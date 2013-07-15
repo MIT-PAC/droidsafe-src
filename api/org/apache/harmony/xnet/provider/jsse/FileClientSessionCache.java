@@ -39,8 +39,7 @@ public class FileClientSessionCache {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static synchronized void reset() {
+        static synchronized void reset() {
         caches.clear();
     }
 
@@ -367,7 +366,6 @@ for(CacheFile cacheFile : diskOnly)
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.381 -0400", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "0FB46900A3E8A9D31BFC2B1422807676")
         @Override
         public int compareTo(File another) {

@@ -80,7 +80,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.823 -0400", hash_original_method = "3717FF744AD9B352598BB020F584214F", hash_generated_method = "C56D73ECFCEAF02768BDFF15C8D4912C")
     public float getColumnDelay() {
         float var29CD4D8FF8E5FB724D956AFF9C7C34F0_1034086954 = (mColumnDelay);
@@ -91,7 +90,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.823 -0400", hash_original_method = "9501A5CA0F153641CDBB87B4A0FF2D10", hash_generated_method = "C7AA2AD84759C6B2FECFC5080692540A")
     public void setColumnDelay(float columnDelay) {
         mColumnDelay = columnDelay;
@@ -100,7 +98,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.824 -0400", hash_original_method = "4A1DF1219341ECD3C219976F02BC50A3", hash_generated_method = "E9A8143AC1BC96C7D700C91C0B8EE9C0")
     public float getRowDelay() {
         float var97A9DC435CAC51E025B6456BF8EAD00A_1056459330 = (mRowDelay);
@@ -111,7 +108,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.824 -0400", hash_original_method = "64D555696CC7461EC1F71D4A3CF182E8", hash_generated_method = "44CD6692632F04CC8033AC326535A160")
     public void setRowDelay(float rowDelay) {
         mRowDelay = rowDelay;
@@ -120,7 +116,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.824 -0400", hash_original_method = "41E7A7956AF2C8AD22DB281BF2D1824C", hash_generated_method = "604052EEA4E6FC0ABE0E0BE50D7CB2AE")
     public int getDirection() {
         int var58DD5558F1951929038C67E89573E9B3_725619804 = (mDirection);
@@ -131,7 +126,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.825 -0400", hash_original_method = "1018F9EE846F5F3D270E1DDB698C3F6E", hash_generated_method = "308442DCD74853153DE9BB2BF46521FD")
     public void setDirection(int direction) {
         mDirection = direction;
@@ -140,7 +134,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.825 -0400", hash_original_method = "B1015DE18826455B040F95A300414206", hash_generated_method = "A9B43DA886E89B30447B7082AD7CAE46")
     public int getDirectionPriority() {
         int varAD0B39F63BA0052B2AAD900697170EF9_1782630531 = (mDirectionPriority);
@@ -151,7 +144,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.826 -0400", hash_original_method = "709631E231E1B8C214255AB5EF74A588", hash_generated_method = "ECC5BD2FC1392EAC72A0F198845CE262")
     public void setDirectionPriority(int directionPriority) {
         mDirectionPriority = directionPriority;
@@ -160,7 +152,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.826 -0400", hash_original_method = "A375B490E9D5A30E7BEB9896805D2CB7", hash_generated_method = "1B5B74A033450E401D7829BA09FFAD21")
     @Override
     public boolean willOverlap() {
@@ -172,7 +163,6 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.828 -0400", hash_original_method = "13A2BFBB43D7D8280701088FA02E8C51", hash_generated_method = "B52D386DD044E9AB6D6C42E7FA2B4548")
     @Override
     protected long getDelayForView(View view) {
@@ -222,7 +212,6 @@ switch(mDirectionPriority){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.829 -0400", hash_original_method = "C50C7512E3339F2A41AD9697D8F57632", hash_generated_method = "1FB25178D0F3291C55BCA38B2BCE03F3")
     private int getTransformedColumnIndex(AnimationParameters params) {
         addTaint(params.getTaint());
@@ -275,7 +264,6 @@ switch(getOrder()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.830 -0400", hash_original_method = "B94231C9BBDDC40F852ECD0311BD9DAC", hash_generated_method = "3A19B5BBC13FE170AB3A5B02F0A5D9C8")
     private int getTransformedRowIndex(AnimationParameters params) {
         addTaint(params.getTaint());

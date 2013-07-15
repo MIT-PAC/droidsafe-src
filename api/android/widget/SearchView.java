@@ -537,7 +537,6 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.438 -0400", hash_original_method = "EBA44227BB74F0B08E6F1C70EA9AD0F7", hash_generated_method = "9F0ED82A7B1E8B7E54C4455D92283D55")
     public void setAppSearchData(Bundle appSearchData) {
         mAppSearchData = appSearchData;
@@ -630,7 +629,6 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.440 -0400", hash_original_method = "5F51E4234BD6E41AFB4ED2E85F8CC1A5", hash_generated_method = "9ED055F823619F93416123D3D749DA22")
     public void setOnQueryTextListener(OnQueryTextListener listener) {
         mOnQueryChangeListener = listener;
@@ -639,7 +637,6 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.440 -0400", hash_original_method = "5C0B64E237CFC180C92A60294DA35470", hash_generated_method = "53357DC670AF8DA5EBA61C8EACD2EFB0")
     public void setOnCloseListener(OnCloseListener listener) {
         mOnCloseListener = listener;
@@ -648,7 +645,6 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.441 -0400", hash_original_method = "2E189EEDC80EC67610C89143836C4DBB", hash_generated_method = "0E136A746D1DACCB2ECA5B20AA0683B2")
     public void setOnQueryTextFocusChangeListener(OnFocusChangeListener listener) {
         mOnQueryTextFocusChangeListener = listener;
@@ -657,7 +653,6 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.441 -0400", hash_original_method = "5242CF20D6A154AA5BAD996C3A14A890", hash_generated_method = "B2386EAE9CE311FF03E5CAA313730E12")
     public void setOnSuggestionListener(OnSuggestionListener listener) {
         mOnSuggestionListener = listener;
@@ -666,7 +661,6 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.441 -0400", hash_original_method = "AFFD80E7D30CC6B8E84DA9D0AC11DA43", hash_generated_method = "8D05E5C8F36ECC1939C7C9EC7679070B")
     public void setOnSearchClickListener(OnClickListener listener) {
         mOnSearchClickListener = listener;
@@ -735,7 +729,6 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "B0C72E24DA4703D19B476F7F5669A367", hash_generated_method = "9CBE6BA2DE9B3891D7055B1F8ECEF4E0")
     public boolean isIconfiedByDefault() {
         boolean var240C319CE9511A3C6618BAF616D6A95D_1143176365 = (mIconifiedByDefault);
@@ -766,7 +759,6 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "844ED2B05054700D6A1A7C47A43DB3F5", hash_generated_method = "76E2B62A989FE612A747EE9303BC350C")
     public boolean isIconified() {
         boolean varE490012EE9B46FF826CCD5B3B6B214A9_1738277275 = (mIconified);
@@ -787,7 +779,6 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "A8CFD3302CC6C1FBD45FF4B867C72D5B", hash_generated_method = "EE5D82E60175644DC60F9E4C9364FE67")
     public boolean isSubmitButtonEnabled() {
         boolean varF51306B58E2668509E9043E7735E1FA4_740332840 = (mSubmitButtonEnabled);
@@ -815,7 +806,6 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "A374A24A58636548BF0B2ADA0B696601", hash_generated_method = "AC18FEB4189CD8AFB5F9B3CAB19D1B72")
     public boolean isQueryRefinementEnabled() {
         boolean var69EE6C3CFA8048276879EF4C552B5C72_2032352600 = (mQueryRefinement);
@@ -836,7 +826,6 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.443 -0400", hash_original_method = "D43CFDAE734651DCDEBEEE22CB7FB2A7", hash_generated_method = "8BF46B62A65EBD81B1BEAEF5063F4A10")
     public CursorAdapter getSuggestionsAdapter() {
 CursorAdapter varC836E41B4405C7DA08B60A1F24129CF9_1824746280 =         mSuggestionsAdapter;
@@ -1775,7 +1764,6 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.451 -0400", hash_original_method = "B092F13CA13C6A372C37DCEFCF94B5BC", hash_generated_method = "18FF810E17310C3371DD05FA1EF81F7C")
     private void launchIntent(Intent intent) {
         addTaint(intent.getTaint());
@@ -1828,7 +1816,6 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.452 -0400", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "C38BEF0A5DE289AED71CF13EC3DBAB9E")
     private Intent createIntent(String action, Uri data, String extraData, String query,
             int actionKey, String actionMsg) {
@@ -1871,7 +1858,6 @@ Intent var095937E5B36214360A2644916BF0E8DF_663309877 =         intent;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.453 -0400", hash_original_method = "88ED2A4CD1E55FCB278985A3652D43A1", hash_generated_method = "CD512AE3D1035775329425CCAE675809")
     private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo searchable) {
         addTaint(searchable.getTaint());
@@ -1892,7 +1878,6 @@ Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_1510810421 =         voiceIntent;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.454 -0400", hash_original_method = "7F7E8A56997E65BDFC7ADF14F1E923E9", hash_generated_method = "1B83F718760C7B8B4EC61452022AE0E9")
     private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo searchable) {
         addTaint(searchable.getTaint());
@@ -1941,7 +1926,6 @@ Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_220857374 =         voiceIntent;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.455 -0400", hash_original_method = "830957C509294E2BDC3732D8A42E8F7A", hash_generated_method = "14A793609C50EE2A8A42969A160F1D3A")
     private Intent createIntentFromSuggestion(Cursor c, int actionKey, String actionMsg) {
         addTaint(actionMsg.getTaint());
@@ -2055,7 +2039,6 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.457 -0400", hash_original_method = "BBDE2605DAB20A62DF5DDA8DAF1B33B9", hash_generated_method = "0D212706D2CE79F99D27416EE240A973")
          void setSearchView(SearchView searchView) {
             mSearchView = searchView;
@@ -2085,7 +2068,6 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.458 -0400", hash_original_method = "04EDD552CD5932834AB8E3EAD2670FCB", hash_generated_method = "2E00CC1DC27537AD22A88B7817BCCBE4")
         @Override
         protected void replaceText(CharSequence text) {
@@ -2094,7 +2076,6 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.458 -0400", hash_original_method = "BBB8F048947DA4F8E171ED984E24E3AE", hash_generated_method = "65E30508731680C780234FF5491E8384")
         @Override
         public void performCompletion() {

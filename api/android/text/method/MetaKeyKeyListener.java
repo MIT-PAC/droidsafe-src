@@ -77,15 +77,13 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isMetaTracker(CharSequence text, Object what) {
+        public static boolean isMetaTracker(CharSequence text, Object what) {
         return what == CAP || what == ALT || what == SYM ||
                what == SELECTING;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
+        public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
         return what == SELECTING;
     }
 
@@ -310,8 +308,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long resetLockedMeta(long state) {
+        public static long resetLockedMeta(long state) {
         if ((state & META_CAP_LOCKED) != 0) {
             state &= ~META_SHIFT_MASK;
         }
@@ -366,8 +363,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long adjustMetaAfterKeypress(long state) {
+        public static long adjustMetaAfterKeypress(long state) {
         if ((state & META_CAP_PRESSED) != 0) {
             state = (state & ~META_SHIFT_MASK) | META_SHIFT_ON | META_CAP_USED;
         } else if ((state & META_CAP_RELEASED) != 0) {
@@ -405,8 +401,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long press(long state, int what, long mask,
+        private static long press(long state, int what, long mask,
             long locked, long pressed, long released, long used) {
         if ((state & pressed) != 0) {
         } else if ((state & released) != 0) {
@@ -457,7 +452,6 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.645 -0400", hash_original_method = "DB6E28AB316658FAB51CA26FDC440ADD", hash_generated_method = "C67C049D164160F6D202F335D42CBC75")
     public long clearMetaKeyState(long state, int which) {
         addTaint(which);

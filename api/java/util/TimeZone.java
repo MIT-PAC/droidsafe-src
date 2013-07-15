@@ -160,7 +160,6 @@ for(int i = 0;i < count - string.length();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.250 -0400", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "479FD41000DDF9806BA2E5207B02A0DB")
     public String getID() {
 String varA5429A949488C23EB72A92C2F2C63667_868529678 =         ID;

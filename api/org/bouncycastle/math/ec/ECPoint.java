@@ -39,7 +39,6 @@ public abstract class ECPoint {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.032 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "DDA0B15304294C9DA61A3DC556D13740")
     public ECCurve getCurve() {
 ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_823125907 =         curve;
@@ -50,7 +49,6 @@ ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_823125907 =         curve;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.032 -0400", hash_original_method = "C7C8D965D2F53EB7BBE8F50406AF2883", hash_generated_method = "3DD82864535861A65D4B8E41DE6E5973")
     public ECFieldElement getX() {
 ECFieldElement varEA5659DA512DECF23E6D37EE8060D074_69228245 =         x;
@@ -61,7 +59,6 @@ ECFieldElement varEA5659DA512DECF23E6D37EE8060D074_69228245 =         x;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.033 -0400", hash_original_method = "B5FEFF99DC806D61F0BCF9BC7ACEB9BA", hash_generated_method = "69EABDE87FCFFD75A295D5CFB06AF7F5")
     public ECFieldElement getY() {
 ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
@@ -72,7 +69,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.033 -0400", hash_original_method = "B09C1F46CE24A0176C4C3F4348C76697", hash_generated_method = "39B38EAAB81955C678F688FA3B68643D")
     public boolean isInfinity() {
         boolean var14C2CA2A32591652557E17643BF90D2B_471133131 = (x == null && y == null);
@@ -83,7 +79,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.034 -0400", hash_original_method = "47BFB55B0C4A3BF2B8623783D9C43540", hash_generated_method = "AA54C8B471A2EF3E7D8D80D4D3CC5E5D")
     public boolean isCompressed() {
         boolean varA04A91040E7D1CAA0270269A913F52BB_201544331 = (withCompression);
@@ -94,7 +89,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.034 -0400", hash_original_method = "8BF915B7848C2883598F0B5C0E5B1EC3", hash_generated_method = "53F966FC49DEBDB3031B1A1491F2D87C")
     public boolean equals(
         Object  other) {
@@ -139,7 +133,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.035 -0400", hash_original_method = "50EB0D4EE4BADC10EDE9CC4D5C9244FF", hash_generated_method = "47F85655367BEEF7513A866C975B472D")
     public int hashCode() {
     if(this.isInfinity())        
@@ -160,7 +153,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.035 -0400", hash_original_method = "3CED2898CE1D9F7EEE71D4F4E6298B52", hash_generated_method = "7B74A03DE78F3C307128B0AF3CA7A466")
      void setPreCompInfo(PreCompInfo preCompInfo) {
         this.preCompInfo = preCompInfo;
@@ -184,7 +176,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     public abstract ECPoint twice();
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.036 -0400", hash_original_method = "CFD8CCAA4A8EFD7B41616F74559C84F4", hash_generated_method = "97CE43AE98DB7914C02173153BE78DF3")
     synchronized void assertECMultiplier() {
     if(this.multiplier == null)        
@@ -199,7 +190,6 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.037 -0400", hash_original_method = "0A712A2425F19F0711671167931DA051", hash_generated_method = "0D852FCBAC1AF8B8B798C56AAA041785")
     public ECPoint multiply(BigInteger k) {
         addTaint(k.getTaint());
@@ -703,7 +693,6 @@ ECPoint varD40A7246E4D1D01EF654FCE8BF0FE2B3_1721620865 =             new ECPoint
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.042 -0400", hash_original_method = "55BA3FB66363791B05BA3007051689C2", hash_generated_method = "E26BC956C66DEB0711576DC7D3104C76")
         public ECPoint negate() {
 ECPoint var8A5D491956EA8C03A91531C071EF48DE_810204297 =             new ECPoint.F2m(curve, this.getX(), this.getY().add(this.getX()), withCompression);

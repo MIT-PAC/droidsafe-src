@@ -368,7 +368,6 @@ for(Node node : mNodes)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.053 -0400", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "AA7ED5172229C6AA5EC857166A175240")
     @Override
     public boolean isStarted() {
@@ -380,7 +379,6 @@ for(Node node : mNodes)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.056 -0400", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "3A96AFFC521A3E8568DA624DF6CD662A")
     @Override
     public long getStartDelay() {
@@ -392,7 +390,6 @@ for(Node node : mNodes)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.062 -0400", hash_original_method = "9B89801AA661B38F8303A0C7891B0195", hash_generated_method = "DFD3698D1A235894B218DEC62F508D58")
     @Override
     public void setStartDelay(long startDelay) {
@@ -402,7 +399,6 @@ for(Node node : mNodes)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.065 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "EDA2552770A5CEF948232498DA83D069")
     @Override
     public long getDuration() {
@@ -770,7 +766,6 @@ for(int j = 0;j < numDependencies;++j)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.129 -0400", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "C2873E3A5F96230B9841E1221FD8122E")
         public void onAnimationCancel(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -794,7 +789,6 @@ for(int j = 0;j < numDependencies;++j)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.138 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "2CC49AF6623F4CFFEDAE2EE5FA4412D5")
         public void onAnimationRepeat(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -939,7 +933,6 @@ for(int i = 0;i < numListeners;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.156 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "2CC49AF6623F4CFFEDAE2EE5FA4412D5")
         public void onAnimationRepeat(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -948,7 +941,6 @@ for(int i = 0;i < numListeners;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.158 -0400", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "4F1E500BA39728FB7A49E02540A0C5AA")
         public void onAnimationStart(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected

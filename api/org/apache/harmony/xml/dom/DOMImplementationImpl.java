@@ -17,7 +17,6 @@ public final class DOMImplementationImpl implements DOMImplementation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.602 -0400", hash_original_method = "A8F6F0126AB1E9E9BF5B76989DE9A32F", hash_generated_method = "54920E025F7E7197697DBDEBB08CE081")
     public Document createDocument(String namespaceURI, String qualifiedName,
             DocumentType doctype) throws DOMException {
@@ -32,7 +31,6 @@ Document var1AFCDC8394B561283EA4137BAAE11034_1558130344 =         new DocumentIm
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.602 -0400", hash_original_method = "9C62B8245777A690BCF019D4FECDC942", hash_generated_method = "428746B385505B247711F2FC8C6BFE42")
     public DocumentType createDocumentType(String qualifiedName,
             String publicId, String systemId) throws DOMException {
@@ -107,7 +105,6 @@ DocumentType var641A63204CB54C67EE90D89886D51C3B_1242962996 =         new Docume
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.604 -0400", hash_original_method = "F21DF5440792B1D9F1F89E7A46F56ED2", hash_generated_method = "93CFC520D1C7512331CFD95668B1693C")
     public Object getFeature(String feature, String version) {
         addTaint(version.getTaint());

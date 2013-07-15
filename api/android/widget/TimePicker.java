@@ -290,7 +290,6 @@ public class TimePicker extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.781 -0400", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "2DC0868B5AC6F8434917913CF5CB2C86")
     @Override
     public boolean isEnabled() {
@@ -363,7 +362,6 @@ Parcelable var767A4A9C9E0294E50933F15CC8E01356_906331038 =         new SavedStat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.783 -0400", hash_original_method = "6B3D4A5E94F1256617D4C5854135F89F", hash_generated_method = "06C44235EEE3C2E117DCBAA9E871B4B2")
     public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener) {
         mOnTimeChangedListener = onTimeChangedListener;
@@ -481,7 +479,6 @@ Integer var06A635A0AB15E903331F9B812F778501_1076036850 =             (currentHou
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.785 -0400", hash_original_method = "4F4BA9CD8FF557544935EB979BB43706", hash_generated_method = "D3E48364207D0305EBCCA3C3F5A9B914")
     public boolean is24HourView() {
         boolean varAB9371C54D62E21B7C9B3A0218F3CF8E_1532647902 = (mIs24HourView);
@@ -765,7 +762,6 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1510544411 =         mMinuteSpinner.
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.791 -0400", hash_original_method = "E8F47E3750239DF4EC2B02FDC3043C0E", hash_generated_method = "85EC86D98DC5C7E12A41ACAF028AF95F")
         public int getHour() {
             int var48AB0AEFD71C009ADE848499A027A428_543416563 = (mHour);
@@ -776,7 +772,6 @@ Integer varD6B53F95DB47F8A2CC8B4CFD55982D2A_1510544411 =         mMinuteSpinner.
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.791 -0400", hash_original_method = "3E9A445CD5F3D9118D6AF471987F3B8F", hash_generated_method = "1E661A575F29818F9674F2E156C2F7D1")
         public int getMinute() {
             int var1D72A8B90C8FB2B549FC5D5E49C93263_1689822335 = (mMinute);

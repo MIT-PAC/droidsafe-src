@@ -85,7 +85,6 @@ public class Address implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.571 -0400", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "10EF5FAE7CA3FE5AB493A65825CACCF3")
     public Locale getLocale() {
 Locale varD4470AF088C85BDC4D13A941A003DD34_1586046080 =         mLocale;
@@ -96,7 +95,6 @@ Locale varD4470AF088C85BDC4D13A941A003DD34_1586046080 =         mLocale;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.571 -0400", hash_original_method = "E1E6237F606789C7A5294059179DF025", hash_generated_method = "C44B7DAE44F0D81B38C3BE2A260DB423")
     public int getMaxAddressLineIndex() {
         int var762CC270A4744104782379DEFC1AD876_331337944 = (mMaxAddressLineIndex);
@@ -172,7 +170,6 @@ for(Integer i : mAddressLines.keySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.573 -0400", hash_original_method = "D108F727B4ED1E44A68F4DDDAA8864A4", hash_generated_method = "2533D409DB355BE86BD9F38E41EB3A0A")
     public String getFeatureName() {
 String varF7A5AFB4D1EE52961A7B38E15120ABDE_1290554332 =         mFeatureName;
@@ -183,7 +180,6 @@ String varF7A5AFB4D1EE52961A7B38E15120ABDE_1290554332 =         mFeatureName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.574 -0400", hash_original_method = "49225B599976EB86160DDAF83CE5BC7F", hash_generated_method = "1D26184E4D899C0F02D8A649DE7F872A")
     public void setFeatureName(String featureName) {
         mFeatureName = featureName;
@@ -192,7 +188,6 @@ String varF7A5AFB4D1EE52961A7B38E15120ABDE_1290554332 =         mFeatureName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.574 -0400", hash_original_method = "EDE4D65E7936029E84B8376D150F4DDE", hash_generated_method = "21B7D6A85C705288277AE7C2E09CF462")
     public String getAdminArea() {
 String var91E7EFC6A55EB1496E7047B6173BA618_242537384 =         mAdminArea;
@@ -203,7 +198,6 @@ String var91E7EFC6A55EB1496E7047B6173BA618_242537384 =         mAdminArea;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.575 -0400", hash_original_method = "C8D449D9A4FBB2AF83806F488A8CAC1C", hash_generated_method = "40C7CFB20A367AD4F7EDC68C1A3AAE86")
     public void setAdminArea(String adminArea) {
         this.mAdminArea = adminArea;
@@ -212,7 +206,6 @@ String var91E7EFC6A55EB1496E7047B6173BA618_242537384 =         mAdminArea;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.575 -0400", hash_original_method = "84D73E83BF1D1209648491141222963A", hash_generated_method = "9FD5E24A57D1F831C33B6F7918DDC65A")
     public String getSubAdminArea() {
 String varA3DCCD1EC01210B6CF0EC83E90F79A22_619812418 =         mSubAdminArea;
@@ -223,7 +216,6 @@ String varA3DCCD1EC01210B6CF0EC83E90F79A22_619812418 =         mSubAdminArea;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.575 -0400", hash_original_method = "4DF91F489D35ACCA2DC2AF8A5398BD9E", hash_generated_method = "10C6DC9E5F0955108CDE6840819AD482")
     public void setSubAdminArea(String subAdminArea) {
         this.mSubAdminArea = subAdminArea;
@@ -232,7 +224,6 @@ String varA3DCCD1EC01210B6CF0EC83E90F79A22_619812418 =         mSubAdminArea;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.575 -0400", hash_original_method = "3743C626E0A5809CC359BBE60C0BEF8D", hash_generated_method = "89B7FA4DEDC6B1B122B91F75EEF060DB")
     public String getLocality() {
 String varB7B79BF2DA4FF4A6C180FBD5B661B23A_194578714 =         mLocality;
@@ -243,7 +234,6 @@ String varB7B79BF2DA4FF4A6C180FBD5B661B23A_194578714 =         mLocality;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.576 -0400", hash_original_method = "E848A60937105A6FB0F90F11784FAFAB", hash_generated_method = "09FAEAEF3CAB423AAFFFED8A05988A88")
     public void setLocality(String locality) {
         mLocality = locality;
@@ -252,7 +242,6 @@ String varB7B79BF2DA4FF4A6C180FBD5B661B23A_194578714 =         mLocality;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.576 -0400", hash_original_method = "4565445A715D9E082E3330822780EE14", hash_generated_method = "A974D417783E35E5758BB177994A54A3")
     public String getSubLocality() {
 String varF5741EE7521AF8C87706F872F400820D_885609280 =         mSubLocality;
@@ -263,7 +252,6 @@ String varF5741EE7521AF8C87706F872F400820D_885609280 =         mSubLocality;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.576 -0400", hash_original_method = "FBC28BB3F834CBCC388544379D8FF1EB", hash_generated_method = "88524407E6F13730692BB0EC0929F8BE")
     public void setSubLocality(String sublocality) {
         mSubLocality = sublocality;
@@ -272,7 +260,6 @@ String varF5741EE7521AF8C87706F872F400820D_885609280 =         mSubLocality;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.577 -0400", hash_original_method = "1512262039F5521B933A04882815530C", hash_generated_method = "9AF3228AD47A5151B2C37FA0A6178304")
     public String getThoroughfare() {
 String var4A2F779844D3CAEF589AA39F1538A5F5_875401863 =         mThoroughfare;
@@ -283,7 +270,6 @@ String var4A2F779844D3CAEF589AA39F1538A5F5_875401863 =         mThoroughfare;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.577 -0400", hash_original_method = "30509B10242C2769144E7C2C070721FD", hash_generated_method = "4924718659371C7461941D134860D04A")
     public void setThoroughfare(String thoroughfare) {
         this.mThoroughfare = thoroughfare;
@@ -292,7 +278,6 @@ String var4A2F779844D3CAEF589AA39F1538A5F5_875401863 =         mThoroughfare;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.577 -0400", hash_original_method = "8EFF44F66BA44D813DFBCA9FC34B8EF5", hash_generated_method = "5774F2E1B60245857C9C8C2BBF67D4E6")
     public String getSubThoroughfare() {
 String varE6F08835740F5BE05D61BBE5DA6AE0F8_884831117 =         mSubThoroughfare;
@@ -303,7 +288,6 @@ String varE6F08835740F5BE05D61BBE5DA6AE0F8_884831117 =         mSubThoroughfare;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.578 -0400", hash_original_method = "ED99ECE32AF3E65AA637AE926CEFB8FE", hash_generated_method = "58B1784B4A68782244F8452AC42B65F4")
     public void setSubThoroughfare(String subthoroughfare) {
         this.mSubThoroughfare = subthoroughfare;
@@ -312,7 +296,6 @@ String varE6F08835740F5BE05D61BBE5DA6AE0F8_884831117 =         mSubThoroughfare;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.578 -0400", hash_original_method = "C1BF40685BD6E248364BFB485F611555", hash_generated_method = "161A97C04282D4F07F207E27FA728FC7")
     public String getPremises() {
 String var43932448830E6B96A882F87012E60811_45320546 =         mPremises;
@@ -323,7 +306,6 @@ String var43932448830E6B96A882F87012E60811_45320546 =         mPremises;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.578 -0400", hash_original_method = "C9E9B1B8FA21E47AD4B139D64075E36A", hash_generated_method = "2B0B3FE07B8F5EE8C21070FE09BD962A")
     public void setPremises(String premises) {
         mPremises = premises;
@@ -332,7 +314,6 @@ String var43932448830E6B96A882F87012E60811_45320546 =         mPremises;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.578 -0400", hash_original_method = "9B5379769D21EFABDDB2785674C4DE4D", hash_generated_method = "4C81ECC637D8378EBE87C55198C6F598")
     public String getPostalCode() {
 String varB177689E8C39CC402F4DF29F8A634D1E_37757682 =         mPostalCode;
@@ -343,7 +324,6 @@ String varB177689E8C39CC402F4DF29F8A634D1E_37757682 =         mPostalCode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.579 -0400", hash_original_method = "21CF31250DB9EF4FD9B8F171A3FE8B16", hash_generated_method = "E8E05B86D22C4A96EB105D8DBDEA25E7")
     public void setPostalCode(String postalCode) {
         mPostalCode = postalCode;
@@ -352,7 +332,6 @@ String varB177689E8C39CC402F4DF29F8A634D1E_37757682 =         mPostalCode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.579 -0400", hash_original_method = "E8D66F74FB4E1AF79CCB258931950FBE", hash_generated_method = "1267812F50BB3F6E824940D4592FC271")
     public String getCountryCode() {
 String varF8C591CBE522BD074E2255B8C3D81562_66985197 =         mCountryCode;
@@ -363,7 +342,6 @@ String varF8C591CBE522BD074E2255B8C3D81562_66985197 =         mCountryCode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.579 -0400", hash_original_method = "DD5F97427C040B47F9123BA4F8DC93A2", hash_generated_method = "10F64B2D94AD623FDE15BD4D4699264C")
     public void setCountryCode(String countryCode) {
         mCountryCode = countryCode;
@@ -372,7 +350,6 @@ String varF8C591CBE522BD074E2255B8C3D81562_66985197 =         mCountryCode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.580 -0400", hash_original_method = "A82A5DCEE67796EF014C1F79656EFD25", hash_generated_method = "2539FEA4B6AA3A33AE915250BBBBE89F")
     public String getCountryName() {
 String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
@@ -383,7 +360,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.580 -0400", hash_original_method = "F7767E8D2EF25B1D1399497900992B14", hash_generated_method = "5F6A05EA0BAE2D22145C166C84A758DE")
     public void setCountryName(String countryName) {
         mCountryName = countryName;
@@ -392,7 +368,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.580 -0400", hash_original_method = "AB4D7FB4B745E9B023209032D37DF18F", hash_generated_method = "1C2D90AE7C43DB867D0A265C9B6B9913")
     public boolean hasLatitude() {
         boolean var8A2123D57155A8AC9188865299099687_856548317 = (mHasLatitude);
@@ -426,7 +401,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.581 -0400", hash_original_method = "E7EB84DA300898C528161A7CBF9FB7F9", hash_generated_method = "4ABFA5E2D8A978A1DF296206A6637849")
     public void setLatitude(double latitude) {
         mLatitude = latitude;
@@ -437,7 +411,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.581 -0400", hash_original_method = "4BCAF53DCD4CF7BB362561C1B9A79F13", hash_generated_method = "A8538AF0D6CB924252483A3546F1E7D2")
     public void clearLatitude() {
         mHasLatitude = false;
@@ -446,7 +419,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.582 -0400", hash_original_method = "44F26BDA1ACBDD9862A3D8D8968B3507", hash_generated_method = "D52219E979EDD1FB277B541976648E0B")
     public boolean hasLongitude() {
         boolean varBE8E4545DFD36BA893A70116C905DDC4_1096275823 = (mHasLongitude);
@@ -480,7 +452,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.582 -0400", hash_original_method = "C4D556739F3557653F6C8D616289AA29", hash_generated_method = "C5F4A24BBD737E53F906B0B4B1241A26")
     public void setLongitude(double longitude) {
         mLongitude = longitude;
@@ -491,7 +462,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.583 -0400", hash_original_method = "D5786F30716C18CE0A0AB74556D12A22", hash_generated_method = "72D8B7051AF8F5D8AF738740565981D0")
     public void clearLongitude() {
         mHasLongitude = false;
@@ -500,7 +470,6 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.583 -0400", hash_original_method = "EB9EE516F482EB01602422E9FA56CA5C", hash_generated_method = "9BC53B0E0342E05B61343CFA7C4F3182")
     public String getPhone() {
 String var07C8F1FD81103AEB314B290597870F83_969555824 =         mPhone;
@@ -511,7 +480,6 @@ String var07C8F1FD81103AEB314B290597870F83_969555824 =         mPhone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.583 -0400", hash_original_method = "5023DDC820B0F6BE06303CFCE3A71EDF", hash_generated_method = "DE0BAA2F1475B12EBE7D57B9B6E7D336")
     public void setPhone(String phone) {
         mPhone = phone;
@@ -520,7 +488,6 @@ String var07C8F1FD81103AEB314B290597870F83_969555824 =         mPhone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.584 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "53BA0CBAD2052BCE1CE12AF53BFA5456")
     public String getUrl() {
 String varF1E91891753CD7C4305CCDECB60B9DDF_2026083837 =         mUrl;
@@ -531,7 +498,6 @@ String varF1E91891753CD7C4305CCDECB60B9DDF_2026083837 =         mUrl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.584 -0400", hash_original_method = "A94A57C3BD4A508E7FC3D69DE1774EEC", hash_generated_method = "4D2F926217B6FA5CE5A195400B3E7118")
     public void setUrl(String Url) {
         mUrl = Url;
@@ -540,7 +506,6 @@ String varF1E91891753CD7C4305CCDECB60B9DDF_2026083837 =         mUrl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.584 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "B7E346AB2B09B51ABC4B648EB65D3E28")
     public Bundle getExtras() {
 Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1528662815 =         mExtras;
@@ -551,7 +516,6 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1528662815 =         mExtras;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.585 -0400", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "9B56A595B86963DFD04070AE7AE28FC1")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? null : new Bundle(extras);
@@ -560,7 +524,6 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1528662815 =         mExtras;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.585 -0400", hash_original_method = "F2CDEB7D6ECCED8CC4C514EA700B26BB", hash_generated_method = "B1E4C3A92B0B1F3038542DE0DDE1B771")
     @Override
     public String toString() {
@@ -626,7 +589,6 @@ String var2460B846747F8B22185AD8BE722266A5_290559347 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.586 -0400", hash_original_method = "2C347F4A4F86FFA77F246DC5FD21E5D6", hash_generated_method = "CFDA3B515E712E55C1A0D47CEB72FD53")
     public int describeContents() {
         int var9C9C6B08C78648CC48F8AF69F3FE8C32_494209134 = ((mExtras != null) ? mExtras.describeContents() : 0);
@@ -637,7 +599,6 @@ String var2460B846747F8B22185AD8BE722266A5_290559347 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.608 -0400", hash_original_method = "609BCF0D5B324DA0FE8A594DDD7486F2", hash_generated_method = "224F627DBC4A775676A43924958A5EC6")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

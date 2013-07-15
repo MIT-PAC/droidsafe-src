@@ -48,7 +48,6 @@ public class RestoreSet implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.423 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "17B928A4E0E6A4307E245B9D6578CB2C")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_839350441 = (0);
@@ -59,7 +58,6 @@ public class RestoreSet implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.424 -0400", hash_original_method = "6F3E6147075189D34A5652BA91455185", hash_generated_method = "8C9487D864A81F2D7D66AF69AE52359D")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

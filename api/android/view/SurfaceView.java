@@ -483,7 +483,6 @@ public class SurfaceView extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.908 -0400", hash_original_method = "11B3726B61DA4E45A86A0978E3D5B1EE", hash_generated_method = "7F2AB83E07352A89B75F8314517BF106")
     public SurfaceHolder getHolder() {
 SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_873333173 =         mSurfaceHolder;
@@ -755,7 +754,6 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_873333173 =         mSurfaceHo
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.913 -0400", hash_original_method = "FB26E6D2AB831E35DDA7A9ED4DEF2DCC", hash_generated_method = "3A11010F1FE7203445373F74FB7FA109")
     public void setZOrderMediaOverlay(boolean isMediaOverlay) {
         mWindowType = isMediaOverlay
@@ -768,7 +766,6 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_873333173 =         mSurfaceHo
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.913 -0400", hash_original_method = "001C3D591DD99644CBE6444F60EBCCA2", hash_generated_method = "96488BE6391412F9F36CDC74D9BA36A6")
     public void setZOrderOnTop(boolean onTop) {
         addTaint(onTop);
@@ -793,7 +790,6 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_873333173 =         mSurfaceHo
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.914 -0400", hash_original_method = "1670DE99B4A30E6D116E6931C42E66D0", hash_generated_method = "038066FDD6533F376555CE67954F9E82")
     public void setWindowType(int type) {
         mWindowType = type;
@@ -1024,7 +1020,6 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_207615594 =        
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.921 -0400", hash_original_method = "A4CE5F54BDA2367531BCEA3F1517BC09", hash_generated_method = "35973A73CAFE77268E21B04BF502CB01")
     public boolean isFixedSize() {
         boolean var1C8AF9176ECD1A92CAC16542656B0789_1421680205 = ((mRequestedWidth != -1 || mRequestedHeight != -1));
@@ -1093,7 +1088,6 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_207615594 =        
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.923 -0400", hash_original_method = "BE0716F4AD0CF82E07CDF7A02946EA01", hash_generated_method = "8DFBCE56B7B4A7917AC4BEE9870F8E58")
         public void dispatchAppVisibility(boolean visible) {
             addTaint(visible);
@@ -1127,7 +1121,6 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_207615594 =        
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.923 -0400", hash_original_method = "FFE9D2CBC83B323644FA8C6DFE6F40CA", hash_generated_method = "9E1B88B9F5CFD832DDE372F9EEB87E36")
         public void executeCommand(String command, String parameters, ParcelFileDescriptor out) {
             addTaint(out.getTaint());

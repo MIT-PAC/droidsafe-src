@@ -249,7 +249,6 @@ LayoutParams var8649ACA5E03771F827BFE666D5C03EC1_813585684 =         new LayoutP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.744 -0400", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "530199D41CC84CFC4332A898338462D8")
     public Drawable getForeground() {
 Drawable varE68730EA53E360629A53778795B047BD_2014992516 =         mForeground;
@@ -541,7 +540,6 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.753 -0400", hash_original_method = "F157652BCC07DCD3C1A1E63F95BA7504", hash_generated_method = "35F4313BD098BAEC40FB26B8C2BFA441")
     @android.view.RemotableViewMethod
     public void setMeasureAllChildren(boolean measureAll) {
@@ -562,7 +560,6 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.754 -0400", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "4511A35003B889BCDDD7BA09CA378474")
     public boolean getMeasureAllChildren() {
         boolean varBDF5B8EA1A766C674F3C6D79DF6608FD_258058295 = (mMeasureAllChildren);
@@ -585,7 +582,6 @@ LayoutParams varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852 =         new FrameL
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.755 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "EBD614467AA7AE23EE31E3C0673F2DCC")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -597,7 +593,6 @@ LayoutParams varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852 =         new FrameL
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.755 -0400", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "C92E54238D22A326C556ED22B2636D19")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

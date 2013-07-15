@@ -181,7 +181,6 @@ String varF523B99BFF261AB8239F9E49DE817850_1805125093 =         certs[0].getPubl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.842 -0400", hash_original_method = "F562E1306C68C131628B54BA54665996", hash_generated_method = "C02F2F2673A624860D9BA4D1D2B076F8")
     @Override
     public int getType() {

@@ -22,7 +22,6 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.500 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
@@ -169,7 +168,6 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.503 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "3FA08E26A7C2474CC418010849B9EF04")
     private void sendResult(Message response, Object result, Throwable ex) {
         addTaint(ex.getTaint());
@@ -190,7 +188,6 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.511 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "5200CE46A7F7442BAD5D32B816103E58")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -414,7 +411,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.512 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "C1A386917C74DB020F818753C69C92FA")
     protected String getCommonIccEFPath(int efid) {
         addTaint(efid);

@@ -13,8 +13,7 @@ public class SocketUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void setCreated(Socket s) {
+        public static void setCreated(Socket s) {
         s.isCreated = true;
     }
 

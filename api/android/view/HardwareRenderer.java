@@ -41,8 +41,7 @@ public abstract class HardwareRenderer {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static void disable(boolean system) {
+        public static void disable(boolean system) {
         sRendererDisabled = true;
         if (system) {
             sSystemRendererDisabled = true;
@@ -156,7 +155,6 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.316 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "3241A090CC83BE170828FAA0D6581868")
      boolean isEnabled() {
         boolean var6F84A7F10C955D3C78F44E5278F6195B_1654908375 = (mEnabled);
@@ -167,7 +165,6 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.317 -0400", hash_original_method = "E431274334564F99DE06BE0647F24670", hash_generated_method = "C2CE1DB1D0D5E01CA74F489F1351598B")
      void setEnabled(boolean enabled) {
         mEnabled = enabled;
@@ -176,7 +173,6 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.317 -0400", hash_original_method = "2657035D37B57C6EB1FDEBFDEB2FC631", hash_generated_method = "CEDFFBA6838D6B16A4B49457246E198A")
      boolean isRequested() {
         boolean varCAD2F4EAFD7FAE1B5AB35772EE26114C_736506143 = (mRequested);
@@ -187,7 +183,6 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.317 -0400", hash_original_method = "5489F62162525BB08E1A950602557C7B", hash_generated_method = "6C5945B8EA5D67FB5159E094E21FF9C0")
      void setRequested(boolean requested) {
         mRequested = requested;
@@ -264,7 +259,6 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.319 -0400", hash_original_method = "8E011D652AD55D9A8BD48AFBDECCE639", hash_generated_method = "C39462F6BD83E1144982F50418061CE1")
          boolean hasDirtyRegions() {
             boolean var0A34812C66F525B1CA7E24023471D9BA_1009905354 = (mDirtyRegionsEnabled);
@@ -739,7 +733,6 @@ EGLContext var927F4799C479B4C43A974ADDE6053FE6_1047708006 =             egl.eglC
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.329 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "17FA939059E2F3B8364122ACD81AA833")
         @Override
          int getWidth() {
@@ -751,7 +744,6 @@ EGLContext var927F4799C479B4C43A974ADDE6053FE6_1047708006 =             egl.eglC
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.329 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "84ED6669BA06B0A4FA743CD1A7CA089F")
         @Override
          int getHeight() {
@@ -763,7 +755,6 @@ EGLContext var927F4799C479B4C43A974ADDE6053FE6_1047708006 =             egl.eglC
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.330 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "4ED32CD0E2E6E3A7E116C61543547A28")
         @Override
          HardwareCanvas getCanvas() {
@@ -775,7 +766,6 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_1889407912 =             mCan
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.330 -0400", hash_original_method = "BAED9FCEBD48E8CDA814A9102CB815B2", hash_generated_method = "FE1DC571B234735D5DA2010D1324A9EC")
          boolean canDraw() {
             boolean var4100F70211E1483E664E1C43EF885793_46864953 = (mGl != null && mCanvas != null);
@@ -786,7 +776,6 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_1889407912 =             mCan
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.330 -0400", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "D1D1BF3A49F969C9AFF6B64380268E6B")
          void onPreDraw(Rect dirty) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -795,7 +784,6 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_1889407912 =             mCan
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.330 -0400", hash_original_method = "600776A2676C628EF453DCB2EAD62BCF", hash_generated_method = "CE44E4A0F53F45960A85861D50074AD3")
          void onPostDraw() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1005,7 +993,6 @@ GLES20Canvas var5172C7EB1AEC89F673E47E03A04AE959_1145379154 =             mGlCan
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.336 -0400", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "05FF634DD8CAE2F3AEF2BB0DC65C3AE0")
         @Override
          int[] getConfig(boolean dirtyRegions) {

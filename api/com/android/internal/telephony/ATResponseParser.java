@@ -98,7 +98,6 @@ for(int i = tokStart;i < tokEnd;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.588 -0400", hash_original_method = "098AF12FD324D863E13EA52B5E17698D", hash_generated_method = "02B2FBC8A9CAE09DCE9BE46DA708D21E")
     public String nextString() {
         nextTok();
@@ -111,7 +110,6 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.588 -0400", hash_original_method = "10F6658C8E801D9A6B4832727F713C99", hash_generated_method = "BF454D1A2BD88AA7E30A2E995FEAD251")
     public boolean hasMore() {
         boolean var6025777476581CB9A5AD5A10C75E617E_111544812 = (next < line.length());
@@ -122,7 +120,6 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.590 -0400", hash_original_method = "0441D3F31DB45A49823AD290225E4F8E", hash_generated_method = "D416AF255BD54634A3BD954560D5CA8F")
     private void nextTok() {
         int len = line.length();
@@ -232,7 +229,6 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.592 -0400", hash_original_method = "1D94A267F6B395134932A5B3B0C0A195", hash_generated_method = "080063B67FE2ECAEE5448CFFF06D0FD3")
     private void skipPrefix() {
         next = 0;

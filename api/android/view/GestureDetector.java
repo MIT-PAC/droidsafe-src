@@ -182,7 +182,6 @@ public class GestureDetector {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.134 -0400", hash_original_method = "571B39F87736E3994F3A317209D7E1C6", hash_generated_method = "8874C66605DB2FF6FE5F0E858C5BB080")
     public void setOnDoubleTapListener(OnDoubleTapListener onDoubleTapListener) {
         mDoubleTapListener = onDoubleTapListener;
@@ -191,7 +190,6 @@ public class GestureDetector {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.135 -0400", hash_original_method = "14829325F18703625EF98BC2472601E3", hash_generated_method = "0B13C9500814A87A70F39F82D929A9E5")
     public void setIsLongpressEnabled(boolean isLongpressEnabled) {
         mIsLongpressEnabled = isLongpressEnabled;
@@ -200,7 +198,6 @@ public class GestureDetector {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.135 -0400", hash_original_method = "880D3BB55D8069819877BA46CC6F055B", hash_generated_method = "BACB0953473E868E0EA4D1BB26677615")
     public boolean isLongpressEnabled() {
         boolean varAC0E18C364C0753415CC5A3B2FB177AA_885577743 = (mIsLongpressEnabled);
@@ -467,7 +464,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.143 -0400", hash_original_method = "6CD5191C407A0B3CBB6F0A0F3D91B6D6", hash_generated_method = "C8BFCF7C40F590B7CBBA8ED1738803C6")
         public boolean onSingleTapUp(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -480,7 +476,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.143 -0400", hash_original_method = "E609FB951BEBFF493B5A5F179A09A7F5", hash_generated_method = "CE7B5EECBD6FB992C82AB867D868DEBD")
         public void onLongPress(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -489,7 +484,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.144 -0400", hash_original_method = "3D0A16086A925B93F4340895FE1B4CBC", hash_generated_method = "5D9363376C58114EDE5EA1E1D30B43FC")
         public boolean onScroll(MotionEvent e1, MotionEvent e2,
                 float distanceX, float distanceY) {
@@ -506,7 +500,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.144 -0400", hash_original_method = "BDBE517451C02C6DD8B1C60030C3C43A", hash_generated_method = "3283410B287E329A17E8BB709F706B69")
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                 float velocityY) {
@@ -523,7 +516,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.145 -0400", hash_original_method = "54A2BF3809B435C5302401FC76B54B22", hash_generated_method = "59BDBECCD2C5F0A2860E71595A2D2C31")
         public void onShowPress(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -532,7 +524,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.145 -0400", hash_original_method = "124BA11CC014942E61EFD87F7F37262C", hash_generated_method = "D23712AF75FCCB295C44FAC4372217C6")
         public boolean onDown(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -545,7 +536,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.145 -0400", hash_original_method = "40BA7E2512EA076BF84D5B49A825B220", hash_generated_method = "2B10A94DD4D24A9E08FB95EE755BD6F3")
         public boolean onDoubleTap(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -558,7 +548,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.146 -0400", hash_original_method = "D3FAA1FBAE0BE329BB5AEDA3CD619E7D", hash_generated_method = "62C5FC73A09CA927085B11931D19DAF3")
         public boolean onDoubleTapEvent(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -571,7 +560,6 @@ switch(action & MotionEvent.ACTION_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.146 -0400", hash_original_method = "5E9F34FF920329D07D248580C4BBB180", hash_generated_method = "C2F79E40F2A0ECC3A578514437E938E4")
         public boolean onSingleTapConfirmed(MotionEvent e) {
             //DSFIXME:  CODE0009: Possible callback target function detected

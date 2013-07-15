@@ -298,7 +298,6 @@ SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAud
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.353 -0400", hash_original_method = "E0DC1BF0888BDAC076F0EBE49A950610", hash_generated_method = "3D72C603A714FB241BCDEDF5E9B732D3")
     public SipAudioCall takeAudioCall(Intent incomingCallIntent,
             SipAudioCall.Listener listener) throws SipException {
@@ -353,8 +352,7 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isIncomingCallIntent(Intent intent) {
+        public static boolean isIncomingCallIntent(Intent intent) {
         if (intent == null) return false;
         String callId = getCallId(intent);
         String offerSd = getOfferSessionDescription(intent);
@@ -362,20 +360,17 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getCallId(Intent incomingCallIntent) {
+        public static String getCallId(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_CALL_ID);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getOfferSessionDescription(Intent incomingCallIntent) {
+        public static String getOfferSessionDescription(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_OFFER_SD);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Intent createIncomingCallBroadcast(String callId,
+        public static Intent createIncomingCallBroadcast(String callId,
             String sessionDescription) {
         Intent intent = new Intent();
         intent.putExtra(EXTRA_CALL_ID, callId);
@@ -463,7 +458,6 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.357 -0400", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "3757901F7FD3DCA6E6CB1F773ADA1C2F")
     public SipSession getSessionFor(Intent incomingCallIntent) throws SipException {
         addTaint(incomingCallIntent.getTaint());

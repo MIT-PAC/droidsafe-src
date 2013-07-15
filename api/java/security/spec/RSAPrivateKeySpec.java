@@ -24,7 +24,6 @@ public class RSAPrivateKeySpec implements KeySpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.009 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "3941DBAF8C7AE4FCA21B57D99B7DA324")
     public BigInteger getModulus() {
 BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_1183354799 =         modulus;
@@ -35,7 +34,6 @@ BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_1183354799 =         modulus;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.009 -0400", hash_original_method = "DA7C8A3DDA38443F1F2D4DBDF52134FD", hash_generated_method = "C1EA012181EFD3FB9BC6AF3DBDC6B563")
     public BigInteger getPrivateExponent() {
 BigInteger varC820A65540BECD18FC145C33971A13B0_1125456945 =         privateExponent;

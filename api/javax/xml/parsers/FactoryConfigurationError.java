@@ -68,7 +68,6 @@ String varFD182D7074F3848E773A38B067BBB880_1135176042 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.451 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "CEEC7A77742B2BAF047C765C39AAFD82")
     public Exception getException() {
 Exception varB0A8CAD4B1C89FFC19A72F5757E92C21_964972947 =         exception;

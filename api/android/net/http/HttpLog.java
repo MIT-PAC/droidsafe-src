@@ -21,8 +21,7 @@ class HttpLog {
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void e(String logMe) {
+        static void e(String logMe) {
         Log.e(LOGTAG, logMe);
     }
 

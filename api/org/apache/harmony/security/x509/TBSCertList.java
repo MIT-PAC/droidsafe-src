@@ -69,7 +69,6 @@ public final class TBSCertList {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.442 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "4E9B13A2BBBF06A3938377B5C8B5C24A")
     public int getVersion() {
         int var2AF72F100C356273D46284F6FD1DFC08_816233566 = (version);
@@ -80,7 +79,6 @@ public final class TBSCertList {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.442 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "8E9E5C1BC908B8E65A48A9E42BA6F1BB")
     public AlgorithmIdentifier getSignature() {
 AlgorithmIdentifier varCDF7DED6F053AD37D069B3F1993A6032_697373277 =         signature;
@@ -91,7 +89,6 @@ AlgorithmIdentifier varCDF7DED6F053AD37D069B3F1993A6032_697373277 =         sign
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.442 -0400", hash_original_method = "EBC299B5141657B108909E991892F54F", hash_generated_method = "3487377467E212201BEBD3AD4ADB47F5")
     public Name getIssuer() {
 Name var8EF52627413B91AB97DB59853805E979_1706063687 =         issuer;
@@ -102,7 +99,6 @@ Name var8EF52627413B91AB97DB59853805E979_1706063687 =         issuer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.442 -0400", hash_original_method = "3F952D48E5C3F549E0CF72E297E1768F", hash_generated_method = "0D246255C275747C6B7F94B39CD44480")
     public Date getThisUpdate() {
 Date varD1B56197E31CD050E59B70739E2BD702_1333882186 =         thisUpdate;
@@ -113,7 +109,6 @@ Date varD1B56197E31CD050E59B70739E2BD702_1333882186 =         thisUpdate;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.443 -0400", hash_original_method = "F86AAF1D9B4DCB96185947A392CE29B0", hash_generated_method = "916DFA3FA292DA38456A5EDBF75327AC")
     public Date getNextUpdate() {
 Date var668F801CBC2DC1072BF49CB46E481CAC_66113313 =         nextUpdate;
@@ -124,7 +119,6 @@ Date var668F801CBC2DC1072BF49CB46E481CAC_66113313 =         nextUpdate;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.443 -0400", hash_original_method = "6BD535137A0D7C6092BE90399C5AC4FA", hash_generated_method = "FAD275FA6B7F7A33A5DF5F13D616CE0C")
     public List<RevokedCertificate> getRevokedCertificates() {
 List<RevokedCertificate> var90744F4394D2E5E9BBF87444A25F95F8_1216625070 =         revokedCertificates;
@@ -135,7 +129,6 @@ List<RevokedCertificate> var90744F4394D2E5E9BBF87444A25F95F8_1216625070 =       
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.443 -0400", hash_original_method = "24898D069ADDF2B72D4CC75EC979A933", hash_generated_method = "BC46A34F70AAFD61DBA0AA485923F8AB")
     public Extensions getCrlExtensions() {
 Extensions varDCEFD14A175BE50B5AC0E611125816AD_990392486 =         crlExtensions;
@@ -146,7 +139,6 @@ Extensions varDCEFD14A175BE50B5AC0E611125816AD_990392486 =         crlExtensions
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.443 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "9A905FF3CA0A7B7BD85B01EC01566E15")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -164,7 +156,6 @@ Extensions varDCEFD14A175BE50B5AC0E611125816AD_990392486 =         crlExtensions
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.444 -0400", hash_original_method = "44BD020D05A989BAC123F5B223D6D101", hash_generated_method = "ED5692EE6EE5A81D7979EF0795016079")
     @Override
     public boolean equals(Object other) {
@@ -198,7 +189,6 @@ Extensions varDCEFD14A175BE50B5AC0E611125816AD_990392486 =         crlExtensions
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.444 -0400", hash_original_method = "78A1F0B8BEA4B34BD8F201B7131E5881", hash_generated_method = "0E2A2CEEAA57F73F6E838F1259A15E9C")
     @Override
     public int hashCode() {
@@ -214,7 +204,6 @@ Extensions varDCEFD14A175BE50B5AC0E611125816AD_990392486 =         crlExtensions
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.445 -0400", hash_original_method = "8372CF0910098C0215CEE031DBAAD799", hash_generated_method = "1672F2BDD83D64B7268A33CC8DA5A13E")
     public void dumpValue(StringBuilder sb) {
         addTaint(sb.getTaint());
@@ -281,7 +270,6 @@ for(RevokedCertificate revokedCertificate : revokedCertificates)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.447 -0400", hash_original_method = "235B3774752183ABFC67FCFEA882E536", hash_generated_method = "2C4185CEBC2D47A711770F5710BFB3C9")
         public Extensions getCrlEntryExtensions() {
 Extensions var7A7A939867039CEA4ADCB8DFD15921BF_1620036554 =             crlEntryExtensions;
@@ -292,7 +280,6 @@ Extensions var7A7A939867039CEA4ADCB8DFD15921BF_1620036554 =             crlEntry
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.447 -0400", hash_original_method = "95F3FA234A9F19C0F47C92249F7AFDCC", hash_generated_method = "56E460384A6ED60F2A693831EB68AA2C")
         public BigInteger getUserCertificate() {
 BigInteger var29531534CAF33A30A18F3DE7015D0A7C_383161105 =             userCertificate;
@@ -303,7 +290,6 @@ BigInteger var29531534CAF33A30A18F3DE7015D0A7C_383161105 =             userCerti
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.447 -0400", hash_original_method = "0C5E7D843026F709B3652BD32A196980", hash_generated_method = "437995B589D990A0AE97640C86A44C05")
         public Date getRevocationDate() {
 Date varBE194ECAF8C3A05947697E51EC2341D1_2079229786 =             revocationDate;
@@ -314,7 +300,6 @@ Date varBE194ECAF8C3A05947697E51EC2341D1_2079229786 =             revocationDate
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.448 -0400", hash_original_method = "CDE119A341F8D25B9AE6819B0711631F", hash_generated_method = "F8B0A3C9957070DD8BECC808E3BA5E24")
         public X500Principal getIssuer() {
     if(crlEntryExtensions == null)            
@@ -356,7 +341,6 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1064351769 =             issue
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.448 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "37455102ABCA2FC99A0E75CC1D0FEBC6")
         public byte[] getEncoded() {
     if(encoding == null)            
@@ -374,7 +358,6 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1064351769 =             issue
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.449 -0400", hash_original_method = "E8EF795929F81DA5391DEE3D693BAF7B", hash_generated_method = "9146FFA9B05C5BCAD4EB1154E224ED54")
         public boolean equals(Object rc) {
             addTaint(rc.getTaint());
@@ -407,7 +390,6 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1064351769 =             issue
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.449 -0400", hash_original_method = "524410A369A93135245C5EB9BC27F7C2", hash_generated_method = "85A4293CBB626459671A0F932DF8D7C8")
         public int hashCode() {
             int var02A0EC16C21900D495366D145DAA716F_2118145867 = (userCertificate.hashCode() * 37 + (int)revocationDate.getTime() / 1000
@@ -420,7 +402,6 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1064351769 =             issue
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.450 -0400", hash_original_method = "8F642BB50419022F85F1FC1824E6E317", hash_generated_method = "2CDC66FCA0B8067D1E15C4C8AEF80B58")
         public void dumpValue(StringBuilder sb, String prefix) {
             addTaint(prefix.getTaint());

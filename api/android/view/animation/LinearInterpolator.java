@@ -23,7 +23,6 @@ public class LinearInterpolator implements Interpolator {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.895 -0400", hash_original_method = "6F32AC5E234DC575638821E35BB1A952", hash_generated_method = "D290879CCCEAD9A01A55E4FC780AD495")
     public float getInterpolation(float input) {
         addTaint(input);

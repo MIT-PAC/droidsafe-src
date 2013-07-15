@@ -93,8 +93,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isInstrumentationEnabled() {
+        public static boolean isInstrumentationEnabled() {
         return IS_ENG_BUILD;
     }
 
@@ -650,7 +649,6 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.926 -0400", hash_original_method = "4D608F0C62317EB539D3EDD1A5B0BBF8", hash_generated_method = "D702D6843E808FFE055E71FCB55FF43A")
     private boolean startEvent(InputEvent event, int nestingLevel, String eventType) {
     if(event == mLastEvent && nestingLevel < mLastNestingLevel
@@ -790,7 +788,6 @@ for(int i = 0;i < RECENT_EVENTS_TO_LOG;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.930 -0400", hash_original_method = "98F44F7E9C89F442263CA208119E2058", hash_generated_method = "48B545D132DE0E0DFB0C4F4AF149DB8B")
     private KeyState findKeyState(int deviceId, int source, int keyCode, boolean remove) {
         addTaint(remove);
@@ -906,7 +903,6 @@ KeyState var540C13E9E156B687226421B24F2DF178_330038431 =         null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.933 -0400", hash_original_method = "F16B27E6183802CE84F6921B26D81A30", hash_generated_method = "CC6AC4BC9D70480CD822939542AD2131")
         public void recycle() {
             synchronized

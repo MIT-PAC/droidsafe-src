@@ -86,13 +86,11 @@ public final class NameConstraints extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static NameConstraints decode(byte[] encoding) throws IOException {
+        public static NameConstraints decode(byte[] encoding) throws IOException {
         return (NameConstraints) ASN1.decode(encoding);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.204 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "D0D28C6D90F4A160D2009557284B30B0")
     @Override
     public byte[] getEncoded() {
@@ -111,7 +109,6 @@ public final class NameConstraints extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.205 -0400", hash_original_method = "D5B90ECD7CBCC97B9564754E474A01DA", hash_generated_method = "68F2E6CC77406B2CC339C3449F94A293")
     private void prepareNames() {
         permitted_names = new ArrayList[9];
@@ -147,7 +144,6 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.205 -0400", hash_original_method = "7F050A55683D0AA0C8EC41E810522931", hash_generated_method = "4A642D64C3E5A0FD40D454B017C18270")
     private byte[] getExtensionValue(X509Certificate cert, String OID) {
         addTaint(OID.getTaint());
@@ -298,7 +294,6 @@ for(int type = 0;type < 9;type++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.208 -0400", hash_original_method = "54185F2659E074B2203C13418D4687EB", hash_generated_method = "7767A1292F0845AA0F9EF9DD7A70C32B")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

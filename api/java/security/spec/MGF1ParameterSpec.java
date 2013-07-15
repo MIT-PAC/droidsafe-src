@@ -27,7 +27,6 @@ public class MGF1ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.974 -0400", hash_original_method = "F76E00B788282743E863E8A91477E027", hash_generated_method = "9FE9D64349DAA8611C2E8109A8D15B7E")
     public String getDigestAlgorithm() {
 String var2F6B2979B47F1FF73F1CD44382C3AAC7_1550836444 =         mdName;

@@ -48,7 +48,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_746877297 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.702 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "82DA08DC7631412BC665D87704304576")
     @Override
     public String toString() {

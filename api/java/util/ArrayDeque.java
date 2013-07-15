@@ -45,7 +45,6 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.298 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "7880F76458629820F33A005C779B0222")
     private void allocateElements(int numElements) {
         addTaint(numElements);
@@ -601,7 +600,6 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.310 -0400", hash_original_method = "D58AA3C48B1B36CF35B203F4633D4120", hash_generated_method = "E0EDD6CA4D052B0929AC0E990AAB3BAC")
     public int size() {
         int var53753E05B8FB8484B39EF846CAB8CEDF_1201820863 = ((tail - head) & (elements.length - 1));
@@ -612,7 +610,6 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.310 -0400", hash_original_method = "029A9450FF46747D2F1AB4761630FBFA", hash_generated_method = "BC30E759B0D249D83F0AAA32E564B760")
     public boolean isEmpty() {
         boolean varB2DD0C25DFB38C2E9B584FF5E8E2A5EA_193647773 = (head == tail);
@@ -695,7 +692,6 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.312 -0400", hash_original_method = "AB065CB5BA1D923138DE6DFF9B806E2B", hash_generated_method = "3BCD3849948858A40A885C9B955FBE53")
     public void clear() {
         int h = head;
@@ -844,7 +840,6 @@ for(int i = 0;i < size;i++)
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "3A79DAD59E65E3487D948FA6BCEA0772")
         public boolean hasNext() {
             boolean varBB2FFB801149738DC5BBBE92D097852F_1962929142 = (cursor != fence);
@@ -934,7 +929,6 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077 =             result;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.316 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "6365C8E9384BF696C7C4D56DF1C27B7F")
         public boolean hasNext() {
             boolean varBB2FFB801149738DC5BBBE92D097852F_1578215704 = (cursor != fence);

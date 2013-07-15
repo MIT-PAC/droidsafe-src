@@ -89,7 +89,6 @@ Pattern var407D32260E541B695CF3FD3F7EFB76AB_986472401 =         pattern;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.269 -0400", hash_original_method = "EEC311F1C8E6E4405BF9A97AEC3D11BF", hash_generated_method = "520953992AC5A249510B32B3ED87792C")
         public synchronized V get(K key) {
             addTaint(key.getTaint());
@@ -101,7 +100,6 @@ V var97156AACD411ADC83FECC30C065B5B0C_1130226788 =             map.get(key);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.269 -0400", hash_original_method = "C4C725598B9694AF1F3D731C0033484D", hash_generated_method = "698C581D6ABEE6803D172CCEA428E1C5")
         public synchronized void put(K key, V value) {
             addTaint(value.getTaint());
@@ -112,7 +110,6 @@ V var97156AACD411ADC83FECC30C065B5B0C_1130226788 =             map.get(key);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.269 -0400", hash_original_method = "145C938C17F7FBD329FF51DDD81E595D", hash_generated_method = "57FAFE10CF84625445BB91462E040F46")
         public synchronized boolean containsKey(K key) {
             addTaint(key.getTaint());

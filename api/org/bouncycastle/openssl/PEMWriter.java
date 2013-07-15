@@ -37,7 +37,6 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.347 -0400", hash_original_method = "996091F5D25AD49D59450216DEC51F49", hash_generated_method = "1DB51AC4578E422112C38F6280819EB1")
     public void writeObject(
         Object  obj) throws IOException {
@@ -73,7 +72,6 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.348 -0400", hash_original_method = "E0AF395E658580FE02EB9102C3B67CCE", hash_generated_method = "C8384EEC406644D31327A18CF885BA82")
     public void writeObject(
         PemObjectGenerator obj) throws IOException {
@@ -84,7 +82,6 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.349 -0400", hash_original_method = "FE40F27E2DA82EBBE9E1DFDF41871C25", hash_generated_method = "2FB306D667E49043CA49F47D5671539D")
     public void writeObject(
         Object       obj,

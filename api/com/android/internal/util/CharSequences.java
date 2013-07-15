@@ -55,8 +55,7 @@ public class CharSequences {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void validate(int start, int end, int length) {
+        static void validate(int start, int end, int length) {
         if (start < 0) throw new IndexOutOfBoundsException();
         if (end < 0) throw new IndexOutOfBoundsException();
         if (end > length) throw new IndexOutOfBoundsException();

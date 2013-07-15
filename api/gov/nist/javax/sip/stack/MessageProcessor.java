@@ -86,7 +86,6 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.793 -0400", hash_original_method = "22854860B4C916CC2FA65D60880C8F3F", hash_generated_method = "564DB85A4C244446A395DD5B7785AE9A")
     public String getTransport() {
 String var555A7CA0390490B84966DAB12A131C9F_1923936223 =         this.transport;
@@ -97,7 +96,6 @@ String var555A7CA0390490B84966DAB12A131C9F_1923936223 =         this.transport;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.794 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "C921892BA0CF1FD35DB4A7EB141AB231")
     public int getPort() {
         int var02075052AFB1BA5EC4413B52BC401B14_560797678 = (this.port);
@@ -215,7 +213,6 @@ ListeningPointImpl var28610F0C322E41C5E84A3628D8BE13E8_1711802144 =         list
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.798 -0400", hash_original_method = "63BE272C790EA048A7B52BA4EDD2764B", hash_generated_method = "858EFBF5019013BDA61B1D46ED01BC8C")
     public String getSavedIpAddress() {
 String var72F771F0BAA193F21ED628CB549B7B74_749933115 =         this.savedIpAddress;
@@ -226,7 +223,6 @@ String var72F771F0BAA193F21ED628CB549B7B74_749933115 =         this.savedIpAddre
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.799 -0400", hash_original_method = "884B07577FCFC9DD806F4641FDB0A38E", hash_generated_method = "8881B564CBA6F3CC9F76DDCE1A81CFC7")
     public InetAddress getIpAddress() {
 InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddress;
@@ -344,7 +340,6 @@ String varD51D88094686E0D480B6E2DDA4DFBAA7_1578934438 =         this.sentBy;
     public abstract void run();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.803 -0400", hash_original_method = "7D85FA3843A3F240694BBADD6AC174E2", hash_generated_method = "39538BF8E17ADCF708AC73B594F5866B")
     public boolean isSentBySet() {
         boolean varD15D2ED694D19F8DC9203DA930128F7F_548914074 = (sentBySet);

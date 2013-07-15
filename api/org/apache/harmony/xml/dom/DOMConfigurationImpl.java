@@ -345,7 +345,6 @@ for(int i = 0;i < text.length();i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.572 -0400", hash_original_method = "580583282F0D57EA1D5F8BCC7DFB7226", hash_generated_method = "123291D451A9C2BAB60954D94F929010")
         public Object get(DOMConfigurationImpl config) {
             addTaint(config.getTaint());
@@ -401,7 +400,6 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.573 -0400", hash_original_method = "BF6F151915BB667F3BD2F9A011756FE4", hash_generated_method = "7A29732A253211BD808DB685CCF1B48A")
         public boolean canSet(DOMConfigurationImpl config, Object value) {
             addTaint(value.getTaint());

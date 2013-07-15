@@ -535,7 +535,6 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =            
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.201 -0400", hash_original_method = "748680E3CF42F5BF312929F3A98BA3E4", hash_generated_method = "FF84DEB99D9BF13141DD024987B0DB4E")
     public void setPropertyName(String propertyName) {
         mPropertyName = propertyName;
@@ -544,7 +543,6 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =            
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.203 -0400", hash_original_method = "8FEFD1E6365C919A12E22D83DCF12A7D", hash_generated_method = "C7C8013F4ECEE98331FB456D99BFC828")
     public void setProperty(Property property) {
         mProperty = property;
@@ -553,7 +551,6 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =            
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.204 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "FD0F51BE8BDD7F02349B9FA2FF2BDD08")
     public String getPropertyName() {
 String varA94EBE08267F8B14AA5B485C2D24900F_712709125 =         mPropertyName;
@@ -564,7 +561,6 @@ String varA94EBE08267F8B14AA5B485C2D24900F_712709125 =         mPropertyName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.206 -0400", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "EAC0F08A2AFB9A9B2A6D4B33F05BCAFE")
      Object getAnimatedValue() {
 Object var75C3F7261811C89DF5C27F09ADF01F70_577607631 =         mAnimatedValue;

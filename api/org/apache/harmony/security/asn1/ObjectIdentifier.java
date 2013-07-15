@@ -34,7 +34,6 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.044 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "258A5D9454C461720698B6310FAD15DE")
     @Override
     public boolean equals(Object o) {
@@ -65,7 +64,6 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.045 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "F83F5CEA729BFAF035DB79F583905770")
     @Override
     public String toString() {
@@ -84,7 +82,6 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_616375120 =         soid;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.045 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "FE3FE4DA4D1EBC0A13BBAAFB3B22F669")
     @Override
     public int hashCode() {

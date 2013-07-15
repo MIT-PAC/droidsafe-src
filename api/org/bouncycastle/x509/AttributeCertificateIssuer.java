@@ -50,7 +50,6 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.726 -0400", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "4C949B64BEA8E325E67189DAA1E0C5F2")
     private Object[] getNames() {
         GeneralNames name;
@@ -117,7 +116,6 @@ Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_811810954 =         (Principal[]
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.728 -0400", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "D6B373F555998B86660374262BF9935A")
     private boolean matchesDN(X500Principal subject, GeneralNames targets) {
         addTaint(targets.getTaint());
@@ -168,7 +166,6 @@ for(int i = 0;i != names.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.729 -0400", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "FF324CFD729A99AD6FD8BC215CF903F3")
     public Object clone() {
 Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCertificateIssuer(AttCertIssuer.getInstance(form));
@@ -179,7 +176,6 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCer
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.729 -0400", hash_original_method = "743F0CF49EF8F89EFC9B72FE9124B1C1", hash_generated_method = "C59CD124C574720A88C98AAD630E5AAE")
     public boolean match(Certificate cert) {
         addTaint(cert.getTaint());
@@ -226,7 +222,6 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCer
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.730 -0400", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "D593755F6D25767EA857FAC110BF00AB")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -260,7 +255,6 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCer
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.730 -0400", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "9695A5C444606A833FB5F9C1A3DA3174")
     public int hashCode() {
         int var2B374B3BF0704C747879C70CC6564E97_15731814 = (this.form.hashCode());
@@ -271,7 +265,6 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCer
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.731 -0400", hash_original_method = "A87301CDB1806806ACAD029929062C9D", hash_generated_method = "34E4672FF82A2409A64AF3E5AB856EA9")
     public boolean match(Object obj) {
         addTaint(obj.getTaint());

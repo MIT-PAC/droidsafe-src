@@ -20,7 +20,6 @@ public class TechListParcel implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.778 -0400", hash_original_method = "6EF67533858F398D5EC0425F1D475F89", hash_generated_method = "AC8DB8CDE1C2FC5EFD31303A56D5B56C")
     public String[][] getTechLists() {
 String[][] var56AA0989E3CC6CA3FAE900904C158736_168993499 =         mTechLists;
@@ -31,7 +30,6 @@ String[][] var56AA0989E3CC6CA3FAE900904C158736_168993499 =         mTechLists;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.779 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F39F6D7560C3618581D5E90E25932665")
     @Override
     public int describeContents() {
@@ -43,7 +41,6 @@ String[][] var56AA0989E3CC6CA3FAE900904C158736_168993499 =         mTechLists;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.779 -0400", hash_original_method = "B19E49B45A2ACFBF18675BF33A9FB41F", hash_generated_method = "C7AD5E61CF40D85AB54C8170AEFE0267")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

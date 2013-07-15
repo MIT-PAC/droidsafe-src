@@ -25,7 +25,6 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.404 -0400", hash_original_method = "9DD1D58A13546676FF124C2FF2506A7B", hash_generated_method = "6CE37724AE0083884DDE3D0CBA98B41E")
     public void connected() {
     if(false){ }    if(false)        
@@ -46,7 +45,6 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.404 -0400", hash_original_method = "AD032216A82F0FAAB91D671673032B40", hash_generated_method = "724F573DE5EAD38B73223912FC0DFFE3")
     public void disconnected() {
     if(false){ }

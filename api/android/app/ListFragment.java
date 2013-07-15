@@ -131,7 +131,6 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.726 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "88BEAA79114E29F33BC32B86B2051CD9")
     public void onListItemClick(ListView l, View v, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -314,7 +313,6 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.729 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "5BCEA0270FA449E23A1F7FEE5B0F47A7")
     public ListAdapter getListAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;

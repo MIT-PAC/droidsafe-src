@@ -95,7 +95,6 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     public abstract ByteBuffer compact();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.959 -0400", hash_original_method = "278C7A58B0643B88C9704D6A9846EFB3", hash_generated_method = "FD43E8FFFB891D849CD08851282BA034")
     public int compareTo(ByteBuffer otherBuffer) {
         addTaint(otherBuffer.getTaint());
@@ -335,7 +334,6 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1430488684 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.967 -0400", hash_original_method = "00AA16AC102512E5E69E8EC846E58DBE", hash_generated_method = "EEE8ADFFC18A9307F1FC3AED3CFCDD49")
      void orderImpl(ByteOrder byteOrder) {
     if(byteOrder == null)        

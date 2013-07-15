@@ -289,7 +289,6 @@ InputStream varCCC692323793F05C82909AF4A23A4D26_1502398053 =                 raf
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.541 -0400", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "72A2243D9A97898B107BAE7DA755BB36")
     public String getName() {
 String varBD5EACC393579FDF5D0E813DB68A2F73_275074010 =         fileName;
@@ -394,7 +393,6 @@ for(int i = 0;i < numEntries;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.544 -0400", hash_original_method = "EBB90581A10714B3978F18E12312CB3A", hash_generated_method = "6A40E3DD3F1AF85008208C1700A23C66")
         @Override
         public int available() throws IOException {
@@ -462,7 +460,6 @@ for(int i = 0;i < numEntries;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.545 -0400", hash_original_method = "62A626F8A4A0AABE786C23986D3622F2", hash_generated_method = "D46255A6FC5EDF3E078E8CFBBF864F0E")
         @Override
         public long skip(long byteCount) throws IOException {

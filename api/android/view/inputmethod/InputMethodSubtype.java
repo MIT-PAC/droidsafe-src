@@ -117,7 +117,6 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.548 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "0D9B1104FEEFBD39EFFB9E71A80CD7C4")
     public int getNameResId() {
         int varAE10E74C5B8FF193877E0EC967173BB0_815970770 = (mSubtypeNameResId);
@@ -128,7 +127,6 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.548 -0400", hash_original_method = "6A7C5EEB38C0091C7A516BA3C0FACD8B", hash_generated_method = "CD54B767FE4F998F50065417BF3CE770")
     public int getIconResId() {
         int varE9CD3C1A08E60FD7C92E17FBDC1E9760_1299918071 = (mSubtypeIconResId);
@@ -139,7 +137,6 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.548 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "0B42D5B0CD6EC1C750855756C6160389")
     public String getLocale() {
 String varC07DAECEA29B71A30EF35B60B8076743_107890345 =         mSubtypeLocale;
@@ -150,7 +147,6 @@ String varC07DAECEA29B71A30EF35B60B8076743_107890345 =         mSubtypeLocale;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.549 -0400", hash_original_method = "960AAB243B4CAAAE714C0B1CB581C452", hash_generated_method = "D88512DC888FD3F1B37E72A248FF016D")
     public String getMode() {
 String varD8BB0738385C90441F5FD93457703855_1595531610 =         mSubtypeMode;
@@ -161,7 +157,6 @@ String varD8BB0738385C90441F5FD93457703855_1595531610 =         mSubtypeMode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.549 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "6EF56AE3D043203C6319E53202BB5334")
     public String getExtraValue() {
 String varD5103786A790F3D4881070784C5A1DFD_1720036130 =         mSubtypeExtraValue;
@@ -172,7 +167,6 @@ String varD5103786A790F3D4881070784C5A1DFD_1720036130 =         mSubtypeExtraVal
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.549 -0400", hash_original_method = "5D42329342BA940BF0C680758D792174", hash_generated_method = "4DAA53CC63088DB7C60413B25F229934")
     public boolean isAuxiliary() {
         boolean var6B887E31A4611BC8CDB502D82236E7C6_1204371502 = (mIsAuxiliary);
@@ -183,7 +177,6 @@ String varD5103786A790F3D4881070784C5A1DFD_1720036130 =         mSubtypeExtraVal
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.549 -0400", hash_original_method = "77DDEB2A23977DBB23EB90699D4CDB8E", hash_generated_method = "B6AC5DADBFA6B72B90CC722EE5EA6A51")
     public boolean overridesImplicitlyEnabledSubtype() {
         boolean var7F4C5EF5B1AF9A5A5C64C38289E3E3D3_1696382447 = (mOverridesImplicitlyEnabledSubtype);
@@ -308,7 +301,6 @@ String var668958CC928CE427869ECE8B61534E65_1270859244 =         getExtraValueHas
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.551 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "631E4C9F4A72B229D76EA5FBC46221C6")
     @Override
     public int hashCode() {
@@ -355,7 +347,6 @@ String var668958CC928CE427869ECE8B61534E65_1270859244 =         getExtraValueHas
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.552 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EABE1CB476FED5E74F7EB3102F0F038B")
     @Override
     public int describeContents() {

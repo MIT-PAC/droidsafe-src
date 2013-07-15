@@ -28,7 +28,6 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.754 -0400", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "D8AD284EBAC98C26DA502ABF59336302")
     public CharSequence getTransformation(CharSequence source, View view) {
         addTaint(view.getTaint());
@@ -65,8 +64,7 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static PasswordTransformationMethod getInstance() {
+        public static PasswordTransformationMethod getInstance() {
         if (sInstance != null)
             return sInstance;
         sInstance = new PasswordTransformationMethod();
@@ -74,7 +72,6 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.755 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "63445082BCC7E22464CE7B1B497FEB87")
     public void beforeTextChanged(CharSequence s, int start,
                                   int count, int after) {
@@ -131,7 +128,6 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.757 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
@@ -139,7 +135,6 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.757 -0400", hash_original_method = "D64B8AB73A1F5CA65D62622D3C82E686", hash_generated_method = "FAEAA3C6FC2994A1670F5B504938EEBA")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
@@ -168,8 +163,7 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void removeVisibleSpans(Spannable sp) {
+        private static void removeVisibleSpans(Spannable sp) {
         Visible[] old = sp.getSpans(0, sp.length(), Visible.class);
         for (int i = 0; i < old.length; i++) {
             sp.removeSpan(old[i]);
@@ -190,7 +184,6 @@ for(int i = 0;v == null && i < vr.length;i++)
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.759 -0400", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "D42C0593DF297827FB9E24E519AB1FA9")
         public int length() {
             int var9E844678846AA17EBC2ADB2098AEA729_1145625496 = (mSource.length());
@@ -201,7 +194,6 @@ for(int i = 0;v == null && i < vr.length;i++)
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.760 -0400", hash_original_method = "9EC5613B57D481274808D46BD66F08EC", hash_generated_method = "2579AE6618A97D93571DA27B47E6C391")
         public char charAt(int i) {
             addTaint(i);
@@ -240,7 +232,6 @@ for(int a = 0;a < visible.length;a++)
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.760 -0400", hash_original_method = "D736D7B90470DFC8C923D4B5D62B4D1D", hash_generated_method = "CFB2B0A14AF99B15D70D84E63FA5F5E7")
         public CharSequence subSequence(int start, int end) {
             addTaint(end);
@@ -257,7 +248,6 @@ CharSequence var5B166C4D1D866639CF85033C2F7318C9_215953242 =             new Str
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.760 -0400", hash_original_method = "814020AAFF189164368E5EE6B0F105D9", hash_generated_method = "DBAC9843967E01F52E65040A7D9708FF")
         public String toString() {
 String var2E22F76A1DF5431AD85BD69F1EB550BE_140405703 =             subSequence(0, length()).toString();
@@ -268,7 +258,6 @@ String var2E22F76A1DF5431AD85BD69F1EB550BE_140405703 =             subSequence(0
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.762 -0400", hash_original_method = "B2B91CFAAB9E07A038BB0750D42A99E3", hash_generated_method = "E5581EFE44659864D12E624E521BC640")
         public void getChars(int start, int end, char[] dest, int off) {
             addTaint(off);
@@ -347,7 +336,6 @@ for(int a = 0;a < nvisible;a++)
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.763 -0400", hash_original_method = "C8775617BEE64680D27DACE05ECB8A14", hash_generated_method = "CA165B97F3ECA7B262668016C7A9F1A7")
         public void run() {
             mText.removeSpan(this);

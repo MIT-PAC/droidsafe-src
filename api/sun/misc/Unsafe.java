@@ -112,7 +112,6 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.184 -0400", hash_original_method = "21E4F9CF99012374BBDA74248C46C8FD", hash_generated_method = "861E8D81E32552449BACBD1DC2DC5566")
     public boolean compareAndSwapInt(Object obj, long offset,
             int expectedValue, int newValue) {
@@ -121,7 +120,6 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.184 -0400", hash_original_method = "B07F728E6C3379FC842B1FF2090A16B1", hash_generated_method = "21B1DB3192A6B8B9EBF277CB675C6446")
     public boolean compareAndSwapLong(Object obj, long offset,
             long expectedValue, long newValue) {
@@ -130,7 +128,6 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "65A652B3AC9F111924C01101653C4D66", hash_generated_method = "0084339C9CBA8216BF037DA4548353C8")
     public boolean compareAndSwapObject(Object obj, long offset,
             Object expectedValue, Object newValue) {
@@ -139,7 +136,6 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "8D5B44DDE927FC459CE77FA18575E830", hash_generated_method = "1000B02C32D87B63B15CF5D8C20991F0")
     public int getIntVolatile(Object obj, long offset) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848537927 = getTaintInt();
@@ -147,13 +143,11 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "2D478903B4854FFA78FE99D55B867EDA", hash_generated_method = "5A5E24E1D36AF1AB6E4BBDC6B10717DF")
     public void putIntVolatile(Object obj, long offset, int newValue) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "5D356F9FCB64558B37245C6E5D455D6F", hash_generated_method = "52E79CA71CA7F8BCC377F19D85187A6E")
     public long getLongVolatile(Object obj, long offset) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1391947139 = getTaintLong();
@@ -161,7 +155,6 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.186 -0400", hash_original_method = "5AB3D5DDF9043F3DC91C224AABAA6528", hash_generated_method = "F779406BA272DE63DFCD9F9456703DC2")
     public void putLongVolatile(Object obj, long offset, long newValue) {
     }
@@ -177,14 +170,12 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.186 -0400", hash_original_method = "F4C73687B1C91E2A955A746EFDA19758", hash_generated_method = "5A0B5DBAE41FE072547CFB28260C499A")
     public void putObjectVolatile(Object obj, long offset,
             Object newValue) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.186 -0400", hash_original_method = "F04350E1B41BC327004009309A9820C4", hash_generated_method = "059C89F9D982B114A635430C993C11BE")
     public int getInt(Object obj, long offset) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627444349 = getTaintInt();
@@ -192,19 +183,16 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.187 -0400", hash_original_method = "CE446F803EECC7090C6DE85B5F9727FB", hash_generated_method = "D6A2F62C2C1BEFFAF33584D8AF4A96C3")
     public void putInt(Object obj, long offset, int newValue) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.187 -0400", hash_original_method = "0F4EEADE82300C8A6D47BB66B25081FB", hash_generated_method = "1206522AD3C7C4CB5DC01B9D266A77C9")
     public void putOrderedInt(Object obj, long offset, int newValue) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.203 -0400", hash_original_method = "A62D16CF4622F3468767ED41FD0C48D8", hash_generated_method = "20A4150E675E42C8C6318F77CE964FE7")
     public long getLong(Object obj, long offset) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1987256066 = getTaintLong();
@@ -212,13 +200,11 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.203 -0400", hash_original_method = "031A6C224714E986F8A4D8A9D45D73DD", hash_generated_method = "AD33BF0F17190F26448FE3ED4C4CF324")
     public void putLong(Object obj, long offset, long newValue) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.204 -0400", hash_original_method = "30A8F8DBA968E18C841B02CD11CE8C50", hash_generated_method = "91EABAB09EB9D3ADBE0B5D1A6698F365")
     public void putOrderedLong(Object obj, long offset, long newValue) {
     }
@@ -234,13 +220,11 @@ public final class Unsafe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.204 -0400", hash_original_method = "C5B0C5B313647A39681E22F983DB9828", hash_generated_method = "0A515CB915F09C93D4FF711A1C549C7D")
     public void putObject(Object obj, long offset, Object newValue) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.205 -0400", hash_original_method = "330A73F0EAD671011DED9E5367E246F7", hash_generated_method = "2BB6AD037CDF25725E1A0D170E7F2C39")
     public void putOrderedObject(Object obj, long offset,
             Object newValue) {

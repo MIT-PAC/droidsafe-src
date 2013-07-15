@@ -35,8 +35,7 @@ class MotionEventCompatEclair {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getPointerCount(MotionEvent event) {
+        public static int getPointerCount(MotionEvent event) {
         return event.getPointerCount();
     }
 

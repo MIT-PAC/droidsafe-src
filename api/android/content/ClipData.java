@@ -114,15 +114,13 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static public ClipData newIntent(CharSequence label, Intent intent) {
+        static public ClipData newIntent(CharSequence label, Intent intent) {
         Item item = new Item(intent);
         return new ClipData(label, MIMETYPES_TEXT_INTENT, item);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static public ClipData newUri(ContentResolver resolver, CharSequence label,
+        static public ClipData newUri(ContentResolver resolver, CharSequence label,
             Uri uri) {
         Item item = new Item(uri);
         String[] mimeTypes = null;
@@ -152,14 +150,12 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static public ClipData newRawUri(CharSequence label, Uri uri) {
+        static public ClipData newRawUri(CharSequence label, Uri uri) {
         Item item = new Item(uri);
         return new ClipData(label, MIMETYPES_TEXT_URILIST, item);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.248 -0400", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "72D9D2B261814C64A2F85BDB0D857B9C")
     public ClipDescription getDescription() {
 ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_283119724 =         mClipDescription;
@@ -188,7 +184,6 @@ ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_283119724 =         mClipDes
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.249 -0400", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "7D74DB5683DBA8BE851C2BD0BE550817")
     public Bitmap getIcon() {
 Bitmap var664A3A1F0DCFF82F0A8D0B798A32C3B0_1787955001 =         mIcon;
@@ -220,7 +215,6 @@ Item var955C9579A8231EA8752336C152243F31_1921877989 =         mItems.get(index);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.250 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "367CC80F9F6E8BCC65C53602A4AB1AC9")
     @Override
     public int describeContents() {
@@ -360,7 +354,6 @@ for(int i=0;i<N;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.259 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "9B6CE575E11621D931A08DC8A6E927DB")
         public CharSequence getText() {
 CharSequence var7F7ECB4B14362FFBA020956966B29A66_807284972 =             mText;
@@ -371,7 +364,6 @@ CharSequence var7F7ECB4B14362FFBA020956966B29A66_807284972 =             mText;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.260 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "F269A679633EEA861B0DD8700F50B188")
         public Intent getIntent() {
 Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_1670900416 =             mIntent;
@@ -382,7 +374,6 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_1670900416 =             mIntent;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.260 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "8DD77BA842FF8B3DE4E14E9984063945")
         public Uri getUri() {
 Uri var7D41D50876117CE5D7DFAD684A455037_365991867 =             mUri;

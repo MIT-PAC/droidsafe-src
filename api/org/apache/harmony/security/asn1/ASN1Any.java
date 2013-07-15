@@ -15,8 +15,7 @@ public final class ASN1Any extends ASN1Type {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static ASN1Any getInstance() {
+        public static ASN1Any getInstance() {
         return ASN1;
     }
 
@@ -71,7 +70,6 @@ Object varE123E70E73254F8B84526419D168A7C8_766227830 =         bytesEncoded;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.501 -0400", hash_original_method = "7511C9B0E36E939B1775FC9EA0F02F20", hash_generated_method = "7AA877D0BC5E134FD6F8182E63D2D768")
     public void encodeASN(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -81,7 +79,6 @@ Object varE123E70E73254F8B84526419D168A7C8_766227830 =         bytesEncoded;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.501 -0400", hash_original_method = "E4481BCA62553D7934DD52F370937ED4", hash_generated_method = "F15B1202ECDA9F7A7EF12645667039EF")
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -91,7 +88,6 @@ Object varE123E70E73254F8B84526419D168A7C8_766227830 =         bytesEncoded;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.501 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "CF6C0D89125D265A070FAEF45137B38D")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -101,7 +97,6 @@ Object varE123E70E73254F8B84526419D168A7C8_766227830 =         bytesEncoded;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.502 -0400", hash_original_method = "4E35D9A00930BDC0DD7D3944E7329986", hash_generated_method = "92E4B18E0B16D1478BCC13E48B23F886")
     public int getEncodedLength(BerOutputStream out) {
         addTaint(out.getTaint());

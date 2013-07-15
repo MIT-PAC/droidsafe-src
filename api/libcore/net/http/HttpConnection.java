@@ -100,8 +100,7 @@ for(int i = 0;i < addresses.length;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunnel,
+        public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunnel,
             int connectTimeout) throws IOException {
         if (proxy != null) {
             Address address = (proxy.type() == Proxy.Type.DIRECT)
@@ -227,7 +226,6 @@ InputStream var6D6AA0B6E97941129A02DB042FF8CF68_447948005 =         inputStream;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.168 -0400", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "41FBE1BA04C0F533B97B2C0DD56A880D")
     protected Socket getSocket() {
 Socket varC212647F359587E811E8677EDC2BCF85_693779556 =         sslSocket != null ? sslSocket : socket;
@@ -238,7 +236,6 @@ Socket varC212647F359587E811E8677EDC2BCF85_693779556 =         sslSocket != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.168 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "ECE67E5792974A73E05CADACA98BE7DE")
     public Address getAddress() {
 Address var814577DDD37BAFB17E08CBEFDB411BAE_1855245961 =         address;
@@ -281,7 +278,6 @@ Address var814577DDD37BAFB17E08CBEFDB411BAE_1855245961 =         address;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.169 -0400", hash_original_method = "E313A7AB78F75EDB07568DFA09A3BF60", hash_generated_method = "6F29BBD3E8946A567E2AF8E4251A40E4")
     public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier) throws IOException {
         addTaint(hostnameVerifier.getTaint());
@@ -304,7 +300,6 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_378070476 =         sslSocket;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.170 -0400", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "4374FBD1BB6F222C062C373C3808ACD6")
     public SSLSocket getSecureSocketIfConnected() {
 SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
@@ -478,7 +473,6 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.174 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "3FC7B383839AE6742611A69BBF2EE404")
         public Proxy getProxy() {
 Proxy var60FC9F22F7E863EBFD33B2ADB8462743_173573983 =             proxy;

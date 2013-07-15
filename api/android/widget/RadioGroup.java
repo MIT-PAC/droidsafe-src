@@ -213,7 +213,6 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "4E7CCBBB1B50F6FD1945ECEEEDBB325B")
     public int getCheckedRadioButtonId() {
         int var1628F13DF17E9E9D9F9B263B8D9EDD6C_764768180 = (mCheckedId);
@@ -232,7 +231,6 @@ public class RadioGroup extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "E7A52B8D01F324B4A1B6AA133FD3E1C1")
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
@@ -253,7 +251,6 @@ LayoutParams var2B042AB9A3A848AB14156E90F264A184_1394145876 =         new RadioG
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "B6F650811616014198C7164725061E28", hash_generated_method = "694C4212BDCCF369FC09D39DA131287D")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {

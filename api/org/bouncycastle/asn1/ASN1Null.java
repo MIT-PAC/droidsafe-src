@@ -14,7 +14,6 @@ public abstract class ASN1Null extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.596 -0400", hash_original_method = "8B33772CC706A3F76B2A9FE6D8E11F7C", hash_generated_method = "1FA3E1C70B4732DEC5F11E45781D24D1")
     public int hashCode() {
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1707003316 = (-1);
@@ -25,7 +24,6 @@ public abstract class ASN1Null extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.597 -0400", hash_original_method = "7109287BD38944677651878D40817EF4", hash_generated_method = "B0BEEC52EFF914451540920B3B6C5720")
      boolean asn1Equals(
         DERObject o) {
@@ -52,7 +50,6 @@ public abstract class ASN1Null extends ASN1Object {
         throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.597 -0400", hash_original_method = "BBD03FB924B892CEE23A9F439923567F", hash_generated_method = "F64FD199D5E3ED82CD8F080ED1F20D6F")
     public String toString() {
 String var33D29D752C3932DEA56761DD803BA922_722173890 =         "NULL";

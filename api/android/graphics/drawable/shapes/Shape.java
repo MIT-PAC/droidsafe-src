@@ -76,7 +76,6 @@ public abstract class Shape implements Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.901 -0400", hash_original_method = "E1C0EB5C360EF4564AFB59E1743F2057", hash_generated_method = "6E65011723CE7E6BDFCC452E8AD78986")
     public boolean hasAlpha() {
         boolean varB326B5062B2F0E69046810717534CB09_354796770 = (true);
@@ -87,7 +86,6 @@ public abstract class Shape implements Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.902 -0400", hash_original_method = "BE42972290D2C4FCDE54C91B730EEF2B", hash_generated_method = "8DB1B544845DD6BA7EDC971E45AACF98")
     protected void onResize(float width, float height) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -97,7 +95,6 @@ public abstract class Shape implements Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.902 -0400", hash_original_method = "581DCFE006AA020FE949D9FFE91E7EA5", hash_generated_method = "2D84F0D3F89D5F878278949D3282BE9D")
     @Override
     public Shape clone() throws CloneNotSupportedException {

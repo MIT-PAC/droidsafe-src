@@ -50,7 +50,6 @@ String varE49F1C2CA3932E94AEDB8A58B7457D2E_492476169 =         "IccIoResponse sw
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.542 -0400", hash_original_method = "E45E4CA02C1498571B14F8EF02CBA542", hash_generated_method = "C2A0EF16EB598FC7249AE24A7AB8551E")
     public boolean success() {
         boolean var6542F7F14374E68C5016419CC02AA14E_1144593969 = (sw1 == 0x90 || sw1 == 0x91 || sw1 == 0x9e || sw1 == 0x9f);

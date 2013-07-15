@@ -198,8 +198,7 @@ public final class IoBridge {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
+        private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
         switch (option) {
         case SocketOptions.IP_MULTICAST_IF:
             return Libcore.os.getsockoptInAddr(fd, IPPROTO_IP, IP_MULTICAST_IF);
@@ -239,14 +238,12 @@ public final class IoBridge {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean booleanFromInt(int i) {
+        private static boolean booleanFromInt(int i) {
         return (i != 0);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int booleanToInt(boolean b) {
+        private static int booleanToInt(boolean b) {
         return b ? 1 : 0;
     }
 

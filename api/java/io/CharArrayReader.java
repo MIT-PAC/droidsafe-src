@@ -74,7 +74,6 @@ public class CharArrayReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.980 -0400", hash_original_method = "F0DC6C1F8DBE67146FDB19D4375AE051", hash_generated_method = "43CD7CFDCFDA4B1D61B8C34590DD1299")
     private boolean isOpen() {
         boolean var0C54AD404B2ACA93D3F8FCA41C54249F_1582981133 = (buf != null);
@@ -85,7 +84,6 @@ public class CharArrayReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.980 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "B571318A9CFEA87451A6D77054343323")
     private boolean isClosed() {
         boolean var424D22B8FEEB84C8061682CC5DE6923D_63018866 = (buf == null);
@@ -128,7 +126,6 @@ public class CharArrayReader extends Reader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.982 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "3DE4516045CDA8AA6BBE0F35C11FE326")
     @Override
     public boolean markSupported() {

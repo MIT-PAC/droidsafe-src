@@ -27,8 +27,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
+        public static void transposeM(float[] mTrans, int mTransOffset, float[] m,
             int mOffset) {
         for (int i = 0; i < 4; i++) {
             int mBase = i * 4 + mOffset;
@@ -40,8 +39,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
+        public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
             int mOffset) {
         final float src0  = m[mOffset +  0];
         final float src4  = m[mOffset +  1];
@@ -141,8 +139,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void orthoM(float[] m, int mOffset,
+        public static void orthoM(float[] m, int mOffset,
         float left, float right, float bottom, float top,
         float near, float far) {
         if (left == right) {
@@ -182,8 +179,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void frustumM(float[] m, int offset,
+        public static void frustumM(float[] m, int offset,
             float left, float right, float bottom, float top,
             float near, float far) {
         if (left == right) {
@@ -229,8 +225,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void perspectiveM(float[] m, int offset,
+        public static void perspectiveM(float[] m, int offset,
           float fovy, float aspect, float zNear, float zFar) {
         float f = 1.0f / (float) Math.tan(fovy * (Math.PI / 360.0));
         float rangeReciprocal = 1.0f / (zNear - zFar);
@@ -253,14 +248,12 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float length(float x, float y, float z) {
+        public static float length(float x, float y, float z) {
         return (float) Math.sqrt(x * x + y * y + z * z);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setIdentityM(float[] sm, int smOffset) {
+        public static void setIdentityM(float[] sm, int smOffset) {
         for (int i=0 ; i<16 ; i++) {
             sm[smOffset + i] = 0;
         }
@@ -270,8 +263,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void scaleM(float[] sm, int smOffset,
+        public static void scaleM(float[] sm, int smOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -285,8 +277,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void scaleM(float[] m, int mOffset,
+        public static void scaleM(float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
             int mi = mOffset + i;
@@ -297,8 +288,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void translateM(float[] tm, int tmOffset,
+        public static void translateM(float[] tm, int tmOffset,
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<12 ; i++) {
@@ -313,8 +303,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void translateM(
+        public static void translateM(
             float[] m, int mOffset,
             float x, float y, float z) {
         for (int i=0 ; i<4 ; i++) {
@@ -324,8 +313,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void rotateM(float[] rm, int rmOffset,
+        public static void rotateM(float[] rm, int rmOffset,
             float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
@@ -335,8 +323,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void rotateM(float[] m, int mOffset,
+        public static void rotateM(float[] m, int mOffset,
             float a, float x, float y, float z) {
         synchronized(sTemp) {
             setRotateM(sTemp, 0, a, x, y, z);
@@ -346,8 +333,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setRotateM(float[] rm, int rmOffset,
+        public static void setRotateM(float[] rm, int rmOffset,
             float a, float x, float y, float z) {
         rm[rmOffset + 3] = 0;
         rm[rmOffset + 7] = 0;
@@ -405,8 +391,7 @@ public class Matrix {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setRotateEulerM(float[] rm, int rmOffset,
+        public static void setRotateEulerM(float[] rm, int rmOffset,
             float x, float y, float z) {
         x *= (float) (Math.PI / 180.0f);
         y *= (float) (Math.PI / 180.0f);

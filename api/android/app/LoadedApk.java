@@ -204,7 +204,6 @@ public final class LoadedApk {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.872 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "1672FCC1042A26F0C2EA44781CA9BC8D")
      Application getApplication() {
 Application varF254F0ADF054F0318B65674CA3670A5E_116889036 =         mApplication;
@@ -215,7 +214,6 @@ Application varF254F0ADF054F0318B65674CA3670A5E_116889036 =         mApplication
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.873 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "03D5D85FC397F0EC5FD0C937DD5F8CDE")
     public String getPackageName() {
 String var5601F77C1E784C31FA233AB799182FA6_303505447 =         mPackageName;
@@ -226,7 +224,6 @@ String var5601F77C1E784C31FA233AB799182FA6_303505447 =         mPackageName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.873 -0400", hash_original_method = "69D4795DAE5563DBA773DE992713BBC9", hash_generated_method = "8A0160EB6119B97A8A72B3832CF7D339")
     public ApplicationInfo getApplicationInfo() {
 ApplicationInfo var7A6C13D6B64BE4CFA903FB80708E9465_1550338644 =         mApplicationInfo;
@@ -237,7 +234,6 @@ ApplicationInfo var7A6C13D6B64BE4CFA903FB80708E9465_1550338644 =         mApplic
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.873 -0400", hash_original_method = "1023CFFB5794A83B41C0A52D163AA3AF", hash_generated_method = "2BCC727DCFA42BCD1C0E5C0D8ED0114B")
     public boolean isSecurityViolation() {
         boolean var8CEAB0F22F050DB955C3D34D83B18CF2_1704102029 = (mSecurityViolation);
@@ -294,7 +290,6 @@ ApplicationInfo var7A6C13D6B64BE4CFA903FB80708E9465_1550338644 =         mApplic
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.876 -0400", hash_original_method = "98BA13F46ABDF03C557DAF40D6E3FC88", hash_generated_method = "D35D5AEAE35B54B8EDE16F78651470BF")
     public ClassLoader getClassLoader() {
         synchronized
@@ -399,7 +394,6 @@ ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_1513152019 =             mClassL
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.876 -0400", hash_original_method = "DDE558C6C52D26591497F8CCA19E2D11", hash_generated_method = "00654093BD681516A99A9F4CEC785A9F")
     public String getAppDir() {
 String var181BC6EF4E240BFA6FBED8BF1ADFB867_1477973049 =         mAppDir;
@@ -410,7 +404,6 @@ String var181BC6EF4E240BFA6FBED8BF1ADFB867_1477973049 =         mAppDir;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.877 -0400", hash_original_method = "1158BD50BBC4E4D9C9B8EC24E43A83EF", hash_generated_method = "F3A4CD1375CA64FC463F1D28A6B3985A")
     public String getResDir() {
 String var679D8BF02D40F53F6FB1455151813483_1290403418 =         mResDir;
@@ -421,7 +414,6 @@ String var679D8BF02D40F53F6FB1455151813483_1290403418 =         mResDir;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.877 -0400", hash_original_method = "5486D8CB07A0A494A33FE28373C3B14E", hash_generated_method = "DC79F1C177B4B9E3BD1CCC83EBD7D568")
     public String getDataDir() {
 String varF2DB52033E7B675C5416BA563C248BCF_124313556 =         mDataDir;
@@ -432,7 +424,6 @@ String varF2DB52033E7B675C5416BA563C248BCF_124313556 =         mDataDir;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.877 -0400", hash_original_method = "6FB19B7083E51C6FD4891C3DDE1600A5", hash_generated_method = "6786028A3795CB3CB163ED9F6E2BE212")
     public File getDataDirFile() {
 File var0F0E3AAC4D6C65AF3E62DA78DF7E2DFD_1196656567 =         mDataDirFile;
@@ -471,7 +462,6 @@ Resources var346B953D96D762F7FED561E83C1656CA_1700485059 =         mResources;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.880 -0400", hash_original_method = "F09CA6154241A46EB02B7FA7F64D8F80", hash_generated_method = "40A3EFF117B6C12202F81938B80D7D6C")
     public Application makeApplication(boolean forceDefaultAppClass,
             Instrumentation instrumentation) {
@@ -537,7 +527,6 @@ Application varBE0936E6D817E83D57F0B07BD06C3D1F_483165870 =         app;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.882 -0400", hash_original_method = "B6291AD2FF4D11DEB13067F1AF687A9F", hash_generated_method = "F6249D7408069BA46AAB3A4261515B76")
     public void removeContextRegistrations(Context context,
             String who, String what) {
@@ -879,7 +868,6 @@ IServiceConnection varB5403F53D6FFC730CE6C14DD2D80D567_889321662 =              
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.897 -0400", hash_original_method = "55A2C8B568742F6DD554B2AE8E06F675", hash_generated_method = "D2D91B8BC6C18DAE66B8B1977533AB8A")
         @Override
         public URL getResource(String resName) {
@@ -1092,7 +1080,6 @@ Class<?> varE1970970BC5A81C617EE2028559098DF_1753225623 =             getParent(
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.906 -0400", hash_original_method = "7C4E5EC981022D2A84B36FB6D93F7965", hash_generated_method = "831BE094501874ABECF3D7EA4A31CCF3")
          IntentReceiverLeaked getLocation() {
 IntentReceiverLeaked varC67D9EAB8F8C7974312627C3F915A447_1247550087 =             mLocation;
@@ -1103,7 +1090,6 @@ IntentReceiverLeaked varC67D9EAB8F8C7974312627C3F915A447_1247550087 =           
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.907 -0400", hash_original_method = "3C5B1FBD8D9CF893CD5AE57A3692C218", hash_generated_method = "D7FD4B4E3921AE89E5E59B23B11622CE")
          BroadcastReceiver getIntentReceiver() {
 BroadcastReceiver var92BB1EAD1A7B04A11F11D488BE72928A_302872101 =             mReceiver;
@@ -1114,7 +1100,6 @@ BroadcastReceiver var92BB1EAD1A7B04A11F11D488BE72928A_302872101 =             mR
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.908 -0400", hash_original_method = "03FF6A1CE859C16292BB870D48D4B619", hash_generated_method = "3E02FAB6663D5DF3CCBBC2E0E7011AE0")
          IIntentReceiver getIIntentReceiver() {
 IIntentReceiver varA4B5D78F6F5CECCAA4D376A15BDA6253_1258353201 =             mIIntentReceiver;
@@ -1125,7 +1110,6 @@ IIntentReceiver varA4B5D78F6F5CECCAA4D376A15BDA6253_1258353201 =             mII
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.909 -0400", hash_original_method = "10021177327079B574AB9A39568AB468", hash_generated_method = "EA685C5A5E8161DEED20B24280A81655")
          void setUnregisterLocation(RuntimeException ex) {
             mUnregisterLocation = ex;
@@ -1134,7 +1118,6 @@ IIntentReceiver varA4B5D78F6F5CECCAA4D376A15BDA6253_1258353201 =             mII
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.910 -0400", hash_original_method = "BEFB4AE86DE2CF8202227FDF4968A841", hash_generated_method = "329F1694920F8707A2E64FF0C168FBAC")
          RuntimeException getUnregisterLocation() {
 RuntimeException var8A7CFC5E9175831B838BE224FA4022CA_1733376891 =             mUnregisterLocation;
@@ -1145,7 +1128,6 @@ RuntimeException var8A7CFC5E9175831B838BE224FA4022CA_1733376891 =             mU
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.911 -0400", hash_original_method = "39181D7F66A331F86FA5BEB0B1E79AC8", hash_generated_method = "5DCD273F0DD250F5935B073F8B6ED6FD")
         public void performReceive(Intent intent, int resultCode,
                 String data, Bundle extras, boolean ordered, boolean sticky) {
@@ -1204,7 +1186,6 @@ RuntimeException var8A7CFC5E9175831B838BE224FA4022CA_1733376891 =             mU
             }
 
             
-            @DSModeled(DSC.SPEC)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.914 -0400", hash_original_method = "79B1DBA6D83AA95E8B5316A9BF3831EB", hash_generated_method = "8742A5F5BC5AD1D45EDE259357C3CF5F")
             public void performReceive(Intent intent, int resultCode,
                     String data, Bundle extras, boolean ordered, boolean sticky) {
@@ -1274,7 +1255,6 @@ RuntimeException var8A7CFC5E9175831B838BE224FA4022CA_1733376891 =             mU
             }
 
             
-            @DSModeled(DSC.SPEC)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.918 -0400", hash_original_method = "55098A9F5CE8E783F44DA889D3A217EF", hash_generated_method = "2C9FA8C56752641601962521BB7C79EB")
             public void run() {
                 final BroadcastReceiver receiver = mReceiver;
@@ -1453,7 +1433,6 @@ RuntimeException var8A7CFC5E9175831B838BE224FA4022CA_1733376891 =             mU
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.925 -0400", hash_original_method = "DB6C3DBDD9CEB1EED1EE508C536B0201", hash_generated_method = "3C6E0FB35882B8812DFD5FF0098AA47B")
          ServiceConnectionLeaked getLocation() {
 ServiceConnectionLeaked varC67D9EAB8F8C7974312627C3F915A447_221339080 =             mLocation;
@@ -1464,7 +1443,6 @@ ServiceConnectionLeaked varC67D9EAB8F8C7974312627C3F915A447_221339080 =         
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.926 -0400", hash_original_method = "14318317B55D028C50F4E970D5AD5F89", hash_generated_method = "A38698BD346E291D4AFB28D89EF27DC4")
          ServiceConnection getServiceConnection() {
 ServiceConnection var9818CDD0C0587BB48621EEA73B53E24D_933931451 =             mConnection;
@@ -1475,7 +1453,6 @@ ServiceConnection var9818CDD0C0587BB48621EEA73B53E24D_933931451 =             mC
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.927 -0400", hash_original_method = "A871391E91E358F0260A3C41C2649BF6", hash_generated_method = "868C7304AC2BD6DE4C20ADE9025DA73E")
          IServiceConnection getIServiceConnection() {
 IServiceConnection var27A75AB4543CE8282280D637CBE787FC_1337268148 =             mIServiceConnection;
@@ -1486,7 +1463,6 @@ IServiceConnection var27A75AB4543CE8282280D637CBE787FC_1337268148 =             
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.927 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "4960267141068C5436284014E82AE4F5")
          int getFlags() {
             int var9C3CD7D37D3E1E66BE9B3B005FC98B3A_1902116215 = (mFlags);
@@ -1497,7 +1473,6 @@ IServiceConnection var27A75AB4543CE8282280D637CBE787FC_1337268148 =             
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.927 -0400", hash_original_method = "CDEAAE2662154511545AF7B43E43329E", hash_generated_method = "460ACB65161A9381766EBD8AD8F65A14")
          void setUnbindLocation(RuntimeException ex) {
             mUnbindLocation = ex;
@@ -1506,7 +1481,6 @@ IServiceConnection var27A75AB4543CE8282280D637CBE787FC_1337268148 =             
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.928 -0400", hash_original_method = "8CFC5DB6BE83E965DCFCD58443A1D896", hash_generated_method = "4E2E53634E1D59CDA504565138205075")
          RuntimeException getUnbindLocation() {
 RuntimeException varA5DF9D25C5162A5017A33E2D2101D98E_155344902 =             mUnbindLocation;
@@ -1579,7 +1553,6 @@ RuntimeException varA5DF9D25C5162A5017A33E2D2101D98E_155344902 =             mUn
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.931 -0400", hash_original_method = "4206BCB9948653D91B6930DF31631CB7", hash_generated_method = "1E32E7AA10D9916241BA02E8B6266A64")
         public void doConnected(ComponentName name, IBinder service) {
             addTaint(service.getTaint());

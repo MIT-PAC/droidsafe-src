@@ -134,7 +134,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.618 -0400", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "69969BE0978D546C3E0967EA03009C6C")
     public int getThumbOffset() {
         int varA28BD1DCDFDB076ED8B0128D800E7517_523218408 = (mThumbOffset);
@@ -155,7 +154,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.619 -0400", hash_original_method = "47EA7303B3E1A2D7511BD2240E8B9AF2", hash_generated_method = "23FC38C564F6AB4BEDBEB8AF8AF33262")
     public void setKeyProgressIncrement(int increment) {
         mKeyProgressIncrement = increment < 0 ? -increment : increment;
@@ -164,7 +162,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.619 -0400", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "B32E8C8EEE3FB08464A556FE1368E3E3")
     public int getKeyProgressIncrement() {
         int varC55911B792B2D1356C2FA646B234CAEE_2115305878 = (mKeyProgressIncrement);
@@ -192,7 +189,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.620 -0400", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "C3DA72E247BCB93CF44A60CD74295519")
     @Override
     protected boolean verifyDrawable(Drawable who) {
@@ -205,7 +201,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.620 -0400", hash_original_method = "A2BEB9099595ED17C9F72C657E221F4D", hash_generated_method = "1649235F7AE89E25D54050B6CE9EC8AF")
     @Override
     public void jumpDrawablesToCurrentState() {
@@ -218,7 +213,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.620 -0400", hash_original_method = "18D3C014C29EEACE1B64A99674108866", hash_generated_method = "26C849F776D29648E3856D4193A00387")
     @Override
     protected void drawableStateChanged() {
@@ -246,7 +240,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.621 -0400", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "861AD8C3EC20310D05FAC1B6B274FD8B")
     @Override
      void onProgressRefresh(float scale, boolean fromUser) {
@@ -270,7 +263,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.621 -0400", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "09A146E0599528F7EF1BF28C7B631032")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -327,7 +319,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.622 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "F30533D5251F0D11C8B4CFD2FF36B697")
     private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         addTaint(gap);
@@ -398,7 +389,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.624 -0400", hash_original_method = "6FE23FC5494DD28976118E3A2B4F8E1A", hash_generated_method = "A3D058C3B4CEA7DF4969518711C4F2C6")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -436,7 +426,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.625 -0400", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "53206375D00AC1DD9DD8DEF773558A20")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -517,7 +506,6 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.628 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "F2D8B3C76143D4B3CDE1BEDEB49AFE66")
     private void trackTouchEvent(MotionEvent event) {
         addTaint(event.getTaint());
@@ -576,7 +564,6 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.629 -0400", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "7CAEA821CD5CFD558839E482944A4FF3")
      void onStartTrackingTouch() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -586,7 +573,6 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.630 -0400", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "28194EE71D53A1717F5B76FA4AF6B1F3")
      void onStopTrackingTouch() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -596,7 +582,6 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.630 -0400", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "335DF8C256CE085A3A9253CFE15462AB")
      void onKeyChange() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -604,7 +589,6 @@ switch(event.getAction()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.631 -0400", hash_original_method = "E4D4B44B4B0BF8B3ACFCDB808BF98F5B", hash_generated_method = "B08BA82682BD3BD61399E95474FAB024")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

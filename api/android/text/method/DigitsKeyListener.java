@@ -41,7 +41,6 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.495 -0400", hash_original_method = "699568E4919BD4E82DA190E9B839182F", hash_generated_method = "856B8D369435E142BAB7B2934E7DEC91")
     @Override
     protected char[] getAcceptedChars() {
@@ -53,8 +52,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static DigitsKeyListener getInstance() {
+        public static DigitsKeyListener getInstance() {
         return getInstance(false, false);
     }
 
@@ -68,8 +66,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static DigitsKeyListener getInstance(String accepted) {
+        public static DigitsKeyListener getInstance(String accepted) {
         DigitsKeyListener dim = new DigitsKeyListener();
         dim.mAccepted = new char[accepted.length()];
         accepted.getChars(0, accepted.length(), dim.mAccepted, 0);
@@ -77,7 +74,6 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.496 -0400", hash_original_method = "C58B63A603B7A45CFB1185F323DD143F", hash_generated_method = "2024BA771B1FACB6B8E7F8CD429715EE")
     public int getInputType() {
         int contentType = InputType.TYPE_CLASS_NUMBER;
@@ -104,7 +100,6 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.499 -0400", hash_original_method = "A15A4B8B8366C48B770873BA3926F314", hash_generated_method = "BCAEF93EBC0C5BE3C8C81F2EA216192D")
     @Override
     public CharSequence filter(CharSequence source, int start, int end,

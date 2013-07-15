@@ -14,15 +14,13 @@ public class IPAddress {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static boolean isValid(
+        public static boolean isValid(
         String address) {
         return isValidIPv4(address) || isValidIPv6(address);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isValidWithNetMask(
+        public static boolean isValidWithNetMask(
         String address) {
         return isValidIPv4WithNetmask(address) || isValidIPv6WithNetmask(address);
     }
@@ -65,8 +63,7 @@ public class IPAddress {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isValidIPv4WithNetmask(
+        public static boolean isValidIPv4WithNetmask(
         String address) {
         int index = address.indexOf("/");
         String mask = address.substring(index + 1);
@@ -75,8 +72,7 @@ public class IPAddress {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isValidIPv6WithNetmask(
+        public static boolean isValidIPv6WithNetmask(
         String address) {
         int index = address.indexOf("/");
         String mask = address.substring(index + 1);
@@ -85,8 +81,7 @@ public class IPAddress {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static boolean isMaskValue(String component, int size) {
+        private static boolean isMaskValue(String component, int size) {
         try
         {
             int value = Integer.parseInt(component);

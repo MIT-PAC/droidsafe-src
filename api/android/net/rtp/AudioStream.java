@@ -37,7 +37,6 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.864 -0400", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "C11A4416DDB66440DAEAEA62CD783E9F")
     public AudioGroup getGroup() {
 AudioGroup var8FC275F44636F88FF4B87724812634C3_581841642 =         mGroup;
@@ -84,7 +83,6 @@ AudioGroup var8FC275F44636F88FF4B87724812634C3_581841642 =         mGroup;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.866 -0400", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "05C1701C6A1FA5014D1E5801460C992A")
     public AudioCodec getCodec() {
 AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202 =         mCodec;
@@ -121,7 +119,6 @@ AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202 =         mCodec;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.867 -0400", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "62A253F12CB222AB808B21216E17ED9C")
     public int getDtmfType() {
         int var076EC8EB5A4D8D6D0B7B64B27BFB2FB2_974836538 = (mDtmfType);

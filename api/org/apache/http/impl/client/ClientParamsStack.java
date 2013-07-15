@@ -195,7 +195,6 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1966650131 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.374 -0400", hash_original_method = "EA9D71906AA8F5EAFC46BDFADD14632A", hash_generated_method = "4E02A34A2490DE1E370102611A4110D3")
     public HttpParams copy() {
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_589795936 =         this;

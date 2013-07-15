@@ -192,7 +192,6 @@ switch(keyCode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.133 -0400", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "6A09BD8EA53A915AB5F822E12CBC5F98")
     @Override
     public void sendAccessibilityEvent(int eventType) {
@@ -324,7 +323,6 @@ switch(keyCode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.134 -0400", hash_original_method = "43D996FE1B0AF9FB74C6533DD719F381", hash_generated_method = "0E19BB31283DFF5D4470C4C5C2BFD534")
     public TabWidget getTabWidget() {
 TabWidget varB3FC95A9DAD9613B1E41023CF16F4D5C_1471722268 =         mTabWidget;
@@ -335,7 +333,6 @@ TabWidget varB3FC95A9DAD9613B1E41023CF16F4D5C_1471722268 =         mTabWidget;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.135 -0400", hash_original_method = "715443AB3E5984F89EAA89C58AA4B1A0", hash_generated_method = "1AFF40CC1F6BC458D910FF36E302FE22")
     public int getCurrentTab() {
         int var6655CA683CFF0C7E3ACACBBF6B5DF883_7740136 = (mCurrentTab);
@@ -384,7 +381,6 @@ View var540C13E9E156B687226421B24F2DF178_1309287318 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.135 -0400", hash_original_method = "EEE501665EA90FABC7BF921A8CA32190", hash_generated_method = "B2B37992B5174BCE407CB2C8459F082A")
     public View getCurrentView() {
 View var91CDA2CE07B9AFD30FCF6AED3E40A3D8_1508111769 =         mCurrentView;
@@ -418,7 +414,6 @@ for(i = 0;i < mTabSpecs.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.135 -0400", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "F6F7DD73AD57A4F1F540487A584AEA81")
     public FrameLayout getTabContentView() {
 FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
@@ -520,7 +515,6 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.136 -0400", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "81BDC8026576E158152F1D6A433CB82E")
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
@@ -621,7 +615,6 @@ TabSpec var72A74007B2BE62B849F475C7BDA4658B_1612647506 =             this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.137 -0400", hash_original_method = "0D57BE6053E1E40100589C46AD4E8491", hash_generated_method = "E3D25F5683279CD9231341D7CE5A9850")
         public TabSpec setContent(Intent intent) {
             mContentStrategy = new IntentContentStrategy(mTag, intent);
@@ -634,7 +627,6 @@ TabSpec var72A74007B2BE62B849F475C7BDA4658B_1255347860 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.138 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "64F464E5CBCF65EE1A50261DB8ADBF9C")
         public String getTag() {
 String varD6A25044F8E609F6CD67330C1523D33D_1270931722 =             mTag;
@@ -765,7 +757,6 @@ View var01EB2B982C218B50E10E237D1B17CF95_1527556638 =             tabIndicator;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.139 -0400", hash_original_method = "E81C3A0236D0948C1B54CB0897C263EB", hash_generated_method = "94B24954DEFC0E4074B81210D857EB8E")
         public View createIndicatorView() {
 View var2A050D4EA4182130A6C1E6806618CCD0_1693899814 =             mView;

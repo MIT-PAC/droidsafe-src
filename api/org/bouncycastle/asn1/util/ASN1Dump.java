@@ -323,8 +323,7 @@ public class ASN1Dump {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String dumpAsString(
+        public static String dumpAsString(
         Object   obj) {
         return dumpAsString(obj, false);
     }
@@ -350,8 +349,7 @@ public class ASN1Dump {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String dumpBinaryDataAsString(String indent, byte[] bytes) {
+        private static String dumpBinaryDataAsString(String indent, byte[] bytes) {
         String nl = System.getProperty("line.separator");
         StringBuffer buf = new StringBuffer();
         indent += TAB;
@@ -383,8 +381,7 @@ public class ASN1Dump {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String calculateAscString(byte[] bytes, int off, int len) {
+        private static String calculateAscString(byte[] bytes, int off, int len) {
         StringBuffer buf = new StringBuffer();
         for (int i = off; i != off + len; i++)
         {

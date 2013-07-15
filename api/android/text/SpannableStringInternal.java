@@ -95,7 +95,6 @@ String var7F7ECB4B14362FFBA020956966B29A66_628949370 =         mText;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.717 -0400", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "076CF2C4CD6529D13A59F56E486EC6BB")
      void setSpan(Object what, int start, int end, int flags) {
         int nstart = start;
@@ -166,7 +165,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.718 -0400", hash_original_method = "03C5B870069E116AF35881F1682BF48B", hash_generated_method = "E118E8AB7BC3606808A5EA7875B8BCD9")
      void removeSpan(Object what) {
         addTaint(what.getTaint());
@@ -208,7 +206,6 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.719 -0400", hash_original_method = "2C34546685C4DD853C66A09CEFBD0C65", hash_generated_method = "546F14CA6C5FA24F19DDA199C27EB9CA")
     public int getSpanStart(Object what) {
         addTaint(what.getTaint());
@@ -240,7 +237,6 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.719 -0400", hash_original_method = "D299E1841C6A6AC66FA9181AA7F112ED", hash_generated_method = "76368477EACFDAEE29968167058AC439")
     public int getSpanEnd(Object what) {
         addTaint(what.getTaint());
@@ -272,7 +268,6 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.720 -0400", hash_original_method = "0BC2A6452DDDFB33D1E74093A43A22EC", hash_generated_method = "ABDF95A51C720B4002B4E14C98A701AD")
     public int getSpanFlags(Object what) {
         addTaint(what.getTaint());
@@ -406,7 +401,6 @@ T[] varC2D15B14AC552DB2CA74824AA0037754_1195998602 =         (T[]) nret;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.724 -0400", hash_original_method = "AE7B5CCE37B25ED0DAD474C110343705", hash_generated_method = "EE766560A9E0568C6A8EADB0837EFB8C")
     public int nextSpanTransition(int start, int limit, Class kind) {
         addTaint(kind.getTaint());
@@ -450,7 +444,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.724 -0400", hash_original_method = "AE5753E793A4485018C5FAB8D6A92DBC", hash_generated_method = "E3FED9D828B8C60E350C18074421AE2E")
     private void sendSpanAdded(Object what, int start, int end) {
         addTaint(end);
@@ -471,7 +464,6 @@ for(int i = 0;i < n;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.725 -0400", hash_original_method = "60A86A7ABB49125FA35263BF87AB59D6", hash_generated_method = "2FA99781654342E619A8954DE98C0A4B")
     private void sendSpanRemoved(Object what, int start, int end) {
         addTaint(end);
@@ -492,7 +484,6 @@ for(int i = 0;i < n;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.725 -0400", hash_original_method = "859EF27A1BB05860E7E5EF0EAB661D52", hash_generated_method = "18D2923662B1F7267D9A8F9A1863BDD0")
     private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         addTaint(en);
@@ -517,8 +508,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String region(int start, int end) {
+        private static String region(int start, int end) {
         return "(" + start + " ... " + end + ")";
     }
 

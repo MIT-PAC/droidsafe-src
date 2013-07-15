@@ -67,7 +67,6 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.655 -0400", hash_original_method = "8B5A99905EE1811A879B3378EE7C88B1", hash_generated_method = "BE8D7A91CF35C3CE4342E681E66ABB40")
     public void setSeparator(String sep) {
         separator = sep;
@@ -76,7 +75,6 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.656 -0400", hash_original_method = "095AA0DB24FB99A12A6684BCE39B9F89", hash_generated_method = "E00E549B3C808990AAB42C9F832CF539")
     public void setQuotedValue() {
         isQuotedString = true;
@@ -87,7 +85,6 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.656 -0400", hash_original_method = "D2172C6C42893F443ABBD625D7655BA2", hash_generated_method = "4E3651EAFF6120090FB98224BC209B4B")
     public boolean isValueQuoted() {
         boolean varBAAFE7850E70D939EC1652577DB1CFB2_1917127853 = (isQuotedString);
@@ -98,7 +95,6 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.657 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "DCD6AD436F7A53444A91AEA9EA92CCFE")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1824617405 =         name;
@@ -109,7 +105,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_1824617405 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.657 -0400", hash_original_method = "1D746EB97F79FD095C35B4AB5FADFB51", hash_generated_method = "B2B0679A105FC35A81BBABC5AAE6D1D6")
     public Object getValueAsObject() {
 Object var51674C9B3053ECEEFFA7BB6C9E2F189C_1469457564 =         isFlagParameter ? "" : value;
@@ -120,7 +115,6 @@ Object var51674C9B3053ECEEFFA7BB6C9E2F189C_1469457564 =         isFlagParameter 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.658 -0400", hash_original_method = "48E6CC9DD98BCA4A1A1FF2D370B346E5", hash_generated_method = "EC3A808F65912EC4B397A06DEEEA4586")
     public void setName(String n) {
         name = n;
@@ -129,7 +123,6 @@ Object var51674C9B3053ECEEFFA7BB6C9E2F189C_1469457564 =         isFlagParameter 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.659 -0400", hash_original_method = "976564EFAA66565638B090B0BED90464", hash_generated_method = "C63631628A71855211E03B08E189AF38")
     public void setValueAsObject(Object v) {
         value = v;
@@ -245,7 +238,6 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_110451557 =             buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.663 -0400", hash_original_method = "AFA5C2A13F94EAF8D89E1398D2146232", hash_generated_method = "A816F07C57DA17201180D7F047F55F21")
     public Object clone() {
         NameValue retval = (NameValue) super.clone();
@@ -336,7 +328,6 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_927588770 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.664 -0400", hash_original_method = "2F0EB2DB361DE1F8D28986094D857BA0", hash_generated_method = "49C053D45F52B66FB444D68AF89BD097")
     public String getKey() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_2100290581 =         this.name;
@@ -347,7 +338,6 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_2100290581 =         this.name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.665 -0400", hash_original_method = "4618674F7CF871F15A32C0791ACD2466", hash_generated_method = "653D662544DD4DF3B9535117D446201D")
     public String getValue() {
 String var92A1FFC6B177D883E210D7CDB9C12881_1584381411 =         value == null ? null : this.value.toString();
@@ -358,7 +348,6 @@ String var92A1FFC6B177D883E210D7CDB9C12881_1584381411 =         value == null ? 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.666 -0400", hash_original_method = "34CFBA77959CE5FB40B94FB25C9241AB", hash_generated_method = "79347FD0D17B6B69772FB7F7DCE63086")
     public String setValue(String value) {
         String retval = this.value == null ? null : value;
@@ -373,7 +362,6 @@ String varF9E19AD6135C970F387F77C6F3DE4477_729695014 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.666 -0400", hash_original_method = "65B8B320E0D14FEF2FD57F3B89A2B17F", hash_generated_method = "9AD97133CE759103553A1941ACF87286")
     @Override
     public int hashCode() {

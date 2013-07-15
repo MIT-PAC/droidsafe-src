@@ -37,8 +37,7 @@ public class ZygoteInit {
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void invokeStaticMain(ClassLoader loader,
+        static void invokeStaticMain(ClassLoader loader,
             String className, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
         try {

@@ -24,7 +24,6 @@ public class RSAPublicKeySpec implements KeySpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.017 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "932CB65D8227841B364B2158B3E6433A")
     public BigInteger getModulus() {
 BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_1543484443 =         modulus;
@@ -35,7 +34,6 @@ BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_1543484443 =         modulus;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.017 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "DFD7FDB9ED1572660197FA02991EA577")
     public BigInteger getPublicExponent() {
 BigInteger varB360105573401CCC465D10C242BA5623_672828051 =         publicExponent;

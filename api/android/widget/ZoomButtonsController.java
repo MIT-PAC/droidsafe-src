@@ -249,7 +249,6 @@ FrameLayout var9A7D772301F15796236447FE645B3608_1684334785 =         container;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.206 -0400", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "39466DB7BD80A5311AC75D7EF4F60C50")
     public void setOnZoomListener(OnZoomListener listener) {
         mCallback = listener;
@@ -287,7 +286,6 @@ FrameLayout var9A7D772301F15796236447FE645B3608_1684334785 =         container;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.207 -0400", hash_original_method = "CDC5AD23EC463D7BB2411752926A03FA", hash_generated_method = "882B65D6E8F2663F398B0A1F038649CA")
     public boolean isAutoDismissed() {
         boolean var7AA27D9B0360FEC25432CC2F487F7B06_1143266143 = (mAutoDismissControls);
@@ -298,7 +296,6 @@ FrameLayout var9A7D772301F15796236447FE645B3608_1684334785 =         container;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.207 -0400", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "380CC679FD665B3A9DE867E005BC6643")
     public void setAutoDismissed(boolean autoDismiss) {
     if(mAutoDismissControls == autoDismiss)        
@@ -310,7 +307,6 @@ FrameLayout var9A7D772301F15796236447FE645B3608_1684334785 =         container;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.207 -0400", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "AC9683078C0B901D5CA860A9CB8A24D3")
     public boolean isVisible() {
         boolean var3841FA617DC417560C9ACBBE88413EC6_1274750337 = (mIsVisible);
@@ -393,7 +389,6 @@ FrameLayout var9A7D772301F15796236447FE645B3608_1684334785 =         container;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.209 -0400", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "31E8049667F7B46D64D007C1C17AA16B")
     public ViewGroup getContainer() {
 ViewGroup varCFF48C15085C1760829740A9CBEECBE6_1336305024 =         mContainer;
@@ -404,7 +399,6 @@ ViewGroup varCFF48C15085C1760829740A9CBEECBE6_1336305024 =         mContainer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.209 -0400", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "B260C278B8706CA54CA8EED749FDD18B")
     public View getZoomControls() {
 View var4BE15960FF1DC136D3D870EA1777142D_519639041 =         mControls;
@@ -512,7 +506,6 @@ View var4BE15960FF1DC136D3D870EA1777142D_519639041 =         mControls;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.212 -0400", hash_original_method = "1F6E6E50114A7831DEC27688067C55C8", hash_generated_method = "1A1BC6B6182F6630FB07F3C1EDE8CF6C")
     private boolean isInterestingKey(int keyCode) {
         addTaint(keyCode);

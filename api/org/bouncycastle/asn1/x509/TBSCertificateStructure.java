@@ -92,16 +92,14 @@ switch(extra.getTagNo()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static TBSCertificateStructure getInstance(
+        public static TBSCertificateStructure getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static TBSCertificateStructure getInstance(
+        public static TBSCertificateStructure getInstance(
         Object  obj) {
         if (obj instanceof TBSCertificateStructure)
         {
@@ -115,7 +113,6 @@ switch(extra.getTagNo()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.300 -0400", hash_original_method = "FDACF2D9FDD982F7370FC1531628D869", hash_generated_method = "58E2DC301E57EEB1DA7BB2AF80087112")
     public int getVersion() {
         int var4E01D99371F8A746A4C58A8E9E72F05E_161156419 = (version.getValue().intValue() + 1);
@@ -126,7 +123,6 @@ switch(extra.getTagNo()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.300 -0400", hash_original_method = "AC16A6F43E56B222CBB33342980501D7", hash_generated_method = "0FF56968BCF7E0CD72B2ABAF912E2B12")
     public DERInteger getVersionNumber() {
 DERInteger varE87BEFBC04DA371DFA5B07C77A4407CB_1015475002 =         version;
@@ -137,7 +133,6 @@ DERInteger varE87BEFBC04DA371DFA5B07C77A4407CB_1015475002 =         version;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.300 -0400", hash_original_method = "FB637D35FB72ECF5302334390BEEB5AC", hash_generated_method = "D353CBC09273DC42D905AE3CB8608117")
     public DERInteger getSerialNumber() {
 DERInteger varC5241B523DA06FB03F5998149659C655_1020516637 =         serialNumber;
@@ -148,7 +143,6 @@ DERInteger varC5241B523DA06FB03F5998149659C655_1020516637 =         serialNumber
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.301 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "F9667F319ED93F869B3CCCBE53811B21")
     public AlgorithmIdentifier getSignature() {
 AlgorithmIdentifier varCDF7DED6F053AD37D069B3F1993A6032_1287415986 =         signature;
@@ -159,7 +153,6 @@ AlgorithmIdentifier varCDF7DED6F053AD37D069B3F1993A6032_1287415986 =         sig
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.301 -0400", hash_original_method = "45BDDD2025565616026FAE1CCD324C0F", hash_generated_method = "6D6E488954D2DC1912EAA5E9547C3972")
     public X509Name getIssuer() {
 X509Name var8EF52627413B91AB97DB59853805E979_1657305409 =         issuer;
@@ -170,7 +163,6 @@ X509Name var8EF52627413B91AB97DB59853805E979_1657305409 =         issuer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.301 -0400", hash_original_method = "909D374C3F5E114020E1939F16D3CF76", hash_generated_method = "3B4E61EE825F45A8F975D731ACC15874")
     public Time getStartDate() {
 Time var6261FAF9C8E7C29EA81EE84682F84B85_1106905253 =         startDate;
@@ -181,7 +173,6 @@ Time var6261FAF9C8E7C29EA81EE84682F84B85_1106905253 =         startDate;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.301 -0400", hash_original_method = "B4A95AF8DCBBCB951EF2EC33D2077725", hash_generated_method = "2D56CBCDC54893B352E2467C971846AC")
     public Time getEndDate() {
 Time var85AADBA0ADC505F040C6B2CE25429C05_779299111 =         endDate;
@@ -192,7 +183,6 @@ Time var85AADBA0ADC505F040C6B2CE25429C05_779299111 =         endDate;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.301 -0400", hash_original_method = "CA422C660E8CA6347A77201218B988AE", hash_generated_method = "E58EBB91CB2A8FFFD816E008E179B8A2")
     public X509Name getSubject() {
 X509Name varC07EC1407326EABEF2FB6D781FE48674_842993584 =         subject;
@@ -203,7 +193,6 @@ X509Name varC07EC1407326EABEF2FB6D781FE48674_842993584 =         subject;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.302 -0400", hash_original_method = "EE5B5FDD20BC2C4F67CD8D0C39F17B3D", hash_generated_method = "939008CDF15AD6CF5D19E3DC15624875")
     public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
 SubjectPublicKeyInfo var56C0C95C3EE73FCF29C802F24ADDBB81_1650449763 =         subjectPublicKeyInfo;
@@ -214,7 +203,6 @@ SubjectPublicKeyInfo var56C0C95C3EE73FCF29C802F24ADDBB81_1650449763 =         su
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.314 -0400", hash_original_method = "6F6E1D43C4C5F3E57DDB874B276B463E", hash_generated_method = "C29EAF6196AB56AEA51F6F25892E9BF0")
     public DERBitString getIssuerUniqueId() {
 DERBitString varC10373B37D512D7FA9423530FDD7A45F_2052060947 =         issuerUniqueId;
@@ -225,7 +213,6 @@ DERBitString varC10373B37D512D7FA9423530FDD7A45F_2052060947 =         issuerUniq
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.314 -0400", hash_original_method = "9788F7D9ABBC525B6D86ECC001203156", hash_generated_method = "EF2DFE25338AAFDE1E4B2FE8CCE5B010")
     public DERBitString getSubjectUniqueId() {
 DERBitString varF05C31D6B4BD7647C8AABBD578AC656D_1306236577 =         subjectUniqueId;
@@ -236,7 +223,6 @@ DERBitString varF05C31D6B4BD7647C8AABBD578AC656D_1306236577 =         subjectUni
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.314 -0400", hash_original_method = "0A664DE086A2ED08A47FCC7544F0D12E", hash_generated_method = "C3C2E4A972344E1F859A1D51ADF73691")
     public X509Extensions getExtensions() {
 X509Extensions varD5DA799FFC3665A23EF170042DC373AD_1753108727 =         extensions;
@@ -247,7 +233,6 @@ X509Extensions varD5DA799FFC3665A23EF170042DC373AD_1753108727 =         extensio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.314 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "9D983FEF2BE12A809B551F01C9F77C73")
     public DERObject toASN1Object() {
 DERObject var42A78C062640017A329FA085150BC1B8_118242468 =         seq;

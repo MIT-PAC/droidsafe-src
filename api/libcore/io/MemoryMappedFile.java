@@ -77,7 +77,6 @@ BufferIterator var8816B5A8C55B4007EB0ABFE9767037E6_553419223 =         new NioBu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.728 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "D3247D815F5371A3E33C4345469EB940")
     public long size() {
         long varF7BD60B75B29D79B660A2859395C1A24_2136677933 = (size);

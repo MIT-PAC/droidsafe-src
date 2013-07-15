@@ -233,7 +233,6 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.870 -0400", hash_original_method = "7186A696463687F53D4FA37D2BB9631D", hash_generated_method = "643676CE5AECCD7272A83D6D1F2AD22B")
     protected boolean enableReplaceObject(boolean enable) {
         boolean originalValue = enableReplace;
@@ -265,7 +264,6 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.874 -0400", hash_original_method = "3E8C44E06770B18C136965DDB10C163B", hash_generated_method = "AFA6002F8EE09711235EBD5D45868EEB")
     private int nextHandle() {
         int var57D4F29AF80AE42B0D9EED2C0C55E152_64021215 = (currentHandle++);
@@ -338,7 +336,6 @@ PutField var86DE5DDDFAC8CCFE25956F12D10EF898_1260619719 =         currentPutFiel
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.879 -0400", hash_original_method = "C1DF94E02684AF79BBD267850463E92A", hash_generated_method = "BC9FEA89902E124D296C21920DBFDA44")
     protected Object replaceObject(Object object) throws IOException {
         addTaint(object.getTaint());

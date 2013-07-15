@@ -29,7 +29,6 @@ AppInterface.CommandType var8A824FAC5ED556766C4037BB3498C325_134690838 =        
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.930 -0400", hash_original_method = "A8568713BEFC46F9EECE865CBC0E3B85", hash_generated_method = "7E2474DD83CC63C3F6EA5221A5BD0366")
      boolean setIcon(Bitmap icon) {
         addTaint(icon.getTaint());
@@ -58,7 +57,6 @@ class DisplayTextParams extends CommandParams {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.931 -0400", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "FD5BD7FE43C7BC1B1CC45DC68D65C95D")
      boolean setIcon(Bitmap icon) {
     if(icon != null && textMsg != null)        
@@ -108,7 +106,6 @@ class LaunchBrowserParams extends CommandParams {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.933 -0400", hash_original_method = "14C8B1CAE4AF3E3922E99E945859BFE8", hash_generated_method = "35D950D8EA741EB28F2A9C300140F3F2")
      boolean setIcon(Bitmap icon) {
     if(icon != null && confirmMsg != null)        
@@ -153,7 +150,6 @@ class PlayToneParams extends CommandParams {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.934 -0400", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "B21E04E6D87662017AF515CE423EFE99")
      boolean setIcon(Bitmap icon) {
     if(icon != null && textMsg != null)        
@@ -198,7 +194,6 @@ class CallSetupParams extends CommandParams {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.936 -0400", hash_original_method = "7CBBFD719CD54FED6A95014430B0D13E", hash_generated_method = "06AD227C7402673962462E61EC5A7C98")
      boolean setIcon(Bitmap icon) {
     if(icon == null)        
@@ -262,7 +257,6 @@ class SelectItemParams extends CommandParams {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.939 -0400", hash_original_method = "18017A51DEA7E263420DEFD24143331D", hash_generated_method = "C012D056CA57C893611D546AAF304EC9")
      boolean setIcon(Bitmap icon) {
     if(icon != null && menu != null)        
@@ -326,7 +320,6 @@ class GetInputParams extends CommandParams {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.940 -0400", hash_original_method = "0D1B780F5B7D1ED973494BE2C3910B90", hash_generated_method = "D87E75ADCEA5AAC6CB43B328C94AF510")
      boolean setIcon(Bitmap icon) {
     if(icon != null && input != null)        

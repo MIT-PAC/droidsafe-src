@@ -13,92 +13,77 @@ public final class OsConstants {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISBLK(int mode) {
+        public static boolean S_ISBLK(int mode) {
         return (mode & S_IFMT) == S_IFBLK;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISCHR(int mode) {
+        public static boolean S_ISCHR(int mode) {
         return (mode & S_IFMT) == S_IFCHR;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISDIR(int mode) {
+        public static boolean S_ISDIR(int mode) {
         return (mode & S_IFMT) == S_IFDIR;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISFIFO(int mode) {
+        public static boolean S_ISFIFO(int mode) {
         return (mode & S_IFMT) == S_IFIFO;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISREG(int mode) {
+        public static boolean S_ISREG(int mode) {
         return (mode & S_IFMT) == S_IFREG;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISLNK(int mode) {
+        public static boolean S_ISLNK(int mode) {
         return (mode & S_IFMT) == S_IFLNK;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean S_ISSOCK(int mode) {
+        public static boolean S_ISSOCK(int mode) {
         return (mode & S_IFMT) == S_IFSOCK;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int WEXITSTATUS(int status) {
+        public static int WEXITSTATUS(int status) {
         return (status & 0xff00) >> 8;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean WCOREDUMP(int status) {
+        public static boolean WCOREDUMP(int status) {
         return (status & 0x80) != 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int WTERMSIG(int status) {
+        public static int WTERMSIG(int status) {
         return status & 0x7f;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int WSTOPSIG(int status) {
+        public static int WSTOPSIG(int status) {
         return WEXITSTATUS(status);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean WIFEXITED(int status) {
+        public static boolean WIFEXITED(int status) {
         return (WTERMSIG(status) == 0);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean WIFSTOPPED(int status) {
+        public static boolean WIFSTOPPED(int status) {
         return (WTERMSIG(status) == 0x7f);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean WIFSIGNALED(int status) {
+        public static boolean WIFSIGNALED(int status) {
         return (WTERMSIG(status + 1) >= 2);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String gaiName(int error) {
+        public static String gaiName(int error) {
         if (error == EAI_AGAIN) {
             return "EAI_AGAIN";
         }
@@ -136,8 +121,7 @@ public final class OsConstants {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String errnoName(int errno) {
+        public static String errnoName(int errno) {
         if (errno == E2BIG) {
             return "E2BIG";
         }
@@ -384,8 +368,7 @@ public final class OsConstants {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int placeholder() {
+        private static int placeholder() {
         return 0;
     }
 

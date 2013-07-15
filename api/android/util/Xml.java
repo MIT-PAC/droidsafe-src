@@ -68,8 +68,7 @@ public class Xml {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static XmlSerializer newSerializer() {
+        public static XmlSerializer newSerializer() {
         try {
             return XmlSerializerFactory.instance.newSerializer();
         } catch (XmlPullParserException e) {
@@ -78,8 +77,7 @@ public class Xml {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Encoding findEncodingByName(String encodingName) throws UnsupportedEncodingException {
+        public static Encoding findEncodingByName(String encodingName) throws UnsupportedEncodingException {
         if (encodingName == null) {
             return Encoding.UTF_8;
         }

@@ -95,7 +95,6 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.690 -0400", hash_original_method = "DD261735D727F86389B5178B589BDC0E", hash_generated_method = "38176E1539BDAD049DB7DDE251C2427D")
     public int getInflatedId() {
         int varD1010496B3E3EC6836447943C5AA44FC_604455750 = (mInflatedId);
@@ -106,7 +105,6 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.691 -0400", hash_original_method = "86B5E29885E599B44EC441F118D9B30F", hash_generated_method = "EBA6AEE4A4115F5E2962979EEB78D8EF")
     public void setInflatedId(int inflatedId) {
         mInflatedId = inflatedId;
@@ -115,7 +113,6 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.691 -0400", hash_original_method = "027E5859DCA96FAAAAB58CE710A8870F", hash_generated_method = "D912B9B6A4B1061E4FA2163524CD1DD5")
     public int getLayoutResource() {
         int varCAD69CF3708A5AE65F3F60DF86F222EC_1131134209 = (mLayoutResource);
@@ -126,7 +123,6 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.691 -0400", hash_original_method = "9A9CDCEDF7B2E8EB813F1BBF2264D05B", hash_generated_method = "8A1DC50EC3A8DB509125E7858400A622")
     public void setLayoutResource(int layoutResource) {
         mLayoutResource = layoutResource;
@@ -147,7 +143,6 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.692 -0400", hash_original_method = "D063B9229A7B99E7AD0A562CA5051177", hash_generated_method = "B4FDD4C6E53F70C771C0461AF2312DCC")
     @Override
     public void draw(Canvas canvas) {
@@ -156,7 +151,6 @@ public final class ViewStub extends View {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.692 -0400", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "8827C1FA31E6998965C439129AE20899")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -261,7 +255,6 @@ View var057D265746AE9672AFE5F9FF6338071D_414210484 =                 view;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.694 -0400", hash_original_method = "082FDB27359F9D2A7A4CA2B124FBADFF", hash_generated_method = "B32FFC65DC1775C44018C6EB136B16B0")
     public void setOnInflateListener(OnInflateListener inflateListener) {
         mInflateListener = inflateListener;

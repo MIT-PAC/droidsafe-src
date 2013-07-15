@@ -36,7 +36,6 @@ public class HttpRetryException extends IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.612 -0400", hash_original_method = "958E0B7EB30F5353747022B831D2FD74", hash_generated_method = "D0E544F56B961F6EACDDBABC38500400")
     public String getLocation() {
 String var96C70FF298E5697493B0D776E54760A4_1789035068 =         location;
@@ -57,7 +56,6 @@ String var161DE919C6E3D4B838448EC95B86CE9B_68996577 =         getMessage();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.613 -0400", hash_original_method = "DF7E8E86AB48E1A133C36E616BD5E9BF", hash_generated_method = "12D389D17B3FCC4EF1FA55497DF87EE8")
     public int responseCode() {
         int var30F8CC0A3AD81545F79B55CD4A8D8C8E_93032498 = (responseCode);

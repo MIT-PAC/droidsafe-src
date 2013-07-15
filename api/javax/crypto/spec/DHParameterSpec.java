@@ -42,7 +42,6 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.383 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "EBC4DBA8CEFD443A3482418547EE77F5")
     public BigInteger getP() {
 BigInteger var74E4690D9F2A026504928C017944E149_1040250957 =         p;
@@ -53,7 +52,6 @@ BigInteger var74E4690D9F2A026504928C017944E149_1040250957 =         p;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.384 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "F1FF9FB0A75CC160770070B9450ECA45")
     public BigInteger getG() {
 BigInteger var96B5EDC7D356FCBAF3C926D8A70305DA_1891943169 =         g;
@@ -64,7 +62,6 @@ BigInteger var96B5EDC7D356FCBAF3C926D8A70305DA_1891943169 =         g;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.384 -0400", hash_original_method = "657EAD8DC5C96D72590F45704DE7ABCD", hash_generated_method = "75EA81883708DF45763784F730485DF8")
     public int getL() {
         int var2DB95E8E1A9267B7A1188556B2013B33_542119482 = (l);

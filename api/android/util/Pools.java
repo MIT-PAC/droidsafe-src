@@ -13,26 +13,22 @@ public class Pools {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static <T extends Poolable<T>> Pool<T> simplePool(PoolableManager<T> manager) {
+        public static <T extends Poolable<T>> Pool<T> simplePool(PoolableManager<T> manager) {
         return new FinitePool<T>(manager);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static <T extends Poolable<T>> Pool<T> finitePool(PoolableManager<T> manager, int limit) {
+        public static <T extends Poolable<T>> Pool<T> finitePool(PoolableManager<T> manager, int limit) {
         return new FinitePool<T>(manager, limit);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool) {
+        public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool) {
         return new SynchronizedPool<T>(pool);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool, Object lock) {
+        public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool, Object lock) {
         return new SynchronizedPool<T>(pool, lock);
     }
 

@@ -22,7 +22,6 @@ public final class AccessControlContext {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.907 -0400", hash_original_method = "1B973012FE4490CD9CBF1AB1866FE20E", hash_generated_method = "42159632D3F362DE6FD7BE145EAB9C02")
     public void checkPermission(Permission perm) throws AccessControlException {
         addTaint(perm.getTaint());
@@ -30,7 +29,6 @@ public final class AccessControlContext {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.907 -0400", hash_original_method = "9A971105212191ED79C64AFC11FE52C6", hash_generated_method = "62770A47AFC7F4A0C25CDE013316D92E")
     public DomainCombiner getDomainCombiner() {
 DomainCombiner var540C13E9E156B687226421B24F2DF178_515712519 =         null;

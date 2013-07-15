@@ -92,7 +92,6 @@ public class SingleClientConnManager implements ClientConnectionManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.933 -0400", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "9BC3CCC03612AFDD26B05328E5F0A85E")
     public SchemeRegistry getSchemeRegistry() {
 SchemeRegistry var88A9F5243E7E93089AA8FDF949007087_1321465197 =         this.schemeRegistry;

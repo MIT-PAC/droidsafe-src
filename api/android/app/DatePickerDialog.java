@@ -112,7 +112,6 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener, On
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.733 -0400", hash_original_method = "54FCA4CF326BECF6DDD25A8F55E4D660", hash_generated_method = "38E347DD6ADEFF38D1E6619E32E2ECA1")
     public DatePicker getDatePicker() {
 DatePicker varD27B4AF16BDD34A107C6FB34013DD24E_702538829 =         mDatePicker;

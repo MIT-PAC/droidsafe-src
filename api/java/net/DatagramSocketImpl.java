@@ -33,7 +33,6 @@ public abstract class DatagramSocketImpl implements SocketOptions {
     protected abstract void create() throws SocketException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.596 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "8715BC18891BC17CAF8D89E689D19E7A")
     protected FileDescriptor getFileDescriptor() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_2026463505 =         fd;
@@ -54,7 +53,6 @@ InetAddress var5B04D0CA841642814A75D4CAB88C3763_741710610 =         IoBridge.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.597 -0400", hash_original_method = "85505F9FF32DDEB1685867EF44676F61", hash_generated_method = "C1ADD9998DC835736E384DA0374EC946")
     protected int getLocalPort() {
         int var55FC25CF376E1B7BFFBC2D46F357C231_1970628083 = (localPort);
@@ -102,7 +100,6 @@ protected abstract byte getTTL() throws IOException;
 protected abstract void setTTL(byte ttl) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.599 -0400", hash_original_method = "4B57C399BF813581E92D5F53070EA8D4", hash_generated_method = "4E0325303BB17DD186D37C1B3AE1E6B2")
     protected void connect(InetAddress inetAddr, int port) throws SocketException {
         addTaint(port);
@@ -111,7 +108,6 @@ protected abstract void setTTL(byte ttl) throws IOException;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.600 -0400", hash_original_method = "E948DE2D4A723F3312DB782756156847", hash_generated_method = "CD37B12F2AD777DD5DE0335AE279D597")
     protected void disconnect() {
         // ---------- Original Method ----------

@@ -82,7 +82,6 @@ public class RequestWrapper extends AbstractHttpMessage implements HttpUriReques
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.658 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "3A361861EE9171A558D32C78A43DBB35")
     public String getMethod() {
 String varB88046C53AB584448F89DD952FF416E1_193403309 =         this.method;
@@ -141,7 +140,6 @@ ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_1568929630 =             Htt
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.661 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "2F82B20846D7FEA99D2A42C803B90742")
     public URI getURI() {
 URI varF8A43570A6D9CE873AAA24BBE28B6265_1128072050 =         this.uri;
@@ -200,7 +198,6 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_1564002888 =         new BasicRe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.662 -0400", hash_original_method = "BBFC2C7FEB496FD80D74781CCFD675B2", hash_generated_method = "E6E8A84F496A526C83FD312307736BBE")
     public boolean isAborted() {
         boolean var68934A3E9455FA72420237EB05902327_238396303 = (false);
@@ -211,7 +208,6 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_1564002888 =         new BasicRe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.662 -0400", hash_original_method = "031DFDACC38ED516BF6F8D68C4847FFF", hash_generated_method = "6368E5F9D5FC137A56BABB4C09965F09")
     public HttpRequest getOriginal() {
 HttpRequest varC5306F3E881F6B4E683392DE999AE02E_231959337 =         this.original;
@@ -222,7 +218,6 @@ HttpRequest varC5306F3E881F6B4E683392DE999AE02E_231959337 =         this.origina
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.663 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "F2F26916A698E95B3DA4AFB6442748BA")
     public boolean isRepeatable() {
         boolean varB326B5062B2F0E69046810717534CB09_466681002 = (true);
@@ -233,7 +228,6 @@ HttpRequest varC5306F3E881F6B4E683392DE999AE02E_231959337 =         this.origina
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.663 -0400", hash_original_method = "CF6A18341EACE9B23200B44E9109C775", hash_generated_method = "5FC13166E00CB198686E28E9364B09C5")
     public int getExecCount() {
         int var9E851E1B1933DC6A3C11FD40EC97D806_4017760 = (this.execCount);
@@ -244,7 +238,6 @@ HttpRequest varC5306F3E881F6B4E683392DE999AE02E_231959337 =         this.origina
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.663 -0400", hash_original_method = "D2EB72E1336F92B73CC51A8B455EFCB5", hash_generated_method = "198898552D46A3B891136D3847E5D4E5")
     public void incrementExecCount() {
         this.execCount++;

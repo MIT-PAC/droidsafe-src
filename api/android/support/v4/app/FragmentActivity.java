@@ -125,7 +125,6 @@ public class FragmentActivity extends Activity {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.426 -0400", hash_original_method = "AE8D2F77597464B24506681CBB435A18", hash_generated_method = "99746B24FB7E3FB0708E0E02A4F62760")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -738,7 +737,6 @@ for(int i=0;i<loaders.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.457 -0400", hash_original_method = "F55A4C6A01F3D0AB15650B3080E9EF76", hash_generated_method = "D04B8ACD151922BAB60C32B925410865")
     public Object onRetainCustomNonConfigurationInstance() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -993,7 +991,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.460 -0400", hash_original_method = "28C2B4CF762BABC0F8C194FDD6A98E77", hash_generated_method = "7BA62512AFE4BD6BB2D807B17B09B3A6")
     public void onAttachFragment(Fragment fragment) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1002,7 +999,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.460 -0400", hash_original_method = "A30369BEE359642894950823DFC915CE", hash_generated_method = "E158E8E1C9D3B1D5CFED70795D3D8C12")
     public FragmentManager getSupportFragmentManager() {
 FragmentManager varB68713B43E6D3DE30B9A48FEA4C5FD0D_1733791102 =         mFragments;
@@ -1013,7 +1009,6 @@ FragmentManager varB68713B43E6D3DE30B9A48FEA4C5FD0D_1733791102 =         mFragme
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.460 -0400", hash_original_method = "5BE63D387764C79BADD7265D6253130D", hash_generated_method = "9FCF3EB3A232A7812661BF3C74491F2F")
     @Override
     public void startActivityForResult(Intent intent, int requestCode) {
@@ -1034,7 +1029,6 @@ FragmentManager varB68713B43E6D3DE30B9A48FEA4C5FD0D_1733791102 =         mFragme
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.460 -0400", hash_original_method = "62E7172DD8437600599EFB859FBECAC1", hash_generated_method = "1791E84EF1BB3D8677153EB9EADD99F6")
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode) {

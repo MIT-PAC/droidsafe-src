@@ -27,8 +27,7 @@ public final class Console implements Flushable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Console getConsole() {
+        public static Console getConsole() {
         return console;
     }
 
@@ -83,7 +82,6 @@ Console var1C1A7E0ECC814A41656D8DF055D1B8DD_886357240 =         format(format, a
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.548 -0400", hash_original_method = "6872D36E6DE03121BD2812355740CF6B", hash_generated_method = "A50DD4307435F0BE977FA5F1C72CB682")
     public Reader reader() {
 Reader var681AFDDDB48FD166DFCBFA04C65E6269_1130052687 =         reader;
@@ -202,7 +200,6 @@ String var54932DCBE9604DD8D26100A2DD0CC65C_936727811 =             readLine();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.558 -0400", hash_original_method = "EF4D37EF542F65995124A506A5A02FEA", hash_generated_method = "67D32852FAF251E8F8CB0D264CEA2126")
     public PrintWriter writer() {
 PrintWriter varF684C05FE6F21143B285791952B93F74_1156836729 =         writer;
@@ -225,7 +222,6 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1156836729 =         writer;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.563 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
         @Override
         public void close() {

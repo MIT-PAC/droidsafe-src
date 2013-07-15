@@ -344,7 +344,6 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.997 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "1ABEBB2A7F6D24E4E333693B5E878426")
     public HttpConnectionMetrics getMetrics() {
 HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256 =         this.metrics;

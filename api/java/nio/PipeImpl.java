@@ -48,7 +48,6 @@ final class PipeImpl extends Pipe {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.912 -0400", hash_original_method = "C0C603D3286C71D643834A21D35D5621", hash_generated_method = "C030505E16C2988312C0F7B2003250DE")
     @Override
     public SinkChannel sink() {
@@ -60,7 +59,6 @@ SinkChannel var9F52798A617E8085E84A971BADA1AE49_4473272 =         sink;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.912 -0400", hash_original_method = "06051B335F1A44C7022D361E395E201A", hash_generated_method = "D9627D87D728EB04956F8F4135D9D7AD")
     @Override
     public SourceChannel source() {
@@ -116,7 +114,6 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.915 -0400", hash_original_method = "B84D8CC4EB02E889C1B3B1D6BF2530A5", hash_generated_method = "00751ADC217574BA51F539DD32224F97")
         @Override
         protected void implCloseSelectableChannel() throws IOException {
@@ -126,7 +123,6 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.915 -0400", hash_original_method = "0AEB9649341280866AD90F7CB8B3B26D", hash_generated_method = "4F55EBE153A756EFE07A2CC19E53DF71")
         @Override
         protected void implConfigureBlocking(boolean blocking) throws IOException {
@@ -137,7 +133,6 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.915 -0400", hash_original_method = "330EC47CD6DC6EBB9C85D6C0A0075684", hash_generated_method = "1F22E3E9E511BB1B45EE39624879CC4B")
         public int read(ByteBuffer buffer) throws IOException {
             addTaint(buffer.getTaint());
@@ -149,7 +144,6 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.916 -0400", hash_original_method = "D5B21F29648A2C207C81CB15F85267EB", hash_generated_method = "056577FF0477EFB537AD2374FFC5D1A2")
         public long read(ByteBuffer[] buffers) throws IOException {
             addTaint(buffers[0].getTaint());
@@ -161,7 +155,6 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.916 -0400", hash_original_method = "C267B10FDAD89EFE496B4C3C55F1ACFC", hash_generated_method = "B084EFE98B4D7092841BEC352DAF8762")
         public long read(ByteBuffer[] buffers, int offset, int length) throws IOException {
             addTaint(length);
@@ -175,7 +168,6 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.916 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "85E864B9C17F6AC90A25753CF70618CD")
         public FileDescriptor getFD() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
@@ -209,7 +201,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.918 -0400", hash_original_method = "B84D8CC4EB02E889C1B3B1D6BF2530A5", hash_generated_method = "00751ADC217574BA51F539DD32224F97")
         @Override
         protected void implCloseSelectableChannel() throws IOException {
@@ -219,7 +210,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.918 -0400", hash_original_method = "0AEB9649341280866AD90F7CB8B3B26D", hash_generated_method = "4F55EBE153A756EFE07A2CC19E53DF71")
         @Override
         protected void implConfigureBlocking(boolean blocking) throws IOException {
@@ -230,7 +220,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.918 -0400", hash_original_method = "9BC03C30CAC8AF5ED6AA22DAB8C2126F", hash_generated_method = "490CF95F160C1C95C04DC8CB3EC5B730")
         public int write(ByteBuffer buffer) throws IOException {
             addTaint(buffer.getTaint());
@@ -242,7 +231,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.919 -0400", hash_original_method = "E4E8C5CCE7619931C84A953E614C424A", hash_generated_method = "910D19BF5E8CF7FD37D844CC6CBD09BD")
         public long write(ByteBuffer[] buffers) throws IOException {
             addTaint(buffers[0].getTaint());
@@ -254,7 +242,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.919 -0400", hash_original_method = "99500A3AB82F453FF24AFFE3A364E51F", hash_generated_method = "32B5A3DF747689AE8B5CD3AE4CECA8EF")
         public long write(ByteBuffer[] buffers, int offset, int length) throws IOException {
             addTaint(length);
@@ -268,7 +255,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.920 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "442F8A5F1A33A9FFCB3194F446222B4E")
         public FileDescriptor getFD() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1665417238 =             fd;

@@ -93,7 +93,6 @@ class ExpatParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.937 -0400", hash_original_method = "650F081790BC185B19FA56BA8A79A45A", hash_generated_method = "9CE0A0CCED5D97504D911EB3DABE69D7")
     private int initialize(String encoding, boolean namespacesEnabled) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_413621417 = getTaintInt();
@@ -513,7 +512,6 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.947 -0400", hash_original_method = "9EF978047B32CC4B7F73DD218F12B5B2", hash_generated_method = "0CB3CD0452C02B8947B440EA2E3A4CB7")
     private void appendString(int pointer, String xml, boolean isFinal) throws SAXException, ExpatException {
     }
@@ -543,7 +541,6 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.948 -0400", hash_original_method = "49A4641A93DAB70A1876B4EB02B18B5D", hash_generated_method = "B6F7ED5CE0B1C737647F06F2C3F6738B")
     private void appendChars(int pointer, char[] xml, int offset,
             int length) throws SAXException, ExpatException {
@@ -583,7 +580,6 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.948 -0400", hash_original_method = "F0951DAA750D508CD972B921A6749C41", hash_generated_method = "5BC4C72BC665C8EA47A950E46B17C0AF")
     private void appendBytes(int pointer, byte[] xml, int offset,
             int length) throws SAXException, ExpatException {
@@ -767,7 +763,6 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.950 -0400", hash_original_method = "B8FAFDCBEF6ED1DBF49858CA951E344D", hash_generated_method = "FD20D872DD983AFC02175B6A41CA789F")
     private void release(int pointer) {
     }
@@ -891,7 +886,6 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "81345E38E6C55A28DE606E0BCA6E5F93", hash_generated_method = "EC8D7AF00F2E5FF0026A8A010704B5F4")
         @Override
         public int getParserPointer() {
@@ -903,7 +897,6 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "8BF0A90E7356097362ADB7AB9898D2BC", hash_generated_method = "9CAB4A1BCB3438414EC6957E0DB0F5E2")
         @Override
         public int getPointer() {
@@ -915,7 +908,6 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "3A3B4CF36FFB9288A1F75BD1422E8C42")
         @Override
         public int getLength() {
@@ -1178,7 +1170,6 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.954 -0400", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "A2D881C6AFC253ADFFDC806313520307")
         @Override
         @SuppressWarnings("FinalizeDoesntCallSuperFinalize")

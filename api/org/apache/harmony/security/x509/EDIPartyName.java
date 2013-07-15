@@ -33,7 +33,6 @@ public final class EDIPartyName {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.864 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "6F65B1A7357E50DD58D05122B460E2FF")
     public byte[] getEncoded() {
     if(encoding == null)        

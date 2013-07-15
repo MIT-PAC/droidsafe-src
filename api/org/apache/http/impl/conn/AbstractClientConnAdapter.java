@@ -60,7 +60,6 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.702 -0400", hash_original_method = "5CCC2D76AB339C78C9BD8A2A561C74E1", hash_generated_method = "C05FA2E5875C4FAD66CDB84286BB9B34")
     protected void detach() {
         wrappedConnection = null;
@@ -73,7 +72,6 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.703 -0400", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "2FD9B2D0BF06975373AEE74C561BA9DC")
     protected OperatedClientConnection getWrappedConnection() {
 OperatedClientConnection var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894 =         wrappedConnection;
@@ -84,7 +82,6 @@ OperatedClientConnection var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894 =        
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.703 -0400", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "BE8B08BF6F012565B9D3D94BAF11112F")
     protected ClientConnectionManager getManager() {
 ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =         connManager;
@@ -419,7 +416,6 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.711 -0400", hash_original_method = "839709285FE118C452FA26DE879FFB1D", hash_generated_method = "7BE665094380AED20128BA3103013769")
     public void markReusable() {
         markedReusable = true;
@@ -428,7 +424,6 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.712 -0400", hash_original_method = "7923E01503297FB76AA22E34EEF6FDF5", hash_generated_method = "F127E589DEE28AC35FB277B0F37C1F36")
     public void unmarkReusable() {
         markedReusable = false;
@@ -437,7 +432,6 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.712 -0400", hash_original_method = "2387742F6BF9638BB6ECF14FF1FDB0EE", hash_generated_method = "DDA269BF6DFDC5344333820FE3FBB008")
     public boolean isMarkedReusable() {
         boolean var77035017D39C20BF71D208F4896BC5CA_1855628578 = (markedReusable);

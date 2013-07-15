@@ -302,8 +302,7 @@ String var5C06B59BC1D23B5BBA16F9412A6A7844_1588339791 =         style.toString(t
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static X500NameStyle getDefaultStyle() {
+        public static X500NameStyle getDefaultStyle() {
         return defaultStyle;
     }
 

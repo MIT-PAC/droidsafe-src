@@ -26,7 +26,6 @@ public class FromParser extends AddressParametersParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.511 -0400", hash_original_method = "090BCBCCA2A0D46A805C56D0690187FF", hash_generated_method = "63692B7CFEFFF2645F37C539CD0DADBB")
     public SIPHeader parse() throws ParseException {
         From from = new From();

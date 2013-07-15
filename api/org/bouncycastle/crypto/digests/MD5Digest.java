@@ -52,7 +52,6 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "D54FFA3F0B368E98533F0D87F68E98DA", hash_generated_method = "67211388691239B2683620F8FD66EBFE")
     public String getAlgorithmName() {
 String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
@@ -63,7 +62,6 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "C2A8D8D6403E5CBA81A6153D9F642DD2")
     public int getDigestSize() {
         int var4582481E693E9037762BFFA6D99AC172_639903042 = (DIGEST_LENGTH);
@@ -113,7 +111,6 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.093 -0400", hash_original_method = "C095FEC528E22D3933584D069B5AEBEC", hash_generated_method = "32D201254469F34E37C8CDB6F6210FF9")
     private void unpackWord(
         int     word,
@@ -186,7 +183,6 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "A078642CC72A2F738FA96A2966371333", hash_generated_method = "625D7D1C5A0D5BC4E3E76C55D66E3923")
     private int rotateLeft(
         int x,
@@ -201,7 +197,6 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "38D2A24ABE645695148EECE5A1633407", hash_generated_method = "DC29E61ACD8CAAA15150634E9D100E13")
     private int F(
         int u,
@@ -218,7 +213,6 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "F823417414ECF2428B5CBDD347B9FAAC", hash_generated_method = "2955155B583D6377D428D1F666501B16")
     private int G(
         int u,
@@ -235,7 +229,6 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "83C9F03736BB5BDF54EC87B24EC05890", hash_generated_method = "55989375281E432204AA7E8BEB6EB7B7")
     private int H(
         int u,
@@ -252,7 +245,6 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.095 -0400", hash_original_method = "23BAA908E549D3D7165335B8EBDAA412", hash_generated_method = "6BEB23B5DDCC5E182ACE9E82CA319556")
     private int K(
         int u,

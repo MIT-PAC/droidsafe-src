@@ -144,7 +144,6 @@ E var9A906597833C8E11199C8E4BAC361563_1667460449 =             (E) mValues[i];
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.003 -0400", hash_original_method = "A9D8FA819E144A31281F443F869190B4", hash_generated_method = "8C06E3E29373946E775F8591664FBD65")
     private void gc() {
         int n = mSize;
@@ -345,7 +344,6 @@ for(int i = 0;i < mSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.008 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "61ED33368900ED20EB0D15BBCF4A009A")
     public void clear() {
         int n = mSize;
@@ -416,8 +414,7 @@ for(int i = 0;i < n;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int binarySearch(long[] a, int start, int len, long key) {
+        private static int binarySearch(long[] a, int start, int len, long key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
             guess = (high + low) / 2;

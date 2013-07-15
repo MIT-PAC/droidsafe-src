@@ -24,14 +24,12 @@ final class CertTool {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static String[] getKeyStrengthList() {
+        static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static String getSignedPublicKey(Context context, int index, String challenge) {
+        static String getSignedPublicKey(Context context, int index, String challenge) {
         try {
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
             generator.initialize((index == 0) ? 2048 : 1024);
@@ -49,14 +47,12 @@ final class CertTool {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void addCertificate(Context context, String type, byte[] value) {
+        static void addCertificate(Context context, String type, byte[] value) {
         Credentials.getInstance().install(context, type, value);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static String getCertType(String mimeType) {
+        static String getCertType(String mimeType) {
         return sCertificateTypeMap.get(mimeType);
     }
 

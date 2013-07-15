@@ -94,13 +94,11 @@ public class HttpsConnection extends Connection {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private synchronized static SSLSocketFactory getSocketFactory() {
+        private synchronized static SSLSocketFactory getSocketFactory() {
         return mSslSocketFactory;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.261 -0400", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "4B8075248C213E7C49A5EEBA2B95A200")
      void setCertificate(SslCertificate certificate) {
         addTaint(certificate.getTaint());
@@ -110,7 +108,6 @@ public class HttpsConnection extends Connection {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.265 -0400", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "FBA11D9F252EC054A17632AB0ADFE027")
     @Override
      AndroidHttpClientConnection openConnection(Request req) throws IOException {
@@ -397,7 +394,6 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772 =    
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.268 -0400", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "B7E9C3346E3CAE55436A0927AEAF4490")
     @Override
      String getScheme() {

@@ -62,8 +62,7 @@ public class SslError {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static SslError SslErrorFromChromiumErrorCode(
+        public static SslError SslErrorFromChromiumErrorCode(
             int error, SslCertificate cert, String url) {
         assert (error >= -299 && error <= -200);
         if (error == -200)
@@ -76,7 +75,6 @@ public class SslError {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.811 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "031F5FC7C19644C0D7A4C9AEDDDCCCE0")
     public SslCertificate getCertificate() {
 SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_2139500250 =         mCertificate;
@@ -87,7 +85,6 @@ SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_2139500250 =         mCertifi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.811 -0400", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "4F73251B30B9870152CE36B7A22B5FFA")
     public String getUrl() {
 String varF1E91891753CD7C4305CCDECB60B9DDF_281831255 =         mUrl;
@@ -98,7 +95,6 @@ String varF1E91891753CD7C4305CCDECB60B9DDF_281831255 =         mUrl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.812 -0400", hash_original_method = "AE664F52BD7226DBAA3D1D1034C9653E", hash_generated_method = "B3E2D1F822ACD4D469F7A5F1254517F8")
     public boolean addError(int error) {
         boolean rval = (0 <= error && error < SslError.SSL_MAX_ERROR);
@@ -118,7 +114,6 @@ String varF1E91891753CD7C4305CCDECB60B9DDF_281831255 =         mUrl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.812 -0400", hash_original_method = "B3A224AA064D57107491E8991A407E79", hash_generated_method = "131BC50BB901EDA1A725DD6ED624F22F")
     public boolean hasError(int error) {
         addTaint(error);

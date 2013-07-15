@@ -24,7 +24,6 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.287 -0400", hash_original_method = "4F4EC815E74FCC73E9106D709A5A342D", hash_generated_method = "5290EB12694B37C81820ECE933174E40")
     public int getSpanTypeId() {
         int var25086A53E0202AD1490D4409D58EA8CF_1226872977 = (TextUtils.STRIKETHROUGH_SPAN);
@@ -35,7 +34,6 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.288 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9490A3B3091C3B7B8A105325243A0CA9")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_129530312 = (0);
@@ -46,7 +44,6 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.288 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "D6F5FAEE7A649F263C37D62D8A41EDFC")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -55,7 +52,6 @@ public class StrikethroughSpan extends CharacterStyle implements UpdateAppearanc
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.288 -0400", hash_original_method = "405DAF545E7B8CA376105971B6D6FF49", hash_generated_method = "89A7F8E9C41ADDAF22957A85A1E63438")
     @Override
     public void updateDrawState(TextPaint ds) {

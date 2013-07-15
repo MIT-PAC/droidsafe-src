@@ -63,7 +63,6 @@ public abstract class URLConnection {
     public abstract void connect() throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.775 -0400", hash_original_method = "C67DC5C525139049127B216E3212E5BD", hash_generated_method = "B2CD2EF30AC39A0944C8F2526B9F1293")
     public boolean getAllowUserInteraction() {
         boolean var165E1313420F8FCA27A780CD6890FD9D_1608810252 = (allowUserInteraction);
@@ -271,20 +270,17 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_172921205 =         getHeaderField("C
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean getDefaultAllowUserInteraction() {
+        public static boolean getDefaultAllowUserInteraction() {
         return defaultAllowUserInteraction;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static String getDefaultRequestProperty(String field) {
         return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.781 -0400", hash_original_method = "08FC81CB612F586F4ABF44BAE872E3A8", hash_generated_method = "1D66F509B5B9867F4F0468C4C9BEEC9B")
     public boolean getDefaultUseCaches() {
         boolean varE5044AEA2CD45AB11C684629D133B064_1711630928 = (defaultUseCaches);
@@ -295,7 +291,6 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_172921205 =         getHeaderField("C
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.781 -0400", hash_original_method = "CCCD690FEDEDD1DE3F70C92A661DD993", hash_generated_method = "72B3AEB19661A864AE15F43731DF5A5C")
     public boolean getDoInput() {
         boolean var4471923C0500D7406947716E8AF1DB0C_902551781 = (doInput);
@@ -306,7 +301,6 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_172921205 =         getHeaderField("C
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.782 -0400", hash_original_method = "15D6FCAAE0989BD58186FF458E57106D", hash_generated_method = "2E40CD8CB8C9A4786506893FDE8CD6E5")
     public boolean getDoOutput() {
         boolean var0E81D488D2F909D6A2A616B72D4618C2_1076543901 = (doOutput);
@@ -337,7 +331,6 @@ String var0EAB4E793F4B3855B9901F8B99D4EE3C_172921205 =         getHeaderField("C
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.783 -0400", hash_original_method = "4AACA905FA1278AAB35ED38439896081", hash_generated_method = "47C1993D82D3200A3596ABAB2DE38470")
     public String getHeaderField(int pos) {
         addTaint(pos);
@@ -405,7 +398,6 @@ Map<String, List<String>> varA32ED10B45EA6ACB8D1ECFEFE1C18540_1700839873 =      
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.785 -0400", hash_original_method = "565CBD8C4BDCB5C201FDE1F2CB76B55D", hash_generated_method = "115E2CD3FAA309224873730A56BC47FE")
     public String getHeaderField(String key) {
         addTaint(key.getTaint());
@@ -479,7 +471,6 @@ String var540C13E9E156B687226421B24F2DF178_2050153086 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.786 -0400", hash_original_method = "2E9FACF1BA93288E38DBB8CED1C2CF00", hash_generated_method = "AD96414435EE04DB599CC57B8DE3CBA8")
     public String getHeaderFieldKey(int posn) {
         addTaint(posn);
@@ -491,7 +482,6 @@ String var540C13E9E156B687226421B24F2DF178_1985163768 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.787 -0400", hash_original_method = "3D630E318477F0341CC679CD7D029C3F", hash_generated_method = "876FD548228968F2FBE53C666CC57025")
     public long getIfModifiedSince() {
         long var61C0F054FFE1E91934EAEB56EE7AF160_1348181274 = (ifModifiedSince);
@@ -564,7 +554,6 @@ String var540C13E9E156B687226421B24F2DF178_1668407663 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.789 -0400", hash_original_method = "2F8DA67F8DE7FED0345BBAE8C82F68E5", hash_generated_method = "81129F759FF9F99E25094FE561EA627D")
     public URL getURL() {
 URL var4F9C62D322C7F68D5668056D4B193F9B_1250407080 =         url;
@@ -575,7 +564,6 @@ URL var4F9C62D322C7F68D5668056D4B193F9B_1250407080 =         url;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.790 -0400", hash_original_method = "2F69889B76EEFF99FBB9977BF19C64FC", hash_generated_method = "AB386732DF1C4FB0DCBF94911908037C")
     public boolean getUseCaches() {
         boolean var691C57F8E736BC3B73874BB05455D1C7_2140125094 = (useCaches);
@@ -706,19 +694,16 @@ String varE65B3A02759122992CB82C0E651AD408_1635712945 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setDefaultAllowUserInteraction(boolean allows) {
+        public static void setDefaultAllowUserInteraction(boolean allows) {
         defaultAllowUserInteraction = allows;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void setDefaultRequestProperty(String field, String value) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.793 -0400", hash_original_method = "850171EE0F333E1246D13E7B06ED7B4A", hash_generated_method = "436C41CBA1FB80C3D7958C86AC6952C6")
     public void setDefaultUseCaches(boolean newValue) {
         addTaint(newValue);
@@ -748,8 +733,7 @@ String varE65B3A02759122992CB82C0E651AD408_1635712945 =         result.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setFileNameMap(FileNameMap map) {
+        public static void setFileNameMap(FileNameMap map) {
         synchronized (URLConnection.class) {
             fileNameMap = map;
         }
@@ -812,7 +796,6 @@ String varE65B3A02759122992CB82C0E651AD408_1635712945 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.797 -0400", hash_original_method = "70B18BFD6BA7B76980125453BE48C7D1", hash_generated_method = "B2BD91F311DAC7F21565B23AED6DBFAB")
     public int getConnectTimeout() {
         int var23877A0B37BD98D5993CA98BD9204BD5_1877037726 = (connectTimeout);
@@ -840,7 +823,6 @@ String varE65B3A02759122992CB82C0E651AD408_1635712945 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.798 -0400", hash_original_method = "D3F0467D6BAB1E0CB8F37756E837EDFD", hash_generated_method = "823412B54EEDC6E8BE1DEB56E6EFD263")
     public int getReadTimeout() {
         int var8FC05721DCBB3B49F66A6D283A300B5B_1589096480 = (readTimeout);

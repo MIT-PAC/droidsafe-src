@@ -99,7 +99,6 @@ String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1156446204 =         CipherSuite.ge
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.326 -0400", hash_original_method = "770FADDB251D7948083EF0D02F3938EE", hash_generated_method = "DF563A4AED76E78CD4165C2FB7C375B4")
     @Override
     public Socket createSocket(Socket s, String host, int port,
@@ -126,7 +125,6 @@ Socket varB60F6C18128D67E2AF7DE4C05556D019_1592116102 =         new SSLSocketWra
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.327 -0400", hash_original_method = "0CDA18BD18854D909AC84115F509C8F0", hash_generated_method = "AF3C7A512DCE4DC2A667818FA1C0CE96")
     @Override
     public Socket createSocket() throws IOException {
@@ -146,7 +144,6 @@ Socket varF585F5C913EA0A8BB66CFC025ED67026_1795044047 =         new SSLSocketImp
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.327 -0400", hash_original_method = "F68AAAAA9B8D61B174802E7029AF7953", hash_generated_method = "3FB2689D42ECFDD9559C469A5AEE0950")
     @Override
     public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
@@ -170,7 +167,6 @@ Socket varF099F73103E10DCDA254E6178668F26C_74346862 =         new SSLSocketImpl(
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.328 -0400", hash_original_method = "53A1989EA3FBEE45809A2C11EADE957A", hash_generated_method = "C38D2CCE35F3CED70E94800B3BF86B7A")
     @Override
     public Socket createSocket(String host, int port,
@@ -198,7 +194,6 @@ Socket var8B2D508D0A0F4CCB24C221E5F50135E3_839209242 =         new SSLSocketImpl
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.329 -0400", hash_original_method = "FD8C4D4ADA3C87BB97218603199064D4", hash_generated_method = "851A1900725C02B57FF1C04F50F9CCEF")
     @Override
     public Socket createSocket(InetAddress host, int port) throws IOException {
@@ -222,7 +217,6 @@ Socket varF099F73103E10DCDA254E6178668F26C_1736983658 =         new SSLSocketImp
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.330 -0400", hash_original_method = "3B16D41EDAC8F54354185F57BF630F58", hash_generated_method = "5231ABB94FA1FE57F0E12059B7AF12FE")
     @Override
     public Socket createSocket(InetAddress address, int port,

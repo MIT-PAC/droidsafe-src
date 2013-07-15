@@ -98,7 +98,6 @@ Certificate[] var20D23548D5B29B039534CE2DC596F6FF_1816746442 =         jEntry.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.844 -0400", hash_original_method = "DAD1125851C16B3E7BCEFC2CE4B21F94", hash_generated_method = "1299D2C6E4503E7C7D01A90BC0FA9100")
     public String getEntryName() {
 String varF3E8D7D8476436F75D1BE6BA494262B0_301287445 =         entryName;
@@ -148,7 +147,6 @@ Manifest varD6A473F34A9B589697EE5BB39DA55A84_1762091243 =         (Manifest)getJ
     public abstract JarFile getJarFile() throws java.io.IOException;
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.846 -0400", hash_original_method = "35923E0EC1A4B6746505AC2CF9BCB1E8", hash_generated_method = "A4CB7DF055302870C91AE6CC1ED9826C")
     public URL getJarFileURL() {
 URL var8B7F9BD78C6186977C46D48EA3629742_1102297032 =         fileURL;

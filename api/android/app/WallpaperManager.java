@@ -489,7 +489,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.322 -0400", hash_original_method = "D2E7CBA6FEE1F1016E75D81DE5B86ECC", hash_generated_method = "EADA38664BEC7414A75FE025CEA53E62")
     public void setWallpaperOffsetSteps(float xStep, float yStep) {
         mWallpaperXStep = xStep;
@@ -647,7 +646,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.348 -0400", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "4F8B14AE94C3B06D810568C3EBF00CBB")
         @Override
         public int getOpacity() {
@@ -659,7 +657,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.349 -0400", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "DD8AC77956034A39F37DA405A27E901A")
         @Override
         public void setBounds(int left, int top, int right, int bottom) {
@@ -719,7 +716,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.355 -0400", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "859BD912F069127B4386A6F414559BFA")
         @Override
         public int getIntrinsicWidth() {
@@ -731,7 +727,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.356 -0400", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "F0C3254A881E1DD5DDA26B10399B69C7")
         @Override
         public int getIntrinsicHeight() {
@@ -743,7 +738,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.356 -0400", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "B9FDC2303677DFE6FF9E52B39C33E744")
         @Override
         public int getMinimumWidth() {
@@ -755,7 +749,6 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.357 -0400", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "03029CFC55C8775BC4F3C810069E84A6")
         @Override
         public int getMinimumHeight() {
@@ -842,7 +835,6 @@ switch(msg.what){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.361 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "2888D0CDB055AB93CC886D9545029A22")
         public Handler getHandler() {
 Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1647084 =             mHandler;
@@ -901,7 +893,6 @@ Bitmap varC038012FF42C722A2F248588A92BE2E9_2075052419 =                 mWallpap
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.364 -0400", hash_original_method = "0171ADD4BBF298493CC8451FAA0D3640", hash_generated_method = "D9BB3FC4AB08399BDA57536FEC203D0F")
         public void forgetLoadedWallpaper() {
             synchronized

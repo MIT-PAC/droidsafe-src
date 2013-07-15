@@ -288,7 +288,6 @@ for(int i = start;i < end;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.270 -0400", hash_original_method = "4EDD82B1AA77527A58B2DDD935211532", hash_generated_method = "03586E4A628021B462143CCB0718E227")
     public int capacity() {
         int var014C1DEA33AEAA22508575E6FA159FEE_1048915659 = (value.length);
@@ -624,7 +623,6 @@ for(int i = start;i < end;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.341 -0400", hash_original_method = "A4F75F4D0C7ABF3196500E489B73A8D4", hash_generated_method = "2AA488740D36070C1ACA0BB150D8EE78")
     public int length() {
         int varE2942A04780E223B215EB8B663CF5353_1990755844 = (count);

@@ -38,7 +38,6 @@ public abstract class Authenticator {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.453 -0400", hash_original_method = "3093C4DCBD758CB1DB7C3B81720996CD", hash_generated_method = "F6CA281235FB7C37D7B259C63325055A")
     protected PasswordAuthentication getPasswordAuthentication() {
 PasswordAuthentication var540C13E9E156B687226421B24F2DF178_142959595 =         null;
@@ -115,8 +114,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1392710308 =         this.scheme;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setDefault(Authenticator a) {
+        public static void setDefault(Authenticator a) {
         thisAuthenticator = a;
     }
 
@@ -148,8 +146,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_440683512 =         host;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static PasswordAuthentication requestPasswordAuthentication(
+        public static PasswordAuthentication requestPasswordAuthentication(
             String rHost, InetAddress rAddr, int rPort, String rProtocol,
             String rPrompt, String rScheme, URL rURL,
             Authenticator.RequestorType reqType) {
@@ -168,7 +165,6 @@ String var872E07117C05F1A34EC24B57B694B8E3_440683512 =         host;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.457 -0400", hash_original_method = "3D575AEF6CE8C91A17FF3C39D0168781", hash_generated_method = "9A094540E4B4F74545FF96FAB2ADA8EA")
     protected URL getRequestingURL() {
 URL var4F9C62D322C7F68D5668056D4B193F9B_2011726904 =         url;
@@ -179,7 +175,6 @@ URL var4F9C62D322C7F68D5668056D4B193F9B_2011726904 =         url;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.458 -0400", hash_original_method = "55F670A5333D0DDAF23FC0CC5542C3C2", hash_generated_method = "9F94A3AE610B35D5E4C380D115BDEA71")
     protected Authenticator.RequestorType getRequestorType() {
 Authenticator.RequestorType var6495F2B70B76ACA4ECED69A6FD453ED2_634521695 =         rt;

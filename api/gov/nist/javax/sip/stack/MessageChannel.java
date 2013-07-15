@@ -45,7 +45,6 @@ public abstract class MessageChannel {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.631 -0400", hash_original_method = "B5543AC884E160C74E00608F95C390A3", hash_generated_method = "547268D6CF76DECC0066A4DC26EFC855")
     protected void uncache() {
         // ---------- Original Method ----------
@@ -101,7 +100,6 @@ public abstract class MessageChannel {
             int receiverPort, boolean reconnectFlag) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.634 -0400", hash_original_method = "CA1BACEAFC0549F0AA4E82303BA5F480", hash_generated_method = "66D9E1607D47C0C321AA11CA87B01C74")
     public String getHost() {
 String var65F2C600F64239A3B364AF9F620B295F_1871729290 =         this.getMessageProcessor().getIpAddress().getHostAddress();
@@ -112,7 +110,6 @@ String var65F2C600F64239A3B364AF9F620B295F_1871729290 =         this.getMessageP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.635 -0400", hash_original_method = "D12E0B39D0A0A3DBD8096F94437302A2", hash_generated_method = "8060648C455FBD2640ADB759C671475B")
     public int getPort() {
     if(this.messageProcessor != null)        
@@ -188,7 +185,6 @@ for(MessageProcessor messageProcessor : getSIPStack().getMessageProcessors())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.636 -0400", hash_original_method = "4AF33D1C82235ED60B6E3DD0D1967C25", hash_generated_method = "C0824AFD3A472BAA5363FBD849866945")
     public void sendMessage(SIPMessage sipMessage, InetAddress receiverAddress, int receiverPort) throws IOException {
         addTaint(receiverPort);
@@ -206,7 +202,6 @@ for(MessageProcessor messageProcessor : getSIPStack().getMessageProcessors())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.637 -0400", hash_original_method = "BC100C85F7EEF6C9116B6E540185BCE8", hash_generated_method = "41691E43879F0B20B433872733E25531")
     public String getRawIpSourceAddress() {
         String sourceAddress = getPeerAddress();
@@ -236,20 +231,17 @@ String var0C55497D4040E5B7A276211312B99E60_1686432340 =         rawIpSourceAddre
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getKey(InetAddress inetAddr, int port, String transport) {
+        public static String getKey(InetAddress inetAddr, int port, String transport) {
         return (transport + ":" + inetAddr.getHostAddress() + ":" + port).toLowerCase();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getKey(HostPort hostPort, String transport) {
+        public static String getKey(HostPort hostPort, String transport) {
         return (transport + ":" + hostPort.getHost().getHostname() + ":" + hostPort.getPort())
                 .toLowerCase();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.638 -0400", hash_original_method = "A44FE176AC0185A0737BBEE3031992DB", hash_generated_method = "78AF5536D76989A2E56F1082588D7C8E")
     public HostPort getHostPort() {
         HostPort retval = new HostPort();
@@ -266,7 +258,6 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_319477055 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.639 -0400", hash_original_method = "B86C07836DB50334479A6BD4BF7381CC", hash_generated_method = "682E641BEA3FBB7893B83DD2576BC333")
     public HostPort getPeerHostPort() {
         HostPort retval = new HostPort();
@@ -283,7 +274,6 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_1231214454 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.640 -0400", hash_original_method = "31F63348466D8C31B05195508CA771AE", hash_generated_method = "5D77069C168102BE1868B7AF39A538C3")
     public Via getViaHeader() {
         Via channelViaHeader;
@@ -311,7 +301,6 @@ Via var35DB1238D58BA2159EC3B88E973131F6_1126258903 =         channelViaHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.641 -0400", hash_original_method = "8AF1560686CCA72CFE111D9FA9C1ECDE", hash_generated_method = "2A7AA626054F690B744221AED5567E81")
     public HostPort getViaHostPort() {
         HostPort retval = new HostPort();
@@ -328,7 +317,6 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_451746499 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.641 -0400", hash_original_method = "C068429579A247F633492130419A4C88", hash_generated_method = "E20D0A2C899AA742E27CCDE796D8C69F")
     protected void logMessage(SIPMessage sipMessage, InetAddress address, int port, long time) {
         addTaint(time);
@@ -351,7 +339,6 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_451746499 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.643 -0400", hash_original_method = "F3D4D9112F2E8581D299D1D033206DF5", hash_generated_method = "3BEECD77B61B4D9035D31F7704FA52B0")
     public void logResponse(SIPResponse sipResponse, long receptionTime, String status) {
         addTaint(status.getTaint());
@@ -481,7 +468,6 @@ String var4FC680801218E6372BC708D6FA44AE60_811310195 =         buf.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.647 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "C116D3F5A203C2A91EBEDADCBF7AD84A")
     public MessageProcessor getMessageProcessor() {
 MessageProcessor varEE93DAA9E4FDACE3D0129BF58212AA5C_1007815180 =         this.messageProcessor;

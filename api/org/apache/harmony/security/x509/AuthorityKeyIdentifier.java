@@ -39,15 +39,13 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException {
+        public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException {
         AuthorityKeyIdentifier aki = (AuthorityKeyIdentifier) ASN1.decode(encoding);
         aki.encoding = encoding;
         return aki;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.695 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "403C4003C0C66D7CC58413CA92F04042")
     @Override
     public byte[] getEncoded() {
@@ -66,7 +64,6 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.695 -0400", hash_original_method = "8E2FBEC1389F8AD5C10937DA32053F15", hash_generated_method = "837728F7EE4D5A0D0FCD5C67A7236EC6")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

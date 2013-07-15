@@ -309,7 +309,6 @@ for(int i = 0;i < getChildCount();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.289 -0400", hash_original_method = "F7E052C477B11777DA7EBFEE8452F40F", hash_generated_method = "F0E085C97CA8439D85BCF0B579BD6526")
     public PagerAdapter getAdapter() {
 PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
@@ -320,7 +319,6 @@ PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.290 -0400", hash_original_method = "36FAA41620F55873E46894195D62C0FE", hash_generated_method = "64B5029EE6627AF5DA8D33AFBF5EB153")
      void setOnAdapterChangeListener(OnAdapterChangeListener listener) {
         mAdapterChangeListener = listener;
@@ -352,7 +350,6 @@ PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.291 -0400", hash_original_method = "A82ABDE9609B8643904FAA59A05D3729", hash_generated_method = "5DF3FF8B55023763334418D944EAF5D6")
     public int getCurrentItem() {
         int var1B622A649B9CF8B641EACDE420DF730F_1008128766 = (mCurItem);
@@ -440,7 +437,6 @@ for(int i=0;i<mItems.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.293 -0400", hash_original_method = "FA06973225A603572F4FD6150255295F", hash_generated_method = "8762A57EBF81138B887037B32512FF60")
     public void setOnPageChangeListener(OnPageChangeListener listener) {
         mOnPageChangeListener = listener;
@@ -449,7 +445,6 @@ for(int i=0;i<mItems.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.293 -0400", hash_original_method = "BEC1D9D7EF0862149EE21D17618B274F", hash_generated_method = "731783E58441F09450AEBA329AA47B08")
      OnPageChangeListener setInternalPageChangeListener(OnPageChangeListener listener) {
         OnPageChangeListener oldListener = mInternalPageChangeListener;
@@ -464,7 +459,6 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.293 -0400", hash_original_method = "3F35BC951292D9FB1DF42BFA6208CE75", hash_generated_method = "BBC31B5380E496A828A597E08D6A1CDC")
     public int getOffscreenPageLimit() {
         int var0860C10CA075BCA0392AC95179F36503_831539908 = (mOffscreenPageLimit);
@@ -515,7 +509,6 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.295 -0400", hash_original_method = "C374880A4C36BA236EE3B5602129BC09", hash_generated_method = "EB8DD7B97389700C869008686857904B")
     public int getPageMargin() {
         int varDDBEB3CB51E072971AA69C4D4A8D6589_12726390 = (mPageMargin);
@@ -1914,7 +1907,6 @@ switch(action & MotionEventCompat.ACTION_MASK){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.321 -0400", hash_original_method = "A453849F99C417376DDBB8B219E48B12", hash_generated_method = "FCB4475A7F4953B5E3F1DD53409C6C95")
     public boolean isFakeDragging() {
         boolean varA433486E64E1D58A4CCC7C7414F54C8F_1686025922 = (mFakeDragging);
@@ -1972,7 +1964,6 @@ switch(action & MotionEventCompat.ACTION_MASK){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.322 -0400", hash_original_method = "2B073E6A9B3015E7E6D245BDA0374ADD", hash_generated_method = "595C47E523309F0CF1633FFA5A230E6D")
     private void setScrollingCacheEnabled(boolean enabled) {
     if(mScrollingCacheEnabled != enabled)        
@@ -2453,7 +2444,6 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.326 -0400", hash_original_method = "FDA1A61FADE7F0C7FCCDCC2DC76C3CF3", hash_generated_method = "56ED9EE580D60BE05B53133A76E9A070")
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -2465,7 +2455,6 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.327 -0400", hash_original_method = "53640E8AF66EBB8ED10DFFE2A0D2E8B4", hash_generated_method = "E14EBD5798939F6D36F12C55A8B6805A")
         @Override
         public void onPageSelected(int position) {
@@ -2475,7 +2464,6 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.327 -0400", hash_original_method = "257CCDCF3F3C71EC13191438C1C85826", hash_generated_method = "7D1A18F60472A016F9CCDF171AEF93EC")
         @Override
         public void onPageScrollStateChanged(int state) {

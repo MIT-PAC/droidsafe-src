@@ -1010,7 +1010,6 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.726 -0400", hash_original_method = "2D7D8ECE305828F8F9DDACE01A4242C8", hash_generated_method = "E0B3A9851C5CE8512DC9E29CB4D86103")
     public void setOnDrawerOpenListener(OnDrawerOpenListener onDrawerOpenListener) {
         mOnDrawerOpenListener = onDrawerOpenListener;
@@ -1019,7 +1018,6 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.727 -0400", hash_original_method = "C6CA4E8603B3A8F496AF48C05AA699E0", hash_generated_method = "D9344A1513C556879AF916B3DDD50A11")
     public void setOnDrawerCloseListener(OnDrawerCloseListener onDrawerCloseListener) {
         mOnDrawerCloseListener = onDrawerCloseListener;
@@ -1028,7 +1026,6 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.727 -0400", hash_original_method = "F07CA388B1E1CC74CA965772D9BCDE7A", hash_generated_method = "0BFCFBDA38F914A759C4F0D488769B85")
     public void setOnDrawerScrollListener(OnDrawerScrollListener onDrawerScrollListener) {
         mOnDrawerScrollListener = onDrawerScrollListener;
@@ -1037,7 +1034,6 @@ switch(action){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.727 -0400", hash_original_method = "AE3D3479E28037BEE2B8772FADCA394B", hash_generated_method = "94AB984A2429AFC7BDDF36D4FF0F276E")
     public View getHandle() {
 View varD901D87B73FFED5C94BAE428F6AEDBC4_2043823957 =         mHandle;
@@ -1048,7 +1044,6 @@ View varD901D87B73FFED5C94BAE428F6AEDBC4_2043823957 =         mHandle;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "383B97EB3876FB14240EC86DEF6C8427", hash_generated_method = "DD1C0840FF39634C85FCBF1774A491F4")
     public View getContent() {
 View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
@@ -1059,7 +1054,6 @@ View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "2AEB4587AE0C07EB559A85B7E1ABA252", hash_generated_method = "E314C470674ECCC8403E0DBB0C6B63EB")
     public void unlock() {
         mLocked = false;
@@ -1068,7 +1062,6 @@ View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "32E6B7DBEEDBFAF28CCF0157F60F94F0", hash_generated_method = "AEE9AFA1D471F580D02FECAFDC04CE19")
     public void lock() {
         mLocked = true;
@@ -1077,7 +1070,6 @@ View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "A0663ABB788C8A0905C7EF76DE01C422", hash_generated_method = "4036FD1AAC322E0D562D830B86462887")
     public boolean isOpened() {
         boolean varEA52AC187B90D5B6EA1A48C8DE714672_2099520313 = (mExpanded);
@@ -1088,7 +1080,6 @@ View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "E24D6C05B3C8D3641FA197063B5CFCA4", hash_generated_method = "942325D77D986BE8C59ADFDA2F99BF57")
     public boolean isMoving() {
         boolean var060E86913631F7A7ACCFE3F8B176ED56_2036179173 = (mTracking || mAnimating);

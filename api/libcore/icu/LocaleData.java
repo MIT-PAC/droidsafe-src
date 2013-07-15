@@ -216,7 +216,6 @@ String var5A6DE645536F723A5172C7B3F4462C9F_1424969000 =         "LocaleData[" +
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:14.563 -0400", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "661A5D0F5903D7BE6EB7261ACD81ADE1")
     private void overrideWithDataFrom(LocaleData overrides) {
     if(overrides.firstDayOfWeek != null)        

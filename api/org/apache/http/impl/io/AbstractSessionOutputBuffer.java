@@ -270,7 +270,6 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.117 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "B4FF40B19C05D385E8EFE9135C9D4D90")
     public HttpTransportMetrics getMetrics() {
 HttpTransportMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1399378501 =         this.metrics;

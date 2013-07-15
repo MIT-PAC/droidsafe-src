@@ -86,7 +86,6 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.963 -0400", hash_original_method = "2CC1A1BE49EC62DFF418BB32459396A9", hash_generated_method = "74AE9F16F0DD1BBCC61D5A9BA8889C0C")
     public void setNextPoolable(VelocityTracker element) {
         mNext = element;
@@ -95,7 +94,6 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.963 -0400", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "A09AD0BA965BF064861887CAB82F3194")
     public VelocityTracker getNextPoolable() {
 VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
@@ -106,7 +104,6 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.964 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "77272E194749156C77211BEA59A74CFE")
     public boolean isPooled() {
         boolean var224D05F4261498DA1D9DF38424832532_651633496 = (mIsPooled);
@@ -117,7 +114,6 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.965 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
     public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;
@@ -306,7 +302,6 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.970 -0400", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "A30968E91F5D697DE452CBCDCEAED8BD")
         private float estimate(float time, float[] c) {
             addTaint(c[0]);

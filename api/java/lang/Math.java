@@ -174,8 +174,7 @@ public final class Math {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long max(long l1, long l2) {
+        public static long max(long l1, long l2) {
         return l1 > l2 ? l1 : l2;
     }
 
@@ -220,8 +219,7 @@ public final class Math {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long min(long l1, long l2) {
+        public static long min(long l1, long l2) {
         return l1 < l2 ? l1 : l2;
     }
 
@@ -320,14 +318,12 @@ public final class Math {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static double toRadians(double angdeg) {
+        public static double toRadians(double angdeg) {
         return angdeg / 180d * PI;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static double toDegrees(double angrad) {
+        public static double toDegrees(double angrad) {
         return angrad * 180d / PI;
     }
 

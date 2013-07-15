@@ -70,8 +70,7 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean waitingForDebugger() {
+        public static boolean waitingForDebugger() {
         return mWaiting;
     }
 
@@ -86,8 +85,7 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void changeDebugPort(int port) {
     }
 
@@ -219,29 +217,25 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getGlobalExternalAllocCount() {
         return 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getGlobalExternalAllocSize() {
         return 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getGlobalExternalFreedCount() {
         return 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getGlobalExternalFreedSize() {
         return 0;
     }
@@ -262,15 +256,13 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getThreadExternalAllocCount() {
         return 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getThreadExternalAllocSize() {
         return 0;
     }
@@ -311,26 +303,22 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void resetGlobalExternalAllocCount() {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void resetGlobalExternalAllocSize() {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void resetGlobalExternalFreedCount() {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void resetGlobalExternalFreedSize() {
     }
 
@@ -350,14 +338,12 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void resetThreadExternalAllocCount() {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void resetThreadExternalAllocSize() {
     }
 
@@ -412,15 +398,13 @@ public final class Debug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int setAllocationLimit(int limit) {
         return -1;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
     }
@@ -653,7 +637,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "0F7876D4F39A60F2060DE34A3D4B321B", hash_generated_method = "BEA2754475B839C9B99F345AC7B6D65C")
         public int getTotalPss() {
             int var6A0B9D535EE465ACD427EA3428C5371B_1484162644 = (dalvikPss + nativePss + otherPss);
@@ -664,7 +647,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "5F6AFDC3B733846B095E6E612D37EF25", hash_generated_method = "E0B3100E8307A734806A244308C6B879")
         public int getTotalPrivateDirty() {
             int varD55679A9240E9250ABB4551BE253AB93_1198226460 = (dalvikPrivateDirty + nativePrivateDirty + otherPrivateDirty);
@@ -675,7 +657,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "DD332BDFA0A32D6562D4D066F36B1807", hash_generated_method = "CFA4C5B23385E63E5253620592E2834E")
         public int getTotalSharedDirty() {
             int var0D3ECF4D368075ECCA91E925F3038A81_1996752857 = (dalvikSharedDirty + nativeSharedDirty + otherSharedDirty);
@@ -686,7 +667,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "8C545D479EA5CCAA2D5CE5956250CE73", hash_generated_method = "1985C99709510BE4B4059F61CECFA560")
         public int getOtherPss(int which) {
             addTaint(which);
@@ -698,7 +678,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "45A31C2AA910C3CDA42EF94E68B5E963", hash_generated_method = "6552591E66DB2F96FEDAE91DB55426D0")
         public int getOtherPrivateDirty(int which) {
             addTaint(which);
@@ -710,7 +689,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "1FF35BC5D0D80C168B4EDFE5B23B6F0A", hash_generated_method = "177D2087AF8F252ADC102B13BD9BE635")
         public int getOtherSharedDirty(int which) {
             addTaint(which);
@@ -722,8 +700,7 @@ public final class Debug {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static String getOtherLabel(int which) {
+                public static String getOtherLabel(int which) {
             switch (which) {
                 case 0: return "Cursor";
                 case 1: return "Ashmem";
@@ -739,7 +716,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E1674A3D703C201195E9B6A7E17A1725")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_2028291891 = (0);
@@ -898,7 +874,6 @@ public final class Debug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.140 -0400", hash_original_method = "51D086FA18F9CD076FA7BBB430E7197D", hash_generated_method = "890FD7A040F33A531A23D3465C66D4A5")
         public int globalTotal() {
             int count = 0;

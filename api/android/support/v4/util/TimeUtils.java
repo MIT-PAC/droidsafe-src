@@ -15,8 +15,7 @@ public class TimeUtils {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    static private int accumField(int amt, int suffix, boolean always, int zeropad) {
+        static private int accumField(int amt, int suffix, boolean always, int zeropad) {
         if (amt > 99 || (always && zeropad >= 3)) {
             return 3+suffix;
         }
@@ -30,8 +29,7 @@ public class TimeUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static private int printField(char[] formatStr, int amt, char suffix, int pos,
+        static private int printField(char[] formatStr, int amt, char suffix, int pos,
             boolean always, int zeropad) {
         if (always || amt > 0) {
             final int startPos = pos;

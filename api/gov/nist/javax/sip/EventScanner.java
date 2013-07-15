@@ -46,7 +46,6 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.467 -0400", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "8922132426CA4DFC9E29A3D13CA8BAD1")
     public void incrementRefcount() {
         synchronized

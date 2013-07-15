@@ -24,7 +24,6 @@ public class EntityEnclosingRequestWrapper extends RequestWrapper implements Htt
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.624 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "4E3AF2B394A259A15BE53C0C9400B69E")
     public HttpEntity getEntity() {
 HttpEntity varB0390008473457B24431D383C02B7BE2_2146054574 =         this.entity;

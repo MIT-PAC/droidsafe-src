@@ -23,14 +23,12 @@ public class SipFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static synchronized SipFactory getInstance() {
+        public static synchronized SipFactory getInstance() {
         if (sSipFactory == null) sSipFactory = new SipFactory();
         return sSipFactory;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.284 -0400", hash_original_method = "4674ABC43EF2CEE4F0AE8B5BE63244D8", hash_generated_method = "1563E944C31091A298AF7AA59469E4FE")
     public synchronized void resetFactory() {
         mNameSipStackMap.clear();
@@ -39,7 +37,6 @@ public class SipFactory {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.285 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "371DE14694E31FB9B3B13865AB150E98")
     public synchronized SipStack createSipStack(Properties properties) throws PeerUnavailableException {
         addTaint(properties.getTaint());
@@ -84,7 +81,6 @@ SipStack var0FC1F21ED47F4C0C48881B0DAF112A16_1347803189 =         sipStack;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.285 -0400", hash_original_method = "131499B33C0579C2805DA9334AD4F6E4", hash_generated_method = "4419901CDD4D4EF342C4956D39806321")
     public AddressFactory createAddressFactory() throws PeerUnavailableException {
         try 
@@ -123,7 +119,6 @@ AddressFactory var562E421D95FD4411AB15911AADE81CA6_882091724 =             new g
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.286 -0400", hash_original_method = "0FA4F64CC80ADFAB389758154B5AE216", hash_generated_method = "8F7BED36140E528E31819AF5E9320C33")
     public HeaderFactory createHeaderFactory() throws PeerUnavailableException {
         try 
@@ -162,7 +157,6 @@ HeaderFactory varAC192C4527CC0F586B5A80B1EFE715DE_1506505426 =             new g
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.286 -0400", hash_original_method = "633D2CDB57C82E2B47B87FEFEA967AF9", hash_generated_method = "BB67590955F02D22F1EC0006BF1A3029")
     public MessageFactory createMessageFactory() throws PeerUnavailableException {
         try 

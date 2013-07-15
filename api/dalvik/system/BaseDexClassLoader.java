@@ -54,7 +54,6 @@ Class<?> var3E303968598B6EE307EE3739CE40F332_797299967 =         clazz;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.532 -0400", hash_original_method = "7470A380EF1D93E773CA71CCC45CC5DC", hash_generated_method = "B782A0989B4586EF2CFB94E376F224F4")
     @Override
     protected URL findResource(String name) {
@@ -79,7 +78,6 @@ Enumeration<URL> var76B87079F4B0CF54B0E673ED75A1D0A7_844585636 =         pathLis
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.543 -0400", hash_original_method = "C00307207743233EB6F3CC5C62BA4C3A", hash_generated_method = "F7E1089B127D68E5F0DF797830AC8CEC")
     @Override
     public String findLibrary(String name) {
@@ -92,7 +90,6 @@ String varAE0CECAF56179FF8E923ABAA9062B12E_1500280114 =         pathList.findLib
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.556 -0400", hash_original_method = "CA22ACC2BBED318A2E853CC270258DF9", hash_generated_method = "9B5D3559D2AA2753431394195D79309F")
     @Override
     protected synchronized Package getPackage(String name) {
@@ -125,7 +122,6 @@ Package var540C13E9E156B687226421B24F2DF178_1452339540 =         null;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.560 -0400", hash_original_method = "A4316A3AABC51F9CE057485DF0B501BC", hash_generated_method = "528FDC0CFD61E6E1BBEEA2A28AB8617B")
     @Override
     public String toString() {

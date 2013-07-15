@@ -71,7 +71,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.589 -0400", hash_original_method = "107F25776C4AB2DB96852EDD25D31975", hash_generated_method = "3341481E15AF1BB0FA6281F6EFF0EE0F")
     public int getDisplayId() {
         int varD29BCBAAD55DD1B1C5A0A9EB22E25252_664221787 = (mDisplay);
@@ -98,7 +97,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.592 -0400", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "CCC57910A60FFFE46777166360FEAAD3")
     private void getSizeInternal(Point outSize, boolean doCompat) {
         addTaint(doCompat);
@@ -289,7 +287,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.595 -0400", hash_original_method = "F4A84F8F2FFCAD78922F38438709A2E6", hash_generated_method = "4AB5E769AF3FBF3FD5AA12EE7A9B10CA")
     private int getRawWidthNative() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1638065195 = getTaintInt();
@@ -311,7 +308,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.596 -0400", hash_original_method = "0BBCECD524BDD54CA608342D94B23905", hash_generated_method = "A613FC34477C91C6D0D608DC6E1B8F66")
     private int getRawHeightNative() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1588802331 = getTaintInt();
@@ -329,7 +325,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.596 -0400", hash_original_method = "6E125A4EC20477CEC647612C37C0ECFE", hash_generated_method = "C2FA149E62A794694006C0454514076A")
     @Deprecated
     public int getOrientation() {
@@ -338,7 +333,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.597 -0400", hash_original_method = "441029F9FCB9AB0438A81D4AE48234F0", hash_generated_method = "C6A011DB9413EE78E5FBB61CB0E0A07D")
     public int getPixelFormat() {
         int var29727137934799BC1D0686EA1284D9AC_514552177 = (mPixelFormat);
@@ -349,7 +343,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.597 -0400", hash_original_method = "79009E426290AE6AA1C61D7B07738692", hash_generated_method = "DDE3432FFF64D1109BC7267170490AA5")
     public float getRefreshRate() {
         float var96892C3CA593DB3BD1DCFF4EAD9D60E2_1094961193 = (mRefreshRate);
@@ -405,7 +398,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.598 -0400", hash_original_method = "FDECD188634E4AD18CD2905FF365772D", hash_generated_method = "DCC90D3EC61E60F5FAF2B5D744099843")
     public int getRawExternalWidth() {
         int varDA11E8CD1811ACB79CCF0FD62CD58F86_796864573 = (1280);
@@ -416,7 +408,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.599 -0400", hash_original_method = "376AC17F1270BAB2AB31395345202FD2", hash_generated_method = "64B76A5CD59B982454C2B361EC6F5304")
     public int getRawExternalHeight() {
         int var5F2C22CB4A5380AF7CA75622A6426917_1665705836 = (720);
@@ -427,7 +418,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.601 -0400", hash_original_method = "9D75A337ADB9CB99DE08523595E3FF43", hash_generated_method = "076F3564DD94D07B124591656DC49DE9")
     public void getMetricsWithSize(DisplayMetrics outMetrics,
             int width, int height) {
@@ -468,7 +458,6 @@ public class Display {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.602 -0400", hash_original_method = "CE3A43F20C9E9D8C85E043AD25A6B3E9", hash_generated_method = "86A89056B78EFFB6F1C0AB9CF5755DEE")
     private void init(int display) {
     }

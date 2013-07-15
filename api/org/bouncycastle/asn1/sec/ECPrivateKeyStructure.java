@@ -174,7 +174,6 @@ ASN1Object var540C13E9E156B687226421B24F2DF178_598791465 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.543 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "4CE1F54696B114186B69DB419AB6DAC0")
     public DERObject toASN1Object() {
 DERObject var42A78C062640017A329FA085150BC1B8_1479877918 =         seq;

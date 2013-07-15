@@ -25,7 +25,6 @@ public final class SpannedString extends SpannableStringInternal implements Char
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.743 -0400", hash_original_method = "5C8F718730EE97469BD91F870902B78A", hash_generated_method = "EDEE0729B5FB81C7AF414FF81D2D59EA")
     public CharSequence subSequence(int start, int end) {
         addTaint(end);
@@ -38,8 +37,7 @@ CharSequence var8E256BFE79DDBC5B54C96C6CCB48784A_757912044 =         new Spanned
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static SpannedString valueOf(CharSequence source) {
+        public static SpannedString valueOf(CharSequence source) {
         if (source instanceof SpannedString) {
             return (SpannedString) source;
         } else {

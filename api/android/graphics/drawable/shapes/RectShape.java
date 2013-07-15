@@ -19,7 +19,6 @@ public class RectShape extends Shape {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.873 -0400", hash_original_method = "6BDD25C71E92DEE23AC033397583FF85", hash_generated_method = "F42A2E1D82E1E835634E2FB3B371471C")
     @Override
     public void draw(Canvas canvas, Paint paint) {
@@ -31,7 +30,6 @@ public class RectShape extends Shape {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.873 -0400", hash_original_method = "62B0D2225FCA5D4099BD1D1E514DF479", hash_generated_method = "9CB3A42F067008BE08F833A4D48BAF78")
     @Override
     protected void onResize(float width, float height) {
@@ -54,7 +52,6 @@ RectF var23E085E00370717E44C5AC6A506C1823_530324516 =         mRect;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.875 -0400", hash_original_method = "F35F96D345FDD22204E61750D42DDCE2", hash_generated_method = "CDFD7C1C9F23F896CB8232FA8A1C8C55")
     @Override
     public RectShape clone() throws CloneNotSupportedException {

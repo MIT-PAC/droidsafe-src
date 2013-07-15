@@ -25,7 +25,6 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
     protected abstract char[] getAcceptedChars();
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.726 -0400", hash_original_method = "C0C70824215D530CCBC4D0D762C70EA3", hash_generated_method = "BE33E4C80457D88439024393E62D1860")
     protected int lookup(KeyEvent event, Spannable content) {
         addTaint(content.getTaint());
@@ -38,7 +37,6 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.727 -0400", hash_original_method = "CB7791CDEF3F29FF221CF4242D732189", hash_generated_method = "AC03C1C0213B8CAA7DDA0D7C0CCA8FB6")
     public CharSequence filter(CharSequence source, int start, int end,
                                Spanned dest, int dstart, int dend) {
@@ -113,8 +111,7 @@ CharSequence var59AFDF48DAC2B65C0DC9F976A34BEAF9_704515118 =         filtered;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static boolean ok(char[] accept, char c) {
+        protected static boolean ok(char[] accept, char c) {
         for (int i = accept.length - 1; i >= 0; i--) {
             if (accept[i] == c) {
                 return true;
@@ -124,7 +121,6 @@ CharSequence var59AFDF48DAC2B65C0DC9F976A34BEAF9_704515118 =         filtered;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.729 -0400", hash_original_method = "A33764BD45F2F5F121C837A63F0C5C57", hash_generated_method = "DD942458CFB5E183691850C2784B10A0")
     @Override
     public boolean onKeyDown(View view, Editable content,

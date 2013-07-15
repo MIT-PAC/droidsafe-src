@@ -80,7 +80,6 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_955473407 =         route;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.150 -0400", hash_original_method = "177416E45C86DBFDF7EC5AE9EA15CB02", hash_generated_method = "CCE2EDAD615404468DAD47D799B6F726")
     public int getCapacity() {
         int varF0DF104E5FB14BBB04D0FF91029B1428_1533721888 = (maxEntries - numEntries);

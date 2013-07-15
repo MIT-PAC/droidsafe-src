@@ -27,7 +27,6 @@ public abstract class TestCase extends Assert implements Test {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.215 -0400", hash_original_method = "C380EF026EE3B754782A4E35FA9663AC", hash_generated_method = "33E9875F222F5E950AA44988DF3B1E02")
     public int countTestCases() {
         int varC4CA4238A0B923820DCC509A6F75849B_735064797 = (1);
@@ -151,14 +150,12 @@ TestResult varDC838461EE2FA0CA4C9BBB70A15456B0_5598565 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.230 -0400", hash_original_method = "FFA3FA0A8311363EADFF98B8B84529FB", hash_generated_method = "A81C1C01F5715F5A1A2D88BCAF958BFB")
     protected void setUp() throws Exception {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.231 -0400", hash_original_method = "9DC9991C60DD393D44750907790C62ED", hash_generated_method = "450766BF2369317CA6E6BEF04678E14E")
     protected void tearDown() throws Exception {
         // ---------- Original Method ----------
@@ -175,7 +172,6 @@ String var1BEFBD354E8229C3240D7A7196078FDB_813543179 =         getName() + "(" +
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.232 -0400", hash_original_method = "2EA0F9602490A1D20696A18728516755", hash_generated_method = "5C08ED12BB0D005E78B75071CF4E7CB8")
     public String getName() {
 String var7008830BBF5901458C7F9C81D44DB32A_1215478142 =         fName;
@@ -186,7 +182,6 @@ String var7008830BBF5901458C7F9C81D44DB32A_1215478142 =         fName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.232 -0400", hash_original_method = "6B586B3A073E23F7D2AE9C8A9582E34C", hash_generated_method = "61CBF5B9E74EA314A73D0181F1AF068A")
     public void setName(String name) {
         fName= name;

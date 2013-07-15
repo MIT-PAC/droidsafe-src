@@ -45,7 +45,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.106 -0400", hash_original_method = "8ECE4916687DC9B660DB4531FCB16044", hash_generated_method = "F771A3695D28B56BABF1036DA6229B6D")
     public int getSpanTypeId() {
         int var9068B6C2E687F6C10064A03FAE28FEA4_491209253 = (TextUtils.ABSOLUTE_SIZE_SPAN);
@@ -56,7 +55,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.106 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "69970F3341480C60FAE5E1679E566E99")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1934575857 = (0);
@@ -67,7 +65,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.106 -0400", hash_original_method = "8027C06709F3FF60199965EEE92D48C7", hash_generated_method = "0B3F0AADA2DBF09F9BA1E055B20B8465")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -80,7 +77,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.107 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "A765D0A5D5E45828E31F1BA1A1EBA164")
     public int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_1527047093 = (mSize);
@@ -91,7 +87,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.107 -0400", hash_original_method = "E1A5B960016F06729A9EBA9A98D5F008", hash_generated_method = "88CD2586E8FE8CE36284C006E06F313D")
     public boolean getDip() {
         boolean varC9C3429D544FE62304830077F3FFD086_1900731050 = (mDip);
@@ -102,7 +97,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.107 -0400", hash_original_method = "EA2263AF61F8EA4B1854731646B3D093", hash_generated_method = "74682F8618092BE68EC92A660F6A35E6")
     @Override
     public void updateDrawState(TextPaint ds) {
@@ -124,7 +118,6 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.108 -0400", hash_original_method = "1F6CC548E4C5BF47656F78351153B803", hash_generated_method = "6FE9C85205AE319DE4CC32B815005A21")
     @Override
     public void updateMeasureState(TextPaint ds) {

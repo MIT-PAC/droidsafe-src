@@ -188,7 +188,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.350 -0400", hash_original_method = "0B532C5E5191073233FEF0FB3B24844F", hash_generated_method = "8415894A66DA67731A999B876FF0D865")
     public int passedCount() {
         int varBD3E147FF22ECCD5153F0A5E9B1D2945_1815568913 = (mPassed);
@@ -199,7 +198,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.350 -0400", hash_original_method = "0CCEB79CE1070F202583C9915927C804", hash_generated_method = "781012B23DFD68E1294ACEB4ACF320CA")
     public int failedCount() {
         int var0902E9DB58B13DD3F11BEA37160A278B_1101984377 = (mFailed);
@@ -224,7 +222,6 @@ for(String cl : classes)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.351 -0400", hash_original_method = "53E84480F070131E858702808FE92767", hash_generated_method = "DC4449037DFCBD6DB5FA61FD72D77725")
     public void setInternalIterations(int count) {
         mInternalIterations = count;
@@ -292,7 +289,6 @@ for(String cl : classes)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.353 -0400", hash_original_method = "EC5A911B7459E56F5BCB8B3F76085E8F", hash_generated_method = "ABEA4E480EED3CE327E9D593E33EF0F7")
     public void setPerformanceMode(int mode) {
         mMode = mode;

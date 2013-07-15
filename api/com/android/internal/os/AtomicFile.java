@@ -30,7 +30,6 @@ public class AtomicFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.886 -0400", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "96ED4E1FBCB51B1E78F8ED474CE7869A")
     public File getBaseFile() {
 File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871 =         mBaseName;
@@ -41,7 +40,6 @@ File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871 =         mBaseName;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.887 -0400", hash_original_method = "3A4012A9534B3FE136043C6A101CE434", hash_generated_method = "71486F296209CFE8634803B0AF86746D")
     public FileOutputStream startWrite() throws IOException {
     if(mBaseName.exists())        

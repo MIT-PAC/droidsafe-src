@@ -42,7 +42,6 @@ public final class InputBindResult implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.679 -0400", hash_original_method = "7D3C8FC32444FE9148F633706CA9BDDA", hash_generated_method = "1D60892CC6A47CAF5C02D4606316A23F")
     @Override
     public String toString() {
@@ -56,7 +55,6 @@ String var7FC001ADC5B990238F8DB3504F6EAF2D_396878583 =         "InputBindResult{
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.679 -0400", hash_original_method = "D059CB42BC9C8F046048FBE3BCB19D52", hash_generated_method = "1C24C4C8ED4286407B25B2860CBEC00D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -71,7 +69,6 @@ String var7FC001ADC5B990238F8DB3504F6EAF2D_396878583 =         "InputBindResult{
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.679 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DAD5BE9ED3AAD5F6D193E00331C5E8AA")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1816105931 = (0);

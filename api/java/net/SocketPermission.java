@@ -18,7 +18,6 @@ public final class SocketPermission extends Permission implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.311 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "C79B065A1222F9A3BC2D14D655264364")
     @Override
     public String getActions() {
@@ -30,7 +29,6 @@ String var540C13E9E156B687226421B24F2DF178_1561332639 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.311 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "893410A5FA998F27EBE6C53FE79AE3FA")
     @Override
     public boolean implies(Permission permission) {

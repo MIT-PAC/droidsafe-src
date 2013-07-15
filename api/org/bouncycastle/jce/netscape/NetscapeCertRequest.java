@@ -125,15 +125,13 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static ASN1Sequence getReq(
+        private static ASN1Sequence getReq(
         byte[]  r) throws IOException {
         ASN1InputStream aIn = new ASN1InputStream(new ByteArrayInputStream(r));
         return ASN1Sequence.getInstance(aIn.readObject());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.555 -0400", hash_original_method = "ED4D5D58119D3F853ED82C63E0533A7D", hash_generated_method = "86E11A80FBBE45ED113923F66530C61C")
     public String getChallenge() {
 String var74568D0557DDB639C8E08A8EFDFC6344_1242805762 =         challenge;
@@ -144,7 +142,6 @@ String var74568D0557DDB639C8E08A8EFDFC6344_1242805762 =         challenge;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.555 -0400", hash_original_method = "301D77BA94E757D10A3FA603DC1F3204", hash_generated_method = "ED44293D30BFB95C03F13A1DC78A5455")
     public void setChallenge(String value) {
         challenge = value;
@@ -153,7 +150,6 @@ String var74568D0557DDB639C8E08A8EFDFC6344_1242805762 =         challenge;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.556 -0400", hash_original_method = "DEA71583AADCBA6F6FCA4AF03E02FF7E", hash_generated_method = "5725B8C7736D043099D8550AD0341E59")
     public AlgorithmIdentifier getSigningAlgorithm() {
 AlgorithmIdentifier var022F107D9C043A7C0CB3A1D1ADABDDCF_1073755869 =         sigAlg;
@@ -164,7 +160,6 @@ AlgorithmIdentifier var022F107D9C043A7C0CB3A1D1ADABDDCF_1073755869 =         sig
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.556 -0400", hash_original_method = "8DECC6DE401A18CABE51772A2768CD3E", hash_generated_method = "4234E9F4B9918E8F387A0E2A48DC8A2C")
     public void setSigningAlgorithm(AlgorithmIdentifier value) {
         sigAlg = value;
@@ -173,7 +168,6 @@ AlgorithmIdentifier var022F107D9C043A7C0CB3A1D1ADABDDCF_1073755869 =         sig
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.557 -0400", hash_original_method = "FE7B6AD2AAFCEFF19EF5259C1AEF0E0B", hash_generated_method = "8757205E7AD98CEFFA3E8774DD0FDA07")
     public AlgorithmIdentifier getKeyAlgorithm() {
 AlgorithmIdentifier var42D430F33AA4FB0A37995C8217D3BF09_2088315795 =         keyAlg;
@@ -184,7 +178,6 @@ AlgorithmIdentifier var42D430F33AA4FB0A37995C8217D3BF09_2088315795 =         key
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.557 -0400", hash_original_method = "A707B494F7BE2B273065A846BD08233F", hash_generated_method = "3EAE43A81A989F21379DEDADCC255BDB")
     public void setKeyAlgorithm(AlgorithmIdentifier value) {
         keyAlg = value;
@@ -193,7 +186,6 @@ AlgorithmIdentifier var42D430F33AA4FB0A37995C8217D3BF09_2088315795 =         key
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.558 -0400", hash_original_method = "B14D7737A8CCC155007C211714C134B9", hash_generated_method = "54DDB16A08001BD11865232D6856DAED")
     public PublicKey getPublicKey() {
 PublicKey varF4E785CAC4E37DDA6682AE974579280B_657540199 =         pubkey;
@@ -204,7 +196,6 @@ PublicKey varF4E785CAC4E37DDA6682AE974579280B_657540199 =         pubkey;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.558 -0400", hash_original_method = "524BDADC1CE3625FA3734945CD591C94", hash_generated_method = "2D5D732B22E00431248C23383E075117")
     public void setPublicKey(PublicKey value) {
         pubkey = value;
@@ -243,7 +234,6 @@ PublicKey varF4E785CAC4E37DDA6682AE974579280B_657540199 =         pubkey;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.559 -0400", hash_original_method = "69BFD65CBC2833C297505F1023C7598F", hash_generated_method = "FC089958E771ACE857E0D0436B1B1767")
     public void sign(PrivateKey priv_key) throws NoSuchAlgorithmException,
             InvalidKeyException, SignatureException, NoSuchProviderException,
@@ -311,7 +301,6 @@ PublicKey varF4E785CAC4E37DDA6682AE974579280B_657540199 =         pubkey;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.561 -0400", hash_original_method = "500EEF6D5B4EBED065BB69A7AF04B4E9", hash_generated_method = "44F77F7FD27D277E51729B475CBA788D")
     private DERObject getKeySpec() throws NoSuchAlgorithmException,
             InvalidKeySpecException, NoSuchProviderException {
@@ -353,7 +342,6 @@ DERObject var2FDE1120F80AA4E8798ECDBDB1C0E85C_843920781 =         obj;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.562 -0400", hash_original_method = "B0EE724D7F7552AF427D32E04334786D", hash_generated_method = "D9227A8A08512941FF1FEE5349373508")
     public DERObject toASN1Object() {
         ASN1EncodableVector spkac = new ASN1EncodableVector();

@@ -80,7 +80,6 @@ String var3B1F39D8F465DFD1B0D3818B237F2D32_245111379 =         digest.getAlgorit
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.316 -0400", hash_original_method = "DF57895E7914F211606EA32A352DF2A7", hash_generated_method = "4A2DCA11D2CEF3D570D6C242C5C29737")
     public Digest getUnderlyingDigest() {
 Digest var3198260B9187CD88530E727D50A62D10_1809758900 =         digest;
@@ -130,7 +129,6 @@ for(int i = 0;i < outputPad.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.319 -0400", hash_original_method = "26B5BCE6AD930971148E6F9157D6A115", hash_generated_method = "0B4B9FABC9E06D9375CF3B3567A173CE")
     public int getMacSize() {
         int var9255F8D1984F4EA41BF6AA324C3097B4_688848666 = (digestSize);

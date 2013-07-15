@@ -21,7 +21,6 @@ public class ThreadAuditor {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.798 -0400", hash_original_method = "E626588797C11F0AE30EE2336DDF5DDE", hash_generated_method = "1430901666801E75BBC7719A953460F5")
     public long getPingIntervalInMillisecs() {
         long varCBCED6551849E103E372D83857F211E1_479280851 = (pingIntervalInMillisecs);
@@ -32,7 +31,6 @@ public class ThreadAuditor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.798 -0400", hash_original_method = "7A7DF1118EDC7A81CF310DAEDEA2CA24", hash_generated_method = "4EE6AECCAFAC51D47EC18DF5AFAFA65C")
     public void setPingIntervalInMillisecs(long value) {
         pingIntervalInMillisecs = value;
@@ -41,7 +39,6 @@ public class ThreadAuditor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.798 -0400", hash_original_method = "3383EC0356978E6A8A0873AB5EB0F6B5", hash_generated_method = "BE518DEC7547C69763191097B3CB8240")
     public boolean isEnabled() {
         boolean var9DF94B84EDB5144CC140ACBCC7DF389E_557457304 = ((pingIntervalInMillisecs > 0));
@@ -171,7 +168,6 @@ String varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705 =         toString;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.803 -0400", hash_original_method = "7C169FF6005EF7125A62D6FC1B2750B7", hash_generated_method = "846BF304E42A7582792D8E7C7F906EB3")
         public boolean isThreadActive() {
             boolean varC27D2AE338AEB5D3D641D7F9A5579631_2130226447 = (isThreadActive);
@@ -182,7 +178,6 @@ String varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705 =         toString;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.803 -0400", hash_original_method = "88A3AB81179102C8D04CED6A81B233E5", hash_generated_method = "F939265BD831E182F8951ADA8E09D004")
         protected void setThreadActive(boolean value) {
             isThreadActive = value;
@@ -191,7 +186,6 @@ String varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705 =         toString;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.804 -0400", hash_original_method = "F8B0A54928E7ECAC7F4DBC7FBE8E98A4", hash_generated_method = "7588DA55A7936F641D6A5F3738377E27")
         public Thread getThread() {
 Thread var4E4577EDE13083D3065B1ECBBC20E477_1915925799 =             thread;

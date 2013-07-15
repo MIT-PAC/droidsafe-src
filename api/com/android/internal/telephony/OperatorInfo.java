@@ -53,7 +53,6 @@ public class OperatorInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.990 -0400", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "4DB8E282BA4CB3CEE274257B490601B7")
     public String getOperatorAlphaLong() {
 String var1B7C97A61CBCC0846D213DF60C49D4F5_668724215 =         operatorAlphaLong;
@@ -64,7 +63,6 @@ String var1B7C97A61CBCC0846D213DF60C49D4F5_668724215 =         operatorAlphaLong
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.990 -0400", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "DF24778C77F759A34D508F82759571C5")
     public String getOperatorAlphaShort() {
 String varCD7C131ECB0CB94030B0581F1C3C360A_1826922945 =         operatorAlphaShort;
@@ -75,7 +73,6 @@ String varCD7C131ECB0CB94030B0581F1C3C360A_1826922945 =         operatorAlphaSho
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.990 -0400", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "B9C3FCAFF51EE655BC0E5310785B9497")
     public String getOperatorNumeric() {
 String var2910E34F66A87ACEB979401752EFC981_365238696 =         operatorNumeric;
@@ -86,7 +83,6 @@ String var2910E34F66A87ACEB979401752EFC981_365238696 =         operatorNumeric;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.991 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "A6B34C9A6A008F4848B5B260A50C45F6")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_2130942889 =         state;
@@ -129,7 +125,6 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_84119934 =         "OperatorInfo " + 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.991 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4D8EAEDBE4EE55E65C1A23DDFB972382")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1251292398 = (0);

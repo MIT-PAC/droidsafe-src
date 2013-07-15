@@ -126,7 +126,6 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.258 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "A196844E345185ADD2A42B24D8C435A9")
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
@@ -203,7 +202,6 @@ OnItemLongClickListener var75586EA0D5BA47B01ECAB15621117474_1842369482 =        
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.260 -0400", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "3770EE67FA344D6B0564B2ED3CB34217")
     public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         mOnItemSelectedListener = listener;
@@ -334,7 +332,6 @@ OnItemSelectedListener varBA18540411FAC3CE0DDA59569C04B324_233297817 =         m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.263 -0400", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "AD36FDC2F7DF761E56D906F891A5AF75")
     @ViewDebug.CapturedViewProperty
     public int getSelectedItemPosition() {
@@ -346,7 +343,6 @@ OnItemSelectedListener varBA18540411FAC3CE0DDA59569C04B324_233297817 =         m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.263 -0400", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "893E009FD2E98408D30ADC25D1170ECF")
     @ViewDebug.CapturedViewProperty
     public long getSelectedItemId() {
@@ -388,7 +384,6 @@ Object var540C13E9E156B687226421B24F2DF178_114156516 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.264 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "E0E693373C541E7E9173EC0541365B6C")
     @ViewDebug.CapturedViewProperty
     public int getCount() {
@@ -452,7 +447,6 @@ for(int i = 0;i < childCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.265 -0400", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "C19652C5D923EE165324FB9E1DFFC568")
     public int getFirstVisiblePosition() {
         int varD3995CD54227E7252588C2EFBE75FDC4_1739252461 = (mFirstPosition);
@@ -491,7 +485,6 @@ for(int i = 0;i < childCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.266 -0400", hash_original_method = "1914B98508B1C21B71F42F5D07F0BF47", hash_generated_method = "DDBCCAC251E4D6FE6ED4CA1CD2408B7F")
     public View getEmptyView() {
 View varAE7C11E50171EC79263635AB3464BCAA_209234301 =         mEmptyView;
@@ -502,7 +495,6 @@ View varAE7C11E50171EC79263635AB3464BCAA_209234301 =         mEmptyView;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.266 -0400", hash_original_method = "FD285526E2677013E6DDAFB01C953F85", hash_generated_method = "F4CB8C7835C7DBF611F0CD650F6370EE")
      boolean isInFilterMode() {
         boolean var68934A3E9455FA72420237EB05902327_1889004359 = (false);
@@ -1060,7 +1052,6 @@ Object var17A047747B6E56B7BE9D3B130AAAD3CE_779402286 =         (adapter == null 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.292 -0400", hash_original_method = "63DA3BDCCF3458E05F2C2D5853C22A6D", hash_generated_method = "72253937140CEB957F4EBCF3F13F1622")
      int lookForSelectablePosition(int position, boolean lookDown) {
         addTaint(lookDown);
@@ -1253,7 +1244,6 @@ Object var17A047747B6E56B7BE9D3B130AAAD3CE_779402286 =         (adapter == null 
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.295 -0400", hash_original_method = "FEB1A2B1EE4CD2130FB08EC4E4CC489E", hash_generated_method = "45FAE979B6EF5255E98919F10948FE73")
         public void clearSavedState() {
             mInstanceState = null;

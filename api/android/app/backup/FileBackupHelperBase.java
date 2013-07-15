@@ -31,7 +31,6 @@ class FileBackupHelperBase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.143 -0400", hash_original_method = "E8F55F8C7A408972FDF45764F997EF73", hash_generated_method = "A35D76E8DAA6CE81953BE72EF3031A1E")
     protected void finalize() throws Throwable {
         try 
@@ -77,7 +76,6 @@ class FileBackupHelperBase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.147 -0400", hash_original_method = "A480CB5B709E68610E22FE65F3C016D5", hash_generated_method = "0270C271809268AE5BE00650BF16D52D")
      boolean writeFile(File f, BackupDataInputStream in) {
         addTaint(in.getTaint());
@@ -113,7 +111,6 @@ class FileBackupHelperBase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.148 -0400", hash_original_method = "2A62291A9AE3A671BAC15E3191D32511", hash_generated_method = "1724FA7548594C7A79F88CD13CBDDDD8")
     public void writeNewStateDescription(ParcelFileDescriptor fd) {
         addTaint(fd.getTaint());
@@ -123,7 +120,6 @@ class FileBackupHelperBase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.150 -0400", hash_original_method = "13360827BDB81EDC3014ECA5973B3541", hash_generated_method = "26946BF9FD6E4425A98606405782059C")
      boolean isKeyInList(String key, String[] list) {
         addTaint(list[0].getTaint());

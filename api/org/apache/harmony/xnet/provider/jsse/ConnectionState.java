@@ -68,7 +68,6 @@ public abstract class ConnectionState {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.194 -0400", hash_original_method = "56D34079E1DEB6511460268571012285", hash_generated_method = "4C790A5E7751BD899B614470A41AA14E")
     protected int getPaddingSize(int content_size) {
         addTaint(content_size);
@@ -114,8 +113,7 @@ public abstract class ConnectionState {
         (byte type, byte[] fragment, int offset, int len);
 
     
-        @DSModeled(DSC.SAFE)
-    protected static void incSequenceNumber(byte[] seq_num) {
+        protected static void incSequenceNumber(byte[] seq_num) {
         int octet = 7;
         while (octet >= 0) {
             seq_num[octet] ++;
@@ -128,7 +126,6 @@ public abstract class ConnectionState {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.196 -0400", hash_original_method = "ECD0F58ABB6F3F91F5B43C452FA3783B", hash_generated_method = "11F44FD967A343893B8B094CF1CF1E92")
     protected void shutdown() {
         encCipher = null;

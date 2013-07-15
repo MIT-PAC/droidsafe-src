@@ -116,7 +116,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.323 -0400", hash_original_method = "7E33E8226B73A02621B31754517607B3", hash_generated_method = "8060E3D99F6AF8526FD22575D85726B9")
     public int getLastFailureMesgAsInt(int def) {
         addTaint(def);
@@ -148,7 +147,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.324 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6B998461262691CC69A7214B5F7D1102")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1207204748 = (0);
@@ -196,7 +194,6 @@ for(long periodicSyncTime : periodicSyncTimes)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.326 -0400", hash_original_method = "BB3C22BCE01837AA4BAC40A0B35F8BC2", hash_generated_method = "9155ACA81EB7FC21ED9DB68D6505F41C")
     public void setPeriodicSyncTime(int index, long when) {
         addTaint(when);
@@ -237,7 +234,6 @@ for(int i = periodicSyncTimes.size();i < requiredSize;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.328 -0400", hash_original_method = "E0266DD4F289B692F6E7B79E10E75B20", hash_generated_method = "18FDBD9EC57759C79CC5A8D1A3B93719")
     public long getPeriodicSyncTime(int index) {
         addTaint(index);
@@ -258,7 +254,6 @@ for(int i = periodicSyncTimes.size();i < requiredSize;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.329 -0400", hash_original_method = "5D5F49D9C483CE201F8BB2B6D37F0FB1", hash_generated_method = "2AB20A703E54688395AB54626C12F81F")
     public void removePeriodicSyncTime(int index) {
         addTaint(index);

@@ -75,7 +75,6 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.908 -0400", hash_original_method = "004191AE8609FCF33514DFCEA01A5714", hash_generated_method = "FA183479F88454A28B1DB9FA52CFC5C0")
     @Override
     public SSLSocketFactory engineGetSocketFactory() {
@@ -96,7 +95,6 @@ SSLSocketFactory varD866F76D407F66984611D788DE50D243_1619899393 =         new SS
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.908 -0400", hash_original_method = "65E8F32416A9204F9A4329BBE6993AED", hash_generated_method = "91523BA5145734C4D53A2E2B15EA554C")
     @Override
     public SSLServerSocketFactory engineGetServerSocketFactory() {
@@ -117,7 +115,6 @@ SSLServerSocketFactory varBE5DD6464E3726ADF417C1BBB9EB6CEA_1091615765 =         
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.908 -0400", hash_original_method = "29CE564F844B35192AD02B59CF29ABFD", hash_generated_method = "3CEDF87CBA0A52F825B24A688D477606")
     @Override
     public SSLEngine engineCreateSSLEngine(String host, int port) {
@@ -144,7 +141,6 @@ SSLEngine var6DC08F9D892DA3576FB89C5E98C66023_1316656857 =         new SSLEngine
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.909 -0400", hash_original_method = "1B7221E2350F2BEF0C28DC221F83475D", hash_generated_method = "BF563422137351B9AAE38C653C06A14B")
     @Override
     public SSLEngine engineCreateSSLEngine() {
@@ -169,7 +165,6 @@ SSLEngine var3CF3392FBD56214EF1E101685DBC345A_615804656 =         new SSLEngineI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.909 -0400", hash_original_method = "D250F9B5B60A63355C4DD3366841F3DE", hash_generated_method = "4F7B7F7A075AD849B2BD896419A467AC")
     @Override
     public ServerSessionContext engineGetServerSessionContext() {
@@ -181,7 +176,6 @@ ServerSessionContext var100440D65E59DFFC2F85188BB92C5DF8_220716462 =         ser
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.909 -0400", hash_original_method = "F7A52ACBCF1ABAC2A6697027AD059F72", hash_generated_method = "43B8348033CD2432BD4A879FE234EC0A")
     @Override
     public ClientSessionContext engineGetClientSessionContext() {

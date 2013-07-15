@@ -153,7 +153,6 @@ for(i = 0;i < len;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.059 -0400", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "6DA00AE61863004D9AE46CBFE91C49B2")
     @Override
     public int available() throws IOException {
@@ -185,7 +184,6 @@ for(i = 0;i < len;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.060 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "DBFBB5090A429A3D5EEDC01DA54EC2DC")
     @Override
     public boolean markSupported() {

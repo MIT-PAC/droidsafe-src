@@ -63,7 +63,6 @@ public class TestCaseClassLoader extends ClassLoader {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.438 -0400", hash_original_method = "AD2D4B295C951CB6F23A0FC95F789D06", hash_generated_method = "BA896609B5A600E26BAFCC8FDA6C8D04")
     public URL getResource(String name) {
         addTaint(name.getTaint());

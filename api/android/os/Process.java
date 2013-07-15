@@ -66,8 +66,7 @@ public class Process {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void openZygoteSocketIfNeeded() throws ZygoteStartFailedEx {
+        private static void openZygoteSocketIfNeeded() throws ZygoteStartFailedEx {
         int retryCount;
         if (sPreviousZygoteOpenFailed) {
             retryCount = 0;

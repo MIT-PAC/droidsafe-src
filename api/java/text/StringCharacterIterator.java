@@ -168,7 +168,6 @@ Object var46F3A0D86742C1D6E099C2B166941A33_828448027 =             super.clone()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.933 -0400", hash_original_method = "C91A51EED2BDD0863CA60178FB31B7F7", hash_generated_method = "B72D31F688B64CBAB8FF06C492ED2F2C")
     public int getBeginIndex() {
         int varEA2B2676C28C0DB26D39331A336C6B92_1150967681 = (start);
@@ -179,7 +178,6 @@ Object var46F3A0D86742C1D6E099C2B166941A33_828448027 =             super.clone()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.933 -0400", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "6A2FD653278EF0FE7A62E7FCBD05346D")
     public int getEndIndex() {
         int var7F021A1415B86F2D013B2618FB31AE53_354742691 = (end);
@@ -190,7 +188,6 @@ Object var46F3A0D86742C1D6E099C2B166941A33_828448027 =             super.clone()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.934 -0400", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "55687B0CCCF35C747275140EF2F66A40")
     public int getIndex() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_2096645208 = (offset);
@@ -201,7 +198,6 @@ Object var46F3A0D86742C1D6E099C2B166941A33_828448027 =             super.clone()
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.934 -0400", hash_original_method = "261EF3CD78C94C444435F1728CE93178", hash_generated_method = "EF04B125CA68CD5A82CEE3D26A07A4B1")
     @Override
     public int hashCode() {

@@ -24,7 +24,6 @@ public final class ParcelUuid implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.155 -0400", hash_original_method = "0CE9C43DAF663B7B5A7713ED255C5D05", hash_generated_method = "7099F424A3520C338D7D372D84DA6CFF")
     public UUID getUuid() {
 UUID var86B71BE3C39C4B77800B74F827A65360_979393065 =         mUuid;
@@ -98,7 +97,6 @@ String var3DBA5581A50FF6A029E224F01A569D9E_1169677943 =         mUuid.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.156 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "46428A8906BAC639C3B97F4BA407D862")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_993488589 = (0);

@@ -31,7 +31,6 @@ public class LocalSocketAddress {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.557 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "40596B36A97D1D87C4C3FD7ABCF032B6")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_420148882 =         name;
@@ -42,7 +41,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_420148882 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.557 -0400", hash_original_method = "F383712D804FA1C6C6A9CA72960DBCA2", hash_generated_method = "145D8EAEEB54B1994A23120D09D70466")
     public Namespace getNamespace() {
 Namespace varF28472CCCF41AB611991133D8001D83B_468426849 =         namespace;
@@ -61,8 +59,7 @@ Namespace varF28472CCCF41AB611991133D8001D83B_468426849 =         namespace;
         Namespace (int id) {
             this.id = id;
         }
-         @DSModeled(DSC.SAFE)
-        int getId() {
+         int getId() {
             return id;
         }
     }

@@ -21,14 +21,12 @@ public final class SqliteWrapper {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static boolean isLowMemory(SQLiteException e) {
+        private static boolean isLowMemory(SQLiteException e) {
         return e.getMessage().equals(SQLITE_EXCEPTION_DETAIL_MESSAGE);
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static void checkSQLiteException(Context context, SQLiteException e) {
+        public static void checkSQLiteException(Context context, SQLiteException e) {
         if (isLowMemory(e)) {
             Toast.makeText(context, com.android.internal.R.string.low_memory,
                     Toast.LENGTH_SHORT).show();
@@ -38,8 +36,7 @@ public final class SqliteWrapper {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Cursor query(Context context, ContentResolver resolver, Uri uri,
+        public static Cursor query(Context context, ContentResolver resolver, Uri uri,
             String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         try {
             return resolver.query(uri, projection, selection, selectionArgs, sortOrder);
@@ -51,8 +48,7 @@ public final class SqliteWrapper {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static boolean requery(Context context, Cursor cursor) {
+        public static boolean requery(Context context, Cursor cursor) {
         try {
             return cursor.requery();
         } catch (SQLiteException e) {
@@ -63,8 +59,7 @@ public final class SqliteWrapper {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int update(Context context, ContentResolver resolver, Uri uri,
+        public static int update(Context context, ContentResolver resolver, Uri uri,
             ContentValues values, String where, String[] selectionArgs) {
         try {
             return resolver.update(uri, values, where, selectionArgs);
@@ -76,8 +71,7 @@ public final class SqliteWrapper {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int delete(Context context, ContentResolver resolver, Uri uri,
+        public static int delete(Context context, ContentResolver resolver, Uri uri,
             String where, String[] selectionArgs) {
         try {
             return resolver.delete(uri, where, selectionArgs);
@@ -89,8 +83,7 @@ public final class SqliteWrapper {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri insert(Context context, ContentResolver resolver,
+        public static Uri insert(Context context, ContentResolver resolver,
             Uri uri, ContentValues values) {
         try {
             return resolver.insert(uri, values);

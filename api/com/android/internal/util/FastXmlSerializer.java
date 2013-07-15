@@ -611,7 +611,6 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.710 -0400", hash_original_method = "66C59149F26C5606D1058F17E91C2E36", hash_generated_method = "19FF5C74DB405E85A6CA055D58E4DA60")
     public void setOutput(Writer writer) throws IOException, IllegalArgumentException,
             IllegalStateException {

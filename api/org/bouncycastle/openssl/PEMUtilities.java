@@ -35,8 +35,7 @@ final class PEMUtilities {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    static int getKeySize(String algorithm) {
+        static int getKeySize(String algorithm) {
         if (!KEYSIZES.containsKey(algorithm))
         {
             throw new IllegalStateException("no key size for algorithm: " + algorithm);
@@ -45,26 +44,22 @@ final class PEMUtilities {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static boolean isPKCS5Scheme1(DERObjectIdentifier algOid) {
+        static boolean isPKCS5Scheme1(DERObjectIdentifier algOid) {
         return PKCS5_SCHEME_1.contains(algOid);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static boolean isPKCS5Scheme2(DERObjectIdentifier algOid) {
+        static boolean isPKCS5Scheme2(DERObjectIdentifier algOid) {
         return PKCS5_SCHEME_2.contains(algOid);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static boolean isPKCS12(DERObjectIdentifier algOid) {
+        static boolean isPKCS12(DERObjectIdentifier algOid) {
         return algOid.getId().startsWith(PKCSObjectIdentifiers.pkcs_12PbeIds.getId());
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] password, byte[] salt, int iterationCount) {
+        static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] password, byte[] salt, int iterationCount) {
         PBEParametersGenerator generator = new PKCS5S2ParametersGenerator();
         generator.init(
             PBEParametersGenerator.PKCS5PasswordToBytes(password),
@@ -74,8 +69,7 @@ final class PEMUtilities {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static byte[] crypt(
+        static byte[] crypt(
         boolean encrypt,
         String provider,
         byte[]  bytes,
@@ -95,8 +89,7 @@ final class PEMUtilities {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static byte[] crypt(
+        static byte[] crypt(
         boolean encrypt,
         Provider provider,
         byte[]  bytes,
@@ -217,8 +210,7 @@ final class PEMUtilities {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static SecretKey getKey(
+        private static SecretKey getKey(
         char[]  password,
         String  algorithm,
         int     keyLength,
@@ -227,8 +219,7 @@ final class PEMUtilities {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static SecretKey getKey(
+        private static SecretKey getKey(
         char[]  password,
         String  algorithm,
         int     keyLength,

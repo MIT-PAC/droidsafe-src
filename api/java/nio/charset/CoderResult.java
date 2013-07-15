@@ -58,7 +58,6 @@ public class CoderResult {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.865 -0400", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "2BFAB51AAC7DF0A531F002D290FF761A")
     public boolean isUnderflow() {
         boolean var199C46FD26760D2F597FADB518575C49_541341656 = (this.type == TYPE_UNDERFLOW);
@@ -69,7 +68,6 @@ public class CoderResult {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.865 -0400", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "F6D7C7A7E5B6F6754CF7449C49E2CAD5")
     public boolean isError() {
         boolean varB8B82089CC11F3579FBA3CE7896EA15E_999790420 = (this.type == TYPE_MALFORMED_INPUT
@@ -82,7 +80,6 @@ public class CoderResult {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.866 -0400", hash_original_method = "A1FC6FBF45CD4662583E11635A563069", hash_generated_method = "D7E05B24EC7CF8DBA3E6F253B3A81D16")
     public boolean isMalformed() {
         boolean varDD3233C41C713B9066D93354948FC49E_1963124611 = (this.type == TYPE_MALFORMED_INPUT);
@@ -93,7 +90,6 @@ public class CoderResult {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.866 -0400", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "958E5D1F9793B7EF5EF0E930C96A8F70")
     public boolean isOverflow() {
         boolean varE5ABA22019AFE03E2FC80214B2DEAA0E_1333206543 = (this.type == TYPE_OVERFLOW);
@@ -104,7 +100,6 @@ public class CoderResult {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.866 -0400", hash_original_method = "406F98BDE206F12612B0B50954C0A2D7", hash_generated_method = "E0210D56967915C5C9B982EA427547F5")
     public boolean isUnmappable() {
         boolean var52B287FE15C090F89BAACCEA5B469454_1653764770 = (this.type == TYPE_UNMAPPABLE_CHAR);

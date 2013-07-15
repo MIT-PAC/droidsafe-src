@@ -47,7 +47,6 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.495 -0400", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "C9E65A83CD4B2E304C5D2B05ECCE7357")
     @Override
     public void dispose() {
@@ -59,7 +58,6 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.496 -0400", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "99F6F9E45C1260AD764C2BCE0C13A713")
     @Override
     public void handleMessage(Message msg) {
@@ -119,7 +117,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.497 -0400", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "7EE7351FE073D76A4EE957740A245782")
     @Override
     protected void handlePollStateResultMessage(int what, AsyncResult ar) {
@@ -160,7 +157,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.498 -0400", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "FE4E9808A03FFE71C90B9C094045E9B6")
     @Override
     protected void setSignalStrengthDefaultValues() {
@@ -216,7 +212,6 @@ switch(cm.getRadioState()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.504 -0400", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "EF9D54C421B6EC1B80DF5D9F6CA8E789")
     @Override
     protected void pollStateDone() {
@@ -428,7 +423,6 @@ switch(cm.getRadioState()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.508 -0400", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "E88F45F59F5F84E8D3ED32B6BEF3371F")
     @Override
     protected void onSignalStrengthResult(AsyncResult ar) {
@@ -483,7 +477,6 @@ switch(cm.getRadioState()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.509 -0400", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "E477066A62B6FDC66E69F17BFDF9DDE6")
     @Override
     public boolean isConcurrentVoiceAndDataAllowed() {
@@ -546,7 +539,6 @@ for(int i = 0;i < mHomeSystemId.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.510 -0400", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "B6DA6A58DAF4513C2CBC2FEB61446FA4")
     @Override
     protected void log(String s) {
@@ -557,7 +549,6 @@ for(int i = 0;i < mHomeSystemId.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.511 -0400", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "9CAD79F5F2E82C48926C38487323D3F6")
     @Override
     protected void loge(String s) {

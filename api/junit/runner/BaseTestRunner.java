@@ -31,8 +31,7 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static void setPreferences(Properties preferences) {
+        protected static void setPreferences(Properties preferences) {
         fPreferences= preferences;
     }
 
@@ -255,7 +254,6 @@ String varD8C9BC94A6E81F246F976FCCA661D48D_839908823 =         suiteName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.383 -0400", hash_original_method = "5089456E72AD517131D2C4755EB25FD8", hash_generated_method = "D9F7D286B22291E15850C20DB8EB5398")
     public void setLoading(boolean enable) {
         fLoading= enable;
@@ -304,7 +302,6 @@ Class varBEB4DDDE7C412D41DB6B8FD62D89A7A0_1494777754 =         getLoader().load(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.384 -0400", hash_original_method = "EEF193CE41029661D90E6D0075FFB68C", hash_generated_method = "374205678E7B67C969D372F4C08DE921")
     protected void clearStatus() {
         // ---------- Original Method ----------

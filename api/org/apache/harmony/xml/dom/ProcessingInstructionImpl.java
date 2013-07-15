@@ -28,7 +28,6 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.943 -0400", hash_original_method = "CA0E91FD462850CF9A2412442DB68D19", hash_generated_method = "A83879EE2DC388DFBB206F52E48F2510")
     public String getData() {
 String var0C8B2C9585EB05DD9CD70726CF8CBC07_494748 =         data;
@@ -39,7 +38,6 @@ String var0C8B2C9585EB05DD9CD70726CF8CBC07_494748 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.943 -0400", hash_original_method = "44DCC451FA6F3CA18022A718FA0AE60D", hash_generated_method = "B017825D0133A8C39CB08867E6BE3665")
     @Override
     public String getNodeName() {
@@ -51,7 +49,6 @@ String varA7DD35DE8EDE4A2FCAF77CE202E687B3_55422581 =         target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.944 -0400", hash_original_method = "3B7DB8AF476DCFC46150583715993452", hash_generated_method = "71B6B04B7BED44C234C108E632C8672D")
     @Override
     public short getNodeType() {
@@ -63,7 +60,6 @@ String varA7DD35DE8EDE4A2FCAF77CE202E687B3_55422581 =         target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.944 -0400", hash_original_method = "26741C8FC3CFA5C9E2871448A384408A", hash_generated_method = "21C5A1F823FD9AFCFE333943715EA2F8")
     @Override
     public String getNodeValue() {
@@ -75,7 +71,6 @@ String var0C8B2C9585EB05DD9CD70726CF8CBC07_1516942536 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.944 -0400", hash_original_method = "067DF5651A33C6E6A710DDDF2900842F", hash_generated_method = "8EB2DF024E8E09A6A0CEED58B1371649")
     public String getTarget() {
 String varA7DD35DE8EDE4A2FCAF77CE202E687B3_1204873580 =         target;
@@ -86,7 +81,6 @@ String varA7DD35DE8EDE4A2FCAF77CE202E687B3_1204873580 =         target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.944 -0400", hash_original_method = "985529340F1B642B4E22D59984257994", hash_generated_method = "764D2C61447051DD6595F6AB31D89D3E")
     public void setData(String data) throws DOMException {
         this.data = data;

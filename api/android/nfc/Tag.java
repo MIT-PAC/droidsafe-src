@@ -129,7 +129,6 @@ String[] var2E6885ACC179B2D302813BAD2D696933_1661297653 =         strings;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.745 -0400", hash_original_method = "89421ECB0C954DB9BA373A13BA3FAA83", hash_generated_method = "071AA858788F65B8E707E1AEC550FEE7")
     public int getServiceHandle() {
         int var2C5FEB0198F897EC9ED4F5F58999D842_11636731 = (mServiceHandle);
@@ -140,7 +139,6 @@ String[] var2E6885ACC179B2D302813BAD2D696933_1661297653 =         strings;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.745 -0400", hash_original_method = "119449B9FCBA8EB72735DF05D41F23E7", hash_generated_method = "C540352B390F2FD6B5A21B795B7CD7EE")
     public byte[] getId() {
         byte[] var6AC7F06B6413A1BE9C136DC7DF0D2B60_40871674 = (mId);
@@ -151,7 +149,6 @@ String[] var2E6885ACC179B2D302813BAD2D696933_1661297653 =         strings;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.745 -0400", hash_original_method = "ED11FAFB07CA3B90E3FEDDA21BAFA279", hash_generated_method = "64F72F7CF7851FEA63667A664127A116")
     public String[] getTechList() {
 String[] varCD028AAF1881533C9F08026F039B4C4D_238755482 =         mTechStringList;
@@ -209,7 +206,6 @@ Tag var9B601A3966D02397507C32AA33318068_526634755 =                 newTag;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.746 -0400", hash_original_method = "066FD8962F433FECE6D4FD3B60FADEA0", hash_generated_method = "49AA6C4E2B46C3496B69DA2176838E0C")
     public boolean hasTech(int techType) {
         addTaint(techType);
@@ -233,7 +229,6 @@ for(int tech : mTechList)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.747 -0400", hash_original_method = "31360E4A8CC1CC354A13744DCF6ABA65", hash_generated_method = "59571D9E3BD4E557F423FB3BAE1BC990")
     public Bundle getTechExtras(int tech) {
         addTaint(tech);
@@ -270,7 +265,6 @@ Bundle var6543B1FECCBBFB52C39498A0EC7DCB0D_1781082447 =         mTechExtras[pos]
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.747 -0400", hash_original_method = "67284B405524DECAA6F6D36DFD293E76", hash_generated_method = "ED754AB6ECE2BA2E40DD898AAFE628E7")
     public INfcTag getTagService() {
 INfcTag varCEA41967F78A032165E0C3EE868F689A_556929694 =         mTagService;
@@ -335,7 +329,6 @@ String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.748 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C6133079B7CF5E9AF7C1836EB5266956")
     @Override
     public int describeContents() {
@@ -398,7 +391,6 @@ String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.750 -0400", hash_original_method = "B7538F13EF8EEF4B4D475104909015D7", hash_generated_method = "2475BD739BB9F2FDEDB63047DAF61090")
     public int getConnectedTechnology() {
         int var824FFD6D91C3217E3C5250F0EF6A1CF5_2056547954 = (mConnectedTechnology);
@@ -409,7 +401,6 @@ String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.751 -0400", hash_original_method = "4FE592F130B2AB198D9A9024B7A375C0", hash_generated_method = "CDDFA9CDCDA74E225B20B2008ED8B5D1")
     public void setTechnologyDisconnected() {
         mConnectedTechnology = -1;

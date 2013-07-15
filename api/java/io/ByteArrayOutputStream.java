@@ -72,7 +72,6 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.480 -0400", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "400ADB088DB2A9073490DD652F495E0B")
     public synchronized void reset() {
         count = 0;
@@ -81,7 +80,6 @@ public class ByteArrayOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.481 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "ADF18B0EE1152182510A6F46A4F05881")
     public int size() {
         int varE2942A04780E223B215EB8B663CF5353_356863739 = (count);

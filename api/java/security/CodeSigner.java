@@ -80,7 +80,6 @@ public final class CodeSigner implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "E248F023712F89DE6755F2D64E51AFED")
     public CertPath getSignerCertPath() {
 CertPath varC4579A22BE0444B538B995294C4BD4B5_1971977180 =         signerCertPath;
@@ -91,7 +90,6 @@ CertPath varC4579A22BE0444B538B995294C4BD4B5_1971977180 =         signerCertPath
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "F117DFA1A6EB777CC4A763885DD30F8B", hash_generated_method = "FEF9F73E6A124870465A4A272A8D12B6")
     public Timestamp getTimestamp() {
 Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1241577390 =         timestamp;

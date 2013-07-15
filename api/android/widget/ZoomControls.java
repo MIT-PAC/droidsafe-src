@@ -81,7 +81,6 @@ public class ZoomControls extends LinearLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.235 -0400", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "5CF2570229A96077D9C2C9E38FD7B1B8")
     @Override
     public boolean onTouchEvent(MotionEvent event) {

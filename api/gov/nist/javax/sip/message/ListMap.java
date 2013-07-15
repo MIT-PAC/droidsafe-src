@@ -17,8 +17,7 @@ class ListMap {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    static private void initializeListMap() {
+        static private void initializeListMap() {
         headerListTable = new Hashtable<Class<?>, Class<?>>();
         headerListTable.put(ExtensionHeaderImpl.class, ExtensionHeaderList.class);
         headerListTable.put(Contact.class, ContactList.class);
@@ -58,8 +57,7 @@ class ListMap {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static protected boolean hasList(SIPHeader sipHeader) {
+        static protected boolean hasList(SIPHeader sipHeader) {
         if (sipHeader instanceof SIPHeaderList)
             return false;
         else {
@@ -69,24 +67,21 @@ class ListMap {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static protected boolean hasList(Class<?> sipHdrClass) {
+        static protected boolean hasList(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
         return headerListTable.get(sipHdrClass) != null;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static protected Class<?> getListClass(Class<?> sipHdrClass) {
+        static protected Class<?> getListClass(Class<?> sipHdrClass) {
         if (!initialized)
             initializeListMap();
         return (Class<?>) headerListTable.get(sipHdrClass);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @SuppressWarnings("unchecked")
+        @SuppressWarnings("unchecked")
     static protected SIPHeaderList<SIPHeader> getList(SIPHeader sipHeader) {
         if (!initialized)
             initializeListMap();

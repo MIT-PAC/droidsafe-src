@@ -47,7 +47,6 @@ public abstract class Schema {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.371 -0400", hash_original_method = "7A084406CC3B18F733E08ECB30CF0A86", hash_generated_method = "9EF99A1D5B0DE9712886E7BC81737116")
     public ElementType rootElementType() {
 ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
@@ -128,7 +127,6 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.373 -0400", hash_original_method = "15E50FC94B256079445190BC5C208F0A", hash_generated_method = "0CD92DC8C415BC6FE1009644FCCA40D4")
     public ElementType getElementType(String name) {
         addTaint(name.getTaint());
@@ -160,7 +158,6 @@ ElementType varCF5D2F602097A6A5D759EF35ED655804_544160767 =         (ElementType
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.373 -0400", hash_original_method = "1798242D281A34B11A86AFDBABA0D18C", hash_generated_method = "A3EE87B30E6B8288EB7C0D885E4FF879")
     public String getURI() {
 String varD120E2446EDC758A0B021B80981B542D_2103243884 =         theURI;
@@ -171,7 +168,6 @@ String varD120E2446EDC758A0B021B80981B542D_2103243884 =         theURI;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.373 -0400", hash_original_method = "ED82F113C378B68FF5FAC6A19F5F47F3", hash_generated_method = "1E1AEDF1C4E1E1497FE536D680872AD6")
     public String getPrefix() {
 String var330006D651A016EFE5B589E8B0D40363_1503881595 =         thePrefix;
@@ -182,7 +178,6 @@ String var330006D651A016EFE5B589E8B0D40363_1503881595 =         thePrefix;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.374 -0400", hash_original_method = "234E680F6FA8586452A8BF7CCF48759A", hash_generated_method = "69EEF406ACDC114BD475EB03C2469E2B")
     public void setURI(String uri) {
         theURI = uri;
@@ -191,7 +186,6 @@ String var330006D651A016EFE5B589E8B0D40363_1503881595 =         thePrefix;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.374 -0400", hash_original_method = "4CEDB742D62DCBE17383ACF000150A0B", hash_generated_method = "A94536348B3AA801BFBCDF0F0F6703FC")
     public void setPrefix(String prefix) {
         thePrefix = prefix;

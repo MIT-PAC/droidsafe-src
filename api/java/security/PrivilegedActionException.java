@@ -15,7 +15,6 @@ public class PrivilegedActionException extends Exception {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.146 -0400", hash_original_method = "96C5131DB95D0ADB8B79CD396371D505", hash_generated_method = "B2568121DEAF1DBA4C7AB0EC10F53BAF")
     public Exception getException() {
 Exception var540C13E9E156B687226421B24F2DF178_2012042587 =         null;

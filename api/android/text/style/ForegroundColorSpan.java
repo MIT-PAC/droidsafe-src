@@ -30,7 +30,6 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.183 -0400", hash_original_method = "8155995CA89F113B2E7BEC17CF09D49D", hash_generated_method = "1F40510F59B347E964F9B65259ABAA44")
     public int getSpanTypeId() {
         int var2B510775B0084BF38A6D9BB3C8737B96_362967972 = (TextUtils.FOREGROUND_COLOR_SPAN);
@@ -41,7 +40,6 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.183 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AFA658F62BAF0B0F5B87587759041E1E")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_741814657 = (0);
@@ -52,7 +50,6 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.184 -0400", hash_original_method = "F35F8912B3182FC877D8B21825C3ABAF", hash_generated_method = "2AA9C9BA7FF737DFF4D6096156FE1247")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -63,7 +60,6 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.184 -0400", hash_original_method = "7DE99734F4F039B37C58D21552D08DBC", hash_generated_method = "D30F7E9935DFC0F097D3EADBE15C8CA2")
     public int getForegroundColor() {
         int varD2A5DB085B68088532B9E8FB544C2EAD_1012726610 = (mColor);
@@ -74,7 +70,6 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.185 -0400", hash_original_method = "119B8D3BB9F53DFAB442699FA205FF8F", hash_generated_method = "443762873CFF0ADB728081F2147DF217")
     @Override
     public void updateDrawState(TextPaint ds) {

@@ -43,7 +43,6 @@ WebHistoryItem var2F460A70B42FEDF7C169E372B218C579_1976468095 =         getItemA
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.390 -0400", hash_original_method = "2A2A2AA161DBB8DEEC2045188BE5DE03", hash_generated_method = "20BAAC25D0EBBC17CF8764B43847977B")
     public synchronized int getCurrentIndex() {
         int var11F35ED6948C3740873B941C47BA8C27_1456224441 = (mCurrentIndex);
@@ -84,7 +83,6 @@ WebHistoryItem varDDBCB502A256E36ED75BFBF3E3E9916A_824329844 =         mArray.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.391 -0400", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "FD3EA87E0200D54A51503BD7F9A0EE2C")
     synchronized void setClearPending() {
         mClearPending = true;
@@ -93,7 +91,6 @@ WebHistoryItem varDDBCB502A256E36ED75BFBF3E3E9916A_824329844 =         mArray.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.391 -0400", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "948347FD1B39762D3CBFDA93BE6EF6FE")
     synchronized boolean getClearPending() {
         boolean var78C6471919B09528C81DBDC9ECC0E774_1401136702 = (mClearPending);

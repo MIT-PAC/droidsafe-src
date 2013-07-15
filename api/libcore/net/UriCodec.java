@@ -215,8 +215,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_800660205 =         builder.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int hexToInt(char c) {
+        private static int hexToInt(char c) {
         if ('0' <= c && c <= '9') {
             return c - '0';
         } else if ('a' <= c && c <= 'f') {

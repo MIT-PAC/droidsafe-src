@@ -28,7 +28,6 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.075 -0400", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "3D81D0E04E157D102DF8F1AEF4E4D3A4")
     public String getDatabaseName() {
 String var851A3104A174A0317C1CB008C48A1898_493213275 =         this.databaseName;

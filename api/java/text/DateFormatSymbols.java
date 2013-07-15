@@ -289,7 +289,6 @@ String[] varC95686BD3F7D0B62DEC47BF195BF2457_686550201 =         eras.clone();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.241 -0400", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "A0107DA6DA095048DA6AB79BF61361AE")
     public String getLocalPatternChars() {
 String varBBC83F2BD84C9E23C318510579B07741_770013521 =         localPatternChars;

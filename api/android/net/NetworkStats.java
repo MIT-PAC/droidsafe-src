@@ -264,7 +264,6 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1475191791 =         entry;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.022 -0400", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "4A3448193A9B66EDE6066762709038F7")
     public long getElapsedRealtime() {
         long var90F9860F2ACD6C63E4929F387936CB9F_717273817 = (elapsedRealtime);
@@ -285,7 +284,6 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1475191791 =         entry;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.022 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "A32E5F1817783ECFDEF47A6C49C6B615")
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_59223002 = (size);
@@ -296,7 +294,6 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1475191791 =         entry;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.023 -0400", hash_original_method = "2B99B673BBD8E75B3053CAA25E99CAA5", hash_generated_method = "E1C670952EC6781CECB8A039FB9B0BC4")
     public int internalSize() {
         int var1D14402A536292FB0E5BFD7749295FCE_1498153163 = (iface.length);
@@ -883,8 +880,7 @@ for(int i = 0;i < size;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String setToString(int set) {
+        public static String setToString(int set) {
         switch (set) {
             case SET_ALL:
                 return "ALL";
@@ -918,7 +914,6 @@ String varEF986DCEFABA18330D92CD8C42EF636E_724773760 =         writer.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.050 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D8C5B9116D310B762891758459BCC9F4")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_469844400 = (0);

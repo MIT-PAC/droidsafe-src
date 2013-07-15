@@ -92,7 +92,6 @@ public class SearchRecentSuggestionsProvider extends ContentProvider {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.302 -0400", hash_original_method = "7D0F511FF715F3B1AC0B77B3BBE41D35", hash_generated_method = "ACA63A659DCC476CB565CDAF3A47BCB0")
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
@@ -141,7 +140,6 @@ public class SearchRecentSuggestionsProvider extends ContentProvider {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.302 -0400", hash_original_method = "ACCB8C00D81DE098BA99F6628F676962", hash_generated_method = "EEA2C89B76C58D3F7E58B522B522743C")
     @Override
     public String getType(Uri uri) {
@@ -195,7 +193,6 @@ String var490969663096EE604BFBACDCB27FFDD5_748739975 =                     "vnd.
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.304 -0400", hash_original_method = "FF93685A731F041589830914387F684E", hash_generated_method = "8AE6055D2F69A5E65888258F56E7D1D1")
     @Override
     public Uri insert(Uri uri, ContentValues values) {
@@ -283,7 +280,6 @@ Uri var6313300DCD5E35AA1F8DE70965D30D12_1573737955 =         newUri;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.309 -0400", hash_original_method = "16EE4F46EB7789D35890A8E3BA57F4D4", hash_generated_method = "CDB1D5FE3D9BA2B6480F292E4B48244B")
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, 
@@ -371,7 +367,6 @@ Cursor var807FB10045EE51C06BDB74744A6714DF_1007787818 =         c;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.312 -0400", hash_original_method = "55DFD7752393168BC8C4EABC7763F14D", hash_generated_method = "4483510740E92BF06E96843EAA174D3D")
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {

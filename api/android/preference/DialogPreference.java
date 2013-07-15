@@ -85,7 +85,6 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.214 -0400", hash_original_method = "6BB18A84F76469D7C771F36F9E0BA9AF", hash_generated_method = "B45A5D7A1E3BCA4FD85953AD13DAF36B")
     public void setDialogTitle(CharSequence dialogTitle) {
         mDialogTitle = dialogTitle;
@@ -103,7 +102,6 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.215 -0400", hash_original_method = "883D8EFBB9B8BAD9BC22F78B210BA75B", hash_generated_method = "4ED7114F347ED709EDB056594AEAC942")
     public CharSequence getDialogTitle() {
 CharSequence var8A283C630C420D29DA612FDBD4AF8034_1274371834 =         mDialogTitle;
@@ -114,7 +112,6 @@ CharSequence var8A283C630C420D29DA612FDBD4AF8034_1274371834 =         mDialogTit
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.215 -0400", hash_original_method = "C3473A1ED58058061356CFFBC848D9C9", hash_generated_method = "41887350F118ACBC0863E2AD4EC64C3B")
     public void setDialogMessage(CharSequence dialogMessage) {
         mDialogMessage = dialogMessage;
@@ -132,7 +129,6 @@ CharSequence var8A283C630C420D29DA612FDBD4AF8034_1274371834 =         mDialogTit
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.215 -0400", hash_original_method = "1C9FE66F99F199ED8416C6E4CD3A4269", hash_generated_method = "8E6A688870049561EA57EE7AD4284A50")
     public CharSequence getDialogMessage() {
 CharSequence varAB9C41555832BFB23A354B68F953D4FB_1757340943 =         mDialogMessage;
@@ -143,7 +139,6 @@ CharSequence varAB9C41555832BFB23A354B68F953D4FB_1757340943 =         mDialogMes
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.216 -0400", hash_original_method = "B73A337DDB013C24C0D62280ED30F9C6", hash_generated_method = "94B3A71D2448291EB1B536AD4A297F55")
     public void setDialogIcon(Drawable dialogIcon) {
         mDialogIcon = dialogIcon;
@@ -160,7 +155,6 @@ CharSequence varAB9C41555832BFB23A354B68F953D4FB_1757340943 =         mDialogMes
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.216 -0400", hash_original_method = "03DB966CB140533ECF1D4BDC15FA7B76", hash_generated_method = "96A817A9B80CB10A1C3C1BC917C18316")
     public Drawable getDialogIcon() {
 Drawable var5FD070880F0D4515E94900111CD7523A_340278633 =         mDialogIcon;
@@ -171,7 +165,6 @@ Drawable var5FD070880F0D4515E94900111CD7523A_340278633 =         mDialogIcon;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.216 -0400", hash_original_method = "6BE23B5D358DB766161BE60C1550EF9B", hash_generated_method = "15FCDB24219E94DB21B0A8028B4E9D51")
     public void setPositiveButtonText(CharSequence positiveButtonText) {
         mPositiveButtonText = positiveButtonText;
@@ -189,7 +182,6 @@ Drawable var5FD070880F0D4515E94900111CD7523A_340278633 =         mDialogIcon;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.217 -0400", hash_original_method = "82AFC23D5F7BC4989211310BE2784E8E", hash_generated_method = "07EE9F5C074A07AA3617A77FF045BBC5")
     public CharSequence getPositiveButtonText() {
 CharSequence var9E414663F7FFDDEF3ACDFE53EB7D0FC4_1248655030 =         mPositiveButtonText;
@@ -200,7 +192,6 @@ CharSequence var9E414663F7FFDDEF3ACDFE53EB7D0FC4_1248655030 =         mPositiveB
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.217 -0400", hash_original_method = "4C31EAF97C896EDBAD876498CF3B2FF0", hash_generated_method = "3FA9845BDDD93E5FC8996CE304918DDD")
     public void setNegativeButtonText(CharSequence negativeButtonText) {
         mNegativeButtonText = negativeButtonText;
@@ -218,7 +209,6 @@ CharSequence var9E414663F7FFDDEF3ACDFE53EB7D0FC4_1248655030 =         mPositiveB
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.218 -0400", hash_original_method = "AAC926564B2F61079BFED9FEE51EB7E4", hash_generated_method = "6A24C67C79E7D6AD3153C8B25F6E396A")
     public CharSequence getNegativeButtonText() {
 CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_481638680 =         mNegativeButtonText;
@@ -229,7 +219,6 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_481638680 =         mNegativeBu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.218 -0400", hash_original_method = "6047D08B9E02F6650B39EE0CB2356C47", hash_generated_method = "8C3214F68C80F820797B01AD29A03A7C")
     public void setDialogLayoutResource(int dialogLayoutResId) {
         mDialogLayoutResId = dialogLayoutResId;
@@ -238,7 +227,6 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_481638680 =         mNegativeBu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.218 -0400", hash_original_method = "6161E3D2B6291A2C05BBD55D42C3AED0", hash_generated_method = "0EEDBD0ECA6866AC6F78568E9CE0F9E0")
     public int getDialogLayoutResource() {
         int varE217A30C43701DC625E41DA6F34EE4A0_37895948 = (mDialogLayoutResId);
@@ -249,7 +237,6 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_481638680 =         mNegativeBu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.218 -0400", hash_original_method = "9A579D55B073C910524B0A138ED58992", hash_generated_method = "3FE15FCBE90C74B4FDE26391C79AD091")
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -306,7 +293,6 @@ CharSequence varE3CDB17A793C79B2095F0AE56CF77E73_481638680 =         mNegativeBu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.220 -0400", hash_original_method = "E61813EC392C6A7361FD971C8A66C42E", hash_generated_method = "6201B30D0577093FA3E68E41FAAFA5AA")
     protected boolean needInputMethod() {
         boolean var68934A3E9455FA72420237EB05902327_311343428 = (false);
@@ -390,7 +376,6 @@ View var10DFF701F8E6B3A87243F69F93A3F708_618140305 =         inflater.inflate(mD
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.221 -0400", hash_original_method = "C7A96C6C4A9A6F7800567BF8395F95D4", hash_generated_method = "FEDD0E6C73168D668F53DC5F0672C0CD")
     public void onClick(DialogInterface dialog, int which) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -415,7 +400,6 @@ View var10DFF701F8E6B3A87243F69F93A3F708_618140305 =         inflater.inflate(mD
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.222 -0400", hash_original_method = "C2C4DECBB4816C085EA1FCA9996FF5B6", hash_generated_method = "F839090159E8D268DD09FFE754CE51F0")
     protected void onDialogClosed(boolean positiveResult) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -424,7 +408,6 @@ View var10DFF701F8E6B3A87243F69F93A3F708_618140305 =         inflater.inflate(mD
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.222 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "08987C1814454894A968321FC47E67AB")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_668551769 =         mDialog;

@@ -186,7 +186,6 @@ Object var61F6902A567A932064AABE0702479FA5_55040939 =         zone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.032 -0400", hash_original_method = "80F5C5F4A535ECB3386672D31D5CF9AA", hash_generated_method = "A4E7FD5EA79604FB046444C0ADD5060D")
     @Override
     public int getDSTSavings() {
@@ -207,7 +206,6 @@ Object var61F6902A567A932064AABE0702479FA5_55040939 =         zone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.035 -0400", hash_original_method = "8DB3C09D8D79030897991A8AF2C3603A", hash_generated_method = "929589E95406E7BBC980F2D2DFA836C1")
     @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int time) {
@@ -414,7 +412,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.037 -0400", hash_original_method = "D90129E49D21D0E2F7EA4F6539F9D2CB", hash_generated_method = "19D07465AA82D8362A583FA00BDA33EE")
     @Override
     public int getRawOffset() {
@@ -450,7 +447,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.039 -0400", hash_original_method = "4BB4BBFFC89848EE3A9E98B493F95D5F", hash_generated_method = "181014FDDD73AC3AB3505E0FC5D26AC0")
     @Override
     public boolean hasSameRules(TimeZone zone) {
@@ -504,7 +500,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.039 -0400", hash_original_method = "C51A338C9795AC2507162C0CE1A08702", hash_generated_method = "7EA7E0A0691061BBB47F66F8B4EE70C8")
     @Override
     public boolean inDaylightTime(Date time) {
@@ -517,7 +512,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.040 -0400", hash_original_method = "8AD8F18B8E2CE991A6AB313B3340B306", hash_generated_method = "61EB00FDA7AD2B7EBD62A46FFA8FF181")
     private boolean isLeapYear(int year) {
         addTaint(year);
@@ -538,7 +532,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.040 -0400", hash_original_method = "EABB822EA3A4CED689A420DE5F07AD18", hash_generated_method = "9B8445A3576E0AF599D70A23A2EFC04B")
     private int mod7(int num1) {
         addTaint(num1);
@@ -573,7 +566,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.041 -0400", hash_original_method = "29EACAF13C91B179EA825409505E4565", hash_generated_method = "A4F39AA52BC512D999B77023BF00553F")
     private void checkRange(int month, int dayOfWeek, int time) {
         addTaint(time);
@@ -610,7 +602,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.042 -0400", hash_original_method = "F04B5CC4561F29CBDFD2A63D85494102", hash_generated_method = "7D26BEF2507EB24BAA13E6D7922540E3")
     private void checkDay(int month, int day) {
         addTaint(day);
@@ -628,7 +619,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.043 -0400", hash_original_method = "E98C141304510A5F08CF5DF5CC63E118", hash_generated_method = "862DB308C772A213B90440B634A79104")
     private void setEndMode() {
     if(endDayOfWeek == 0)        
@@ -729,7 +719,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.048 -0400", hash_original_method = "C8A257B93E1C51862FD9A30D6A75C66A", hash_generated_method = "565DCC6768A82C6D61497D0F194E6405")
     @Override
     public void setRawOffset(int offset) {
@@ -739,7 +728,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.049 -0400", hash_original_method = "4370DAC820CAB38F82466934EE4F5C8D", hash_generated_method = "9AFC0EE9DA1BA4E9AFD8356AF30CDC29")
     private void setStartMode() {
     if(startDayOfWeek == 0)        
@@ -840,7 +828,6 @@ switch(endMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.089 -0400", hash_original_method = "7CBF25AFDCF863C97C11F8D0CB7F66E7", hash_generated_method = "0EAB2221FE5CC0E50F7ABB3F73F14E8B")
     public void setStartYear(int year) {
         startYear = year;
@@ -885,7 +872,6 @@ String var20F954FD534D7F6240714D87A28A185A_443538627 =         getClass().getNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.090 -0400", hash_original_method = "7C1BE50DE9C29B43BADE36CF66AF8A96", hash_generated_method = "B8CCBD9DCEE9810B887F4B36FA85ABEF")
     @Override
     public boolean useDaylightTime() {
@@ -897,7 +883,6 @@ String var20F954FD534D7F6240714D87A28A185A_443538627 =         getClass().getNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.092 -0400", hash_original_method = "F4691E6CC75F84FE0527C352A6F6F1B9", hash_generated_method = "3AF6E77932D09CDDA4B26B268AA87FAA")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -960,7 +945,6 @@ String var20F954FD534D7F6240714D87A28A185A_443538627 =         getClass().getNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.094 -0400", hash_original_method = "19765306B3DA0529AD0AFD53EDC0B4B8", hash_generated_method = "A3CA1DC8A42EACF155A580603E8449CF")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

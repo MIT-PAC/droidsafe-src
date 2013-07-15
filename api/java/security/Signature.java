@@ -379,7 +379,6 @@ String var77ECA046F6C5DB9243992DFD1F17C516_1861157972 =         "SIGNATURE " + a
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.534 -0400", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "6730DFC0D1EE8F9155FE43A74B806F14")
     private String stateToString(int state) {
         addTaint(state);

@@ -34,7 +34,6 @@ List<ComprehensionTlv> varEED3324DF316BCB609D1536A9D775114_429141878 =         m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.683 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "C949633633E8504B81F7E86821BB39FC")
     public int getTag() {
         int var07496860B5C53FDD66588727158D5F73_1727397498 = (mTag);

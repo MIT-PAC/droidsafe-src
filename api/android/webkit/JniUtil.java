@@ -20,16 +20,14 @@ class JniUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void checkInitialized() {
+        private static void checkInitialized() {
         if (sContext == null) {
             throw new IllegalStateException("Call CookieSyncManager::createInstance() or create a webview before using this class");
         }
     }
 
     
-        @DSModeled(DSC.SPEC)
-    protected static synchronized void setContext(Context context) {
+        protected static synchronized void setContext(Context context) {
         if (sContext != null) {
             return;
         }
@@ -37,14 +35,12 @@ class JniUtil {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static synchronized Context getContext() {
+        protected static synchronized Context getContext() {
         return sContext;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static synchronized String getDatabaseDirectory() {
+        private static synchronized String getDatabaseDirectory() {
         checkInitialized();
         if (sDatabaseDirectory == null) {
             sDatabaseDirectory = sContext.getDatabasePath("dummy").getParent();
@@ -124,16 +120,14 @@ class JniUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static synchronized String getAutofillQueryUrl() {
+        private static synchronized String getAutofillQueryUrl() {
         checkInitialized();
         return Settings.Secure.getString(sContext.getContentResolver(),
                 Settings.Secure.WEB_AUTOFILL_QUERY_URL);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
+        private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
         checkInitialized();
         ActivityManager manager = (ActivityManager) sContext.getSystemService(
                 Context.ACTIVITY_SERVICE);

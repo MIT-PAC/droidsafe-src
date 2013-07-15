@@ -309,7 +309,6 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.184 -0400", hash_original_method = "B428180B0BF5EA600E8FA7F08EE496F8", hash_generated_method = "7B82C4CB6E5963F86CF6FF60F52DA7CD")
     public String getSecurityMechanism() {
 String var4B79C76D511B5068B7982514555BAC48_1592392380 =         this.secMechanism;

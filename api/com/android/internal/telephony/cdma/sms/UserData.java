@@ -53,7 +53,6 @@ public class UserData {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.548 -0400", hash_original_method = "F1C0D00F51384BB453814F967BB3AF69", hash_generated_method = "3C95B1CCF283FA1C28AA366D44537136")
     @Override
     public String toString() {

@@ -574,7 +574,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "F84051EF4AE07616E094DC9CB46B0764")
     public boolean isInProgress() {
         boolean var061B672487708A5F02C378E108FB2523_941464235 = (mGestureInProgress);
@@ -585,7 +584,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "AC0381EF29B01CFF3C15EBF3D7B069C0")
     public float getFocusX() {
         float varA0FE7B7E6572E9A5C03F808D583D21EF_1594995677 = (mFocusX);
@@ -596,7 +594,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "3DDCA51F9D70ADEDAD280E48FAC62846")
     public float getFocusY() {
         float varE371837A8119A3AB321FC558BC169293_274762003 = (mFocusY);
@@ -628,7 +625,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "EE1543A06FC47C6D52BAF4F591067AF9")
     public float getCurrentSpanX() {
         float varD797CF4A75F206359DDA7851042405DE_1345950532 = (mCurrFingerDiffX);
@@ -639,7 +635,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "BC0019030010366467B8BFBA8B538F3C")
     public float getCurrentSpanY() {
         float varF613F042D8B78098BEAE14BEDF4D7F31_1676932164 = (mCurrFingerDiffY);
@@ -671,7 +666,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "9A85C6A1735D5E9215A4E83978C6D841")
     public float getPreviousSpanX() {
         float varE0D70E96C315A6A926A5DF77407556F0_1377267022 = (mPrevFingerDiffX);
@@ -682,7 +676,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "D53D118C8B62F6A4698B9E588716B118")
     public float getPreviousSpanY() {
         float var3BCD82D8995452F8C4D8BC4D6958AFA9_186057030 = (mPrevFingerDiffY);
@@ -710,7 +703,6 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "44F0F98CC8CA516D3A3FA2B5A287771A")
     public long getTimeDelta() {
         long varD088DDA1C27B96429D7E4965433B26E2_937456004 = (mTimeDelta);
@@ -740,7 +732,6 @@ for(int i = 0;i < pointerCount;i++)
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "926392105F005767D7567AB7A88C6C8A")
         public boolean onScale(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -753,7 +744,6 @@ for(int i = 0;i < pointerCount;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "407486EDB1AE6F4E57A76AD165FB63CC")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -766,7 +756,6 @@ for(int i = 0;i < pointerCount;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
         public void onScaleEnd(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected

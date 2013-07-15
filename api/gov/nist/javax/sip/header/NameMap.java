@@ -17,16 +17,14 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    protected static void putNameMap(String headerName, String className) {
+        protected static void putNameMap(String headerName, String className) {
         nameMap.put(
             headerName.toLowerCase(),
             className);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Class getClassFromName(String headerName) {
+        public static Class getClassFromName(String headerName) {
         String className = (String) nameMap.get(headerName.toLowerCase());
         if (className == null)
             return null;

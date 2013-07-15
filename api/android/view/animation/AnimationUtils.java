@@ -49,14 +49,12 @@ public class AnimationUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+        private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
+        private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         Animation anim = null;
         int type;
@@ -89,8 +87,7 @@ public class AnimationUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
+        public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -111,15 +108,13 @@ public class AnimationUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+        private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+        private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         LayoutAnimationController controller = null;
         int type;
@@ -198,8 +193,7 @@ public class AnimationUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+        private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         Interpolator interpolator = null;
         int type;
         int depth = parser.getDepth();

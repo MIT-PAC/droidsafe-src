@@ -22,7 +22,6 @@ public abstract class LeafNodeImpl extends NodeImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.778 -0400", hash_original_method = "DC63B22231FC6D38D6E19E3A9D1523CF", hash_generated_method = "0B29EB2C23156395444E8FBC201973A1")
     public Node getNextSibling() {
     if(parent == null || index + 1 >= parent.children.size())        
@@ -42,7 +41,6 @@ Node varCAF2121A40A40843AD59F9E2CDF911E5_1845677900 =         parent.children.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.778 -0400", hash_original_method = "B8A0C756618E449548951ECCC8542C8B", hash_generated_method = "2CDBA2C750C6A536D86B5E373D1CDEE9")
     public Node getParentNode() {
 Node var0F49909EA73F8892C338E4DCA6EB9906_497330269 =         parent;
@@ -53,7 +51,6 @@ Node var0F49909EA73F8892C338E4DCA6EB9906_497330269 =         parent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.778 -0400", hash_original_method = "8D9655D90408A316224292865014DAE6", hash_generated_method = "9C91A4CB60A3B0AC7CE195A3B72F3957")
     public Node getPreviousSibling() {
     if(parent == null || index == 0)        
@@ -73,7 +70,6 @@ Node varBCF210482F2AE12B57DFC78EE95A547D_1028086002 =         parent.children.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.779 -0400", hash_original_method = "4FE9AF789BEC71BD17F719913A9768F5", hash_generated_method = "5EC9BFFE940A775D76ABE255CFCDE2BD")
      boolean isParentOf(Node node) {
         addTaint(node.getTaint());

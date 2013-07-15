@@ -29,7 +29,6 @@ public class PatternSyntaxException extends IllegalArgumentException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.345 -0400", hash_original_method = "7A292BCA91A2C0FA8C2558D08D8D09A0", hash_generated_method = "C88A107D10B28CC4D58C0C7F1216FA70")
     public String getPattern() {
 String var407D32260E541B695CF3FD3F7EFB76AB_27348833 =         pattern;
@@ -102,7 +101,6 @@ String var2460B846747F8B22185AD8BE722266A5_1837597700 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.346 -0400", hash_original_method = "B876CD4C2F9B0449C0BFBE53447962F9", hash_generated_method = "C8D18C62C1C1319D35D25E1F10BE7636")
     public String getDescription() {
 String varD03F909FD24236E480611D9D33E98808_631557678 =         desc;
@@ -113,7 +111,6 @@ String varD03F909FD24236E480611D9D33E98808_631557678 =         desc;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.346 -0400", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "E6B672CD8BF650A3EB26A378E1DB546F")
     public int getIndex() {
         int var6A992D5529F459A44FEE58C733255E86_505076176 = (index);

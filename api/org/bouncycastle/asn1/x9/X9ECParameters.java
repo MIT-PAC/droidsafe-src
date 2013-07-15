@@ -151,7 +151,6 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.499 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "CEE723B547A3F6E4A719B65B3CA8CD79")
     public ECCurve getCurve() {
 ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_2031538005 =         curve;
@@ -162,7 +161,6 @@ ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_2031538005 =         curve;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.499 -0400", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "63CA24BF974E1E58AF815B13D448AB45")
     public ECPoint getG() {
 ECPoint var96B5EDC7D356FCBAF3C926D8A70305DA_1266244486 =         g;
@@ -173,7 +171,6 @@ ECPoint var96B5EDC7D356FCBAF3C926D8A70305DA_1266244486 =         g;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.499 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "A6525733BB57A36FF352FFFC1F62D7A0")
     public BigInteger getN() {
 BigInteger var041154653C812B0D1663EC287BE4C757_1431153311 =         n;
@@ -184,7 +181,6 @@ BigInteger var041154653C812B0D1663EC287BE4C757_1431153311 =         n;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.500 -0400", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "527A379838E8D5F8EF95AC43F2511E16")
     public BigInteger getH() {
     if(h == null)        
@@ -205,7 +201,6 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_2068272264 =         h;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.500 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "051BEABDB41F17309C3BF3BF79490992")
     public byte[] getSeed() {
         byte[] varFE4C0F30AA359C41D9F9A5F69C8C4192_61948294 = (seed);

@@ -31,7 +31,6 @@ public class ContentProviderClient {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.516 -0400", hash_original_method = "4948470E164D98D1C187E8F0772E2690", hash_generated_method = "E7D9F48DABE18518AC4ECC0D079A970E")
     public Cursor query(Uri url, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) throws RemoteException {
@@ -48,7 +47,6 @@ Cursor var18540D6B41070F14F5FE0EB78359FBB4_841101773 =         mContentProvider.
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.517 -0400", hash_original_method = "4D009E8B711C29FD69591B2F9B4F00E0", hash_generated_method = "C78B25FE87BE47193B49A3229BC43D5C")
     public String getType(Uri url) throws RemoteException {
         addTaint(url.getTaint());
@@ -60,7 +58,6 @@ String var82195E878B3E82B3A02094B1850982F7_1528076568 =         mContentProvider
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.517 -0400", hash_original_method = "FB59FC7223A39B6B6F90441FA7E5A170", hash_generated_method = "55DBC5EA97630201C5C69653E56ED614")
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException {
         addTaint(mimeTypeFilter.getTaint());
@@ -73,7 +70,6 @@ String[] varD261B285689E343EB631D71BFEB7913C_548996935 =         mContentProvide
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.518 -0400", hash_original_method = "DCF792BA3D706C57D023C460ED11C34C", hash_generated_method = "FB2C12FA1D813532271A2EE9D05FED9E")
     public Uri insert(Uri url, ContentValues initialValues) throws RemoteException {
         addTaint(initialValues.getTaint());
@@ -86,7 +82,6 @@ Uri varA3DC35E25A52C8D59F81F238CA85622E_1443705380 =         mContentProvider.in
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.518 -0400", hash_original_method = "610F9CD05A6F00083AB860F680EDE10F", hash_generated_method = "A755E66F3A64C23FB85526BD09C9A262")
     public int bulkInsert(Uri url, ContentValues[] initialValues) throws RemoteException {
         addTaint(initialValues[0].getTaint());
@@ -99,7 +94,6 @@ Uri varA3DC35E25A52C8D59F81F238CA85622E_1443705380 =         mContentProvider.in
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.519 -0400", hash_original_method = "55FA237DF4BFD41E9E08436F090DA85B", hash_generated_method = "432EF29B0F8AF13C80CC42825E73EB07")
     public int delete(Uri url, String selection, String[] selectionArgs) throws RemoteException {
         addTaint(selectionArgs[0].getTaint());
@@ -113,7 +107,6 @@ Uri varA3DC35E25A52C8D59F81F238CA85622E_1443705380 =         mContentProvider.in
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.520 -0400", hash_original_method = "BCCAE42CFD50D64D397E399DC9FED070", hash_generated_method = "221BC950A2E02A80C53E64E1DA68FE12")
     public int update(Uri url, ContentValues values, String selection,
             String[] selectionArgs) throws RemoteException {
@@ -129,7 +122,6 @@ Uri varA3DC35E25A52C8D59F81F238CA85622E_1443705380 =         mContentProvider.in
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.520 -0400", hash_original_method = "D4D68B8D1E5B48A554790DFA92374EAF", hash_generated_method = "2F9B02214D0A7EDCC92A935120EA30C9")
     public ParcelFileDescriptor openFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
         addTaint(mode.getTaint());
@@ -142,7 +134,6 @@ ParcelFileDescriptor varBB4FE6E865172683939A18CA8BB37357_1150793433 =         mC
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.521 -0400", hash_original_method = "0F83F3227BB34A0F16879E1472F99C94", hash_generated_method = "558F51BB20ACDB4EAD99D01D6B5FD3DB")
     public AssetFileDescriptor openAssetFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
         addTaint(mode.getTaint());
@@ -180,7 +171,6 @@ ContentProviderResult[] varA5792D8F2DF3492C001E17A78FA6D47B_260042163 =         
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.523 -0400", hash_original_method = "6D0FD87E467E88469A71D9D6FF407FC5", hash_generated_method = "AE6A7F72DD553C9C3DD3834D6FB6C00B")
     public boolean release() {
         boolean var0E13907596B373C827F95A0D4B9A5F8F_18114100 = (mContentResolver.releaseProvider(mContentProvider));

@@ -36,7 +36,6 @@ public class IccCardStatus {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.433 -0400", hash_original_method = "FA0602D88E7C21991E0740ABD82BDA04", hash_generated_method = "E8A329A89DA1394AB1F8A7EB0516AB9F")
     public CardState getCardState() {
 CardState var2D1E0840F22322CEA6782A0E26A4A513_1566293230 =         mCardState;
@@ -82,7 +81,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.434 -0400", hash_original_method = "EAD880236056BC0FED4A918911F5B846", hash_generated_method = "2FA73BB56BD790225B35824B6148F4E7")
     public PinState getUniversalPinState() {
 PinState var01A551BCF4C2957CEA82343EFB7BBFCF_1989370772 =         mUniversalPinState;
@@ -146,7 +144,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.435 -0400", hash_original_method = "BB106B954443B302CECFC313EF7CB395", hash_generated_method = "E4511B63706939E711B01A34F986FF96")
     public int getGsmUmtsSubscriptionAppIndex() {
         int var3E8DC37F731F198865915768FB05C367_803135689 = (mGsmUmtsSubscriptionAppIndex);
@@ -157,7 +154,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.436 -0400", hash_original_method = "08BD9E6DFC873F65C3F784287907D5E3", hash_generated_method = "03968C0784B0953DB1DC116AD2BB207A")
     public void setGsmUmtsSubscriptionAppIndex(int gsmUmtsSubscriptionAppIndex) {
         mGsmUmtsSubscriptionAppIndex = gsmUmtsSubscriptionAppIndex;
@@ -166,7 +162,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.436 -0400", hash_original_method = "2A192AC2BA1E64618C17CC6A1074F688", hash_generated_method = "7B2707F563DF522B4E6320CF829F9A36")
     public int getCdmaSubscriptionAppIndex() {
         int varC0CBC2A81F0876A1D29E0DD01BDCB0D2_160065172 = (mCdmaSubscriptionAppIndex);
@@ -177,7 +172,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.437 -0400", hash_original_method = "891E989E2EC1A38AF8B37DBC8E8322CF", hash_generated_method = "6D1B0649C9CFAF249D62B999C50E4C43")
     public void setCdmaSubscriptionAppIndex(int cdmaSubscriptionAppIndex) {
         mCdmaSubscriptionAppIndex = cdmaSubscriptionAppIndex;
@@ -186,7 +180,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.437 -0400", hash_original_method = "66775E00E5C07C014B4CD9717DAD3963", hash_generated_method = "420C4C1A97B86FBCEE78EDD765B6406E")
     public int getImsSubscriptionAppIndex() {
         int var396B4A6976B7DC9E2179C8BE7CC98B90_686602745 = (mImsSubscriptionAppIndex);
@@ -197,7 +190,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.437 -0400", hash_original_method = "F62298652BB86C33D896C0D398774EF1", hash_generated_method = "EDDFA44F41288CFC56DC7BAF3703C59D")
     public void setImsSubscriptionAppIndex(int imsSubscriptionAppIndex) {
         mImsSubscriptionAppIndex = imsSubscriptionAppIndex;
@@ -206,7 +198,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.438 -0400", hash_original_method = "73A878FBCD525FA581932F7C6A7C55D4", hash_generated_method = "53D4625F4441676A7E6EF5F1FC01E7DB")
     public int getNumApplications() {
         int var360D6A6B07C55B04E0858861D2699CF8_1041873787 = (mNumApplications);
@@ -217,7 +208,6 @@ switch(state){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.438 -0400", hash_original_method = "6F974EA3499D29038B295A1FDDF2D7B1", hash_generated_method = "E0EE19C0A0A8F7AD8CB842C7430E7BAA")
     public void setNumApplications(int numApplications) {
         mNumApplications = numApplications;
@@ -282,7 +272,6 @@ String var2460B846747F8B22185AD8BE722266A5_651276945 =         sb.toString();
         CARDSTATE_ABSENT,
         CARDSTATE_PRESENT,
         CARDSTATE_ERROR;
-        @DSModeled(DSC.SAFE)
         boolean isCardPresent() {
             return this == CARDSTATE_PRESENT;
         }
@@ -296,15 +285,12 @@ String var2460B846747F8B22185AD8BE722266A5_651276945 =         sb.toString();
         PINSTATE_DISABLED,
         PINSTATE_ENABLED_BLOCKED,
         PINSTATE_ENABLED_PERM_BLOCKED;
-        @DSModeled(DSC.SAFE)
         boolean isPermBlocked() {
             return this == PINSTATE_ENABLED_PERM_BLOCKED;
         }
-        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == PINSTATE_ENABLED_NOT_VERIFIED;
         }
-        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == PINSTATE_ENABLED_BLOCKED;
         }

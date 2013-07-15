@@ -25,7 +25,6 @@ public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.399 -0400", hash_original_method = "C859D426E02BE595D55C2FAA9CB97225", hash_generated_method = "225686674E8AB59729BA6C67C424523F")
     public Object clone() {
         ExtensionHeaderList retval = new ExtensionHeaderList(headerName);
@@ -40,7 +39,6 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1620161768 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.399 -0400", hash_original_method = "05F9E55197B7F8BF967FE19D758EB1FB", hash_generated_method = "FBF4C815C4762BA05F166EA7F31ADCB5")
     public String encode() {
         StringBuffer retval = new StringBuffer();

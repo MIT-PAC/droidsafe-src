@@ -38,7 +38,6 @@ final class JWebCoreJavaBridge extends Handler {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.456 -0400", hash_original_method = "5F428C944882A33820E180A8794913DA", hash_generated_method = "CB8433DCF50F6DDB57C54A958589B3D3")
     @Override
     protected void finalize() {
@@ -64,7 +63,6 @@ final class JWebCoreJavaBridge extends Handler {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.457 -0400", hash_original_method = "02E069F093A33F917985EC0A146AF5DF", hash_generated_method = "482361C838A1D6C0B6F62C16E4D30209")
     private void fireSharedTimer() {
         mHasInstantTimer = false;
@@ -123,7 +121,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.458 -0400", hash_original_method = "AB9D63477B4D64307AC8C3CAD493B037", hash_generated_method = "E6C1DD8C897E1EE49852D729942B140D")
     private void signalServiceFuncPtrQueue() {
         Message msg = obtainMessage(FUNCPTR_MESSAGE);
@@ -134,13 +131,11 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.458 -0400", hash_original_method = "7F0F2EACA52373092F02E1C8C47DF6D2", hash_generated_method = "6600CFE6221B9A1E6606BE98A91D05C6")
     private void nativeServiceFuncPtrQueue() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.458 -0400", hash_original_method = "DCDD00DDB3DA5C0826A1E2E2E5E3FA67", hash_generated_method = "96A1FD464DCFA4908690A441DD814413")
     public void pause() {
     if(!mTimerPaused)        
@@ -178,13 +173,11 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.459 -0400", hash_original_method = "B06B3FDC2D2CDF223C79F9432CF6B221", hash_generated_method = "40CEB3675B2F6C9D2120A50F6D591BB2")
     public void setCacheSize(int bytes) {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.460 -0400", hash_original_method = "D5A9FC7DDB356B7F9D175C82B50A2AF1", hash_generated_method = "29D5F5345B4E8FB18A42984A246E1751")
     private void setCookies(String url, String value) {
         addTaint(value.getTaint());
@@ -221,7 +214,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.460 -0400", hash_original_method = "E3D7D6931554145E868760CB2C4A26A3", hash_generated_method = "06F2843DC4FEF80D68D818C1E6CB8E3D")
     private String cookies(String url) {
         addTaint(url.getTaint());
@@ -263,7 +255,6 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_37080297 =         PluginManager.getI
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.461 -0400", hash_original_method = "8308F15706BD844BBD432043C004CF45", hash_generated_method = "A512D0498C6FE08096B54AEFDDC32E76")
     private void setSharedTimer(long timemillis) {
         addTaint(timemillis);
@@ -320,7 +311,6 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_37080297 =         PluginManager.getI
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.462 -0400", hash_original_method = "017AD119A16DE91023E8FE76067DD440", hash_generated_method = "E25CF03C92593B02FB52198710A362CF")
     private String[] getKeyStrengthList() {
 String[] varDBCAD717D2F0C05E3C7F0AAD2619EDB5_1159775468 =         CertTool.getKeyStrengthList();
@@ -331,7 +321,6 @@ String[] varDBCAD717D2F0C05E3C7F0AAD2619EDB5_1159775468 =         CertTool.getKe
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.462 -0400", hash_original_method = "A59843A23C4CF1F3FD140F676EC35D8E", hash_generated_method = "21705674460553F4E0BFAF8806C966F2")
     synchronized private String getSignedPublicKey(int index, String challenge,
             String url) {
@@ -364,7 +353,6 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_538500157 =             "";
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.463 -0400", hash_original_method = "7BAB6C5DC5E9A5F66D14195839893242", hash_generated_method = "42DAC8AEB68DECFE610815DB2F7C0271")
     private String resolveFilePathForContentUri(String uri) {
         addTaint(uri.getTaint());
@@ -394,7 +382,6 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.464 -0400", hash_original_method = "3D9A94F616B3884F20C1C47ABAEE0053", hash_generated_method = "D491AE7D999DA9602D8EE674E69E0FE6")
     public void storeFilePathForContentUri(String path, String contentUri) {
         addTaint(contentUri.getTaint());
@@ -412,7 +399,6 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.464 -0400", hash_original_method = "48D122DFD280F464E6FED9A0593B265C", hash_generated_method = "F61E5C3079FECEB52B2DB1D9B7433BD0")
     public void updateProxy(ProxyProperties proxyProperties) {
         addTaint(proxyProperties.getTaint());
@@ -439,38 +425,32 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "CB9D9CAF93B6F7C6AC078700B30D5B3A", hash_generated_method = "B34C03FE423B4EE0844813601A2B0A67")
     private void nativeConstructor() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "46D026C452E34CB5D17D4D7413C83210", hash_generated_method = "76DCFAD42AA6902991CC86FFBD4823C2")
     private void nativeFinalize() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "509DDA1BD92D7B897CEF90224EAD9875", hash_generated_method = "AC2815A7BF25B7D98F063D4757A74F41")
     private void sharedTimerFired() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "9316866F322C157E5A357156C0328836", hash_generated_method = "0894466BDD76BC6CCF8988BD75C70B60")
     private void nativeUpdatePluginDirectories(String[] directories,
             boolean reload) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "DB39049AAE02496ACE7C7C1E193B0ADF", hash_generated_method = "D032B386D2B3E2A3611A9E9397D501D0")
     public void setNetworkOnLine(boolean online) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "E4793A664EF98A715ED3BAC198AF4EBD", hash_generated_method = "0BF6A0594BE2D247A95E23B02A51ECCF")
     public void setNetworkType(String type, String subtype) {
     }
@@ -481,19 +461,16 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.466 -0400", hash_original_method = "B071A6644C9AA816555B15D21EE52FB4", hash_generated_method = "0C564C4E48A08A51377B9BD8DC556B50")
     public void addPackageName(String packageName) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.466 -0400", hash_original_method = "143D937A228206F27207E7C61286CEC1", hash_generated_method = "1C9E54868B04A06DAF8309867D2F41A3")
     public void removePackageName(String packageName) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.466 -0400", hash_original_method = "562AC1C8CCB348A368D1FD0970777261", hash_generated_method = "CDD15C7E3E55587B192A2AF9CC08B56E")
     public void nativeUpdateProxy(String newProxy, String exclusionList) {
     }

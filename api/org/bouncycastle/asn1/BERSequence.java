@@ -33,7 +33,6 @@ public class BERSequence extends DERSequence {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.811 -0400", hash_original_method = "02357BA9FDB8523F9B8A86E245A5D94B", hash_generated_method = "0D06B814DD9B73B21F34A7B3DBE8471D")
      void encode(
         DEROutputStream out) throws IOException {

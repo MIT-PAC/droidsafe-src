@@ -433,7 +433,6 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.121 -0400", hash_original_method = "903092ED2C38BF649D61CAF92AAF4DF4", hash_generated_method = "B091948D31507164528E2CB3A01B1509")
     private void clearResultLocked() {
         mInteractionId = -1;
@@ -570,7 +569,6 @@ for(int i = 0;i < infosCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.125 -0400", hash_original_method = "44FB956257430D3824804A6F98AEDC24", hash_generated_method = "2CEFC81F4C56AE7493F0289BF89C7226")
     private Message getSameProcessMessageAndClear() {
         synchronized

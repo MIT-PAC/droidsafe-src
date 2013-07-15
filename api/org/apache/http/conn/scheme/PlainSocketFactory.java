@@ -34,13 +34,11 @@ public final class PlainSocketFactory implements SocketFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static PlainSocketFactory getSocketFactory() {
+        public static PlainSocketFactory getSocketFactory() {
         return DEFAULT_FACTORY;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.618 -0400", hash_original_method = "A3A12F6A184479CE87309C0199F9FB19", hash_generated_method = "10D0E5B755367EF28CAD3AB787809A84")
     public Socket createSocket() {
 Socket var5C6AFEF94E279F279E58F2088BCAD974_448410740 =         new Socket();
@@ -51,7 +49,6 @@ Socket var5C6AFEF94E279F279E58F2088BCAD974_448410740 =         new Socket();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.619 -0400", hash_original_method = "3F8F2095BF15D67174F7BEAF65F7911A", hash_generated_method = "2A5C67461E27E5D0DF93CF216FB5119D")
     public Socket connectSocket(Socket sock, String host, int port, 
                                 InetAddress localAddress, int localPort,
@@ -151,7 +148,6 @@ Socket var947470A701CF490B15CD8DA4BCF73C48_2028839521 =         sock;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.620 -0400", hash_original_method = "F7B998F5AE180E31090E44B8A03A92F7", hash_generated_method = "196855E93AF8BB62E01FDF49A562D39C")
     @Override
     public boolean equals(Object obj) {

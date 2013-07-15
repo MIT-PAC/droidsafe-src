@@ -130,7 +130,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.433 -0400", hash_original_method = "C51DF920D125BDAE90130F458F1F9388", hash_generated_method = "54499EE185511541EF870E8EAB8A02CF")
     @Override
     public ClassLoader getClassLoader() {
@@ -485,7 +484,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.447 -0400", hash_original_method = "10BBC39B201767C43F0FBBE296ABD273", hash_generated_method = "90575AB0DE7291D8EFE21336A8AB881C")
     @Override
     public void startActivity(Intent intent) {
@@ -510,7 +508,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.448 -0400", hash_original_method = "70A0DB323D66E33A5F118512F09625C8", hash_generated_method = "9E4BF9804A80D98EB1914ED8B553E7C0")
     @Override
     public void startIntentSender(IntentSender intent,
@@ -528,7 +525,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.448 -0400", hash_original_method = "7E1C16471170CAC5D2A8AEA7AFD07DD1", hash_generated_method = "5B5FD54DCCEFC507619E3C76178AD4D8")
     @Override
     public void sendBroadcast(Intent intent) {
@@ -541,7 +537,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.448 -0400", hash_original_method = "4C3B301BF0F66FC6027023D458D4F5CD", hash_generated_method = "F88637FE5EE5DD95EA107061803A8D1B")
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
@@ -555,7 +550,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.449 -0400", hash_original_method = "53C9E33F6F3BF762F0C7AD2D83F8B880", hash_generated_method = "8D7D313D92A3B74832E500ACDCE554B2")
     @Override
     public void sendOrderedBroadcast(Intent intent,
@@ -570,7 +564,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.449 -0400", hash_original_method = "BD4D4F58A89D586949B717D061DAB18B", hash_generated_method = "DE50E140EA27588700893E5FDBB923CF")
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
@@ -591,7 +584,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.449 -0400", hash_original_method = "F1DE7775DB33185A5749E492B31FBC7D", hash_generated_method = "FC1285B61D4D1AA78ABF9B7379C578C0")
     @Override
     public void sendStickyBroadcast(Intent intent) {
@@ -604,7 +596,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.450 -0400", hash_original_method = "282E4DE5B4B9DE490016C7174B108592", hash_generated_method = "2B6179BA51007EDA9288FB49C929A9DE")
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
@@ -624,7 +615,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.450 -0400", hash_original_method = "171AE827F280EA82963EC0D862FF9728", hash_generated_method = "DFD443EF7CE6532E5AADD4561B199CD9")
     @Override
     public void removeStickyBroadcast(Intent intent) {
@@ -637,7 +627,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.451 -0400", hash_original_method = "0850381B9C1FC302FA99B7B33A5E73A3", hash_generated_method = "E779CD07402AA233AB100BEC23E49630")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -652,7 +641,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.451 -0400", hash_original_method = "38D46FC990EC0A671B9656203023C7E3", hash_generated_method = "547372CA60234C8FF4D14C9B4B01F154")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
@@ -682,7 +670,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.452 -0400", hash_original_method = "E1F1505B58131FB6B0B7748694608436", hash_generated_method = "BF63A599DE35BFF88F668CD1E511E289")
     @Override
     public ComponentName startService(Intent service) {
@@ -695,7 +682,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.452 -0400", hash_original_method = "6B730D00DB06298D95F2B7A23DAD395A", hash_generated_method = "0D174CF9BA536233FB0C2B4351637747")
     @Override
     public boolean stopService(Intent service) {
@@ -708,7 +694,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.453 -0400", hash_original_method = "BFAA291B41512300628CDA2B72A00114", hash_generated_method = "2656367E7C58DE5A92C37452CF2C7DDA")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -842,7 +827,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "CA3402270A11C945C3AA0E7919220352", hash_generated_method = "68AAB319A0CFC3836BE6E6970BC7AE33")
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
@@ -857,7 +841,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "A5567E6B8C539B68F363AE3EA825B3B1", hash_generated_method = "D7C126759A8C49CDB3F5E5A9D10DDCE9")
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
@@ -871,7 +854,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "01DA97890A1635A805E6ABA70EA7E1A2", hash_generated_method = "47658A541D2D8C9410407B0E30FB022A")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -887,7 +869,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "0E91A21D8BB5EE13B32E9508DC980D04", hash_generated_method = "C1D112186B3FED14F139498C8EEE0B15")
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
@@ -901,7 +882,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.457 -0400", hash_original_method = "4E907F188543B6F68B290447CBA938FC", hash_generated_method = "E129AC93A68C1A77FA748B70006CBE10")
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
@@ -915,7 +895,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.457 -0400", hash_original_method = "10E5B81078B4D8C80FD1ADA81F59A293", hash_generated_method = "2B46110CE8120D0D7AA8D9989371954D")
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
@@ -934,7 +913,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.457 -0400", hash_original_method = "D6C517671FDE2208703A3C3A6D7AC623", hash_generated_method = "8D3C7973FBF8B5347C283574BA40AD5C")
     @Override
     public void enforceUriPermission(
@@ -952,7 +930,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.458 -0400", hash_original_method = "5404073C28217A8FED2D1029326FF0C1", hash_generated_method = "B6BE422CADAEEC604FF1C334E87FF547")
     @Override
     public void enforceCallingUriPermission(
@@ -968,7 +945,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.458 -0400", hash_original_method = "581596FE93D696843E16CDAA47A17F02", hash_generated_method = "A783A1E71D1B060029D11AEE11BEFD82")
     @Override
     public void enforceCallingOrSelfUriPermission(
@@ -984,7 +960,6 @@ public class MockContext extends Context {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.458 -0400", hash_original_method = "3F20BE4E74327552B96137FD3F126AED", hash_generated_method = "C70D5AECA789EDB4DF72CAF622232A92")
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,

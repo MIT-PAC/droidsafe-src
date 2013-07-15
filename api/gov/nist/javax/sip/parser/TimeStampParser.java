@@ -26,7 +26,6 @@ public class TimeStampParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.104 -0400", hash_original_method = "2B179D27AA0FC8FCF5481D4095B4030E", hash_generated_method = "ED9F885392993EA0152D8FC3D6E88246")
     public SIPHeader parse() throws ParseException {
     if(debug)        

@@ -101,7 +101,6 @@ public class EdgeEffect {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.126 -0400", hash_original_method = "2560E21D822EB58266D32B5FBCFCA888", hash_generated_method = "937C2CF909C70F6CCE7A1CB2903577B5")
     public void setSize(int width, int height) {
         mWidth = width;
@@ -112,7 +111,6 @@ public class EdgeEffect {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.128 -0400", hash_original_method = "C5415C2330467D0B97062A48ADF90DEB", hash_generated_method = "73C3555B4FBBDA968E91359AD813BBD6")
     public boolean isFinished() {
         boolean var116E16B3C77234A36C6DE3CC8043EE7D_302440833 = (mState == STATE_IDLE);
@@ -123,7 +121,6 @@ public class EdgeEffect {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.128 -0400", hash_original_method = "27AC7ECC3801AAB2943059507B28FB49", hash_generated_method = "4A51E2781D945A7EDF99F072DEC552D1")
     public void finish() {
         mState = STATE_IDLE;

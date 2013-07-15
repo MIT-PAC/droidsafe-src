@@ -685,7 +685,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.879 -0400", hash_original_method = "48D7C107F944AA3B8D2770DC9FDB0ED7", hash_generated_method = "4C6EB676C6950072E961904D96746D64")
     private void handleCmdResponse(CatResponseMessage resMsg) {
         addTaint(resMsg.getTaint());

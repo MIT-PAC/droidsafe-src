@@ -243,7 +243,6 @@ ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_45780091 =         anim;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.373 -0400", hash_original_method = "91CB6634BDE3355704A6B2B246DAA7A9", hash_generated_method = "2611AE739E240D7A76D87C75CA154E0C")
     private void setDisplayedChild(int whichChild, boolean animate) {
         addTaint(animate);
@@ -283,7 +282,6 @@ ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_45780091 =         anim;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.374 -0400", hash_original_method = "A7ED1EB61B0FBCD2BEBD15D1C1303F9C", hash_generated_method = "5679EA3D8F18A0FEBFDD599E810F6440")
      void applyTransformForChildAtIndex(View child, int relativeIndex) {
         addTaint(relativeIndex);
@@ -292,7 +290,6 @@ ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_45780091 =         anim;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.374 -0400", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "D0EB6A40CD0035C78337D7E801F2E773")
     public int getDisplayedChild() {
         int varDB5BE583416C3068C849D51E047EB136_2022995309 = (mWhichChild);
@@ -319,7 +316,6 @@ ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_45780091 =         anim;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.375 -0400", hash_original_method = "2C561D0D9BDC240B9A5D5DE9ED7CC2E1", hash_generated_method = "C2280049749561BD96B803DFE6A9DE9D")
      int modulo(int pos, int size) {
         addTaint(size);
@@ -987,7 +983,6 @@ Parcelable var11363738A09686A83D7F808C5259F29A_1457576814 =         new SavedSta
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.389 -0400", hash_original_method = "A2807F1883DAD1F14A6CC088A989D676", hash_generated_method = "F7A2B037FE18B88D1D426D476A09B500")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -1026,7 +1021,6 @@ View varD83D48D5932ACB235CE655A1204CCB70_546050429 =         getViewAtRelativeIn
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.390 -0400", hash_original_method = "23AFF2D08DB63552361956C44B4439AE", hash_generated_method = "F9874A5D4C5566522725D1F0707CA6A0")
     public ObjectAnimator getInAnimation() {
 ObjectAnimator var4B5C05D2D2A95AF947FC9E803E337EB1_1460361330 =         mInAnimation;
@@ -1037,7 +1031,6 @@ ObjectAnimator var4B5C05D2D2A95AF947FC9E803E337EB1_1460361330 =         mInAnima
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.390 -0400", hash_original_method = "4E43CB38736F57C9005B93984FDB3BE2", hash_generated_method = "EA5FC0666FD015F2A1540E2A3150D3AB")
     public void setInAnimation(ObjectAnimator inAnimation) {
         mInAnimation = inAnimation;
@@ -1046,7 +1039,6 @@ ObjectAnimator var4B5C05D2D2A95AF947FC9E803E337EB1_1460361330 =         mInAnima
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.390 -0400", hash_original_method = "6B0CDF48C8054A61C9B211FDE065CA93", hash_generated_method = "4503F642B064FAA723CB11C62417D023")
     public ObjectAnimator getOutAnimation() {
 ObjectAnimator var12545A6CD44F5F92DFAF41C046B9E960_116028624 =         mOutAnimation;
@@ -1057,7 +1049,6 @@ ObjectAnimator var12545A6CD44F5F92DFAF41C046B9E960_116028624 =         mOutAnima
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.390 -0400", hash_original_method = "1BCB8E8A3DAEDE15E6756EE2F683DC83", hash_generated_method = "C301EFF9C320600FE647D35958651477")
     public void setOutAnimation(ObjectAnimator outAnimation) {
         mOutAnimation = outAnimation;
@@ -1086,7 +1077,6 @@ ObjectAnimator var12545A6CD44F5F92DFAF41C046B9E960_116028624 =         mOutAnima
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.391 -0400", hash_original_method = "8FC95409534ABC48E92905DC8C518CE2", hash_generated_method = "B8F320B30FC7DD41541BCFCAA6FCA367")
     public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;
@@ -1106,7 +1096,6 @@ ObjectAnimator var12545A6CD44F5F92DFAF41C046B9E960_116028624 =         mOutAnima
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.392 -0400", hash_original_method = "4778E83EF7DB01E18145E85F688E24B4", hash_generated_method = "816E08BD7BA54EC30735C7B11940C83D")
     @Override
     public Adapter getAdapter() {
@@ -1153,7 +1142,6 @@ Adapter varD72668EDE5E63ADF9340F3D8A19FD205_1265176362 =         mAdapter;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.394 -0400", hash_original_method = "27E899D618A9F50FEEEF08AE1A9356B2", hash_generated_method = "830668230BE8DBAE61B67DFF47A3F87F")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
@@ -1204,7 +1192,6 @@ View varD83D48D5932ACB235CE655A1204CCB70_429871561 =         getViewAtRelativeIn
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.394 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "9D38AC80197E9738EE138974F1EA14DE")
     public void deferNotifyDataSetChanged() {
         mDeferNotifyDataSetChanged = true;
@@ -1264,7 +1251,6 @@ View varD83D48D5932ACB235CE655A1204CCB70_429871561 =         getViewAtRelativeIn
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.396 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "64085B2EAF9EA39B9EA364A5E4CA7F63")
     public void onRemoteAdapterDisconnected() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1280,7 +1266,6 @@ View varD83D48D5932ACB235CE655A1204CCB70_429871561 =         getViewAtRelativeIn
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.396 -0400", hash_original_method = "1A32686EBDFA985B54B6CF53155BB413", hash_generated_method = "AD4C3644092881C2E0FBB4399DF4389D")
     public void fyiWillBeAdvancedByHostKThx() {
         // ---------- Original Method ----------

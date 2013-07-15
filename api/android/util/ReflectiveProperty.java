@@ -243,7 +243,6 @@ V varE396095FB568A116FDE56C12F3E74C0A_1336768383 =                 (V) mField.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.203 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "6D3FB7659584CE31C0E753556C93A188")
     @Override
     public boolean isReadOnly() {

@@ -69,7 +69,6 @@ public class OperationApplicationException extends Exception {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.216 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "3133049EFC196CBF1EAEA3562AA75E92")
     public int getNumSuccessfulYieldPoints() {
         int var11FC6C9D498EE8CC3E52A83CA9847515_905803450 = (mNumSuccessfulYieldPoints);

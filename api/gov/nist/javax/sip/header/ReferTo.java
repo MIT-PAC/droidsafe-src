@@ -15,7 +15,6 @@ public final class ReferTo extends AddressParametersHeader implements javax.sip.
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.839 -0400", hash_original_method = "264DF371DD142B0CCD6F6ECE44A7BFB6", hash_generated_method = "8BE28CA6C76DEEB4B3E08245DF08679E")
     protected String encodeBody() {
     if(address == null)        

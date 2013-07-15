@@ -258,7 +258,6 @@ switch(msg.what){
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.406 -0400", hash_original_method = "856BC446A8E3590AAA97D30784AFC7AF", hash_generated_method = "A74DD86EEB964679872C2579E3BF5CCE")
         public void restoreSetsAvailable(RestoreSet[] result) {
             addTaint(result[0].getTaint());
@@ -270,7 +269,6 @@ switch(msg.what){
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.406 -0400", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "2F50BAFD1BE78E86C546D0C5DFA814CB")
         public void restoreStarting(int numPackages) {
             addTaint(numPackages);
@@ -282,7 +280,6 @@ switch(msg.what){
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.407 -0400", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "31766C357506570A5FADBB1195FA94D3")
         public void onUpdate(int nowBeingRestored, String currentPackage) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -296,7 +293,6 @@ switch(msg.what){
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.407 -0400", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "CA417BC5B0D06FEA4D8A0973BA34390A")
         public void restoreFinished(int error) {
             addTaint(error);

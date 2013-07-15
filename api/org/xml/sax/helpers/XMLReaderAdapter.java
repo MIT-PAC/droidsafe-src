@@ -96,7 +96,6 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.576 -0400", hash_original_method = "066AA0855CEAF16F5A4DD1498A9898AE", hash_generated_method = "0F2ADD0F92A8C507A348EECB68D8069E")
     public void setDocumentHandler(DocumentHandler handler) {
         documentHandler = handler;
@@ -188,7 +187,6 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.578 -0400", hash_original_method = "A4FE8368A0813DB39B9B2D62745BDC50", hash_generated_method = "8FDC55F9D464E2D689D2B0B5CDBBC246")
     public void startPrefixMapping(String prefix, String uri) {
         addTaint(uri.getTaint());
@@ -197,7 +195,6 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.578 -0400", hash_original_method = "6288457D9104DBA73FF5F77796A5069B", hash_generated_method = "398A8D091F972C52779202B902D2C498")
     public void endPrefixMapping(String prefix) {
         addTaint(prefix.getTaint());
@@ -277,7 +274,6 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.580 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());
@@ -296,7 +292,6 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.581 -0400", hash_original_method = "53FC4E3BB2217D6659CB21AA159A3250", hash_generated_method = "7A0F98D55CE81AA31A2B8414CFC871B3")
          void setAttributes(Attributes attributes) {
             this.attributes = attributes;

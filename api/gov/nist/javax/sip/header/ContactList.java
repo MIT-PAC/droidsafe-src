@@ -16,7 +16,6 @@ public class ContactList extends SIPHeaderList<Contact> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.218 -0400", hash_original_method = "BED68D8C66CBF48DBAF6B0E90A05F961", hash_generated_method = "D58E50333E84310EBC813A755218C676")
     public Object clone() {
         ContactList retval = new ContactList();

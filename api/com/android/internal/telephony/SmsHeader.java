@@ -155,7 +155,6 @@ public class SmsHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.442 -0400", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "21C5A00987745231BDE1498BF3228BA7")
     @Override
     public String toString() {

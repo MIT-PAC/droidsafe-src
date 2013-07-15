@@ -15,8 +15,7 @@ public class GLU {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static String gluErrorString(int error) {
+        public static String gluErrorString(int error) {
         switch (error) {
         case GL10.GL_NO_ERROR:
             return "no error";

@@ -17,7 +17,6 @@ public class DocumentFragmentImpl extends InnerNodeImpl implements DocumentFragm
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.607 -0400", hash_original_method = "D48C9C65653FE8B5C8C6E3ECCF0B8A68", hash_generated_method = "E9069870A3175F7F994D9F8D3899935C")
     @Override
     public String getNodeName() {
@@ -29,7 +28,6 @@ String varF287D4A7E79E99AB03AE4329BB749CF2_1934392709 =         "#document-fragm
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.607 -0400", hash_original_method = "0F2F6CD4C06D66DF39BC0FDC5EEF69E4", hash_generated_method = "85B6A8069E561CB121FBC793355B11B2")
     @Override
     public short getNodeType() {

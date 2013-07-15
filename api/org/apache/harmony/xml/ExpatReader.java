@@ -233,7 +233,6 @@ Object varF24ED8F881B00D87C96DB18E799E5B4E_1684895060 =             lexicalHandl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.015 -0400", hash_original_method = "4AC4E6C4007D28BC651CD7E6B362DD6C", hash_generated_method = "63D835E03E7F509982E0571C1C9770D9")
     public void setEntityResolver(EntityResolver resolver) {
         this.entityResolver = resolver;
@@ -242,7 +241,6 @@ Object varF24ED8F881B00D87C96DB18E799E5B4E_1684895060 =             lexicalHandl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.015 -0400", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "460900C55F5652C346A398068CE496A1")
     public EntityResolver getEntityResolver() {
 EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_830015387 =         entityResolver;
@@ -253,7 +251,6 @@ EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_830015387 =         entityRes
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "C5C8FE4AAF9C21A7CE3D34FBCBA58D65", hash_generated_method = "8B0F5ED3687EC3A90BA8E74AD080DCEE")
     public void setDTDHandler(DTDHandler dtdHandler) {
         this.dtdHandler = dtdHandler;
@@ -262,7 +259,6 @@ EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_830015387 =         entityRes
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "3C3FF5FAEB1A6BEF84D72357FA4D72D5")
     public DTDHandler getDTDHandler() {
 DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_466222319 =         dtdHandler;
@@ -273,7 +269,6 @@ DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_466222319 =         dtdHandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "2FAFDB8E70CAAF64BA45E64983BDD69F", hash_generated_method = "A94027FF3EBB8EC2D5A71E5B3D4DF058")
     public void setContentHandler(ContentHandler handler) {
         this.contentHandler = handler;
@@ -282,7 +277,6 @@ DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_466222319 =         dtdHandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "E04698427463FF6147E1A918B2D0CE2E", hash_generated_method = "51AC84000EC4268178BC4317AE4E245B")
     public ContentHandler getContentHandler() {
 ContentHandler var3013AD2E73283A2E190EF56C6A56B21E_253131022 =         this.contentHandler;
@@ -293,7 +287,6 @@ ContentHandler var3013AD2E73283A2E190EF56C6A56B21E_253131022 =         this.cont
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.017 -0400", hash_original_method = "7B962796A6AC5EDA23D64E3C68EF714F", hash_generated_method = "6F05662BE8FCA118F2F6EF361C757A69")
     public void setErrorHandler(ErrorHandler handler) {
         this.errorHandler = handler;
@@ -302,7 +295,6 @@ ContentHandler var3013AD2E73283A2E190EF56C6A56B21E_253131022 =         this.cont
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.017 -0400", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "150D780AEFDEC21A9287BA77A2E517B3")
     public ErrorHandler getErrorHandler() {
 ErrorHandler var814E1CB3DFFE2674E65471BBF7C52ECD_339476575 =         errorHandler;
@@ -313,7 +305,6 @@ ErrorHandler var814E1CB3DFFE2674E65471BBF7C52ECD_339476575 =         errorHandle
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.017 -0400", hash_original_method = "6DC1F08FFDA197EBCFE51BBDA6091085", hash_generated_method = "64EBCB4E3826189DF08A334F48EFF248")
     public LexicalHandler getLexicalHandler() {
 LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHandler;
@@ -324,7 +315,6 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.018 -0400", hash_original_method = "46969CCBA4951230BBEE4D65C754FA21", hash_generated_method = "453F77C804B47DFB6BD13C7EAAB6638F")
     public void setLexicalHandler(LexicalHandler lexicalHandler) {
         this.lexicalHandler = lexicalHandler;
@@ -333,7 +323,6 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.018 -0400", hash_original_method = "8B578359B2B86A936D64E613060A616F", hash_generated_method = "17FFA7C518350684BC738B6453A4D203")
     public boolean isNamespaceProcessingEnabled() {
         boolean varA1F90DC0949B964CF3CD56D32EFE56BC_1832916148 = (processNamespaces);
@@ -344,7 +333,6 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.018 -0400", hash_original_method = "B86489F53C66FA94BF60F43E844ECD38", hash_generated_method = "7BDAE2666FC1C25E8AEF559C34924293")
     public void setNamespaceProcessingEnabled(boolean processNamespaces) {
         this.processNamespaces = processNamespaces;

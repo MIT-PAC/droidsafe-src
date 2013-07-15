@@ -38,7 +38,6 @@ public class ExceptionInInitializerError extends LinkageError {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.722 -0400", hash_original_method = "7090E247F85246652792FDABBC14B51F", hash_generated_method = "9F4A01771B6C43BAC0BB89D3A5AF0E67")
     public Throwable getException() {
 Throwable varB0A8CAD4B1C89FFC19A72F5757E92C21_165257240 =         exception;
@@ -49,7 +48,6 @@ Throwable varB0A8CAD4B1C89FFC19A72F5757E92C21_165257240 =         exception;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.723 -0400", hash_original_method = "28A8EFFB85C5CFA84BB4445EFA004CE6", hash_generated_method = "C7F3F2F779A001BD380013FB395346AB")
     @Override
     public Throwable getCause() {

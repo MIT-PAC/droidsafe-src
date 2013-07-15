@@ -40,7 +40,6 @@ public class UUSInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.553 -0400", hash_original_method = "352357FC22D874D178D2C62527C60010", hash_generated_method = "F8B50CEF5469128653B237ACE32692E8")
     public int getDcs() {
         int varFB280BB54367BD3E895E9F6CFFC39695_1003751432 = (uusDcs);
@@ -51,7 +50,6 @@ public class UUSInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.554 -0400", hash_original_method = "304C29E73AF67DC85E7B439D2558394F", hash_generated_method = "94E5F21EB525F1888281AA89A1F2FFDB")
     public void setDcs(int uusDcs) {
         this.uusDcs = uusDcs;
@@ -60,7 +58,6 @@ public class UUSInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.554 -0400", hash_original_method = "C3F90AEC24B57BCB14BA37794741B56A", hash_generated_method = "530E0772514C870BE3913A874BBC2E8B")
     public int getType() {
         int var6C451461439D1D1511468C6A6A5AB661_1640034943 = (uusType);
@@ -71,7 +68,6 @@ public class UUSInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.554 -0400", hash_original_method = "4FF18D0C69655C8ABC948EB5DB465A11", hash_generated_method = "3FE8B407493C90F081206001F0842ACB")
     public void setType(int uusType) {
         this.uusType = uusType;
@@ -80,7 +76,6 @@ public class UUSInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.554 -0400", hash_original_method = "CBC9083E31E276860957A8B7835786FF", hash_generated_method = "41026A85A9345A54A48981ECB42A9E73")
     public byte[] getUserData() {
         byte[] varB320C3EA100DC45335CD66ADEBC42630_1710590203 = (uusData);
@@ -91,7 +86,6 @@ public class UUSInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.555 -0400", hash_original_method = "E6220F4E83328DF111D0B2120F7A66C4", hash_generated_method = "E70042857A3CF2E987698B8992450A83")
     public void setUserData(byte[] uusData) {
         this.uusData = uusData;

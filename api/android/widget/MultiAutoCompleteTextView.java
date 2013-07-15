@@ -45,14 +45,12 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.329 -0400", hash_original_method = "BCA16A32890B669BA239C7F8E91B803C", hash_generated_method = "54CDFBC681C1E3EEE4A842CD88F26A03")
      void finishInit() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.329 -0400", hash_original_method = "0C1CB9531D2E188C8CD299E678A81235", hash_generated_method = "3641C7F0ADB77417CC960DAB0B499BB5")
     public void setTokenizer(Tokenizer t) {
         mTokenizer = t;

@@ -86,8 +86,7 @@ public class DateFormat {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String getDateFormatStringForSetting(Context context, String value) {
+        private static String getDateFormatStringForSetting(Context context, String value) {
         if (value != null) {
             int month = value.indexOf('M');
             int day = value.indexOf('d');
@@ -159,8 +158,7 @@ public class DateFormat {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String getDateFormatString(Context context) {
+        private static String getDateFormatString(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.DATE_FORMAT);
         return getDateFormatStringForSetting(context, value);

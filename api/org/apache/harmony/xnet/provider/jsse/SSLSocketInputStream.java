@@ -36,7 +36,6 @@ public final class SSLSocketInputStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.412 -0400", hash_original_method = "A09BD0FC7A641BF0B6392C48D9B80DDB", hash_generated_method = "D50BB51FAE52E72979CFB5B32761475B")
     protected void setEnd() {
         end_reached = true;
@@ -45,7 +44,6 @@ public final class SSLSocketInputStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.412 -0400", hash_original_method = "32329B6D4EFC7F65437C2D09A5400721", hash_generated_method = "E51B2C1B2F65467880B8482EFDC02310")
     @Override
     public int available() throws IOException {
@@ -57,7 +55,6 @@ public final class SSLSocketInputStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.412 -0400", hash_original_method = "B0B2FCB9CE6FDF4EA578715FA3754421", hash_generated_method = "94D10BF77244A202799017548290E6EF")
     @Override
     public void close() throws IOException {

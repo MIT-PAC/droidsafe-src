@@ -17,7 +17,6 @@ public class ASN1EncodableVector extends DEREncodableVector {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.532 -0400", hash_original_method = "D2631DDAF2947787DEB94C0E4C39923E", hash_generated_method = "C07A46466B2C3107C1E9219F21752B31")
     public void add(DEREncodable obj) {
         addTaint(obj.getTaint());
@@ -27,7 +26,6 @@ public class ASN1EncodableVector extends DEREncodableVector {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.532 -0400", hash_original_method = "B314138255529409821E04A292C38866", hash_generated_method = "8DB1A259552A01C34901B3B32F81840B")
     public DEREncodable get(int i) {
         addTaint(i);
@@ -39,7 +37,6 @@ DEREncodable var8191964E2FCEE7188EFAEBD767F0FDB4_1453115967 =         (DEREncoda
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.532 -0400", hash_original_method = "F82248B1BB6EFF1F27955CBD5C3A97B0", hash_generated_method = "2592458B177134CCDDAFBD6E54750549")
     public int size() {
         int var51AE616C0259F34AABC75BA09943E804_2041358170 = (v.size());

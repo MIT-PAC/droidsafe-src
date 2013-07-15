@@ -21,7 +21,6 @@ public class X509DefaultEntryConverter extends X509NameEntryConverter {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.361 -0400", hash_original_method = "E0075DF75B4E99D6DCA984CA2F76B1C5", hash_generated_method = "5D26E8DC14F7373370F15A226EA0656A")
     public DERObject getConvertedValue(
         DERObjectIdentifier  oid,

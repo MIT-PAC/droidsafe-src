@@ -35,7 +35,6 @@ public abstract class ASN1Constructed extends ASN1Type {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.560 -0400", hash_original_method = "D76B5AEAE2B5495729712535531D2D80", hash_generated_method = "E722662B4269D1E0D51D2EC5A319D71E")
     public void encodeASN(BerOutputStream out) {
         addTaint(out.getTaint());

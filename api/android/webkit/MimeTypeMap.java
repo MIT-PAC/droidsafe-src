@@ -136,8 +136,7 @@ String var31E26FAFE73C53DECDB0A7F1CF57D932_1530623850 =         mimeType;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static MimeTypeMap getSingleton() {
+        public static MimeTypeMap getSingleton() {
         return sMimeTypeMap;
     }
 

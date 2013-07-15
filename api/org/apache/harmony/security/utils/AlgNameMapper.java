@@ -37,8 +37,7 @@ public class AlgNameMapper {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void selectEntries(Provider p) {
+        private static void selectEntries(Provider p) {
         Set<Map.Entry<Object, Object>> entrySet = p.entrySet();
         for (String service : serviceName) {
             String keyPrfix2find = "Alg.Alias." + service + ".";

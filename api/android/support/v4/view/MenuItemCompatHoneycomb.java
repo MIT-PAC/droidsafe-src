@@ -16,14 +16,12 @@ class MenuItemCompatHoneycomb {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static void setShowAsAction(MenuItem item, int actionEnum) {
+        public static void setShowAsAction(MenuItem item, int actionEnum) {
         item.setShowAsAction(actionEnum);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MenuItem setActionView(MenuItem item, View view) {
+        public static MenuItem setActionView(MenuItem item, View view) {
         return item.setActionView(view);
     }
 

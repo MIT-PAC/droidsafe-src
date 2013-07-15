@@ -18,8 +18,7 @@ public class Utils implements UtilsExt {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static Utils getInstance() {
+        public static Utils getInstance() {
         return instance;
     }
 
@@ -40,8 +39,7 @@ public class Utils implements UtilsExt {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static String reduceString(String input) {
+        protected static String reduceString(String input) {
         String newString = input.toLowerCase();
         int len = newString.length();
         String retval = "";
@@ -98,7 +96,6 @@ String var9F4A62C177DDEACC16AA2E7B03FF1348_384256951 =         SIPConstants.BRAN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.940 -0400", hash_original_method = "C81ECDD34C7D54B91D88A9F561BC20EF", hash_generated_method = "C7775B5913D9726B990B21DB3064C139")
     public boolean responseBelongsToUs(SIPResponse response) {
         addTaint(response.getTaint());
@@ -114,14 +111,12 @@ String var9F4A62C177DDEACC16AA2E7B03FF1348_384256951 =         SIPConstants.BRAN
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getSignature() {
+        public static String getSignature() {
         return signature;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         HashSet branchIds = new HashSet();
         for (int b = 0; b < 100000; b++) {
             String bid = Utils.getInstance().generateBranchId();

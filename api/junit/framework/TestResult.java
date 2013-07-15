@@ -179,7 +179,6 @@ Enumeration varB9E0BF60CDAD5BE5B5A751F5B7678F67_839173512 =         fFailures.el
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.267 -0400", hash_original_method = "B255F5DC6E019A7B063A4503DC44009F", hash_generated_method = "ECF1643526C8CBB7E44930B2EC79F2C0")
     public synchronized int runCount() {
         int var53D392AC28E0DA7A2A8E4DDB2F5DD653_1194296195 = (fRunTests);
@@ -227,7 +226,6 @@ Enumeration varB9E0BF60CDAD5BE5B5A751F5B7678F67_839173512 =         fFailures.el
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.268 -0400", hash_original_method = "2A4A3BCA46AEDD234384156D1F68427A", hash_generated_method = "C3105BD88A463F67012666C31BABBE4E")
     public synchronized boolean shouldStop() {
         boolean var2971494BCF0D07D01887CCC65BC0A659_1869221811 = (fStop);
@@ -261,7 +259,6 @@ for(Enumeration e= cloneListeners().elements();e.hasMoreElements();)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.269 -0400", hash_original_method = "9AD54EE55D5A75E97AE6A449995157CC", hash_generated_method = "A30B6ABC6D3DEBCDA1E349CB6199EDB8")
     public synchronized void stop() {
         fStop= true;

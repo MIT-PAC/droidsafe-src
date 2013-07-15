@@ -74,11 +74,9 @@ public final class BinaryHprof {
                 BYTE_TO_TAG.put(v.tag, v);
             }
         }
-        @DSModeled(DSC.BAN)
         public static Tag get(byte tag) {
             return BYTE_TO_TAG.get(tag);
         }
-        @DSModeled(DSC.BAN)
         public String checkSize(int actual) {
             if (actual < minimumSize) {
                 return "expected a minimial record size of " + minimumSize + " for " + this

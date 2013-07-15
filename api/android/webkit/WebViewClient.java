@@ -18,7 +18,6 @@ public class WebViewClient {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.618 -0400", hash_original_method = "B25B5EE312C01437108EEEF8D289ECD3", hash_generated_method = "4C2C2710B8ECBCA58E99F98B16B1BB40")
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         addTaint(url.getTaint());
@@ -31,7 +30,6 @@ public class WebViewClient {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.618 -0400", hash_original_method = "5314B6B2031A7AB7127460792C15BEA8", hash_generated_method = "D93B80D6F86035B05D74B08FEFCB8E77")
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -42,7 +40,6 @@ public class WebViewClient {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.618 -0400", hash_original_method = "3C74EFC6CC5DEEE74470BD61275572DD", hash_generated_method = "18394219E58E831AFE36EAF99B8C48E2")
     public void onPageFinished(WebView view, String url) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -52,7 +49,6 @@ public class WebViewClient {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.618 -0400", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "3814A17CF73A0CC7E65B049FD30BD4B2")
     public void onLoadResource(WebView view, String url) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -62,7 +58,6 @@ public class WebViewClient {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.619 -0400", hash_original_method = "B5801BDD799BA7062410BD396AAB4B71", hash_generated_method = "1E544877150922E5C7FED1C77B0AF1EA")
     public WebResourceResponse shouldInterceptRequest(WebView view,
             String url) {
@@ -90,7 +85,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.619 -0400", hash_original_method = "12ABA78EBE10E417F0C1B2A97120946D", hash_generated_method = "526469B4E594B6C070E8C51CE61C04B0")
     public void onReceivedError(WebView view, int errorCode,
             String description, String failingUrl) {
@@ -103,7 +97,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.620 -0400", hash_original_method = "F404DEEFBF7AA691DD4FBAFA7C65E80C", hash_generated_method = "D21809EDA5E6448F58E176C2251D6C20")
     public void onFormResubmission(WebView view, Message dontResend,
             Message resend) {
@@ -117,7 +110,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.620 -0400", hash_original_method = "17353DC9A8A29F2A1F6857B45DCA3F35", hash_generated_method = "75E4FF4C78A5FD0B0EDF76D6739C2FED")
     public void doUpdateVisitedHistory(WebView view, String url,
             boolean isReload) {
@@ -141,7 +133,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.620 -0400", hash_original_method = "B2EE2F5677BCC95DB5D614A683A4C62D", hash_generated_method = "E76D4D6EE1DEFD7875B9B2AF2E567A59")
     public void onProceededAfterSslError(WebView view, SslError error) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -178,7 +169,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.621 -0400", hash_original_method = "1014277FB075F3AB2B83403F67794F88", hash_generated_method = "429786102C41A31FBAEB37D9C3A36BAE")
     public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
         addTaint(event.getTaint());
@@ -191,7 +181,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.622 -0400", hash_original_method = "0A322E8BE1639A0DBED358F3919BFB99", hash_generated_method = "EAB59AD094465F6C1908C9F29CC32974")
     public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -201,7 +190,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.622 -0400", hash_original_method = "E786223707BD58A877E8AD07E09750F2", hash_generated_method = "23CAC2CD770F1D38FA4036177044B490")
     public void onScaleChanged(WebView view, float oldScale, float newScale) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -212,7 +200,6 @@ WebResourceResponse var540C13E9E156B687226421B24F2DF178_792244770 =         null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:01.622 -0400", hash_original_method = "61AD7355C99E5A8A7ACA8AE385985070", hash_generated_method = "52D754F41502790021C2E35960D39E26")
     public void onReceivedLoginRequest(WebView view, String realm,
             String account, String args) {

@@ -28,7 +28,6 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.877 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "45998FC1640AA08F69C864CD50BDF811")
     public boolean isAccessible() {
         boolean var327A6C4304AD5938EAF0EFB6CC3E53DC_398866677 = (flag);
@@ -39,7 +38,6 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.878 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "D0859DDEC273DE0EC754854BC0CB46EB")
     public void setAccessible(boolean flag) {
         this.flag = flag;

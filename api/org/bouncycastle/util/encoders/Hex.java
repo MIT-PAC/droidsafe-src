@@ -17,15 +17,13 @@ public class Hex {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static byte[] encode(
+        public static byte[] encode(
         byte[]    data) {
         return encode(data, 0, data.length);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] encode(
+        public static byte[] encode(
         byte[]    data,
         int       off,
         int       length) {
@@ -42,16 +40,14 @@ public class Hex {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int encode(
+        public static int encode(
         byte[]         data,
         OutputStream   out) throws IOException {
         return encoder.encode(data, 0, data.length, out);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int encode(
+        public static int encode(
         byte[]         data,
         int            off,
         int            length,
@@ -60,8 +56,7 @@ public class Hex {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] decode(
+        public static byte[] decode(
         byte[]    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
         try
@@ -76,8 +71,7 @@ public class Hex {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] decode(
+        public static byte[] decode(
         String    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
         try

@@ -15,7 +15,6 @@ public class AcceptLanguageList extends SIPHeaderList<AcceptLanguage> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "D59E3796661CC485086FCE096143E912", hash_generated_method = "17A2BA5FCCCB6DF5BD378811E637D73B")
     @Override
     public Object clone() {
@@ -31,7 +30,6 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1949219861 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "4EAA649C6A43B8603903A57164247286", hash_generated_method = "883A2F371ED0926AD57062F1BF4912B4")
     public AcceptLanguage getFirst() {
         AcceptLanguage retval = (AcceptLanguage) super.getFirst();
@@ -56,7 +54,6 @@ AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_1568613459 =         new Acce
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "D3074C13DEFE0D00E21551F82106E50D", hash_generated_method = "B1A8A7FB049CDCA724D68206AC7CAB02")
     public AcceptLanguage getLast() {
         AcceptLanguage retval = (AcceptLanguage) super.getLast();

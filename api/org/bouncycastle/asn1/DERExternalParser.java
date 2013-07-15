@@ -19,7 +19,6 @@ public class DERExternalParser implements DEREncodable, InMemoryRepresentable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.990 -0400", hash_original_method = "C77FFAC7A6753577CB275ABB55D17A64", hash_generated_method = "F6A05A697CF6DF15D178E94E9B664EC4")
     public DEREncodable readObject() throws IOException {
 DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_438738312 =         _parser.readObject();
@@ -30,7 +29,6 @@ DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_438738312 =         _parser.rea
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.991 -0400", hash_original_method = "E08AB982B1429E7FF32DFAFFCE3445B5", hash_generated_method = "234553DF4B13AAA41AA2394E91D92C99")
     public DERObject getLoadedObject() throws IOException {
         try 
@@ -57,7 +55,6 @@ DERObject varD972B7683CF111A6F634D8311D8A2756_2004392713 =             new DEREx
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.991 -0400", hash_original_method = "E8FC5EC09DAB37CBF457EC44DD373FAE", hash_generated_method = "702FC8A4270B970A74D7D12C2D6852FF")
     public DERObject getDERObject() {
         try 

@@ -34,7 +34,6 @@ public class TimeoutEvent extends TransactionTerminatedEvent {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.299 -0400", hash_original_method = "83172AE614FED36EC49043A629BB9E54", hash_generated_method = "AF68EF7E84749B8050AFDE42928B85E7")
     public Timeout getTimeout() {
 Timeout var8318AEC113BDBBB67AC369DA259B4BA7_914558776 =         mTimeout;

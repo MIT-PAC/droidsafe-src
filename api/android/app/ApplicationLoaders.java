@@ -20,13 +20,11 @@ class ApplicationLoaders {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static ApplicationLoaders getDefault() {
+        public static ApplicationLoaders getDefault() {
         return gApplicationLoaders;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.326 -0400", hash_original_method = "EA4DC0433A5C7A22C1BA1C659599A634", hash_generated_method = "296C8BAD2C692DA0E40F38799501CC8A")
     public ClassLoader getClassLoader(String zip, String libPath, ClassLoader parent) {
         addTaint(parent.getTaint());

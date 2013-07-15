@@ -95,7 +95,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.686 -0400", hash_original_method = "D97604A456AD6CF9916FB862EEBD56CF", hash_generated_method = "747848DFDECCFD971D865471FA6BE28D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -167,31 +166,26 @@ for(Map.Entry<Integer, Integer> entry : mSelectionArgsBackReferences.entrySet())
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newInsert(Uri uri) {
+        public static Builder newInsert(Uri uri) {
         return new Builder(TYPE_INSERT, uri);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newUpdate(Uri uri) {
+        public static Builder newUpdate(Uri uri) {
         return new Builder(TYPE_UPDATE, uri);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newDelete(Uri uri) {
+        public static Builder newDelete(Uri uri) {
         return new Builder(TYPE_DELETE, uri);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newAssertQuery(Uri uri) {
+        public static Builder newAssertQuery(Uri uri) {
         return new Builder(TYPE_ASSERT, uri);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.688 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "E7973766B26F8BB7CE20E4574C5B7EF9")
     public Uri getUri() {
 Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
@@ -202,7 +196,6 @@ Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.688 -0400", hash_original_method = "0D76D2BF4F9E314AF3AEB01067FC98E0", hash_generated_method = "2376DCA5FBA76D217DDFF146773E74C0")
     public boolean isYieldAllowed() {
         boolean varB3463DA9E487038FF44897CC868147B7_1358038527 = (mYieldAllowed);
@@ -213,7 +206,6 @@ Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.689 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "F91DF4CA456B85E471AC9BB91BEB454F")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_1426472940 = (mType);
@@ -224,7 +216,6 @@ Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.689 -0400", hash_original_method = "94452D9A7E20FFB1CE97B24DC927192A", hash_generated_method = "484D38DBC138A4C3850C997F93E7FAE5")
     public boolean isWriteOperation() {
         boolean var61CA068672D6005E111FF12D7F442E6F_661351605 = (mType == TYPE_DELETE || mType == TYPE_INSERT || mType == TYPE_UPDATE);
@@ -235,7 +226,6 @@ Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.689 -0400", hash_original_method = "BBB0424C7EB706D24B64E8DBE01BF66B", hash_generated_method = "176D650D037E30540F03DA693D04927C")
     public boolean isReadOperation() {
         boolean var9CDB60DEFE76685410316EA9CCF1700B_586139720 = (mType == TYPE_ASSERT);
@@ -246,7 +236,6 @@ Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.691 -0400", hash_original_method = "2009EEC78D1FCDD51A500D4742040E7C", hash_generated_method = "F402789FAA322923286EBDB14FA6A479")
     public ContentProviderResult apply(ContentProvider provider, ContentProviderResult[] backRefs,
             int numBackRefs) throws OperationApplicationException {
@@ -439,7 +428,6 @@ String[] var66A41BD6CDACE61B81A29265306FE12C_605118089 =         newArgs;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.696 -0400", hash_original_method = "78718167AF18105CAC703FAFB09E4964", hash_generated_method = "21DA4F1C045D1B9C72D3B4B21820E2EC")
     @Override
     public String toString() {
@@ -506,7 +494,6 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.698 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E04BBAE0F399B57E334E466EA46C683A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_462618791 = (0);
@@ -565,7 +552,6 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.701 -0400", hash_original_method = "52DF5CD1F3EDB944F65D1FF1857828C4", hash_generated_method = "CFF0D8CAE49C492549547C51E00C2476")
         public ContentProviderOperation build() {
     if(mType == TYPE_UPDATE)            
@@ -866,7 +852,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_274090281 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.717 -0400", hash_original_method = "1D016C05C5C9EB70F24159159C761C5E", hash_generated_method = "29637C43B9B176ECADBF4CDCDB435EEE")
         public Builder withYieldAllowed(boolean yieldAllowed) {
             mYieldAllowed = yieldAllowed;

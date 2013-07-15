@@ -17,38 +17,32 @@ public class Color {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static int alpha(int color) {
+        public static int alpha(int color) {
         return color >>> 24;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int red(int color) {
+        public static int red(int color) {
         return (color >> 16) & 0xFF;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int green(int color) {
+        public static int green(int color) {
         return (color >> 8) & 0xFF;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int blue(int color) {
+        public static int blue(int color) {
         return color & 0xFF;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int rgb(int red, int green, int blue) {
+        public static int rgb(int red, int green, int blue) {
         return (0xFF << 24) | (red << 16) | (green << 8) | blue;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int argb(int alpha, int red, int green, int blue) {
+        public static int argb(int alpha, int red, int green, int blue) {
         return (alpha << 24) | (red << 16) | (green << 8) | blue;
     }
 

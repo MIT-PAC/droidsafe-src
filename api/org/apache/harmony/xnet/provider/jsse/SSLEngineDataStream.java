@@ -63,7 +63,6 @@ for(int i=offset;i<limit;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.935 -0400", hash_original_method = "12974A5B538247B78E89825F62815487", hash_generated_method = "C5E5CF278A6FEE559EFAA65831B7D200")
     public int available() {
         int varE4894CA167B08880BFC35862F18575EB_974009350 = (available);
@@ -74,7 +73,6 @@ for(int i=offset;i<limit;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.935 -0400", hash_original_method = "B6667DC9436017993F0441DE39A68018", hash_generated_method = "FC9E0C96BD6DD060D8222F1ECB3E0775")
     public boolean hasData() {
         boolean var187323F648CA0F77519D1FF133B598A4_1590887052 = (available > 0);
@@ -130,7 +128,6 @@ for(;offset<limit;offset++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.936 -0400", hash_original_method = "7DD74A3F0F5CC57B45BB73D025A428F5", hash_generated_method = "42C0ACC266A043D13275279B3665E415")
     protected int consumed() {
         int var48FE8558CE14C4C865198444C538ECC5_1371248460 = (consumed);

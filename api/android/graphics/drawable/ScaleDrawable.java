@@ -62,7 +62,6 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.696 -0400", hash_original_method = "AEF970ED5616036B7E8018EB225E392F", hash_generated_method = "43F02C865ED0856194B691561F535DAC")
     public Drawable getDrawable() {
 Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mDrawable;
@@ -490,7 +489,6 @@ Drawable var82A4E78F82249DE721665224C03FCFD2_920825464 =             new ScaleDr
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.710 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "A7B39FD9017C27C2BD7A07ACC0418FF1")
         @Override
         public int getChangingConfigurations() {

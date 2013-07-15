@@ -20,8 +20,7 @@ public final class MimeUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void add(String mimeType, String extension) {
+        private static void add(String mimeType, String extension) {
         if (!mimeTypeToExtensionMap.containsKey(mimeType)) {
             mimeTypeToExtensionMap.put(mimeType, extension);
         }

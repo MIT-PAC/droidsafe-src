@@ -38,7 +38,6 @@ public class Element {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.897 -0400", hash_original_method = "BFA15C1190E0B500E7A321E762D22239", hash_generated_method = "422E209CF9D768E4914C8017DCA23B29")
     public ElementType type() {
 ElementType varF51095CBFCCE381E73DD672B54BEF95F_461119508 =         theType;
@@ -49,7 +48,6 @@ ElementType varF51095CBFCCE381E73DD672B54BEF95F_461119508 =         theType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.897 -0400", hash_original_method = "5DFAF4737CD1323AC5BCD66ECC931C62", hash_generated_method = "1664CD3770F677C0DCCCCF3EB3AD285C")
     public AttributesImpl atts() {
 AttributesImpl varFB5CAB611E727D03F638BBA9F461FD53_799499683 =         theAtts;
@@ -60,7 +58,6 @@ AttributesImpl varFB5CAB611E727D03F638BBA9F461FD53_799499683 =         theAtts;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.898 -0400", hash_original_method = "9BD985D9D137F9E87CC0C75657FC57B8", hash_generated_method = "0D793DF6C30A4E99537C4D69072BE383")
     public Element next() {
 Element varB89BFAC58CA29A6FFD18C2AE8DA88577_988907934 =         theNext;
@@ -71,7 +68,6 @@ Element varB89BFAC58CA29A6FFD18C2AE8DA88577_988907934 =         theNext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.898 -0400", hash_original_method = "9784418C474A290336108D75EC2613BB", hash_generated_method = "B0D02388E7E125BF20397459054E2AB9")
     public void setNext(Element next) {
         theNext = next;
@@ -216,7 +212,6 @@ for(int i = theAtts.getLength() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.903 -0400", hash_original_method = "4B2B445A367BD9870FD7E6D0B377F667", hash_generated_method = "9487A721FE8CC0EDA322618ED3CDFEEE")
     public void preclose() {
         preclosed = true;
@@ -225,7 +220,6 @@ for(int i = theAtts.getLength() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.903 -0400", hash_original_method = "D6339CFBAEA862E2360C9454B8ED0BC8", hash_generated_method = "18F41F16A704A17045F377B2B5D4BEB6")
     public boolean isPreclosed() {
         boolean varD8AE31ABFACD39F1529F19591E594EAD_1117089601 = (preclosed);

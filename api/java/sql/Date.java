@@ -173,8 +173,7 @@ String var2460B846747F8B22185AD8BE722266A5_2072412108 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long normalizeTime(long theTime) {
+        private static long normalizeTime(long theTime) {
         return theTime;
     }
 

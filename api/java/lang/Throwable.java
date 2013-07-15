@@ -100,7 +100,6 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_565210774 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.716 -0400", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "D460754CE243182A20A6D334D37C2CDF")
     public String getMessage() {
 String var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1517944061 =         detailMessage;
@@ -344,7 +343,6 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_707003474 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.722 -0400", hash_original_method = "22464C579A8BDBBA630699F5CFE21CE6", hash_generated_method = "5766EC51FCF26B4BA7A6F587E3415853")
     public Throwable getCause() {
     if(cause == this)        

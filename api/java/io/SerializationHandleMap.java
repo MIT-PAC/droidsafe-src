@@ -186,7 +186,6 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.006 -0400", hash_original_method = "A55090ECB6D90893D6737F77075A1229", hash_generated_method = "0BF0037FE145DAA3371262A693082813")
     public int remove(Object key) {
         addTaint(key.getTaint());
@@ -242,7 +241,6 @@ for(int i = 0;i < oldKeys.length;++i)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.007 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "E328021BEDC685ECF61C34FF4CFFF9D5")
     public boolean isEmpty() {
         boolean var9FB8BC7F775DDD98EEAB5582D340229E_238124799 = (size == 0);

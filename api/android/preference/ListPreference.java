@@ -64,7 +64,6 @@ public class ListPreference extends DialogPreference {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.321 -0400", hash_original_method = "92444C405286C6A282911C360FA1B20D", hash_generated_method = "C62CC4A5A33DFC543ABA49B4451B21C1")
     public void setEntries(CharSequence[] entries) {
         mEntries = entries;
@@ -82,7 +81,6 @@ public class ListPreference extends DialogPreference {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.322 -0400", hash_original_method = "F69A5267D165BB7292A2F7B29A70DF84", hash_generated_method = "F4E764D0D82E0F9A101A2AD676EAA13C")
     public CharSequence[] getEntries() {
 CharSequence[] varDFEB20DF106F6A2CD6E980CC40196305_1253586815 =         mEntries;
@@ -93,7 +91,6 @@ CharSequence[] varDFEB20DF106F6A2CD6E980CC40196305_1253586815 =         mEntries
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.322 -0400", hash_original_method = "33C67F5304EFCF57E93FE56574A29FD8", hash_generated_method = "784E1B92FE82DF1BFF22EEB8A8902145")
     public void setEntryValues(CharSequence[] entryValues) {
         mEntryValues = entryValues;
@@ -111,7 +108,6 @@ CharSequence[] varDFEB20DF106F6A2CD6E980CC40196305_1253586815 =         mEntries
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.323 -0400", hash_original_method = "4077A49F0088F4F9F53375DFF9727B97", hash_generated_method = "BA24D96577B1528C7F5E8A5E9FD47BCA")
     public CharSequence[] getEntryValues() {
 CharSequence[] var8191EBE8B88208B04001F3EB9757A462_513535984 =         mEntryValues;
@@ -195,7 +191,6 @@ CharSequence varB94F03AB2102AC083EBCD479B7D73881_1183870725 =             String
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.325 -0400", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "0EFC7B214082BF2FB4D9BB07AB2A004C")
     public String getValue() {
 String varD1FEA3F5EE4618A9C3646312F018E4AC_903727116 =         mValue;

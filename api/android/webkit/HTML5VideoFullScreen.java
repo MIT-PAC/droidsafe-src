@@ -180,7 +180,6 @@ public class HTML5VideoFullScreen extends HTML5VideoView implements MediaPlayerC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.250 -0400", hash_original_method = "AB3C62FD6F005880E77BC1927A87EEED", hash_generated_method = "E67625EFF9898BCA6DC6CCB96E92BD82")
     private SurfaceView getSurfaceView() {
 SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfaceView;
@@ -191,7 +190,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.250 -0400", hash_original_method = "1F74C4E95F456B4EB4EE7ED74E748A1C", hash_generated_method = "801799CB0C592DFB6B2E64277EBF8B7F")
     private void setMediaController(MediaController m) {
         mMediaController  = m;
@@ -202,7 +200,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "BDA424FAC6D15253AC0E1C5DC76C6F7A", hash_generated_method = "4BA845F75A9141E62683E2F586729A80")
     private void attachMediaController() {
     if(mPlayer != null && mMediaController != null)        
@@ -220,7 +217,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "010B148200478BACA2EC38A18BA9574D", hash_generated_method = "88980725431A155BEDF1061FBBB25E49")
     @Override
     public void decideDisplayMode() {
@@ -230,7 +226,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "55B4D124A95057AC3A279B37C798CFA8", hash_generated_method = "944F90C44367916A4DC4AB4D8CFB1BA7")
     private void prepareForFullScreen() {
         mPlayer.reset();
@@ -249,7 +244,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.251 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "3FD9697155F837AC56FFFC09091C9312")
     private void toggleMediaControlsVisiblity() {
     if(mMediaController.isShowing())        
@@ -269,7 +263,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.253 -0400", hash_original_method = "8210B7805670B2428155D9962ECCD498", hash_generated_method = "0B5D0351AA80A3CF8BFC7AD969F4A539")
     @Override
     public void onPrepared(MediaPlayer mp) {
@@ -311,7 +304,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.253 -0400", hash_original_method = "D38369E141B1495D009E7319C4B9F69F", hash_generated_method = "447715A976D89DD9E65B14969C5F5784")
     public boolean fullScreenExited() {
         boolean varA93A45CC1C08EB972D4A6DEB1FE2CB96_208829479 = ((mLayout == null));
@@ -322,7 +314,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.254 -0400", hash_original_method = "A8AE00CC29C9049B47899131597AFF8D", hash_generated_method = "A2BCE3B2D185CEC0CD0772FB06D84590")
     @Override
     public void enterFullScreenVideoState(int layerId,
@@ -364,7 +355,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.255 -0400", hash_original_method = "2F3070B25A278338AEEAB48124299E28", hash_generated_method = "EA5F4F321B5F43D7F983433A485F62C3")
     public boolean isFullScreenMode() {
         boolean varB326B5062B2F0E69046810717534CB09_1672123184 = (true);
@@ -375,7 +365,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.255 -0400", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "7D0BBB23CE8B890FB5A8421835FCBF40")
     @Override
     public boolean canPause() {
@@ -387,7 +376,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.255 -0400", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "FC3D6B6C843EBC983EA89B0F02B8CDF1")
     @Override
     public boolean canSeekBackward() {
@@ -399,7 +387,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.256 -0400", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "04C738AEFF348C6E9602072118B004F9")
     @Override
     public boolean canSeekForward() {
@@ -411,7 +398,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.256 -0400", hash_original_method = "5712A5AFCA7A8FC23B7D8D35D8488604", hash_generated_method = "D14A9791CAF5A3C281A4BA76E51C5238")
     @Override
     public int getBufferPercentage() {
@@ -432,7 +418,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.256 -0400", hash_original_method = "6CF96CE118939EE02746CF132717D00A", hash_generated_method = "55CB337324939B3C15B871928E913F10")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -456,7 +441,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.257 -0400", hash_original_method = "768EF74C7E083D9FE3529A6C9E69F9F8", hash_generated_method = "F331AAB42E954B97E4895E585A9B451C")
     @Override
     protected void switchProgressView(boolean playerBuffering) {
@@ -495,7 +479,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.257 -0400", hash_original_method = "9B50960AB78A53ECD97D5FCFD81C02C7", hash_generated_method = "A9195C0AFBDD862B72B1DC4CDD53C35F")
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -550,7 +533,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.258 -0400", hash_original_method = "5C37CDC7ADB20FAB9875274C523AD18A", hash_generated_method = "E9BD2B88B09359647271228EDD79FC97")
         @Override
         public void show() {
@@ -567,7 +549,6 @@ SurfaceView var864033359B783656342F447F5243D0ED_1661518275 =         mVideoSurfa
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.259 -0400", hash_original_method = "82DCA636A8398ED2FB754EAF8FD1AC92", hash_generated_method = "7836EC5B1B2083E36988EDFB4FF85DD7")
         @Override
         public void hide() {

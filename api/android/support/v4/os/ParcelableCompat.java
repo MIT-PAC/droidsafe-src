@@ -35,7 +35,6 @@ public class ParcelableCompat {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.476 -0400", hash_original_method = "BC4263EA8B5E453C51CC1CF339ED2394", hash_generated_method = "882E72DD926F7EF2EC01D84D830943C6")
         @Override
         public T createFromParcel(Parcel source) {
@@ -48,7 +47,6 @@ T var25D98B315EBA03ECC7F6F53097856CE3_285144324 =             mCallbacks.createF
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.476 -0400", hash_original_method = "5AB872DFD1AEB45ECC63ABABFF71FE11", hash_generated_method = "888C38BEBAFB415004BF877377958C5F")
         @Override
         public T[] newArray(int size) {

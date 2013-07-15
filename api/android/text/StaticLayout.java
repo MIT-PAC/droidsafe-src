@@ -927,7 +927,6 @@ for(left = 0;left < right;left++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.938 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "DF8990C0288B587AD7FAA7120F74CCF3")
     @Override
     public int getLineForVertical(int vertical) {
@@ -982,7 +981,6 @@ for(left = 0;left < right;left++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.938 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "E8ADCEE0AEE232F39FE32D33B28BB694")
     @Override
     public int getLineCount() {
@@ -1040,7 +1038,6 @@ for(left = 0;left < right;left++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.940 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "A8898A96626BCFFAC443D7EA7FFF9A91")
     @Override
     public int getLineStart(int line) {
@@ -1053,7 +1050,6 @@ for(left = 0;left < right;left++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.940 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "E364DC2CCA82F7EC0272F3BC0032F24C")
     @Override
     public int getParagraphDirection(int line) {
@@ -1066,7 +1062,6 @@ for(left = 0;left < right;left++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.941 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "DBE74D3EBF4F6EC14B39E897F2AEC108")
     @Override
     public boolean getLineContainsTab(int line) {
@@ -1091,7 +1086,6 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.941 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "A6CE4E56947F9AC7C623529B22CD3270")
     @Override
     public int getTopPadding() {
@@ -1103,7 +1097,6 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.941 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "B378FCD25E9189D670F048407CAF2BBA")
     @Override
     public int getBottomPadding() {
@@ -1115,7 +1108,6 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.942 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "7DBBDAF9D4F1F869E7689A92F455D1DD")
     @Override
     public int getEllipsisCount(int line) {
@@ -1137,7 +1129,6 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.942 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "48263A550B1E382AA04240773DB898AE")
     @Override
     public int getEllipsisStart(int line) {
@@ -1159,7 +1150,6 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.943 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "19180E3B2AE221730BBDB1C11A2F3AC9")
     @Override
     public int getEllipsizedWidth() {

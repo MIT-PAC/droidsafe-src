@@ -15,7 +15,6 @@ public class SupportedList extends SIPHeaderList<Supported> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.501 -0400", hash_original_method = "45CDCD8BD327539AF66457D00250AD24", hash_generated_method = "C2A121FD9CA0BCB945ADFA1536AFE1D6")
     public Object clone() {
         SupportedList retval = new SupportedList();

@@ -105,7 +105,6 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.352 -0400", hash_original_method = "0C586E8D4837845118D5ECAFE1DD23B0", hash_generated_method = "2D5199C3EDC59A2443DBB0E900B9D773")
     public ComponentName clone() {
 ComponentName var6C09C2B1BA5F965B795709781D6C0A40_252668599 =         new ComponentName(mPackage, mClass);
@@ -116,7 +115,6 @@ ComponentName var6C09C2B1BA5F965B795709781D6C0A40_252668599 =         new Compon
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.353 -0400", hash_original_method = "89B4378559F402BEFD7FD434E355C3B4", hash_generated_method = "B7216F2A7D1D43B81E0D922656424BAC")
     public String getPackageName() {
 String varD0D543EB218BC9E16C17B23C08BC19C7_46339205 =         mPackage;
@@ -127,7 +125,6 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_46339205 =         mPackage;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.354 -0400", hash_original_method = "ABD4E1FA4C56F78B933D2E76ACF407D1", hash_generated_method = "8A0440C1A5E2719F2CD9FC914B79AB41")
     public String getClassName() {
 String var64662C86CFFE7A9599CD4183BD66D434_1978471194 =         mClass;
@@ -176,7 +173,6 @@ String var06A4D852FFCAF88A29792FA49A49FE23_353153014 =         mPackage + "/" + 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.356 -0400", hash_original_method = "CF7AA080F36C0EC07816037C2C3C9C55", hash_generated_method = "4111C9EAFAB8C8C9BC5BC8AAD2D083FC")
     public String flattenToShortString() {
 String var25046991B4E1F9743FF1F8E8BA0A59D6_2048536845 =         mPackage + "/" + getShortClassName();
@@ -211,7 +207,6 @@ String varB78D2BB45811B1D90493C7362E6C1AA5_965692711 =         "{" + mPackage + 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.357 -0400", hash_original_method = "54FBA5D02AAB0DA35DA4E57242A769F6", hash_generated_method = "B591990818C47547CC535219CA60A63A")
     @Override
     public String toString() {
@@ -223,7 +218,6 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_609710672 =         "ComponentInfo{" 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.358 -0400", hash_original_method = "221E549665728B04A91E5C9A58326754", hash_generated_method = "3B09C02386C7F15C6DDEA7D903DB43A4")
     @Override
     public boolean equals(Object obj) {
@@ -258,7 +252,6 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_609710672 =         "ComponentInfo{" 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.359 -0400", hash_original_method = "0BD278EA5D55E08CD4E56E53F182D0C7", hash_generated_method = "EA58D47E5D85EAFB6F8200BB332FDD10")
     @Override
     public int hashCode() {
@@ -270,7 +263,6 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_609710672 =         "ComponentInfo{" 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.359 -0400", hash_original_method = "DB0D439501C0EAB456A0FFDB0A59DF6E", hash_generated_method = "07A464F114F872C7ECEF3D2EE243FDE5")
     public int compareTo(ComponentName that) {
         addTaint(that.getTaint());
@@ -295,7 +287,6 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_609710672 =         "ComponentInfo{" 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.360 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "31DE1383E04D7A91CB75F43DDB516BFC")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_970800487 = (0);
@@ -306,7 +297,6 @@ String var6AF44BA55BD7D20B537175E5DA6FC475_609710672 =         "ComponentInfo{" 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.360 -0400", hash_original_method = "04D15992D5C44ACF00A97C758C27E164", hash_generated_method = "0015459FF2A6FD18C92307902A2DCE54")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

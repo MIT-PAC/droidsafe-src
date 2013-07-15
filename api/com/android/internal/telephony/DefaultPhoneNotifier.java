@@ -29,7 +29,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.678 -0400", hash_original_method = "B1B04D5C561E6616E6BB5E666E01B9EA", hash_generated_method = "72D090356AA24BE56084406CA18E405D")
     public void notifyPhoneState(Phone sender) {
         addTaint(sender.getTaint());
@@ -59,7 +58,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.678 -0400", hash_original_method = "8120B7915F3C7B653A108168FE940FC9", hash_generated_method = "DB2E0C7F747300AB45AE321EE1C486CD")
     public void notifyServiceState(Phone sender) {
         addTaint(sender.getTaint());
@@ -89,7 +87,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.679 -0400", hash_original_method = "51C3EBD9D5F86649F01134EE2C844096", hash_generated_method = "C6B9CE9D627B682BF49F32A95E975C57")
     public void notifySignalStrength(Phone sender) {
         addTaint(sender.getTaint());
@@ -108,7 +105,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.680 -0400", hash_original_method = "EEA6E3D036FE30A21A0E7B01738A2091", hash_generated_method = "E0171F8EEF192E2A0004C48A2A704753")
     public void notifyMessageWaitingChanged(Phone sender) {
         addTaint(sender.getTaint());
@@ -127,7 +123,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.681 -0400", hash_original_method = "61F204C17435F73A0638C1B2194C11D4", hash_generated_method = "451E9CFEA85F0CA5D41CB5B713559ECF")
     public void notifyCallForwardingChanged(Phone sender) {
         addTaint(sender.getTaint());
@@ -146,7 +141,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.682 -0400", hash_original_method = "6186BE83E934F018920409C47A141A66", hash_generated_method = "9EC5744F0BDB119C8FD9A307F87AAB12")
     public void notifyDataActivity(Phone sender) {
         addTaint(sender.getTaint());
@@ -218,7 +212,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.684 -0400", hash_original_method = "67482F4F9D9E6F44C4639F27C32CCD68", hash_generated_method = "719D18BE205D27FCFA5F0CAC82E561DD")
     public void notifyDataConnectionFailed(Phone sender, String reason, String apnType) {
         addTaint(apnType.getTaint());
@@ -239,7 +232,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.684 -0400", hash_original_method = "200E0849AE67515A7A87FAAD1F0CCF5A", hash_generated_method = "5D4F98D2D9648B85C64571EAA13A54CF")
     public void notifyCellLocation(Phone sender) {
         addTaint(sender.getTaint());
@@ -262,7 +254,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.684 -0400", hash_original_method = "E58B6ECC0D24F432EA477897C3B146BA", hash_generated_method = "41C7AEFFC1A7DF23A22090536AD8817E")
     public void notifyOtaspChanged(Phone sender, int otaspMode) {
         addTaint(otaspMode);
@@ -282,7 +273,6 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.685 -0400", hash_original_method = "2A392D1FEF0E39928D559AB442BF53B9", hash_generated_method = "F7E2F6E2C1BD30D3529804142CCA13F9")
     private void log(String s) {
         addTaint(s.getTaint());
@@ -304,8 +294,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Phone.State convertCallState(int state) {
+        public static Phone.State convertCallState(int state) {
         switch (state) {
             case TelephonyManager.CALL_STATE_RINGING:
                 return Phone.State.RINGING;
@@ -331,8 +320,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Phone.DataState convertDataState(int state) {
+        public static Phone.DataState convertDataState(int state) {
         switch (state) {
             case TelephonyManager.DATA_CONNECTING:
                 return Phone.DataState.CONNECTING;
@@ -362,8 +350,7 @@ public class DefaultPhoneNotifier implements PhoneNotifier {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Phone.DataActivityState convertDataActivityState(int state) {
+        public static Phone.DataActivityState convertDataActivityState(int state) {
         switch (state) {
             case TelephonyManager.DATA_ACTIVITY_IN:
                 return Phone.DataActivityState.DATAIN;

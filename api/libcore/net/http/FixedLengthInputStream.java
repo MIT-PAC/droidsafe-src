@@ -34,7 +34,6 @@ final class FixedLengthInputStream extends AbstractHttpInputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.083 -0400", hash_original_method = "5B284B9FC407E028AC176D716362F3C7", hash_generated_method = "D4165663F1F1A283028A57EC4BCD865B")
     @Override
     public int read(byte[] buffer, int offset, int count) throws IOException {

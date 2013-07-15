@@ -77,7 +77,6 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1274041724 =         instantiateItem(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.803 -0400", hash_original_method = "FA1E5F7C2B2EB1EE6744E074AA1F10AB", hash_generated_method = "2AD025258BA808635F28BA1BF2B444F8")
     public void startUpdate(View container) {
         addTaint(container.getTaint());
@@ -112,7 +111,6 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1274041724 =         instantiateItem(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.804 -0400", hash_original_method = "BBAFE0B2C7FC305268C2EE6C04F35275", hash_generated_method = "4A808F912C2A3738AFE71F40FF60A7FE")
     public void setPrimaryItem(View container, int position, Object object) {
         addTaint(object.getTaint());
@@ -122,7 +120,6 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1274041724 =         instantiateItem(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.804 -0400", hash_original_method = "140CF544DAB4E9753AD13C5C6F7AF228", hash_generated_method = "948CEEC952AF21DF136FE0405AB0883D")
     public void finishUpdate(View container) {
         addTaint(container.getTaint());
@@ -133,7 +130,6 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1274041724 =         instantiateItem(
     public abstract boolean isViewFromObject(View view, Object object);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.805 -0400", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "9CFD9FCD102270C1F6A535B659F1FAAA")
     public Parcelable saveState() {
 Parcelable var540C13E9E156B687226421B24F2DF178_1479114771 =         null;
@@ -144,7 +140,6 @@ Parcelable var540C13E9E156B687226421B24F2DF178_1479114771 =         null;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.805 -0400", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "F5A125A85F42CD1DC99BEBF6861BC1A8")
     public void restoreState(Parcelable state, ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -153,7 +148,6 @@ Parcelable var540C13E9E156B687226421B24F2DF178_1479114771 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.806 -0400", hash_original_method = "A005A760A98AF47FB8E2DAD0B5F81664", hash_generated_method = "04061D1A92E312795A8F15E638629955")
     public int getItemPosition(Object object) {
         addTaint(object.getTaint());
@@ -192,7 +186,6 @@ Parcelable var540C13E9E156B687226421B24F2DF178_1479114771 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.808 -0400", hash_original_method = "D33F5CC8812E682744289E753AD4C997", hash_generated_method = "C812F1C9FFFBA7C455280742BFC767D7")
     public CharSequence getPageTitle(int position) {
         addTaint(position);

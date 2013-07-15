@@ -59,7 +59,6 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.126 -0400", hash_original_method = "28A47EA36D54BFEB24E3F3419F095F72", hash_generated_method = "62C6883177E06C5D3EE9245139D57ADC")
     public void startQuery(int token, Object cookie, Uri uri,
             String[] projection, String selection, String[] selectionArgs,
@@ -204,7 +203,6 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.135 -0400", hash_original_method = "DE79F9BA4E2E1E76FD6FB5837E125869", hash_generated_method = "9D3FF6ECD27AC8BDCBB25BE5F4EF571A")
     protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -215,7 +213,6 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.135 -0400", hash_original_method = "56E707F93CF845AF5D37EDA14CF36C80", hash_generated_method = "FB85709BC61A8419CE005019868AF694")
     protected void onInsertComplete(int token, Object cookie, Uri uri) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -226,7 +223,6 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.136 -0400", hash_original_method = "D24E238B6DD6917FF9CA66039892AD0D", hash_generated_method = "136393E13205FCAEE209B63116A32EAB")
     protected void onUpdateComplete(int token, Object cookie, int result) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -237,7 +233,6 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.137 -0400", hash_original_method = "5282503E7213EB860C46CD1340339EC5", hash_generated_method = "6409983EE856B1ECD4D07AAFA58F9B22")
     protected void onDeleteComplete(int token, Object cookie, int result) {
         //DSFIXME:  CODE0009: Possible callback target function detected

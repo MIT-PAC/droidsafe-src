@@ -19,7 +19,6 @@ public class MediaRange extends SIPObject {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.587 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "03C4BC840CD7879BBD89D4711B7437EB")
     public String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_2139309576 =         type;
@@ -30,7 +29,6 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_2139309576 =         type;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.587 -0400", hash_original_method = "F553636983A7698A0C67E9F36C861E72", hash_generated_method = "D8242A5EFF21ADC9C97149F9CD5FC90C")
     public String getSubtype() {
 String var169367A745E19D18DAC62A70AF6FE5E6_1733474077 =         subtype;
@@ -41,7 +39,6 @@ String var169367A745E19D18DAC62A70AF6FE5E6_1733474077 =         subtype;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.588 -0400", hash_original_method = "1F9FAB648DA6511C86522C3730D40F12", hash_generated_method = "3A963E148C8DEA20E44FBC8909AF4438")
     public void setType(String t) {
         type = t;
@@ -50,7 +47,6 @@ String var169367A745E19D18DAC62A70AF6FE5E6_1733474077 =         subtype;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.588 -0400", hash_original_method = "3A0BB05139828A93AF0155E2224A9877", hash_generated_method = "8F25E54D9A9BC590C1B963D060DAD10B")
     public void setSubtype(String s) {
         subtype = s;
@@ -59,7 +55,6 @@ String var169367A745E19D18DAC62A70AF6FE5E6_1733474077 =         subtype;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.588 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "C03560A705EC85667355BFA875CB47C8")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_1594453312 =         encode(new StringBuffer()).toString();
@@ -70,7 +65,6 @@ String var678B6FE61D54E5BD4E109D01C318C133_1594453312 =         encode(new Strin
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.589 -0400", hash_original_method = "65E8BB72BD507B7E1F69F2EFA7F6C332", hash_generated_method = "CF32242B2D5502384C1C3FAA09E76439")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());

@@ -25,7 +25,6 @@ public class AuthorizationParser extends ChallengeParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.877 -0400", hash_original_method = "EB9857D021AE5F251F44C2032AC6D5E3", hash_generated_method = "384C13E1863AFA3006496435A13696A7")
     public SIPHeader parse() throws ParseException {
         dbg_enter("parse");

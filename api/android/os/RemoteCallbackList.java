@@ -221,7 +221,6 @@ E varB387F1FD5AB54FD12A37CFCEE986154C_418405655 =         ((Callback)mActiveBroa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.512 -0400", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "CEF4FB6EC0B28BAC88E6F2B9CD7F37D4")
     public Object getBroadcastCookie(int index) {
         addTaint(index);

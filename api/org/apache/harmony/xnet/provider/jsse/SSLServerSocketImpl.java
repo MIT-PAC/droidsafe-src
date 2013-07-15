@@ -209,7 +209,6 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_468005327 =         sslParameters.g
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.241 -0400", hash_original_method = "E95178BAD1AB83F5F7B2A543005EDE81", hash_generated_method = "35461F0119C431D03926F5E4D5355400")
     @Override
     public Socket accept() throws IOException {
@@ -243,7 +242,6 @@ Socket var0478718F0636FB61899C13801CE9FE09_98824357 =         s;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.242 -0400", hash_original_method = "2BD2C11E492A0926A3928FBE6062AA1A", hash_generated_method = "5F9DBCAA7CFE565B95E912764D36CE2C")
     @Override
     public String toString() {

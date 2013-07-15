@@ -35,7 +35,6 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.778 -0400", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "B13AEFE150954F83F3FEF3E24550B65D")
     public IBinder getBinder() {
 IBinder varE29672B36B312FCEF89F2650279B2AD2_859636602 =         mTarget.asBinder();
@@ -46,7 +45,6 @@ IBinder varE29672B36B312FCEF89F2650279B2AD2_859636602 =         mTarget.asBinder
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.778 -0400", hash_original_method = "C149400C0C5347CE34188C78467CE5CF", hash_generated_method = "300E8F6623306A46B733E4435F30F350")
     public boolean equals(Object otherObj) {
         addTaint(otherObj.getTaint());
@@ -82,7 +80,6 @@ IBinder varE29672B36B312FCEF89F2650279B2AD2_859636602 =         mTarget.asBinder
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.779 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "269CC93B8DF520FBB164AC5781FF77C0")
     public int hashCode() {
         int var015DBE14D40CCC902461F5EB4537F2D8_1837492687 = (mTarget.asBinder().hashCode());
@@ -93,7 +90,6 @@ IBinder varE29672B36B312FCEF89F2650279B2AD2_859636602 =         mTarget.asBinder
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.779 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E94E93C93C5E1FD40318F88CAC900718")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1497595263 = (0);
@@ -104,7 +100,6 @@ IBinder varE29672B36B312FCEF89F2650279B2AD2_859636602 =         mTarget.asBinder
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.780 -0400", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "C7A202EDEDAAFB23E59B79A7FE9B7381")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

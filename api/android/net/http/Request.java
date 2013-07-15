@@ -135,7 +135,6 @@ class Request {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.400 -0400", hash_original_method = "A8C7471D7BEF79EC71A4F8B9C611F231", hash_generated_method = "D70D1983B2F9D3329EE3C868A7734833")
      void setConnection(Connection connection) {
         mConnection = connection;
@@ -144,7 +143,6 @@ class Request {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.400 -0400", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "F85409CE4E41A66EB12FF011984D5E39")
      EventHandler getEventHandler() {
 EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHandler;
@@ -460,7 +458,6 @@ String var2C2774A4504CCD41056B65A992871E34_1794404703 =         mHost.getSchemeN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.406 -0400", hash_original_method = "260B42F8E7BEBB3ADC717EDEB2B728A2", hash_generated_method = "7E6778AD6872290B585E091E4B356EAB")
     public String toString() {
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;

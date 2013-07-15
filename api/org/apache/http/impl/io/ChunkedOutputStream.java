@@ -44,7 +44,6 @@ public class ChunkedOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.157 -0400", hash_original_method = "320F140F8D57B27D338CDA0750999A03", hash_generated_method = "24651ED8CD5565703872EAAEB1079B47")
     protected void flushCache() throws IOException {
     if(this.cachePosition > 0)        
@@ -110,7 +109,6 @@ public class ChunkedOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.158 -0400", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "10485433EF2AFBE6389B1ECD83F83636")
     public void write(int b) throws IOException {
     if(this.closed)        
@@ -174,7 +172,6 @@ public class ChunkedOutputStream extends OutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.160 -0400", hash_original_method = "1D035E07BE479B8A909681E6BF90CFBD", hash_generated_method = "A492F731C1F84352887E9BB507A040A1")
     public void flush() throws IOException {
         flushCache();

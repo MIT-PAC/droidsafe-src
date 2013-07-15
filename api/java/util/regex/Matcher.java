@@ -324,7 +324,6 @@ String varFE2C09F856B281EC496BCCBB30C802C4_559262045 =         appendTail(buffer
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.308 -0400", hash_original_method = "29D81214171EEBB46568323FF70F06B8", hash_generated_method = "16F5D42119435B32BA753269A44D6969")
     public Pattern pattern() {
 Pattern var407D32260E541B695CF3FD3F7EFB76AB_911535806 =         pattern;
@@ -566,7 +565,6 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_2049254877 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.316 -0400", hash_original_method = "56179EEEB1BB6D253C6C82DD4DB81ED5", hash_generated_method = "83889357B21A1D5EAA7278F98F5BB94E")
     public boolean hasAnchoringBounds() {
         boolean var19B3006D2C5C72B63F2948F86CE60FF2_2078966981 = (anchoringBounds);
@@ -606,7 +604,6 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_1620500452 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.317 -0400", hash_original_method = "935CF82B5FBC95B795356ABD430E53CE", hash_generated_method = "E4550D2435FB37DD388CBBF2DA65AA8E")
     public boolean hasTransparentBounds() {
         boolean varEA05B80BA92F422C6A4E97CE3DB6F1F0_106514420 = (transparentBounds);
@@ -617,7 +614,6 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_1620500452 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.317 -0400", hash_original_method = "1309D9DA3902B8EF77EAE3BBEDE0D6E3", hash_generated_method = "3CD28D6FA91D907FE5E861550B8BB6EC")
     public int regionStart() {
         int varECFFF1362128F72A357ECE9557617256_577929757 = (regionStart);
@@ -628,7 +624,6 @@ Matcher var72A74007B2BE62B849F475C7BDA4658B_1620500452 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.318 -0400", hash_original_method = "A2DEE293E79DD1E070648045D7A01545", hash_generated_method = "D8640AC9A7EFBB028AF55229C3F9C515")
     public int regionEnd() {
         int var93DE8CC916B0BCFB1D6128BF808B866E_1809154908 = (regionEnd);

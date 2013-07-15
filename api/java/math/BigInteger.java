@@ -338,7 +338,6 @@ BigInt varF61D17EA034CC14FAE8780D55F9242B6_1964298226 =             bigInt;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.895 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "FB8F32B7985E2B240502D873FAE13D52")
     private void setBigInt(BigInt bigInt) {
         this.bigInt = bigInt;
@@ -349,7 +348,6 @@ BigInt varF61D17EA034CC14FAE8780D55F9242B6_1964298226 =             bigInt;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.897 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "DDED3CCDAC81118323E9CC670E4E61F1")
     private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
         while
@@ -1373,8 +1371,7 @@ for(int i = 0;i < bytesInInteger;i++,digit >>= 8)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static int multiplyByInt(int[] res, int[] a, int aSize, int factor) {
+        static int multiplyByInt(int[] res, int[] a, int aSize, int factor) {
         long carry = 0;
         for (int i = 0; i < aSize; i++) {
             carry += (a[i] & 0xFFFFFFFFL) * (factor & 0xFFFFFFFFL);
@@ -1385,8 +1382,7 @@ for(int i = 0;i < bytesInInteger;i++,digit >>= 8)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static int inplaceAdd(int[] a, int aSize, int addend) {
+        static int inplaceAdd(int[] a, int aSize, int addend) {
         long carry = addend & 0xFFFFFFFFL;
         for (int i = 0; (carry != 0) && (i < aSize); i++) {
             carry += a[i] & 0xFFFFFFFFL;
@@ -1432,7 +1428,6 @@ for(int i = 0;i < bytesInInteger;i++,digit >>= 8)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.928 -0400", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "0A31E70A47F4B5125044B61FCF76451E")
      int getFirstNonzeroDigit() {
     if(firstNonzeroDigit == -2)        

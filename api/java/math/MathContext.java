@@ -110,7 +110,6 @@ public final class MathContext implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.303 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "1EB236C286725216FA5EB19CCF9AC164")
     public int getPrecision() {
         int varE2794D8F12719281EFF5601251C8A680_1581266719 = (precision);
@@ -121,7 +120,6 @@ public final class MathContext implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.303 -0400", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "E2F726522ECA5B545CA1CD950731AE21")
     public RoundingMode getRoundingMode() {
 RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMode;

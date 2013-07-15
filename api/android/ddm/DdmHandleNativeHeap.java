@@ -18,27 +18,23 @@ public class DdmHandleNativeHeap extends ChunkHandler {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void register() {
+        public static void register() {
         DdmServer.registerHandler(CHUNK_NHGT, mInstance);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.417 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.418 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.418 -0400", hash_original_method = "D29D7720926B3EEAF9F111354569BA63", hash_generated_method = "8023B5B0D5C0D87F23885F32F73CCFEB")
     public Chunk handleChunk(Chunk request) {
         addTaint(request.getTaint());
@@ -95,7 +91,6 @@ Chunk var31AF8528E5341C3C90ADCF4B619E8D29_1697954443 =             createFailChu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.421 -0400", hash_original_method = "FB1B192E745D23B5AF3323CB7D32960E", hash_generated_method = "D814A292B4FE0EAA46C0FBC95E9286B9")
     private byte[] getLeakInfo() {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1567462929 = {getTaintByte()};

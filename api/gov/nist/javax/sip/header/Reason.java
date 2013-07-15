@@ -25,7 +25,6 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.800 -0400", hash_original_method = "8E10C2A6776CBAA32EF7257A8A62ADDC", hash_generated_method = "C25CCA195B22FC4351D4D9CE037527B9")
     public int getCause() {
         int varB689AF9DF45B4A4C0A6A8AA085C47E02_1101750878 = (getParameterAsInt(CAUSE));
@@ -36,7 +35,6 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.801 -0400", hash_original_method = "3B7AE3E82D120F32D14143BCEAA3D0F3", hash_generated_method = "68A66357C3B1FEBC6226C8217E0662B3")
     public void setCause(int cause) throws javax.sip.InvalidArgumentException {
         addTaint(cause);
@@ -46,7 +44,6 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.801 -0400", hash_original_method = "70E0561C3515B6199EF81B19035663E5", hash_generated_method = "4C76BB115A08F7A5B416485065695A07")
     public void setProtocol(String protocol) throws ParseException {
         this.protocol = protocol;
@@ -55,7 +52,6 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.801 -0400", hash_original_method = "5EF709A41590C5E9760EDEDCACA5AD40", hash_generated_method = "F7CAF29714078AA269527F2E6ECD287F")
     public String getProtocol() {
 String var6B7E338C8BD363F309A7E471EADA8AA9_1372014172 =         this.protocol;
@@ -66,7 +62,6 @@ String var6B7E338C8BD363F309A7E471EADA8AA9_1372014172 =         this.protocol;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.802 -0400", hash_original_method = "A59A90A2875E29D5E7D7A7D1C378A11A", hash_generated_method = "A01CBCF029764DD50C79419193301631")
     public void setText(String text) throws ParseException {
         addTaint(text.getTaint());
@@ -83,7 +78,6 @@ String var6B7E338C8BD363F309A7E471EADA8AA9_1372014172 =         this.protocol;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.802 -0400", hash_original_method = "E868EA376D386565EBAAF11DC1F8D010", hash_generated_method = "60DE93E1DC5FFC61CD56295159603636")
     public String getText() {
 String varF89C3BEBADC51C1C26007C0B343E4BDB_424733466 =         this.parameters.getParameter("text");
@@ -94,7 +88,6 @@ String varF89C3BEBADC51C1C26007C0B343E4BDB_424733466 =         this.parameters.g
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.802 -0400", hash_original_method = "58D1ADCDFA9509486623D4E556DE8E64", hash_generated_method = "B092B006F1DDFE8B5B967EE0818B17F2")
     public String getName() {
 String var4AF16528A7526259CFEF5DF72DA3FFB0_421513727 =         NAME;

@@ -106,7 +106,6 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.475 -0400", hash_original_method = "D736F484B6800931FE72576618335766", hash_generated_method = "8F8562D02FAC5353A01979F5EEB6A0EB")
     private void setFieldIdentifier() {
     if(curve instanceof ECCurve.Fp)        
@@ -142,7 +141,6 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.475 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "2251FBF1CCF24832463B6AA1C5E11A0A")
     public ECCurve getCurve() {
 ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_852918609 =         curve;
@@ -153,7 +151,6 @@ ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_852918609 =         curve;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.476 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "5C49C35F030AA0C86C6A6F355281C057")
     public byte[] getSeed() {
         byte[] varFE4C0F30AA359C41D9F9A5F69C8C4192_38424976 = (seed);

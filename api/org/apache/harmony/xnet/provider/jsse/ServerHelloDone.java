@@ -29,7 +29,6 @@ public class ServerHelloDone extends Message {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.650 -0400", hash_original_method = "52BF089D22903982B0C882C52DE70EC3", hash_generated_method = "9633694D7184296AF73D33CE8CCEA8FC")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -38,7 +37,6 @@ public class ServerHelloDone extends Message {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.650 -0400", hash_original_method = "7AF5A4434AA58EF13D06038DF32CDF19", hash_generated_method = "FD7D6D7F42EC484CA0E43E3E46554E9F")
     @Override
     public int length() {
@@ -50,7 +48,6 @@ public class ServerHelloDone extends Message {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.650 -0400", hash_original_method = "240B7202464892A2DF96B887945F5E1E", hash_generated_method = "DF732CF17546370672198576161616FF")
     @Override
     public int getType() {

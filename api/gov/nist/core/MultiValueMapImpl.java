@@ -49,7 +49,6 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_738196787 =         keyList;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.580 -0400", hash_original_method = "DB86C9FAE576BDCBCAB6ACEF27E24DCF", hash_generated_method = "35E8CFF161C05349C04345FBD52BC2F0")
     public boolean containsValue(Object value) {
         addTaint(value.getTaint());
@@ -91,7 +90,6 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_738196787 =         keyList;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.594 -0400", hash_original_method = "ACD58D82904FAC9C1E105DF6132F728F", hash_generated_method = "FF8067C1BE23B04FD9994F427CB86C7B")
     public void clear() {
         Set pairs = map.entrySet();
@@ -151,7 +149,6 @@ Collection var195207CFC264788B20A079C8C3E1371E_1590439384 =         returnList;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.595 -0400", hash_original_method = "7FD8976C5EB94AF5BEDA5274AB7D4960", hash_generated_method = "FA394591BA20A6954179A235D3494CC9")
     public Object clone() {
         MultiValueMapImpl obj = new MultiValueMapImpl<V>();
@@ -166,7 +163,6 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.595 -0400", hash_original_method = "5426196537489B9F267A5D92E091E0D1", hash_generated_method = "BA570010E2B36A337B5882AD68579E70")
     public int size() {
         int varF2202A8501CD0EEDB2506BC8F112F883_275648384 = (this.map.size());
@@ -177,7 +173,6 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.595 -0400", hash_original_method = "51FDEF8A21E6EA5E0FB4715F8113FE74", hash_generated_method = "B266F21FA5ADD8FC15F035D93F6D9131")
     public boolean containsKey(Object key) {
         addTaint(key.getTaint());
@@ -189,7 +184,6 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.595 -0400", hash_original_method = "A7117DE6FDE9AB582C79C19A4704EAC3", hash_generated_method = "CA7770560E0B1E030617D35B5DF0D8E0")
     public Set entrySet() {
 Set varD70A818A9C24919C79B0A6854ED78BA4_1438188410 =         map.entrySet();
@@ -200,7 +194,6 @@ Set varD70A818A9C24919C79B0A6854ED78BA4_1438188410 =         map.entrySet();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.595 -0400", hash_original_method = "193F4487BCC4A9B88FB28866363E7ABF", hash_generated_method = "CA8D23C79FA0692BF03DC3897090526C")
     public boolean isEmpty() {
         boolean varAF143B23ABB0913809523AA7F6DBE946_347325777 = (map.isEmpty());

@@ -128,7 +128,6 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.211 -0400", hash_original_method = "92CEFDF21FC191A18696C43CA9E48D20", hash_generated_method = "2E8592797B80F07DB9D925974C99BF53")
     public void checkValidity() throws CertificateExpiredException, CertificateNotYetValidException {
         checkValidity(System.currentTimeMillis());
@@ -137,7 +136,6 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.211 -0400", hash_original_method = "59C6435E22C5BAEC0B6376C8B7A5112D", hash_generated_method = "2FFF3BB4F0AB44597FC8E6106AA77162")
     public void checkValidity(Date date) throws CertificateExpiredException, CertificateNotYetValidException {
         addTaint(date.getTaint());
@@ -147,7 +145,6 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.212 -0400", hash_original_method = "5C762410FB306F1308EE7204752B0EB0", hash_generated_method = "C19E75CDB5C0DC7981E929B495F06237")
     private void checkValidity(long time) throws CertificateExpiredException, CertificateNotYetValidException {
         addTaint(time);
@@ -177,7 +174,6 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.212 -0400", hash_original_method = "89D7F1BE0C395C13D4A43DDDB6D84533", hash_generated_method = "83D62E56336693B0BA05F33371501A04")
     public int getVersion() {
         int var82D9B87543E818257630C637DD23BADE_1005079119 = (tbsCert.getVersion() + 1);
@@ -188,7 +184,6 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.212 -0400", hash_original_method = "CC90380181A21ABFD0C1237D9F2C9838", hash_generated_method = "672E6F490E599B21388D2E8736CCAAF9")
     public BigInteger getSerialNumber() {
         BigInteger result = serialNumber;
@@ -208,7 +203,6 @@ BigInteger varDC838461EE2FA0CA4C9BBB70A15456B0_1690371677 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.213 -0400", hash_original_method = "2552251E229FA5F4C4BC8254C0633556", hash_generated_method = "CF44F0A9542EA29313A57CBBF197E387")
     public Principal getIssuerDN() {
 Principal var8B119D623D7E352AE065FF4D099457A1_2050847007 =         getIssuerX500Principal();
@@ -219,7 +213,6 @@ Principal var8B119D623D7E352AE065FF4D099457A1_2050847007 =         getIssuerX500
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.213 -0400", hash_original_method = "B82B3361EE6501B1AD6CD55F9554225E", hash_generated_method = "1FDA9706D1326848B364365A301426E2")
     public X500Principal getIssuerX500Principal() {
         X500Principal result = issuer;
@@ -239,7 +232,6 @@ X500Principal varDC838461EE2FA0CA4C9BBB70A15456B0_266453847 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.213 -0400", hash_original_method = "57EE376613339C3801C08A778AAA92CE", hash_generated_method = "8CBF3BCC27DA5EA38BEA7907D3FFF0F6")
     public Principal getSubjectDN() {
 Principal varD321BCC5B5C85FF5FF4DF05A7C18FCC4_1623141317 =         getSubjectX500Principal();
@@ -250,7 +242,6 @@ Principal varD321BCC5B5C85FF5FF4DF05A7C18FCC4_1623141317 =         getSubjectX50
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.214 -0400", hash_original_method = "50D7E6DD1BE4A80FFE9B722B1EC59064", hash_generated_method = "CA2536C8DA2B2FE200885994FD2D5591")
     public X500Principal getSubjectX500Principal() {
         X500Principal result = subject;
@@ -270,7 +261,6 @@ X500Principal varDC838461EE2FA0CA4C9BBB70A15456B0_763678144 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.214 -0400", hash_original_method = "42D01D75FA3640E76A288F4F69BBD1FB", hash_generated_method = "492592737CA86D6688A57643B7B2B871")
     public Date getNotBefore() {
 Date varFEDE4E5DB357A7A9C6F6942870B50E47_2006755232 =         new Date(getNotBeforeInternal());
@@ -281,7 +271,6 @@ Date varFEDE4E5DB357A7A9C6F6942870B50E47_2006755232 =         new Date(getNotBef
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.215 -0400", hash_original_method = "4558EB8E531DC796F00773B26346E007", hash_generated_method = "25E6F649CC7458F781C85845A207A47B")
     private long getNotBeforeInternal() {
         long result = notBefore;
@@ -301,7 +290,6 @@ Date varFEDE4E5DB357A7A9C6F6942870B50E47_2006755232 =         new Date(getNotBef
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.215 -0400", hash_original_method = "247B9C82A59BA08F12FC34A8D1043A8F", hash_generated_method = "C48650C7A16B09D408B4E27445572797")
     public Date getNotAfter() {
 Date varF07AE8371BA4C7483475EB71A659D6AA_116482751 =         new Date(getNotAfterInternal());
@@ -312,7 +300,6 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_116482751 =         new Date(getNotAfte
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.215 -0400", hash_original_method = "DD249744796DD4B2B8069CA6B07316ED", hash_generated_method = "55A0D8FE046C3872CA6E64F1F93176D9")
     private long getNotAfterInternal() {
         long result = notAfter;
@@ -332,7 +319,6 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_116482751 =         new Date(getNotAfte
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.216 -0400", hash_original_method = "713937699882346A31B465214B9B4401", hash_generated_method = "DC97822B6B6DB44F988DE31E92022CBB")
     public byte[] getTBSCertificate() throws CertificateEncodingException {
         byte[] var999C0F0C19DBB2AA13CF470395B1301B_2018308977 = (getTbsCertificateInternal().clone());
@@ -343,7 +329,6 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_116482751 =         new Date(getNotAfte
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.216 -0400", hash_original_method = "3E85018628BFB50292B491E8B8B8C0CD", hash_generated_method = "99A4D8495FF467483C10FAC890211AC0")
     private byte[] getTbsCertificateInternal() {
         byte[] result = tbsCertificate;
@@ -363,7 +348,6 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_116482751 =         new Date(getNotAfte
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.217 -0400", hash_original_method = "EB14E7CDB05E64025ABBA11FDD999629", hash_generated_method = "9453EDE0356BB79710147249A2C805A7")
     public byte[] getSignature() {
         byte[] var877124AB260DABB4E0930C59695E3A36_444887544 = (getSignatureInternal().clone());
@@ -374,7 +358,6 @@ Date varF07AE8371BA4C7483475EB71A659D6AA_116482751 =         new Date(getNotAfte
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.217 -0400", hash_original_method = "1D526D791318CE6ACD668C92F6511A39", hash_generated_method = "A88174D6AABD29EB8B97534288FDE88C")
     private byte[] getSignatureInternal() {
         byte[] result = signature;
@@ -443,7 +426,6 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1590877455 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.219 -0400", hash_original_method = "A4F68E4A7ABF2F614B271E042CE68DFD", hash_generated_method = "4081014707EF45ABFE443D1093D1496C")
     public byte[] getSigAlgParams() {
     if(nullSigAlgParams)        
@@ -485,7 +467,6 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1590877455 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.220 -0400", hash_original_method = "5910DFD7FE416853E5E8B3596C036798", hash_generated_method = "698A1F1D17A67E8ED5A4C8FEC8261653")
     public boolean[] getIssuerUniqueID() {
         boolean[] var490EB4602856F1ADB23E8FB86CA2759C_384172671 = (tbsCert.getIssuerUniqueID());
@@ -496,7 +477,6 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1590877455 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.220 -0400", hash_original_method = "97AECD47F957244BC2EDB08A3DFA1485", hash_generated_method = "F12F5D3AB02837DEA84B3324A57F9D2D")
     public boolean[] getSubjectUniqueID() {
         boolean[] var5A8D1516130F1918A25071AAD0A1C43E_1767065445 = (tbsCert.getSubjectUniqueID());
@@ -507,7 +487,6 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1590877455 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.220 -0400", hash_original_method = "7963F25A7C6EC878E5FE59792F4927CF", hash_generated_method = "B1503829E4A3AB62BB817FF53CEB9D82")
     public boolean[] getKeyUsage() {
     if(extensions == null)        
@@ -527,7 +506,6 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1590877455 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.221 -0400", hash_original_method = "879E6EC12A8ACAB06B48BD9054F744F5", hash_generated_method = "C4372333FD24554820339F7618F3B5BF")
     public List<String> getExtendedKeyUsage() throws CertificateParsingException {
     if(extensions == null)        
@@ -560,7 +538,6 @@ List<String> varFA88FF5E99F6DBF23FD7A34F12A065CB_1129690037 =             extens
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.221 -0400", hash_original_method = "338E6CEAECFAB8CF1E7BE34A5E6721D3", hash_generated_method = "9DA825145B75AADCE039A9D76A3D8B60")
     public int getBasicConstraints() {
     if(extensions == null)        
@@ -644,7 +621,6 @@ Collection<List<?>> varFDB4369B42BB66019B0D43D7D2AC0A9E_1200285882 =            
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.223 -0400", hash_original_method = "4063CD679B717558744A87C021CCD284", hash_generated_method = "5F7F12A6CD153CFA6D5EF954F0E74171")
     @Override
     public byte[] getEncoded() throws CertificateEncodingException {
@@ -656,7 +632,6 @@ Collection<List<?>> varFDB4369B42BB66019B0D43D7D2AC0A9E_1200285882 =            
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.224 -0400", hash_original_method = "89DAFF52A0746AEA205DFD1B0F750CF1", hash_generated_method = "3531D70B5D7E6AF87617AFF529D0A1CC")
     private byte[] getEncodedInternal() throws CertificateEncodingException {
         byte[] result = encoding;
@@ -676,7 +651,6 @@ Collection<List<?>> varFDB4369B42BB66019B0D43D7D2AC0A9E_1200285882 =            
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.224 -0400", hash_original_method = "C29BF4798FFF05217C70FFE55AFF7469", hash_generated_method = "7A8CB1A8ACB26FD5DB064DC7DC029B81")
     @Override
     public PublicKey getPublicKey() {
@@ -697,7 +671,6 @@ PublicKey varDC838461EE2FA0CA4C9BBB70A15456B0_1467087009 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.225 -0400", hash_original_method = "3446887E135847ED5405A847AD59261D", hash_generated_method = "C42CB444705C8C3397D1D27EEDB119CA")
     @Override
     public String toString() {
@@ -798,7 +771,6 @@ String var4DAAEB14EC5D64F86AE3E76141F1DCFF_21850569 =         certificate.toStri
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.226 -0400", hash_original_method = "D555F516A4047F5D7C4D53CF443DF432", hash_generated_method = "C4783E1A184D31EAAFA29F50770BCF32")
     @Override
     public Set<String> getNonCriticalExtensionOIDs() {
@@ -819,7 +791,6 @@ Set<String> var527809B743FC0C579F26D2991C397701_227380075 =         extensions.g
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.227 -0400", hash_original_method = "B95147569C30A037580BE18E2484572D", hash_generated_method = "B485D011EA852374384415E4561733F3")
     @Override
     public Set<String> getCriticalExtensionOIDs() {

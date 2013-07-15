@@ -56,7 +56,6 @@ Node var04421AF73B134EC262B05FD2063BE675_1490019355 =         document.cloneOrIm
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.908 -0400", hash_original_method = "E2D79625FBECAF1E43447A0BEFC228B9", hash_generated_method = "1DF95FE702AD0C2788282E89BACFC3A4")
     public NamedNodeMap getAttributes() {
 NamedNodeMap var540C13E9E156B687226421B24F2DF178_1199673869 =         null;
@@ -67,7 +66,6 @@ NamedNodeMap var540C13E9E156B687226421B24F2DF178_1199673869 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.909 -0400", hash_original_method = "1F381BCE8228355FEE86D697E02DDE0B", hash_generated_method = "679135F5F481434F93D07E3CE4B3807E")
     public NodeList getChildNodes() {
 NodeList var3EB787547078B98C6DA0C5CC8DE617C5_1991701219 =         EMPTY_LIST;
@@ -78,7 +76,6 @@ NodeList var3EB787547078B98C6DA0C5CC8DE617C5_1991701219 =         EMPTY_LIST;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.909 -0400", hash_original_method = "DB31E0DD76C8C1947AB843730A5D8205", hash_generated_method = "2FC877E310B02DBC7D493C058A738FB6")
     public Node getFirstChild() {
 Node var540C13E9E156B687226421B24F2DF178_404572476 =         null;
@@ -89,7 +86,6 @@ Node var540C13E9E156B687226421B24F2DF178_404572476 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.909 -0400", hash_original_method = "6070A4A9C5DDD0223B459D45F6FD5CBB", hash_generated_method = "8B6A7CABB2C134EC403EBD5A51AD6654")
     public Node getLastChild() {
 Node var540C13E9E156B687226421B24F2DF178_233173598 =         null;
@@ -100,7 +96,6 @@ Node var540C13E9E156B687226421B24F2DF178_233173598 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.910 -0400", hash_original_method = "DEB04882A70946FEC78DD7AD3ABDE01B", hash_generated_method = "C22C25E4A827337F9D32B78AC188BCDF")
     public String getLocalName() {
 String var540C13E9E156B687226421B24F2DF178_127657537 =         null;
@@ -111,7 +106,6 @@ String var540C13E9E156B687226421B24F2DF178_127657537 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.910 -0400", hash_original_method = "4D95F58ABD4076A5B25FED87E28A6FD8", hash_generated_method = "4F1A8C51DCA420F879FF94FBD14F2F3B")
     public String getNamespaceURI() {
 String var540C13E9E156B687226421B24F2DF178_1088551392 =         null;
@@ -122,7 +116,6 @@ String var540C13E9E156B687226421B24F2DF178_1088551392 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.911 -0400", hash_original_method = "D23B45CE7514A5E8C576F43815BA5C75", hash_generated_method = "AE580892C6D47393E1C952F993BA9E5C")
     public Node getNextSibling() {
 Node var540C13E9E156B687226421B24F2DF178_323817441 =         null;
@@ -133,7 +126,6 @@ Node var540C13E9E156B687226421B24F2DF178_323817441 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.911 -0400", hash_original_method = "FDA68CAC7DBE692AD654EACCAEB8ADF4", hash_generated_method = "9F6491B52D3FE1C72F2CA7E683A29B53")
     public String getNodeName() {
 String var540C13E9E156B687226421B24F2DF178_168399330 =         null;
@@ -147,7 +139,6 @@ String var540C13E9E156B687226421B24F2DF178_168399330 =         null;
     public abstract short getNodeType();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.912 -0400", hash_original_method = "5D533F6B29FA017DED37EB54506CEFCE", hash_generated_method = "229F122FC47667268C6F74FA040D1FB1")
     public String getNodeValue() throws DOMException {
 String var540C13E9E156B687226421B24F2DF178_566073849 =         null;
@@ -168,7 +159,6 @@ Document var8A49EDE76E6856D243C546DB784C50EC_1767911814 =         document == th
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.913 -0400", hash_original_method = "2F661FBCA438408BEACED1A87A3CFAEE", hash_generated_method = "6A19A0A51E4BF35CBBA5E63DF0433359")
     public Node getParentNode() {
 Node var540C13E9E156B687226421B24F2DF178_1523835501 =         null;
@@ -179,7 +169,6 @@ Node var540C13E9E156B687226421B24F2DF178_1523835501 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.913 -0400", hash_original_method = "727413C23E49E727D2327332BBC1F81A", hash_generated_method = "E0904129E0B701998027B8FAB7294215")
     public String getPrefix() {
 String var540C13E9E156B687226421B24F2DF178_1083709204 =         null;
@@ -190,7 +179,6 @@ String var540C13E9E156B687226421B24F2DF178_1083709204 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.914 -0400", hash_original_method = "70F44FC98E437F8103C8C034DB4ECB33", hash_generated_method = "0DDFB3055ED30E353182BBEC89B06C8D")
     public Node getPreviousSibling() {
 Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
@@ -201,7 +189,6 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.914 -0400", hash_original_method = "B7795536C66ABB4718F9ED686281788D", hash_generated_method = "6469C6CFB6D0FD0A5C3F712C4002D7C5")
     public boolean hasAttributes() {
         boolean var68934A3E9455FA72420237EB05902327_1966388166 = (false);
@@ -212,7 +199,6 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.914 -0400", hash_original_method = "75BC1F0CD3DD7ADF1C7C374A2270CAC3", hash_generated_method = "0AF5D34511BFF1E0589C1E137EE44F92")
     public boolean hasChildNodes() {
         boolean var68934A3E9455FA72420237EB05902327_349197934 = (false);
@@ -247,7 +233,6 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.916 -0400", hash_original_method = "6E21C006D39E2D7D2AB395E9723D1D3D", hash_generated_method = "AAB79EA75709AFAC418FB3A2AD6C8459")
     public void normalize() {
         // ---------- Original Method ----------
@@ -311,7 +296,6 @@ switch(getNodeType()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.917 -0400", hash_original_method = "534A727E4FDB6CDBB5DC8BBEFB80CC50", hash_generated_method = "6394A903E9072527732E970BA56A5453")
     public void setPrefix(String prefix) throws DOMException {
         addTaint(prefix.getTaint());
@@ -601,7 +585,6 @@ switch(getNodeType()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.921 -0400", hash_original_method = "CDCF2BEBCB3DF8B0191B82144C39E4E3", hash_generated_method = "DB8EADA6700842874BEFF22C22812CD4")
     public boolean isSameNode(Node other) {
         addTaint(other.getTaint());

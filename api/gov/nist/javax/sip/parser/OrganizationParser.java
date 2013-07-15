@@ -25,7 +25,6 @@ public class OrganizationParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.932 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "6A26863922CA4CF36289EC3283A7678E")
     public SIPHeader parse() throws ParseException {
     if(debug)        

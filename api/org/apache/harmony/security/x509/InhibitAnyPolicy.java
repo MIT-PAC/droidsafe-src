@@ -24,7 +24,6 @@ public final class InhibitAnyPolicy extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.118 -0400", hash_original_method = "3EBD51C43A05A1E4C8002DD6E78AE310", hash_generated_method = "A5E7234AFA672FFA2F560A5B523BA36D")
     @Override
     public byte[] getEncoded() {
@@ -45,7 +44,6 @@ public final class InhibitAnyPolicy extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.118 -0400", hash_original_method = "25B8E258E2717A4BB370159BACC96911", hash_generated_method = "90318AB1054F99DE94AA2CF5B6CBAB6C")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

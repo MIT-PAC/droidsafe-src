@@ -79,7 +79,6 @@ public class CertificateVerify extends Message {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.883 -0400", hash_original_method = "78FC60AEF6831C8195D1932C8B8AE728", hash_generated_method = "F965D4F2E4EA1D6BC9C52940C61FAA9C")
     @Override
     public int getType() {

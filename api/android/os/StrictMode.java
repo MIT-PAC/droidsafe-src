@@ -286,8 +286,7 @@ public final class StrictMode {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static VmPolicy getVmPolicy() {
+        public static VmPolicy getVmPolicy() {
         synchronized (StrictMode.class) {
             return sVmPolicy;
         }
@@ -306,14 +305,12 @@ public final class StrictMode {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean vmSqliteObjectLeaksEnabled() {
+        public static boolean vmSqliteObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CURSOR_LEAKS) != 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean vmClosableObjectLeaksEnabled() {
+        public static boolean vmClosableObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CLOSABLE_LEAKS) != 0;
     }
 
@@ -737,7 +734,6 @@ Builder varC3126CEB2524227BCB28FCD226FE486C_1370772932 =                 enable(
             }
 
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.756 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "23BDA50DEA6073A82EDAABD855CCBD64")
             private Builder enable(int bit) {
                 mMask |= bit;
@@ -750,7 +746,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1870995108 =                 this;
             }
 
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.756 -0400", hash_original_method = "DD377E4C338D3B09C11C3D4D7DFD99D3", hash_generated_method = "2B3963DB776ED03D4D2CEFD5DA3C06A9")
             private Builder disable(int bit) {
                 mMask &= ~bit;
@@ -973,7 +968,6 @@ Builder varC3126CEB2524227BCB28FCD226FE486C_1979389971 =                 enable(
             }
 
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.759 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "FE53EC53892673EDC515A853EC4EB3BD")
             private Builder enable(int bit) {
                 mMask |= bit;
@@ -1120,7 +1114,6 @@ String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlock
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.762 -0400", hash_original_method = "BDAE35F9BC36FEF12DCB9013D520032B", hash_generated_method = "D6CF7CB69791B833B941866D698A17AD")
         public int getPolicyMask() {
             int var762A5B3087E77BD4ABEEF3C3AF201E66_782472847 = (mPolicyMask);
@@ -1249,7 +1242,6 @@ String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlock
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.763 -0400", hash_original_method = "A35D2E9A8AD0B9C28C9280D1C3956061", hash_generated_method = "6D9513DC2646B63D96CE73E109E46A70")
         public void setPolicyMask(int policyMask) {
             mPolicyMask = policyMask;

@@ -148,7 +148,6 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.500 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "806ACB8A3AE7C8DD34329FBC63A3B213")
     public String getComment() {
 String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
@@ -159,7 +158,6 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.500 -0400", hash_original_method = "BD185E24018FAED136FF653216A88FC6", hash_generated_method = "8492FC75F1EF9A7365087156A4876128")
     public long getCompressedSize() {
         long varD21EEAE05759BB4CAE36118C403A0B35_998854437 = (compressedSize);
@@ -170,7 +168,6 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.501 -0400", hash_original_method = "9F9CC7112652CAA1DD447640E3933AED", hash_generated_method = "CCCCC10A2AD0F74059A16F3172A2E2D8")
     public long getCrc() {
         long varF5AD59C5401FEA3F2DF0703D958FDC97_1690599797 = (crc);
@@ -181,7 +178,6 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.501 -0400", hash_original_method = "12884DA1C8E953155933C9EDA5E5913F", hash_generated_method = "95C3B7114FAE20FD7BEBDD468C2B301C")
     public byte[] getExtra() {
         byte[] varEA9F91B2CDA019730F2891BD12A7A4D6_5587349 = (extra);
@@ -192,7 +188,6 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.501 -0400", hash_original_method = "5D6E0D5CF72121589416F8E200760163", hash_generated_method = "7E5023A436A2A2F7D3AF5AFBA45A40F8")
     public int getMethod() {
         int var2BB54D2AE49B8469137AD2B40B9E2AD5_1323218566 = (compressionMethod);
@@ -203,7 +198,6 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.502 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "241516B08BE429CB8F2277BA4B4D3F5A")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
@@ -214,7 +208,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.502 -0400", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "C1BD82D4BCC8F16C4D4D5AF968BA41A9")
     public long getSize() {
         long varF7BD60B75B29D79B660A2859395C1A24_1345465803 = (size);
@@ -285,7 +278,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.504 -0400", hash_original_method = "24AF7AE4A55FD751B6B8B8E36C8E6668", hash_generated_method = "334A47E452019AA69BE98A99FED4C96B")
     public void setCompressedSize(long value) {
         compressedSize = value;
@@ -412,7 +404,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.508 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "12907E50BC21ED62ED5C083769267B20")
     @Override
     public String toString() {

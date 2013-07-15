@@ -33,7 +33,6 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.369 -0400", hash_original_method = "33DD110D68F95CA8E21FED144538609A", hash_generated_method = "343A2AD01F31716B3078FEDD4EF0CBE0")
     public T acquire() {
         synchronized
@@ -49,7 +48,6 @@ T varEDF53E778C1F13B11764E360D72D35D7_1079152317 =             mPool.acquire();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.369 -0400", hash_original_method = "D3A44672BBA01F45A0EA27E869DCFDD8", hash_generated_method = "6C341286A4A31E49DD30101410171D89")
     public void release(T element) {
         addTaint(element.getTaint());

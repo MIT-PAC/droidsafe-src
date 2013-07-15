@@ -239,7 +239,6 @@ Hop var65DBDE1B68EBAE1D8996367F5504793F_1122010583 =         addressResolver
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.418 -0400", hash_original_method = "4C71B768C5A06ACD6891DA2692157012", hash_generated_method = "0DD18B7568666651288BE099106B1FC2")
     public javax.sip.address.Hop getOutboundProxy() {
 javax.sip.address.Hop varF8E8BFFE70D4C82F135420B297CB0572_695786099 =         this.defaultRoute;

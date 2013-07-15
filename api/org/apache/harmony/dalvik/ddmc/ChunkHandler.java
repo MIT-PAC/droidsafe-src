@@ -24,8 +24,7 @@ public abstract class ChunkHandler {
     public abstract Chunk handleChunk(Chunk request);
 
     
-        @DSModeled(DSC.SPEC)
-    public static Chunk createFailChunk(int errorCode, String msg) {
+        public static Chunk createFailChunk(int errorCode, String msg) {
         if (msg == null)
             msg = "";
         ByteBuffer out = ByteBuffer.allocate(8 + msg.length() * 2);
@@ -53,8 +52,7 @@ public abstract class ChunkHandler {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void putString(ByteBuffer buf, String str) {
+        public static void putString(ByteBuffer buf, String str) {
         int len = str.length();
         for (int i = 0; i < len; i++)
             buf.putChar(str.charAt(i));

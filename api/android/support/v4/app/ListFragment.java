@@ -163,7 +163,6 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_1179395292 =         root;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.940 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "88BEAA79114E29F33BC32B86B2051CD9")
     public void onListItemClick(ListView l, View v, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -175,7 +174,6 @@ View varE2FC54A1BB143D1D1A0E38EDF22F290D_1179395292 =         root;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.940 -0400", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "603A4D55808103A90D851FF671C09445")
     public void setListAdapter(ListAdapter adapter) {
         boolean hadAdapter = mAdapter != null;
@@ -347,7 +345,6 @@ ListView var344AE622895130273F3D062543816FEE_132459919 =         mList;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.945 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "BEC6D0516F38BC9C679EC3C38544694C")
     public ListAdapter getListAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1772993592 =         mAdapter;

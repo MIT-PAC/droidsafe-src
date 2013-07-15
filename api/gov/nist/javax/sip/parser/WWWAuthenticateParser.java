@@ -25,7 +25,6 @@ public class WWWAuthenticateParser extends ChallengeParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.576 -0400", hash_original_method = "21D63394A7F5FCF103E716C1D0FF5141", hash_generated_method = "BC1BD4A467E4B8E37EAE2C37A1241CDB")
     public SIPHeader parse() throws ParseException {
     if(debug)        

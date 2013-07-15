@@ -73,7 +73,6 @@ public final class SignerInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.146 -0400", hash_original_method = "4521AB691538FE3E0581DA96E2D306DA", hash_generated_method = "C0AC16B11132ED8308FB0A878AF719AF")
     public X500Principal getIssuer() {
 X500Principal var8EF52627413B91AB97DB59853805E979_64781278 =         issuer;
@@ -84,7 +83,6 @@ X500Principal var8EF52627413B91AB97DB59853805E979_64781278 =         issuer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.147 -0400", hash_original_method = "9420C2CEA2A6F47D515C0AB0605412CD", hash_generated_method = "1C9EC0254400895A066D3A56D4AC710B")
     public BigInteger getSerialNumber() {
 BigInteger varC5241B523DA06FB03F5998149659C655_1511091224 =         serialNumber;
@@ -115,7 +113,6 @@ String varD7ABE868ACE670569FA3F032243EA182_35547336 =         digestEncryptionAl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.147 -0400", hash_original_method = "AEBE4A58A31E26ADF89831B320BDD2E7", hash_generated_method = "2605052E4DE61336EFE39758502B7ADC")
     public List<AttributeTypeAndValue> getAuthenticatedAttributes() {
     if(authenticatedAttributes == null)        
@@ -154,7 +151,6 @@ List<AttributeTypeAndValue> var111D566C00971C79F18A3FFB116CA856_2034026704 =    
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.148 -0400", hash_original_method = "14A08E1AF72E02B64CEDF5DA67544611", hash_generated_method = "D4D12A444D1B846D0CC1294DEB009498")
     public byte[] getEncryptedDigest() {
         byte[] varEE2C93D60E14AB73DB78160F92DCB869_138663220 = (encryptedDigest);

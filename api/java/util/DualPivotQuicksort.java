@@ -829,8 +829,7 @@ final class DualPivotQuicksort {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int findAnyZero(float[] a, int low, int high) {
+        private static int findAnyZero(float[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             float middleValue = a[middle];
@@ -1022,8 +1021,7 @@ final class DualPivotQuicksort {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int findAnyZero(double[] a, int low, int high) {
+        private static int findAnyZero(double[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             double middleValue = a[middle];

@@ -37,7 +37,6 @@ public final class ContentInfo {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.114 -0400", hash_original_method = "FEA779456A4B7718EE7D788C42FE9ED3", hash_generated_method = "B7BE3780752A185E021A089D5CB01DD5")
     public SignedData getSignedData() {
     if(Arrays.equals(oid, SIGNED_DATA))        
@@ -57,7 +56,6 @@ SignedData var540C13E9E156B687226421B24F2DF178_205883696 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.114 -0400", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "645637D2F97BCF9A3BA4A9D6E5AD34D1")
     public Object getContent() {
 Object varD442C91479410F76C84B872DA6AAE139_135263699 =         content;
@@ -68,7 +66,6 @@ Object varD442C91479410F76C84B872DA6AAE139_135263699 =         content;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.114 -0400", hash_original_method = "47E7DB6049BFBF7F7143C81AA2952707", hash_generated_method = "459BDB150277D122EEBCCC3EED86837D")
     public int[] getContentType() {
         int[] var130F43112BB8A7A7790EBFC08EE9D6AF_751747705 = (oid);
@@ -96,7 +93,6 @@ Object varD442C91479410F76C84B872DA6AAE139_135263699 =         content;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.115 -0400", hash_original_method = "E27EF60D80B9BCE694BEF49083131D32", hash_generated_method = "6E5505CFFE475C491F7CEA0CE38ABD21")
     @Override
     public String toString() {

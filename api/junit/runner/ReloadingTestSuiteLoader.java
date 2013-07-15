@@ -36,7 +36,6 @@ Class var94ED448C605A0DF1C953E6DD05247BFA_360916237 =         createLoader().loa
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.392 -0400", hash_original_method = "C0CD1B730267B48F98209346AB7074D3", hash_generated_method = "8C89520E61E297F00B0861BA98B20694")
     protected TestCaseClassLoader createLoader() {
 TestCaseClassLoader var9FDAA0A7F10327187F6F54690C1C504D_833318893 =         new TestCaseClassLoader();

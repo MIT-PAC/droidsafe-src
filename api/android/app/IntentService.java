@@ -34,7 +34,6 @@ public abstract class IntentService extends Service {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.658 -0400", hash_original_method = "5DC41098BF9C689ED5E1C1A6B5CD66D3", hash_generated_method = "BF0E6D5DC1A4107DCB204701CFD64C59")
     public void setIntentRedelivery(boolean enabled) {
         mRedelivery = enabled;
@@ -61,7 +60,6 @@ public abstract class IntentService extends Service {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.660 -0400", hash_original_method = "1A8CCBE4C5A081BBDC2E857325C2F354", hash_generated_method = "887436FAF5CDDB5C3BD15FD14B9A3878")
     @Override
     public void onStart(Intent intent, int startId) {
@@ -80,7 +78,6 @@ public abstract class IntentService extends Service {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.660 -0400", hash_original_method = "38140402AEC024932D8DF709F80C2AA8", hash_generated_method = "485ACFB190D930D0331EA89D3CA51EA1")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -108,7 +105,6 @@ public abstract class IntentService extends Service {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.662 -0400", hash_original_method = "B9DB5B746A4D0B6826A1AC056C39AB0D", hash_generated_method = "40CCED6F97C4917AAF4B5B22E6ED797B")
     @Override
     public IBinder onBind(Intent intent) {

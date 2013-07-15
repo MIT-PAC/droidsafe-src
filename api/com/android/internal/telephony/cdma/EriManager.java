@@ -91,14 +91,12 @@ switch(mEriFileSource){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.018 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
     private void loadEriFileFromModem() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.019 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
     private void loadEriFileFromFileSystem() {
         // ---------- Original Method ----------
@@ -216,7 +214,6 @@ switch(mEriFileSource){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.023 -0400", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "CB31412093EB33B26603AC3CF4DE3727")
     public int getEriFileVersion() {
         int var84CA50330295D6872A385F9A7A9BE91E_1964787058 = (mEriFile.mVersionNumber);
@@ -227,7 +224,6 @@ switch(mEriFileSource){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.023 -0400", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "3D21865797EB1C87458FD0EB022A0B74")
     public int getEriNumberOfEntries() {
         int varC749F5B583DFAF595D13626B09EB5960_1433053090 = (mEriFile.mNumberOfEriEntries);
@@ -238,7 +234,6 @@ switch(mEriFileSource){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.024 -0400", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "7A84E495C421EFC7387C8415011008BA")
     public int getEriFileType() {
         int varE91C92CE404E86D048540B9EF5715810_1042623721 = (mEriFile.mEriFileType);
@@ -249,7 +244,6 @@ switch(mEriFileSource){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.024 -0400", hash_original_method = "82EFBDE53CEDFA09C7F551715591238A", hash_generated_method = "689C9D36EE160C291630AC63B3F72D8B")
     public boolean isEriFileLoaded() {
         boolean var583264D6B6FB2E8327A962B767E7361D_643632940 = (isEriFileLoaded);

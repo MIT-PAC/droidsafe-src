@@ -33,7 +33,6 @@ public final class AccessDescription {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.651 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "D65E1B412BA42E87AACF564936FA1AF9")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -51,7 +50,6 @@ public final class AccessDescription {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.652 -0400", hash_original_method = "4D59D0B3E432FF02219BDDB6D479EFFA", hash_generated_method = "B0C6B7B1943436B523200EAD85C391E1")
     @Override
     public String toString() {

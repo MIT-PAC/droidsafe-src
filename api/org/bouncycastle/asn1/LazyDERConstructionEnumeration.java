@@ -25,7 +25,6 @@ class LazyDERConstructionEnumeration implements Enumeration {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.311 -0400", hash_original_method = "DE6A082C3D4BE08EE722248DFA2ED752", hash_generated_method = "9A4F420A0DE1511A150A399B133ED1A5")
     public boolean hasMoreElements() {
         boolean varD33774CA35F5B6F9427B64BA73FFD039_16652869 = (nextObj != null);
@@ -36,7 +35,6 @@ class LazyDERConstructionEnumeration implements Enumeration {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.312 -0400", hash_original_method = "7A36257711540715C5E7C9FBD3EAD6E1", hash_generated_method = "69D9BBDEC98969F6B3DDE84F1B7B6273")
     public Object nextElement() {
         Object o = nextObj;
@@ -51,7 +49,6 @@ Object varBB0FDDC5CC83552BCB5FF7675B18007A_1285497834 =         o;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.312 -0400", hash_original_method = "C7A49820E6202D53B06F271620A3165C", hash_generated_method = "00E9B17FCB6FB44C681AB788C0BA45F4")
     private Object readObject() {
         try 

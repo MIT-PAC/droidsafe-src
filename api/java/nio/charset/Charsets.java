@@ -34,8 +34,7 @@ public class Charsets {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static byte[] toBigEndianUtf16Bytes(char[] chars, int offset, int length) {
+        public static byte[] toBigEndianUtf16Bytes(char[] chars, int offset, int length) {
         byte[] result = new byte[length * 2];
         int end = offset + length;
         int resultIndex = 0;

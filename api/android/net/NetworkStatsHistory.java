@@ -219,7 +219,6 @@ switch(version){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0D744969D616078E42F6ADD139CE9DD7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1628472853 = (0);
@@ -230,7 +229,6 @@ switch(version){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "3E2D8D04EF3E8C4BDF56D4CFDD864A04", hash_generated_method = "F10DD82FDA70911B61AA20015A0CA0D3")
     public int size() {
         int var3ED54E5E8C85283782F9EFF085B93E51_9862181 = (bucketCount);
@@ -241,7 +239,6 @@ switch(version){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "D0E743773F77C0F20C1DE2E3BE48F30B", hash_generated_method = "5A263F4B294B345CEBC0A8887561903A")
     public long getBucketDuration() {
         long var12D6496AFB9546FF78CE1A9D7D8F4BFC_1273294319 = (bucketDuration);
@@ -252,7 +249,6 @@ switch(version){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "0DA78BB7B3F99E1543E4DC9DFD2BD9F4", hash_generated_method = "2B94A79BEC39FA5AD2E3485B3566B130")
     public long getStart() {
     if(bucketCount > 0)        
@@ -276,7 +272,6 @@ switch(version){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.200 -0400", hash_original_method = "D4476AE88A84FACA51BF4BF1E3EE2F8D", hash_generated_method = "0016A7958693FBC2603528606C849C57")
     public long getEnd() {
     if(bucketCount > 0)        
@@ -796,20 +791,17 @@ String varEF986DCEFABA18330D92CD8C42EF636E_1564160533 =         writer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long getLong(long[] array, int i, long value) {
+        private static long getLong(long[] array, int i, long value) {
         return array != null ? array[i] : value;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void setLong(long[] array, int i, long value) {
+        private static void setLong(long[] array, int i, long value) {
         if (array != null) array[i] = value;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void addLong(long[] array, int i, long value) {
+        private static void addLong(long[] array, int i, long value) {
         if (array != null) array[i] += value;
     }
 

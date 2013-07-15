@@ -333,7 +333,6 @@ public class Thread implements Runnable {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.500 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "F858D604933D6354BAA79FB8133F71C7")
     public ClassLoader getContextClassLoader() {
 ClassLoader varCDB6A46B81C356659A30478714667CAA_2000297776 =         contextClassLoader;
@@ -344,13 +343,11 @@ ClassLoader varCDB6A46B81C356659A30478714667CAA_2000297776 =         contextClas
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
+        public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
         return defaultUncaughtHandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.500 -0400", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "65042993FB88CFA38ADBE0B317C8AE60")
     public long getId() {
         long varB80BB7740288FDA1F201890375A60C8F_308727485 = (id);
@@ -446,7 +443,6 @@ ThreadGroup varD15A27BD67EB0D670CD5C298FF20B74F_1202712973 =             group;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.503 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "8F2423F23787477B292CB4C3CC81965A")
     public UncaughtExceptionHandler getUncaughtExceptionHandler() {
     if(uncaughtHandler != null)        
@@ -656,7 +652,6 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.511 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "3571A2A1E3CF85993D3F0CF0F870AA51")
     public void setContextClassLoader(ClassLoader cl) {
         contextClassLoader = cl;
@@ -687,8 +682,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
+        public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         Thread.defaultUncaughtHandler = handler;
     }
 
@@ -798,7 +792,6 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.518 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "32052A607317B2CF4FD95D37AFA858D8")
     public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         uncaughtHandler = handler;

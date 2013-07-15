@@ -22,7 +22,6 @@ public abstract class Message {
     abstract int getType();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.505 -0400", hash_original_method = "A95929A9D1E422E13DF7B6BE29D62093", hash_generated_method = "10C8C93898B328E36AEAD1AE97E3208C")
     public int length() {
         int var2FA47F7C65FEC19CC163B195725E3844_1945838412 = (length);

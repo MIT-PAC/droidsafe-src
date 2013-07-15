@@ -51,8 +51,7 @@ class MeasuredText {
     }
 
     
-        @DSModeled(DSC.BAN)
-    static MeasuredText obtain() {
+        static MeasuredText obtain() {
         MeasuredText mt;
         synchronized (sLock) {
             for (int i = sCached.length; --i >= 0;) {
@@ -71,8 +70,7 @@ class MeasuredText {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static MeasuredText recycle(MeasuredText mt) {
+        static MeasuredText recycle(MeasuredText mt) {
         mt.mText = null;
         if (mt.mLen < 1000) {
             synchronized(sLock) {
@@ -270,7 +268,6 @@ for(int i = mPos + 1, e = mPos + len;i < e;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.262 -0400", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "692FAF8CC7DE4427D003E45C58485330")
      int breakText(int start, int limit, boolean forwards, float width) {
         addTaint(width);
@@ -324,7 +321,6 @@ for(int i = limit;--i >= start;)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.262 -0400", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "2575C4D6D9CD815D214BFB85E929B492")
      float measure(int start, int limit) {
         addTaint(limit);

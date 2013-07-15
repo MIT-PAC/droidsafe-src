@@ -89,7 +89,6 @@ public class LogRecord implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.232 -0400", hash_original_method = "0FEEFD0C4767A5B5B477CADC6D101FDE", hash_generated_method = "2220A3AC89C4E7A3AA49996060C48B72")
     public Level getLevel() {
 Level varBBB01F92FFE3DDEF2182A71AE5793430_1513851799 =         level;
@@ -117,7 +116,6 @@ Level varBBB01F92FFE3DDEF2182A71AE5793430_1513851799 =         level;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.233 -0400", hash_original_method = "F91ED8A8026304D4EB26E347DCDA5498", hash_generated_method = "BA3F3F3AC84B63651FBF38386C9D26AD")
     public String getLoggerName() {
 String var6AE45EC7DF15F0C56515E791110DC732_600034348 =         loggerName;
@@ -128,7 +126,6 @@ String var6AE45EC7DF15F0C56515E791110DC732_600034348 =         loggerName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.233 -0400", hash_original_method = "A458AA58D2D6B65ABAE0935E2AD2D855", hash_generated_method = "4107C4AC85EC187BD5ACF284D6F4D27F")
     public void setLoggerName(String loggerName) {
         this.loggerName = loggerName;
@@ -137,7 +134,6 @@ String var6AE45EC7DF15F0C56515E791110DC732_600034348 =         loggerName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.233 -0400", hash_original_method = "AF20B727F6E1F2FE1F73E3107355CAA7", hash_generated_method = "E96C9EB7FA5AAEC8FAA690BD5011B7CB")
     public String getMessage() {
 String varFD182D7074F3848E773A38B067BBB880_65060135 =         message;
@@ -148,7 +144,6 @@ String varFD182D7074F3848E773A38B067BBB880_65060135 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "9A40E46319AC2A39DCEE47C689D1B957", hash_generated_method = "ECD2FD94E8E1263A481FCAA4BA79136D")
     public void setMessage(String message) {
         this.message = message;
@@ -157,7 +152,6 @@ String varFD182D7074F3848E773A38B067BBB880_65060135 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "06B95E2D5570D6B3A84011B34076B5C7", hash_generated_method = "422ACA6B9A4612EDE3E70387FB1FB47F")
     public long getMillis() {
         long var259A879E32720D127D38B39F2F1385B5_1484034343 = (millis);
@@ -168,7 +162,6 @@ String varFD182D7074F3848E773A38B067BBB880_65060135 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "AAA6B913A1F36A93830487DCD9FBEB6E", hash_generated_method = "4A5286A8D3BAD575DF87ABE37A21528A")
     public void setMillis(long millis) {
         this.millis = millis;
@@ -177,7 +170,6 @@ String varFD182D7074F3848E773A38B067BBB880_65060135 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "7E2CB3B3486574EE0A68176991A0ECCF", hash_generated_method = "207D26893D48CB8AED8E78242AEC04FD")
     public Object[] getParameters() {
 Object[] var3CB0A38B794BDEDADB1F50256E0AE35B_1393699480 =         parameters;
@@ -188,7 +180,6 @@ Object[] var3CB0A38B794BDEDADB1F50256E0AE35B_1393699480 =         parameters;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "A8B44ED180D604C73C7E6D3CC47CE208", hash_generated_method = "EAAF5364DA7321CF27F377D30F3727EC")
     public void setParameters(Object[] parameters) {
         this.parameters = parameters;
@@ -197,7 +188,6 @@ Object[] var3CB0A38B794BDEDADB1F50256E0AE35B_1393699480 =         parameters;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "A55D46251237391AC4070653DF8FD1F0", hash_generated_method = "D5D7207B7859C2B275231EF92EB28BCC")
     public ResourceBundle getResourceBundle() {
 ResourceBundle varD5B8822BB1F67E996F69C6A3B1291C5B_1178084692 =         resourceBundle;
@@ -208,7 +198,6 @@ ResourceBundle varD5B8822BB1F67E996F69C6A3B1291C5B_1178084692 =         resource
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "22E19C2BD30D13ED1AEAB526931847D2", hash_generated_method = "82DB922AF0E3D816DBC8DF664756776E")
     public void setResourceBundle(ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
@@ -217,7 +206,6 @@ ResourceBundle varD5B8822BB1F67E996F69C6A3B1291C5B_1178084692 =         resource
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.234 -0400", hash_original_method = "73FB3843FBEEE5F85EEE27DAD4E6665A", hash_generated_method = "964F1E0A9ABAF27F5A12569886C38CD6")
     public String getResourceBundleName() {
 String var506B431B3C5514F7A1B8B5DDED2D5487_575737794 =         resourceBundleName;
@@ -228,7 +216,6 @@ String var506B431B3C5514F7A1B8B5DDED2D5487_575737794 =         resourceBundleNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.235 -0400", hash_original_method = "953EDB4ADFDF1563BD9A241A7063EF86", hash_generated_method = "DB340DADBDA61DCE3A5BCDCFF788C469")
     public void setResourceBundleName(String resourceBundleName) {
         this.resourceBundleName = resourceBundleName;
@@ -237,7 +224,6 @@ String var506B431B3C5514F7A1B8B5DDED2D5487_575737794 =         resourceBundleNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.235 -0400", hash_original_method = "5B99D7AA47A1BEEC3DF03D05A32BB6DB", hash_generated_method = "01FBA460F416A4BDA2B82285E2DC2113")
     public long getSequenceNumber() {
         long var1C021ADF174562C07D271E889F46BABF_42004157 = (sequenceNumber);
@@ -248,7 +234,6 @@ String var506B431B3C5514F7A1B8B5DDED2D5487_575737794 =         resourceBundleNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.235 -0400", hash_original_method = "A872117CAF84BB70B3F50AB7DBB15709", hash_generated_method = "36A35E268F041883EE2560486480F2F4")
     public void setSequenceNumber(long sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
@@ -311,7 +296,6 @@ for(StackTraceElement element : new Throwable().getStackTrace())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.235 -0400", hash_original_method = "4073B854D67A7DD73FA3797FFA5DDD0A", hash_generated_method = "B1E4EB455B67315901A563571AF6A0E5")
     public void setSourceClassName(String sourceClassName) {
         sourceInitialized = true;
@@ -334,7 +318,6 @@ String varE932A73D87763A704173CF8783AEB9D1_1159837548 =         sourceMethodName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.235 -0400", hash_original_method = "6DB80156486F9B3573D791516F5BFF16", hash_generated_method = "2100A9D45537A528897DE9D1784E0F3D")
     public void setSourceMethodName(String sourceMethodName) {
         sourceInitialized = true;
@@ -345,7 +328,6 @@ String varE932A73D87763A704173CF8783AEB9D1_1159837548 =         sourceMethodName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.236 -0400", hash_original_method = "23D166A70BC333A13745104EBA97F318", hash_generated_method = "C45D7EF1AA1EBE0A00433863F9682510")
     public int getThreadID() {
         int var77FF125E7D621F2339535A6CB37AB5EA_895396761 = (threadID);
@@ -356,7 +338,6 @@ String varE932A73D87763A704173CF8783AEB9D1_1159837548 =         sourceMethodName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.236 -0400", hash_original_method = "BFD778F3BC25BE448B5B49F6297DA90A", hash_generated_method = "242E8DAC4BAF6C1976325C1A9D10F46A")
     public void setThreadID(int threadID) {
         this.threadID = threadID;
@@ -365,7 +346,6 @@ String varE932A73D87763A704173CF8783AEB9D1_1159837548 =         sourceMethodName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.236 -0400", hash_original_method = "9281C9177DD0647B668ECFF1744AEA20", hash_generated_method = "F9AD231837338DAC02936D84336E6316")
     public Throwable getThrown() {
 Throwable var40084472BF9BAFD590E7F3643D5F17C8_1599886481 =         thrown;
@@ -376,7 +356,6 @@ Throwable var40084472BF9BAFD590E7F3643D5F17C8_1599886481 =         thrown;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.236 -0400", hash_original_method = "11A0184E1F2F67806A14E7D6384E1936", hash_generated_method = "D3014FF7E704F60A198DAA6CB1A11C82")
     public void setThrown(Throwable thrown) {
         this.thrown = thrown;

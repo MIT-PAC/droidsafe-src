@@ -98,7 +98,6 @@ public abstract class AuthSchemeBase implements AuthScheme {
             CharArrayBuffer buffer, int pos, int len) throws MalformedChallengeException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.099 -0400", hash_original_method = "268F84420EF1E9954B4C291A99275A1C", hash_generated_method = "744324C8C62ECA0A7E68F43E0460614D")
     public boolean isProxy() {
         boolean var8D85537F0BC6D0E5E9FAD030D5A879CA_1057904560 = (this.proxy);

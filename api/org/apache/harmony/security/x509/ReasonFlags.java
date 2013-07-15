@@ -22,7 +22,6 @@ public final class ReasonFlags {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.261 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "A270A8CE89307BF26CB2AB5C17A62AAE")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

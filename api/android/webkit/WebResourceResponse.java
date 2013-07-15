@@ -31,7 +31,6 @@ public class WebResourceResponse {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.502 -0400", hash_original_method = "1165C88EB0307FF1DFDA0D499F11D5AA", hash_generated_method = "C8A7435C68C155A5CFE8D0848286F857")
     public void setMimeType(String mimeType) {
         mMimeType = mimeType;
@@ -40,7 +39,6 @@ public class WebResourceResponse {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.503 -0400", hash_original_method = "FA5F1755E5361266828E073C873270CA", hash_generated_method = "FD22FE5430709C75081989E27D725F60")
     public String getMimeType() {
 String varBE38DA462B031CDCB7789EAC19C3FD2D_368149675 =         mMimeType;
@@ -51,7 +49,6 @@ String varBE38DA462B031CDCB7789EAC19C3FD2D_368149675 =         mMimeType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.503 -0400", hash_original_method = "6642C41BC98D7E1BDACAB67A1DFBBC4B", hash_generated_method = "A8BE31D3863194E0609EC5C066013D56")
     public void setEncoding(String encoding) {
         mEncoding = encoding;
@@ -60,7 +57,6 @@ String varBE38DA462B031CDCB7789EAC19C3FD2D_368149675 =         mMimeType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.503 -0400", hash_original_method = "2712105DF2D5EC1ED27B9462D6F15E3A", hash_generated_method = "F039559464580489BD934FF85BB785FC")
     public String getEncoding() {
 String varD11A7DF5C4874207C4AF6345DC7F5843_498297577 =         mEncoding;
@@ -71,7 +67,6 @@ String varD11A7DF5C4874207C4AF6345DC7F5843_498297577 =         mEncoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.504 -0400", hash_original_method = "C26148C30E5EF65B476B7B323E30AB3C", hash_generated_method = "AECC74294CA1A9AFB603B72E07B7B0E9")
     public void setData(InputStream data) {
         mInputStream = data;
@@ -80,7 +75,6 @@ String varD11A7DF5C4874207C4AF6345DC7F5843_498297577 =         mEncoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.504 -0400", hash_original_method = "70FED193DE86C029473917F94AE9B4C4", hash_generated_method = "85839984A12567192D17322C21C4671D")
     public InputStream getData() {
 InputStream var2E675DC7F4D82075BA9D940E3D1423A3_843420246 =         mInputStream;

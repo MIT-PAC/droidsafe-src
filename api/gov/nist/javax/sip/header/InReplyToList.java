@@ -15,7 +15,6 @@ public final class InReplyToList extends SIPHeaderList<InReplyTo> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.544 -0400", hash_original_method = "DCD4BD1433043890DC84CD67AE62360B", hash_generated_method = "9FDCF10600318E43827AB6C549377D9C")
     public Object clone() {
         InReplyToList retval = new InReplyToList();

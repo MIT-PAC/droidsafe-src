@@ -26,7 +26,6 @@ public final class ExtendedKeyUsage extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.871 -0400", hash_original_method = "EC4A736D051BE2AF82868DFFF88ACC79", hash_generated_method = "F6B4DE9D4F2046EB17641A4FF6B0DE11")
     public List<String> getExtendedKeyUsage() throws IOException {
     if(keys == null)        
@@ -44,7 +43,6 @@ List<String> varB14736CAAF1705D7B3CD66C22C8D3EBC_1931646150 =         keys;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.872 -0400", hash_original_method = "63AFE39A4816AB8A1F7656BFDDDB680C", hash_generated_method = "47FFB0930AD3A116970797A19FEBF648")
     @Override
     public byte[] getEncoded() {
@@ -63,7 +61,6 @@ List<String> varB14736CAAF1705D7B3CD66C22C8D3EBC_1931646150 =         keys;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.873 -0400", hash_original_method = "4F87579E7E9CA4B1B17B20CD410B3E10", hash_generated_method = "D89135C7521E619869D7B4974467F11E")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

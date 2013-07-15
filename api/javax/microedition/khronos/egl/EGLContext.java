@@ -15,8 +15,7 @@ public abstract class EGLContext {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static EGL getEGL() {
+        public static EGL getEGL() {
         return EGL_INSTANCE;
     }
 

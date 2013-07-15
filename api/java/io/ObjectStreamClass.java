@@ -96,7 +96,6 @@ public class ObjectStreamClass implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.273 -0400", hash_original_method = "7053F33417C9644BFD49070B9EF96C54", hash_generated_method = "AC3AFCBDE4A9E172383956581C876B87")
      void setConstructor(long newConstructor) {
         constructor = newConstructor;
@@ -105,7 +104,6 @@ public class ObjectStreamClass implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.273 -0400", hash_original_method = "AE977884038645FC18D9650C0686387C", hash_generated_method = "A32337068D8C95DF8292830D062B0B9B")
      long getConstructor() {
         long var6CA268371EEB5D93EEFEB68F96157666_525223417 = (constructor);
@@ -747,7 +745,6 @@ for(int j = 0;j < fields.length;j++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.320 -0400", hash_original_method = "8F334CDB84C81A51C0419AAF322CA87A", hash_generated_method = "A66BD086223C1042C05B24D9510EC424")
      ObjectStreamField[] getLoadFields() {
 ObjectStreamField[] varFFE48A86F4DE3B2E682DE0CE30222550_1983587909 =         loadFields;
@@ -764,7 +761,6 @@ ObjectStreamField[] varFFE48A86F4DE3B2E682DE0CE30222550_1983587909 =         loa
 	}
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.323 -0400", hash_original_method = "CB224A404D2A4A24CFF7504565CB22F2", hash_generated_method = "6E5347F20B97244E8F14B40620B67084")
      byte getFlags() {
         byte var4E5868D676CB634AA75B125A0F741ABF_549519506 = (flags);
@@ -781,7 +777,6 @@ ObjectStreamField[] varFFE48A86F4DE3B2E682DE0CE30222550_1983587909 =         loa
 	}
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.327 -0400", hash_original_method = "4A271A070FBC29EF826D1B50170E00D2", hash_generated_method = "45AB3D04A0C312221E9AC2C017F7BB18")
     public String getName() {
 String varF57DF2C3C72C0BA8574176BD3A4AA127_1019383579 =         className;
@@ -792,7 +787,6 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1019383579 =         className;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.328 -0400", hash_original_method = "50DDDA79153910C7DDC4FA6D8AF3586E", hash_generated_method = "315382B9222BB56DC48412F303828246")
     public long getSerialVersionUID() {
         long var28CDF3CD863FE5D84844FE25A3CD04A2_1378417080 = (svUID);
@@ -803,7 +797,6 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1019383579 =         className;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.329 -0400", hash_original_method = "B099B86A783D62A1B2FEC5CAB74CA2FF", hash_generated_method = "E168F9820C3469B7F5A01C67BE6B6853")
      ObjectStreamClass getSuperclass() {
 ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_719465507 =         superclass;
@@ -826,8 +819,7 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_719465507 =         superc
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static boolean isPrimitiveType(char typecode) {
+        static boolean isPrimitiveType(char typecode) {
         return !(typecode == '[' || typecode == 'L');
     }
 
@@ -979,7 +971,6 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_719465507 =         superc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.350 -0400", hash_original_method = "8B291B650661131936FFDD0976F9C451", hash_generated_method = "B6992FE6ED70034CAFFB9493B7C3A253")
      boolean hasMethodWriteReplace() {
         boolean varC5C50AF3A96235EE06F14A4054ECB16D_1237069866 = ((methodWriteReplace != null));
@@ -990,7 +981,6 @@ ObjectStreamClass var605488FFF682003C1CF49E47CFE0CB88_719465507 =         superc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.350 -0400", hash_original_method = "42662B3DE24059CFD85E0D286320D7E3", hash_generated_method = "716236FF452541E1C83D8ED9AA638C43")
      Method getMethodWriteReplace() {
 Method var206BC8C04910C0FB4D4E5C2F0A803E8D_1945791546 =         methodWriteReplace;
@@ -1001,7 +991,6 @@ Method var206BC8C04910C0FB4D4E5C2F0A803E8D_1945791546 =         methodWriteRepla
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.352 -0400", hash_original_method = "2852DBB1E5C3B0D1351FCC53EE3E49ED", hash_generated_method = "BAB31BB3BAF42318055E993ED9E3F48D")
      boolean hasMethodReadResolve() {
         boolean var9FA32245FC9D15A587F6C8E61C826120_901016354 = ((methodReadResolve != null));
@@ -1012,7 +1001,6 @@ Method var206BC8C04910C0FB4D4E5C2F0A803E8D_1945791546 =         methodWriteRepla
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.353 -0400", hash_original_method = "4E87A71E13632BD19F893729646A7048", hash_generated_method = "726456111D8A171AE715445C1C583CF9")
      Method getMethodReadResolve() {
 Method varC362345BB436481765CCFD945370E01A_1021591593 =         methodReadResolve;
@@ -1023,7 +1011,6 @@ Method varC362345BB436481765CCFD945370E01A_1021591593 =         methodReadResolv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.354 -0400", hash_original_method = "5A79EE26139C94EE3C3A1C73D8050C0E", hash_generated_method = "27940847BCFD4FEE31A294580FA93025")
      boolean hasMethodWriteObject() {
         boolean varCD42F0C01E864FCB858A5F038B60FDB4_246947019 = ((methodWriteObject != null));
@@ -1034,7 +1021,6 @@ Method varC362345BB436481765CCFD945370E01A_1021591593 =         methodReadResolv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.354 -0400", hash_original_method = "234967F1224E01D561A4A7AA93A723BD", hash_generated_method = "7ED0460C3EAB2D0276F8DDDDEAFA41D3")
      Method getMethodWriteObject() {
 Method var0C7876443CF7079D263CA84361BC21AF_935464428 =         methodWriteObject;
@@ -1045,7 +1031,6 @@ Method var0C7876443CF7079D263CA84361BC21AF_935464428 =         methodWriteObject
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.356 -0400", hash_original_method = "46A702B5AEFAE4B1088A7C3DF1FC5D53", hash_generated_method = "66E65186E331F3E0FB1CA23EF82DBBA7")
      boolean hasMethodReadObject() {
         boolean varA66395F47C27FB7F49C015BF5A9A3975_337248261 = ((methodReadObject != null));
@@ -1056,7 +1041,6 @@ Method var0C7876443CF7079D263CA84361BC21AF_935464428 =         methodWriteObject
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.357 -0400", hash_original_method = "46960222BC0B63A6D59A57191BB77464", hash_generated_method = "57FAA0018611A39D78F9B924387CAE7B")
      Method getMethodReadObject() {
 Method varD22288161F844BB1B614C017B84DB295_690434327 =         methodReadObject;
@@ -1067,7 +1051,6 @@ Method varD22288161F844BB1B614C017B84DB295_690434327 =         methodReadObject;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.359 -0400", hash_original_method = "29BCBE89B6EA217724D7699109546E15", hash_generated_method = "59CC7EF805E3F162CCA4C893F08DCF10")
      boolean hasMethodReadObjectNoData() {
         boolean var2268C4BD6E66C45D000783AEB8105D0F_428802606 = ((methodReadObjectNoData != null));
@@ -1078,7 +1061,6 @@ Method varD22288161F844BB1B614C017B84DB295_690434327 =         methodReadObject;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.360 -0400", hash_original_method = "04BED52E799E809DB8DD364039964962", hash_generated_method = "1E3E19B246156C6BFF041D9B832DF589")
      Method getMethodReadObjectNoData() {
 Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectNoData;
@@ -1089,7 +1071,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.364 -0400", hash_original_method = "971C620E95BDC0255A7014EB736B5315", hash_generated_method = "B5F3BDDAE6A803CDF4D471FA2756DB0E")
      void initPrivateFields(ObjectStreamClass desc) {
         methodWriteReplace = desc.methodWriteReplace;
@@ -1114,7 +1095,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.368 -0400", hash_original_method = "95CB44F7E664D85BD475B63456D19F48", hash_generated_method = "621FA11CDA9BF8080C1105CE3A873D93")
      void setFields(ObjectStreamField[] f) {
         fields = f;
@@ -1123,7 +1103,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.370 -0400", hash_original_method = "BCDE99C62E7E698332D80A91E945CB98", hash_generated_method = "D8783C05CB4817ECCBC0A4DB4114E614")
      void setLoadFields(ObjectStreamField[] f) {
         loadFields = f;
@@ -1132,7 +1111,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.371 -0400", hash_original_method = "576B4ED3621FB044BCB61FA4A013466B", hash_generated_method = "A1473C1BC66B458281188527CD3D2FFA")
      void setFlags(byte b) {
         flags = b;
@@ -1141,7 +1119,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.371 -0400", hash_original_method = "013A745A10FFAC0063C18ECA8D35B13C", hash_generated_method = "A8DB264CFECA0C5CD0FC0F9AB8AC5A8F")
      void setName(String newName) {
         className = newName;
@@ -1150,7 +1127,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.373 -0400", hash_original_method = "F5AE79B32CCC15982EBF3437ADD142B6", hash_generated_method = "2B1ADB1E939E150C2B4F3759E3B94493")
      void setSerialVersionUID(long l) {
         svUID = l;
@@ -1159,7 +1135,6 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_391625096 =         methodReadObjectN
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.375 -0400", hash_original_method = "0C66D1C8E17ECB3824AFA99C964D873A", hash_generated_method = "B10D683C7024190847B8FAF4B67B2A8C")
      void setSuperclass(ObjectStreamClass c) {
         superclass = c;

@@ -508,7 +508,6 @@ String var8D11C2D110975896438D6F91C60E6D6F_1924800161 =         stringRepresenta
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.149 -0400", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "3015754AD1277BEBF84036C90F24FB59")
     public String debugDump(int indent) {
         addTaint(indent);
@@ -528,7 +527,6 @@ String varF9E19AD6135C970F387F77C6F3DE4477_2058239018 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.150 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "B6ECE04BF4200EA3734123DBD1261EC5")
     public String toString() {
 String varB17575D7C845B2C662583710539AAEBB_2120514142 =         this.encode();

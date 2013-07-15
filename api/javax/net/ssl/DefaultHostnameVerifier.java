@@ -82,7 +82,6 @@ for(String cn : getDNSSubjectAlts(x509))
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.733 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "441B50B7BE9F1B6274D94A388F0B9237")
     private boolean matches(String hostName, String cn) {
         addTaint(cn.getTaint());
@@ -158,7 +157,6 @@ for(String cn : getDNSSubjectAlts(x509))
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.736 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "734310FA843DE023A067395BC3E3EE6A")
     private String getFirstCn(X509Certificate cert) {
         addTaint(cert.getTaint());

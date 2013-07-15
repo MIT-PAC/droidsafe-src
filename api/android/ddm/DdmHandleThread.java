@@ -19,29 +19,25 @@ public class DdmHandleThread extends ChunkHandler {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void register() {
+        public static void register() {
         DdmServer.registerHandler(CHUNK_THEN, mInstance);
         DdmServer.registerHandler(CHUNK_THST, mInstance);
         DdmServer.registerHandler(CHUNK_STKL, mInstance);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.485 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.485 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.486 -0400", hash_original_method = "A7F2A84C27DF1EE7C10C6ACC7D9300BF", hash_generated_method = "157E3BB840ACBCBFFED0C2676566BC1E")
     public Chunk handleChunk(Chunk request) {
         addTaint(request.getTaint());
@@ -134,7 +130,6 @@ Chunk var3F84CD09A45C8D277213099EBB773786_2036111004 =         createFailChunk(1
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.488 -0400", hash_original_method = "D658C618BB2C2BBDA71F6A2C6E25EF76", hash_generated_method = "E7A62BF36E1D1E92636180C8B7EC5FF8")
     private Chunk handleSTKL(Chunk request) {
         addTaint(request.getTaint());

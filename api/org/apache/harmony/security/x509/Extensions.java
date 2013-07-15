@@ -51,7 +51,6 @@ public final class Extensions {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.959 -0400", hash_original_method = "B4520EB3CA6AF47BBFFA43544D7C2D00", hash_generated_method = "D1BE7B1662102E0E16B0D14E6AA3B20B")
     public int size() {
         int var1C67B571805D86D4F76721DB00F8E6F4_984587576 = ((extensions == null) ? 0 : extensions.size());
@@ -62,7 +61,6 @@ public final class Extensions {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.959 -0400", hash_original_method = "6A8A6C791C17F1564EF710302C5F6E38", hash_generated_method = "6B5A1098449A788BC9BE5168E7DD5D16")
     public Set<String> getCriticalExtensions() {
     if(critical == null)        
@@ -80,7 +78,6 @@ Set<String> varF2B06FFF774E5FA9D519BD0DE855932F_2037688232 =         critical;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.960 -0400", hash_original_method = "A9814A684588F34F98E6563F2443DAA6", hash_generated_method = "85310C4415FA4DFB859971BDE5F13556")
     public Set<String> getNonCriticalExtensions() {
     if(noncritical == null)        
@@ -98,7 +95,6 @@ Set<String> var2FA3366C666BE300428E25FAF64BF989_1487120807 =         noncritical
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.960 -0400", hash_original_method = "CA1C7754653BDDEC58CFB11BB71C11DB", hash_generated_method = "379427A35EFEC8175428FD6929416753")
     public boolean hasUnsupportedCritical() {
     if(critical == null)        
@@ -116,7 +112,6 @@ Set<String> var2FA3366C666BE300428E25FAF64BF989_1487120807 =         noncritical
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.961 -0400", hash_original_method = "F144B02FA833AD81E1DCC6E0D8E9952F", hash_generated_method = "FD79ADC27BE331C2CFEDF2658270B663")
     private void makeOidsLists() {
     if(extensions == null)        
@@ -163,7 +158,6 @@ for(Extension extension : extensions)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.962 -0400", hash_original_method = "44703E9781E0014C266798D0DB277AFC", hash_generated_method = "8A3C840F77B20DEE810EEB91D03229C1")
     public Extension getExtensionByOID(String oid) {
         addTaint(oid.getTaint());
@@ -221,7 +215,6 @@ Extension varD544C9E50790C376615EA57A8A783338_396548050 =         oidMap.get(oid
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.962 -0400", hash_original_method = "84A63CE35CC08D6818168132AFB51A65", hash_generated_method = "A0A66C5072F1AF01ECA0F2DCE36B6E72")
     public List<String> valueOfExtendedKeyUsage() throws IOException {
         Extension extension = getExtensionByOID("2.5.29.37");
@@ -243,7 +236,6 @@ List<String> varA799009FD1F982F781627366A4256725_144601934 =         ((ExtendedK
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.963 -0400", hash_original_method = "CD9DAABD8089C73414664CD384AA791C", hash_generated_method = "436D2335D0ACDF4324DFDCB750D69CD5")
     public int valueOfBasicConstrains() {
         Extension extension = getExtensionByOID("2.5.29.19");
@@ -267,7 +259,6 @@ List<String> varA799009FD1F982F781627366A4256725_144601934 =         ((ExtendedK
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.963 -0400", hash_original_method = "05742F8CFC468BD801B4E723F95A84AD", hash_generated_method = "F98F1256939221CE66B2B8CF93952C5A")
     public Collection<List<?>> valueOfSubjectAlternativeName() throws IOException {
         Extension extension = getExtensionByOID("2.5.29.17");
@@ -289,7 +280,6 @@ Collection<List<?>> var3C92EC5454C0B0BC8255D151CC79DB75_922349820 =         ((Ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.964 -0400", hash_original_method = "03BB26B095671170BC4A5910FD38473D", hash_generated_method = "FA4FCF31517567B2497F62CC7CDB97BB")
     public Collection<List<?>> valueOfIssuerAlternativeName() throws IOException {
         Extension extension = getExtensionByOID("2.5.29.18");
@@ -311,7 +301,6 @@ Collection<List<?>> var3C92EC5454C0B0BC8255D151CC79DB75_1513693968 =         ((G
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.964 -0400", hash_original_method = "7B080EDEBF008BF89BEA15CA32B37546", hash_generated_method = "E47204E856E59456B7BC4C609C8616B6")
     public X500Principal valueOfCertificateIssuerExtension() throws IOException {
         Extension extension = getExtensionByOID("2.5.29.29");
@@ -333,7 +322,6 @@ X500Principal var3B1A9D77F25BB2C1E4F64E96F5CE1A92_1735846413 =         ((Certifi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.964 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "EC3688E9882A6674AC30DED1445C9117")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -351,7 +339,6 @@ X500Principal var3B1A9D77F25BB2C1E4F64E96F5CE1A92_1735846413 =         ((Certifi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.965 -0400", hash_original_method = "C22B11DD1D34238E2A26C4258C487EE2", hash_generated_method = "01057E1CB00C0BFFCA34ACDA509EA161")
     @Override
     public boolean equals(Object other) {
@@ -379,7 +366,6 @@ X500Principal var3B1A9D77F25BB2C1E4F64E96F5CE1A92_1735846413 =         ((Certifi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.965 -0400", hash_original_method = "4C94C64ABE7312C3D3BBBB76E6D36C32", hash_generated_method = "C439D7CBF5219AD93F4766D7F5ACECFC")
     @Override
     public int hashCode() {
@@ -400,7 +386,6 @@ X500Principal var3B1A9D77F25BB2C1E4F64E96F5CE1A92_1735846413 =         ((Certifi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.966 -0400", hash_original_method = "F4C0EB00BC61B6C3C716F9B41C861C66", hash_generated_method = "FC378369D1F8E6B2BB47C41B53A909F6")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

@@ -100,7 +100,6 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.993 -0400", hash_original_method = "B164C3A01C2D5FB8FE5C16711A461B38", hash_generated_method = "506D81554DA755C976BC4543BD9A3DC2")
     public int getSaltLength() {
         int var056E4139309C25B9756680DC9176AB5D_1168656951 = (saltLen);
@@ -111,7 +110,6 @@ public class PSSParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.993 -0400", hash_original_method = "F76E00B788282743E863E8A91477E027", hash_generated_method = "D0AFFCE982B7226BEB48FFDADF469760")
     public String getDigestAlgorithm() {
 String var2F6B2979B47F1FF73F1CD44382C3AAC7_2018276284 =         mdName;
@@ -122,7 +120,6 @@ String var2F6B2979B47F1FF73F1CD44382C3AAC7_2018276284 =         mdName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.994 -0400", hash_original_method = "11682E81B271E60CD76F4E3CFB1D831D", hash_generated_method = "B112E9813D141992CBF7588A761A25E4")
     public String getMGFAlgorithm() {
 String var10E900ABFC9A9F07D66DAFF61B2B7D0A_1201767659 =         mgfName;
@@ -133,7 +130,6 @@ String var10E900ABFC9A9F07D66DAFF61B2B7D0A_1201767659 =         mgfName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.994 -0400", hash_original_method = "79BC41FB5304035884EA00639B685A6D", hash_generated_method = "D716A7766B7BECFD0726AD2512A21E8C")
     public AlgorithmParameterSpec getMGFParameters() {
 AlgorithmParameterSpec var450A2359A3589399018B2039256375D9_1038783271 =         mgfSpec;
@@ -144,7 +140,6 @@ AlgorithmParameterSpec var450A2359A3589399018B2039256375D9_1038783271 =         
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.994 -0400", hash_original_method = "61A230854EAEDDEEB7E5A3E90232200C", hash_generated_method = "0F343CCDE1BA4B1195498CFB941BBCF9")
     public int getTrailerField() {
         int var3A4430CC349D3B8A1E847B147ACBA301_2115387423 = (trailerField);

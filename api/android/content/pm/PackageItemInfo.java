@@ -200,7 +200,6 @@ Drawable var3716CCA1FFFC9EFA2CF03E314A8A1A27_1197341990 =         loadDefaultLog
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.947 -0400", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "276CF94D51998AAB4B3C1CBF0C46E70C")
     protected Drawable loadDefaultLogo(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -268,7 +267,6 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_622014301 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.948 -0400", hash_original_method = "B7061250601C1EA92C43E5184BBC6241", hash_generated_method = "E7500C2A6335C8EBED547E7514F82CE5")
     protected void dumpBack(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -299,7 +297,6 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_622014301 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.949 -0400", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "129C70B3B4306A08A82613C958C0B220")
     protected ApplicationInfo getApplicationInfo() {
 ApplicationInfo var540C13E9E156B687226421B24F2DF178_1312455592 =         null;

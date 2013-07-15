@@ -100,7 +100,6 @@ for(int i = 0;i < columnCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.627 -0400", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "AB7F41C090CC4621827A13255A8A723B")
     public SQLiteDatabase getDatabase() {
         synchronized
@@ -195,7 +194,6 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_59300907 =             mQuery
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.629 -0400", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "C87018021A184A4C7C3B4F00FACAB1EA")
     private synchronized SQLiteQuery getQuery() {
 SQLiteQuery varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1501298399 =         mQuery;
@@ -245,7 +243,6 @@ for(int i = 0;i < columnCount;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.631 -0400", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "CAB4D3EBA645561070271CA7F8746168")
     @Override
     public String[] getColumnNames() {
@@ -286,7 +283,6 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.634 -0400", hash_original_method = "EB44A3C249AFFC8E58A7028D8F44463C", hash_generated_method = "7FD622C3E1254C90E0E1DABAA29281B5")
     @Override
     public boolean requery() {

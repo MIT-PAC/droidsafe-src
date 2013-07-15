@@ -91,7 +91,6 @@ switch(a.getSak()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.886 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "A667DCBC73FED35F11D37C39E574B6E6")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_901162241 = (mType);
@@ -102,7 +101,6 @@ switch(a.getSak()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.887 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "5090EE07AAC2B264E59518A065326E8A")
     public int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_514172713 = (mSize);
@@ -113,7 +111,6 @@ switch(a.getSak()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.887 -0400", hash_original_method = "571F1D61EE68738D4B1083BD48C02876", hash_generated_method = "18A54E0B445B226A2B88F974CF41EE8B")
     public boolean isEmulated() {
         boolean var70A0825F7C8424D762F96A4610B5A4E1_1308601508 = (mIsEmulated);
@@ -124,7 +121,6 @@ switch(a.getSak()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.888 -0400", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "F5156EFBE03AB5CE043C7FFA48B57511")
     public int getSectorCount() {
 switch(mSize){
@@ -165,7 +161,6 @@ switch(mSize){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.888 -0400", hash_original_method = "94025DFC316C8F4CE80BFCF15B00E224", hash_generated_method = "F8B5F59E747EC435AA628507BB23B0B1")
     public int getBlockCount() {
         int var113D873C42A5D92E1679C450278154BF_1491802679 = (mSize / BLOCK_SIZE);
@@ -228,7 +223,6 @@ switch(mSize){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.891 -0400", hash_original_method = "9D4F0360D229F71B4914DA14E59850F0", hash_generated_method = "5706CCFA39B1C977A1D90B3B03050CBC")
     public int sectorToBlock(int sectorIndex) {
         addTaint(sectorIndex);

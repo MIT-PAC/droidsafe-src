@@ -66,7 +66,6 @@ public class BasicRequestLine implements RequestLine, Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.653 -0400", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "B381DB8C80D11B0B5A37BB9F0ED33257")
     public String getMethod() {
 String varB88046C53AB584448F89DD952FF416E1_1478202634 =         this.method;
@@ -77,7 +76,6 @@ String varB88046C53AB584448F89DD952FF416E1_1478202634 =         this.method;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.654 -0400", hash_original_method = "96B8CBD1E6801618947DE1A14DEAA69F", hash_generated_method = "6DFDB22E412F5F633949B68A47E975CF")
     public ProtocolVersion getProtocolVersion() {
 ProtocolVersion varEABA99A6EF8BF747C858263A803E170A_2055127226 =         this.protoversion;
@@ -88,7 +86,6 @@ ProtocolVersion varEABA99A6EF8BF747C858263A803E170A_2055127226 =         this.pr
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.654 -0400", hash_original_method = "638E54DC35C58AE1ED57DF94E885B4C7", hash_generated_method = "95AE4920F788CAC2A0C65884BA015CD4")
     public String getUri() {
 String varF8A43570A6D9CE873AAA24BBE28B6265_1063850565 =         this.uri;

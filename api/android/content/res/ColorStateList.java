@@ -221,7 +221,6 @@ for(i = 0;i < numAttrs;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.723 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "F22548537C5AFC5398523BAF80CA6854")
     public boolean isStateful() {
         boolean varE10B369199E1AC74C448DAA7938908FC_1787841065 = (mStateSpecs.length > 1);
@@ -262,7 +261,6 @@ for(int i = 0;i < setLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.724 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "D5E65D32D6FBE278611E27603BFC5042")
     public int getDefaultColor() {
         int var27A2282CE852080081DD6A76ACF8DAC0_1252600221 = (mDefaultColor);
@@ -289,7 +287,6 @@ String var214C2B72655A76B1EFDC24D7C88B2748_234513353 =         "ColorStateList{"
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.724 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "40AFB68B4EFCB9E79903EC6AA92F1537")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_794853710 = (0);

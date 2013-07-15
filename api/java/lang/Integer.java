@@ -26,7 +26,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.946 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "634F63334F10388C7FED2F6C1E65CAF3")
     @Override
     public byte byteValue() {
@@ -49,14 +48,12 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int compare(int lhs, int rhs) {
+        public static int compare(int lhs, int rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static NumberFormatException invalidInt(String s) {
+        private static NumberFormatException invalidInt(String s) {
         throw new NumberFormatException("Invalid int: \"" + s + "\"");
     }
 
@@ -98,7 +95,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.948 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "E7E6BD014B1131506CD3066375F90D83")
     @Override
     public double doubleValue() {
@@ -110,7 +106,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.949 -0400", hash_original_method = "F74FD59F9B798AB03C90305DF48139A2", hash_generated_method = "61D363CC0D0B3979908B5906DF57BC21")
     @Override
     public boolean equals(Object o) {
@@ -123,7 +118,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.949 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "9EDF2462F4E549E85BC004B8EF0B5E18")
     @Override
     public float floatValue() {
@@ -183,7 +177,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.951 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "BE16E2B1D6F2EB79A65525A436B9531F")
     @Override
     public int hashCode() {
@@ -195,7 +188,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.951 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "DD4A244EE5D7D46D3FF69DB9AB1E15A4")
     @Override
     public int intValue() {
@@ -207,7 +199,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.952 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "29C42A05CE64769005899E50D3D1D55A")
     @Override
     public long longValue() {
@@ -243,8 +234,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
+        private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
         int max = Integer.MIN_VALUE / radix;
         int result = 0, length = string.length();
         while (offset < length) {
@@ -271,7 +261,6 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.953 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "7099CF1D6B292231363CF9F2CA3476CD")
     @Override
     public short shortValue() {
@@ -329,8 +318,7 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_766227357 =         Integer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int highestOneBit(int i) {
+        public static int highestOneBit(int i) {
         i |= (i >> 1);
         i |= (i >> 2);
         i |= (i >> 4);
@@ -340,14 +328,12 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_766227357 =         Integer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int lowestOneBit(int i) {
+        public static int lowestOneBit(int i) {
         return i & -i;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int numberOfLeadingZeros(int i) {
+        public static int numberOfLeadingZeros(int i) {
         if (i <= 0) {
             return (~i >> 26) & 32;
         }
@@ -372,14 +358,12 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_766227357 =         Integer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int numberOfTrailingZeros(int i) {
+        public static int numberOfTrailingZeros(int i) {
         return NTZ_TABLE[((i & -i) * 0x0450FBAF) >>> 26];
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int bitCount(int i) {
+        public static int bitCount(int i) {
         i -= (i >> 1) & 0x55555555;
         i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
         i = ((i >> 4) + i) & 0x0F0F0F0F;
@@ -389,27 +373,23 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_766227357 =         Integer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int rotateLeft(int i, int distance) {
+        public static int rotateLeft(int i, int distance) {
         return (i << distance) | (i >>> -distance);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int rotateRight(int i, int distance) {
+        public static int rotateRight(int i, int distance) {
         return (i >>> distance) | (i << -distance);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int reverseBytes(int i) {
+        public static int reverseBytes(int i) {
         i =    ((i >>>  8) & 0x00FF00FF) | ((i & 0x00FF00FF) <<  8);
         return ( i >>> 16              ) | ( i               << 16);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int reverse(int i) {
+        public static int reverse(int i) {
         i =    ((i >>>  1) & 0x55555555) | ((i & 0x55555555) <<  1);
         i =    ((i >>>  2) & 0x33333333) | ((i & 0x33333333) <<  2);
         i =    ((i >>>  4) & 0x0F0F0F0F) | ((i & 0x0F0F0F0F) <<  4);
@@ -418,8 +398,7 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_766227357 =         Integer.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int signum(int i) {
+        public static int signum(int i) {
         return (i >> 31) | (-i >>> 31);
     }
 

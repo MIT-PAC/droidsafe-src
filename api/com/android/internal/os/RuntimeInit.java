@@ -217,7 +217,6 @@ public class RuntimeInit {
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.118 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "85B8A7EC12546E6F392AE1E64811A623")
         public void uncaughtException(Thread t, Throwable e) {
             addTaint(e.getTaint());

@@ -114,7 +114,6 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.452 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "58AFB00D637A894E6584FECEF2441A58")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_2131483653 =         algorithm;
@@ -125,7 +124,6 @@ String var44A46B4003FC81ACB0223385BA1FA818_2131483653 =         algorithm;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.452 -0400", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "79E0AC49797474B68823A665F7032FE2")
     public String getFormat() {
 String var75AE4CAF1CB13EF15783F46A006C5A7F_1816652193 =         "RAW";

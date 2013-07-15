@@ -29,8 +29,7 @@ public abstract class SAXParserFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static SAXParserFactory newInstance(String factoryClassName,
+        public static SAXParserFactory newInstance(String factoryClassName,
             ClassLoader classLoader) {
         if (factoryClassName == null) {
             throw new FactoryConfigurationError("factoryClassName == null");
@@ -57,7 +56,6 @@ public abstract class SAXParserFactory {
         throws ParserConfigurationException, SAXException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.942 -0400", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "98A9EE2B3964663F64D1613FA6F20ABE")
     public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
@@ -66,7 +64,6 @@ public abstract class SAXParserFactory {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.942 -0400", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "599F2B5B61FB8B7D3C2CD0C1E871774F")
     public void setValidating(boolean validating) {
         this.validating = validating;
@@ -75,7 +72,6 @@ public abstract class SAXParserFactory {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.943 -0400", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "1738F29D8B029AC082EC7D0813C317CA")
     public boolean isNamespaceAware() {
         boolean varCEC00E48144CD3C5B0000055F3D7FF26_1074989591 = (namespaceAware);
@@ -86,7 +82,6 @@ public abstract class SAXParserFactory {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.943 -0400", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "13DBD16EEA4214BE5C4B7C889D509DE4")
     public boolean isValidating() {
         boolean varD77932958A49E1F50F11C2D742FE1493_1172906898 = (validating);

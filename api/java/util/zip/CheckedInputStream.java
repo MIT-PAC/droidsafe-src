@@ -66,7 +66,6 @@ public class CheckedInputStream extends java.io.FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.537 -0400", hash_original_method = "8D60BCB1BD17D4099BEB55CEF28E25BB", hash_generated_method = "03CD7DE9F2C82B7D2BB6054777ABA1AA")
     public Checksum getChecksum() {
 Checksum var9CC2FC46D445C20863EA381528DFA086_2121419141 =         check;

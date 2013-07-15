@@ -22,8 +22,7 @@ final class SslCertLookupTable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static SslCertLookupTable getInstance() {
+        public static SslCertLookupTable getInstance() {
         if (sTable == null) {
             sTable = new SslCertLookupTable();
         }
@@ -31,7 +30,6 @@ final class SslCertLookupTable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.083 -0400", hash_original_method = "D1D349299054A2A05843F53D2271E3F3", hash_generated_method = "132CBC29873CD844CD84EF9A625617F7")
     public void setIsAllowed(SslError sslError) {
         addTaint(sslError.getTaint());
@@ -56,7 +54,6 @@ final class SslCertLookupTable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.084 -0400", hash_original_method = "BE69D625DE69B336FE62B540E51D9D21", hash_generated_method = "315A91BA84ED0B2E03F9A2160530F036")
     public boolean isAllowed(SslError sslError) {
         addTaint(sslError.getTaint());
@@ -85,7 +82,6 @@ final class SslCertLookupTable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.084 -0400", hash_original_method = "ACAE13D192212363EBD03A770903E836", hash_generated_method = "50263D7EA683F7C86C6DCDB42989A20A")
     public void clear() {
         table.clear();

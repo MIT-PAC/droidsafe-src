@@ -22,7 +22,6 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.597 -0400", hash_original_method = "D7FCE27D9AEC3742DED8FD71AF804648", hash_generated_method = "E389B33420AD3F441E10DECB74F4C208")
     public int getMinorVersion() {
         int varB7BA36A0E18534FEF756461FEA28AA33_73587180 = (minorVersion);
@@ -33,7 +32,6 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.597 -0400", hash_original_method = "634F243B87354520E8F28C8C2539E93B", hash_generated_method = "FF2CD2D06B96C6FDCDC27165983C1ADE")
     public int getMajorVersion() {
         int varC307DCAC851A344568C2B1FAF6525AF1_591937632 = (majorVersion);
@@ -44,7 +42,6 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.597 -0400", hash_original_method = "6BBEE0FD6D45D5567C0156A66B800B02", hash_generated_method = "7FA5438B8969485D12679CCE0FB6315E")
     public void setMinorVersion(int minorVersion) throws InvalidArgumentException {
     if(minorVersion < 0)        
@@ -65,7 +62,6 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.598 -0400", hash_original_method = "D3EA6112924A8CE6932EA7AE61D5C665", hash_generated_method = "51F48CFAE25580B56EA165041BE9D148")
     public void setMajorVersion(int majorVersion) throws InvalidArgumentException {
     if(majorVersion < 0)        
@@ -86,7 +82,6 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.598 -0400", hash_original_method = "C604A793DAEAE92DAC99FA0862A74B19", hash_generated_method = "8105C1D84E7E30F93A7F8BB3C0D44888")
     public String encodeBody() {
 String var48AEC22F1C2C1AFC10DB4A26BBF578AB_1051112220 =         Integer.toString(majorVersion)

@@ -57,7 +57,6 @@ public final class Certificate {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.727 -0400", hash_original_method = "FF2C12E3D498720C4C6A280928F0E345", hash_generated_method = "302F2B894EE6F2488E9D086F40059DAB")
     public TBSCertificate getTbsCertificate() {
 TBSCertificate var1857F9BA3F27C149AD964AF4EA223803_563352471 =         tbsCertificate;
@@ -68,7 +67,6 @@ TBSCertificate var1857F9BA3F27C149AD964AF4EA223803_563352471 =         tbsCertif
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.727 -0400", hash_original_method = "8722C62E4FA981F57078A28963CBFC5B", hash_generated_method = "238F50C45B458510F0CDF673432AA32F")
     public byte[] getSignatureValue() {
         byte[] varB5FB8CAD04B397AF118846FC12B421DC_1761925505 = (signatureValue.clone());
@@ -79,7 +77,6 @@ TBSCertificate var1857F9BA3F27C149AD964AF4EA223803_563352471 =         tbsCertif
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.728 -0400", hash_original_method = "AB851A8A0A531CFA5FA89690A5B67B6A", hash_generated_method = "5D7BEC20C9646996446D0CB2B791E31D")
     @Override
     public String toString() {
@@ -109,7 +106,6 @@ String varE65B3A02759122992CB82C0E651AD408_676307960 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.728 -0400", hash_original_method = "40E68AC9D0BBD7DBB7B922A2DC357EC3", hash_generated_method = "FEA4137395A42777D7B63D2696AEA9B1")
     public byte[] getEncoded() {
     if(encoding == null)        

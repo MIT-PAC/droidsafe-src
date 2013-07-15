@@ -123,7 +123,6 @@ public class MediaScannerConnection implements ServiceConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.413 -0400", hash_original_method = "585F124B91F8E6FD252A74E28C966933", hash_generated_method = "FC7569132AF813C5B7B1AB92AD564AEE")
     public synchronized boolean isConnected() {
         boolean varF28274E44CC48E20133A298DADA33A06_1247704271 = ((mService != null && mConnected));
@@ -217,7 +216,6 @@ public class MediaScannerConnection implements ServiceConnection {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.415 -0400", hash_original_method = "95A47EFDF43A33BA0DC593830BA12E50", hash_generated_method = "7041D897E0D3AF354A42B1654CDF21A7")
     public void onServiceDisconnected(ComponentName className) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -277,7 +275,6 @@ public class MediaScannerConnection implements ServiceConnection {
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.418 -0400", hash_original_method = "D5B152CD911B45918F84440EF851975F", hash_generated_method = "C1AC9A5AC48E28F380E86F736EA6C9FA")
         public void onScanCompleted(String path, Uri uri) {
             //DSFIXME:  CODE0009: Possible callback target function detected

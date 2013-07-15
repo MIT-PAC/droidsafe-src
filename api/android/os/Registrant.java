@@ -32,7 +32,6 @@ public class Registrant {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.432 -0400", hash_original_method = "AD65744D6793AC8F89861EE1586F2E60", hash_generated_method = "0652DDD73EE83AEB0035EB645B57E65A")
     public void clear() {
         refH = null;
@@ -43,7 +42,6 @@ public class Registrant {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.432 -0400", hash_original_method = "4409C699F4CAB16C2D504E283EFD3CDE", hash_generated_method = "28D035BF35B005A395534D365D96D57D")
     public void notifyRegistrant() {
         internalNotifyRegistrant (null, null);
@@ -52,7 +50,6 @@ public class Registrant {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.432 -0400", hash_original_method = "64830107363F59A49C8D9CD8F53D1153", hash_generated_method = "EE1CD4AA79A03607A94F9EE115A6B472")
     public void notifyResult(Object result) {
         addTaint(result.getTaint());
@@ -62,7 +59,6 @@ public class Registrant {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.433 -0400", hash_original_method = "3375894D9F21481D987FA847F34F65EF", hash_generated_method = "690CF7D49B68DF3F37F2A474174C0397")
     public void notifyException(Throwable exception) {
         addTaint(exception.getTaint());
@@ -81,7 +77,6 @@ public class Registrant {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.434 -0400", hash_original_method = "8E93682DAE1125F8892DB75F842EE54A", hash_generated_method = "6BE42F4E4466874DF431DFBC36BB6F73")
      void internalNotifyRegistrant(Object result, Throwable exception) {
         addTaint(exception.getTaint());
@@ -144,7 +139,6 @@ Message varEDC5B72465A7F0BEE288689BCB1DD141_67798529 =             msg;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.436 -0400", hash_original_method = "7FEDB520AB82A5F00001E1B2C02807FF", hash_generated_method = "8B43ADEDD03CF5703E1E9DA730F93E07")
     public Handler getHandler() {
     if(refH == null)        

@@ -15,14 +15,12 @@ class ViewCompatGingerbread {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static int getOverScrollMode(View v) {
+        public static int getOverScrollMode(View v) {
         return v.getOverScrollMode();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void setOverScrollMode(View v, int mode) {
+        public static void setOverScrollMode(View v, int mode) {
         v.setOverScrollMode(mode);
     }
 

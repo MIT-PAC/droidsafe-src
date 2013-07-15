@@ -148,7 +148,6 @@ AttributeCertificateIssuer var72990C4D367DCACD011502DE16918243_1459323883 =     
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.826 -0400", hash_original_method = "CB2A2B3C356F1AD47950BB2253ACA4BD", hash_generated_method = "28CD25117FD61A018A22D70DE0B51DC6")
     public Date getNotBefore() {
 Date varA538B0CD17616FA44CA9B918B38CAEAC_863015787 =         notBefore;
@@ -159,7 +158,6 @@ Date varA538B0CD17616FA44CA9B918B38CAEAC_863015787 =         notBefore;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.826 -0400", hash_original_method = "9EADF7E1E76408811693CE379F621727", hash_generated_method = "192F5D95D6488328A806B157BD33E273")
     public Date getNotAfter() {
 Date varE84253AB2AD08AA2E1E3A8582D622350_1444921790 =         notAfter;

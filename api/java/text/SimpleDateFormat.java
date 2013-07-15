@@ -1379,7 +1379,6 @@ String var240EBD5AC8EFFE1F951B588542F8A189_866801605 =         convertPattern(pa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.028 -0400", hash_original_method = "35D638E960413F452190EF441C98A34C", hash_generated_method = "A608004B85FCB44CFEFE7FBF819A5151")
     public String toPattern() {
 String var407D32260E541B695CF3FD3F7EFB76AB_346560113 =         pattern;

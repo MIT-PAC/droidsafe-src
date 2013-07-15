@@ -286,7 +286,6 @@ BigInteger var4174CC434CBDE7DB724D4E7CC73D7929_308616573 =         add(oneHalf.a
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.353 -0400", hash_original_method = "555259738C76709D8C0A4CEB0BA4F05B", hash_generated_method = "666DA5E438C798CDE7C654C63E9CD21E")
     public int getScale() {
         int var0CB47AEB6E5F9323F0969E628C4E59F5_1272456854 = (scale);

@@ -249,7 +249,6 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_525323052 =         (
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.890 -0400", hash_original_method = "145E2FEDCA1A32FEC7370D21776649A2", hash_generated_method = "2DD9E24066548ACA81CF15355B844800")
     public void clearRequestInterceptors() {
         this.requestInterceptors = null;
@@ -334,7 +333,6 @@ HttpResponseInterceptor var32D940C10DC357DD7965B943C7C1E197_1084239370 =        
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.893 -0400", hash_original_method = "312DB737544A7054D89F25FB9ECC2521", hash_generated_method = "9D3E135536DF2EF44F610851B9BC1333")
     public void clearResponseInterceptors() {
         this.responseInterceptors = null;

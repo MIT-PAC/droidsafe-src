@@ -31,7 +31,6 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.052 -0400", hash_original_method = "79431EAAD385E82AA03E24E6CD9A3769", hash_generated_method = "F254491ED635F0E53536FE3CA9F2A212")
     @Override
     public Editable getEditable() {
@@ -54,7 +53,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.052 -0400", hash_original_method = "47A7176B3179FC9D2FE377D6B6F09D07", hash_generated_method = "7D70F76961836FF39114D3FEBE9840C5")
     @Override
     public boolean beginBatchEdit() {
@@ -68,7 +66,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.052 -0400", hash_original_method = "2B85862E44056949DE76AFB5C9725EFA", hash_generated_method = "F0975F1FF8D4BC0AF56BB1AF00648DB3")
     @Override
     public boolean endBatchEdit() {
@@ -121,7 +118,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "120BCC39A19E9D48E7D09303ED2ED952", hash_generated_method = "F85F834CAD70863A59B591F7ACDECD2A")
     @Override
     public boolean commitCompletion(CompletionInfo text) {
@@ -141,7 +137,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "DB06BCD96079AC12D626255A3932F1C1", hash_generated_method = "0D01EF3775943DA3514034DB8F3B3423")
     @Override
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
@@ -161,7 +156,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "E62B789941F8A63BCC6EB7B832B68D0F", hash_generated_method = "2D3B6D37A9A8A1D2BF168DAD700E0DE1")
     @Override
     public boolean performEditorAction(int actionCode) {
@@ -177,7 +171,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "7AF0006D10C2DF24946CEF4909222B3C", hash_generated_method = "C0391549F8AC06E4C419BC3586B022E5")
     @Override
     public boolean performContextMenuAction(int id) {
@@ -197,7 +190,6 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "1D36BC67F0D3E0E821622DAE101B8DA4", hash_generated_method = "5EE6C4546C378DEDC6EE510C9B400171")
     @Override
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
@@ -234,7 +226,6 @@ ExtractedText var540C13E9E156B687226421B24F2DF178_1358193204 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.054 -0400", hash_original_method = "66E210A03F4A51E56AF5DC1352B2E636", hash_generated_method = "8E6FD0CC6D11B15A08608D3533C3AD89")
     @Override
     public boolean performPrivateCommand(String action, Bundle data) {
@@ -250,7 +241,6 @@ ExtractedText var540C13E9E156B687226421B24F2DF178_1358193204 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.054 -0400", hash_original_method = "ED478A4EB972D41E370E9603327B3839", hash_generated_method = "BC78B22965C569A18FBD21411227E634")
     @Override
     public boolean commitText(CharSequence text, int newCursorPosition) {

@@ -14,8 +14,7 @@ public abstract class TimezoneGetter {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static TimezoneGetter getInstance() {
+        public static TimezoneGetter getInstance() {
         return instance;
     }
 

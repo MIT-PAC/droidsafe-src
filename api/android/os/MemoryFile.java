@@ -134,7 +134,6 @@ public class MemoryFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.651 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "8986F821FD345689A179573F68E8240E")
     private boolean isDeactivated() {
         boolean var472664B108BA887238443A411579BA83_1782640223 = (mAddress == 0);
@@ -170,7 +169,6 @@ public class MemoryFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.652 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "71C3BDE24976A95A5F3C94D224478654")
     public int length() {
         int var429F431E8CD8AC287AA27460675EAEFE_485496203 = (mLength);
@@ -181,7 +179,6 @@ public class MemoryFile {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.652 -0400", hash_original_method = "36BC15D120E9C0B3759A6273F0B6F394", hash_generated_method = "3413478599195E482CD489C11120CAB7")
     public boolean isPurgingAllowed() {
         boolean var9AF79FB5B21F6F4CE7B22525EBD546C0_543356922 = (mAllowPurging);
@@ -307,7 +304,6 @@ OutputStream var86EFA5916CD0155241780D6EEE9688E0_1431435914 =         new Memory
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.654 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "2300962B65729C13D36EB434456D2D92")
     public FileDescriptor getFileDescriptor() throws IOException {
 FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
@@ -361,7 +357,6 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.655 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "9EA9321BF50AAD895F68CC88BF76E286")
         @Override
         public boolean markSupported() {
@@ -373,7 +368,6 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.656 -0400", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "E4F11F77F2CFC4BD43327EF113355F07")
         @Override
         public void mark(int readlimit) {
@@ -384,7 +378,6 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.656 -0400", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "51C43F06C3033D3370FC41BB3D926B97")
         @Override
         public void reset() throws IOException {

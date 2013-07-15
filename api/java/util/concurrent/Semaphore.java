@@ -197,7 +197,6 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.828 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "D2B040116DB6924B50D3F573FAD2AD1A")
     public boolean isFair() {
         boolean var025994C1DF49233538C6DF8BADB9C6C8_1272966308 = (sync instanceof FairSync);

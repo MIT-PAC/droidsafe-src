@@ -25,7 +25,6 @@ public final class AlternativeName extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.686 -0400", hash_original_method = "A70D2DB25ABF0E0F1A8BC79C0C161D91", hash_generated_method = "CDC2931FA81FBA8720F555C2FB874856")
     @Override
     public byte[] getEncoded() {
@@ -44,7 +43,6 @@ public final class AlternativeName extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.686 -0400", hash_original_method = "62E9965B6B09CF0D2F916BAB455CC9AA", hash_generated_method = "DB1DABD5F91C43129AC61B45A3862F60")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

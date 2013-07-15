@@ -202,7 +202,6 @@ for(Thread hook : hooks)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.295 -0400", hash_original_method = "67196F5597F9CC48251D355499CA1423", hash_generated_method = "03408D5FDF9057D5E8E3B43BFBC88A1E")
     public long freeMemory() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_66097031 = getTaintLong();
@@ -210,14 +209,12 @@ for(Thread hook : hooks)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.296 -0400", hash_original_method = "D5E9C32F4CCF731A5E6B245C708DE511", hash_generated_method = "F2BA90326A844E033E7882399F00530F")
     public void gc() {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Runtime getRuntime() {
+        public static Runtime getRuntime() {
         return mRuntime;
     }
 
@@ -231,7 +228,6 @@ for(Thread hook : hooks)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.297 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "D94892DDD4F16F486160D0339689EC9C")
      void load(String filename, ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -269,7 +265,6 @@ for(Thread hook : hooks)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.298 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "8BAFF47C916258EB048BA3F408FC00F0")
      void loadLibrary(String libraryName, ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -329,7 +324,7 @@ for(String directory : mLibPaths)
 	}
 
     
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private static String nativeLoad(String filename, ClassLoader loader) {
 		String ret = new String();
 		ret.addTaint(filename.taint);
@@ -357,14 +352,12 @@ for(String directory : mLibPaths)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static void runFinalizersOnExit(boolean run) {
         finalizeOnExit = run;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.300 -0400", hash_original_method = "4EB2522F808EA94D0A66B66F863EF421", hash_generated_method = "181A8433F048FA7D08FFC2687F8D87F4")
     public long totalMemory() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1749391796 = getTaintLong();
@@ -372,7 +365,6 @@ for(String directory : mLibPaths)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.300 -0400", hash_original_method = "53798D26DA92803B5299289F1912C9D0", hash_generated_method = "D48C5D50EAB5ED262BC047C38DB9B711")
     public void traceInstructions(boolean enable) {
         addTaint(enable);
@@ -555,7 +547,6 @@ OutputStream varA87CF74140B150613F4203E71875F9A7_1074491912 =         stream;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.306 -0400", hash_original_method = "2D7CF54D0F59DA12C2E5D19C64B23A09", hash_generated_method = "BB6618274435E8AE203B52438B18E7F7")
     public long maxMemory() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1437157185 = getTaintLong();

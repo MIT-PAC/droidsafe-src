@@ -28,7 +28,6 @@ public class InReplyTo extends SIPHeader implements InReplyToHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.540 -0400", hash_original_method = "AFE760D92C6B99B9817A49FA1C34A82C", hash_generated_method = "A24A2DC0B9CCE1FEA8A047D9B2D42F51")
     public void setCallId(String callId) throws ParseException {
         try 
@@ -50,7 +49,6 @@ public class InReplyTo extends SIPHeader implements InReplyToHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.540 -0400", hash_original_method = "EA32F9E304DDFDAAFD9F10122A085C03", hash_generated_method = "2DD8B5B32D6BD3EBB13A5E70BBA3B91C")
     public String getCallId() {
     if(callId == null)        
@@ -69,7 +67,6 @@ String var458701EC323B8ACB74F03E71B901A251_1297029591 =         callId.encode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.540 -0400", hash_original_method = "64901279DBD4FD22B1D7FC340D43545B", hash_generated_method = "302B879BB9824A30DBAF17C530FD2BAE")
     public String encodeBody() {
 String var458701EC323B8ACB74F03E71B901A251_760220469 =         callId.encode();
@@ -80,7 +77,6 @@ String var458701EC323B8ACB74F03E71B901A251_760220469 =         callId.encode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.541 -0400", hash_original_method = "AACC864B78324D30A82E58DDECBB4AB7", hash_generated_method = "598BC5B64FAA9944A89DB28EE2B7C2AD")
     public Object clone() {
         InReplyTo retval = (InReplyTo) super.clone();

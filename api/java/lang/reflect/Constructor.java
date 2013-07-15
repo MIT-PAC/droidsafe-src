@@ -236,7 +236,6 @@ A var5417718CA49F9779F67999A1AA0ED4BB_1056788597 =         Method.getAnnotation(
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.962 -0400", hash_original_method = "15C5C292A9A80BF83F51CF39D22A468B", hash_generated_method = "E864497F23F15C64818E87B1C92B8415")
     public Annotation[][] getParameterAnnotations() {
         Annotation[][] parameterAnnotations = Method.getParameterAnnotations(declaringClass, slot);

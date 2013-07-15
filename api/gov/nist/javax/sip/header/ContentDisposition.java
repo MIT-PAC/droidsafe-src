@@ -18,7 +18,6 @@ public final class ContentDisposition extends ParametersHeader implements javax.
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.225 -0400", hash_original_method = "A77142351A28E594907776BE9B73073E", hash_generated_method = "0AF0E2918D88376B62382DC2BB98C5D5")
     public String encodeBody() {
         StringBuffer encoding = new StringBuffer(dispositionType);
@@ -38,7 +37,6 @@ String varD48A745DC29A29C7851286E6A426D0D0_1220286826 =         encoding.toStrin
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.226 -0400", hash_original_method = "BC30AB325A2FD01EDD0A547607B8E8A1", hash_generated_method = "331655E3188477F953BF80BB4F66C010")
     public void setDispositionType(String dispositionType) throws ParseException {
     if(dispositionType == null)        
@@ -59,7 +57,6 @@ String varD48A745DC29A29C7851286E6A426D0D0_1220286826 =         encoding.toStrin
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.227 -0400", hash_original_method = "D3ED1AFB699417969621FE1884F8C7FE", hash_generated_method = "2736253D1898268949894378C98D5786")
     public String getDispositionType() {
 String varDF8BFF844B0C824F8A45CA808AD8A3B8_1547137136 =         this.dispositionType;
@@ -70,7 +67,6 @@ String varDF8BFF844B0C824F8A45CA808AD8A3B8_1547137136 =         this.disposition
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.227 -0400", hash_original_method = "0297698DA62A584BC408978A78677ED8", hash_generated_method = "70A1AE47B85F7227D3DFB76FA7D5E3DF")
     public String getHandling() {
 String var6388C6605C2B24F018472B02E4927E84_274137428 =         this.getParameter("handling");
@@ -81,7 +77,6 @@ String var6388C6605C2B24F018472B02E4927E84_274137428 =         this.getParameter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.228 -0400", hash_original_method = "B6C4C36D7665EDCFABC9BF782D2AADE0", hash_generated_method = "C926111E44EFB6BCBE40998FCB808739")
     public void setHandling(String handling) throws ParseException {
         addTaint(handling.getTaint());
@@ -103,7 +98,6 @@ String var6388C6605C2B24F018472B02E4927E84_274137428 =         this.getParameter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.243 -0400", hash_original_method = "C2FDE3A2DBDC43C0B4279ABCAA53BEFB", hash_generated_method = "8A06244B9C9FB50130A7AEF56E24C0DC")
     public String getContentDisposition() {
 String varC32A0959BF3FBBB1F055BAFAA3BABC6F_1032989769 =         this.encodeBody();

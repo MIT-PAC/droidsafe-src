@@ -137,7 +137,6 @@ public class Base64 {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.740 -0400", hash_original_method = "006B314D1443F75FACC9C9CF957F4174", hash_generated_method = "92E11B3D7F0CDB00CAA297B330E97868")
         public int maxOutputSize(int len) {
             addTaint(len);
@@ -149,7 +148,6 @@ public class Base64 {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.745 -0400", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "20CC8F0A016261CA2DC1298D14C83F58")
         public boolean process(byte[] input, int offset, int len, boolean finish) {
             addTaint(finish);
@@ -432,7 +430,6 @@ switch(state){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.749 -0400", hash_original_method = "9D3D65123317D09985A4DE210ACBFBB3", hash_generated_method = "6213963919350540069660E8BBAF4049")
         public int maxOutputSize(int len) {
             addTaint(len);

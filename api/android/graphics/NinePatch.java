@@ -57,7 +57,6 @@ public class NinePatch {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.422 -0400", hash_original_method = "D0981A681D74F230E15D58DC6CAB4B12", hash_generated_method = "6C5BAF6F2F11B93DFDBE2A7B4FA1E0F5")
     public void setPaint(Paint p) {
         mPaint = p;
@@ -150,7 +149,6 @@ public class NinePatch {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.423 -0400", hash_original_method = "27EBBFC0A49FBB6B32AE88535DB257BA", hash_generated_method = "A5B4B951578C0FA6BBDDA419143F67D5")
     public int getDensity() {
         int var9E30D0A74E195321DF2F63FF8FEFFFBD_1289247420 = (mBitmap.mDensity);

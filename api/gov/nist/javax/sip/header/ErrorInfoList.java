@@ -15,7 +15,6 @@ public class ErrorInfoList extends SIPHeaderList<ErrorInfo> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.342 -0400", hash_original_method = "DEBEF33CFB4944E55BD5A9FB315B228C", hash_generated_method = "CB4DCFF8642710107ADC69494DD55AD9")
     public Object clone() {
         ErrorInfoList retval = new ErrorInfoList();

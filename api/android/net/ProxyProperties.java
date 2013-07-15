@@ -94,7 +94,6 @@ InetSocketAddress var571036BB61B9E7FDBB9F3BBC66371C29_1530859938 =         inetS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.373 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "BC4D799EE4CEB92E78240283234E8179")
     public String getHost() {
 String varE57614B151242FB69B92E61EEA287D33_838707180 =         mHost;
@@ -105,7 +104,6 @@ String varE57614B151242FB69B92E61EEA287D33_838707180 =         mHost;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.373 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "1E986B7D7BB2928248E10DF673F71177")
     public int getPort() {
         int var5EFA61C4FCA92CA992BE37C2BAF4D350_338061715 = (mPort);
@@ -116,7 +114,6 @@ String varE57614B151242FB69B92E61EEA287D33_838707180 =         mHost;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.373 -0400", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "A1552935CECD79A101F70FDA011B2448")
     public String getExclusionList() {
 String varC0B04173BEBA2500AEBF48903299C3F4_2011288382 =         mExclusionList;
@@ -338,7 +335,6 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.378 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "43B73516BC68CA2675B0F61E9D1FFDF8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1860894371 = (0);

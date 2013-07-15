@@ -42,7 +42,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.743 -0400", hash_original_method = "9D27DA83295DE88E54D1A14DE01D13B2", hash_generated_method = "9CD626D3B7E761B74975832D2EC44050")
     public int getLac() {
         int varB2F9C701F6B9FA98A906A1D27571667E_2081994543 = (mLac);
@@ -53,7 +52,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.744 -0400", hash_original_method = "03F3B6133F275A943C2D43BD3469FDB7", hash_generated_method = "C38C5EBA86C63B3ED00FF673DBA0E0E9")
     public int getCid() {
         int var47909A4A63C9D0DF4D400D36305EA002_607902683 = (mCid);
@@ -64,7 +62,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.744 -0400", hash_original_method = "0E29DC7205E312820087B8B417C09B13", hash_generated_method = "8A927D3DD3250D8C1B07B25C6E32A613")
     public int getPsc() {
         int var865B7932A3A776B1F3AFFD84DFC3DDFF_1543528397 = (mPsc);
@@ -75,7 +72,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.744 -0400", hash_original_method = "FCA91E5B63933202A24477E6F48B3BA4", hash_generated_method = "BB933A23AF5B88892C1519E997FF80C3")
     public void setStateInvalid() {
         mLac = -1;
@@ -88,7 +84,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.745 -0400", hash_original_method = "7E7A76E42558C43BF4B90F38BACF91D2", hash_generated_method = "40F58B370039924C8421676095F63887")
     public void setLacAndCid(int lac, int cid) {
         mLac = lac;
@@ -99,7 +94,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.746 -0400", hash_original_method = "C81AA559E9201CC662BD56FE57EC5612", hash_generated_method = "FBA4344E835EEEB4D9AAE7A0BA923E04")
     public void setPsc(int psc) {
         mPsc = psc;
@@ -108,7 +102,6 @@ public class GsmCellLocation extends CellLocation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.746 -0400", hash_original_method = "01808FF7591EA9C272F4AD513B525DCA", hash_generated_method = "868F032E064A1E1CA8AF510990129805")
     @Override
     public int hashCode() {
@@ -189,7 +182,6 @@ String varF33E5A404114ABDA40FB2431CC5ECD4B_1263840189 =         "["+ mLac + "," 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.750 -0400", hash_original_method = "4AB62BA2C67CFF55264B23F8CEEE7482", hash_generated_method = "1F1BE98834EE118445ACB5B080557EE6")
     public boolean isEmpty() {
         boolean varA4BAC2586B510062364329D68E1FF9DE_1737568464 = ((mLac == -1 && mCid == -1 && mPsc == -1));

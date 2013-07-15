@@ -88,7 +88,6 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.328 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "789D32E6E27F738CA308B82475BF3030")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_40123290 =         name;
@@ -99,7 +98,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_40123290 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.328 -0400", hash_original_method = "849DADC9512AC29CFF5A5EB4D1517425", hash_generated_method = "8DF60A22786C52A6717A39A02D8A8AF4")
     public double getVersion() {
         double var2AF72F100C356273D46284F6FD1DFC08_929000179 = (version);
@@ -110,7 +108,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_40123290 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.329 -0400", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "F42F7844B88B4A36F48B8E042DE87ECE")
     public String getInfo() {
 String var43CF3338FDBA93597A9562D3166E9DC4_1159343604 =         info;
@@ -132,7 +129,6 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.330 -0400", hash_original_method = "53793BFB01C9C5B2BDDE9F63C2E38535", hash_generated_method = "51F2BDED737F22F77F16FE87E2A29BF1")
     @Override
     public synchronized void clear() {
@@ -183,7 +179,6 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.330 -0400", hash_original_method = "EB6BD048CAF9E12CFD99EC1891725291", hash_generated_method = "0CDD80B9CC8CC73B60130FCD06F2D900")
     @Override
     public synchronized void load(InputStream inStream) throws IOException {
@@ -364,7 +359,6 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.336 -0400", hash_original_method = "73ADEB588A693290C2EBE420EE1B60DD", hash_generated_method = "D908BEC46715C96AFB7B5705E426BF8B")
      boolean implementsAlg(String serv, String alg, String attribute, String val) {
         addTaint(val.getTaint());
@@ -464,7 +458,6 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.338 -0400", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "BA9FDE46C0F8402C6FB4936CC36C7FAA")
      void setProviderNumber(int n) {
         providerNumber = n;
@@ -473,7 +466,6 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.338 -0400", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "45ED5B722FA7588009D882CC6D8E6E67")
      int getProviderNumber() {
         int varBC53644233DA12363BC91D331C131157_1283667977 = (providerNumber);
@@ -800,7 +792,6 @@ for(Map.Entry<String, String> entry : s.attributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.347 -0400", hash_original_method = "C88E49400116B5906A9CAC0E8D20528B", hash_generated_method = "2A8E7CFD229A5E53F7903E2AC18099A7")
     private void removeFromPropertyServiceTable(Object key) {
         addTaint(key.getTaint());
@@ -888,7 +879,6 @@ for(String alias : ser.aliases)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.353 -0400", hash_original_method = "C12B51396475B7F4EF23B74D619C33FD", hash_generated_method = "59A4818189A0EC8995B4F5535294CC25")
     private void updatePropertyServiceTable() {
         Object _key;
@@ -1041,7 +1031,6 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.355 -0400", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "9C6A342A2081A7D73BA214C115FEC8EA")
     private void servicesChanged() {
         lastServicesByType = null;
@@ -1373,7 +1362,6 @@ Object var6688C2BA9FE406E726A7A7FF4A097B4F_95079013 =                 implementa
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.368 -0400", hash_original_method = "A158C77880B526D8A49B8720A1D647AC", hash_generated_method = "8C2E1AC53C0B3EED64708255AC052B2F")
         public boolean supportsParameter(Object parameter) {
             addTaint(parameter.getTaint());

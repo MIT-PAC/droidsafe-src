@@ -802,7 +802,6 @@ String varDFC74F53FA2B8E3B85B1E9D7EEF183F2_1197863945 =         dform.toPattern(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.320 -0400", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "D522B63823C2C452B89153EEC11CA2B9")
     public RoundingMode getRoundingMode() {
 RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1085806856 =         roundingMode;

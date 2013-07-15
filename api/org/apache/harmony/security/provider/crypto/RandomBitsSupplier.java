@@ -19,8 +19,7 @@ public class RandomBitsSupplier implements SHA1_Data {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    static boolean isServiceAvailable() {
+        static boolean isServiceAvailable() {
         return serviceAvailable;
     }
 

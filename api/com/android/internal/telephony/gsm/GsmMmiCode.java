@@ -238,7 +238,6 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "1011BDE16286B5AA22D002FBB93D64A9")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_1866741360 =         state;
@@ -249,7 +248,6 @@ State var37C56C9D63C623261861C16DCFB73F6D_1866741360 =         state;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "BA9F214D9A0EE5A893ABC2D8884C71D6")
     public CharSequence getMessage() {
 CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
@@ -288,7 +286,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "248235E8DF3E05BA5583B3AF86C41C77", hash_generated_method = "F919D4CF978BC51E826C8EED39D24FCF")
     public boolean isCancelable() {
         boolean var8D111C48FFCFB880A1878EEA7D383221_976621444 = (isPendingUSSD);
@@ -299,7 +296,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "C3EFABB6ACCE73BCC8BAFC802C5DCA3C", hash_generated_method = "88234E2A4122F8F1349F78D51632D6E0")
      boolean isMMI() {
         boolean varFA8A19485DF9D2474D2439AA7B853812_1892326349 = (poundString != null);
@@ -480,7 +476,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "18A8B0A5C57D2FDE667C353F321E4EE3", hash_generated_method = "D1426B38C98748E3CD9B89A94D662375")
     public boolean isPendingUSSD() {
         boolean var8D111C48FFCFB880A1878EEA7D383221_1736971155 = (isPendingUSSD);
@@ -491,7 +486,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "29AF801768BF493864C8071B1DB2A48B", hash_generated_method = "221FF785768C43F8ADF9D4BB61D8A80E")
     public boolean isUssdRequest() {
         boolean var07574527064CCEC9D1F5EEA5FA7C4751_727021311 = (isUssdRequest);

@@ -63,7 +63,6 @@ public class DhcpInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.941 -0400", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "2582B8D02C98D808037F87B0200235AC")
     public String toString() {
         StringBuffer str = new StringBuffer();
@@ -102,13 +101,11 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1550173688 =         str.toString();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void putAddress(StringBuffer buf, int addr) {
+        private static void putAddress(StringBuffer buf, int addr) {
         buf.append(NetworkUtils.intToInetAddress(addr).getHostAddress());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.942 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C2063F9433F12A30344D078BB6A693F8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2135172774 = (0);
@@ -119,7 +116,6 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1550173688 =         str.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.942 -0400", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "F87B62B9FC8B7BB277B51C26D6B492CB")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

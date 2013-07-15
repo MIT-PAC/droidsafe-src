@@ -42,7 +42,6 @@ public class ToneSettings implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.538 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7D29F61C3801CD6D321136D1D19FA810")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_112880545 = (0);
@@ -53,7 +52,6 @@ public class ToneSettings implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.538 -0400", hash_original_method = "A5E63ABB35658FAF6D2AA5EF55230C8C", hash_generated_method = "C423931C6848FDEF5118EF75D797BD20")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

@@ -14,7 +14,6 @@ public class AuthorizationList extends SIPHeaderList<Authorization> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.058 -0400", hash_original_method = "81792A8EF4604C1C9CC7309BCA2D7523", hash_generated_method = "E1C4C94C9D44AFCF8D7EBC7CB46243CE")
     public Object clone() {
         AuthorizationList retval = new AuthorizationList();

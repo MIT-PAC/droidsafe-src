@@ -48,7 +48,6 @@ public class ParserCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.766 -0400", hash_original_method = "B6CD36FF17D4C577E642B4E01F194082", hash_generated_method = "6FC562265C271EA1F2C03FA82975DD99")
     public int getLowerBound() {
         int var39781BB417E90C2CDB1675D8E436D2D9_37831805 = (this.lowerBound);
@@ -59,7 +58,6 @@ public class ParserCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.766 -0400", hash_original_method = "66602FD2E118973F9E6D21C36C521447", hash_generated_method = "17AC6BAAF877FCC3A677ABF071DC8273")
     public int getUpperBound() {
         int var8277DB68548C3DFE081D0E64D66046A8_70024438 = (this.upperBound);
@@ -70,7 +68,6 @@ public class ParserCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.767 -0400", hash_original_method = "1216C5DA6D96C0F767DB071179C12F61", hash_generated_method = "7068CE503D88752927546680ABD63470")
     public int getPos() {
         int varC6E42501CCE6A1FF7C3704EF034A434D_1655248425 = (this.pos);
@@ -107,7 +104,6 @@ public class ParserCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.767 -0400", hash_original_method = "159D31ECA8D03F41976CF671BF1C3B8F", hash_generated_method = "DF26FF396F16E8FB6D40C59B782DEBAC")
     public boolean atEnd() {
         boolean var0115475EE8D6B4ABAB8E5F11F0957FB9_567109707 = (this.pos >= this.upperBound);

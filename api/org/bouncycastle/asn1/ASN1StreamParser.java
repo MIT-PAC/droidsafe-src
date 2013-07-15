@@ -88,7 +88,6 @@ DEREncodable varE346071D9A7CD17D4B60913654A94C97_422587233 =         new BERSetP
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.722 -0400", hash_original_method = "CAB584B2B56E52E14F26B47F81A64976", hash_generated_method = "7C678355AAA7DFFDEC49C158FA02DFD0")
      DEREncodable readImplicit(boolean constructed, int tag) throws IOException {
         addTaint(tag);
@@ -293,7 +292,6 @@ DEREncodable var645D42AEC1170006BF2760866022159D_169530297 =                 ASN
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.725 -0400", hash_original_method = "4F333A451CCAA8C49D86BC8C0430A606", hash_generated_method = "E70C09FFF2F6AA5D68125DB92827308D")
     private void set00Check(boolean enabled) {
         addTaint(enabled);
@@ -309,7 +307,6 @@ DEREncodable var645D42AEC1170006BF2760866022159D_169530297 =                 ASN
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.725 -0400", hash_original_method = "0431F63F80CE6652BCE08CECE2E42AA0", hash_generated_method = "0E7806AE68CA0BDD0C111779EB41942F")
      ASN1EncodableVector readVector() throws IOException {
         ASN1EncodableVector v = new ASN1EncodableVector();

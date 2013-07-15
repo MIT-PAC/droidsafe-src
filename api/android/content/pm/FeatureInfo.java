@@ -82,7 +82,6 @@ String var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397 =             "FeatureInfo{"
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.230 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1F73C037D8A088F82DE8765FB3C21419")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1011705154 = (0);

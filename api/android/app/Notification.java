@@ -218,7 +218,6 @@ Notification varF9965B73D80F3C31BC4764828F08696D_987725386 =         that;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.325 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1A859E8E5FAE74B105FD75371CC11192")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1208464716 = (0);
@@ -532,7 +531,6 @@ String var2460B846747F8B22185AD8BE722266A5_1927433773 =         sb.toString();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.341 -0400", hash_original_method = "F33CFE0DDEF1BDE88E81CA07B2B4AF4A", hash_generated_method = "26A4D45970F39AF31B79CE294A147D1E")
         public Builder setWhen(long when) {
             mWhen = when;
@@ -545,7 +543,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_485540984 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.342 -0400", hash_original_method = "76509FA1EC330D1A963F56DC8E00B5D8", hash_generated_method = "0024C4FC881E199B67BCAE9781980624")
         public Builder setSmallIcon(int icon) {
             mSmallIcon = icon;
@@ -558,7 +555,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1393629864 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.343 -0400", hash_original_method = "686130331B3575C911C4ACE6437F15B8", hash_generated_method = "C7402BAF26FCE0D22727531AEE77972F")
         public Builder setSmallIcon(int icon, int level) {
             mSmallIcon = icon;
@@ -573,7 +569,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_876041634 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.343 -0400", hash_original_method = "51D215D9B594EB5434D1A4893B0851B6", hash_generated_method = "9DA85C69DEE010FD5EDE07CD56A630D3")
         public Builder setContentTitle(CharSequence title) {
             mContentTitle = title;
@@ -586,7 +581,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_684438330 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.344 -0400", hash_original_method = "3B85C73BAA4531891B097F4FBFA7845D", hash_generated_method = "7BBFD41E9149B59EA002D208952660D4")
         public Builder setContentText(CharSequence text) {
             mContentText = text;
@@ -599,7 +593,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_337101881 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.345 -0400", hash_original_method = "5E0FC1F68404C1057ACE1D67E6ED676A", hash_generated_method = "C3AD60DBC1F58729416F089ACF3DE866")
         public Builder setNumber(int number) {
             mNumber = number;
@@ -612,7 +605,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_727894105 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.345 -0400", hash_original_method = "52A8AABE54D5BDFE521B8B41861DFCD9", hash_generated_method = "99FFBC06B9776B2D90DDC1FC1DAF3653")
         public Builder setContentInfo(CharSequence info) {
             mContentInfo = info;
@@ -625,7 +617,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_493361531 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.346 -0400", hash_original_method = "D0B2BE14A572EFF2EC3981BC799BA989", hash_generated_method = "ABD22D662D8465ADFCA66C804035118D")
         public Builder setProgress(int max, int progress, boolean indeterminate) {
             mProgressMax = max;
@@ -642,7 +633,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1887443642 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.346 -0400", hash_original_method = "0C2B2238CAAAD5F7B913F4DC0C6DE3C5", hash_generated_method = "2062CF4ED4DC1AF50E7FF3EE29D0A5CC")
         public Builder setContent(RemoteViews views) {
             mContentView = views;
@@ -655,7 +645,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1549705379 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.347 -0400", hash_original_method = "13AF9850EB916E3E1CD09235309F6318", hash_generated_method = "4DE0451C575EB337702FBCDBDFADDA97")
         public Builder setContentIntent(PendingIntent intent) {
             mContentIntent = intent;
@@ -668,7 +657,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_2084730201 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.348 -0400", hash_original_method = "F48B9AE94AA7354563811F0226E4C56E", hash_generated_method = "A9002683AF742FCD2CFF434DBBA2B8A6")
         public Builder setDeleteIntent(PendingIntent intent) {
             mDeleteIntent = intent;
@@ -696,7 +684,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1600697775 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.349 -0400", hash_original_method = "43D2B64A31B6B61BB554BA691C460973", hash_generated_method = "5666E26C6E84686030C771E363618624")
         public Builder setTicker(CharSequence tickerText) {
             mTickerText = tickerText;
@@ -709,7 +696,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_660857520 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.350 -0400", hash_original_method = "4C6C26DEDB76E0CF44BFBAEE6FBE84BC", hash_generated_method = "65C38F96943E71193E7992BFE531B27A")
         public Builder setTicker(CharSequence tickerText, RemoteViews views) {
             mTickerText = tickerText;
@@ -724,7 +710,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_383518149 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.350 -0400", hash_original_method = "7DCB1EA67ACA56F0B2754C8E360CAB68", hash_generated_method = "078D905459CD2923AA59FF4E7D8D250D")
         public Builder setLargeIcon(Bitmap icon) {
             mLargeIcon = icon;
@@ -737,7 +722,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1756708452 =             this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.351 -0400", hash_original_method = "E4D966D2AF4F815A75885EB0928B9225", hash_generated_method = "01EB0585FB0AB107453909F3306BAB04")
         public Builder setSound(Uri sound) {
             mSound = sound;
@@ -752,7 +736,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_231982758 =             this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.352 -0400", hash_original_method = "2D9F8E95A20AD7FBCF7EC4A8FF50BED5", hash_generated_method = "6C3DB44F94682428CE24B3345029207B")
         public Builder setSound(Uri sound, int streamType) {
             mSound = sound;
@@ -767,7 +750,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1325397450 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.353 -0400", hash_original_method = "A86D234FAB504C5B3A4DEC6712517174", hash_generated_method = "2370CF8D1B2A9447DF17E02AF73FF615")
         public Builder setVibrate(long[] pattern) {
             mVibrate = pattern;
@@ -780,7 +762,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1669420579 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.355 -0400", hash_original_method = "06C76CABA696566E00D48B5A1D10E8B9", hash_generated_method = "40F7DA5E26FC84A5A47FD2730ECE3A51")
         public Builder setLights(int argb, int onMs, int offMs) {
             mLedArgb = argb;
@@ -836,7 +817,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_317919917 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.357 -0400", hash_original_method = "413289369D1534DD93CD0DF6E13619C0", hash_generated_method = "769B9D45CD8C2449B1644DF3FDA1B201")
         public Builder setDefaults(int defaults) {
             mDefaults = defaults;
@@ -849,7 +829,6 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_924192405 =             this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.357 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "8A7BB69AA36E9A4190E2455BA21998A6")
         private void setFlag(int mask, boolean value) {
             addTaint(value);

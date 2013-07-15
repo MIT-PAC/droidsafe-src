@@ -33,8 +33,7 @@ public class CallLog {
         }
 
 
-                @DSModeled(DSC.SPEC)
-        public static Uri addCall(CallerInfo ci, Context context, String number,
+                public static Uri addCall(CallerInfo ci, Context context, String number,
                 int presentation, int callType, long start, int duration) {
             final ContentResolver resolver = context.getContentResolver();
             if (presentation == Connection.PRESENTATION_RESTRICTED) {
@@ -120,8 +119,7 @@ public class CallLog {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        private static void removeExpiredEntries(Context context) {
+                private static void removeExpiredEntries(Context context) {
             final ContentResolver resolver = context.getContentResolver();
             resolver.delete(CONTENT_URI, "_id IN " +
                     "(SELECT _id FROM calls ORDER BY " + DEFAULT_SORT_ORDER

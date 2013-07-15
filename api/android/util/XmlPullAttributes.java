@@ -75,7 +75,6 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.483 -0400", hash_original_method = "367A5DCA84F3DB949AE42F70B52DA04A", hash_generated_method = "3BD8A206112429E6892273E0ADE5C7D5")
     public int getAttributeNameResource(int index) {
         addTaint(index);

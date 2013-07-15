@@ -70,7 +70,6 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.872 -0400", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "E006B5C52189467876DC8C1FA5DFF268")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {

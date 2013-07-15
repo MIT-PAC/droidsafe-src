@@ -26,7 +26,6 @@ public abstract class SocketFactory {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.698 -0400", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "21EB0CF58885A21F6A7B5926A8A74EA6")
     public Socket createSocket() throws IOException {
         SocketException var017B431FE5380BEF3661A8EE7F89DBAD_447729864 = new SocketException("Unconnected sockets not implemented");

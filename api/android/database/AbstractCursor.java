@@ -94,7 +94,6 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     abstract public boolean isNull(int column);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.876 -0400", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "46F960E0D362652E459F551F3A7AD9BA")
     public int getType(int column) {
         addTaint(column);
@@ -117,7 +116,6 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.877 -0400", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "4CB3805856A4BC01D4B949080991E519")
     public CursorWindow getWindow() {
 CursorWindow var540C13E9E156B687226421B24F2DF178_991102409 =         null;
@@ -185,7 +183,6 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_991102409 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.879 -0400", hash_original_method = "B825EEA007B34E9E28068D61BE8C7018", hash_generated_method = "4FABB4FD53D652ADA6C65CE8F0CC0929")
     public boolean isClosed() {
         boolean varC15A1B081B66F38188E926501ED5F8A7_1671730822 = (mClosed);
@@ -208,7 +205,6 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_991102409 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.879 -0400", hash_original_method = "316C43B210EB72CE31C6D4E542FB15C5", hash_generated_method = "260D689E553B68F87451D2687C0B737C")
     public boolean onMove(int oldPosition, int newPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -574,7 +570,6 @@ String var8C8536068CF525DD3D9E0466509BC4FE_229196354 =         getColumnNames()[
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.892 -0400", hash_original_method = "9CE71984FA039D61518575C1361CCA79", hash_generated_method = "0630F40A2FC1B1EC0A30BBC8E3203B9E")
     protected DataSetObservable getDataSetObservable() {
 DataSetObservable var1889C2832C6671EE87AE3F20070859ED_1542523885 =         mDataSetObservable;
@@ -626,7 +621,6 @@ DataSetObservable var1889C2832C6671EE87AE3F20070859ED_1542523885 =         mData
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.894 -0400", hash_original_method = "265F32C67EE2A711D5C4BAD496137660", hash_generated_method = "72C120B621C25D60AEDC8284D77430A2")
     public void setNotificationUri(ContentResolver cr, Uri notifyUri) {
         synchronized
@@ -655,7 +649,6 @@ DataSetObservable var1889C2832C6671EE87AE3F20070859ED_1542523885 =         mData
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.895 -0400", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "1FEBEB55E6D1A73BE94ED49A1F70CCA5")
     public Uri getNotificationUri() {
 Uri var2BA43AFCFCD662CAFF1EE24368377DEE_103648325 =         mNotifyUri;
@@ -666,7 +659,6 @@ Uri var2BA43AFCFCD662CAFF1EE24368377DEE_103648325 =         mNotifyUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.895 -0400", hash_original_method = "95EB5F956072F4428350A5713DB4F16C", hash_generated_method = "DE2CEC75338893B2540B56AA81506222")
     public boolean getWantsAllOnMoveCalls() {
         boolean var68934A3E9455FA72420237EB05902327_95922441 = (false);
@@ -677,7 +669,6 @@ Uri var2BA43AFCFCD662CAFF1EE24368377DEE_103648325 =         mNotifyUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.896 -0400", hash_original_method = "FFD927D835EC033CA0D5789154520D3B", hash_generated_method = "598746C945848452E29BDC82DB3737FA")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? Bundle.EMPTY : extras;
@@ -686,7 +677,6 @@ Uri var2BA43AFCFCD662CAFF1EE24368377DEE_103648325 =         mNotifyUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.896 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "E72B3B2F0F4B75DD3132306F3F638C0C")
     public Bundle getExtras() {
 Bundle var5E49E1FEC958658F846C38CDDBF16A8B_882016659 =         mExtras;
@@ -697,7 +687,6 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_882016659 =         mExtras;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.897 -0400", hash_original_method = "0DCA3EA5579BB07DA7E61D916C230104", hash_generated_method = "164E90232EE8B9B8A4EDE31F857B7841")
     public Bundle respond(Bundle extras) {
         addTaint(extras.getTaint());
@@ -709,7 +698,6 @@ Bundle var998437625BBF03281B97467174D26383_724232825 =         Bundle.EMPTY;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.897 -0400", hash_original_method = "038210FB7F6D7350A83F25D9DA43B6B8", hash_generated_method = "DEC1E9146101EFED54746354CEE62C22")
     @Deprecated
     protected boolean isFieldUpdated(int columnIndex) {
@@ -722,7 +710,6 @@ Bundle var998437625BBF03281B97467174D26383_724232825 =         Bundle.EMPTY;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.898 -0400", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "2E4ABAF8025F9AF7E45526A11D15585F")
     @Deprecated
     protected Object getUpdatedField(int columnIndex) {
@@ -778,7 +765,6 @@ Object var540C13E9E156B687226421B24F2DF178_541370056 =         null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.900 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "2FF7200D8D693D8F75AA015BBD870EAB")
         @Override
         public boolean deliverSelfNotifications() {

@@ -22,7 +22,6 @@ public class PluginList {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.914 -0400", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "C590C9210FFCD6381096622595377CFE")
     @Deprecated
     public synchronized List getList() {

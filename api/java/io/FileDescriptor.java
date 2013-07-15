@@ -43,7 +43,6 @@ public final class FileDescriptor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.461 -0400", hash_original_method = "1AD9601B3D5C4D14896E5C48E725B899", hash_generated_method = "2B352881A7A401F7074D9B93A73E9CA5")
     public boolean valid() {
         boolean var0BAE74BB13337C9C944836840E955185_126260119 = (descriptor != -1);

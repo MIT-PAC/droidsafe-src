@@ -18,8 +18,7 @@ class VMClassLoader {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    static URL getResource(String name) {
+        static URL getResource(String name) {
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
             String urlStr = getBootClassPathResource(name, i);
@@ -35,8 +34,7 @@ class VMClassLoader {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static List<URL> getResources(String name) {
+        static List<URL> getResources(String name) {
         ArrayList<URL> list = new ArrayList<URL>();
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {

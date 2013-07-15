@@ -148,7 +148,6 @@ Object var417CB3276EE229BF33C771F6ACA37265_1102470289 =         decode(new DerIn
     public abstract boolean checkTag(int identifier);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.722 -0400", hash_original_method = "C98349FCBC509D9B5E2186CE1C87C57F", hash_generated_method = "7AF82CF4C3F53F3B61CAA73663B20DD9")
     protected Object getDecodedObject(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -169,7 +168,6 @@ Object var57556EEB4589CFB95311E6AAE5182292_2051022839 =         in.content;
     public abstract void setEncodingContent(BerOutputStream out);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.723 -0400", hash_original_method = "FA7F24CC02CDE7C91DB883C7C7C15F71", hash_generated_method = "2F73D63D0D92227C2F94C1357B4CA638")
     public int getEncodedLength(BerOutputStream out) {
         addTaint(out.getTaint());

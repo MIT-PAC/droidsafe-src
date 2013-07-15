@@ -64,7 +64,6 @@ public class URISyntaxException extends Exception {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.629 -0400", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "596F68341C53FEE0168B77793E43F26C")
     public int getIndex() {
         int var6A992D5529F459A44FEE58C733255E86_882234229 = (index);
@@ -85,7 +84,6 @@ String var1F56B99E8E42A81BCA45826E1719D3B0_410704981 =         super.getMessage(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.630 -0400", hash_original_method = "DF4880B690A0BCFCB8F3C337A75DD5A0", hash_generated_method = "2D944DBA7CDCABA780492BAF1A81E0E5")
     public String getInput() {
 String var5B0B1B23FE12EB4FF686B5A845BE063F_556133486 =         input;

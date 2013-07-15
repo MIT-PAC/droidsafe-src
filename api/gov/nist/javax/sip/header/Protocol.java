@@ -29,7 +29,6 @@ public class Protocol extends SIPObject {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.699 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "E6A5DFDEF2AF3E0179E136FD67828BB8")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_1894247659 =         encode(new StringBuffer()).toString();
@@ -40,7 +39,6 @@ String var678B6FE61D54E5BD4E109D01C318C133_1894247659 =         encode(new Strin
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.700 -0400", hash_original_method = "5917804CC8541DAC2CA5A0DEC050E620", hash_generated_method = "07C87E7DA4B0DE6BCF4419DDBBE687AA")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -62,7 +60,6 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_178975308 =         buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.700 -0400", hash_original_method = "0EA6E7D3A9B59E59CEEBB8D3EE9D071C", hash_generated_method = "7EAD8E6F0D81F7248061DC95BE0A3F0C")
     public String getProtocolName() {
 String var45474CC388B4F52DAFE20A4369F8BE7C_966387181 =         protocolName;
@@ -73,7 +70,6 @@ String var45474CC388B4F52DAFE20A4369F8BE7C_966387181 =         protocolName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.700 -0400", hash_original_method = "B8FA221EC0DA8944EFD0CEB861346936", hash_generated_method = "E6285770BE9717653FC54537B4A5518C")
     public String getProtocolVersion() {
 String var3CDE05F2C7D524E8DF5DB73F2146C98E_1787358583 =         protocolVersion;
@@ -84,7 +80,6 @@ String var3CDE05F2C7D524E8DF5DB73F2146C98E_1787358583 =         protocolVersion;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.700 -0400", hash_original_method = "3E5201C0CB5C46DC512CD40707A0CB06", hash_generated_method = "F50E1184E1ED6150D44328290977D52B")
     public String getProtocol() {
 String var8E89C14E271D89CD67AFB79E2F47F729_569119124 =         protocolName + '/' + protocolVersion;
@@ -95,7 +90,6 @@ String var8E89C14E271D89CD67AFB79E2F47F729_569119124 =         protocolName + '/
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.701 -0400", hash_original_method = "095B78DD27D74EBF49777967A681F20E", hash_generated_method = "F045626F70C647007945D04160E0C987")
     public void setProtocol( String name_and_version ) throws ParseException {
         int slash = name_and_version.indexOf('/');
@@ -119,7 +113,6 @@ String var8E89C14E271D89CD67AFB79E2F47F729_569119124 =         protocolName + '/
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.702 -0400", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "D08F2EEDC8D2B2AFB29206837B219371")
     public String getTransport() {
 String var6D37A12806110C538EDC9272068F264D_1209570334 =         transport;
@@ -130,7 +123,6 @@ String var6D37A12806110C538EDC9272068F264D_1209570334 =         transport;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.702 -0400", hash_original_method = "D424701D0BAFF5CEC55A80344E30BD30", hash_generated_method = "B4D21ACCA657B794F87AC481BEFA63A6")
     public void setProtocolName(String p) {
         protocolName = p;
@@ -139,7 +131,6 @@ String var6D37A12806110C538EDC9272068F264D_1209570334 =         transport;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.703 -0400", hash_original_method = "2A792840748FAB978DAA68C8F2495344", hash_generated_method = "3746DD0FB723CD5F349A9341429551FC")
     public void setProtocolVersion(String p) {
         protocolVersion = p;
@@ -148,7 +139,6 @@ String var6D37A12806110C538EDC9272068F264D_1209570334 =         transport;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.703 -0400", hash_original_method = "2F1F81EB1D8D9B12E2B4CE0AEE6CB155", hash_generated_method = "6E2B7DAB33C44857128202FB176B4870")
     public void setTransport(String t) {
         transport = t;

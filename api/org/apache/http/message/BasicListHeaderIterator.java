@@ -102,7 +102,6 @@ public class BasicListHeaderIterator implements HeaderIterator {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.622 -0400", hash_original_method = "A999EE5BCD06DCC7730AAD5F8A866DB2", hash_generated_method = "E35466C495373485AC79026CB6991763")
     public boolean hasNext() {
         boolean varC26A12D4E7C3FDC78864370D6EEB75E9_778900379 = ((this.currentIndex >= 0));

@@ -25,7 +25,6 @@ public class RecordRoute extends AddressParametersHeader implements javax.sip.he
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.821 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "CB26ED8E14EF8DF1D15A4669DCD761A7")
     public String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_922642630 =         encodeBody(new StringBuffer()).toString();
@@ -36,7 +35,6 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_922642630 =         encodeBody(new St
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.822 -0400", hash_original_method = "1F2E3BF90793586E89EB2C500039787C", hash_generated_method = "56D71691DA44AC7E9F4117CE9ACDF3C0")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());

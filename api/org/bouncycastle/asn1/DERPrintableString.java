@@ -85,7 +85,6 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.171 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "CF7D2D922FDCB76B1369BE7E88BE4FA9")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_2105646936 =         string;
@@ -162,7 +161,6 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.173 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "5CC6CE383862492D394A9F80BBA03690")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_116784829 =         string;

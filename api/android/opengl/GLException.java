@@ -38,7 +38,6 @@ public class GLException extends RuntimeException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.676 -0400", hash_original_method = "C8251C577CC610BBB512FB097A387252", hash_generated_method = "E9CB1908C20D232E7270208AEFB7876C")
      int getError() {
         int var6F8A455C94CBB7A00E920835C0C8964C_6371545 = (mError);

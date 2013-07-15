@@ -130,7 +130,6 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.540 -0400", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "8E4D4606CCAD347C966167D4CE5354C3")
     public Cursor getCursor() {
 Cursor var2D697C95C6440211C70889796F0139B0_646030858 =         mCursor;
@@ -227,7 +226,6 @@ Object var540C13E9E156B687226421B24F2DF178_183506576 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.541 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "8E7340F98CF8472006C544817182C351")
     @Override
     public boolean hasStableIds() {
@@ -457,7 +455,6 @@ Filter var90C9C830C345364A3B8EB78F9A63072B_1741547440 =         mCursorFilter;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.543 -0400", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "CFCFF5076BBCE7E77F0CE718D067B68C")
     public FilterQueryProvider getFilterQueryProvider() {
 FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_898439911 =         mFilterQueryProvider;
@@ -468,7 +465,6 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_898439911 =         mFil
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.543 -0400", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "3AC0EC2BF9C403B489B89218AE938BE8")
     public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
         mFilterQueryProvider = filterQueryProvider;
@@ -501,7 +497,6 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_898439911 =         mFil
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.543 -0400", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "4101DEED2956A79D1000DF2A2F133D21")
         @Override
         public boolean deliverSelfNotifications() {

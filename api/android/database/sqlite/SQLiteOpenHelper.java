@@ -77,7 +77,6 @@ public abstract class SQLiteOpenHelper {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.031 -0400", hash_original_method = "68E7432F62212BC238811FF4144A34FC", hash_generated_method = "B172A09411344261D05E35DCE6DB109A")
     public String getDatabaseName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_631282529 =         mName;
@@ -301,7 +300,6 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_901109843 =             mData
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.038 -0400", hash_original_method = "4811C8ED58A3ECFEDC0621F514E7FFAC", hash_generated_method = "114D8028AAA729F2C8D5D48D03E2C088")
     public void onOpen(SQLiteDatabase db) {
         //DSFIXME:  CODE0009: Possible callback target function detected

@@ -35,7 +35,6 @@ public abstract class Reference<T> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.839 -0400", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "3CA142A05BF69F5A64895A936ECBE10C")
     public void clear() {
         referent = null;
@@ -87,7 +86,6 @@ T var759DD485E78D2D3BF7BBC0941CAE41CB_1242956865 =         referent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.840 -0400", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "340A3032D708504C8B370243E68EF288")
     public boolean isEnqueued() {
         boolean varF8F380FE3C977ED15D3C774688222A9E_468566791 = (queueNext != null);

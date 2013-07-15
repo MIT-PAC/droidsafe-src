@@ -19,7 +19,6 @@ public class Priority extends SIPHeader implements PriorityHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "275A06F50E7B2077A23380B094FCE956", hash_generated_method = "1DF8313397D86E93A768FEA0A452CB94")
     public String encodeBody() {
 String var9141C1D2D467F4F6FF150C27DE3F01A3_373640585 =         priority;
@@ -30,7 +29,6 @@ String var9141C1D2D467F4F6FF150C27DE3F01A3_373640585 =         priority;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "AC75F30C8EC9876CCCC8499A70C4E5E6")
     public String getPriority() {
 String var9141C1D2D467F4F6FF150C27DE3F01A3_549223744 =         priority;
@@ -41,7 +39,6 @@ String var9141C1D2D467F4F6FF150C27DE3F01A3_549223744 =         priority;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "5B52FF98236754242B91AFCB31F1DBDC", hash_generated_method = "06E5BA8C167ADEC28DD963D9AD0FE4D6")
     public void setPriority(String p) throws ParseException {
     if(p == null)        

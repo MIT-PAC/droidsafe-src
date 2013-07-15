@@ -81,7 +81,6 @@ public final class Timestamp implements Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.571 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "376CBF8490741D62AF1B6C6FA13F3A8A")
     public CertPath getSignerCertPath() {
 CertPath varC4579A22BE0444B538B995294C4BD4B5_1473273335 =         signerCertPath;

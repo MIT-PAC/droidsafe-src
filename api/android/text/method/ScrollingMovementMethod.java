@@ -189,7 +189,6 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.928 -0400", hash_original_method = "171EBC702B28CBB8F3E97F4458472A3A", hash_generated_method = "6231E95CF651359DEF093E01716F8985")
     @Override
     public void onTakeFocus(TextView widget, Spannable text, int dir) {

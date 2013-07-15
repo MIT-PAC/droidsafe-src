@@ -21,8 +21,7 @@ class NoSaveStateFrameLayout extends FrameLayout {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static ViewGroup wrap(View child) {
+        static ViewGroup wrap(View child) {
         NoSaveStateFrameLayout wrapper = new NoSaveStateFrameLayout(child.getContext());
         ViewGroup.LayoutParams childParams = child.getLayoutParams();
         if (childParams != null) {

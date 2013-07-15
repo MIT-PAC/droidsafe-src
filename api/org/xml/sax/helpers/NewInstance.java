@@ -16,8 +16,7 @@ class NewInstance {
     }
 
 
-        @DSModeled(DSC.BAN)
-    static Object newInstance(ClassLoader classLoader, String className) throws ClassNotFoundException, IllegalAccessException,
+        static Object newInstance(ClassLoader classLoader, String className) throws ClassNotFoundException, IllegalAccessException,
             InstantiationException {
         Class driverClass;
         if (classLoader == null) {
@@ -29,8 +28,7 @@ class NewInstance {
     }
 
     
-        @DSModeled(DSC.BAN)
-    static ClassLoader getClassLoader() {
+        static ClassLoader getClassLoader() {
         Method m = null;
         try {
             m = Thread.class.getMethod("getContextClassLoader");

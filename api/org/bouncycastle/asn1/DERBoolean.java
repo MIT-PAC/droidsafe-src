@@ -20,8 +20,7 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static DERBoolean getInstance(
+        public static DERBoolean getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERBoolean)
         {
@@ -31,15 +30,13 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static DERBoolean getInstance(
+        public static DERBoolean getInstance(
         boolean  value) {
         return (value ? TRUE : FALSE);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static DERBoolean getInstance(
+        public static DERBoolean getInstance(
         byte[] octets) {
         return (octets[0] != 0) ? TRUE : FALSE;
     }
@@ -60,7 +57,6 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.933 -0400", hash_original_method = "CAF36277BE2299D4A97B34E514847231", hash_generated_method = "A4FF6E5CBF9343D4B02AF44EBC3B30A6")
     public boolean isTrue() {
         boolean var4661EA07E82336BE9B2AECA9A764B18E_125028910 = ((value != 0));
@@ -71,7 +67,6 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.935 -0400", hash_original_method = "17536CB7674727E81A6C11BC3F7B5C5B", hash_generated_method = "339736C0392F9DA44B50A766C32B8CD3")
      void encode(
         DEROutputStream out) throws IOException {
@@ -86,7 +81,6 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.942 -0400", hash_original_method = "7025372BC5443A52FED5B1B11C72A34D", hash_generated_method = "8484472E9AE9B04FE2945E6EEB4944A5")
     protected boolean asn1Equals(
         DERObject  o) {
@@ -109,7 +103,6 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.943 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "973546ECB6481D7B1C6A4C2C38A14420")
     public int hashCode() {
         int var2063C1608D6E0BAF80249C42E2BE5804_1426732188 = (value);
@@ -120,7 +113,6 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.944 -0400", hash_original_method = "9F6A9420185E5E125B8A61B3882EDFBB", hash_generated_method = "DD9302D3246BD844F67C510F07029EC2")
     public String toString() {
 String var304B31753549FEAA0EC0E7EC343CD6BE_1774561757 =         (value != 0) ? "TRUE" : "FALSE";

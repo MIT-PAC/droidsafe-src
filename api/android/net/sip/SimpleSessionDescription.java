@@ -275,7 +275,6 @@ String varCA33BF02D280D51D7B795F30C150EFBE_2059983010 =         mFields.getAttri
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.155 -0400", hash_original_method = "F57356AE1A37FC524BD36BB2BA67325B", hash_generated_method = "916DFC665F9EB31033823F998A75757A")
         public String getType() {
 String var4BA7381699FCDF343F6526506FD5D65C_92852379 =             mType;
@@ -286,7 +285,6 @@ String var4BA7381699FCDF343F6526506FD5D65C_92852379 =             mType;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.155 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "C96AB0869E6980363D4FA5A6CB3A0167")
         public int getPort() {
             int var5EFA61C4FCA92CA992BE37C2BAF4D350_2002596736 = (mPort);
@@ -297,7 +295,6 @@ String var4BA7381699FCDF343F6526506FD5D65C_92852379 =             mType;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.156 -0400", hash_original_method = "7A9595EE55A65FB3ADE35A1A62D4E357", hash_generated_method = "19FC5AD5347CC7A49FA06663C104AF1E")
         public int getPortCount() {
             int varD0E1DF8C25F4A332E41D25A2CE9F3985_1426092918 = (mPortCount);
@@ -308,7 +305,6 @@ String var4BA7381699FCDF343F6526506FD5D65C_92852379 =             mType;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.156 -0400", hash_original_method = "259570BEE3678204ECD026726561CF7F", hash_generated_method = "3690A82BB8E928AA517C6F29EF5F5929")
         public String getProtocol() {
 String var08FE45DCAD8E150FAC65A2ED6B7AD1DC_1278233429 =             mProtocol;

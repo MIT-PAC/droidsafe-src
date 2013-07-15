@@ -29,7 +29,6 @@ public class StatusLineParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.849 -0400", hash_original_method = "9D10732B3C09BAF61A909B669781A09D", hash_generated_method = "FC0FD5DC0730C016BBEA43FD5FF873B5")
     protected int statusCode() throws ParseException {
         String scode = this.lexer.number();
@@ -73,7 +72,6 @@ public class StatusLineParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.850 -0400", hash_original_method = "11C2A678ADE57722743D10D0059D6373", hash_generated_method = "B0736E706C021B181E1DAC281DE2AAA7")
     protected String reasonPhrase() throws ParseException {
 String varC363A8A5C6F4FC7ED22F830028945703_1824180787 =         this.lexer.getRest().trim();
@@ -84,7 +82,6 @@ String varC363A8A5C6F4FC7ED22F830028945703_1824180787 =         this.lexer.getRe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.851 -0400", hash_original_method = "FDCF7CDA1662776BB5DD6F85C9EEC616", hash_generated_method = "5E4C2F1429E0BA41EEC9F33260D11204")
     public StatusLine parse() throws ParseException {
         try 

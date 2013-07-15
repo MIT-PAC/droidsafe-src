@@ -58,7 +58,6 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_322892520 =         mSuperState;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.509 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0EAF65125AB5F514E81A73BEF1A47D5E")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_762002312 = (0);
@@ -69,7 +68,6 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_322892520 =         mSuperState;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.510 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "B89CCEE673445C1158793CC7051F939D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

@@ -422,7 +422,6 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.866 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "0C5A58A28ADE0AC11D86AE29B0EB6794")
     @Override
     public int getTopPadding() {
@@ -434,7 +433,6 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.866 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "104F9E7B7E4C7702AE7C7A24AFC9A288")
     @Override
     public int getBottomPadding() {
@@ -446,7 +444,6 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.867 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "2F3438A12CE5F9EF25A08D0AA1454576")
     @Override
     public int getEllipsizedWidth() {
@@ -534,7 +531,6 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.869 -0400", hash_original_method = "95E45B237E67DBC952009C430C254747", hash_generated_method = "12846E2D58F047016FD5A94EDD3F1FEF")
         public void beforeTextChanged(CharSequence s, int where, int before, int after) {
             addTaint(after);
@@ -558,7 +554,6 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.869 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
         public void afterTextChanged(Editable s) {
             addTaint(s.getTaint());

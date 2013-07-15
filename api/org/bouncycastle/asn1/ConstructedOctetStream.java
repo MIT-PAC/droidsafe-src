@@ -27,7 +27,6 @@ class ConstructedOctetStream extends InputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.857 -0400", hash_original_method = "30D34BC5FF70D0CD39A8963110E96C00", hash_generated_method = "C53DBA00632FAACC5A9237DD03B9D496")
     public int read(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -83,7 +82,6 @@ for(;;)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.858 -0400", hash_original_method = "07E101CE9B272EF565A5C01515093572", hash_generated_method = "ED429C945C5B93D485B11B6FCFFD168F")
     public int read() throws IOException {
     if(_currentStream == null)        

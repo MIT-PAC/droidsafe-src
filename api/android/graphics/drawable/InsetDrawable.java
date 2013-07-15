@@ -495,7 +495,6 @@ Drawable varFC2F28817735D8057413562963630ACD_428318449 =             new InsetDr
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.293 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "CB1A3388D421E6C521E1C1544324124A")
         @Override
         public int getChangingConfigurations() {

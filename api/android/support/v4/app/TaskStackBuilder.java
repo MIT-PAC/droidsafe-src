@@ -36,7 +36,6 @@ public class TaskStackBuilder implements Iterable<Intent> {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.238 -0400", hash_original_method = "511DF8C4B67F5D7A80704A12F82C5852", hash_generated_method = "0A33019EAC02EEE2BF8DD3B636188267")
     public TaskStackBuilder addNextIntent(Intent nextIntent) {
         addTaint(nextIntent.getTaint());
@@ -138,7 +137,6 @@ TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_2097346849 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.240 -0400", hash_original_method = "59669D711935F600119486724ABE92DB", hash_generated_method = "AC9A352967ABE216837BAB39930EAFCB")
     public Intent getIntent(int index) {
         addTaint(index);

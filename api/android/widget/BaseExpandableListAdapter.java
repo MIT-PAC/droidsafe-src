@@ -54,7 +54,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.592 -0400", hash_original_method = "DC1745DFF85763BBC0B3711D531FD60B", hash_generated_method = "9D139762A48D165B2D359B8A1401D120")
     public boolean areAllItemsEnabled() {
         boolean varB326B5062B2F0E69046810717534CB09_1411690843 = (true);
@@ -65,7 +64,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.592 -0400", hash_original_method = "C8A32BD5B228826DAE8ECAF9C52D77CC", hash_generated_method = "4AB5127AC0DCCE6566F0CDD02EC70069")
     public void onGroupCollapsed(int groupPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -74,7 +72,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.592 -0400", hash_original_method = "EDE3519F9C72D4A644C7E6D1DFFECD4D", hash_generated_method = "5C64D6D0F3D5AA2D9DE1377CB3A7558C")
     public void onGroupExpanded(int groupPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -83,7 +80,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.593 -0400", hash_original_method = "62D751D6B99293BC12E6D4807928381F", hash_generated_method = "C83CEB800F3AAEF6DDFA9A6D8D050CFD")
     public long getCombinedChildId(long groupId, long childId) {
         addTaint(childId);
@@ -96,7 +92,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.593 -0400", hash_original_method = "EB7194051A92C01EF508538BB57C4064", hash_generated_method = "8635EF93B1910ACADAEDF6A3668D733F")
     public long getCombinedGroupId(long groupId) {
         addTaint(groupId);
@@ -118,7 +113,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.593 -0400", hash_original_method = "3976CE9E755202E3C931B6278940CC72", hash_generated_method = "54D8DBF33594F9F95562F314F1BFEC50")
     public int getChildType(int groupPosition, int childPosition) {
         addTaint(childPosition);
@@ -131,7 +125,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.594 -0400", hash_original_method = "CBF60407A4D820C72FB94E8B743C23B8", hash_generated_method = "3287D6452BDB9B73584F5FF362390B27")
     public int getChildTypeCount() {
         int varC4CA4238A0B923820DCC509A6F75849B_1736845842 = (1);
@@ -142,7 +135,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.594 -0400", hash_original_method = "386488F689E9AEDF8DF1CAB1FEBD53FC", hash_generated_method = "91F99E55041A9FED98E97CFE2339AE0F")
     public int getGroupType(int groupPosition) {
         addTaint(groupPosition);
@@ -154,7 +146,6 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.594 -0400", hash_original_method = "BE48BAFD668175AB338E2F1890BDC5F9", hash_generated_method = "0F7458FB817E4E10906ACE841D0E228E")
     public int getGroupTypeCount() {
         int varC4CA4238A0B923820DCC509A6F75849B_1644598146 = (1);

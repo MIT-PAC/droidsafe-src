@@ -21,7 +21,6 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.581 -0400", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "FDDA96E0F55F07E67D27BBD6CBA22EFC")
     public boolean hasStableIds() {
         boolean var68934A3E9455FA72420237EB05902327_189962843 = (false);
@@ -67,7 +66,6 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.582 -0400", hash_original_method = "DC1745DFF85763BBC0B3711D531FD60B", hash_generated_method = "D01CD91996E4665D44DA46EA5D07D8F6")
     public boolean areAllItemsEnabled() {
         boolean varB326B5062B2F0E69046810717534CB09_1676371278 = (true);
@@ -78,7 +76,6 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.582 -0400", hash_original_method = "C1B9753B52C20D50833727AFD33E53F1", hash_generated_method = "0F3999A52685FBCFC052C2C369706959")
     public boolean isEnabled(int position) {
         addTaint(position);
@@ -103,7 +100,6 @@ View var07BEEB65197AB6DA2760E163F2697E6C_2131329151 =         getView(position, 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.583 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "E37C495FD817E0BD73D4CC0F51E46011")
     public int getItemViewType(int position) {
         addTaint(position);
@@ -115,7 +111,6 @@ View var07BEEB65197AB6DA2760E163F2697E6C_2131329151 =         getView(position, 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.583 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "8DA8C640AD5D5D6A1B76796E4CA3C48A")
     public int getViewTypeCount() {
         int varC4CA4238A0B923820DCC509A6F75849B_1896896149 = (1);

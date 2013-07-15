@@ -90,7 +90,6 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     public abstract void add(int field, int value);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.624 -0400", hash_original_method = "3DBAFBF02CB3C60196FBCDD8387C90F7", hash_generated_method = "1A45FB4BA6D204441D64EF805BA0D6F2")
     public boolean after(Object calendar) {
         addTaint(calendar.getTaint());
@@ -111,7 +110,6 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.625 -0400", hash_original_method = "AB514F7047FACF0A18BC971364ADD066", hash_generated_method = "CBD089B208F949C3AFFF4D8FCEDF6952")
     public boolean before(Object calendar) {
         addTaint(calendar.getTaint());
@@ -161,7 +159,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.627 -0400", hash_original_method = "84D98F75151E4961D0916EA8CB3E0C38", hash_generated_method = "B368B55D86F629B8FF27F074337621F1")
     @Override
     public Object clone() {
@@ -194,7 +191,6 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.628 -0400", hash_original_method = "A716BA757DE54F1250A3DB16F903EEB4", hash_generated_method = "A22C3AC0CDB42FA7361AB168FA508AE9")
     protected void complete() {
     if(!isTimeSet)        
@@ -225,7 +221,6 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     protected abstract void computeTime();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.629 -0400", hash_original_method = "A4F7F4EE453A4994C5225BE31C26C1E8", hash_generated_method = "AA47D265D6E106A268E3D4E5404B0DA7")
     @Override
     public boolean equals(Object object) {
@@ -268,7 +263,6 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.629 -0400", hash_original_method = "E826346499B559368BF751B42F34C786", hash_generated_method = "FA896AD58658C958EF2EFFD87FFA58AD")
     public int get(int field) {
         addTaint(field);
@@ -282,7 +276,6 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.630 -0400", hash_original_method = "424E8E96F9A12B00FD5C6FDA146C325F", hash_generated_method = "41A5D5CBC48FF4DDAE72B1169A4D40FD")
     public int getActualMaximum(int field) {
         addTaint(field);
@@ -328,7 +321,6 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.631 -0400", hash_original_method = "598A84D60F29BB97F62226BCCD8A7F9E", hash_generated_method = "1F1DB2A0EB54A305E086C758E0E4A06A")
     public int getActualMinimum(int field) {
         addTaint(field);
@@ -374,13 +366,11 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static synchronized Locale[] getAvailableLocales() {
+        public static synchronized Locale[] getAvailableLocales() {
         return ICU.getAvailableCalendarLocales();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.632 -0400", hash_original_method = "2210DC8BCE617C61AD2F9503CE7923B1", hash_generated_method = "4F0EC11728AE7E6E303ED7D3388DF3CC")
     public int getFirstDayOfWeek() {
         int var3CD3E760E15423653736E26E4D21E54A_1049131463 = (firstDayOfWeek);
@@ -394,26 +384,22 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     public abstract int getGreatestMinimum(int field);
 
     
-        @DSModeled(DSC.SAFE)
-    public static synchronized Calendar getInstance() {
+        public static synchronized Calendar getInstance() {
         return new GregorianCalendar();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static synchronized Calendar getInstance(Locale locale) {
+        public static synchronized Calendar getInstance(Locale locale) {
         return new GregorianCalendar(locale);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static synchronized Calendar getInstance(TimeZone timezone) {
+        public static synchronized Calendar getInstance(TimeZone timezone) {
         return new GregorianCalendar(timezone);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static synchronized Calendar getInstance(TimeZone timezone, Locale locale) {
+        public static synchronized Calendar getInstance(TimeZone timezone, Locale locale) {
         return new GregorianCalendar(timezone, locale);
     }
 
@@ -424,7 +410,6 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1215734438 =             clone;
     public abstract int getMaximum(int field);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.634 -0400", hash_original_method = "104647FF062CF5167F06DB549E6DD4EB", hash_generated_method = "6991639D61DE49FFEDF5ECF259DD36D7")
     public int getMinimalDaysInFirstWeek() {
         int var84FAA04375A171B334639F6BBA18E901_1111696414 = (minimalDaysInFirstWeek);
@@ -448,7 +433,6 @@ Date var4FE5A3569B4AD21C5FEAEB352ABA8F58_239951368 =         new Date(getTimeInM
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.634 -0400", hash_original_method = "1B58DB6425011C7C1965B5C43056D530", hash_generated_method = "0E71DD989506010206575C94D504B59D")
     public long getTimeInMillis() {
     if(!isTimeSet)        
@@ -468,7 +452,6 @@ Date var4FE5A3569B4AD21C5FEAEB352ABA8F58_239951368 =         new Date(getTimeInM
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.635 -0400", hash_original_method = "A62BA7A8B3AE52F44B15929DB0809596", hash_generated_method = "65022A265D3A847B079579D1C1B60548")
     public TimeZone getTimeZone() {
 TimeZone var61F6902A567A932064AABE0702479FA5_1440657599 =         zone;
@@ -479,7 +462,6 @@ TimeZone var61F6902A567A932064AABE0702479FA5_1440657599 =         zone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.635 -0400", hash_original_method = "2D54AA953826341AD4FD2AC42B53AEBA", hash_generated_method = "523E6277963D56179F3BD1576FC8BE47")
     @Override
     public int hashCode() {
@@ -504,7 +486,6 @@ TimeZone var61F6902A567A932064AABE0702479FA5_1440657599 =         zone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.636 -0400", hash_original_method = "5DB017D3EE054B32EA01614D92601D4D", hash_generated_method = "DBC469DF6D1AD8314D404454AB8145AF")
     public boolean isLenient() {
         boolean var526E2996690A16FF145147ABB1927920_2059304204 = (lenient);
@@ -526,7 +507,6 @@ TimeZone var61F6902A567A932064AABE0702479FA5_1440657599 =         zone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.637 -0400", hash_original_method = "F5FA416393576D1F9DD8BCE9349020A6", hash_generated_method = "D28845D088C3F1B473610F38D060B168")
     public void roll(int field, int value) {
         addTaint(value);
@@ -549,7 +529,6 @@ for(int i = 0;i < count;i++)
     public abstract void roll(int field, boolean increment);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.638 -0400", hash_original_method = "41A9E001F522D5852F11FBD319F3A5A6", hash_generated_method = "F370123754D39C4B902827C19A52C6F1")
     public void set(int field, int value) {
         fields[field] = value;
@@ -633,7 +612,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.640 -0400", hash_original_method = "9CEC56E07503C11B5926FEE82FE32939", hash_generated_method = "A3F69F8954E7C273CD6DF8888940CD88")
     public void setFirstDayOfWeek(int value) {
         firstDayOfWeek = value;
@@ -642,7 +620,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.641 -0400", hash_original_method = "769D5CCA341B85723A2FDFB2D353BC44", hash_generated_method = "28CC1D5E16959D01C7BF084614507B78")
     public void setLenient(boolean value) {
         lenient = value;
@@ -651,7 +628,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.641 -0400", hash_original_method = "ABF413A19C063DF72268F54419071447", hash_generated_method = "2BBA47AEAE7F0EBBCFCC90A1297DA654")
     public void setMinimalDaysInFirstWeek(int value) {
         minimalDaysInFirstWeek = value;
@@ -669,7 +645,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.642 -0400", hash_original_method = "2FA47445AF3A8C90A658A67E45128F41", hash_generated_method = "B7657A9496314A0A94626379E623DEBB")
     public void setTimeInMillis(long milliseconds) {
     if(!isTimeSet || !areFieldsSet || time != milliseconds)        
@@ -689,7 +664,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.643 -0400", hash_original_method = "C71A9CD315A030E06030733CE10A6247", hash_generated_method = "227A37CC71E14E244267359E7E425B06")
     public void setTimeZone(TimeZone timezone) {
         zone = timezone;
@@ -700,7 +674,6 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.643 -0400", hash_original_method = "FE2881479678F103D2A9794655ED1F87", hash_generated_method = "D359A8DD5DBB9043033B05B8E09B9770")
     @Override
     public String toString() {
@@ -752,7 +725,6 @@ String varE65B3A02759122992CB82C0E651AD408_1710605340 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.644 -0400", hash_original_method = "91CA2BBC83B63568E9D66A64F5127506", hash_generated_method = "886DBBB72ADF763CBD7165640C70FC57")
     public int compareTo(Calendar anotherCalendar) {
         addTaint(anotherCalendar.getTaint());
@@ -795,7 +767,6 @@ String varE65B3A02759122992CB82C0E651AD408_1710605340 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.644 -0400", hash_original_method = "3943CE5519C03267AB2522359CAFDF8D", hash_generated_method = "D085C3CEC69E4823E4F63D6C476DB678")
     public String getDisplayName(int field, int style, Locale locale) {
         addTaint(locale.getTaint());
@@ -820,7 +791,6 @@ String varBE80B03BFDF52EE6C9453F245B3DB27C_210783460 =         (array != null) ?
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.645 -0400", hash_original_method = "23B9DFD5A49D248BECD0B5B67B00C262", hash_generated_method = "6EA9B44D13EC23B6FCBBEBD7F35987CE")
     private String[] getDisplayNameArray(int field, int style, Locale locale) {
         addTaint(locale.getTaint());
@@ -874,8 +844,7 @@ String[] var02443F3A76AE487EA27B8DD484E529A8_1684506969 =         (style == LONG
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void checkStyle(int style) {
+        private static void checkStyle(int style) {
         if (style != ALL_STYLES && style != SHORT && style != LONG) {
             throw new IllegalArgumentException("bad style " + style);
         }
@@ -915,8 +884,7 @@ Map<String, Integer> varB60C0CCEE522AFD4A5CF89ECA4EFF4A9_376039721 =         res
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void insertValuesInMap(Map<String, Integer> map, String[] values) {
+        private static void insertValuesInMap(Map<String, Integer> map, String[] values) {
         if (values == null) {
             return;
         }
@@ -928,7 +896,6 @@ Map<String, Integer> varB60C0CCEE522AFD4A5CF89ECA4EFF4A9_376039721 =         res
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.647 -0400", hash_original_method = "B466F6EE281116CF7ABF0D209ADAF19B", hash_generated_method = "4E7102DAF281A059419DE4BA790DAD0B")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -964,7 +931,6 @@ Map<String, Integer> varB60C0CCEE522AFD4A5CF89ECA4EFF4A9_376039721 =         res
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.648 -0400", hash_original_method = "8FB104B0DF4EC943895E45AF22309DC6", hash_generated_method = "B3ECB270A155681BF1211E2A8EED4CE4")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

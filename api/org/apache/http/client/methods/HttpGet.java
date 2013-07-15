@@ -35,7 +35,6 @@ public class HttpGet extends HttpRequestBase {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.174 -0400", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "A467123862D94C2D60E3C2B08166AE4F")
     @Override
     public String getMethod() {

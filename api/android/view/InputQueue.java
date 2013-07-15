@@ -36,7 +36,6 @@ public final class InputQueue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.946 -0400", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "FAEEAB07963246FEA42BB3434A675E6D")
     public InputChannel getInputChannel() {
 InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1620232544 =         mChannel;

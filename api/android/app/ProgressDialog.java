@@ -97,7 +97,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.474 -0400", hash_original_method = "FE2AC98467F95F1FDF5E365DE947BD3D", hash_generated_method = "EB60C8DF224A339DC28B96F8E67BA73A")
     private void initFormats() {
         mProgressNumberFormat = "%1d/%2d";
@@ -110,22 +109,19 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ProgressDialog show(Context context, CharSequence title,
+        public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message) {
         return show(context, title, message, false);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ProgressDialog show(Context context, CharSequence title,
+        public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message, boolean indeterminate) {
         return show(context, title, message, indeterminate, false, null);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ProgressDialog show(Context context, CharSequence title,
+        public static ProgressDialog show(Context context, CharSequence title,
             CharSequence message, boolean indeterminate, boolean cancelable) {
         return show(context, title, message, indeterminate, cancelable, null);
     }
@@ -145,7 +141,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.480 -0400", hash_original_method = "3C62C073499C0C1AB7CB80CDA6A00701", hash_generated_method = "BB94B364A0BE1274C70BCDCF60692BE6")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -248,7 +243,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.481 -0400", hash_original_method = "E4C380672C091716BA880A9F39495F13", hash_generated_method = "D96DD738669DD0F97C550EA7D446DAAF")
     @Override
     public void onStart() {
@@ -261,7 +255,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.481 -0400", hash_original_method = "167333ED7F36A78C04285C2EEC5DCE22", hash_generated_method = "CA0145CDF0F773E726BCE8702522BE73")
     @Override
     protected void onStop() {
@@ -274,7 +267,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.482 -0400", hash_original_method = "23FC1AAA73A8AF68F967E7C4900FBF4D", hash_generated_method = "18D7ED23AA1B10B9E6A56B9078FB67D0")
     public void setProgress(int value) {
     if(mHasStarted)        
@@ -296,7 +288,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.483 -0400", hash_original_method = "6E4750DDBC0AC16C300E83EC6E6DBC1D", hash_generated_method = "97BC4668F32198E8F25070B2DC67928E")
     public void setSecondaryProgress(int secondaryProgress) {
     if(mProgress != null)        
@@ -318,7 +309,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.483 -0400", hash_original_method = "4D0AEB75C79AE0306A009E89E85077BB", hash_generated_method = "C43AF3F671DED14B1E0A5E7DCC8F507E")
     public int getProgress() {
     if(mProgress != null)        
@@ -338,7 +328,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.484 -0400", hash_original_method = "58FB68124F7103A7657A430EF8D5C27D", hash_generated_method = "E2664F141D4D4B529E4E582E8D2F33EE")
     public int getSecondaryProgress() {
     if(mProgress != null)        
@@ -358,7 +347,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.484 -0400", hash_original_method = "B2C91689E392BFA0100BFE7CD7CBCF9A", hash_generated_method = "67D742D74DF921145896DA6C587D9990")
     public int getMax() {
     if(mProgress != null)        
@@ -378,7 +366,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.486 -0400", hash_original_method = "823B39538AFD9A862BBB0CFD9EF1E653", hash_generated_method = "DCCD9F44809BE846A2E4D4386280730D")
     public void setMax(int max) {
     if(mProgress != null)        
@@ -400,7 +387,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.487 -0400", hash_original_method = "445D81214DF2B063E62A55D5F8A17F23", hash_generated_method = "174E8B55067E0CF8A7D5C5419831531E")
     public void incrementProgressBy(int diff) {
     if(mProgress != null)        
@@ -422,7 +408,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.488 -0400", hash_original_method = "ACDD0F5A55036B735620D3E49831AA1C", hash_generated_method = "841371A88B83560F209D63A0B796D0E9")
     public void incrementSecondaryProgressBy(int diff) {
     if(mProgress != null)        
@@ -444,7 +429,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.489 -0400", hash_original_method = "BF189ED691A8CB1AA1828F7DFAB16E61", hash_generated_method = "67F658A537AD2BBFB6D2FE0B2202855F")
     public void setProgressDrawable(Drawable d) {
     if(mProgress != null)        
@@ -464,7 +448,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.490 -0400", hash_original_method = "55A3C3032B86D6D77860B6605EF0B7F9", hash_generated_method = "F9021E2B403438273A020FD71BE5010C")
     public void setIndeterminateDrawable(Drawable d) {
     if(mProgress != null)        
@@ -484,7 +467,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.491 -0400", hash_original_method = "87844978D06A223987B222FFA166DFBA", hash_generated_method = "C9A3F9E10B5F181198E6EE74040148FB")
     public void setIndeterminate(boolean indeterminate) {
     if(mProgress != null)        
@@ -504,7 +486,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.492 -0400", hash_original_method = "91BE21C4F81E2907389C6C7DE0F7DEB9", hash_generated_method = "F12CDAE2428199B615826C0158CA55BB")
     public boolean isIndeterminate() {
     if(mProgress != null)        
@@ -524,7 +505,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.493 -0400", hash_original_method = "AFD34C008702B9F6492C001F2A71B115", hash_generated_method = "BE89C27492FBBDAA43AF53BEA18E23FF")
     @Override
     public void setMessage(CharSequence message) {
@@ -556,7 +536,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.494 -0400", hash_original_method = "85F4612555E33B447C725C49965B14D6", hash_generated_method = "4273143CCA6E95A2C8596BE20934D03B")
     public void setProgressStyle(int style) {
         mProgressStyle = style;
@@ -585,7 +564,6 @@ public class ProgressDialog extends AlertDialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.495 -0400", hash_original_method = "28A5BA5A84A47E224F80ADB1F1423669", hash_generated_method = "3381CDF2225D84E26B49476232567754")
     private void onProgressChanged() {
     if(mProgressStyle == STYLE_HORIZONTAL)        

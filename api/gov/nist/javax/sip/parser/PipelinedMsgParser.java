@@ -72,13 +72,11 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static synchronized int getNewUid() {
+        private static synchronized int getNewUid() {
         return uid++;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.438 -0400", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5A7C2DED95E3A949F3D0D6A47527D147")
     public void processInput() {
         mythread.start();
@@ -87,7 +85,6 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.439 -0400", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "D0EF6DB3757C5769542AB4550A799B66")
     protected Object clone() {
         PipelinedMsgParser p = new PipelinedMsgParser();
@@ -108,7 +105,6 @@ Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.440 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "853BB09F699662204A7FAC41D98CD659")
     public void setMessageListener(SIPMessageListener mlistener) {
         sipMessageListener = mlistener;
@@ -346,7 +342,6 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.447 -0400", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "192A77C307E1B0090303A5E8F33C3527")
     public void close() {
         try 

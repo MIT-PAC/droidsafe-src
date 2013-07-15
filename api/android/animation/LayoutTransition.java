@@ -132,7 +132,6 @@ public class LayoutTransition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.711 -0400", hash_original_method = "24394BA80BA94B39DCA5B438DC3EBDB1", hash_generated_method = "CF9B4395D785358863CAB9605D225CA9")
     public void setDuration(long duration) {
         mChangingAppearingDuration = duration;
@@ -147,7 +146,6 @@ public class LayoutTransition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.719 -0400", hash_original_method = "939FBD8B4C5590BFCAA9E14AEC15ED50", hash_generated_method = "A5FB537129437D22F2C6F067E57B2516")
     public void setStartDelay(int transitionType, long delay) {
         addTaint(transitionType);
@@ -183,7 +181,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.723 -0400", hash_original_method = "3F88CD33B6864BEBC3B576EB6504FB35", hash_generated_method = "F1540425F24E444073AC6545AF32D294")
     public long getStartDelay(int transitionType) {
         addTaint(transitionType);
@@ -222,7 +219,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.728 -0400", hash_original_method = "2851CBF3AA331995F771441E9F6D0AAD", hash_generated_method = "7657A96A3B56109E70AF47B61010EB14")
     public void setDuration(int transitionType, long duration) {
         addTaint(transitionType);
@@ -258,7 +254,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.731 -0400", hash_original_method = "F259A86CD3BB3A6D515EAAF2335DC6DD", hash_generated_method = "D5CAF6BD9684E907D4095770B6406CAA")
     public long getDuration(int transitionType) {
         addTaint(transitionType);
@@ -297,7 +292,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.735 -0400", hash_original_method = "DB3710D74B2FBFD7C44693C4FBA40808", hash_generated_method = "0F08A1C25BA5B8F0A6C96E94A8EBA372")
     public void setStagger(int transitionType, long duration) {
         addTaint(transitionType);
@@ -321,7 +315,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.741 -0400", hash_original_method = "70FCFF77D9C405B5FA9E6B4579BF3D8B", hash_generated_method = "7876A2C8D9059D8A5E62D913DB9FC8D9")
     public long getStagger(int transitionType) {
         addTaint(transitionType);
@@ -348,7 +341,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.747 -0400", hash_original_method = "2AD5234EB4F80ED9C0D5C1F0BD7735E5", hash_generated_method = "E83B3F47CAEB350521F19BC35F2C70CF")
     public void setInterpolator(int transitionType, TimeInterpolator interpolator) {
         addTaint(transitionType);
@@ -384,7 +376,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.749 -0400", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "BACD3F6CAF7CD3A5E0A1B252DAFCAF96")
     public TimeInterpolator getInterpolator(int transitionType) {
         addTaint(transitionType);
@@ -423,7 +414,6 @@ TimeInterpolator varCFF24B6F2E2CCEBC82FB2CBB95DACE21_1111023346 =         mDisap
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.752 -0400", hash_original_method = "1CE02B172FBE4A7CE10D1F87669E47EA", hash_generated_method = "23274A8F6E7DE274B00CDBF4AEE41ED6")
     public void setAnimator(int transitionType, Animator animator) {
         addTaint(transitionType);
@@ -459,7 +449,6 @@ switch(transitionType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.757 -0400", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "415711EB0476EB8A765A1EE33D8D49C9")
     public Animator getAnimator(int transitionType) {
         addTaint(transitionType);
@@ -585,7 +574,6 @@ for(View view : views)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.778 -0400", hash_original_method = "5ECFD2D430BE870F40C042D01FD8A2D6", hash_generated_method = "CEE41014B49B701489653EF4BEF3638A")
     public void setAnimateParentHierarchy(boolean animateParentHierarchy) {
         mAnimateParentHierarchy = animateParentHierarchy;

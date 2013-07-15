@@ -22,7 +22,6 @@ public class UnsafeByteSequence {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.764 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "89136E31EE387140FF40573112817989")
     public int size() {
         int varE2942A04780E223B215EB8B663CF5353_578873832 = (count);
@@ -33,7 +32,6 @@ public class UnsafeByteSequence {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.767 -0400", hash_original_method = "CD6FA0D10C84692422449C0C5D320E8A", hash_generated_method = "37A38F7B043D44D70AC23E12C0B9583A")
     public void rewind() {
         count = 0;

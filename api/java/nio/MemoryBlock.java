@@ -59,8 +59,7 @@ class MemoryBlock {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MemoryBlock allocate(int byteCount) {
+        public static MemoryBlock allocate(int byteCount) {
         VMRuntime runtime = VMRuntime.getRuntime();
         byte[] array = (byte[]) runtime.newNonMovableArray(byte.class, byteCount);
         int address = (int) runtime.addressOf(array);
@@ -68,13 +67,11 @@ class MemoryBlock {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MemoryBlock wrapFromJni(int address, long byteCount) {
+        public static MemoryBlock wrapFromJni(int address, long byteCount) {
         return new UnmanagedBlock(address, byteCount);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.877 -0400", hash_original_method = "0474BFDE3AD81DCD66C16B9CD0EF394B", hash_generated_method = "43CB35035F131465C65FE5F69E42CE91")
     public byte[] array() {
         byte[] var37A6259CC0C1DAE299A7866489DFF0BD_462899351 = (null);
@@ -85,7 +82,6 @@ class MemoryBlock {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.877 -0400", hash_original_method = "DAA4200658B56FF77DA7170F747BB7D3", hash_generated_method = "5BE07C58F63F85984738B520AF21ADD2")
     public void free() {
         // ---------- Original Method ----------
@@ -461,7 +457,6 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.891 -0400", hash_original_method = "D17F44ECB38D0894EC4D368C7A4552E2", hash_generated_method = "163892CD627642C4913F1A71B6D4E971")
         @Override
         public byte[] array() {
@@ -473,7 +468,6 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.891 -0400", hash_original_method = "7CD7BC202225C0DF2E4B3C563E9F4089", hash_generated_method = "732E056F3D64E4EBE26E88FEB87054A0")
         @Override
         public void free() {

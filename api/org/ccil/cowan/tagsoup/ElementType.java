@@ -122,7 +122,6 @@ String var70CFE88F30A49EB927310132B2D66122_623257127 =             name.substrin
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.926 -0400", hash_original_method = "AEAF2CA6A2A9BD287C2AECB04BDA5589", hash_generated_method = "92D84FE296139DDD354CEB87789A5EBF")
     public String name() {
 String var70F0F034C0DCFF6E2661DB55A73F06A1_331875182 =         theName;
@@ -133,7 +132,6 @@ String var70F0F034C0DCFF6E2661DB55A73F06A1_331875182 =         theName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.926 -0400", hash_original_method = "D5C09A7EAC3540D5025F54207902E2D8", hash_generated_method = "954FE999F0751F570F5FA8225540AE5C")
     public String namespace() {
 String var0406821FDFE3D35AD99B5845E33FC3E7_1703918737 =         theNamespace;
@@ -144,7 +142,6 @@ String var0406821FDFE3D35AD99B5845E33FC3E7_1703918737 =         theNamespace;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.926 -0400", hash_original_method = "7820A4FDEE02D17FDE49851C9121389B", hash_generated_method = "C97B15317261D33BCFBDD84C57B2B60D")
     public String localName() {
 String varB1346F921066FA7F8698728CBA4E1FCB_1639810395 =         theLocalName;
@@ -155,7 +152,6 @@ String varB1346F921066FA7F8698728CBA4E1FCB_1639810395 =         theLocalName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.926 -0400", hash_original_method = "863150B34251535222F20C0EAB163E01", hash_generated_method = "47FC7B36A829BA6A58566F0731FFE684")
     public int model() {
         int varD799417756D0E4F3CEF7BE3BDCA5304D_2110779436 = (theModel);
@@ -166,7 +162,6 @@ String varB1346F921066FA7F8698728CBA4E1FCB_1639810395 =         theLocalName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.927 -0400", hash_original_method = "9FFB3E9386976737FD5FBA37B814C4D0", hash_generated_method = "326449CDE6832624BA448D79698702F1")
     public int memberOf() {
         int var9D336585DF3A7AB55AAD7BDD3FC0C0D6_779164625 = (theMemberOf);
@@ -177,7 +172,6 @@ String varB1346F921066FA7F8698728CBA4E1FCB_1639810395 =         theLocalName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.927 -0400", hash_original_method = "19D08FF6AA5F9D4D6B65E686C6EC5676", hash_generated_method = "1F5BF848BD162A17E3B54D7411EDD5E1")
     public int flags() {
         int varB4210363C6C1EA0142699EBDD2F10BCA_939164925 = (theFlags);
@@ -188,7 +182,6 @@ String varB1346F921066FA7F8698728CBA4E1FCB_1639810395 =         theLocalName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.927 -0400", hash_original_method = "5DFAF4737CD1323AC5BCD66ECC931C62", hash_generated_method = "73014D5B5E3BD756C1790B479B2FAD4C")
     public AttributesImpl atts() {
 AttributesImpl varFB5CAB611E727D03F638BBA9F461FD53_459980536 =         theAtts;
@@ -199,7 +192,6 @@ AttributesImpl varFB5CAB611E727D03F638BBA9F461FD53_459980536 =         theAtts;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.927 -0400", hash_original_method = "E92CD830CE12526F79993827804AE423", hash_generated_method = "D33F3E42ADF2A9AA86FCD77E76DB02A2")
     public ElementType parent() {
 ElementType varA18F4F163F633B2655786FDB630B95FF_596994650 =         theParent;
@@ -210,7 +202,6 @@ ElementType varA18F4F163F633B2655786FDB630B95FF_596994650 =         theParent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.928 -0400", hash_original_method = "5ED9C031E5D9227A40A639080CADBFC4", hash_generated_method = "0D7E8E6BE17259F0018C728A11DAF221")
     public Schema schema() {
 Schema varF1B5508E6B3CF9213428E6D6136C1D0E_79120465 =         theSchema;
@@ -221,7 +212,6 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_79120465 =         theSchema;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.928 -0400", hash_original_method = "3CB53268EE03367F93FB62614B11BBE8", hash_generated_method = "62EC493022C184FCB729075ED5BCE6BF")
     public boolean canContain(ElementType other) {
         addTaint(other.getTaint());
@@ -319,7 +309,6 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_79120465 =         theSchema;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.930 -0400", hash_original_method = "3D843454E0461CA80E31D71540C9240B", hash_generated_method = "02D113F936059A5083A48C9FA70AED6B")
     public void setModel(int model) {
         theModel = model;
@@ -328,7 +317,6 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_79120465 =         theSchema;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.931 -0400", hash_original_method = "49C12A488EE0CFA925BEADC8ACD7C6C0", hash_generated_method = "CF4421C34C163600235102D156504648")
     public void setMemberOf(int memberOf) {
         theMemberOf = memberOf;
@@ -337,7 +325,6 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_79120465 =         theSchema;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.931 -0400", hash_original_method = "40381178E3FA56E0EF661C8DC2AD49FA", hash_generated_method = "C6564C5E0D1842F3281E028CC4944D07")
     public void setFlags(int flags) {
         theFlags = flags;
@@ -346,7 +333,6 @@ Schema varF1B5508E6B3CF9213428E6D6136C1D0E_79120465 =         theSchema;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.931 -0400", hash_original_method = "DBB2D29F8F1C5757D222A7D837762BD5", hash_generated_method = "6E2410F5D8C251D0B3D77776823BF205")
     public void setParent(ElementType parent) {
         theParent = parent;

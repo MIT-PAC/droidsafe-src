@@ -69,7 +69,6 @@ public final class HttpResponseCache extends ResponseCache {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.393 -0400", hash_original_method = "BDF5FA5DFC6F094E24DB34D390FA0AF5", hash_generated_method = "ABEF9B15042BA02048E6B15758FCD649")
     private String uriToKey(URI uri) {
         addTaint(uri.getTaint());
@@ -188,7 +187,6 @@ InputStream var0E745B4527042622C7751CC8FF15D1F0_1527038642 =         new FilterI
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.396 -0400", hash_original_method = "B60E0E98B4938597A03FCCE829FCA215", hash_generated_method = "674582AEE59893CCAA969CE7578C2E71")
     @Override
     public CacheRequest put(URI uri, URLConnection urlConnection) throws IOException {
@@ -311,7 +309,6 @@ HttpEngine var540C13E9E156B687226421B24F2DF178_210088857 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.397 -0400", hash_original_method = "B64C7BD7AB99F4603E597D8D8E01D294", hash_generated_method = "ED7C316932FA549BCAD474DF6F83F9F8")
     public DiskLruCache getCache() {
 DiskLruCache var02A6FDEB64F19DB584E60A103B9AE5CB_1779045493 =         cache;
@@ -322,7 +319,6 @@ DiskLruCache var02A6FDEB64F19DB584E60A103B9AE5CB_1779045493 =         cache;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.397 -0400", hash_original_method = "584B91EB5EE577F8A207E65218FB5240", hash_generated_method = "718980038DE0EA345598255C7E80067E")
     public synchronized int getWriteAbortCount() {
         int var4CFEE5DDB5A666111EBCE2224B5C204B_1368709292 = (writeAbortCount);
@@ -333,7 +329,6 @@ DiskLruCache var02A6FDEB64F19DB584E60A103B9AE5CB_1779045493 =         cache;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.398 -0400", hash_original_method = "2EA3BABAF279B90BEBA0727537DCC414", hash_generated_method = "DF614D91BBAA21BFF1005C5F77E01D47")
     public synchronized int getWriteSuccessCount() {
         int var11679E351AB2CDD5977DCC10C5E3BDA9_761321116 = (writeSuccessCount);
@@ -371,7 +366,6 @@ switch(source){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.398 -0400", hash_original_method = "456F1C16A4D586B3084074761F46B903", hash_generated_method = "DED87D8EE049228E5DD63E04F46EE83E")
     synchronized void trackConditionalCacheHit() {
         hitCount++;
@@ -380,7 +374,6 @@ switch(source){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.398 -0400", hash_original_method = "43B20B4C5A2152AB1A746223212EFB79", hash_generated_method = "4010C31F794925C4644888B34574988C")
     public synchronized int getNetworkCount() {
         int var3D06ECB00548A4CD4B10D3412F2AB801_168163597 = (networkCount);
@@ -391,7 +384,6 @@ switch(source){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.399 -0400", hash_original_method = "F60E9424D0F277AC3F88D95186713E51", hash_generated_method = "3202A832E3E017EF5671E30B3A043CEE")
     public synchronized int getHitCount() {
         int var5BBBCEBEEA805F9664B2979FBACE5699_1160486418 = (hitCount);
@@ -402,7 +394,6 @@ switch(source){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.399 -0400", hash_original_method = "B572A7BCEFA26365FDB2542BDB35291E", hash_generated_method = "23DF6462D3662E484367B812CA1E7092")
     public synchronized int getRequestCount() {
         int var27F327C12CD3EA7E5A5835FCAE116C07_1714600575 = (requestCount);
@@ -513,7 +504,6 @@ switch(source){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.401 -0400", hash_original_method = "CD115A1F543477A8E0342CED7BC41A18", hash_generated_method = "942C822D40C072E99CFCE9A8986B4809")
         @Override
         public OutputStream getBody() throws IOException {

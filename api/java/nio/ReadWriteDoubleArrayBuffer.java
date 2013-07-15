@@ -84,7 +84,6 @@ DoubleBuffer var6ED4708F04CD11720ECFFDBFD927116F_1611044836 =         copy(this,
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.099 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "2DB4459575C67DE16E4A26AF1AC3DE4C")
     @Override
     public boolean isReadOnly() {
@@ -96,7 +95,6 @@ DoubleBuffer var6ED4708F04CD11720ECFFDBFD927116F_1611044836 =         copy(this,
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.100 -0400", hash_original_method = "B39E44D51BEA2E7F8F320F30D5A69080", hash_generated_method = "F2381CF7B4FC272F076E7F9EFFD693D9")
     @Override
     protected double[] protectedArray() {
@@ -108,7 +106,6 @@ DoubleBuffer var6ED4708F04CD11720ECFFDBFD927116F_1611044836 =         copy(this,
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.100 -0400", hash_original_method = "F848F07A68FC53238B1B56C46C388C04", hash_generated_method = "9863461110212B9EDF9557993B0828DD")
     @Override
     protected int protectedArrayOffset() {
@@ -120,7 +117,6 @@ DoubleBuffer var6ED4708F04CD11720ECFFDBFD927116F_1611044836 =         copy(this,
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.100 -0400", hash_original_method = "504D4244F3E9BA0CFC7CEE21DED3336C", hash_generated_method = "DAE27B1EB2A1FD291F992982A30269BF")
     @Override
     protected boolean protectedHasArray() {

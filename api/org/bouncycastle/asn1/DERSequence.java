@@ -58,7 +58,6 @@ for(int i = 0;i != a.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.179 -0400", hash_original_method = "EB6AC1866581E5FE18FBF3DDAE772D4D", hash_generated_method = "F795A4A35B62312F1F15DA1D8E8B6F4F")
      void encode(
         DEROutputStream out) throws IOException {

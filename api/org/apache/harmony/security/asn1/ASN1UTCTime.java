@@ -18,8 +18,7 @@ public final class ASN1UTCTime extends ASN1Time {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static ASN1UTCTime getInstance() {
+        public static ASN1UTCTime getInstance() {
         return ASN1;
     }
 

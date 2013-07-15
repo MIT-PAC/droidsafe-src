@@ -58,7 +58,6 @@ class ConnectionThread extends Thread {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.045 -0400", hash_original_method = "A5666AE0946DEF68E8FF606C0FDBCF6D", hash_generated_method = "675E9DAA678FFBEB722D5811FBE321FA")
      void requestStop() {
         synchronized
@@ -145,7 +144,6 @@ class ConnectionThread extends Thread {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.047 -0400", hash_original_method = "E5691DA5C4D558B8174DB10F2BE5CF59", hash_generated_method = "404E008F71741DAEF6B475E0834C6375")
     public synchronized String toString() {
         String con = mConnection == null ? "" : mConnection.toString();

@@ -127,7 +127,6 @@ for(WifiP2pDevice d : mDevices)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.173 -0400", hash_original_method = "AF7D82D1BB8BCC5F50496B9C85783B3A", hash_generated_method = "79ED04FEBC30A30247CC0E2CBD95E2AC")
     public Collection<WifiP2pDevice> getDeviceList() {
 Collection<WifiP2pDevice> var24D252EDC5D3BF4B65D91841154ED408_585846280 =         Collections.unmodifiableCollection(mDevices);
@@ -157,7 +156,6 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1064448395 =         sbuf.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.174 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FE52C75D140E40F238491F9E60C0B684")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_40360739 = (0);

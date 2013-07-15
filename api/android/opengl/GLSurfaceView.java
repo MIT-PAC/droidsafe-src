@@ -89,7 +89,6 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.500 -0400", hash_original_method = "62AADEA51F1A9BF5575F2E5A0791202E", hash_generated_method = "DE8535F451C1DB5D5B53F3A6215E7688")
     public void setGLWrapper(GLWrapper glWrapper) {
         mGLWrapper = glWrapper;
@@ -98,7 +97,6 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.500 -0400", hash_original_method = "95CD067D63C131003FD4FBBE7098897E", hash_generated_method = "31E24E5D35845A66E5F3AEE9995517A2")
     public void setDebugFlags(int debugFlags) {
         mDebugFlags = debugFlags;
@@ -107,7 +105,6 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.501 -0400", hash_original_method = "6993850204A95232CAB55D0CCC1BAFCE", hash_generated_method = "9379FE9C2508485A0DB28A0E096BA278")
     public int getDebugFlags() {
         int var8073F2C08292CAAB03561C345E401438_795071760 = (mDebugFlags);
@@ -118,7 +115,6 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.501 -0400", hash_original_method = "717A951DD1F3691DEF19A2756D2824F8", hash_generated_method = "E9353C948C1F52F5DBA984F15989C2F4")
     public void setPreserveEGLContextOnPause(boolean preserveOnPause) {
         mPreserveEGLContextOnPause = preserveOnPause;
@@ -127,7 +123,6 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.501 -0400", hash_original_method = "60238A7236A689DEF9712C11E43803DE", hash_generated_method = "B5859E4B5B039A7526E38489C4CC4B11")
     public boolean getPreserveEGLContextOnPause() {
         boolean varF50201D924FB5476F49BE8AD0664A8AC_2011737532 = (mPreserveEGLContextOnPause);
@@ -540,7 +535,6 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1155902256 =             result;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.511 -0400", hash_original_method = "8324D0F818B008780D6764BA3D123E5B", hash_generated_method = "92D06F37A9B56344D0F08EB6839D2A8F")
         public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
             addTaint(display.getTaint());
@@ -1420,7 +1414,6 @@ switch(error){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.534 -0400", hash_original_method = "0EE68488D52C3628D006C7323CA4E5A0", hash_generated_method = "A7C4C6CA337C88D97A721AC7EA4012AB")
         private boolean readyToDraw() {
             boolean varD45A9E3CBAE4F7104CD510795BE80E11_1856086919 = ((!mPaused) && mHasSurface
@@ -1960,7 +1953,6 @@ for(int i = 0;i < count;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.550 -0400", hash_original_method = "12EA186A7F5CD9C6E3046A2A0BD2DF68", hash_generated_method = "D3A8AF5B989D8F7984CBE406CD3F5633")
         public synchronized boolean shouldReleaseEGLContextWhenPausing() {
             boolean varA9EFE93895F3A53C29BDAB72648B5FDA_1895276251 = (mLimitedGLESContexts);

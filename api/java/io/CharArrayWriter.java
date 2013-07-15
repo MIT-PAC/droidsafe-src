@@ -43,7 +43,6 @@ public class CharArrayWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.000 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
@@ -73,7 +72,6 @@ public class CharArrayWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.001 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
@@ -81,7 +79,6 @@ public class CharArrayWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.001 -0400", hash_original_method = "41854ED78018FCB86E06DA2ADE584B53", hash_generated_method = "EF66D3120D8A5048C78C67480E598644")
     public void reset() {
         synchronized
@@ -95,7 +92,6 @@ public class CharArrayWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.001 -0400", hash_original_method = "796F2451CF9DC3EF411446EADA3F03C7", hash_generated_method = "E11B9201B31DD88C4FE18B1B5A8CB402")
     public int size() {
         synchronized

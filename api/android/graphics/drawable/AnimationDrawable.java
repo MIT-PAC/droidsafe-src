@@ -110,7 +110,6 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.552 -0400", hash_original_method = "58F8F26763BA19E1F1B373F32B389D6B", hash_generated_method = "AA90744769D0744D4B6AD4EAEA886F01")
     public boolean isRunning() {
         boolean varB13D098C873A2C979776046FBFB77EA9_1136532147 = (mCurFrame > -1);

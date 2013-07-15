@@ -407,7 +407,6 @@ public class CalendarView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.759 -0400", hash_original_method = "466B93651CABC20F69979D67C7EC6971", hash_generated_method = "001DC00C14C5736043F0D5EBB8029CAB")
     public boolean getShowWeekNumber() {
         boolean var53E3E568843E4B190CE603DFFAC9D53E_1983812146 = (mShowWeekNumber);
@@ -418,7 +417,6 @@ public class CalendarView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.759 -0400", hash_original_method = "13AE9B7D254FD4442860EE49493A72AE", hash_generated_method = "7D7E1006084A207FF4C50044ABD866E4")
     public int getFirstDayOfWeek() {
         int varFD868BD5C2AC35186323583DC33DC09D_1624475622 = (mFirstDayOfWeek);
@@ -450,7 +448,6 @@ public class CalendarView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.760 -0400", hash_original_method = "2EC5480533B2BF54D56B2049BA7CA5D7", hash_generated_method = "40E23822C44A26C2CDF30A58488DCCDD")
     public void setOnDateChangeListener(OnDateChangeListener listener) {
         mOnDateChangeListener = listener;
@@ -1095,7 +1092,6 @@ for(int i = 1, count = mDayNamesHeader.getChildCount();i < count;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.779 -0400", hash_original_method = "B5E95894B654555C190BA20C07877305", hash_generated_method = "D86E99F27510C66A52001A51B2667C04")
         public Calendar getSelectedDay() {
 Calendar var0A52F701728BCB2179FFB504BA6EC2B2_1329731196 =             mSelectedDate;
@@ -1106,7 +1102,6 @@ Calendar var0A52F701728BCB2179FFB504BA6EC2B2_1329731196 =             mSelectedD
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.780 -0400", hash_original_method = "F04F5B9FBE7B2AAA41BE9F0558597E2D", hash_generated_method = "483F4D5D9A83612E0B34C10BB83262A3")
         @Override
         public int getCount() {
@@ -1118,7 +1113,6 @@ Calendar var0A52F701728BCB2179FFB504BA6EC2B2_1329731196 =             mSelectedD
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.780 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "587F803C5B04705DFF5F1286C607DDB2")
         @Override
         public Object getItem(int position) {
@@ -1131,7 +1125,6 @@ Object var540C13E9E156B687226421B24F2DF178_1580879482 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.780 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "A76F13D569AACD4A021DE32C7ACCFDEA")
         @Override
         public long getItemId(int position) {
@@ -1272,7 +1265,6 @@ View var4B3D7F76B00CE0C2FF9DC309BE93B973_546269996 =             weekView;
             }
 
 
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.782 -0400", hash_original_method = "685EB340645172BC9B4FCDA0078720CA", hash_generated_method = "7187EE10D8ECCE687027B3CD73E00410")
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
@@ -1429,7 +1421,6 @@ for(;i < mNumCells;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.788 -0400", hash_original_method = "132ACA3161A5E95F30BDE89FA7E699D9", hash_generated_method = "DB208A928CD8A987C451AC4262388B0F")
         public int getMonthOfFirstWeekDay() {
             int var6CD19E346791C18197AD7EF90BB2B5BC_1105897188 = (mMonthOfFirstWeekDay);
@@ -1440,7 +1431,6 @@ for(;i < mNumCells;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.788 -0400", hash_original_method = "CD3B8D9B4D0AF03A28010706DE17FBAB", hash_generated_method = "98539E6F3B6EED65F361D90DE0929472")
         public int getMonthOfLastWeekDay() {
             int var4C5CE45FAFF7E4CAA32AD4D878ED3E93_1436400901 = (mLastWeekDayMonth);
@@ -1451,7 +1441,6 @@ for(;i < mNumCells;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.788 -0400", hash_original_method = "58CF666CFDF77BB5B426C92097C0AA79", hash_generated_method = "12B68AA9153DAF4671EF6FFE7FC1E8D1")
         public Calendar getFirstDay() {
 Calendar var6B7DB0E14A75815A70795AEE528E21DF_1493201770 =             mFirstDay;

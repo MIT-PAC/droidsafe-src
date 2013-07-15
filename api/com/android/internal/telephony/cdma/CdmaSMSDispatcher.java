@@ -62,7 +62,6 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.701 -0400", hash_original_method = "6D5F69086FA9BAB54819022B7E1C6EB4", hash_generated_method = "80D407A54A94447C6E35DFD5DF927FC8")
     @Override
     public void dispose() {
@@ -72,7 +71,6 @@ final class CdmaSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.702 -0400", hash_original_method = "77401C8F23584A16465C2C7060977D74", hash_generated_method = "24E2EE983CA8A965921E2187E497CF8D")
     @Override
     protected String getFormat() {
@@ -84,7 +82,6 @@ String var7E8ED78256EA5640D81A12BE6B09A2A1_1455323017 =         android.telephon
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.702 -0400", hash_original_method = "D8F9BF94E3CE828F06F15D06BD41575B", hash_generated_method = "03DD0AE38F414E7F49E6FBB331A7B67E")
     private void handleCdmaStatusReport(SmsMessage sms) {
         addTaint(sms.getTaint());
@@ -277,7 +274,6 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.707 -0400", hash_original_method = "1C79B20542F5EA033BD01F30A8B0455D", hash_generated_method = "72B7024DF51DCBBD1D6E8C4B5870D4D3")
     @Override
     protected void sendData(String destAddr, String scAddr, int destPort,
@@ -298,7 +294,6 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.707 -0400", hash_original_method = "5D58764547BE2148EE8A5F6EEE636061", hash_generated_method = "8D910942DF4C3EBFC86FE04FB66F5874")
     @Override
     protected void sendText(String destAddr, String scAddr, String text,
@@ -318,7 +313,6 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.707 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "06F269BE07D0DC44EDB7B100C6851A32")
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
@@ -333,7 +327,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_759901983 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.708 -0400", hash_original_method = "77E27619E0BAA0675283D74233CDEF70", hash_generated_method = "4DFDE733898AAFDBFC346B6AE6C7AB82")
     @Override
     protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -435,7 +428,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_759901983 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.710 -0400", hash_original_method = "8A630C8BC501F81DB51344181E02B8CE", hash_generated_method = "54988EDB67C41AB9D73A4516B7474B2D")
     @Override
     protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
@@ -468,8 +460,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_759901983 =         SmsM
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int resultToCause(int rc) {
+        private static int resultToCause(int rc) {
         switch (rc) {
         case Activity.RESULT_OK:
         case Intents.RESULT_SMS_HANDLED:
@@ -485,8 +476,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_759901983 =         SmsM
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
+        private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index) {
         index += 4;
         byte[] omaPdu = new byte[origPdu.length - index];
         System.arraycopy(origPdu, index, omaPdu, 0, omaPdu.length);

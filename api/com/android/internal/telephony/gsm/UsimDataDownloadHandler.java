@@ -104,8 +104,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
+        private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
         int length = tpduLength + 5;
         length += (tpduLength > 127 ? 2 : 1);
         if (scAddressLength != 0) {
@@ -201,8 +200,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean is7bitDcs(int dcs) {
+        private static boolean is7bitDcs(int dcs) {
         return ((dcs & 0x8C) == 0x00) || ((dcs & 0xF4) == 0xF0);
     }
 

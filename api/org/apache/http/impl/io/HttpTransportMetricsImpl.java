@@ -18,7 +18,6 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.214 -0400", hash_original_method = "7E49696C17D36DF48010DE39377AB681", hash_generated_method = "C4CF6C75448597B1EF98D6447D80A117")
     public long getBytesTransferred() {
         long var9227AA73D15265B9E3F4726608650434_1443827955 = (this.bytesTransferred);
@@ -29,7 +28,6 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.215 -0400", hash_original_method = "7CF98125B8F87A2FD19C70088B288B78", hash_generated_method = "B5449F175BF9820DC474D49437D8D9CA")
     public void setBytesTransferred(long count) {
         this.bytesTransferred = count;
@@ -38,7 +36,6 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.215 -0400", hash_original_method = "5BC15BEBDBF96C2B4749F7E80B21C1AA", hash_generated_method = "E273073A4939F9C970DA3A9120498FFC")
     public void incrementBytesTransferred(long count) {
         this.bytesTransferred += count;
@@ -47,7 +44,6 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.215 -0400", hash_original_method = "57609043FFD34118E5E2ADA78EDAAD37", hash_generated_method = "09659E599DDF8A9241FB68801CC9E8DF")
     public void reset() {
         this.bytesTransferred = 0;

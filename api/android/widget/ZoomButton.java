@@ -75,7 +75,6 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.123 -0400", hash_original_method = "6BCA096FD56C8C78BA7791883B013378", hash_generated_method = "14353E0D94FC6CE296C71F3B92D71BFF")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -98,7 +97,6 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.124 -0400", hash_original_method = "DEDF5C76C1376B1670A66754E8A8EB41", hash_generated_method = "D68C36E9625129F28B8BB01C9B1C450E")
     public void setZoomSpeed(long speed) {
         mZoomSpeed = speed;
@@ -107,7 +105,6 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.124 -0400", hash_original_method = "26BCB5A69421DEBA679FF4C8B6DA9672", hash_generated_method = "F704277BF55763B7A7C4220E169D240A")
     public boolean onLongClick(View v) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -124,7 +121,6 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.125 -0400", hash_original_method = "BFA7CE14F9602D57E8995DEC9C69E7C5", hash_generated_method = "86ABFD5D51AAC2969D6DCA84789290F3")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -141,7 +137,6 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.125 -0400", hash_original_method = "46BB6036120D403ECAC10DF2C7F6C840", hash_generated_method = "925A01D3E053CDD86E95416C9AC1521B")
     @Override
     public void setEnabled(boolean enabled) {
@@ -159,7 +154,6 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.126 -0400", hash_original_method = "F8B564AE722FC7E23EAA2F8FF5648A4E", hash_generated_method = "FEC77F2EFA72B85F4DBEACF460E82850")
     @Override
     public boolean dispatchUnhandledMove(View focused, int direction) {

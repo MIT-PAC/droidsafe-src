@@ -30,7 +30,6 @@ public class BasicScheme extends RFC2617Scheme {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.107 -0400", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "388F5C1C772B94710724A1E849A7F0D7")
     public String getSchemeName() {
 String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
@@ -54,7 +53,6 @@ String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "55F297D8F03182901153C40DE976D667")
     public boolean isComplete() {
         boolean varF04431E2940FB2099EE63A9B8E626BFD_1376477476 = (this.complete);
@@ -65,7 +63,6 @@ String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "2FE624D476337A9A71BC0B305EE55B9D")
     public boolean isConnectionBased() {
         boolean var68934A3E9455FA72420237EB05902327_944673243 = (false);

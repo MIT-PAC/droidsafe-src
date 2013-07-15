@@ -30,7 +30,6 @@ abstract class GLES20Layer extends HardwareLayer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.983 -0400", hash_original_method = "1433CF09BAF49EB0158C4CBA390321AC", hash_generated_method = "82085099D0E6A4B13361E56187376929")
     public int getLayer() {
         int var005B4338173753DA1B50DCC47C3EC00C_156292498 = (mLayer);
@@ -41,7 +40,6 @@ abstract class GLES20Layer extends HardwareLayer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.984 -0400", hash_original_method = "EC2EF6564AC27596601815B02E5CA477", hash_generated_method = "E3C35F0B3A8847B3F0B5674D16B42B53")
     @Override
      boolean copyInto(Bitmap bitmap) {
@@ -54,7 +52,6 @@ abstract class GLES20Layer extends HardwareLayer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.984 -0400", hash_original_method = "029DFD798166E5D5C7A45581B8E77BAB", hash_generated_method = "85D5A6199DD21C8291897461B969B8A5")
     @Override
      void update(int width, int height, boolean isOpaque) {
@@ -67,7 +64,6 @@ abstract class GLES20Layer extends HardwareLayer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.984 -0400", hash_original_method = "2F5D80F3F3B9905F82317A3BBAA77B2C", hash_generated_method = "C536F96D6D7D11E400EB516A9CD04970")
     @Override
      void destroy() {
@@ -99,7 +95,6 @@ abstract class GLES20Layer extends HardwareLayer {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.985 -0400", hash_original_method = "C9B02BF326BE144CFBB3A19B3133BF7D", hash_generated_method = "8A44B6F007F325C4D91D392ADD98C1FE")
         @Override
         protected void finalize() throws Throwable {
@@ -125,7 +120,6 @@ abstract class GLES20Layer extends HardwareLayer {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.986 -0400", hash_original_method = "7590F3F5AEB9FFE0334022A0C3C47C46", hash_generated_method = "FCB6BE9C7071D9FEDE0DFAB107D26AE6")
          void destroy() {
             GLES20Canvas.nDestroyLayer(mLayerId);

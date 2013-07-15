@@ -57,8 +57,7 @@ public class SmsMessage {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static SmsMessage newFromParcel(Parcel p) {
+        public static SmsMessage newFromParcel(Parcel p) {
         SmsMessageBase wrappedMessage =
                 com.android.internal.telephony.cdma.SmsMessage.newFromParcel(p);
         return new SmsMessage(wrappedMessage);
@@ -195,7 +194,6 @@ public class SmsMessage {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.587 -0400", hash_original_method = "918A2835DDADF3191B8B6CF8127F286C", hash_generated_method = "7769F524268DD45D85A6458B45305576")
     public String getServiceCenterAddress() {
 String var925E36433672E3787EB66016D3EC0AE0_1046036553 =         mWrappedSmsMessage.getServiceCenterAddress();
@@ -276,7 +274,6 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128 =         mWrappedSmsMessa
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.589 -0400", hash_original_method = "A5B6E1F6D425F99E0AE9246791CF1B08", hash_generated_method = "E8BB5AE46D8604196E6C729925F9C7FD")
     public boolean isEmail() {
         boolean var4E1F5C64E20847E31953992E560A1C78_1320747365 = (mWrappedSmsMessage.isEmail());
@@ -297,7 +294,6 @@ String var67A1D8B8DD5E36D76DD3DF492B86B2D9_421842944 =         mWrappedSmsMessag
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.589 -0400", hash_original_method = "CF41F1C32C92AADB2191A6AB99FD49D6", hash_generated_method = "F52AF8DD4A9E9802400A4074DA4A22CA")
     public String getEmailFrom() {
 String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessage.getEmailFrom();
@@ -378,7 +374,6 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.591 -0400", hash_original_method = "F61520780332A4249272ED211A1EBC6F", hash_generated_method = "5A734D34A8874A3FA3ADD7006555DAE1")
     public byte[] getPdu() {
         byte[] var6023B6186A54154A7A7D4B28633F6539_1131852732 = (mWrappedSmsMessage.getPdu());
@@ -484,7 +479,6 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.594 -0400", hash_original_method = "A866707516A0999C629C71FD5B45C6F7", hash_generated_method = "8B7F78F4CFC360816DCCBDEDA7A7B876")
         public String toString() {
 String var7D8267AB38F2C416692BE7250E9741D6_73946129 =             "SubmitPdu: encodedScAddress = "

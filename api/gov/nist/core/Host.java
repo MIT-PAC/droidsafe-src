@@ -67,7 +67,6 @@ public class Host extends GenericObject {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.310 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "3FFB189F3E8021A3F90630F3C68FF7F8")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_382899007 =         encode(new StringBuffer()).toString();
@@ -78,7 +77,6 @@ String var678B6FE61D54E5BD4E109D01C318C133_382899007 =         encode(new String
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.310 -0400", hash_original_method = "5E49E67C5D7F1A51E2BA67DE70DCB03A", hash_generated_method = "8F49074C4911863852DCDEE306DCC8FB")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -132,7 +130,6 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_232446915 =         buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.312 -0400", hash_original_method = "01D438C7CBE6320DFE75C4BCB8CCFBCD", hash_generated_method = "216FB4FD74BC28D2EDA319F66F1086A7")
     public String getHostname() {
 String varA422790FD25D792954B908E37198A455_342248920 =         hostname;
@@ -143,7 +140,6 @@ String varA422790FD25D792954B908E37198A455_342248920 =         hostname;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.312 -0400", hash_original_method = "4A9CAFF1CF2BA97BC04195E67D0EDAE7", hash_generated_method = "FCBFB17EBAB4E995F8C760BB6FD1DA12")
     public String getAddress() {
 String varA422790FD25D792954B908E37198A455_1123884881 =         hostname;
@@ -202,7 +198,6 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_437636372 =         rawIpAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.314 -0400", hash_original_method = "034E33BB1D9418D32D19E4F440D283F7", hash_generated_method = "DB42AB4E4ECBBC545008BA4A93A2CA7D")
     public void setHostname(String h) {
         addTaint(h.getTaint());
@@ -212,7 +207,6 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_437636372 =         rawIpAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.315 -0400", hash_original_method = "FD1F209D65B716B09B8932A7E5ED8BB4", hash_generated_method = "0D4212529688F498CF9EAE46CE6D9701")
     public void setHostAddress(String address) {
         addTaint(address.getTaint());
@@ -262,7 +256,6 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_437636372 =         rawIpAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.318 -0400", hash_original_method = "40D2051A869C7630B2CBDEFFB67D40A0", hash_generated_method = "941CA92A97EE75971DE6587F975186B7")
     public void setAddress(String address) {
         addTaint(address.getTaint());
@@ -272,7 +265,6 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_437636372 =         rawIpAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.318 -0400", hash_original_method = "E77AF8452BCCF2463D33B3FB98136CBC", hash_generated_method = "449660CC9CA5490C83F532C90C7B002A")
     public boolean isHostname() {
         boolean var6E3CB3F008131D3B4FB6746FA4728512_124297713 = (addressType == HOSTNAME);
@@ -283,7 +275,6 @@ String varB9A086326A3B77E8D4CF1FBB7004D18C_437636372 =         rawIpAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.319 -0400", hash_original_method = "99CC342CC6A41D10B099489516EB4814", hash_generated_method = "88C25E434A816B6B3B1C24C846A7EC1A")
     public boolean isIPAddress() {
         boolean varC972EE7FCD416E02DAA769124D36D639_570061487 = (addressType != HOSTNAME);
@@ -322,7 +313,6 @@ InetAddress varC7DF9E11D1E8039B1F9825069E449303_584328922 =         inetAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.320 -0400", hash_original_method = "22A9CB4332482AECEE114125E6F63C27", hash_generated_method = "4912F57598AAA11863F23BD1E16F216D")
     private boolean isIPv6Address(String address) {
         addTaint(address.getTaint());
@@ -334,14 +324,12 @@ InetAddress varC7DF9E11D1E8039B1F9825069E449303_584328922 =         inetAddress;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isIPv6Reference(String address) {
+        public static boolean isIPv6Reference(String address) {
         return address.charAt(0) == '['
             && address.charAt(address.length() - 1) == ']';
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.321 -0400", hash_original_method = "0C8DED4D9F69E994518D3B4A84463600", hash_generated_method = "9D8A9A2E7E27F69573053B50D17BB804")
     @Override
     public int hashCode() {

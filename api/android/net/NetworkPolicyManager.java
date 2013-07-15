@@ -215,8 +215,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isUidValidForPolicy(Context context, int uid) {
+        public static boolean isUidValidForPolicy(Context context, int uid) {
         if (uid < android.os.Process.FIRST_APPLICATION_UID
                 || uid > android.os.Process.LAST_APPLICATION_UID) {
             return false;

@@ -37,7 +37,6 @@ public final class NfcManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.696 -0400", hash_original_method = "4CC1396725247CE50C996383E5F907DD", hash_generated_method = "89DA0C0DDE0D424C0884AC83BE0A8E64")
     public NfcAdapter getDefaultAdapter() {
 NfcAdapter varD72668EDE5E63ADF9340F3D8A19FD205_423605964 =         mAdapter;

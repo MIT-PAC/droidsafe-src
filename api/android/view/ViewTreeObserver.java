@@ -336,7 +336,6 @@ public final class ViewTreeObserver {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.749 -0400", hash_original_method = "8E102E0046F857D94D6EB92859BCA09E", hash_generated_method = "6757A31BD2D65C07684C1D1B9A740BD1")
     public boolean isAlive() {
         boolean varD5ADB51FA651F2BDB10432197B9FBD03_824580910 = (mAlive);
@@ -347,7 +346,6 @@ public final class ViewTreeObserver {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.749 -0400", hash_original_method = "CE15D88AAF79A195F4E8949632256817", hash_generated_method = "ADAC88CFF01E50F749BE8EE5F2A18844")
     private void kill() {
         mAlive = false;
@@ -525,7 +523,6 @@ for(OnComputeInternalInsetsListener listener : listeners)
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.754 -0400", hash_original_method = "01F6FFADBD331B04D5C349DCEDD59961", hash_generated_method = "8DEE7B19E2DFEBD717CC580FD498B385")
         public void setTouchableInsets(int val) {
             mTouchableInsets = val;
@@ -534,7 +531,6 @@ for(OnComputeInternalInsetsListener listener : listeners)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.754 -0400", hash_original_method = "22281D8629688FB4A664F43EE105A786", hash_generated_method = "6EE76A7B1A05E9211C9FB994484392FE")
         public int getTouchableInsets() {
             int var81F903742DA4C92623CAE8BEAA067BDE_1966316786 = (mTouchableInsets);

@@ -355,7 +355,6 @@ public class DatePicker extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.033 -0400", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "56A148A33360E996D8641CCF5F084BF7")
     @Override
     public boolean isEnabled() {
@@ -423,7 +422,6 @@ public class DatePicker extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.034 -0400", hash_original_method = "E5E91372452D81D0FC87710458852870", hash_generated_method = "322E83A93BAC67867D6091CF6097204B")
     public CalendarView getCalendarView() {
 CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_895597547 =         mCalendarView;

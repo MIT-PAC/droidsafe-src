@@ -27,7 +27,6 @@ public final class ImplForWildcard implements WildcardType {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.336 -0400", hash_original_method = "0E02033FF7243902E994038D555D1587", hash_generated_method = "50CFB39C5CB29D3400C398104EF1922A")
     public Type[] getLowerBounds() throws TypeNotPresentException,
             MalformedParameterizedTypeException {
@@ -39,7 +38,6 @@ Type[] var8E000A8FFB2D6EE4356348D63AD03C33_287919653 =         superBound.getRes
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.336 -0400", hash_original_method = "F21086AF3EFC8DD73AF90E899FA34F74", hash_generated_method = "C1EC8A53BA3C195B75691953D106DE5C")
     public Type[] getUpperBounds() throws TypeNotPresentException,
             MalformedParameterizedTypeException {
@@ -51,7 +49,6 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getRe
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.337 -0400", hash_original_method = "4E6CE2D91E2326D588B30852F56501A7", hash_generated_method = "8DAE9386EC0D45D67C6690996E9B39BF")
     @Override
     public boolean equals(Object o) {
@@ -77,7 +74,6 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getRe
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.337 -0400", hash_original_method = "336948550805F35B42E4F5770BA4CC44", hash_generated_method = "F89883FD2F71B7C3FE80843481407870")
     @Override
     public int hashCode() {
@@ -91,7 +87,6 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getRe
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.338 -0400", hash_original_method = "93865AC448C11A5C9C4A3B3F15C62698", hash_generated_method = "1DC3DB93A1CA221F0A1C5BDE39A8D8E5")
     @Override
     public String toString() {

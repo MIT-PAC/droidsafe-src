@@ -73,7 +73,6 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.542 -0400", hash_original_method = "EFEC7F93A39736AF8130A49104B9A895", hash_generated_method = "90CD870133FC87AECCB31999792D3994")
     public Menu getParentMenu() {
 Menu varF208CAAF42A19269A08D768D04E791E1_733320622 =         mParentMenu;
@@ -84,7 +83,6 @@ Menu varF208CAAF42A19269A08D768D04E791E1_733320622 =         mParentMenu;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.542 -0400", hash_original_method = "B68A5ADECB21212250B72B1DD0399FE9", hash_generated_method = "F67E638FD9757A0DAB487BFE6909832A")
     public MenuItem getItem() {
 MenuItem varB8B55D922EB39771645EDB9C40F92DB5_1891286340 =         mItem;
@@ -105,7 +103,6 @@ MenuItem varB8B55D922EB39771645EDB9C40F92DB5_1891286340 =         mItem;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.542 -0400", hash_original_method = "DFDE0312E92BA6118839C252C79690F8", hash_generated_method = "9A200FA2681F212731B998B5937826EF")
     @Override
     public MenuBuilder getRootMenu() {

@@ -30,7 +30,6 @@ public class NodeListImpl implements NodeList {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.937 -0400", hash_original_method = "3686ABB43FF3696F10F1056AA01C2579", hash_generated_method = "B91DD2A3E84E4AF0DB8F1F0CC69341AF")
      void add(NodeImpl node) {
         addTaint(node.getTaint());
@@ -40,7 +39,6 @@ public class NodeListImpl implements NodeList {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.937 -0400", hash_original_method = "91DC5DE88E19C57D8C382EFD5B1079BB", hash_generated_method = "CE9A7A004FE40A85A061547AF553D941")
     public int getLength() {
         int varCA7385CBF53925F741853B4A529FBE32_1261086321 = (children.size());
@@ -51,7 +49,6 @@ public class NodeListImpl implements NodeList {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.938 -0400", hash_original_method = "41D1F200C8CAC9D2F8301DE4F00B532B", hash_generated_method = "96370D46C02F5E5175A2EBD8D68F8F9D")
     public Node item(int index) {
         addTaint(index);

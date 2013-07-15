@@ -27,7 +27,6 @@ public class ToParser extends AddressParametersParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.112 -0400", hash_original_method = "9D8B9A06C15E6D7FEEEC143ED65417C6", hash_generated_method = "56AD002D41CC2338DA3544B6131B33DE")
     public SIPHeader parse() throws ParseException {
         headerName(TokenTypes.TO);

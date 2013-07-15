@@ -42,14 +42,12 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Bitmap decodeFile(String pathName) {
+        public static Bitmap decodeFile(String pathName) {
         return decodeFile(pathName, null);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Bitmap decodeResourceStream(Resources res, TypedValue value,
+        public static Bitmap decodeResourceStream(Resources res, TypedValue value,
             InputStream is, Rect pad, Options opts) {
         if (opts == null) {
             opts = new Options();
@@ -90,8 +88,7 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Bitmap decodeResource(Resources res, int id) {
+        public static Bitmap decodeResource(Resources res, int id) {
         return decodeResource(res, id, null);
     }
 
@@ -113,8 +110,7 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts) {
+        public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts) {
         if (is == null) {
             return null;
         }
@@ -139,8 +135,7 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
+        private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
         if (bm == null || opts == null) {
             return bm;
         }
@@ -318,13 +313,11 @@ public class BitmapFactory {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.871 -0400", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "0A55D796763E8D9E6E50E72FD3E99166")
         private void requestCancel() {
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.871 -0400", hash_original_method = "1FC603D50B1CC5C62A2F5DE57FF4610A", hash_generated_method = "4C9F07CF8433D9C32575769E3132C089")
         public void requestCancelDecode() {
             mCancel = true;

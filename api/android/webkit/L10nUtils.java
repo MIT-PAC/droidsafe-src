@@ -18,8 +18,7 @@ public class L10nUtils {
     }
 
 
-        @DSModeled(DSC.BAN)
-    public static void setApplicationContext(Context applicationContext) {
+        public static void setApplicationContext(Context applicationContext) {
         mApplicationContext = applicationContext.getApplicationContext();
     }
 
@@ -34,8 +33,7 @@ public class L10nUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getLocalisedString(int id) {
+        public static String getLocalisedString(int id) {
         if (mStrings == null) {
             return loadString(id);
         }

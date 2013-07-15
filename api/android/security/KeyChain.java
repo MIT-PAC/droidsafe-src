@@ -39,8 +39,7 @@ public final class KeyChain {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static Intent createInstallIntent() {
+        public static Intent createInstallIntent() {
         Intent intent = new Intent(ACTION_INSTALL);
         intent.setClassName("com.android.certinstaller",
                             "com.android.certinstaller.CertInstallerMain");
@@ -246,7 +245,6 @@ public final class KeyChain {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.035 -0400", hash_original_method = "954EE7241574324971051CDC9EEAAD50", hash_generated_method = "AD7E82270459456EC781B9D51F5711B1")
         public IKeyChainService getService() {
 IKeyChainService var18881A382C668272945CA08D6E19E173_1025493662 =             service;

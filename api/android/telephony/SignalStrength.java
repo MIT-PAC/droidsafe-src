@@ -186,7 +186,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.316 -0400", hash_original_method = "2805E95BBC437ECAE5861EC35986FF86", hash_generated_method = "A7E9AAE67CFBB3173109CFF2547D84E6")
     protected void copyFrom(SignalStrength s) {
         mGsmSignalStrength = s.mGsmSignalStrength;
@@ -253,7 +252,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.320 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BF924AAFC3F8109C55A171F2E636BB53")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_90627874 = (0);
@@ -264,7 +262,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.320 -0400", hash_original_method = "BF744C5FBE02CF825B56C3345AF59498", hash_generated_method = "CAD8E472A47AFE9CCB4E1F8A58A7DFB6")
     public int getGsmSignalStrength() {
         int varF6D024FCBC092F8CA655B3ADD44E65F2_876911018 = (this.mGsmSignalStrength);
@@ -275,7 +272,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.321 -0400", hash_original_method = "092AE71FB082AB370F835236471B5652", hash_generated_method = "36A319C2BB4E062B814CCB92AE4F5813")
     public int getGsmBitErrorRate() {
         int var3D6B6FCA5C55C54B4E9616E3F18CCF4A_2143990266 = (this.mGsmBitErrorRate);
@@ -286,7 +282,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.321 -0400", hash_original_method = "4A3A20AF02DE258CADBBD180CAF3D12D", hash_generated_method = "3FC102228F808571BFD83473523638C6")
     public int getCdmaDbm() {
         int var1634A1D6AA6A3D50C93AE184F8CBD9B3_1990822307 = (this.mCdmaDbm);
@@ -297,7 +292,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.321 -0400", hash_original_method = "38AEFFB984E37DCE606B9F88ABDA8DE8", hash_generated_method = "28E0C622A04007DECB12CFCFBB93B79A")
     public int getCdmaEcio() {
         int var26C8A0B22A123734990D48F8274C8129_1998724156 = (this.mCdmaEcio);
@@ -308,7 +302,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.322 -0400", hash_original_method = "D895F9B1A344D14CB24D80BCC48EF38D", hash_generated_method = "BF15ADA9791653BB614C0A112A05A20D")
     public int getEvdoDbm() {
         int varE161CACFF03699C64B2E7386CC1AB736_395654295 = (this.mEvdoDbm);
@@ -319,7 +312,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.322 -0400", hash_original_method = "E512C4871B3839CD9850A80797FFBB27", hash_generated_method = "8F9440DF8525648FB66A4D53D46CA7FB")
     public int getEvdoEcio() {
         int var3E78086B484F051EAB78CE913A8DD796_1294767957 = (this.mEvdoEcio);
@@ -330,7 +322,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.322 -0400", hash_original_method = "76215695BF499679C7BA84176FCF6732", hash_generated_method = "DBB1AB0648A66659E5F775C003D75D7F")
     public int getEvdoSnr() {
         int varE1D4E57EE59C0185BEB84F195185B7B5_1793685907 = (this.mEvdoSnr);
@@ -746,7 +737,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.339 -0400", hash_original_method = "94E656AC1ABF6547309F24472B6D486E", hash_generated_method = "8AAA5DCD8306A121FF68AB134F8EBE01")
     public int getLteDbm() {
         int varC9762CBD0EAA7A95E02E0A893545B09D_1600223696 = (mLteRsrp);
@@ -757,7 +747,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.340 -0400", hash_original_method = "CDB40306822E2DC8617AD5A6BB9C97E4", hash_generated_method = "25CAE9D9E80A619AC83F8344FC9BD9FF")
     public int getLteLevel() {
         int levelLteRsrp = 0;
@@ -822,7 +811,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.342 -0400", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "1DA1C507301F60D31D2553FBC50FF1C7")
     public boolean isGsm() {
         boolean var26B70D966913FAE5824B1B6647F5C9F3_550341086 = (this.isGsm);
@@ -833,7 +821,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.343 -0400", hash_original_method = "77932B1FC1CD240B3EE054141A5B543F", hash_generated_method = "CB1D066EC29351B5386E541785F848CA")
     @Override
     public int hashCode() {
@@ -859,7 +846,6 @@ public class SignalStrength implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.345 -0400", hash_original_method = "42740862A2861DE7D9325894DE272263", hash_generated_method = "585A511ACF01D7D60DE4D5A996F7AB2F")
     @Override
     public boolean equals(Object o) {

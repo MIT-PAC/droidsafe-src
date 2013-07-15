@@ -676,7 +676,6 @@ String var2460B846747F8B22185AD8BE722266A5_1656700004 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.392 -0400", hash_original_method = "F87637A67413F385021CCAE210B2BF25", hash_generated_method = "C93A56F5B4B25B9088C3CD55959CD473")
     public void toShortString(StringBuilder sb) {
         addTaint(sb.getTaint());

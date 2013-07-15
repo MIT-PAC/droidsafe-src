@@ -135,7 +135,6 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.535 -0400", hash_original_method = "523EC9820CA9D9B6EC1AAD0F0C3D4C58", hash_generated_method = "7D4617D75530B0050584F0EA3C734CE7")
     public int getAppWidgetId() {
         int var905A4BBD5E07D0C7A80D7BBC86A773FE_939149883 = (mAppWidgetId);
@@ -146,7 +145,6 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.535 -0400", hash_original_method = "FF9792E81F5B9850F94285F82FEF7EB6", hash_generated_method = "BADF6804EA53F3ECA51CD22FA7BBD143")
     public AppWidgetProviderInfo getAppWidgetInfo() {
 AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1253630836 =         mInfo;
@@ -565,7 +563,6 @@ View var8BB2C09B3FFE775E9F9FBFEC00A28511_97562639 =         tv;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.556 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AB0373EB2A308473D3F242711BA504DD")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1844620329 = (0);

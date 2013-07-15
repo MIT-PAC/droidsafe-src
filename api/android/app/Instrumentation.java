@@ -80,7 +80,6 @@ public class Instrumentation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.544 -0400", hash_original_method = "4B024CDE66137DA3ED66BF57127A0E80", hash_generated_method = "618433C04A9C5C61D907C7BAF3E63003")
     public void onCreate(Bundle arguments) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -108,7 +107,6 @@ public class Instrumentation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.545 -0400", hash_original_method = "0451E38101EC2D69951E664FB36904F0", hash_generated_method = "C270D6AECB942165605F46F9C723CFA1")
     public void onStart() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -116,7 +114,6 @@ public class Instrumentation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.546 -0400", hash_original_method = "8DC9492B498FF3067475C41C79EEAB3B", hash_generated_method = "0404899803F2573CB6678DAE40A1E027")
     public boolean onException(Object obj, Throwable e) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -217,7 +214,6 @@ public class Instrumentation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.550 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -225,7 +221,6 @@ public class Instrumentation {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.551 -0400", hash_original_method = "0612F59C08E6EE31E243F52D2CCB68AA", hash_generated_method = "5054BA76A1B6A9A7BB5F1DAE55810B37")
     public Context getContext() {
 Context var7C973FF6A647252FD84A74D84093D275_931504749 =         mInstrContext;
@@ -236,7 +231,6 @@ Context var7C973FF6A647252FD84A74D84093D275_931504749 =         mInstrContext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.551 -0400", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "42057771BD358E238279147A24F687C1")
     public ComponentName getComponentName() {
 ComponentName var05A4B5AD7D0B7D1F57C4FD8455C615E7_740339770 =         mComponent;
@@ -247,7 +241,6 @@ ComponentName var05A4B5AD7D0B7D1F57C4FD8455C615E7_740339770 =         mComponent
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.551 -0400", hash_original_method = "D1026223DF11B7056861FB0AA4B64828", hash_generated_method = "282D863DC590F8B80811AE90CAC3DE81")
     public Context getTargetContext() {
 Context var4908ADF1214C45A06C620C4F7C556D83_1452914291 =         mAppContext;
@@ -360,7 +353,6 @@ Context var4908ADF1214C45A06C620C4F7C556D83_1452914291 =         mAppContext;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.560 -0400", hash_original_method = "834B647755C86ED587A771C499B38AF8", hash_generated_method = "02C48280113E8E874755340038EBCA02")
     public Activity startActivitySync(Intent intent) {
         addTaint(intent.getTaint());
@@ -790,7 +782,6 @@ for(int i = 0;i < events.length;i++)
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.582 -0400", hash_original_method = "1A9EF24656896AC4FCE906BFB43593E0", hash_generated_method = "9846480DD37655701EAB993C743406A9")
     public Application newApplication(ClassLoader cl, String className, Context context) throws InstantiationException, IllegalAccessException, 
             ClassNotFoundException {
@@ -858,7 +849,6 @@ Activity var8CEBAC25E19008E785695F06EF11C2CD_1044966438 =         activity;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.589 -0400", hash_original_method = "67A9E29CAF7C169812898E8BB0812F51", hash_generated_method = "B55A298B6522D318F669DA9A12A66B15")
     public Activity newActivity(ClassLoader cl, String className,
             Intent intent) throws InstantiationException, IllegalAccessException,
@@ -963,7 +953,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.595 -0400", hash_original_method = "5C607C7DDC680DB12532E9DB6F9CBC1F", hash_generated_method = "F828474EF8A20C9EC836F8E06653A174")
     public void callActivityOnNewIntent(Activity activity, Intent intent) {
         addTaint(intent.getTaint());
@@ -1162,7 +1151,6 @@ Bundle var238ECCC9872FFCA0B3C3DB83598FF044_2086314797 =         results;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.614 -0400", hash_original_method = "2C6BFD417D58A73C3437D9BD22014CB6", hash_generated_method = "102DEA7C1B2D2F7EF7A081235242050A")
     public ActivityResult execStartActivity(
             Context who, IBinder contextThread, IBinder token, Activity target,
@@ -1266,7 +1254,6 @@ for(int i=0;i<intents.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.616 -0400", hash_original_method = "D8D9B46CC68EC6EB44E02EECB84F8BB9", hash_generated_method = "C86E3A6B11DABDB370859AA45E9702ED")
     public ActivityResult execStartActivity(
         Context who, IBinder contextThread, IBinder token, Fragment target,
@@ -1644,7 +1631,6 @@ Activity varB5053E025797B3BF768F5C37934C244D_2087176395 =                     re
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.633 -0400", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "2E9746437A355BD7EFBA9E3517C45C4E")
         public int getResultCode() {
             int varE5CED19E692744D577EC9F38B767773F_1111679257 = (mResultCode);
@@ -1655,7 +1641,6 @@ Activity varB5053E025797B3BF768F5C37934C244D_2087176395 =                     re
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.634 -0400", hash_original_method = "230B95D397C0359A2CE808B90BABA149", hash_generated_method = "9D97A707088BC8DABA21A74193578A83")
         public Intent getResultData() {
 Intent var7AF81C367EA4623980C8741236739982_230886168 =             mResultData;
@@ -1723,7 +1708,6 @@ Intent var7AF81C367EA4623980C8741236739982_230886168 =             mResultData;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.636 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
             // ---------- Original Method ----------

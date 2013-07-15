@@ -83,7 +83,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.374 -0400", hash_original_method = "34F755352C02DF9FD9E8CDE125547BA1", hash_generated_method = "5F21128ECA585D33E8E9E59C7C15056C")
     public boolean getDesiredPowerState() {
         boolean varC89D1AF0AEE8D0A2CF4FED65DAD30DE6_1369310093 = (mDesiredPowerState);
@@ -115,7 +114,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.375 -0400", hash_original_method = "14E5206D7B7C852E20FD1241EAC246C6", hash_generated_method = "7B0E8ABD8DC07994B7A9E1EE187339C5")
     public void unregisterForRoamingOn(Handler h) {
         addTaint(h.getTaint());
@@ -146,7 +144,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.376 -0400", hash_original_method = "D1DD4EA819F10675CB2C3CAADBABF939", hash_generated_method = "397CA0B434CB1A23785E285D6904FC55")
     public void unregisterForRoamingOff(Handler h) {
         addTaint(h.getTaint());
@@ -167,7 +164,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.377 -0400", hash_original_method = "58B5CA04F87B88A9C6B403E745D26733", hash_generated_method = "92BDBC4BB37F973F511A951B7426B3A8")
     public void setRadioPower(boolean power) {
         mDesiredPowerState = power;
@@ -178,7 +174,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.378 -0400", hash_original_method = "7C68C47F455301AB5237FB081DD87707", hash_generated_method = "A64305A3C5AE0A15B7CF187088C81618")
     public void enableSingleLocationUpdate() {
     if(mWantSingleLocationUpdate || mWantContinuousLocationUpdates)        
@@ -192,7 +187,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.378 -0400", hash_original_method = "5E0DE008FDA53D6E066E09E5FF8905A8", hash_generated_method = "5EFDEA145548F7C6421C58FEF1199223")
     public void enableLocationUpdates() {
     if(mWantSingleLocationUpdate || mWantContinuousLocationUpdates)        
@@ -206,7 +200,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.378 -0400", hash_original_method = "F0181FD0DF80A6AAF51E269E67B33EC8", hash_generated_method = "13587F63A9CDB9E1532CC6B19C05B013")
     protected void disableSingleLocationUpdate() {
         mWantSingleLocationUpdate = false;
@@ -222,7 +215,6 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.379 -0400", hash_original_method = "70DFFFF4880D84ACE04FFF62B87B40F7", hash_generated_method = "3D7F68D0C9994935E6BCCD955EC76188")
     public void disableLocationUpdates() {
         mWantContinuousLocationUpdates = false;
@@ -316,7 +308,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.381 -0400", hash_original_method = "522E6F692E8A34CBC0692BA5B00B104A", hash_generated_method = "0228F11F54DF21E5EAE442F3DFB7E637")
     public void unregisterForDataConnectionAttached(Handler h) {
         addTaint(h.getTaint());
@@ -347,7 +338,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.382 -0400", hash_original_method = "EDB8FFB895F180442CD81D10E9DCB320", hash_generated_method = "339DDA0B6A0646C1EC551F1E5E32A252")
     public void unregisterForDataConnectionDetached(Handler h) {
         addTaint(h.getTaint());
@@ -378,7 +368,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.382 -0400", hash_original_method = "724BCD9A17C4DC5B22474701A65D5E92", hash_generated_method = "D99859EEA20F834B51D579FE8C1E10C2")
     public void unregisterForNetworkAttached(Handler h) {
         addTaint(h.getTaint());
@@ -409,7 +398,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.383 -0400", hash_original_method = "9066DA15695A4B8D83C2DCD56A112C2B", hash_generated_method = "BDEE252955A662FCAAFCAEF3308662EC")
     public void unregisterForPsRestrictedEnabled(Handler h) {
         addTaint(h.getTaint());
@@ -440,7 +428,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.384 -0400", hash_original_method = "3E796B0EF9A5478F633347EEDEC69A91", hash_generated_method = "0E77F3FE97D43173ED8E4F975A49C3F9")
     public void unregisterForPsRestrictedDisabled(Handler h) {
         addTaint(h.getTaint());
@@ -489,7 +476,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.385 -0400", hash_original_method = "67059C8AF83909E1964C0331470598CC", hash_generated_method = "E3227FB4AA91ABF44EE1CB591824E9C8")
     public boolean processPendingRadioPowerOffAfterDataOff() {
         synchronized
@@ -526,7 +512,6 @@ switch(msg.what){
     protected abstract void hangupAndPowerOff();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.386 -0400", hash_original_method = "CCBC34A7562606F2023BFC5649B6E19A", hash_generated_method = "F6D15879E1DF2FFC771820A47AF4ACD6")
     protected void cancelPollState() {
         pollingContext = new int[1];

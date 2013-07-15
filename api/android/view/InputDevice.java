@@ -58,7 +58,6 @@ public final class InputDevice implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.824 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "D472F103AF15DC72E60B2C2AF61E3389")
     public int getId() {
         int var6AC7F06B6413A1BE9C136DC7DF0D2B60_1352459076 = (mId);
@@ -69,7 +68,6 @@ public final class InputDevice implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.824 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "345E92494D894721CFD8647887DC5BD4")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_133733504 =         mName;
@@ -80,7 +78,6 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_133733504 =         mName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.825 -0400", hash_original_method = "3BD5CDD2AD0F6E345998577876EA9513", hash_generated_method = "B1797F9D34F342B00423D1A9507C0821")
     public int getSources() {
         int varDB16CA429360673C225135A6E95335E5_754290897 = (mSources);
@@ -91,7 +88,6 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_133733504 =         mName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.825 -0400", hash_original_method = "3E019E9C92E6EAD3726AE49F913F1619", hash_generated_method = "EC5A5AE8EE5EB2199EB5165FD92128A2")
     public int getKeyboardType() {
         int var4F373ED5F3CABA41929A1177EB3FB926_2001164075 = (mKeyboardType);
@@ -112,7 +108,6 @@ KeyCharacterMap var0C467EEC84F0F598C0D81E03A823790D_308097438 =         KeyChara
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.825 -0400", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "9FF63717585EDD893B06915A18C463F0")
      String getKeyCharacterMapFile() {
 String varC41B4C4A25BA902F7F690BA9A2B25586_678091145 =         mKeyCharacterMapFile;
@@ -283,7 +278,6 @@ for(int i = 0;i < numRanges;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.826 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "93B3070E7AB8A6092F518D5D90CE5597")
     @Override
     public int describeContents() {
@@ -401,7 +395,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.828 -0400", hash_original_method = "7AA123496C72318A01ADA9E2FDF13D66", hash_generated_method = "D0F97BC044F85C098EB0731A2ABC4C67")
         public int getAxis() {
             int varDDDC097689F9367A976032A7CB2D356F_443367582 = (mAxis);
@@ -412,7 +405,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.828 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "C9A424DFB73AEE330584CB8B4F789CF9")
         public int getSource() {
             int var6917951DFB797D97827BAAA584F128DE_1759150339 = (mSource);
@@ -423,7 +415,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "5BD2FEA7B11B9283C78F11EA439073DF", hash_generated_method = "3424212D1CD872B81591AC72482C030B")
         public float getMin() {
             float var5226ADEF3F3B32783B4143237DC7F62E_458243706 = (mMin);
@@ -434,7 +425,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "CDE9D2624870C8EBE80058272C14174B", hash_generated_method = "6D118BD00C9FF440DB0860934B1D535C")
         public float getMax() {
             float varC886C6FF92A43B3F6833B7BAFD354FBA_1644291953 = (mMax);
@@ -445,7 +435,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "FCC48134B6B008CC9CD869CCEF03FE5F", hash_generated_method = "3D556B7E4E09BF75C283FD4A5ABA12E4")
         public float getRange() {
             float varBCE7EEE240F58C938F84D6A44D3B7270_1892877933 = (mMax - mMin);
@@ -456,7 +445,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "6E70447A0F19559DDEE9B218BFC4E0A9", hash_generated_method = "1D6337AC8D31E29D19FB169B3C7AC03A")
         public float getFlat() {
             float varC5775080456E320FD2BA8673FDF85440_198376123 = (mFlat);
@@ -467,7 +455,6 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "6C32BE9CB35AEE464A215A2BDA6324A6", hash_generated_method = "6471731E1309DC76A95EA00C613FD64E")
         public float getFuzz() {
             float varA0A8D80651D8BE9B0B3FA9DF5C043C6F_889038023 = (mFuzz);

@@ -113,7 +113,6 @@ public class OverScrollGlow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.859 -0400", hash_original_method = "898E1992D368021CDA53745F0D37B2ED", hash_generated_method = "DB9138BBE530C1A27762C46B9EBC1FDA")
     public void setOverScrollDeltas(int deltaX, int deltaY) {
         mOverScrollDeltaX = deltaX;

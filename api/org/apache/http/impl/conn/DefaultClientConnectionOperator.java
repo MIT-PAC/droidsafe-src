@@ -236,7 +236,6 @@ for(int i = 0;i < addresses.length;++i)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.810 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "59042B2CF1FC4CDCDBDD66CFB82220B7")
     protected void prepareSocket(Socket sock, HttpContext context,
                                  HttpParams params) throws IOException {

@@ -36,7 +36,6 @@ public final class InfoAccessSyntax extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.108 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "4EF27CF4F5C72E4CFA9D2A1262266485")
     @Override
     public byte[] getEncoded() {
@@ -55,13 +54,11 @@ public final class InfoAccessSyntax extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
+        public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
         return ((InfoAccessSyntax) ASN1.decode(encoding));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.108 -0400", hash_original_method = "CB86A2DBB1FE1A1292A1258597C50E5F", hash_generated_method = "0B9E3F6BEED6AD2DC19A9A4C91970B63")
     @Override
     public String toString() {
@@ -93,7 +90,6 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_377830177 =         res.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.109 -0400", hash_original_method = "781E3C6C6D65C7307F0C093EFF5048AD", hash_generated_method = "C1FFA07B3D8EE88D7BBFDD4921489C51")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

@@ -81,7 +81,6 @@ public class UsbRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.005 -0400", hash_original_method = "11B9FE3CCFCADE645E006FF088DA13C2", hash_generated_method = "3FC196492185F1ED2C4F4BA77840B6EE")
     public UsbEndpoint getEndpoint() {
 UsbEndpoint var1E2C04928ABBA6D082564726F43A8D42_1699042542 =         mEndpoint;
@@ -92,7 +91,6 @@ UsbEndpoint var1E2C04928ABBA6D082564726F43A8D42_1699042542 =         mEndpoint;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.006 -0400", hash_original_method = "B71E58093DB1269AF1945AD07DDB8F74", hash_generated_method = "316C2B2C476165A0146FA9370DA4F324")
     public Object getClientData() {
 Object varB655F44450C96892E9EC7109124959C6_357653487 =         mClientData;
@@ -103,7 +101,6 @@ Object varB655F44450C96892E9EC7109124959C6_357653487 =         mClientData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.006 -0400", hash_original_method = "D9B34A9E5333EFBBF13F29A3015D9990", hash_generated_method = "886F50FCD9BFB9352373280B6BF2CFC1")
     public void setClientData(Object data) {
         mClientData = data;
@@ -192,7 +189,6 @@ Object varB655F44450C96892E9EC7109124959C6_357653487 =         mClientData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.009 -0400", hash_original_method = "088D546DD8E640FE6DF053A8179CD4B6", hash_generated_method = "56188DB14972BC281FC1E4C398F01052")
     private boolean native_init(UsbDeviceConnection connection, int ep_address,
             int ep_attributes, int ep_max_packet_size, int ep_interval) {
@@ -201,13 +197,11 @@ Object varB655F44450C96892E9EC7109124959C6_357653487 =         mClientData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.009 -0400", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "2E0BD664A18EDEE4C394D0A3A394EB28")
     private void native_close() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.010 -0400", hash_original_method = "7F13ABFE9FDE97F40DC7842504BAE184", hash_generated_method = "223F7D2E4DE0D0972C1CAB01DB2CE644")
     private boolean native_queue_array(byte[] buffer, int length, boolean out) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1405346445 = getTaintBoolean();
@@ -215,13 +209,11 @@ Object varB655F44450C96892E9EC7109124959C6_357653487 =         mClientData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.010 -0400", hash_original_method = "3BDF4594393C8A1BD126F313DABD0D0F", hash_generated_method = "14C0D08C05C45945D5BFE9DE18F35A99")
     private void native_dequeue_array(byte[] buffer, int length, boolean out) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.011 -0400", hash_original_method = "E7AB577A437B8CBAAC35FF91F8C41F2B", hash_generated_method = "18C208A9A06AD1C0A5B744E1C49BAD72")
     private boolean native_queue_direct(ByteBuffer buffer, int length, boolean out) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382933643 = getTaintBoolean();
@@ -229,13 +221,11 @@ Object varB655F44450C96892E9EC7109124959C6_357653487 =         mClientData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.011 -0400", hash_original_method = "558CB787B8354E17E879C85035FE4714", hash_generated_method = "567EC500351D45B790D82131561103CB")
     private void native_dequeue_direct() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.011 -0400", hash_original_method = "EF977425574389A96D73B721035A87F5", hash_generated_method = "4754C703378575CE3879B18193E524E2")
     private boolean native_cancel() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_542075696 = getTaintBoolean();

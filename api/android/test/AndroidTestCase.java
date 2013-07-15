@@ -26,7 +26,6 @@ public class AndroidTestCase extends TestCase {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.762 -0400", hash_original_method = "C075C1EA684B5A9C947727B1963E4CB2", hash_generated_method = "33B8667659E021345D7AE66A5095EA4B")
     @Override
     protected void setUp() throws Exception {
@@ -36,7 +35,6 @@ public class AndroidTestCase extends TestCase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.762 -0400", hash_original_method = "2BD388E2F32CC4B26827F8032514E9AF", hash_generated_method = "F0A72738E6C6EEAEB8D116968B7166EC")
     @Override
     protected void tearDown() throws Exception {
@@ -46,7 +44,6 @@ public class AndroidTestCase extends TestCase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.762 -0400", hash_original_method = "A28E17AE7E99D1F277F3747A57A4A95C", hash_generated_method = "7835C711021F03AC3B0467DA037450F8")
     public void testAndroidTestCaseSetupProperly() {
         assertNotNull("Context is null. setContext should be called before tests are run",
@@ -57,7 +54,6 @@ public class AndroidTestCase extends TestCase {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.763 -0400", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "6F13A8B42448B2C5D39C1B275EFDE141")
     public void setContext(Context context) {
         mContext = context;
@@ -66,7 +62,6 @@ public class AndroidTestCase extends TestCase {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.763 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "5714452324EFE025684D3ED30960D018")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_72938778 =         mContext;
@@ -77,7 +72,6 @@ Context var178E2AD52D6FBBB503F908168856B574_72938778 =         mContext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.764 -0400", hash_original_method = "3848B0B3D63F14BFB1A8E29618D82C34", hash_generated_method = "B699A63D99510D00DDB5F97C782A1536")
     public void setTestContext(Context context) {
         mTestContext = context;
@@ -86,7 +80,6 @@ Context var178E2AD52D6FBBB503F908168856B574_72938778 =         mContext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.764 -0400", hash_original_method = "0FA51A2375E728630821E2E4824DA56A", hash_generated_method = "D793BE007119A2F6688621F7C2533F08")
     public Context getTestContext() {
 Context var76636B45E4D1C87FF9777E5D70C7AB46_1186400631 =         mTestContext;
@@ -132,7 +125,6 @@ Context var76636B45E4D1C87FF9777E5D70C7AB46_1186400631 =         mTestContext;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.765 -0400", hash_original_method = "CB8C127D61BF3BFB6D4AA0767F4C3E81", hash_generated_method = "335B0936AD8373635B60B7798BB1BA92")
     public void assertReadingContentUriRequiresPermission(Uri uri, String permission) {
         addTaint(permission.getTaint());
@@ -160,7 +152,6 @@ Context var76636B45E4D1C87FF9777E5D70C7AB46_1186400631 =         mTestContext;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.765 -0400", hash_original_method = "945434805312A02DD9F6BB0BD9CF6A31", hash_generated_method = "385844784677AB04DD2F4019B1446219")
     public void assertWritingContentUriRequiresPermission(Uri uri, String permission) {
         addTaint(permission.getTaint());

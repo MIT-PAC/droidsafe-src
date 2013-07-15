@@ -224,8 +224,7 @@ public final class System {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static SecurityManager getSecurityManager() {
+        public static SecurityManager getSecurityManager() {
         return null;
     }
 
@@ -237,8 +236,7 @@ public final class System {
 	}
 
     
-        @DSModeled(DSC.SAFE)
-    public static String lineSeparator() {
+        public static String lineSeparator() {
         return lineSeparator;
     }
 
@@ -300,8 +298,7 @@ public final class System {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setProperties(Properties p) {
+        public static void setProperties(Properties p) {
         systemProperties = p;
     }
 

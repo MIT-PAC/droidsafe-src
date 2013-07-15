@@ -77,7 +77,6 @@ public class JsResult {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.507 -0400", hash_original_method = "0E860B2505C14EEFDBCB2EDE7B7F93FE", hash_generated_method = "90010F3DCBEA88A5D9DE027215972ED1")
      void handleDefault() {
         setReady();

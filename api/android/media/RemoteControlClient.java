@@ -266,7 +266,6 @@ MetadataEditor varED224B1BF4EAE660E8B6808A4D079108_1604846232 =         editor;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.542 -0400", hash_original_method = "2C35ADA55DC65E9D8CCC19BDAA7D2B4B", hash_generated_method = "9AD56FA2A4BC849436766B6C6753F712")
     public PendingIntent getRcMediaIntent() {
 PendingIntent var1596228B9A06056CB18AE26D216C4D1A_692998856 =         mRcMediaIntent;
@@ -277,7 +276,6 @@ PendingIntent var1596228B9A06056CB18AE26D216C4D1A_692998856 =         mRcMediaIn
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.542 -0400", hash_original_method = "6031DEC176ACCB06C28473E7885E0907", hash_generated_method = "2C5D3E18BF9EAC8F82A922CD3A925400")
     public IRemoteControlClient getIRemoteControlClient() {
 IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mIRCC;
@@ -288,7 +286,6 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.542 -0400", hash_original_method = "1D4279FF389DE00E45CE62733E438945", hash_generated_method = "7BE69845830A5C30F8E86A0E732E3185")
     private void detachFromDisplay_syncCacheLock() {
         mRcDisplay = null;
@@ -456,7 +453,6 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.546 -0400", hash_original_method = "6CA13622614E338BD9C3EB3C00B6EAD4", hash_generated_method = "CE1E34C2269255946FE14815078895D2")
     private void onNewCurrentClientGen(int clientGeneration) {
         synchronized
@@ -470,7 +466,6 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.547 -0400", hash_original_method = "53EC796651633C35ADEE8DE59FBA0A28", hash_generated_method = "7EB3D35BCC5B940E229808DC7334D943")
     private void onPlugDisplay(IRemoteControlDisplay rcd) {
         synchronized
@@ -539,8 +534,7 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041 =         bitmap;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean validTypeForKey(int key, int[] validKeys) {
+        private static boolean validTypeForKey(int key, int[] validKeys) {
         try {
             for (int i = 0 ; ; i++) {
                 if (key == validKeys[i]) {

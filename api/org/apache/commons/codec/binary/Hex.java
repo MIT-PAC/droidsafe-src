@@ -44,8 +44,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static char[] encodeHex(byte[] data) {
+        public static char[] encodeHex(byte[] data) {
         int l = data.length;
         char[] out = new char[l << 1];
         for (int i = 0, j = 0; i < l; i++) {

@@ -99,7 +99,6 @@ for(int i = 0;i < mColumns;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.325 -0400", hash_original_method = "E80F8248AEB29BC6824FCA0E99840E40", hash_generated_method = "023C92C55A5CCD9C4772B1FAF775CE48")
     public void deleteAt(int row, int count) {
         addTaint(row);
@@ -119,7 +118,6 @@ for(int i = 0;i < mColumns;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.325 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "B406F0AC07FB02825EC3BF1FA9AFDA26")
     public int size() {
         int var60FCE0CE49C68973BD6EAD5B2D3866D1_1459357090 = (mRows - mRowGapLength);
@@ -130,7 +128,6 @@ for(int i = 0;i < mColumns;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.326 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "4590DCB26BDEB902D87D1F061EC74E7E")
     public int width() {
         int var11C985F30142FD30ACDDFE7CD3BD4A9B_1432516555 = (mColumns);
@@ -141,7 +138,6 @@ for(int i = 0;i < mColumns;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.328 -0400", hash_original_method = "6242267CE6FD4DA11CE3B8DDDCD83B59", hash_generated_method = "76CD3949D59289F5C314469443F38C9B")
     private void growBuffer() {
         int newsize = size() + 1;
@@ -166,7 +162,6 @@ for(int i = 0;i < mColumns;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.330 -0400", hash_original_method = "31F6FBDDD7D0FB1F20A58E1CEB067332", hash_generated_method = "5FE94BC6192458A151DB187330779CB5")
     private void moveRowGapTo(int where) {
     if(where == mRowGapStart)        
@@ -203,7 +198,6 @@ for(int j = 0;j < mColumns;j++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.331 -0400", hash_original_method = "D4D4661D97DE10B055DBC1529423C904", hash_generated_method = "A1FB8E7AC3A82954571F9B34F02DA715")
     public void dump() {
 for(int i = 0;i < mRows;i++)

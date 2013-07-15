@@ -31,7 +31,6 @@ public class StatusBarIconList implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.523 -0400", hash_original_method = "0EC7FD83FC46EFCC709C5A111EEA0E42", hash_generated_method = "92BFAAE77352478DAF50A241651F863D")
     public void readFromParcel(Parcel in) {
         this.mSlots = in.readStringArray();
@@ -67,7 +66,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.524 -0400", hash_original_method = "65DAF69F4AC762C1C1797457361FBB3F", hash_generated_method = "02BEFEDA806A49DF5F1A6C2D78732652")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -115,7 +113,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.525 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0931F9B5F1DC18E30FE1A7E4F24362DD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_958060689 = (0);
@@ -126,7 +123,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.525 -0400", hash_original_method = "0586E09C5C5185E1B5D07A28F24AD5B7", hash_generated_method = "94E99048B859037175F7694D7CCE7F8B")
     public void defineSlots(String[] slots) {
         addTaint(slots[0].getTaint());
@@ -147,7 +143,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.526 -0400", hash_original_method = "8024CC157D8FAF0FCD4261460DE3C083", hash_generated_method = "51D930FBE997FF6253C99AC444CC1CB7")
     public int getSlotIndex(String slot) {
         addTaint(slot.getTaint());
@@ -175,7 +170,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.526 -0400", hash_original_method = "18E8290E0FC9CEC842564D5A893D75F8", hash_generated_method = "661EED0510E86F30E6090F1BADB87F5A")
     public int size() {
         int var7FEA67C242D34EE38B78C60F1C771922_810295943 = (mSlots.length);
@@ -186,7 +180,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.527 -0400", hash_original_method = "F5C28F866C5BC55B13E5B475658140A5", hash_generated_method = "AC62024623008080371D9E7FBC0FCB36")
     public void setIcon(int index, StatusBarIcon icon) {
         mIcons[index] = icon.clone();
@@ -195,7 +188,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.540 -0400", hash_original_method = "5EB075B9B4A8FCAA3C94C3EC3DFC81DD", hash_generated_method = "84A66CD0BE0474DA3AABDED324FB9352")
     public void removeIcon(int index) {
         mIcons[index] = null;
@@ -204,7 +196,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.540 -0400", hash_original_method = "28B506564CF04E7E4762309FF5F1124B", hash_generated_method = "B82C557A21CADAE1193C8C04D1A8DCD5")
     public String getSlot(int index) {
         addTaint(index);
@@ -216,7 +207,6 @@ String varAF217A4CA52EBC3C66857A54F12B3111_1443897770 =         mSlots[index];
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.540 -0400", hash_original_method = "6B1D8C3B652540022F161D426C6FAB9E", hash_generated_method = "4EFA888BA8A8468D7999ABF6FDAFB935")
     public StatusBarIcon getIcon(int index) {
         addTaint(index);
@@ -228,7 +218,6 @@ StatusBarIcon var8139DC844EAAE707D899B460381F3A2F_804270408 =         mIcons[ind
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.541 -0400", hash_original_method = "3DC98D18577B41896086CB1A25B66967", hash_generated_method = "A8B56AC2581A4CE72C9134F720F2B941")
     public int getViewIndex(int index) {
         addTaint(index);
@@ -254,7 +243,6 @@ for(int i=0;i<index;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.541 -0400", hash_original_method = "2696800C6093D03F49CA8649D9AB9ADB", hash_generated_method = "D82F341A3DCEADA9FB585ED78B08AAC0")
     public void copyFrom(StatusBarIconList that) {
     if(that.mSlots == null)        
@@ -289,7 +277,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.541 -0400", hash_original_method = "CDB2EE3714C17FCEED2F6D337D2E6DCE", hash_generated_method = "F239414EA1AE8DF0FD02480EC210817F")
     public void dump(PrintWriter pw) {
         addTaint(pw.getTaint());

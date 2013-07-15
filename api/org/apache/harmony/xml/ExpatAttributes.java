@@ -357,7 +357,6 @@ String varE07B6E3B798DFD23138E54E703D445BD_1262533456 =         getValueForQName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.888 -0400", hash_original_method = "9C2FF3514BF1A56FDD02B5A5C31F714B", hash_generated_method = "89627B71E85340B676FC2D21222B8514")
     protected void freeAttributes(int pointer) {
     }

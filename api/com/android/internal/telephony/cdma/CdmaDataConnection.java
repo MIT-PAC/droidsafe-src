@@ -85,7 +85,6 @@ String var20537B75E409F43099188469A355FDC5_566342555 =         "State=" + getCur
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.233 -0400", hash_original_method = "78F02BF6B20F01750FE4BD6062BC9879", hash_generated_method = "AC3BA7280D7B268BFC1C3E6FA57CA01B")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {
@@ -115,7 +114,6 @@ String var20537B75E409F43099188469A355FDC5_566342555 =         "State=" + getCur
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.233 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "3D39A3641D1F679267312BB4AD7C571C")
     @Override
     protected void log(String s) {

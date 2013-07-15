@@ -29,7 +29,6 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.723 -0400", hash_original_method = "671E1905A4ABBFEC9E8C5B4CD14B64F9", hash_generated_method = "084F97C58E7BDCADFF8AD86DFAC8FD32")
     public void setmIccSmsInterfaceManager(IccSmsInterfaceManager iccSmsInterfaceManager) {
         this.mIccSmsInterfaceManager = iccSmsInterfaceManager;
@@ -38,7 +37,6 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.723 -0400", hash_original_method = "DC12853B6F5A9BF9A9AEF133DEC97096", hash_generated_method = "49892E5F3638D3827C405BAB6FE98E68")
     public boolean updateMessageOnIccEf(int index, int status, byte[] pdu) throws android.os.RemoteException {
         addTaint(pdu[0]);
@@ -52,7 +50,6 @@ public class IccSmsInterfaceManagerProxy extends ISms.Stub {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.724 -0400", hash_original_method = "A12926ED612F9F1CC0852D606D3EA5CE", hash_generated_method = "1986904C696125E062E673510D004F8F")
     public boolean copyMessageToIccEf(int status, byte[] pdu,
             byte[] smsc) throws android.os.RemoteException {
@@ -77,7 +74,6 @@ List<SmsRawData> var1E9CCA9C0A91D2170EE885EDBA8CE17D_2062516002 =         mIccSm
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.725 -0400", hash_original_method = "E01EFF7504F6F5A7F2409B5C1751CC43", hash_generated_method = "4D4A8703C00A6950684907735D90CF56")
     public void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
@@ -95,7 +91,6 @@ List<SmsRawData> var1E9CCA9C0A91D2170EE885EDBA8CE17D_2062516002 =         mIccSm
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.725 -0400", hash_original_method = "D48A5BF0B94B8EDA7081204D0BFF762D", hash_generated_method = "B0FD0A400016E4768FE793F81FCCDD7F")
     public void sendText(String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent) {
@@ -127,7 +122,6 @@ List<SmsRawData> var1E9CCA9C0A91D2170EE885EDBA8CE17D_2062516002 =         mIccSm
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.726 -0400", hash_original_method = "5D02A742FEB89A51A662A78F91F83EB2", hash_generated_method = "E9447B58A4ADC020C77F0EA97B12ACBB")
     public boolean enableCellBroadcast(int messageIdentifier) throws android.os.RemoteException {
         addTaint(messageIdentifier);
@@ -139,7 +133,6 @@ List<SmsRawData> var1E9CCA9C0A91D2170EE885EDBA8CE17D_2062516002 =         mIccSm
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.726 -0400", hash_original_method = "C80EBC5BA55DC936FFC43EB47C1044D2", hash_generated_method = "C64C52AB2F2A165656F720D38D8DEE3E")
     public boolean disableCellBroadcast(int messageIdentifier) throws android.os.RemoteException {
         addTaint(messageIdentifier);
@@ -151,7 +144,6 @@ List<SmsRawData> var1E9CCA9C0A91D2170EE885EDBA8CE17D_2062516002 =         mIccSm
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.726 -0400", hash_original_method = "77C7447F884D58462B45A73E9887417A", hash_generated_method = "E17F194E70B062080C7FF8CC4E87C69B")
     public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException {
         addTaint(endMessageId);
@@ -164,7 +156,6 @@ List<SmsRawData> var1E9CCA9C0A91D2170EE885EDBA8CE17D_2062516002 =         mIccSm
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.727 -0400", hash_original_method = "D3E78DE7F13EEAAE236D37E8C5EE46B7", hash_generated_method = "C747F6F18435B9E80F205FDC07628B8F")
     public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException {
         addTaint(endMessageId);

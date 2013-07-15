@@ -37,7 +37,6 @@ public class PeriodicSync implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.243 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C7A77A7AB7D01842AF87B4447D5CFD0B")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_992826110 = (0);

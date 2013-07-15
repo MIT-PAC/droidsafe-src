@@ -134,7 +134,6 @@ SessionOutputBuffer var95460FC2529DBA317C2C68B6FFB37D8D_2124452636 =         new
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.075 -0400", hash_original_method = "38867CD3C8042DC0E4B0EAE08D88273F", hash_generated_method = "3EE9F043284426CD1C86EA16E34751F4")
     public boolean isOpen() {
         boolean var00BFB1FB2706ED8CD7ED237AFFEB8C1A_1092136608 = (this.open);
@@ -145,7 +144,6 @@ SessionOutputBuffer var95460FC2529DBA317C2C68B6FFB37D8D_2124452636 =         new
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.075 -0400", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "3480A8583B58D122C05BFED7A822E345")
     protected Socket getSocket() {
 Socket var6B38E62DD669FDAB6F1C8B30960FAB66_408127110 =         this.socket;

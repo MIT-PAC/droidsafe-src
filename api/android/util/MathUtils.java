@@ -14,20 +14,17 @@ public final class MathUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float abs(float v) {
+        public static float abs(float v) {
         return v > 0 ? v : -v;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int constrain(int amount, int low, int high) {
+        public static int constrain(int amount, int low, int high) {
         return amount < low ? low : (amount > high ? high : amount);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float constrain(float amount, float low, float high) {
+        public static float constrain(float amount, float low, float high) {
         return amount < low ? low : (amount > high ? high : amount);
     }
 
@@ -47,50 +44,42 @@ public final class MathUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float max(float a, float b) {
+        public static float max(float a, float b) {
         return a > b ? a : b;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float max(int a, int b) {
+        public static float max(int a, int b) {
         return a > b ? a : b;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float max(float a, float b, float c) {
+        public static float max(float a, float b, float c) {
         return a > b ? (a > c ? a : c) : (b > c ? b : c);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float max(int a, int b, int c) {
+        public static float max(int a, int b, int c) {
         return a > b ? (a > c ? a : c) : (b > c ? b : c);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float min(float a, float b) {
+        public static float min(float a, float b) {
         return a < b ? a : b;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float min(int a, int b) {
+        public static float min(int a, int b) {
         return a < b ? a : b;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float min(float a, float b, float c) {
+        public static float min(float a, float b, float c) {
         return a < b ? (a < c ? a : c) : (b < c ? b : c);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float min(int a, int b, int c) {
+        public static float min(int a, int b, int c) {
         return a < b ? (a < c ? a : c) : (b < c ? b : c);
     }
 
@@ -120,20 +109,17 @@ public final class MathUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float sq(float v) {
+        public static float sq(float v) {
         return v * v;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float radians(float degrees) {
+        public static float radians(float degrees) {
         return degrees * DEG_TO_RAD;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float degrees(float radians) {
+        public static float degrees(float radians) {
         return radians * RAD_TO_DEG;
     }
 
@@ -163,20 +149,17 @@ public final class MathUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float lerp(float start, float stop, float amount) {
+        public static float lerp(float start, float stop, float amount) {
         return start + (stop - start) * amount;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float norm(float start, float stop, float value) {
+        public static float norm(float start, float stop, float value) {
         return (value - start) / (stop - start);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float map(float minStart, float minStop, float maxStart, float maxStop, float value) {
+        public static float map(float minStart, float minStop, float maxStart, float maxStop, float value) {
         return maxStart + (maxStart - maxStop) * ((value - minStart) / (minStop - minStart));
     }
 

@@ -418,7 +418,6 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.095 -0400", hash_original_method = "022306A077B45DC674F98467F25F93CD", hash_generated_method = "0D8B55611074D550C570D4DB4AB88BFC")
     public E take() throws InterruptedException {
         E x;
@@ -470,7 +469,6 @@ E varEA5659DA512DECF23E6D37EE8060D074_1243331420 =         x;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.096 -0400", hash_original_method = "AA8094BF5AEC46D297071331A526D258", hash_generated_method = "A05100EBE43044EC2412FABB33010E5C")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -534,7 +532,6 @@ E varEA5659DA512DECF23E6D37EE8060D074_800526200 =         x;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.097 -0400", hash_original_method = "D22B106AF12DCACC53C408D22FAEA025", hash_generated_method = "B1B813049B49A64C8696FB2C86CF5C38")
     public E poll() {
         final AtomicInteger count = this.count;
@@ -591,7 +588,6 @@ E varEA5659DA512DECF23E6D37EE8060D074_338865570 =         x;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.097 -0400", hash_original_method = "6BD887DAC1ACD373E1861DD85FA5D83B", hash_generated_method = "8F12978D611BE6A567FF4A216ED63296")
     public E peek() {
     if(count.get() == 0)        
@@ -1104,7 +1100,6 @@ for(;;)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.108 -0400", hash_original_method = "930D47D628EF4F4226A6936FD0C40F3E", hash_generated_method = "C2DB4269EC3C8157422A50E5C75B51AA")
         public boolean hasNext() {
             boolean var97D04F0DD15D17F3CFE71371925A4C92_1139515096 = (current != null);
@@ -1147,7 +1142,6 @@ Node<E> var0478718F0636FB61899C13801CE9FE09_87483396 =                 s;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.110 -0400", hash_original_method = "B1551F09E1CC1CE37F95082545A7F15D", hash_generated_method = "6862ED38DA8964035EE37FD2D699345B")
         public E next() {
             fullyLock();

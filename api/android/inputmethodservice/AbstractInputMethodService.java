@@ -29,7 +29,6 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.022 -0400", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "693C4887C1AA293F88A79ED43B45DF63")
     public KeyEvent.DispatcherState getKeyDispatcherState() {
 KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_1646955847 =         mDispatcherState;
@@ -46,7 +45,6 @@ KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_1646955847 =       
     public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.023 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "039AF2C6A10B612A151CDC15787A6BA8")
     @Override
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -77,7 +75,6 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_2119718954 =         new IInputMetho
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.025 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "4079F39CFD72679ADF19A10EEF7AFBFF")
     public boolean onTrackballEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -146,7 +143,6 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_2119718954 =         new IInputMetho
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.026 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "02589FEEC7738CF04C4808BF1AE3C466")
         public boolean isEnabled() {
             boolean var6F84A7F10C955D3C78F44E5278F6195B_1885776883 = (mEnabled);
@@ -157,7 +153,6 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_2119718954 =         new IInputMetho
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.027 -0400", hash_original_method = "C0B4C5A0A5D7F00D5E6612F5DDAFF7B5", hash_generated_method = "73E99AD0C554A6DCD96D27AEF91128B0")
         public boolean isRevoked() {
             boolean varF1726E470958465011824E5F0EBDE84F_1691691192 = (mRevoked);
@@ -168,7 +163,6 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_2119718954 =         new IInputMetho
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.027 -0400", hash_original_method = "BA8B8E3B4141C528807EA03970F3ED77", hash_generated_method = "D04D9CD4679D7D7E2C9DAE267ACCB74E")
         public void setEnabled(boolean enabled) {
     if(!mRevoked)            
@@ -182,7 +176,6 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_2119718954 =         new IInputMetho
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.028 -0400", hash_original_method = "6150597809F85496BEE526162ACEB60F", hash_generated_method = "E60B36F04B14FB96FAC9E90F23CA5FB2")
         public void revokeSelf() {
             mRevoked = true;

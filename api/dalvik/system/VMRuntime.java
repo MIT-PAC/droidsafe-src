@@ -13,8 +13,7 @@ public final class VMRuntime {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static VMRuntime getRuntime() {
+        public static VMRuntime getRuntime() {
         return THE_ONE;
     }
 
@@ -48,7 +47,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.112 -0400", hash_original_method = "A53C7C5E8A86B0A14FF3A91D5B112A95", hash_generated_method = "026F32E3B1E5E124F74F90F16B99A7F6")
     public float getTargetHeapUtilization() {
         float var546ADE640B6EDFBC8A086EF31347E768_1355759455 = getTaintFloat();
@@ -56,7 +54,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.116 -0400", hash_original_method = "F170D2A35A1238A4622F6C568D71821B", hash_generated_method = "6C7DE0E6A78023CF6C0AA54ADF2B0211")
     public float setTargetHeapUtilization(float newTarget) {
         addTaint(newTarget);
@@ -88,13 +85,11 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.120 -0400", hash_original_method = "C39A30D8892B0E36B74298597ED5FBE9", hash_generated_method = "EA21A7B0162E01E5EA792CC7A6CE2370")
     public void setTargetSdkVersion(int targetSdkVersion) {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.123 -0400", hash_original_method = "923B1334376C4F437A073246F9A10510", hash_generated_method = "E0A9DEAFF9A9BDB84C3C138BEE764BEF")
     @Deprecated
     public long getMinimumHeapSize() {
@@ -106,7 +101,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.128 -0400", hash_original_method = "CEB5420B7859E2786C7813E3E643E566", hash_generated_method = "7AED0706B9B4B54610B93CE8BA33A835")
     @Deprecated
     public long setMinimumHeapSize(long size) {
@@ -119,7 +113,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.133 -0400", hash_original_method = "7E7FC96AF2763DCE3DA2004144A94138", hash_generated_method = "C3FE825593A165B12ADFD8E36D4D78F4")
     @Deprecated
     public void gcSoftReferences() {
@@ -127,7 +120,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.135 -0400", hash_original_method = "3F466C6AD532878D6C4CCB4CF518C455", hash_generated_method = "8EB14B4D72CA777DA01382AEBEEFF1B9")
     @Deprecated
     public void runFinalizationSync() {
@@ -137,13 +129,11 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.138 -0400", hash_original_method = "1BC492CFAAC06440005836321EF40EC6", hash_generated_method = "2A4500EED54D06B53CF090EFE1949B33")
     private void nativeSetTargetHeapUtilization(float newTarget) {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.142 -0400", hash_original_method = "0DBB3F3440DA26D4CDE5B1A71A1243C2", hash_generated_method = "D68CE53806E951A5710EFBC4605BA678")
     @Deprecated
     public boolean trackExternalAllocation(long size) {
@@ -156,7 +146,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.145 -0400", hash_original_method = "22330635CB403C3ADB4BC9A546866054", hash_generated_method = "CE2AEFA646DA82A51D36B8F06ED1BFAC")
     @Deprecated
     public void trackExternalFree(long size) {
@@ -165,7 +154,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.148 -0400", hash_original_method = "A946C3EA36CF5D407B19BD7EB5F84EAB", hash_generated_method = "ED44CC8ABDB8E6B073A6DC778EF638B3")
     @Deprecated
     public long getExternalBytesAllocated() {
@@ -177,13 +165,11 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.154 -0400", hash_original_method = "2166D40B30A2B78A2A8578391CF70C71", hash_generated_method = "5CE41E3C314575546051C1FC068CDF23")
     public void startJitCompilation() {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.155 -0400", hash_original_method = "988710BD2A10AD89943FF29F774B18B3", hash_generated_method = "5394F4F9494DB803D576EA0E55AE138D")
     public void disableJitCompilation() {
     }
@@ -198,7 +184,6 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.161 -0400", hash_original_method = "F2F9C5A5D8870A09D65982DFE8B619AA", hash_generated_method = "667E68A609816345899EE59CA9D362EA")
     public long addressOf(Object array) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1590348934 = getTaintLong();
@@ -206,13 +191,11 @@ public final class VMRuntime {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.162 -0400", hash_original_method = "008D98C2BCE518EEA7FDC1071598BCD6", hash_generated_method = "EEB37EDD5B5B9071347315008085CFAF")
     public void clearGrowthLimit() {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.163 -0400", hash_original_method = "FD10061FB9DFD564FAB6BA17DFE98F77", hash_generated_method = "17DA4309FAA5627031A6610C8B561095")
     public boolean isDebuggerActive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_218757306 = getTaintBoolean();

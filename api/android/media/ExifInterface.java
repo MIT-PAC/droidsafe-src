@@ -229,7 +229,6 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.800 -0400", hash_original_method = "8ADD93432A1FBC3F2D5AE95E2101E8B1", hash_generated_method = "88A05E518BD99AA92AC9A4304F0A1D1F")
     public boolean hasThumbnail() {
         boolean varE3FE02CCD86450EB1D96C4963640A0F3_758976742 = (mHasThumbnail);
@@ -448,7 +447,6 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.809 -0400", hash_original_method = "10F8297A0D98F2707B10E874747B53C0", hash_generated_method = "955E44BFB896163D3FA60A3BB9C8DC5C")
     private boolean appendThumbnailNative(String fileName,
             String thumbnailFileName) {
@@ -457,14 +455,12 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.809 -0400", hash_original_method = "1943C005EEA560A6DA7650C63E13B4C3", hash_generated_method = "0C52AA2329BBA64696E1E6FC4874D678")
     private void saveAttributesNative(String fileName,
             String compressedAttributes) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.810 -0400", hash_original_method = "21C44A8FDEA142EAF44ED7CEC6DABF8E", hash_generated_method = "43A16705CA15F45B5C6A3BDE225AF57D")
     private String getAttributesNative(String fileName) {
     	addTaint(fileName.taint);
@@ -474,13 +470,11 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.811 -0400", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "00C8985DB1983BF703BB7E7AFEB6EC82")
     private void commitChangesNative(String fileName) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.811 -0400", hash_original_method = "EE2CC310FEF6D1380D04E187818EEB60", hash_generated_method = "00F95BA98511A26DE6C39C9E32619FE6")
     private byte[] getThumbnailNative(String fileName) {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_864092249 = {getTaintByte()};

@@ -203,7 +203,6 @@ Annotation[] varD68AC863F3425367D397905DE25428DB_176931204 =         getDeclared
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.010 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "D92EC240660BEE1945E1008CE4EC5D78")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
@@ -236,7 +235,6 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1817856320 =         getAnnotation(declari
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.011 -0400", hash_original_method = "D8B142EB73E138FF5927E6AE1DAD56D2", hash_generated_method = "532EEF45A6A619C93B274B958CD22D7E")
     @Override
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -387,7 +385,6 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_583261595 =         declaringClass;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.014 -0400", hash_original_method = "9D513D500FBFD57DB21A924D9A85826A", hash_generated_method = "2D4CCB3D5B850157727B5FBABC0A1406")
     private int getFieldModifiers(Class<?> declaringClass, int slot) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1384427873 = getTaintInt();
@@ -395,7 +392,6 @@ Class<?> var55840ACAE88F5536515BB8E6ADD923C6_583261595 =         declaringClass;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.014 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "6D95AD644A60D765042E3B90076F8052")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_117178215 =         name;
@@ -591,7 +587,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.019 -0400", hash_original_method = "E4CBB65FF20F2B42AAAA5852C9FC84C9", hash_generated_method = "1A06E6EE6A85DF7A1A8E4C74248B7B2B")
     private double getDField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -600,7 +595,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.019 -0400", hash_original_method = "9B86AA05444EF83A8159E0D0E3B46582", hash_generated_method = "A96092923272B9F9D251508CB48E99B8")
     private int getIField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -609,7 +603,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.019 -0400", hash_original_method = "1F116F930DBB16C5DB58ABA31954B7AA", hash_generated_method = "C586DBFF7DAD6387B2746D84B5162210")
     private long getJField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -618,7 +611,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.019 -0400", hash_original_method = "50BE3A9E4BA3ACB6450AF3382B17C97D", hash_generated_method = "7B9C5C626085667F1B590360FF223AC4")
     private boolean getZField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -627,7 +619,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.020 -0400", hash_original_method = "94E059571B5D65D86B6231E7D36BF7FA", hash_generated_method = "7EA505566A1D1450CF0460C2A2EBD404")
     private float getFField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -636,7 +627,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.020 -0400", hash_original_method = "9A55E198BD753BB34F159FBC2807D96E", hash_generated_method = "567F3DBB966E11DC69DAE552BA6CB5C9")
     private char getCField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -645,7 +635,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.020 -0400", hash_original_method = "9FE268B454DA8902066BFF2BFC132935", hash_generated_method = "5BE51FE21007E495DE94352B47A2AD61")
     private short getSField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -654,7 +643,6 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.021 -0400", hash_original_method = "B020FC56F3182544B11E7C259C9C5B21", hash_generated_method = "6F20E0A340F1DD81BE3D17D1F519D252")
     private byte getBField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor) throws IllegalAccessException {
@@ -663,63 +651,54 @@ String varE65B3A02759122992CB82C0E651AD408_698562485 =         result.toString()
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.021 -0400", hash_original_method = "D9AA799947323C8F653B1139DF380855", hash_generated_method = "C408ADE9BAD371E4961776A5655ECA1D")
     private void setField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, Object value) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.021 -0400", hash_original_method = "3CCE00B68111CAA3AA20979F21B904D8", hash_generated_method = "3179919531A6B77C3D15EE892C5A42ED")
     private void setDField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, double v) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.021 -0400", hash_original_method = "32CBAB454E52D8BFC71D6AB87E7BF1FE", hash_generated_method = "0AD27F9AC1D9709615BF81BE0EC00C6F")
     private void setIField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, int i) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.022 -0400", hash_original_method = "7CE46D8AB646DF2CA9A88ACDCE998029", hash_generated_method = "6C698AE9F78C7DE632773059C8D4BC97")
     private void setJField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, long j) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.022 -0400", hash_original_method = "E80188BF0543922F0F2BDA0A103D17F5", hash_generated_method = "72E8231E78B1D9BCE0F14C1F2F070F7A")
     private void setZField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, boolean z) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.022 -0400", hash_original_method = "570BC71D32CB4741615EF7701079ED2D", hash_generated_method = "8275ADFFBEC551D7D79BD7EB97FC5146")
     private void setFField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, float f) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.022 -0400", hash_original_method = "ACD0A6EABB934CC5EEECCAB72AA01730", hash_generated_method = "13FE5F042DD294402F9D22C992CA140C")
     private void setCField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, char c) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.023 -0400", hash_original_method = "2A0F6C37A6B68BD24BAC15A31879F06F", hash_generated_method = "4F3A9A2CC7778961778A3052697CE1D8")
     private void setSField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, short s) throws IllegalAccessException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.023 -0400", hash_original_method = "4D8B3646C0E699793861ED8487ADC739", hash_generated_method = "D5189C3BB7F03AFCF5839741EE6876A2")
     private void setBField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck, char descriptor, byte b) throws IllegalAccessException {

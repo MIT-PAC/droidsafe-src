@@ -20,7 +20,6 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.350 -0400", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "9593A125A57B67579C3D7F63B84CA212")
     public void onCorruption(SQLiteDatabase dbObj) {
         //DSFIXME:  CODE0009: Possible callback target function detected

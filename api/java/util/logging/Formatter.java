@@ -76,7 +76,6 @@ String var407D32260E541B695CF3FD3F7EFB76AB_13198181 =         pattern;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.064 -0400", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "2A05E7E97CE2EBB45C5A67CFF706F2B4")
     public String getHead(Handler h) {
         addTaint(h.getTaint());
@@ -88,7 +87,6 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1678275127 =         "";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.064 -0400", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "193ACCC2A80FE735AD2F0EC7A5D161DB")
     public String getTail(Handler h) {
         addTaint(h.getTaint());

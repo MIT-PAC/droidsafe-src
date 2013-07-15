@@ -79,7 +79,6 @@ for(Iterator it = obj.getHeaders().iterator();it.hasNext();)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.662 -0400", hash_original_method = "7DC9EFDB066BC03515C2F692EE0CAAF1", hash_generated_method = "3E45C2F3E6847EA5C286FC9BB64ECF40")
     public void writeObject(PemObjectGenerator objGen) throws IOException {
         addTaint(objGen.getTaint());

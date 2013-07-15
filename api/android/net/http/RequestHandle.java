@@ -142,7 +142,6 @@ public class RequestHandle {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.505 -0400", hash_original_method = "1E2E2512E5F173592E2117FB4C479261", hash_generated_method = "4812BB003F8F7F6A6CC9A3BEF4A844BE")
     public boolean isRedirectMax() {
         boolean varE59A16454EBA0506B8807ACFE87505C0_1197445002 = (mRedirectCount >= MAX_REDIRECT_COUNT);
@@ -153,7 +152,6 @@ public class RequestHandle {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.505 -0400", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "60A0115C12A971F9CBEB5EC143004766")
     public int getRedirectCount() {
         int var5C719A8BE232C682CF3CBD6C1D4CA4E2_482921618 = (mRedirectCount);
@@ -164,7 +162,6 @@ public class RequestHandle {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.506 -0400", hash_original_method = "FFEBE76B00A2A9B427C3877CD59FFD71", hash_generated_method = "75F6E6041180F5755B1072705080BEBF")
     public void setRedirectCount(int count) {
         mRedirectCount = count;
@@ -346,7 +343,6 @@ public class RequestHandle {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.509 -0400", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "44CC3D1EEB8CC220169355D751F7FD69")
     public String getMethod() {
 String var4E41053965FCD154582D303800DDC3B2_1081005856 =         mMethod;
@@ -434,8 +430,7 @@ String var2A1114F4272D753FE23A36E3D68CD293_2131147101 =         response;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String authorizationHeader(boolean isProxy) {
+        public static String authorizationHeader(boolean isProxy) {
         if (!isProxy) {
             return AUTHORIZATION_HEADER;
         } else {

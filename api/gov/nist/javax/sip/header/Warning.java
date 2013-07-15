@@ -26,7 +26,6 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.672 -0400", hash_original_method = "F1B6F008CE79EB2FBE5188D2B8BB2F2C", hash_generated_method = "C86BA4813C04EA53A955847C6542DF0D")
     public String encodeBody() {
 String var11EAF17437950272B831FF213CDE88DD_1708552131 =         text != null
@@ -53,7 +52,6 @@ String var11EAF17437950272B831FF213CDE88DD_1708552131 =         text != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.672 -0400", hash_original_method = "0DCDBA7E30E559B2571A09070ED05380", hash_generated_method = "6EDC7685CD5916F75609BCDDCC9C5CC7")
     public int getCode() {
         int varC13367945D5D4C91047B3B50234AA7AB_1765686523 = (code);
@@ -64,7 +62,6 @@ String var11EAF17437950272B831FF213CDE88DD_1708552131 =         text != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.673 -0400", hash_original_method = "7B2F86C2E403FA4426A7AF0306AE1B67", hash_generated_method = "F942B3575F3BF0E39AB84DECA6536486")
     public String getAgent() {
 String var1EB77813C3300980563FC972DA0DB3A8_923442238 =         agent;
@@ -75,7 +72,6 @@ String var1EB77813C3300980563FC972DA0DB3A8_923442238 =         agent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.673 -0400", hash_original_method = "C0F9B3C9D6FFAEB2F99491C721442157", hash_generated_method = "3073AA18F2BCDBB0243613D762BF495F")
     public String getText() {
 String var79CC641C1148018540A26F7ADC424893_119167748 =         text;
@@ -86,7 +82,6 @@ String var79CC641C1148018540A26F7ADC424893_119167748 =         text;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.674 -0400", hash_original_method = "741202B8F1CEFA0CCA05AB4A3FC24738", hash_generated_method = "877271D4FE1D29A64B89F55FA4DA217D")
     public void setCode(int code) throws InvalidArgumentException {
     if(code >99  && code < 1000)        
@@ -111,7 +106,6 @@ String var79CC641C1148018540A26F7ADC424893_119167748 =         text;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.675 -0400", hash_original_method = "25CC32B68A77A53B595C551260404BAA", hash_generated_method = "422A8795B7E0E4F62445DB9A08DB7512")
     public void setAgent(String host) throws ParseException {
     if(host == null)        
@@ -133,7 +127,6 @@ String var79CC641C1148018540A26F7ADC424893_119167748 =         text;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.676 -0400", hash_original_method = "8DD43A4484C9753D191B662ECF9B8CD6", hash_generated_method = "2B806AFF72BC99558E38A72E44656348")
     public void setText(String text) throws ParseException {
     if(text == null)        

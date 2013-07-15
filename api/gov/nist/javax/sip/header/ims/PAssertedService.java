@@ -118,7 +118,6 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489 =         this.subServiceI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.884 -0400", hash_original_method = "0A65ED1D7958A8DC93D54B9D5172FB86", hash_generated_method = "813392CF39A94B938B1B3C7E12E815AD")
     public void setApplicationIdentifiers(String appids) {
         this.subAppIds = appids;
@@ -127,7 +126,6 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489 =         this.subServiceI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.884 -0400", hash_original_method = "D85C3DD3D271FDFF4F350559A8282CAD", hash_generated_method = "408F5C6315DFA9E24D9CFBD7DDC9F713")
     public void setSubserviceIdentifiers(String subservices) {
         this.subServiceIds = subservices;

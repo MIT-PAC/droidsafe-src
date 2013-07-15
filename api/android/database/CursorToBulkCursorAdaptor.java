@@ -119,7 +119,6 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.097 -0400", hash_original_method = "4ECB0E8EDFF03AFDCED1B443F780B12E", hash_generated_method = "521ECE19EBBDE4B1240EE3F708DD5A64")
     @Override
     public CursorWindow getWindow(int startPos) {
@@ -440,7 +439,6 @@ Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_971310098 =             mCursor.respo
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.105 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "DF3C064C47AC49393F42D4E71739C248")
         @Override
         public boolean deliverSelfNotifications() {

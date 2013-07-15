@@ -31,7 +31,6 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.277 -0400", hash_original_method = "D75087D014852658987FF99D82A818E7", hash_generated_method = "ED22A77DBCDF12909424D982E1B4C1E1")
     public void init(
         KeyGenerationParameters param) {

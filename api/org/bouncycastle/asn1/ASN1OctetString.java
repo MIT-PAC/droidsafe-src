@@ -59,8 +59,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ASN1OctetString getInstance(
+        public static ASN1OctetString getInstance(
         ASN1TaggedObject    obj,
         boolean             explicit) {
         DERObject o = obj.getObject();
@@ -75,8 +74,7 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ASN1OctetString getInstance(
+        public static ASN1OctetString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof ASN1OctetString)
         {
@@ -90,7 +88,6 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.621 -0400", hash_original_method = "34640A97A031BA78080CEBB6F9EA17E5", hash_generated_method = "A2928CBF5BD9B1B0DDC4A5EA555284D3")
     public InputStream getOctetStream() {
 InputStream varFDCDB5E8FC538F264AC02353EB3C9F5D_283676052 =         new ByteArrayInputStream(string);
@@ -101,7 +98,6 @@ InputStream varFDCDB5E8FC538F264AC02353EB3C9F5D_283676052 =         new ByteArra
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.622 -0400", hash_original_method = "9D3ECD11646B7B9703C16B797DA8DA2E", hash_generated_method = "0C90AF6A4C84AF3BC3DA517C52D0335D")
     public ASN1OctetStringParser parser() {
 ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         this;
@@ -112,7 +108,6 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.622 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "0D1AB98C512BAE0C5485130A618C25ED")
     public byte[] getOctets() {
         byte[] varB45CFFE084DD3D20D928BEE85E7B0F21_236564180 = (string);
@@ -123,7 +118,6 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.622 -0400", hash_original_method = "306C0053EB93BF3AE4D12BCDAA093AD0", hash_generated_method = "9DA642E0B7DD600CF7385FBB9EDAB772")
     public int hashCode() {
         int var8CC5DCD7A6E75AED57809811CBC104BF_1531730215 = (Arrays.hashCode(this.getOctets()));
@@ -134,7 +128,6 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.623 -0400", hash_original_method = "5FE20DA2EBC8E33EF5740C0666CFE34F", hash_generated_method = "A33E0740AD30567D0B5AC4BE2E4141EC")
      boolean asn1Equals(
         DERObject  o) {
@@ -159,7 +152,6 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.623 -0400", hash_original_method = "D3363286272FDA8D05900543905FFBE8", hash_generated_method = "981F6B564CA97E589C0C9F0995514745")
     public DERObject getLoadedObject() {
 DERObject var637323B1C4EE7CAF17B2CD40E14254B5_383424228 =         this.getDERObject();
@@ -174,7 +166,6 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_383424228 =         this.getDERObj
         throws IOException;
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.624 -0400", hash_original_method = "A6F4AE428E861451DA18F2BDC0B16A3E", hash_generated_method = "F71C3B62FF91AC147A24E578D0458E19")
     public String toString() {
 String var9E18392C58EAD0B1BFCF106787A98CB2_1487910992 =         "#"+new String(Hex.encode(string));

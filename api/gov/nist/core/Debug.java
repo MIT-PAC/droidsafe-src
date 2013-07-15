@@ -14,29 +14,25 @@ public class Debug {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static void setStackLogger(StackLogger stackLogger) {
+        public static void setStackLogger(StackLogger stackLogger) {
         Debug.stackLogger = stackLogger;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void println(String s) {
+        public static void println(String s) {
         if ((parserDebug || debug )&& stackLogger != null )
             stackLogger.logDebug(s + "\n");
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void printStackTrace(Exception ex) {
+        public static void printStackTrace(Exception ex) {
         if ((parserDebug || debug ) && stackLogger != null) {
             stackLogger.logError("Stack Trace",ex);
         }
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void logError(String message, Exception ex) {
+        public static void logError(String message, Exception ex) {
         if ((parserDebug || debug) &&  stackLogger != null ) {
           stackLogger.logError(message,ex);
       }

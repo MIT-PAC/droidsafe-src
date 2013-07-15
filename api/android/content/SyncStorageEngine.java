@@ -628,7 +628,6 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.829 -0400", hash_original_method = "DA5487F77FC92CA93809E84A1EE05946", hash_generated_method = "EFE61AA99799A2004065324FA177EC07")
     private void updateOrRemovePeriodicSync(Account account, String providerName, Bundle extras,
             long period, boolean add) {
@@ -812,7 +811,6 @@ List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_569452902 =         syncs
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.832 -0400", hash_original_method = "6DBCD9157A2DF54805879831F88D4B77", hash_generated_method = "41AFAEA68D763C1A8C23F38BA7AA8FD6")
     public boolean getMasterSyncAutomatically() {
         synchronized
@@ -2026,7 +2024,6 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.878 -0400", hash_original_method = "1F0CD4338AAE9E719690DF5E0BB493ED", hash_generated_method = "508E8C836A734818A12B33BB1339D9BE")
     private boolean maybeMigrateSettingsForRenamedAuthorities() {
         boolean writeNeeded = false;
@@ -2068,7 +2065,6 @@ for(AuthorityInfo authorityInfo : authoritiesToRemove)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.880 -0400", hash_original_method = "39CA1CD415012CC0A4B70AAED3727A93", hash_generated_method = "4E92A5516D294B81A5C09FF61CE4CD55")
     private AuthorityInfo parseAuthority(XmlPullParser parser, int version) {
         addTaint(version);

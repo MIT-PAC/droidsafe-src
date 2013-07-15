@@ -60,14 +60,12 @@ public final class SQLiteDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getNumActiveCursorsFinalized() {
+        public static int getNumActiveCursorsFinalized() {
         return sNumActiveCursorsFinalized;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static synchronized void notifyActiveCursorFinalized() {
+        static synchronized void notifyActiveCursorFinalized() {
         sNumActiveCursorsFinalized++;
     }
 

@@ -249,7 +249,6 @@ DERObject varDCE3C524664FF49CD40212ED0922D544_1818197785 =         v.get(index).
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.983 -0400", hash_original_method = "0B6DEA5056C96F68CB576A145B8163A4", hash_generated_method = "D4E003DD499D07D1443AF4C8062F1D66")
     public ASN1Object getDataValueDescriptor() {
 ASN1Object var7F5CBFB8592795F817B841B1977CFEEC_996733755 =         dataValueDescriptor;
@@ -260,7 +259,6 @@ ASN1Object var7F5CBFB8592795F817B841B1977CFEEC_996733755 =         dataValueDesc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.984 -0400", hash_original_method = "5D19E791BF0146D74AAC703832ECF7B9", hash_generated_method = "22759A61548D70966CC79124D4D7C8E8")
     public DERObjectIdentifier getDirectReference() {
 DERObjectIdentifier var55C2E5FE77E7482E4A8A041A0695CF01_1214580897 =         directReference;
@@ -271,7 +269,6 @@ DERObjectIdentifier var55C2E5FE77E7482E4A8A041A0695CF01_1214580897 =         dir
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.984 -0400", hash_original_method = "20B2CEB64A03B59C5CB213FEC1AC33C9", hash_generated_method = "92351727A0B0C3C46327F14682712FBF")
     public int getEncoding() {
         int var84BEA1F0FD2CE16F7E562A9F06EF03D3_963997150 = (encoding);
@@ -282,7 +279,6 @@ DERObjectIdentifier var55C2E5FE77E7482E4A8A041A0695CF01_1214580897 =         dir
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.984 -0400", hash_original_method = "A31A01A5BEAE5C1C675F68CA7DEBC312", hash_generated_method = "E12647F529B6E12464FE51D47BFDA1A9")
     public DERObject getExternalContent() {
 DERObject var53BE248C57C176B392026470DE704D1E_2102448274 =         externalContent;
@@ -293,7 +289,6 @@ DERObject var53BE248C57C176B392026470DE704D1E_2102448274 =         externalConte
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.984 -0400", hash_original_method = "A48170CD86EA456F3F5BDA9638D90BB1", hash_generated_method = "2878C1C1CFFD46BEF5CDF7CA51E6F200")
     public DERInteger getIndirectReference() {
 DERInteger var6F7D586A588E89E70D60AA8FC6714E98_1733112849 =         indirectReference;
@@ -304,7 +299,6 @@ DERInteger var6F7D586A588E89E70D60AA8FC6714E98_1733112849 =         indirectRefe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.985 -0400", hash_original_method = "0BD65C140FCC2077661040D20B226912", hash_generated_method = "EF6BD976ABD259EA66BA89BDDB768754")
     private void setDataValueDescriptor(ASN1Object dataValueDescriptor) {
         this.dataValueDescriptor = dataValueDescriptor;
@@ -313,7 +307,6 @@ DERInteger var6F7D586A588E89E70D60AA8FC6714E98_1733112849 =         indirectRefe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.985 -0400", hash_original_method = "A83523D5E22547A02A231238C93C9842", hash_generated_method = "D6AD4C337C3FD3A0AD5109A0D5A2ACE9")
     private void setDirectReference(DERObjectIdentifier directReferemce) {
         this.directReference = directReferemce;
@@ -340,7 +333,6 @@ DERInteger var6F7D586A588E89E70D60AA8FC6714E98_1733112849 =         indirectRefe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.986 -0400", hash_original_method = "DE6F2795286824746E38E92F0B41BA33", hash_generated_method = "24CEF734212704228B883286898B188C")
     private void setExternalContent(DERObject externalContent) {
         this.externalContent = externalContent;
@@ -349,7 +341,6 @@ DERInteger var6F7D586A588E89E70D60AA8FC6714E98_1733112849 =         indirectRefe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.987 -0400", hash_original_method = "0014F60DB99B68C720B34F07B78773E4", hash_generated_method = "D2EB81AEFDE4F6F36CC34563A6AD7814")
     private void setIndirectReference(DERInteger indirectReference) {
         this.indirectReference = indirectReference;

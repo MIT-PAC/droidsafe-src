@@ -16,7 +16,6 @@ public class UnsupportedList extends SIPHeaderList<Unsupported> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.556 -0400", hash_original_method = "586FD49C37A8AA9D6CC092649E8819BF", hash_generated_method = "EDE237798BD9A170FBCB0A6D97008B9F")
     public Object clone() {
         UnsupportedList retval = new UnsupportedList();

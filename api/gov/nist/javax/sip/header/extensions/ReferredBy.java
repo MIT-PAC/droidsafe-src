@@ -18,7 +18,6 @@ public final class ReferredBy extends AddressParametersHeader implements Extensi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.755 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "B1B3423D46BEFC3652B1071EB31840D1")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -30,7 +29,6 @@ public final class ReferredBy extends AddressParametersHeader implements Extensi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.756 -0400", hash_original_method = "264DF371DD142B0CCD6F6ECE44A7BFB6", hash_generated_method = "8C533B4ACBB90438A57C76EB55B72F0B")
     protected String encodeBody() {
     if(address == null)        

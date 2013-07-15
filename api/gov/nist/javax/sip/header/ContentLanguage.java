@@ -82,7 +82,6 @@ String var9D965CDE9A5FC69D278845CD5ADE967F_1616933772 =             locale.getLa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.268 -0400", hash_original_method = "BB5B9CEBF2423E9AF1F4569292591142", hash_generated_method = "2BC19841DA48D39F14BF693D92BBDE3A")
     public Locale getContentLanguage() {
 Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_1961161150 =         locale;
@@ -93,7 +92,6 @@ Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_1961161150 =         locale;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.268 -0400", hash_original_method = "7E2DC8255947AB5497CF8DB62C4D31B5", hash_generated_method = "ECC90E2EED8E215D634D57C08DDAA062")
     public void setContentLanguage(Locale language) {
         this.locale = language;

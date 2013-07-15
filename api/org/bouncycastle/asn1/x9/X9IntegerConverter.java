@@ -17,7 +17,6 @@ public class X9IntegerConverter {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.536 -0400", hash_original_method = "4EEA327D2CC1CF90BCBE86A301A2F541", hash_generated_method = "6CE5FF70C21B6103593BC1C9293E5BEE")
     public int getByteLength(
         ECCurve c) {
@@ -30,7 +29,6 @@ public class X9IntegerConverter {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.537 -0400", hash_original_method = "906B1BA812A6A3F3853F695C4CB554DD", hash_generated_method = "41FA2CBA272653FA1AEB8D698C776409")
     public int getByteLength(
         ECFieldElement fe) {
@@ -43,7 +41,6 @@ public class X9IntegerConverter {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.537 -0400", hash_original_method = "DFBCE33E331D16CEE660F164961DBF46", hash_generated_method = "D49703476FF0E8C89093D2856B202A7E")
     public byte[] integerToBytes(
         BigInteger s,

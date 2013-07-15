@@ -46,8 +46,7 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void getChars(CharSequence s, int start, int end,
+        public static void getChars(CharSequence s, int start, int end,
                                 char[] dest, int destoff) {
         Class<? extends CharSequence> c = s.getClass();
         if (c == String.class)
@@ -65,14 +64,12 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int indexOf(CharSequence s, char ch) {
+        public static int indexOf(CharSequence s, char ch) {
         return indexOf(s, ch, 0);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int indexOf(CharSequence s, char ch, int start) {
+        public static int indexOf(CharSequence s, char ch, int start) {
         Class<? extends CharSequence> c = s.getClass();
         if (c == String.class)
             return ((String) s).indexOf(ch, start);
@@ -80,8 +77,7 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int indexOf(CharSequence s, char ch, int start, int end) {
+        public static int indexOf(CharSequence s, char ch, int start, int end) {
         Class<? extends CharSequence> c = s.getClass();
         if (s instanceof GetChars || c == StringBuffer.class ||
             c == StringBuilder.class || c == String.class) {
@@ -111,14 +107,12 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int lastIndexOf(CharSequence s, char ch) {
+        public static int lastIndexOf(CharSequence s, char ch) {
         return lastIndexOf(s, ch, s.length() - 1);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int lastIndexOf(CharSequence s, char ch, int last) {
+        public static int lastIndexOf(CharSequence s, char ch, int last) {
         Class<? extends CharSequence> c = s.getClass();
         if (c == String.class)
             return ((String) s).lastIndexOf(ch, last);
@@ -126,8 +120,7 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int lastIndexOf(CharSequence s, char ch,
+        public static int lastIndexOf(CharSequence s, char ch,
                                   int start, int last) {
         if (last < 0)
             return -1;
@@ -163,20 +156,17 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int indexOf(CharSequence s, CharSequence needle) {
+        public static int indexOf(CharSequence s, CharSequence needle) {
         return indexOf(s, needle, 0, s.length());
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int indexOf(CharSequence s, CharSequence needle, int start) {
+        public static int indexOf(CharSequence s, CharSequence needle, int start) {
         return indexOf(s, needle, start, s.length());
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int indexOf(CharSequence s, CharSequence needle,
+        public static int indexOf(CharSequence s, CharSequence needle,
                               int start, int end) {
         int nlen = needle.length();
         if (nlen == 0)
@@ -199,8 +189,7 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean regionMatches(CharSequence one, int toffset,
+        public static boolean regionMatches(CharSequence one, int toffset,
                                         CharSequence two, int ooffset,
                                         int len) {
         char[] temp = obtain(2 * len);
@@ -730,8 +719,7 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static boolean doesNotNeedBidi(char[] text, int start, int len) {
+        static boolean doesNotNeedBidi(char[] text, int start, int len) {
         for (int i = start, e = i + len; i < e; i++) {
             if (text[i] >= FIRST_RIGHT_TO_LEFT) {
                 return false;
@@ -753,8 +741,7 @@ public class TextUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static void recycle(char[] temp) {
+        static void recycle(char[] temp) {
         if (temp.length > 1000)
             return;
         synchronized (sLock) {
@@ -1045,7 +1032,6 @@ Iterator<String> var72A74007B2BE62B849F475C7BDA4658B_746359128 =             thi
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.788 -0400", hash_original_method = "675B2012EE41806104DFB06FA586494D", hash_generated_method = "ED8AF99AFA3477113A1B09820F50E665")
         public boolean hasNext() {
             boolean var08931E0A660193FE88B5CCE4F34F221C_1753552410 = (mPosition < mLength);
@@ -1116,7 +1102,6 @@ String varC59F893A61ED32D3CBCDB20357461460_1138327967 =             nextString;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.789 -0400", hash_original_method = "7B7C0865096082EBDC6C915DBB65AA78", hash_generated_method = "121F295172D62FD101AC16BE8F82DF83")
         public int length() {
             int varE12401DE7F163750A23A237001BAD0C5_1091304433 = (mEnd - mStart);

@@ -60,7 +60,6 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.583 -0400", hash_original_method = "6CBD3E9C112A20CE725E0B14080873B3", hash_generated_method = "FBB1310A5EFCDF2B72BEFBD717EF881F")
     public void setOrderingAsAdded(boolean orderingAsAdded) {
         mOrderingAsAdded = orderingAsAdded;
@@ -69,7 +68,6 @@ public abstract class PreferenceGroup extends Preference implements GenericInfla
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.583 -0400", hash_original_method = "5AE1DA121FD737E8D77F265AA9EE4792", hash_generated_method = "A9B86CB7EB9D81CD5FCAA763D66F1D6E")
     public boolean isOrderingAsAdded() {
         boolean var177908C532A27E32AC131CD0F3997D38_1483767409 = (mOrderingAsAdded);
@@ -291,7 +289,6 @@ Preference var540C13E9E156B687226421B24F2DF178_515834542 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.589 -0400", hash_original_method = "DAC56CE9E9B1E4D46C67382001476B7D", hash_generated_method = "F17310F60DC766059FD54DDF52AEECD6")
     protected boolean isOnSameScreenAsChildren() {
         boolean varB326B5062B2F0E69046810717534CB09_899489872 = (true);

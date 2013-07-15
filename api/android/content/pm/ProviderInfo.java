@@ -93,7 +93,6 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.190 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "49EB62A6B26BA06C2E2FDC4F7CF8AC51")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1561132760 = (0);
@@ -104,7 +103,6 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.190 -0400", hash_original_method = "45D9E31DA8DC0720E2897CA268CD8E20", hash_generated_method = "9F4C4083C3F4074D78644EE2A673883B")
     @Override
     public void writeToParcel(Parcel out, int parcelableFlags) {
@@ -134,7 +132,6 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.191 -0400", hash_original_method = "A325E506B6C78D4488CEDF60427F48B5", hash_generated_method = "21FE00BC250FA883454572650AD861DB")
     public String toString() {
 String varD6FD82BF3DAE7A6B9B51563B3E18074B_954968619 =         "ContentProviderInfo{name=" + authority + " className=" + name

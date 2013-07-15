@@ -679,7 +679,6 @@ for(int i = mExpGroupMetadataList.size() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.299 -0400", hash_original_method = "5DCA730791D083145030F1469300702C", hash_generated_method = "ADF6079EFB27B709D59795A65482C88A")
     public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
@@ -688,7 +687,6 @@ for(int i = mExpGroupMetadataList.size() - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.299 -0400", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "21F98BA18E535E774EB837EB0F9F09AD")
      ExpandableListAdapter getAdapter() {
 ExpandableListAdapter var6138734355307F47AFFDB0E0F3A9A71E_1827774421 =         mExpandableListAdapter;
@@ -936,7 +934,6 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.307 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3ED30D0290D3AAE32E722E3278ECEA99")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_112269970 = (0);
@@ -1020,7 +1017,6 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.308 -0400", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "C2D78B097428DD4DBD267482388DC1E9")
         private void resetState() {
             position = null;
@@ -1075,7 +1071,6 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.308 -0400", hash_original_method = "3DA77438EDE7E493B793AF2E840B43CD", hash_generated_method = "4B29D4BE6115A9372F4CE42CCA5B1F29")
         public boolean isExpanded() {
             boolean varB3BC9AD7B79E12A165E034A47E593F8B_1521313168 = (groupMetadata != null);

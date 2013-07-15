@@ -51,7 +51,6 @@ public class ManifestDigest implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.861 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DEEA74C88E538BB12767A143F4E30494")
     @Override
     public int describeContents() {

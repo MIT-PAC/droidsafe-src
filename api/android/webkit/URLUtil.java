@@ -21,8 +21,7 @@ public final class URLUtil {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static String guessUrl(String inUrl) {
+        public static String guessUrl(String inUrl) {
         String retVal = inUrl;
         WebAddress webAddress;
         if (DebugFlags.URL_UTIL) Log.v(LOGTAG, "guessURL before queueRequest: " + inUrl);
@@ -49,8 +48,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String composeSearchUrl(String inQuery, String template,
+        public static String composeSearchUrl(String inQuery, String template,
                                           String queryPlaceHolder) {
         int placeHolderIndex = template.indexOf(queryPlaceHolder);
         if (placeHolderIndex < 0) {
@@ -71,8 +69,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] decode(byte[] url) throws IllegalArgumentException {
+        public static byte[] decode(byte[] url) throws IllegalArgumentException {
         if (url.length == 0) {
             return new byte[0];
         }
@@ -97,8 +94,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static boolean verifyURLEncoding(String url) {
+        static boolean verifyURLEncoding(String url) {
         int count = url.length();
         if (count == 0) {
             return false;
@@ -121,8 +117,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static int parseHex(byte b) {
+        private static int parseHex(byte b) {
         if (b >= '0' && b <= '9') return (b - '0');
         if (b >= 'A' && b <= 'F') return (b - 'A' + 10);
         if (b >= 'a' && b <= 'f') return (b - 'a' + 10);
@@ -130,20 +125,17 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isAssetUrl(String url) {
+        public static boolean isAssetUrl(String url) {
         return (null != url) && url.startsWith(ASSET_BASE);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isResourceUrl(String url) {
+        public static boolean isResourceUrl(String url) {
         return (null != url) && url.startsWith(RESOURCE_BASE);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    @Deprecated
+        @Deprecated
     public static boolean isCookielessProxyUrl(String url) {
         return (null != url) && url.startsWith(PROXY_BASE);
     }
@@ -156,42 +148,36 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isAboutUrl(String url) {
+        public static boolean isAboutUrl(String url) {
         return (null != url) && url.startsWith("about:");
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isDataUrl(String url) {
+        public static boolean isDataUrl(String url) {
         return (null != url) && url.startsWith("data:");
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isJavaScriptUrl(String url) {
+        public static boolean isJavaScriptUrl(String url) {
         return (null != url) && url.startsWith("javascript:");
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isHttpUrl(String url) {
+        public static boolean isHttpUrl(String url) {
         return (null != url) &&
                (url.length() > 6) &&
                url.substring(0, 7).equalsIgnoreCase("http://");
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isHttpsUrl(String url) {
+        public static boolean isHttpsUrl(String url) {
         return (null != url) &&
                (url.length() > 7) &&
                url.substring(0, 8).equalsIgnoreCase("https://");
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isNetworkUrl(String url) {
+        public static boolean isNetworkUrl(String url) {
         if (url == null || url.length() == 0) {
             return false;
         }
@@ -199,8 +185,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isContentUrl(String url) {
+        public static boolean isContentUrl(String url) {
         return (null != url) && url.startsWith("content:");
     }
 
@@ -220,8 +205,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String stripAnchor(String url) {
+        public static String stripAnchor(String url) {
         int anchorIndex = url.indexOf('#');
         if (anchorIndex != -1) {
             return url.substring(0, anchorIndex);
@@ -303,8 +287,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static String parseContentDisposition(String contentDisposition) {
+        static String parseContentDisposition(String contentDisposition) {
         try {
             Matcher m = CONTENT_DISPOSITION_PATTERN.matcher(contentDisposition);
             if (m.find()) {

@@ -23,7 +23,6 @@ public class BlockGuardOs extends ForwardingOs {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.365 -0400", hash_original_method = "C76A4564374F8B1BE91B3642FF0C847C", hash_generated_method = "7F5834040574372FAD2170D1E310088D")
     private FileDescriptor tagSocket(FileDescriptor fd) throws ErrnoException {
         addTaint(fd.getTaint());
@@ -50,7 +49,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_2102775064 =             fd;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.365 -0400", hash_original_method = "94528424D623701A416A9704EA17EE51", hash_generated_method = "B48A53956516B65259B5AB6B5D80DD15")
     private void untagSocket(FileDescriptor fd) throws ErrnoException {
         addTaint(fd.getTaint());
@@ -73,7 +71,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_2102775064 =             fd;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.366 -0400", hash_original_method = "635584284C97FD1E7DC4024F591AB4FA", hash_generated_method = "47E08104407437CA7486B5A12F2DB209")
     @Override
     public FileDescriptor accept(FileDescriptor fd, InetSocketAddress peerAddress) throws ErrnoException {
@@ -89,7 +86,6 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_477128961 =         tagSocket
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.366 -0400", hash_original_method = "5D4ED9A04E2D732CC559EB48A60FC49B", hash_generated_method = "BA893E72F7BA55EAD0F91D86B35967C5")
     @Override
     public void close(FileDescriptor fd) throws ErrnoException {
@@ -123,14 +119,12 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_477128961 =         tagSocket
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static boolean isLingerSocket(FileDescriptor fd) throws ErrnoException {
+        private static boolean isLingerSocket(FileDescriptor fd) throws ErrnoException {
         StructLinger linger = Libcore.os.getsockoptLinger(fd, SOL_SOCKET, SO_LINGER);
         return linger.isOn() && linger.l_linger > 0;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.367 -0400", hash_original_method = "524D1337E9F0426B22674071C6D0693B", hash_generated_method = "7D6F005B384299D55C30D85FEFB441F0")
     @Override
     public void connect(FileDescriptor fd, InetAddress address, int port) throws ErrnoException {
@@ -145,7 +139,6 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_477128961 =         tagSocket
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.367 -0400", hash_original_method = "651C9D4A8AD9CD60F42C588D20417ED0", hash_generated_method = "A4E7315638EA838816D8E2B0416E7448")
     @Override
     public void fdatasync(FileDescriptor fd) throws ErrnoException {
@@ -158,7 +151,6 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_477128961 =         tagSocket
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.368 -0400", hash_original_method = "E0F4576754752430F3173F2FFDEB5F93", hash_generated_method = "B44C8DB1DAD7693480E29A2015D68241")
     @Override
     public void fsync(FileDescriptor fd) throws ErrnoException {
@@ -171,7 +163,6 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_477128961 =         tagSocket
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.368 -0400", hash_original_method = "D97DA02F2520733C349FC66FF2A146AF", hash_generated_method = "1189BDF7C8A95F2D52523B2E7F6EBC98")
     @Override
     public void ftruncate(FileDescriptor fd, long length) throws ErrnoException {
@@ -185,7 +176,6 @@ FileDescriptor varEB739DAEA0779973AFC08C3F032D7A35_477128961 =         tagSocket
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.368 -0400", hash_original_method = "60BB804A04FED2996BE622E8EB3C8C72", hash_generated_method = "5924FEDA517B29A2E0FB19B05AB2A74D")
     @Override
     public FileDescriptor open(String path, int flags, int mode) throws ErrnoException {
@@ -209,7 +199,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.369 -0400", hash_original_method = "F416944E2BAC8A3A477E3A9DF95661DC", hash_generated_method = "58717BF3B2DF78EB5E0ABDB12B05E463")
     @Override
     public int poll(StructPollfd[] fds, int timeoutMs) throws ErrnoException {
@@ -230,7 +219,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.369 -0400", hash_original_method = "B4077B073E0F60ADBED6DEE6A699AD14", hash_generated_method = "654A8B97782958BCDE29C21D683EBC92")
     @Override
     public int pread(FileDescriptor fd, ByteBuffer buffer, long offset) throws ErrnoException {
@@ -247,7 +235,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.370 -0400", hash_original_method = "51D119A1C60E3F0FF85DFC4F5BCBEBDF", hash_generated_method = "85A8EC205A34AAE0564DF212E50F10C3")
     @Override
     public int pread(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
@@ -266,7 +253,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.370 -0400", hash_original_method = "0F2134A6426D9EB8374019A9EA67DB6B", hash_generated_method = "67B2B3E74F4B8BDA3F929D2E68BE2C1D")
     @Override
     public int pwrite(FileDescriptor fd, ByteBuffer buffer, long offset) throws ErrnoException {
@@ -283,7 +269,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.371 -0400", hash_original_method = "A4033B69E198E86AF41C6F2BD93A7F05", hash_generated_method = "A8D451C4F83B3D3B948C5B623847840C")
     @Override
     public int pwrite(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
@@ -302,7 +287,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.371 -0400", hash_original_method = "ED8C50F685094B5680C00B42F9F5F045", hash_generated_method = "C4DE8D32B4709C49C02C8D53608529B5")
     @Override
     public int read(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
@@ -318,7 +302,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.372 -0400", hash_original_method = "2387C0D98FE16C1C4919C1D4A5A4F85D", hash_generated_method = "7E0EDD4BF4232D7F3B450BC964A8373E")
     @Override
     public int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
@@ -336,7 +319,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.372 -0400", hash_original_method = "418568873B9A73D38D7FF96ACC4F4219", hash_generated_method = "049AFAC20E447563C183E701F2958BA2")
     @Override
     public int readv(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
@@ -354,7 +336,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.373 -0400", hash_original_method = "E5449C41BDDE69AE1805A14CD8C0DB04", hash_generated_method = "E7AF7557FDD66E3CA007E8C3362D5D46")
     @Override
     public int recvfrom(FileDescriptor fd, ByteBuffer buffer, int flags, InetSocketAddress srcAddress) throws ErrnoException {
@@ -372,7 +353,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.373 -0400", hash_original_method = "F697E31CA82538D4CA19A49211FAEDE8", hash_generated_method = "44B55C74DDAD0A6B72153E02184FEBF2")
     @Override
     public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException {
@@ -392,7 +372,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.374 -0400", hash_original_method = "712364CE21E2D97A52399AF047375669", hash_generated_method = "0D61AD1E066E8D30758F77FEC76ED418")
     @Override
     public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws ErrnoException {
@@ -411,7 +390,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.374 -0400", hash_original_method = "55701E5A28F22D42DFE5E9BDB107BB3B", hash_generated_method = "2ADFD9D18A8F4B034787D15AD6220CAF")
     @Override
     public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
@@ -437,7 +415,6 @@ FileDescriptor var39B89F4C81D0661C45D0F28BA8EB3A2E_990831681 =         os.open(p
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.375 -0400", hash_original_method = "3EA6FC55F29379EA1669AB58FC394717", hash_generated_method = "F0FD203168DCC673F78185756E192AAD")
     @Override
     public FileDescriptor socket(int domain, int type, int protocol) throws ErrnoException {
@@ -452,7 +429,6 @@ FileDescriptor var67CBD9833D2D49016EBA64AE77EB089C_1731373955 =         tagSocke
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.375 -0400", hash_original_method = "5EE10271D9A1F133950EEC82FBA5FE84", hash_generated_method = "6B56DF4B04ED834442D786653000B769")
     @Override
     public int write(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
@@ -468,7 +444,6 @@ FileDescriptor var67CBD9833D2D49016EBA64AE77EB089C_1731373955 =         tagSocke
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.376 -0400", hash_original_method = "45958860FE67213CB5E2A0FF79C39AE3", hash_generated_method = "5630FCC66C591C28EDA8A9381CF1C67C")
     @Override
     public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
@@ -486,7 +461,6 @@ FileDescriptor var67CBD9833D2D49016EBA64AE77EB089C_1731373955 =         tagSocke
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.376 -0400", hash_original_method = "5DBA61950559A586673FCC47110213A7", hash_generated_method = "8E7FC206DCD0E4F65C21C319399104D7")
     @Override
     public int writev(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {

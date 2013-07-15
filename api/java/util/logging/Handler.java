@@ -192,7 +192,6 @@ Object var8501EF1A6479596C53E60F4A91E85184_1613827343 =         c.newInstance();
     public abstract void publish(LogRecord record);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.098 -0400", hash_original_method = "B6DA448E779CA9929D0D7B4D988D1AFB", hash_generated_method = "8DD621997465FD0AA18C2AAB52618CB6")
     public String getEncoding() {
 String varA498384F8F847576463EF4FF247934DD_932002440 =         this.encoding;
@@ -215,7 +214,6 @@ ErrorManager varDC0DB3B2F6F9CFE0B48E09E1FB7A56FC_1181021163 =         this.error
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.098 -0400", hash_original_method = "D58C134707557B2D24085330800528E0", hash_generated_method = "E230238A46952921F074B3FDE469CF0D")
     public Filter getFilter() {
 Filter varF4BCC990D13B6FB90061D986D6021A1C_1757080781 =         this.filter;
@@ -226,7 +224,6 @@ Filter varF4BCC990D13B6FB90061D986D6021A1C_1757080781 =         this.filter;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.098 -0400", hash_original_method = "A74BB1584114C9889E52E1E2254AF36C", hash_generated_method = "565DCB1E48DAC721BE1E31FF5CB2CC41")
     public Formatter getFormatter() {
 Formatter var4201E23B52038F1A9E1FF0526F113251_337090006 =         this.formatter;
@@ -237,7 +234,6 @@ Formatter var4201E23B52038F1A9E1FF0526F113251_337090006 =         this.formatter
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.099 -0400", hash_original_method = "56C01E3C36F1CAAB6EC71D0FEE2F8D34", hash_generated_method = "FE84573736FDD22951D910DCEE5D4184")
     public Level getLevel() {
 Level varD3219067F4C112409126B4317B90C6BA_1289981414 =         this.level;

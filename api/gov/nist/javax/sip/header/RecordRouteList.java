@@ -15,7 +15,6 @@ public class RecordRouteList extends SIPHeaderList<RecordRoute> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.827 -0400", hash_original_method = "7817AF16B5252B16AA7B12BAE88CFC40", hash_generated_method = "F68E77E7D1A793D73AA71FC9C2B1F095")
     public Object clone() {
         RecordRouteList retval = new RecordRouteList();

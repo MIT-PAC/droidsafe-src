@@ -74,7 +74,6 @@ String[] varF1D84C9BE10FAF82BDD8C524A41262B8_264546613 =         split(input, 0)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.335 -0400", hash_original_method = "266BA96807DA041E9813A92F169CCF9C", hash_generated_method = "B08C92654B10B17D2429D349AF00A2D6")
     public String pattern() {
 String var407D32260E541B695CF3FD3F7EFB76AB_1103796651 =         pattern;
@@ -85,7 +84,6 @@ String var407D32260E541B695CF3FD3F7EFB76AB_1103796651 =         pattern;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.335 -0400", hash_original_method = "78D8A2FB7B521C80E554EF489653C471", hash_generated_method = "CEDE60D5BF35D10BA805F074AB82539C")
     @Override
     public String toString() {
@@ -97,7 +95,6 @@ String var407D32260E541B695CF3FD3F7EFB76AB_48024340 =         pattern;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.336 -0400", hash_original_method = "2653DED91010C405DFA7C9A961BBF2C3", hash_generated_method = "2F00716E950BBEE7F33744D47DD1D57D")
     public int flags() {
         int var4E5868D676CB634AA75B125A0F741ABF_1902695880 = (flags);

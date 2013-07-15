@@ -333,8 +333,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getMinGzipSize(ContentResolver resolver) {
+        public static long getMinGzipSize(ContentResolver resolver) {
         return DEFAULT_SYNC_MIN_GZIP_BYTES;
     }
 
@@ -367,7 +366,6 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.857 -0400", hash_original_method = "ACD8C6EB71D9F6C325AF8CC21E8A00EF", hash_generated_method = "C4593E5AA16D43E72F368F7DD199C333")
     public void disableCurlLogging() {
         curlConfiguration = null;

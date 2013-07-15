@@ -72,16 +72,14 @@ for(int i = index;i != seq.size();i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static V2Form getInstance(
+        public static V2Form getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static V2Form getInstance(
+        public static V2Form getInstance(
         Object  obj) {
         if (obj == null || obj instanceof V2Form)
         {
@@ -95,7 +93,6 @@ for(int i = index;i != seq.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.343 -0400", hash_original_method = "55884F30CB8A32C82BBC3BF8E06EF566", hash_generated_method = "E581A50E0E7B717730C6494DFB7B800A")
     public GeneralNames getIssuerName() {
 GeneralNames var45766B0DF0D0B85E6E779A59D6C70FDF_1682330075 =         issuerName;
@@ -106,7 +103,6 @@ GeneralNames var45766B0DF0D0B85E6E779A59D6C70FDF_1682330075 =         issuerName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.344 -0400", hash_original_method = "0056368CFDBAD05E126455DF61F0B2E7", hash_generated_method = "FBAEE54FADD6034A217146B3D09E27A0")
     public IssuerSerial getBaseCertificateID() {
 IssuerSerial var3F2CF66981EEEACD456AAF29D2BB1816_144065548 =         baseCertificateID;
@@ -117,7 +113,6 @@ IssuerSerial var3F2CF66981EEEACD456AAF29D2BB1816_144065548 =         baseCertifi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.344 -0400", hash_original_method = "BF432F04B889EC14E618C49342356E7A", hash_generated_method = "393C8BDA3D7511388D68C758F5B59B0F")
     public ObjectDigestInfo getObjectDigestInfo() {
 ObjectDigestInfo var8645E6823C16465BE8DE456BAC146566_1706722228 =         objectDigestInfo;

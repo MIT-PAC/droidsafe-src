@@ -55,7 +55,6 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.784 -0400", hash_original_method = "FE73EB52D6E189AC5420897BE3BAB488", hash_generated_method = "CC7A998E19022A793CC09650902F7B5D")
     public void write(int b) throws IOException {
     if(buffer == null)        
@@ -95,7 +94,6 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.785 -0400", hash_original_method = "A3459DDB741D1D5DB893FD9A7CFFE0F1", hash_generated_method = "9B8A7469D3F6400D187082335FF47885")
     public void write(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -112,7 +110,6 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.786 -0400", hash_original_method = "17457DFCCCBD635753AB001ED5B818FB", hash_generated_method = "9CE0DEBDB385AF1C9E213046ADEE54C4")
     public void close() throws IOException {
         IOException thrown = null;
@@ -195,7 +192,6 @@ public class Base64OutputStream extends FilterOutputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.788 -0400", hash_original_method = "8F1A1CDA0B50B3C3FF8220D3A1F18B22", hash_generated_method = "FEB15C45BCAED0327B33AA870DD50865")
     private byte[] embiggen(byte[] b, int len) {
         addTaint(len);

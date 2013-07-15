@@ -125,7 +125,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.653 -0400", hash_original_method = "EAA2EB56C456A75F6A36236287457095", hash_generated_method = "A3848F3DB898F61715B75999BC0817F8")
     public int getRssi() {
         int var367DEE652AE08B1E7A6DD8CD03A62B84_398368108 = (mRssi);
@@ -136,7 +135,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.653 -0400", hash_original_method = "9D27DA83295DE88E54D1A14DE01D13B2", hash_generated_method = "29310542B0201E480A521E20DE57CA10")
     public int getLac() {
         int varB2F9C701F6B9FA98A906A1D27571667E_1191748897 = (mLac);
@@ -147,7 +145,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.654 -0400", hash_original_method = "03F3B6133F275A943C2D43BD3469FDB7", hash_generated_method = "B7F964FF4C0C712FA21B6ABB0D32E56E")
     public int getCid() {
         int var47909A4A63C9D0DF4D400D36305EA002_951383483 = (mCid);
@@ -158,7 +155,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.654 -0400", hash_original_method = "0E29DC7205E312820087B8B417C09B13", hash_generated_method = "E232EA26358728A7C2DFC883581E4B84")
     public int getPsc() {
         int var865B7932A3A776B1F3AFFD84DFC3DDFF_185231135 = (mPsc);
@@ -169,7 +165,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.654 -0400", hash_original_method = "BA8FF13D9B34325771E51CDF8D4F958D", hash_generated_method = "6496FFC75C1F8527851435A97B50FBBB")
     public int getNetworkType() {
         int var9761905E68D80D41E55047BFA13A52C2_1025803599 = (mNetworkType);
@@ -180,7 +175,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.654 -0400", hash_original_method = "6316D6CF1176EA8E415E44B17DEEB68F", hash_generated_method = "797F050B3EBE62F935630D664E238E38")
     @Deprecated
     public void setCid(int cid) {
@@ -190,7 +184,6 @@ switch(radioType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.655 -0400", hash_original_method = "DC61695B2550927FEF6924BD6DCCD37F", hash_generated_method = "0E2A4B21AE2C4AC464A8CE307DEBA552")
     @Deprecated
     public void setRssi(int rssi) {
@@ -237,7 +230,6 @@ String var2460B846747F8B22185AD8BE722266A5_1168421261 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.656 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "508EC0CC7A01F7F2A86E9B55F39759FC")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1039423245 = (0);

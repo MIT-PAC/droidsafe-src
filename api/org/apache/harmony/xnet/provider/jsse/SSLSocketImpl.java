@@ -773,7 +773,6 @@ switch(type = recordProtocol.unwrap()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.402 -0400", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "C1695AE7DFED5B6A53610B6DDC6B44F9")
     private void doHandshake() throws IOException {
         SSLEngineResult.HandshakeStatus status;
@@ -863,7 +862,6 @@ for(int i=0;i<size;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.402 -0400", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "EEEBAB35DBDAB7E1CD2D955BE0668ED9")
     private void processAlert() throws IOException {
     if(!alertProtocol.hasAlert())        

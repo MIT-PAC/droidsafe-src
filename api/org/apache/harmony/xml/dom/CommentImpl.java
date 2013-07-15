@@ -18,7 +18,6 @@ public final class CommentImpl extends CharacterDataImpl implements Comment {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.523 -0400", hash_original_method = "AADC148D3C6535A85098796D78F74F64", hash_generated_method = "2C2A7A3856E5A11DD4E7229FB7488EAB")
     @Override
     public String getNodeName() {
@@ -30,7 +29,6 @@ String var0FCA15F9618B56275D1C4A63BF78C539_309308725 =         "#comment";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.523 -0400", hash_original_method = "6EA19FED584EC66A374D4E0A8EF9DBF2", hash_generated_method = "50259F5153F5EC8228E24DECE8FDC179")
     @Override
     public short getNodeType() {

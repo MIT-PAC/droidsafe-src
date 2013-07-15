@@ -25,7 +25,6 @@ public class AsymmetricCipherKeyPair {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.774 -0400", hash_original_method = "3D299E49495FDEB066F19C28CA51812C", hash_generated_method = "8BB31CD4A80B288830BC5187222911D7")
     public CipherParameters getPublic() {
 CipherParameters var96E1D8F27EFED9237328720061BDA387_2011869511 =         publicParam;
@@ -36,7 +35,6 @@ CipherParameters var96E1D8F27EFED9237328720061BDA387_2011869511 =         public
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.774 -0400", hash_original_method = "E6E9A7462A68D5F39CC837AD8A41F899", hash_generated_method = "3D99B7C01FE2FF345B68E1102278CE00")
     public CipherParameters getPrivate() {
 CipherParameters var7323AE44E1F2E5C42925B14B8B0CE986_1202910857 =         privateParam;

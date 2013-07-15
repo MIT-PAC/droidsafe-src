@@ -152,8 +152,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isRequestHeader(SIPHeader sipHeader) {
+        public static boolean isRequestHeader(SIPHeader sipHeader) {
         return sipHeader instanceof AlertInfo || sipHeader instanceof InReplyTo
                 || sipHeader instanceof Authorization || sipHeader instanceof MaxForwards
                 || sipHeader instanceof UserAgent || sipHeader instanceof Priority
@@ -164,8 +163,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isResponseHeader(SIPHeader sipHeader) {
+        public static boolean isResponseHeader(SIPHeader sipHeader) {
         return sipHeader instanceof ErrorInfo || sipHeader instanceof ProxyAuthenticate
                 || sipHeader instanceof Server || sipHeader instanceof Unsupported
                 || sipHeader instanceof RetryAfter || sipHeader instanceof Warning
@@ -174,7 +172,6 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.994 -0400", hash_original_method = "4E875487FBA3E9E3C25B636513844812", hash_generated_method = "FB248FC3842952D3E8B127B2DE3C5E8A")
     public LinkedList<String> getMessageAsEncodedStrings() {
         LinkedList<String> retval = new LinkedList<String>();
@@ -212,7 +209,6 @@ LinkedList<String> varF9E19AD6135C970F387F77C6F3DE4477_1800958827 =         retv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.995 -0400", hash_original_method = "A27900405272FB61F2D6362A05DA41D6", hash_generated_method = "1F0879645B00074B11CD6D2FD679181B")
     protected String encodeSIPHeaders() {
         StringBuffer encoding = new StringBuffer();
@@ -334,7 +330,6 @@ String var2D67BB46AD10FAB14B45E2CB0673323E_732808532 =         contentLengthHead
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.997 -0400", hash_original_method = "789EABA7F64EF1819B9EE91356F4E918", hash_generated_method = "7BE5939C3FD7CC665AF3A8200DF2CF02")
     public void merge(Object template) {
         addTaint(template.getTaint());
@@ -519,7 +514,6 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1467685368 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.002 -0400", hash_original_method = "CE435A19EF4C3C8ADC65C5BBD44452BB", hash_generated_method = "0489D35DB858338171AFBA0BF4BC74E7")
     public String debugDump() {
         stringRepresentation = "";
@@ -564,7 +558,6 @@ String var8D11C2D110975896438D6F91C60E6D6F_660482926 =         stringRepresentat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.025 -0400", hash_original_method = "D9E90811A837F48EC447FF925318738A", hash_generated_method = "9D38E6FDDA012C72F23CE545A0DCB0CA")
     private void attachHeader(SIPHeader h) {
         addTaint(h.getTaint());
@@ -605,7 +598,6 @@ String var8D11C2D110975896438D6F91C60E6D6F_660482926 =         stringRepresentat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.025 -0400", hash_original_method = "230B17E5A17A83111BEC4A023E8D6F14", hash_generated_method = "69E028C2522D025B3E1F234A9246E0C9")
     public void setHeader(Header sipHeader) {
         addTaint(sipHeader.getTaint());
@@ -677,7 +669,6 @@ String var8D11C2D110975896438D6F91C60E6D6F_660482926 =         stringRepresentat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.026 -0400", hash_original_method = "9B17545BC9FC78AB24684381D78F3E60", hash_generated_method = "854FB2D1DB68B7F1CBAE645D4468DED4")
     public void attachHeader(SIPHeader h, boolean replaceflag) throws SIPDuplicateHeaderException {
         addTaint(replaceflag);
@@ -874,7 +865,6 @@ String var8D11C2D110975896438D6F91C60E6D6F_660482926 =         stringRepresentat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.027 -0400", hash_original_method = "A43C3FE911C5904FA81F0CAD0EBF40FE", hash_generated_method = "9FA907E212399C279FBE46429D3EA7FB")
     public void removeHeader(String headerName) {
         addTaint(headerName.getTaint());
@@ -1012,7 +1002,6 @@ String var74489726A6E091DB52CBF99C7496DFAB_1999872345 =             retval.toStr
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.028 -0400", hash_original_method = "0B4068F7FDD81C59C44EF10BE948C047", hash_generated_method = "C12A36EB344F0A6CC98F627AEB1446F8")
     public boolean hasContent() {
         boolean var5D9A09772781E199458818160705ED78_597026495 = (messageContent != null || messageContentBytes != null);
@@ -1023,7 +1012,6 @@ String var74489726A6E091DB52CBF99C7496DFAB_1999872345 =             retval.toStr
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.028 -0400", hash_original_method = "16CF6C29A1D923EBFDFB9DE65000093A", hash_generated_method = "DB3268297B90FBEDB3F815E4B5E973CB")
     public Iterator<SIPHeader> getHeaders() {
 Iterator<SIPHeader> var169085E2B47E3BF8416E299E951072CC_1885710738 =         headers.iterator();
@@ -1034,7 +1022,6 @@ Iterator<SIPHeader> var169085E2B47E3BF8416E299E951072CC_1885710738 =         hea
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.028 -0400", hash_original_method = "1ADD77F2239C280F0A32414969B68312", hash_generated_method = "D3ACC764267B31AE093B554ECE76DA15")
     public Header getHeader(String headerName) {
         addTaint(headerName.getTaint());
@@ -1046,7 +1033,6 @@ Header varCCB0AD9CF7E1F5AFBE8B1DF0A30B8415_178262899 =         getHeaderLowerCas
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "32A79E235DDCC6E80E2B12189B346373", hash_generated_method = "69CD1DDDA4FB4DDB3F7FEEDF1CE20866")
     private Header getHeaderLowerCase(String lowerCaseHeaderName) {
         addTaint(lowerCaseHeaderName.getTaint());
@@ -1080,7 +1066,6 @@ Header varDF77B5B4168F45421B89B792E9510A4B_1474529368 =         (Header) sipHead
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "094433154D44236D0991BBCF366E0E6A", hash_generated_method = "5C6C50C0FF14EEF0EE1DA16AA60127C9")
     public ContentType getContentTypeHeader() {
 ContentType var503E7451F54F9039473F136B95CD15E8_1989183972 =         (ContentType) getHeaderLowerCase(CONTENT_TYPE_LOWERCASE);
@@ -1091,7 +1076,6 @@ ContentType var503E7451F54F9039473F136B95CD15E8_1989183972 =         (ContentTyp
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "F29DC29143C65AC3E05B010248583D2F", hash_generated_method = "B998BAB66902AAB3F5F712A8A487E47F")
     public ContentLengthHeader getContentLengthHeader() {
 ContentLengthHeader var0E116520CA9F97032B794A62953662D9_1205029522 =         this.getContentLength();
@@ -1102,7 +1086,6 @@ ContentLengthHeader var0E116520CA9F97032B794A62953662D9_1205029522 =         thi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "E10DCB9A2200DABE5E8DE063DD5342F3", hash_generated_method = "5DA9D5CCCC0E8EDB39736813155C1AB0")
     public FromHeader getFrom() {
 FromHeader var7E8616B95CCA52C5507153D700D0B24C_1721334451 =         (FromHeader) fromHeader;
@@ -1113,7 +1096,6 @@ FromHeader var7E8616B95CCA52C5507153D700D0B24C_1721334451 =         (FromHeader)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "10D7F219ADDA2D1F9DA30C2C2F401D03", hash_generated_method = "E62CFB28F2B8547AE5AEC4E322B844A6")
     public ErrorInfoList getErrorInfoHeaders() {
 ErrorInfoList var036CD60E11ECF3BF75B0E9B9E834ACEC_1013798712 =         (ErrorInfoList) getSIPHeaderListLowerCase(ERROR_LOWERCASE);
@@ -1124,7 +1106,6 @@ ErrorInfoList var036CD60E11ECF3BF75B0E9B9E834ACEC_1013798712 =         (ErrorInf
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "6BBB646E6D7D64808CC70B68BEB17C86", hash_generated_method = "B8A0F9A355D89EDB0829AEF7B7F38C5F")
     public ContactList getContactHeaders() {
 ContactList varAA8B9C443D692B0636D9210B1B99FEB4_1977777927 =         (ContactList) this.getSIPHeaderListLowerCase(CONTACT_LOWERCASE);
@@ -1135,7 +1116,6 @@ ContactList varAA8B9C443D692B0636D9210B1B99FEB4_1977777927 =         (ContactLis
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "7930A8382B37585900D6B0ADAEF5E908", hash_generated_method = "AA6B969690E694A1D21B14B5128E709E")
     public Contact getContactHeader() {
         ContactList clist = this.getContactHeaders();
@@ -1161,7 +1141,6 @@ Contact var540C13E9E156B687226421B24F2DF178_889846430 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "F913627528E03E7BE96F6FC26EC1EAB5", hash_generated_method = "B19DE9D952F7403053F27780E1395BBE")
     public ViaList getViaHeaders() {
 ViaList varE4963E1622596596C3AFE385A55A1E9A_327526914 =         (ViaList) getSIPHeaderListLowerCase(VIA_LOWERCASE);
@@ -1195,7 +1174,6 @@ ViaList varE4963E1622596596C3AFE385A55A1E9A_327526914 =         (ViaList) getSIP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "458FFC69EFF172F74B60E661629859D7", hash_generated_method = "54E49F2F21AF4B6DDD33B5C78B897EDC")
     public void setHeader(SIPHeaderList<Via> sipHeaderList) {
         addTaint(sipHeaderList.getTaint());
@@ -1205,7 +1183,6 @@ ViaList varE4963E1622596596C3AFE385A55A1E9A_327526914 =         (ViaList) getSIP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "D8225C1F89A591B431137F8AC67C8011", hash_generated_method = "C511199CC083B550D8F3C3D274BE5388")
     public Via getTopmostVia() {
     if(this.getViaHeaders() == null)        
@@ -1228,7 +1205,6 @@ Via var1BDC64DDD514EFAB50D16B7E00DBDB95_1090412446 =         (Via) (getViaHeader
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "734B287C3C9508BBD63962A2764D9C01", hash_generated_method = "B139E86A95355E2AC538B190A2855FF1")
     public CSeqHeader getCSeq() {
 CSeqHeader var0371EB3DF60DCD3E5DB5804B1DA468CE_1758094125 =         (CSeqHeader) cSeqHeader;
@@ -1239,7 +1215,6 @@ CSeqHeader var0371EB3DF60DCD3E5DB5804B1DA468CE_1758094125 =         (CSeqHeader)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "6A92E6492A4EA537FE7E1089912E5A2E", hash_generated_method = "72BF97E111273EEAF7A8A4574A959FE4")
     public Authorization getAuthorization() {
 Authorization varF9F736C1A1FC4A7AE6CF26AB986434D5_49744591 =         (Authorization) getHeaderLowerCase(AUTHORIZATION_LOWERCASE);
@@ -1250,7 +1225,6 @@ Authorization varF9F736C1A1FC4A7AE6CF26AB986434D5_49744591 =         (Authorizat
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "1941B7A53D19F77542CA45C05AFF9884", hash_generated_method = "B79ADD66BAED2A4E43970297A4E53FF3")
     public MaxForwardsHeader getMaxForwards() {
 MaxForwardsHeader varEF725751D19AC70C4F57F9BFAAC191D7_812757190 =         maxForwardsHeader;
@@ -1261,7 +1235,6 @@ MaxForwardsHeader varEF725751D19AC70C4F57F9BFAAC191D7_812757190 =         maxFor
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "08224707CDDBB2C37148D3B618E2B6B7", hash_generated_method = "CF135258C84BD8E6D2854DBA92CDED20")
     public void setMaxForwards(MaxForwardsHeader maxForwards) {
         addTaint(maxForwards.getTaint());
@@ -1271,7 +1244,6 @@ MaxForwardsHeader varEF725751D19AC70C4F57F9BFAAC191D7_812757190 =         maxFor
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "7800F88C4B689BC7D7C78CBE850678CA", hash_generated_method = "84096958F140852E43C417C90CDBF51E")
     public RouteList getRouteHeaders() {
 RouteList varD88E9995CB472A568317A79450686765_989921654 =         (RouteList) getSIPHeaderListLowerCase(ROUTE_LOWERCASE);
@@ -1282,7 +1254,6 @@ RouteList varD88E9995CB472A568317A79450686765_989921654 =         (RouteList) ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "9DA69A74904D39D3267E3E1010C409F3", hash_generated_method = "F371A89B35A7CB0E3BCE39E79F741FE0")
     public CallIdHeader getCallId() {
 CallIdHeader var2512F43A36DEB920CEA89B5BA464D4B4_4859762 =         callIdHeader;
@@ -1293,7 +1264,6 @@ CallIdHeader var2512F43A36DEB920CEA89B5BA464D4B4_4859762 =         callIdHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "5127E494FA29164B5CB6A74D7F3B176F", hash_generated_method = "4B6CC3F25B69F43940D6327B43A25A55")
     public void setCallId(CallIdHeader callId) {
         addTaint(callId.getTaint());
@@ -1303,7 +1273,6 @@ CallIdHeader var2512F43A36DEB920CEA89B5BA464D4B4_4859762 =         callIdHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.030 -0400", hash_original_method = "16037BFD4917B839A558D81FBF251209", hash_generated_method = "59A37871E8B1DF4ED7BDFDD2669DAC25")
     public void setCallId(String callId) throws java.text.ParseException {
         addTaint(callId.getTaint());
@@ -1320,7 +1289,6 @@ CallIdHeader var2512F43A36DEB920CEA89B5BA464D4B4_4859762 =         callIdHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.031 -0400", hash_original_method = "6FCB806D3659BA1DF59CA318834E3C35", hash_generated_method = "D529E51397B1FBEFFF1FB43A66F75F4F")
     public RecordRouteList getRecordRouteHeaders() {
 RecordRouteList var1588548A9B02ACBEF48523119ABFF6A9_1162098716 =         (RecordRouteList) this.getSIPHeaderListLowerCase(RECORDROUTE_LOWERCASE);
@@ -1331,7 +1299,6 @@ RecordRouteList var1588548A9B02ACBEF48523119ABFF6A9_1162098716 =         (Record
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.031 -0400", hash_original_method = "D2F3523F315E42C3CDB78FE4D7DBD860", hash_generated_method = "521BDA6856AE9A9B705AAAEBA5D4A651")
     public ToHeader getTo() {
 ToHeader varF7A555A948C2C4B404B57534A94E4D37_594120320 =         (ToHeader) toHeader;
@@ -1342,7 +1309,6 @@ ToHeader varF7A555A948C2C4B404B57534A94E4D37_594120320 =         (ToHeader) toHe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.031 -0400", hash_original_method = "AA146219F068967CE3F55E3F637E86D7", hash_generated_method = "5797DA27E97DA9467A667D6BAFA3F5D2")
     public void setTo(ToHeader to) {
         addTaint(to.getTaint());
@@ -1352,7 +1318,6 @@ ToHeader varF7A555A948C2C4B404B57534A94E4D37_594120320 =         (ToHeader) toHe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.031 -0400", hash_original_method = "61E9A0C02A79622F4076A17D3E8275D9", hash_generated_method = "2DA4E980183CF318802824B52CD7E3DA")
     public void setFrom(FromHeader from) {
         addTaint(from.getTaint());
@@ -1362,7 +1327,6 @@ ToHeader varF7A555A948C2C4B404B57534A94E4D37_594120320 =         (ToHeader) toHe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.031 -0400", hash_original_method = "BF14C97BBADF5B6B3DD1A606FFB97154", hash_generated_method = "422EA05A2B29502B23F45CA87DE95A16")
     public ContentLengthHeader getContentLength() {
 ContentLengthHeader varEAA2B9DD673B76B698F2B6C64694CC67_1313718821 =         this.contentLengthHeader;
@@ -1373,7 +1337,6 @@ ContentLengthHeader varEAA2B9DD673B76B698F2B6C64694CC67_1313718821 =         thi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.031 -0400", hash_original_method = "40D47E0A8FD809ED2EC3170259DB7692", hash_generated_method = "1378536BF78E102009868F948096B8A8")
     public String getMessageContent() throws UnsupportedEncodingException {
     if(this.messageContent == null && this.messageContentBytes == null)        
@@ -1400,7 +1363,6 @@ String varF829FB8E72DE477DA0945F7BFAD27FF7_1718047055 =         this.messageCont
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.032 -0400", hash_original_method = "0A8A11F2CA57642B3F77F3FF48221ABE", hash_generated_method = "18D9F8E0315F152C2404968DE159B73C")
     public byte[] getRawContent() {
         try 
@@ -1475,7 +1437,6 @@ String varF829FB8E72DE477DA0945F7BFAD27FF7_1718047055 =         this.messageCont
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.033 -0400", hash_original_method = "F6727728B1118BFFD3FCC04534FCE621", hash_generated_method = "1C7556188806097D00B82E9917A9967A")
     public void setContent(Object content, ContentTypeHeader contentTypeHeader) throws ParseException {
         addTaint(contentTypeHeader.getTaint());
@@ -1518,7 +1479,6 @@ String varF829FB8E72DE477DA0945F7BFAD27FF7_1718047055 =         this.messageCont
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.033 -0400", hash_original_method = "54FC52177A1CB92C02565C30A4F8CE94", hash_generated_method = "FDD3606812CD9AEF1A5525355DDFE3CD")
     public Object getContent() {
     if(this.messageContentObject != null)        
@@ -1559,7 +1519,6 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.033 -0400", hash_original_method = "567464035ABE474ACDCFF614F9D534B5", hash_generated_method = "C12E6E953020DAB31745A7CAFC39BA3E")
     public void setMessageContent(String type, String subType, byte[] messageContent) {
         addTaint(messageContent[0]);
@@ -1612,7 +1571,6 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.034 -0400", hash_original_method = "19C7E154661732280AD152F3E186944D", hash_generated_method = "FE4B2F2B2435BA47A415DC55253399E0")
     public void setMessageContent(byte[] content) {
         computeContentLength(content);
@@ -1627,7 +1585,6 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.034 -0400", hash_original_method = "677A53CE4E6B4035F9B12FCECD3E865E", hash_generated_method = "9FF694BEE5F22A80688DE7D444BAB054")
     public void setMessageContent(byte[] content, boolean computeContentLength, int givenLength) throws ParseException {
         addTaint(givenLength);
@@ -1655,7 +1612,6 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.035 -0400", hash_original_method = "D3327D918F93ECC2995A4C67A415A1A5", hash_generated_method = "E4A07DFF382A07C6F220F461C866E952")
     private void computeContentLength(Object content) {
         addTaint(content.getTaint());
@@ -1712,7 +1668,6 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.035 -0400", hash_original_method = "B09AA5FB20D2965ADCD41D53860CDBE3", hash_generated_method = "C433687F37F78D6DB58F9B2BE25DC4C8")
     public void removeContent() {
         messageContent = null;
@@ -1736,7 +1691,6 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.036 -0400", hash_original_method = "B51D33B6E886062DB169564C9DA9DCD8", hash_generated_method = "882DF587F0656FA6BF6E0D2B3F5E4BDE")
     @SuppressWarnings("unchecked")
     public ListIterator<SIPHeader> getHeaders(String headerName) {
@@ -1782,7 +1736,6 @@ ListIterator<SIPHeader> var359DBD5FF7CDD10C9EF326ED7D065DC7_334793218 =         
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.036 -0400", hash_original_method = "6CE50AA271DA9876F1700D8E280EAFD1", hash_generated_method = "D238EAFF08E0290F1363A58BCD25716F")
     public String getHeaderAsFormattedString(String name) {
         addTaint(name.getTaint());
@@ -1809,7 +1762,6 @@ String var4A58D553E11CF1284D32C65807D538A0_635515369 =             this.getHeade
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.036 -0400", hash_original_method = "2723C6F27F309BF6F386C5DF25AB6032", hash_generated_method = "030189BB7951C5982F9D17B112E8361C")
     private SIPHeader getSIPHeaderListLowerCase(String lowerCaseHeaderName) {
         addTaint(lowerCaseHeaderName.getTaint());
@@ -1821,7 +1773,6 @@ SIPHeader var9F84BCDE7A03E3F19EFF3E75A8D0C3B5_911692280 =         nameTable.get(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.036 -0400", hash_original_method = "9F4B7A8AFA1B725FEEE6FA6CFA2755DF", hash_generated_method = "C7769B6C06EB1DFEE9EB30DE162DE8A4")
     @SuppressWarnings("unchecked")
     private List<SIPHeader> getHeaderList(String headerName) {
@@ -1864,7 +1815,6 @@ List<SIPHeader> var53BD4E0B8E8668757CB18B1D2E5DB6FB_955324640 =             ll;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.037 -0400", hash_original_method = "6DBF8105DE4FD1DC6BA28CCFFFEEC680", hash_generated_method = "73914416045D0F5470474A0AEDDEB332")
     public boolean hasHeader(String headerName) {
         addTaint(headerName.getTaint());
@@ -1876,7 +1826,6 @@ List<SIPHeader> var53BD4E0B8E8668757CB18B1D2E5DB6FB_955324640 =             ll;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.037 -0400", hash_original_method = "4231E4F79F4F1EB89656879CE689B66E", hash_generated_method = "79DB2E0F55C2BFF899D1664C9B659334")
     public boolean hasFromTag() {
         boolean varE9818AEC36D5AB232033D7F3832A5DFF_1591671862 = (fromHeader != null && fromHeader.getTag() != null);
@@ -1887,7 +1836,6 @@ List<SIPHeader> var53BD4E0B8E8668757CB18B1D2E5DB6FB_955324640 =             ll;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.038 -0400", hash_original_method = "62BEDD072F48BB9AA18DBB87956D8F3D", hash_generated_method = "3B881A9C0036926806CE28711DDD9DAF")
     public boolean hasToTag() {
         boolean var018B7C5541312476336C310A7ADC802C_1166364250 = (toHeader != null && toHeader.getTag() != null);
@@ -1898,7 +1846,6 @@ List<SIPHeader> var53BD4E0B8E8668757CB18B1D2E5DB6FB_955324640 =             ll;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.039 -0400", hash_original_method = "5C72A9C802C6EC574622DB27171F7A2E", hash_generated_method = "E50B6396486AC7097FFED91057999D6E")
     public String getFromTag() {
 String var8D362156A1E0C71E78338EF5B9B04177_1323609175 =         fromHeader == null ? null : fromHeader.getTag();
@@ -1909,7 +1856,6 @@ String var8D362156A1E0C71E78338EF5B9B04177_1323609175 =         fromHeader == nu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.039 -0400", hash_original_method = "2974ECBC3FF627B3CB2268B4D90C9E07", hash_generated_method = "0890AEDD9876CF7C342DD6ACEC0297CA")
     public void setFromTag(String tag) {
         addTaint(tag.getTaint());
@@ -1928,7 +1874,6 @@ String var8D362156A1E0C71E78338EF5B9B04177_1323609175 =         fromHeader == nu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.039 -0400", hash_original_method = "7DFC8A6205B3CBC36E5183721A30EB01", hash_generated_method = "DA53511CDC1ADC6DBCF7048CD1941616")
     public void setToTag(String tag) {
         addTaint(tag.getTaint());
@@ -1947,7 +1892,6 @@ String var8D362156A1E0C71E78338EF5B9B04177_1323609175 =         fromHeader == nu
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.040 -0400", hash_original_method = "5B9C84C201385B92B0E684584F1ECF7E", hash_generated_method = "F0DCBB2928A1AF54084E49E2B73F8A17")
     public String getToTag() {
 String var1E8D6A1AFE73FE2CAA8B49D42AEF9694_608008970 =         toHeader == null ? null : toHeader.getTag();
@@ -1961,7 +1905,6 @@ String var1E8D6A1AFE73FE2CAA8B49D42AEF9694_608008970 =         toHeader == null 
     public abstract String getFirstLine();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.040 -0400", hash_original_method = "34A83ACBA422BB4E8AD74511B9BCE335", hash_generated_method = "66B188E74EB4300D6E0E41B1A3BBCBE8")
     public void addHeader(Header sipHeader) {
         addTaint(sipHeader.getTaint());
@@ -2011,7 +1954,6 @@ String var1E8D6A1AFE73FE2CAA8B49D42AEF9694_608008970 =         toHeader == null 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.040 -0400", hash_original_method = "8AEC9EB78EF51FE3B48C263748A725D0", hash_generated_method = "D0E5371C761D9250B5A63AA197035B65")
     public void addUnparsed(String unparsed) {
         addTaint(unparsed.getTaint());
@@ -2021,7 +1963,6 @@ String var1E8D6A1AFE73FE2CAA8B49D42AEF9694_608008970 =         toHeader == null 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.040 -0400", hash_original_method = "8ACC7204C4B122EB788CE6764EA1EA77", hash_generated_method = "4AB7F96F10B288BD60F60E0EFA1ADCB4")
     public void addHeader(String sipHeader) {
         addTaint(sipHeader.getTaint());
@@ -2048,7 +1989,6 @@ String var1E8D6A1AFE73FE2CAA8B49D42AEF9694_608008970 =         toHeader == null 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.041 -0400", hash_original_method = "F4B3A65BCC1C141571353972EC488146", hash_generated_method = "EFFFA51184B3B6D26D871AF2B50718BA")
     public ListIterator<String> getUnrecognizedHeaders() {
 ListIterator<String> varDBB72A2BAA4A67B704AF5950B205E051_1984180507 =         this.unrecognizedHeaders.listIterator();
@@ -2059,7 +1999,6 @@ ListIterator<String> varDBB72A2BAA4A67B704AF5950B205E051_1984180507 =         th
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.041 -0400", hash_original_method = "C08D5FBD41C305191A05DA7EC6E8BA34", hash_generated_method = "563F0A1D0E92744C21A070B800E5BE8F")
     public ListIterator<String> getHeaderNames() {
         Iterator<SIPHeader> li = this.headers.iterator();
@@ -2086,7 +2025,6 @@ ListIterator<String> varE5CB21342F743C2789E32811BD0E4C88_738402580 =         ret
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.042 -0400", hash_original_method = "19862554CF2CF162312B89332E1831C0", hash_generated_method = "444B8AB2EDFA78D69F2EBE326A49FD4D")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -2192,7 +2130,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.043 -0400", hash_original_method = "729B7ABDA713D8DD91F71F3C7E5D92DE", hash_generated_method = "252719CE4412C739601CC1C306D95C9B")
     public void setExpires(ExpiresHeader expiresHeader) {
         addTaint(expiresHeader.getTaint());
@@ -2202,7 +2139,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.043 -0400", hash_original_method = "9820BC2E150668B0FD803FA9E719FCCB", hash_generated_method = "B0F6E4E280B331FB60FAD30B38356686")
     public void setContentDisposition(ContentDispositionHeader contentDispositionHeader) {
         addTaint(contentDispositionHeader.getTaint());
@@ -2212,7 +2148,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.044 -0400", hash_original_method = "664B5D910990D19402FB830D30BD43E8", hash_generated_method = "97D305AF7527163C522C9DE8A9553384")
     public void setContentEncoding(ContentEncodingHeader contentEncodingHeader) {
         addTaint(contentEncodingHeader.getTaint());
@@ -2222,7 +2157,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.044 -0400", hash_original_method = "F5B59DEA81E2E529FE4037C765469E44", hash_generated_method = "F272A27E90DB85C019DE456C5574EA1F")
     public void setContentLanguage(ContentLanguageHeader contentLanguageHeader) {
         addTaint(contentLanguageHeader.getTaint());
@@ -2232,7 +2166,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.045 -0400", hash_original_method = "5BC3E664403E9FC36E24FA33AD51CF36", hash_generated_method = "EC82C8E000A189149A89231BADB2FD12")
     public void setContentLength(ContentLengthHeader contentLength) {
         addTaint(contentLength.getTaint());
@@ -2251,7 +2184,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.045 -0400", hash_original_method = "B722E58F0DD8E1CBC622964AAF1F9B26", hash_generated_method = "2BDE89A0FF22729ECAFC892EB96A087D")
     public void setSize(int size) {
         this.size = size;
@@ -2260,7 +2192,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.045 -0400", hash_original_method = "54E84843E0EEE275508F3EB8305B3F4F", hash_generated_method = "5168FFB4CF0ED08FAE559146D9539A81")
     public int getSize() {
         int varFE91D8EC738CF7D8BE7D802E3604E3B0_2059380545 = (this.size);
@@ -2271,7 +2202,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.045 -0400", hash_original_method = "51B72F61F828A2C6A4124D3A8929AD68", hash_generated_method = "7E746B9B5EE864BB48E4E8BF770D053F")
     public void addLast(Header header) throws SipException, NullPointerException {
         addTaint(header.getTaint());
@@ -2302,7 +2232,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.046 -0400", hash_original_method = "FB58DD3E1F3A0D99159750C09E15B568", hash_generated_method = "1BAB1590C58C1F510C261EB1A9554C01")
     public void addFirst(Header header) throws SipException, NullPointerException {
         addTaint(header.getTaint());
@@ -2333,7 +2262,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.046 -0400", hash_original_method = "F7D2F7162E4B2A1EDD2D78AF07F98ED3", hash_generated_method = "354C22E8EE423F9D0ED8DE3F3A5309C4")
     public void removeFirst(String headerName) throws NullPointerException {
         addTaint(headerName.getTaint());
@@ -2351,7 +2279,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.046 -0400", hash_original_method = "B1A0AEB4CA388E0A9ED7E42FB6DA96D3", hash_generated_method = "B4DEA1912EC7DFE900C52FE84FDFE81F")
     public void removeLast(String headerName) {
         addTaint(headerName.getTaint());
@@ -2369,7 +2296,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.046 -0400", hash_original_method = "1B0E35DCABA77A6424B3D6172B19A4B7", hash_generated_method = "0766B39F8BB4941FEAF016E08ED531C4")
     public void setCSeq(CSeqHeader cseqHeader) {
         addTaint(cseqHeader.getTaint());
@@ -2379,7 +2305,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.046 -0400", hash_original_method = "552E0456C33D24CD63C8EBCDAC1D019B", hash_generated_method = "E17DD994BC845C3BDBBD70ECC432242E")
     public void setApplicationData(Object applicationData) {
         this.applicationData = applicationData;
@@ -2388,7 +2313,6 @@ javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 = 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.046 -0400", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "0A880609FCF733A8E531F256753ED45D")
     public Object getApplicationData() {
 Object varAC81821DD38AD6A8C7609D7C76D213BC_774808560 =         this.applicationData;
@@ -2399,7 +2323,6 @@ Object varAC81821DD38AD6A8C7609D7C76D213BC_774808560 =         this.applicationD
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.047 -0400", hash_original_method = "3FB4581572217B4D34EC8E3A9F62CA88", hash_generated_method = "C9B2642249A672498A3324E320536760")
     public MultipartMimeContent getMultipartMimeContent() throws ParseException {
     if(this.contentLengthHeader.getContentLength() == 0)        
@@ -2444,7 +2367,6 @@ MultipartMimeContent var540C13E9E156B687226421B24F2DF178_1890834744 =           
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.047 -0400", hash_original_method = "6A8980AC46BDEC47E118DEA889F580E2", hash_generated_method = "3A666297CECD17A76B16C4DC82BF3A82")
     public CallIdHeader getCallIdHeader() {
 CallIdHeader var0A1A7D5AA74854841C64078E07B44310_1958503664 =         this.callIdHeader;
@@ -2455,7 +2377,6 @@ CallIdHeader var0A1A7D5AA74854841C64078E07B44310_1958503664 =         this.callI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.047 -0400", hash_original_method = "616E19996CDDFB660618161B80D5BB27", hash_generated_method = "FAC28143D0255378E9D50B3E75C3FA38")
     public FromHeader getFromHeader() {
 FromHeader var72AF2DF6C5ECAD84AD712323E664F963_1953655538 =         this.fromHeader;
@@ -2466,7 +2387,6 @@ FromHeader var72AF2DF6C5ECAD84AD712323E664F963_1953655538 =         this.fromHea
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.047 -0400", hash_original_method = "9C43D5663CBD78C15545690BFB01C4BF", hash_generated_method = "2D6A51E6DC7F49B563D0AECF3C6398CC")
     public ToHeader getToHeader() {
 ToHeader varD91F8239BCF28C00671F0A5C73087FCE_1555237377 =         this.toHeader;
@@ -2477,7 +2397,6 @@ ToHeader varD91F8239BCF28C00671F0A5C73087FCE_1555237377 =         this.toHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.048 -0400", hash_original_method = "FE98900B9C779953579B6764E7283FC2", hash_generated_method = "280A5F858FEBD67A705965D38CF73532")
     public ViaHeader getTopmostViaHeader() {
 ViaHeader varFC1D9495E0A1F8DC30CB7DE024DD62C3_959685064 =         this.getTopmostVia();
@@ -2488,7 +2407,6 @@ ViaHeader varFC1D9495E0A1F8DC30CB7DE024DD62C3_959685064 =         this.getTopmos
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.048 -0400", hash_original_method = "2CE1B7EDE28DB048E923E7FFD28A72BE", hash_generated_method = "0A67284F461B9145A679C408709873DF")
     public CSeqHeader getCSeqHeader() {
 CSeqHeader varA6B6B804DB86DE21D039C99E75A063C6_1626175462 =         this.cSeqHeader;
@@ -2524,7 +2442,6 @@ String var1813311D7651DBE75E34FA9918664FA9_541020982 =         contentEncodingCh
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.048 -0400", hash_original_method = "F8575631397F30A77B6575B01C9E50F5", hash_generated_method = "2A0BC1BBC9702BBE4E89828891556C4E")
     public boolean isNullRequest() {
         boolean var146ADE144DD4FFEF759B25BCE7E6ACB1_995363203 = (this.nullRequest);
@@ -2535,7 +2452,6 @@ String var1813311D7651DBE75E34FA9918664FA9_541020982 =         contentEncodingCh
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.048 -0400", hash_original_method = "76987385F34084CF4A8C6AA1CD858E63", hash_generated_method = "9270889C04904F8C78507597689FCBFB")
     public void setNullRequest() {
         this.nullRequest = true;

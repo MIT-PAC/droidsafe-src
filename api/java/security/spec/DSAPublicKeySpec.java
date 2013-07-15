@@ -35,7 +35,6 @@ public class DSAPublicKeySpec implements KeySpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.945 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "414E20B501BAF4466B72650CF0FE7464")
     public BigInteger getG() {
 BigInteger var96B5EDC7D356FCBAF3C926D8A70305DA_865593586 =         g;
@@ -46,7 +45,6 @@ BigInteger var96B5EDC7D356FCBAF3C926D8A70305DA_865593586 =         g;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.945 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "139556B9AD4246417DA362390CA5B295")
     public BigInteger getP() {
 BigInteger var74E4690D9F2A026504928C017944E149_780631575 =         p;
@@ -57,7 +55,6 @@ BigInteger var74E4690D9F2A026504928C017944E149_780631575 =         p;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.946 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "006FC6DB261292C38B2BF569D000F533")
     public BigInteger getQ() {
 BigInteger varBEF1B7662E10AF6D5747729987514CB6_1613955545 =         q;
@@ -68,7 +65,6 @@ BigInteger varBEF1B7662E10AF6D5747729987514CB6_1613955545 =         q;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.946 -0400", hash_original_method = "E902D6151D4FD6CFB5C854DFA08B0568", hash_generated_method = "DE57EB38CCDAB847289A651177573CD8")
     public BigInteger getY() {
 BigInteger var01417B0442ECD521584E2B7EFB9FC218_1692092869 =         y;

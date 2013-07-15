@@ -60,7 +60,6 @@ for(int i=0;i<indent;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.494 -0400", hash_original_method = "330ED05F95D8039149C4EE202C44E32C", hash_generated_method = "47144670D508CFD561143F4799BC76AB")
         public void newIndent() {
             indent ++;
@@ -69,7 +68,6 @@ for(int i=0;i<indent;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.495 -0400", hash_original_method = "85AD8C1F1AFBCA83430C30D8B2614DB0", hash_generated_method = "06F7FF18FCADBC918591EB35F5BEEA6F")
         public void endIndent() {
             indent --;

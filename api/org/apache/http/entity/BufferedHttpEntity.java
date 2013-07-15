@@ -92,7 +92,6 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242 =             wrapped
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.928 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "C99E335C42E845AC438A02F9BAA69694")
     public boolean isRepeatable() {
         boolean varB326B5062B2F0E69046810717534CB09_1254044504 = (true);

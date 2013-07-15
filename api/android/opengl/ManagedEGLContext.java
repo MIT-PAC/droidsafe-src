@@ -34,7 +34,6 @@ public abstract class ManagedEGLContext {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.635 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "1E247494C50004D6D856CE13263E9CD1")
     public EGLContext getContext() {
 EGLContext var178E2AD52D6FBBB503F908168856B574_969427356 =         mContext;

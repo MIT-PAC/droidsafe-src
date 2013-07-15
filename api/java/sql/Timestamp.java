@@ -250,7 +250,6 @@ public class Timestamp extends Date {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.108 -0400", hash_original_method = "B1AC9E2AEA3FCD014890A3BD86F2475F", hash_generated_method = "10C8F6508A4136D76EC3C0FC5E51A923")
     public int getNanos() {
         int varC86DC03A2B4847378E26EED64B8AE3ED_1559453710 = (nanos);

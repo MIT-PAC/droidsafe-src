@@ -543,7 +543,6 @@ HttpEngine varAA56CD70F706D25D7750C40296FAF5EA_1119388219 =             httpEngi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.468 -0400", hash_original_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B", hash_generated_method = "938256FBDFB027543FCC6D622019C37C")
      HttpEngine getHttpEngine() {
 HttpEngine varAA56CD70F706D25D7750C40296FAF5EA_1927208625 =         httpEngine;

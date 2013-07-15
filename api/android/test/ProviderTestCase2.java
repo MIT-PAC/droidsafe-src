@@ -94,7 +94,6 @@ T var0FBB50B5F14310A28A298A4AC9FE2015_1769435306 =         mProvider;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.138 -0400", hash_original_method = "47989BC91A04FCD58E7A9B18A55F8AED", hash_generated_method = "C2615A828EC9AB35BDE527A468CF6A1E")
     public MockContentResolver getMockContentResolver() {
 MockContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_1560767362 =         mResolver;
@@ -105,7 +104,6 @@ MockContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_1560767362 =         mRe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.138 -0400", hash_original_method = "27594498B405F878C6750971BD241F38", hash_generated_method = "D72D41D3676141E75D72180F783FD592")
     public IsolatedContext getMockContext() {
 IsolatedContext var8DD4DD47675B38CCCB1F8751874E6C34_784508158 =         mProviderContext;
@@ -166,7 +164,6 @@ File varF0EE242A1A7DD6772B5AB1383F0A7B57_1988587450 =             getContext().g
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.140 -0400", hash_original_method = "5BEB3FA867778B3A9B9AEA4D4C069E55", hash_generated_method = "94819F0C201EF0E3E8421AED5E1F8F25")
         @Override
         public Context getApplicationContext() {

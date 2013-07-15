@@ -31,14 +31,12 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.349 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.349 -0400", hash_original_method = "0C75AFD9B32739C91AE66AE73680B3EC", hash_generated_method = "8F16DA9EA1966CE6CA2B1ABF9D723833")
     protected void finalize() {
         try 
@@ -143,7 +141,6 @@ String varD1D6F5168E76CE1592036B4FE9F8DF9C_1317787277 =         mPhone.getMsisdn
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.350 -0400", hash_original_method = "D6964CF0DD97089F5666548710C28DF3", hash_generated_method = "04B6BA8E9524B72FBD3BB0ABC9F81176")
     public String getVoiceMailNumber() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
@@ -160,7 +157,6 @@ String var63E80DF571E08DAA47BEFBF0BD0EEBAD_318555510 =         number;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.350 -0400", hash_original_method = "E9A6A2984EA72CED9E5DEFCEFCC9AE08", hash_generated_method = "5818998FCBD71E6512E7CE7F3B1D64EF")
     public String getCompleteVoiceMailNumber() {
         mContext.enforceCallingOrSelfPermission(CALL_PRIVILEGED,
@@ -278,7 +274,6 @@ String[] var540C13E9E156B687226421B24F2DF178_929115939 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.351 -0400", hash_original_method = "4DB3773BD9844F1658383FB3EDE03C78", hash_generated_method = "F51842C2FF88B51CFBBEFF35BCF8F5C2")
     protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
         addTaint(args[0].getTaint());

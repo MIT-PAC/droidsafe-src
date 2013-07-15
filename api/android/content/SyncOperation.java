@@ -240,7 +240,6 @@ String var2460B846747F8B22185AD8BE722266A5_596931214 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.152 -0400", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "B45AA2EE7192560A4DCD36C738915A9A")
     public int compareTo(Object o) {
         addTaint(o.getTaint());

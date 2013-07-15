@@ -98,7 +98,6 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.032 -0400", hash_original_method = "7A83CE97AECF8C418E9A73B613D40E3A", hash_generated_method = "A06DA0480DE3ABC96C9F72342E8CC113")
     @Override
     protected void accept(SocketImpl newImpl) throws IOException {
@@ -146,7 +145,6 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.033 -0400", hash_original_method = "71A74E49E6970F91549D0885CC2DD805", hash_generated_method = "8263FCD9E99151BF2B954F0EF19B9268")
     public void initLocalPort(int localPort) {
         addTaint(localPort);
@@ -156,7 +154,6 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.046 -0400", hash_original_method = "2FB3C28FA9096CEDAB5697B9A14F4A6D", hash_generated_method = "3F7238155DA9FE60A021E36DC18A54EB")
     public void initRemoteAddressAndPort(InetAddress remoteAddress, int remotePort) {
         addTaint(remotePort);
@@ -184,7 +181,6 @@ public class PlainSocketImpl extends SocketImpl {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.047 -0400", hash_original_method = "4AE73BDFE66EC427EEC7327D1955F75B", hash_generated_method = "6C558FE1BFFE2481AB0BE76D538EBA44")
     @Override
     protected synchronized int available() throws IOException {
@@ -563,7 +559,6 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.082 -0400", hash_original_method = "D66101C95E8A449E156BD86059B4B4F6", hash_generated_method = "BC8DF018CB372B7AA89EDD0BC0C8D103")
     private void socksBind() throws IOException {
         try 
@@ -683,7 +678,6 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.084 -0400", hash_original_method = "C84277CCCCD515C678DD8E297690CF63", hash_generated_method = "4A2A0BE2C658470CFEF747661637C5D1")
     @Override
     protected boolean supportsUrgentData() {

@@ -21,7 +21,6 @@ public class ParsePosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.810 -0400", hash_original_method = "7A2CC483DDAB3EA409EA20ED7AF6932E", hash_generated_method = "7402602D53A4AD9FBFD7D25DC844262C")
     @Override
     public boolean equals(Object object) {
@@ -47,7 +46,6 @@ public class ParsePosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.810 -0400", hash_original_method = "251F29749A0D498AD09891D5409959A9", hash_generated_method = "9ECF8B268A2BF15F5AE56431E45F1276")
     public int getErrorIndex() {
         int var9BEB71D3C627DEA11B9CF92BA54AA661_725621885 = (errorIndex);
@@ -58,7 +56,6 @@ public class ParsePosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.811 -0400", hash_original_method = "1CFE76DD95166F56A240763AD86BFFF6", hash_generated_method = "9C3E19C79663CC0DD17E48355DBC0DFD")
     public int getIndex() {
         int varF92DCDD86E6BEEEA3E199F5D44A97241_943414101 = (currentPosition);
@@ -69,7 +66,6 @@ public class ParsePosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.811 -0400", hash_original_method = "78BEA0F92DBA8060A51AB3A3D8273064", hash_generated_method = "47A3E26C7A47642DA97D620C10C6B0AC")
     @Override
     public int hashCode() {
@@ -81,7 +77,6 @@ public class ParsePosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.812 -0400", hash_original_method = "F3EA9276CC48A5113CA1E4D2C48DC7D4", hash_generated_method = "19BC42C8529ADD2DE558BFF9D2CE02DA")
     public void setErrorIndex(int index) {
         errorIndex = index;
@@ -90,7 +85,6 @@ public class ParsePosition {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.812 -0400", hash_original_method = "1C6C7B20133CCF9092C9B321C0CF7A81", hash_generated_method = "D9D656F864CC281851276926DE08C108")
     public void setIndex(int index) {
         currentPosition = index;

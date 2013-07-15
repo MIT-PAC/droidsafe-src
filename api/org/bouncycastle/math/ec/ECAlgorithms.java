@@ -34,8 +34,7 @@ public class ECAlgorithms {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
+        public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l) {
         if (!P.getCurve().equals(Q.getCurve()))
         {
@@ -45,8 +44,7 @@ public class ECAlgorithms {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
+        private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l) {
         int m = Math.max(k.bitLength(), l.bitLength());
         ECPoint Z = P.add(Q);

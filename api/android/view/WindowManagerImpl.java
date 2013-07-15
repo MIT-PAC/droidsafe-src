@@ -49,8 +49,7 @@ public class WindowManagerImpl implements WindowManager {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static WindowManagerImpl getDefault() {
+        public static WindowManagerImpl getDefault() {
         return sWindowManager;
     }
 
@@ -77,7 +76,6 @@ public class WindowManagerImpl implements WindowManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.999 -0400", hash_original_method = "8E464E19F5A7F279FF3FC1B84D15C4F0", hash_generated_method = "AEECAF99CDD7AB94B75127315C7F18D3")
     public boolean isHardwareAccelerated() {
         boolean var68934A3E9455FA72420237EB05902327_807972442 = (false);
@@ -769,7 +767,6 @@ for(int i=0;i<count;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.015 -0400", hash_original_method = "56BE5D6095195D262FD5BEEEDA100E7B", hash_generated_method = "CA718A6BB13ECF605B88229575CDC3F4")
         @Override
         public Display getDefaultDisplay() {

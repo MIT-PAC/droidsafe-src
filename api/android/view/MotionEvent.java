@@ -265,7 +265,6 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.541 -0400", hash_original_method = "3F0B5C050D986DD9F1F0F2A742C616C8", hash_generated_method = "385D2C3489242CAC5323F682E351928B")
     @Override
     protected void finalize() throws Throwable {
@@ -293,8 +292,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static private MotionEvent obtain() {
+        static private MotionEvent obtain() {
         final MotionEvent ev;
         synchronized (gRecyclerLock) {
             ev = gRecyclerTop;
@@ -311,8 +309,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(long downTime, long eventTime,
+        static public MotionEvent obtain(long downTime, long eventTime,
             int action, int pointerCount, PointerProperties[] pointerProperties,
             PointerCoords[] pointerCoords, int metaState, int buttonState,
             float xPrecision, float yPrecision, int deviceId,
@@ -327,8 +324,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime,
             int action, int pointerCount, int[] pointerIds, PointerCoords[] pointerCoords,
             int metaState, float xPrecision, float yPrecision, int deviceId,
@@ -347,8 +343,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(long downTime, long eventTime, int action,
+        static public MotionEvent obtain(long downTime, long eventTime, int action,
             float x, float y, float pressure, float size, int metaState,
             float xPrecision, float yPrecision, int deviceId, int edgeFlags) {
         MotionEvent ev = obtain();
@@ -373,8 +368,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime, int action,
             int pointerCount, float x, float y, float pressure, float size, int metaState,
             float xPrecision, float yPrecision, int deviceId, int edgeFlags) {
@@ -383,16 +377,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(long downTime, long eventTime, int action,
+        static public MotionEvent obtain(long downTime, long eventTime, int action,
             float x, float y, int metaState) {
         return obtain(downTime, eventTime, action, x, y, 1.0f, 1.0f,
                 metaState, 1.0f, 1.0f, 0, 0);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(MotionEvent other) {
+        static public MotionEvent obtain(MotionEvent other) {
         if (other == null) {
             throw new IllegalArgumentException("other motion event must not be null");
         }
@@ -402,8 +394,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtainNoHistory(MotionEvent other) {
+        static public MotionEvent obtainNoHistory(MotionEvent other) {
         if (other == null) {
             throw new IllegalArgumentException("other motion event must not be null");
         }
@@ -413,7 +404,6 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.542 -0400", hash_original_method = "78DE11FBBF58608981D1F74EEB443B54", hash_generated_method = "74DD44E334932FCFCDB270A995A4BE5D")
     @Override
     public MotionEvent copy() {
@@ -1553,7 +1543,6 @@ MotionEvent var589F943EB1E905D6F47E9BDE80F73551_382186292 =             ev;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.567 -0400", hash_original_method = "69A985781D7A79E036178DEB42E5F1F0", hash_generated_method = "484ABDD4C8E51F8B7595BA42A96316C5")
     @Override
     public String toString() {
@@ -1587,8 +1576,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String actionToString(int action) {
+        public static String actionToString(int action) {
         switch (action) {
             case ACTION_DOWN:
                 return "ACTION_DOWN";
@@ -1621,15 +1609,13 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String axisToString(int axis) {
+        public static String axisToString(int axis) {
         String symbolicName = AXIS_SYMBOLIC_NAMES.get(axis);
         return symbolicName != null ? symbolicName : Integer.toString(axis);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int axisFromString(String symbolicName) {
+        public static int axisFromString(String symbolicName) {
         if (symbolicName == null) {
             throw new IllegalArgumentException("symbolicName must not be null");
         }
@@ -1647,8 +1633,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String buttonStateToString(int buttonState) {
+        public static String buttonStateToString(int buttonState) {
         if (buttonState == 0) {
             return "0";
         }
@@ -1675,22 +1660,19 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String toolTypeToString(int toolType) {
+        public static String toolTypeToString(int toolType) {
         String symbolicName = TOOL_TYPE_SYMBOLIC_NAMES.get(toolType);
         return symbolicName != null ? symbolicName : Integer.toString(toolType);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static MotionEvent createFromParcelBody(Parcel in) {
+        public static MotionEvent createFromParcelBody(Parcel in) {
         MotionEvent ev = obtain();
         ev.mNativePtr = nativeReadFromParcel(ev.mNativePtr, in);
         return ev;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.568 -0400", hash_original_method = "D732CA58C71ED959C0E1A12C336FC80D", hash_generated_method = "3F40403E65BDFBE08917BC35DE7F1C38")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -1753,8 +1735,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static PointerCoords[] createArray(int size) {
+                public static PointerCoords[] createArray(int size) {
             PointerCoords[] array = new PointerCoords[size];
             for (int i = 0; i < size; i++) {
                 array[i] = new PointerCoords();
@@ -1763,7 +1744,6 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.570 -0400", hash_original_method = "5B10C041062144B27347C9202A1953B2", hash_generated_method = "85A3A31EE556A4BEA00BDAAD4B198A1A")
         public void clear() {
             mPackedAxisBits = 0;
@@ -1790,7 +1770,6 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.572 -0400", hash_original_method = "A2C68F8615572C95C5947791A8CC8026", hash_generated_method = "5DCA61032438B6B62952CB867DFFA53B")
         public void copyFrom(PointerCoords other) {
             final long bits = other.mPackedAxisBits;
@@ -1821,7 +1800,6 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.572 -0400", hash_original_method = "566631CFDB34A411EF93513211D62594", hash_generated_method = "4AF261353C0DB7C5300B99A8F07AC792")
         public float getAxisValue(int axis) {
             addTaint(axis);
@@ -1889,7 +1867,6 @@ switch(axis){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.576 -0400", hash_original_method = "55E9DEFA01615304E1434A1FAB8328FA", hash_generated_method = "550B72F2333A2EF1605AA1160A00E8E8")
         public void setAxisValue(int axis, float value) {
             addTaint(axis);
@@ -2003,8 +1980,7 @@ switch(axis){
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static PointerProperties[] createArray(int size) {
+                public static PointerProperties[] createArray(int size) {
             PointerProperties[] array = new PointerProperties[size];
             for (int i = 0; i < size; i++) {
                 array[i] = new PointerProperties();
@@ -2013,7 +1989,6 @@ switch(axis){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.577 -0400", hash_original_method = "ADC6A83F955A9ED0C1C75B5F08682583", hash_generated_method = "DFC90B75E706F2F74BBF473BA904F663")
         public void clear() {
             id = INVALID_POINTER_ID;
@@ -2024,7 +1999,6 @@ switch(axis){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.578 -0400", hash_original_method = "1E34ECE529256025A33CF5DCBE029131", hash_generated_method = "83EE2C55C6A446D371F6C2FC0D637123")
         public void copyFrom(PointerProperties other) {
             id = other.id;

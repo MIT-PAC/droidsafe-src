@@ -117,7 +117,6 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.470 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "71472DEA8BBFB3F86500262FE3A8EA81")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_421061607 =         name;
@@ -128,7 +127,6 @@ String varB017984728AC60AD1F0BF8734F33F15C_421061607 =         name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.470 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "0C5899BEC78978E01AD0225BEE47FDDE")
     public int getOffset() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_570423487 = (offset);
@@ -346,7 +344,6 @@ String var7A85238CD32275F0BFF675D89BABBB30_1821854435 =         typeString;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.480 -0400", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "4305F7EB15B8D74A66017D2CC764F457")
     protected void setOffset(int newValue) {
         this.offset = newValue;
@@ -366,7 +363,6 @@ String var1C1258DA98EFE38BC9C2501509B2FF42_2049635888 =         this.getClass().
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.481 -0400", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "32D00F1C806E34AAC93FBAF8E3FC5E7F")
      void resolve(ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -415,7 +411,6 @@ String var1C1258DA98EFE38BC9C2501509B2FF42_2049635888 =         this.getClass().
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.482 -0400", hash_original_method = "F21E97E0131CF96F90294027D325F2F1", hash_generated_method = "1F1D1D5FC1A5232F1FDC2C13607BCE84")
     public boolean isUnshared() {
         boolean var962FA027E49514EF42DADB2095E8C618_1996297201 = (unshared);
@@ -426,7 +421,6 @@ String var1C1258DA98EFE38BC9C2501509B2FF42_2049635888 =         this.getClass().
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.484 -0400", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "78989AD0A169EB11A9E371D43CF1C2E1")
      void setUnshared(boolean unshared) {
         this.unshared = unshared;

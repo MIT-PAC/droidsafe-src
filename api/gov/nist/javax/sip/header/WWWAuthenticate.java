@@ -17,7 +17,6 @@ public class WWWAuthenticate extends AuthenticationHeader implements WWWAuthenti
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.651 -0400", hash_original_method = "415F36F94D5D5AF0B0B417563353646C", hash_generated_method = "2819209FE9652F83D775D0FAE8457D4A")
     public URI getURI() {
 URI var540C13E9E156B687226421B24F2DF178_1616802026 =         null;
@@ -28,7 +27,6 @@ URI var540C13E9E156B687226421B24F2DF178_1616802026 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.651 -0400", hash_original_method = "4B2EBAFE6DAB8E15456CC1135D4262EB", hash_generated_method = "EFB37CFD85A05AB0A4932DBCB802E4F4")
     public void setURI(URI uri) {
         addTaint(uri.getTaint());

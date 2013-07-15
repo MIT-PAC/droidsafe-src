@@ -114,7 +114,6 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.575 -0400", hash_original_method = "57FC26158D8D678057BEA3A3771FCDE7", hash_generated_method = "CF664141399EEA829152709DCBAB48F4")
     public short getTnf() {
         short varD9FDE3B8C938C55414D9EA824E4653B4_854764682 = (mTnf);
@@ -155,8 +154,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri parseWellKnownUriRecord(NdefRecord record) throws FormatException {
+        public static Uri parseWellKnownUriRecord(NdefRecord record) throws FormatException {
         byte[] payload = record.getPayload();
         if (payload.length < 2) {
             throw new FormatException("Payload is not a valid URI (missing prefix)");
@@ -178,8 +176,7 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static NdefRecord createUri(Uri uri) {
+        public static NdefRecord createUri(Uri uri) {
         return createUri(uri.toString());
     }
 
@@ -226,7 +223,6 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.586 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6F6E0AFD62D3E83104C9A6B482FD30A7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1976425867 = (0);
@@ -261,7 +257,6 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.587 -0400", hash_original_method = "D593336128142C3B83A1F96FE0DB1162", hash_generated_method = "E65A7B3A13FC3853E21B816EB1780DE6")
     private int parseNdefRecord(byte[] data) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031322318 = getTaintInt();
@@ -269,7 +264,6 @@ public final class NdefRecord implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.587 -0400", hash_original_method = "D4618511B086F2DC6D5A6E1B49747B83", hash_generated_method = "80D3575DB2BF8C73B2F5DF99D203405D")
     private byte[] generate(short flags, short tnf, byte[] type, byte[] id, byte[] data) {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1599919241 = {getTaintByte()};

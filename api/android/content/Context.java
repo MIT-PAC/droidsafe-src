@@ -110,7 +110,6 @@ String var3E6B52F63767621631F101D027EAE3AD_917877023 =         getResources().ge
     public abstract void setTheme(int resid);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.038 -0400", hash_original_method = "50CDF7EE4EA4E2BC75FC99DEA1DDCB11", hash_generated_method = "F8D401165C237982B46F0358A50E01C5")
     public int getThemeResId() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1096273709 = (0);
@@ -416,7 +415,6 @@ public abstract void clearWallpaper() throws IOException;
             int flags) throws PackageManager.NameNotFoundException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.054 -0400", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "5F1991CBEF0F6D036A5A5727AC803C29")
     public boolean isRestricted() {
         boolean var68934A3E9455FA72420237EB05902327_1339783102 = (false);

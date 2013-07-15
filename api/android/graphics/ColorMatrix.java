@@ -47,7 +47,6 @@ public class ColorMatrix {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.197 -0400", hash_original_method = "651EAEC497B28FBE14AC71396739DF99", hash_generated_method = "C9802DD4B14A25277F01312014A8FD63")
     public void reset() {
         final float[] a = mArray;
@@ -83,7 +82,6 @@ for(int i = 19;i > 0;--i)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.200 -0400", hash_original_method = "0974414711261BF80A4D723D743AAB06", hash_generated_method = "0253D4D01530EF96653929C114A0FF57")
     public void setScale(float rScale, float gScale, float bScale,
                          float aScale) {

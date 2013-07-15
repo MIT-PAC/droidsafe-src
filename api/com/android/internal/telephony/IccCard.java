@@ -220,7 +220,6 @@ public abstract class IccCard {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.338 -0400", hash_original_method = "B45586395D9726A6E3A7A444B2DA9D4A", hash_generated_method = "E14D2F763CBDE5C9BB2CB5844268BF53")
     public State getState() {
     if(mState == null)        
@@ -264,7 +263,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.338 -0400", hash_original_method = "EF67D81D926CA0EC8F8754BC29C8826B", hash_generated_method = "8FB4003EBB7FCD2F2B0FD7E02F818470")
     public void dispose() {
         mPhone.mCM.unregisterForIccStatusChanged(mHandler);
@@ -273,7 +271,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.338 -0400", hash_original_method = "C148A728067D02A221BE75C987C5D733", hash_generated_method = "075B2DD258946BBD2F1ED4568E67D027")
     protected void finalize() {
     if(mDbg)        
@@ -304,7 +301,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.339 -0400", hash_original_method = "A388490F008524959D490318F4B49030", hash_generated_method = "66FC903E19FC06F23B54C0169321B9F6")
     public void unregisterForAbsent(Handler h) {
         addTaint(h.getTaint());
@@ -335,7 +331,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.340 -0400", hash_original_method = "5CEB6427435BFB9EC514E781B4093E7E", hash_generated_method = "7DFB72ED84F9CCDD81A7238D28F7A6EB")
     public void unregisterForNetworkLocked(Handler h) {
         addTaint(h.getTaint());
@@ -366,7 +361,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.340 -0400", hash_original_method = "5667345A02500557814700DAC5845BCA", hash_generated_method = "4120B15D3085B4081E351EA59521ADBF")
     public void unregisterForLocked(Handler h) {
         addTaint(h.getTaint());
@@ -386,7 +380,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.341 -0400", hash_original_method = "F069297D525546A0218C2FB5A43E0287", hash_generated_method = "6C4B332D320CB80099C34321333EC54B")
     public void supplyPuk(String puk, String newPin, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -400,7 +393,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.341 -0400", hash_original_method = "35EFF2F2C787166AB4A51F303C9455F4", hash_generated_method = "75BBF5125FE3936953DDFEEA8E7F2019")
     public void supplyPin2(String pin2, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -413,7 +405,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "982062922CE016EAC29E809D9B066C8E", hash_generated_method = "3FD2710E1D191E6F5553ECD82AE860A2")
     public void supplyPuk2(String puk2, String newPin2, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -427,7 +418,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "96497D4DFF6E2FE9CEEE26788CBD4E3F", hash_generated_method = "FDBF1AFB05FA4F18733CCB7FD465D8B5")
     public void supplyNetworkDepersonalization(String pin, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -440,7 +430,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "BCA6EFC1210C838BF4CD916790946AA6", hash_generated_method = "912E76BE560A0DDE6E9DC645753D71CC")
     public boolean getIccLockEnabled() {
         boolean var98241A760904A8071026171FB5F891EF_1537214631 = (mIccPinLocked);
@@ -451,7 +440,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.343 -0400", hash_original_method = "F2BBF6EB30564DA8841F6D4A48D01D80", hash_generated_method = "75EF38D476865F39FF68CB5327539A42")
     public boolean getIccFdnEnabled() {
         boolean var5D26F052B120A0C24B0BF31105E0F878_1550469319 = (mIccFdnEnabled);
@@ -545,7 +533,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     public abstract String getServiceProviderName();
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.345 -0400", hash_original_method = "26BBB856B8138972809A4E6EC2BCC376", hash_generated_method = "4A1645AE835255FE7642245C74B88BD6")
     protected void updateStateProperty() {
         mPhone.setSystemProperty(TelephonyProperties.PROPERTY_SIM_STATE, getState().toString());
@@ -554,7 +541,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.345 -0400", hash_original_method = "B8050A82EEEB3E75B61D0D7FED84BD4F", hash_generated_method = "12BBA13D839834AB35ED613287238E93")
     private void getIccCardStatusDone(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -649,7 +635,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.348 -0400", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "B509E0B2F3B300F4D599576F13AFE3ED")
     private void onIccSwap(boolean isAdded) {
         addTaint(isAdded);
@@ -789,7 +774,6 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.350 -0400", hash_original_method = "531282E014DCDC26F790CA6DADE3C8C6", hash_generated_method = "C877E460BC8719B85C9B0D4EE7DFECD0")
     public State getIccCardState() {
     if(mIccCardStatus == null)        
@@ -914,7 +898,6 @@ State var02D409DFF15E9D7C28B89B1EDC402D16_879521334 =         IccCard.State.NOT_
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.353 -0400", hash_original_method = "292BB37BE4996383C23DC23B1670D1D7", hash_generated_method = "DF536A31BE2F10EEC061DFC2375BEDBF")
     private State getConsolidatedState(State left, State right, State preferredState) {
         addTaint(preferredState.getTaint());
@@ -1051,11 +1034,9 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
         READY,
         NOT_READY,
         PERM_DISABLED;
-        @DSModeled(DSC.SAFE)
         public boolean isPinLocked() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED));
         }
-        @DSModeled(DSC.SAFE)
         public boolean iccCardExist() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED)
                     || (this == NETWORK_LOCKED) || (this == READY)

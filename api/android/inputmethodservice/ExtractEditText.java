@@ -45,7 +45,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.112 -0400", hash_original_method = "E6DBB41915E723C9F2EECFAC48030375", hash_generated_method = "B5DB85C3F2BB9A526DFFD35933729A52")
      void setIME(InputMethodService ime) {
         mIME = ime;
@@ -54,7 +53,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.113 -0400", hash_original_method = "29AED765F6785A82C9D8840D589CD172", hash_generated_method = "27A568DC538086C464A343B5494E6E51")
     public void startInternalChanges() {
         mSettingExtractedText += 1;
@@ -63,7 +61,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.113 -0400", hash_original_method = "B6A18168A6952BD0C0F99B7AFD2A1CFC", hash_generated_method = "6D0BECC3D9DA8C9768F35AB3B6B16D1B")
     public void finishInternalChanges() {
         mSettingExtractedText -= 1;
@@ -134,7 +131,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.115 -0400", hash_original_method = "7C9BA2F8326E15326AC5ACB19DAA03AF", hash_generated_method = "D8B8DAE86B257877329D32F466771160")
     @Override
     public boolean onTextContextMenuItem(int id) {
@@ -157,7 +153,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.115 -0400", hash_original_method = "CC164D54DA859C5908F37C0D6AF369B4", hash_generated_method = "3D03690C2D0AB69B4450DCA72911BDED")
     @Override
     public boolean isInputMethodTarget() {
@@ -212,7 +207,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.117 -0400", hash_original_method = "8821EFE99206E3F001E81A89F23C541D", hash_generated_method = "8E126FA49998E613390E2F1FCD233D1B")
     @Override
     protected void viewClicked(InputMethodManager imm) {
@@ -228,7 +222,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.117 -0400", hash_original_method = "5EFADD14D723A5DDC172F34D6074AA1D", hash_generated_method = "F9EE5538E6AA87AA47FAB5DED002BB54")
     @Override
     protected void deleteText_internal(int start, int end) {
@@ -240,7 +233,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.117 -0400", hash_original_method = "439F32381BAC49247AD70546B9BEE6A0", hash_generated_method = "4958D6B1F85A7A7F7A64D9FF2B4F22BD")
     @Override
     protected void replaceText_internal(int start, int end, CharSequence text) {
@@ -253,7 +245,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.118 -0400", hash_original_method = "68A0F27720FB577E88EB01CE64B3B91C", hash_generated_method = "0D2922EAA3A423972165667948D9887E")
     @Override
     protected void setSpan_internal(Object span, int start, int end, int flags) {
@@ -267,7 +258,6 @@ public class ExtractEditText extends EditText {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.118 -0400", hash_original_method = "4F35DEE60ED94EEB6924945BBEBAAE46", hash_generated_method = "CAC619E3074C7B011882CC12883765DA")
     @Override
     protected void setCursorPosition_internal(int start, int end) {

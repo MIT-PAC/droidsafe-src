@@ -119,8 +119,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void checkURI(URI uri) {
+        private static void checkURI(URI uri) {
         if (!uri.isAbsolute()) {
             throw new IllegalArgumentException("URI is not absolute: " + uri);
         } else if (!uri.getRawSchemeSpecificPart().startsWith("/")) {
@@ -424,7 +423,6 @@ File varD8B3B9F37F2A78EA9F84CD2AE0544A52_1350042859 =         new File(tempParen
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.156 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "37C21016B20E3AF34C44FC916B540003")
     public String getPath() {
 String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
@@ -1001,7 +999,6 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.401 -0400", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "50D89DF4F29D7EB95EA86A602FB9F454")
     @Override
     public String toString() {
@@ -1013,7 +1010,6 @@ String var535F4D9720F3B0C96D8143873CE0638C_888147156 =         path;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.412 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "1EF49E95BC472C43CE76FF7E680A8B65")
     public URI toURI() {
         String name = getAbsoluteName();
@@ -1057,7 +1053,6 @@ URI var540C13E9E156B687226421B24F2DF178_1805726078 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.431 -0400", hash_original_method = "A697C8A8DDF3EFD4E15B0A56A47ADC60", hash_generated_method = "9D4166729FBF67E106CDD78B3A5D7A25")
     @Deprecated
     public URL toURL() throws java.net.MalformedURLException {

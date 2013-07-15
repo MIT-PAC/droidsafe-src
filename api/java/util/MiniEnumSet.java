@@ -26,7 +26,6 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.250 -0400", hash_original_method = "B65740ADDB851C7AEA4DC0329B3A4F67", hash_generated_method = "C595DF64A4B249807B3847443D4FE7C3")
     @Override
     public Iterator<E> iterator() {
@@ -38,7 +37,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.251 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "ADF5DCE77F6413A59102223D8039026B")
     @Override
     public int size() {
@@ -50,7 +48,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.252 -0400", hash_original_method = "025226B2883D32895649213F93C1A199", hash_generated_method = "3713CFA0CB1A568F7EA76D80B212B858")
     @Override
     public void clear() {
@@ -163,7 +160,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.257 -0400", hash_original_method = "F9B76DA5C8885A8F064E3CAE60CAF100", hash_generated_method = "CACCC54EFEF4364FE09E83EA2F1EBC88")
     @Override
     public boolean containsAll(Collection<?> collection) {
@@ -198,7 +194,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.259 -0400", hash_original_method = "0FAF468D35EFC7156A8E4C7EB1F47E75", hash_generated_method = "B203EA23BB37FF192949B1C4C2254A51")
     @Override
     public boolean removeAll(Collection<?> collection) {
@@ -259,7 +254,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.260 -0400", hash_original_method = "017E11B07B37D92215BE552EFD39EA89", hash_generated_method = "7CD810459803717106597FD1D8172F98")
     @Override
     public boolean retainAll(Collection<?> collection) {
@@ -401,7 +395,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.262 -0400", hash_original_method = "34C2A46ACE6140E33D58771C1EEACFB4", hash_generated_method = "DAC34BCE88EAEE87FA2EBB9256194714")
     @Override
      void complement() {
@@ -420,7 +413,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.263 -0400", hash_original_method = "9CD323C98F30FAEA7DF6B6CE47F14F1E", hash_generated_method = "C73C8BE214706D864CBE8D8F96708FC9")
     @Override
      void setRange(E start, E end) {
@@ -456,7 +448,6 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.264 -0400", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "C498174E6D8B885D1BBA094226391ED4")
         public boolean hasNext() {
             boolean varD4C71BBF3A783D0D50DB7E2A5ECD4FBD_182845570 = (mask != 0);

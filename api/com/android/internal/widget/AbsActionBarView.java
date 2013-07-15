@@ -107,7 +107,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.577 -0400", hash_original_method = "D4ADA7B8094B8C24856ACB21A2F3F966", hash_generated_method = "2774B4992A13F924AB31013753167D87")
     public void setSplitActionBar(boolean split) {
         mSplitActionBar = split;
@@ -116,7 +115,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.578 -0400", hash_original_method = "68FCF08F15ACE8E4E864370710ECF8B3", hash_generated_method = "EFC04914301CDD5999164CC812B627A5")
     public void setSplitWhenNarrow(boolean splitWhenNarrow) {
         mSplitWhenNarrow = splitWhenNarrow;
@@ -125,7 +123,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.578 -0400", hash_original_method = "156B54BA6D77F8AE13369D564149F7A2", hash_generated_method = "7D9711632D731186724CA7F4F4F3FAD8")
     public void setContentHeight(int height) {
         mContentHeight = height;
@@ -136,7 +133,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.579 -0400", hash_original_method = "AB5D9AC478BBA1C6AA700AA7486698D8", hash_generated_method = "42DA680F456B0688C3D54DCDF8F89351")
     public int getContentHeight() {
         int varF40FB88A5310D2E8A8F0AC8C692796A5_588320704 = (mContentHeight);
@@ -147,7 +143,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.580 -0400", hash_original_method = "3A09CE20A6543F8D9E8109683BD6E731", hash_generated_method = "1A26F6E86D020C5E2F245C84AB51C6BF")
     public void setSplitView(ActionBarContainer splitView) {
         mSplitView = splitView;
@@ -175,7 +170,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.582 -0400", hash_original_method = "2B465E314C114C54F186AF3EB05111D9", hash_generated_method = "69252CE66765CF476EB83EF9077D6FBF")
     public void animateToVisibility(int visibility) {
         addTaint(visibility);
@@ -236,7 +230,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.584 -0400", hash_original_method = "E3FDA7CA05E815669691C5C9F461C174", hash_generated_method = "F348BE301D04D3937F0F827432AC70BD")
     @Override
     public void setVisibility(int visibility) {
@@ -254,7 +247,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.585 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "270A32156819CCAF5A0E430BDDB4F5FE")
     public boolean showOverflowMenu() {
     if(mActionMenuPresenter != null)        
@@ -274,7 +266,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.586 -0400", hash_original_method = "5B398819B085BB8DF5162E4F323954D1", hash_generated_method = "18ADCEAB37E78D4C7BBDE0A95608FFF4")
     public void postShowOverflowMenu() {
         post(new Runnable() {        
@@ -294,7 +285,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.586 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "4A6DE22F214B2A501CA2283DF56F145C")
     public boolean hideOverflowMenu() {
     if(mActionMenuPresenter != null)        
@@ -314,7 +304,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.586 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "A8467D201A63E12DF2826D35B13CBB4D")
     public boolean isOverflowMenuShowing() {
     if(mActionMenuPresenter != null)        
@@ -334,7 +323,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.587 -0400", hash_original_method = "2716B287AFF500B52D105CE9F72467AF", hash_generated_method = "8819015502838CDB4CFCC2F49E2434A4")
     public boolean isOverflowReserved() {
         boolean var0407F9259A8F0659777734FF7C947718_1479526133 = (mActionMenuPresenter != null && mActionMenuPresenter.isOverflowReserved());
@@ -345,7 +333,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.587 -0400", hash_original_method = "E263C11D43E740E059E17F24B3046AB1", hash_generated_method = "0C8CC31443E33B0A3D343683DEADE683")
     public void dismissPopupMenus() {
     if(mActionMenuPresenter != null)        
@@ -359,7 +346,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.587 -0400", hash_original_method = "A00B85663064A0063707CD21F6F98F93", hash_generated_method = "A9B63D44F434F295592D101DB5E0AB77")
     protected int measureChildView(View child, int availableWidth, int childSpecHeight,
             int spacing) {
@@ -383,7 +369,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.588 -0400", hash_original_method = "231762BB3E313BE1E16BACBDFDC62788", hash_generated_method = "A41FDE3E1276B6D5937307EDABA9E325")
     protected int positionChild(View child, int x, int y, int contentHeight) {
         addTaint(contentHeight);
@@ -406,7 +391,6 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.588 -0400", hash_original_method = "59F436BC9157B56F2D013CC5AD850863", hash_generated_method = "B8D36B601332B6131600E182858DD47C")
     protected int positionChildInverse(View child, int x, int y, int contentHeight) {
         addTaint(contentHeight);
@@ -444,7 +428,6 @@ public abstract class AbsActionBarView extends ViewGroup {
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.589 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "8228809A759C1FB306F4F325FED8D50D")
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             mFinalVisibility = visibility;
@@ -457,7 +440,6 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_58454927 =           
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.589 -0400", hash_original_method = "9145E12DF11688F9DD8CB4C23A0F2F13", hash_generated_method = "43A419CBA987813FF6A97459EB9F4822")
         @Override
         public void onAnimationStart(Animator animation) {
@@ -473,7 +455,6 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_58454927 =           
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.589 -0400", hash_original_method = "D1281410E67CFC6892364AC0D96A57F2", hash_generated_method = "4A086F0917800DBFFB372EEFD955EEDC")
         @Override
         public void onAnimationEnd(Animator animation) {
@@ -497,7 +478,6 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_58454927 =           
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.590 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "8F11757114E12F8DD42F47845FC47878")
         @Override
         public void onAnimationCancel(Animator animation) {
@@ -509,7 +489,6 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_58454927 =           
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.590 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
         @Override
         public void onAnimationRepeat(Animator animation) {

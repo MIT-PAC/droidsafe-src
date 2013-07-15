@@ -142,7 +142,6 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.174 -0400", hash_original_method = "8A330421DEC3E061C169D87595A7D18D", hash_generated_method = "5F15D37204D20F27C203D3C3A3C5DD25")
     public void setIcon(String slot, int iconId, int iconLevel, String contentDescription) {
         addTaint(contentDescription.getTaint());
@@ -177,7 +176,6 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.174 -0400", hash_original_method = "D02D0B03CC45E73478507B52DB06904B", hash_generated_method = "3E0FDF0963B63E3ACFC0381258551D37")
     public void removeIcon(String slot) {
         addTaint(slot.getTaint());
@@ -207,7 +205,6 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.175 -0400", hash_original_method = "59E45760864584BE81198BD1AADB01C2", hash_generated_method = "A99C47B526A71DDF9346A0D269EF4B8A")
     public void setIconVisibility(String slot, boolean visible) {
         addTaint(visible);

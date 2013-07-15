@@ -57,8 +57,7 @@ public class RDN extends ASN1Encodable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static RDN getInstance(Object obj) {
+        public static RDN getInstance(Object obj) {
         if (obj instanceof RDN)
         {
             return (RDN)obj;
@@ -71,7 +70,6 @@ public class RDN extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.695 -0400", hash_original_method = "8A639F09C3F110E6BEBA76653F26863C", hash_generated_method = "A02665FB0B4F574EA7D9CDF55C36FA9D")
     public boolean isMultiValued() {
         boolean var4BD1DF8E036A3E994525BA373DB11683_1169605007 = (this.values.size() > 1);
@@ -82,7 +80,6 @@ public class RDN extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.695 -0400", hash_original_method = "C47887FAFD60151A3B1C3C44B7665548", hash_generated_method = "8CEBB6EFA657CD3850154C0E724541FA")
     public AttributeTypeAndValue getFirst() {
     if(this.values.size() == 0)        
@@ -103,7 +100,6 @@ AttributeTypeAndValue var3E668B3FBD36C203E122F3AF63D5393B_11503090 =         Att
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.695 -0400", hash_original_method = "BEE890DAA6519CDB424A36294BC48156", hash_generated_method = "A8DB0356B5C0FCE49A14D82B511F6BAA")
     public AttributeTypeAndValue[] getTypesAndValues() {
         AttributeTypeAndValue[] tmp = new AttributeTypeAndValue[values.size()];
@@ -124,7 +120,6 @@ AttributeTypeAndValue[] var3F12A0424932F6B5155AA6C49B63FE6E_1121233081 =        
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.696 -0400", hash_original_method = "C51EA85277B01B717571B534CACD612E", hash_generated_method = "E627CC5FAC9C4F06D0E3B49CB65212EA")
     public DERObject toASN1Object() {
 DERObject var674B10C763DBAAF9696AD9A3DDAE07B3_2144861341 =         values;

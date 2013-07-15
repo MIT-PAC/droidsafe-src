@@ -104,8 +104,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void startRecyclerTracing(String prefix, View view) {
+        public static void startRecyclerTracing(String prefix, View view) {
         if (!TRACE_RECYCLER) {
             return;
         }
@@ -120,8 +119,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void stopRecyclerTracing() {
+        public static void stopRecyclerTracing() {
         if (!TRACE_RECYCLER) {
             return;
         }
@@ -189,8 +187,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void startHierarchyTracing(String prefix, View view) {
+        public static void startHierarchyTracing(String prefix, View view) {
         if (!TRACE_HIERARCHY) {
             return;
         }
@@ -212,8 +209,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void stopHierarchyTracing() {
+        public static void stopHierarchyTracing() {
         if (!TRACE_HIERARCHY) {
             return;
         }
@@ -1202,7 +1198,6 @@ public class ViewDebug {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.987 -0400", hash_original_method = "154FC169BABA0D9841DA90FB18C972FB", hash_generated_method = "4D5EEED3A4E0DDBF058576EAC9A4A5DC")
         @Override
         public void println(String x) {
@@ -1355,8 +1350,7 @@ public class ViewDebug {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        private static void writeHeader(DataOutputStream out, long start,
+                private static void writeHeader(DataOutputStream out, long start,
                 HashMap<String, Integer> names, ArrayList<Entry> entries) throws IOException {
             Entry last = entries.get(entries.size() - 1);
             long wallTotal = (last.wallStart + last.wallTime) - start;
@@ -1376,8 +1370,7 @@ public class ViewDebug {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        private static void addMethods(HashMap<String, Integer> names, DataOutputStream out) throws IOException {
+                private static void addMethods(HashMap<String, Integer> names, DataOutputStream out) throws IOException {
             for (Map.Entry<String, Integer> name : names.entrySet()) {
                 out.writeBytes(String.format("0x%08x\tEventQueue\t%s\t()V\tLooper\t-2\n",
                         name.getValue(), name.getKey()));

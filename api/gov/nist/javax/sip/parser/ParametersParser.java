@@ -26,7 +26,6 @@ public abstract class ParametersParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.948 -0400", hash_original_method = "D7D1ED3794D3EF5845398404979DE69B", hash_generated_method = "776F3D8F5F4BDE4004E634BC09BAD823")
     protected void parse(ParametersHeader parametersHeader) throws ParseException {
         addTaint(parametersHeader.getTaint());
@@ -52,7 +51,6 @@ public abstract class ParametersParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.949 -0400", hash_original_method = "F0B8EED12E7201B6D65F9EE76F7129AE", hash_generated_method = "703A9073FDCC74319A70A8CB40B735B8")
     protected void parseNameValueList(ParametersHeader parametersHeader) throws ParseException {
         addTaint(parametersHeader.getTaint());

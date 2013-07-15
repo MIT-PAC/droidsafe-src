@@ -78,7 +78,6 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.719 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "85E24EA39B1293CBD8BB3FEB1DB550AC")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1893710660 = getTaintInt();
@@ -86,7 +85,6 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.719 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "5469A48855EF638B35A8D38628B25735")
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_999429503 = getTaintInt();

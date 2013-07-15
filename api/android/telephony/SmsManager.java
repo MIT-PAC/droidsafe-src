@@ -191,8 +191,7 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static SmsManager getDefault() {
+        public static SmsManager getDefault() {
         return sInstance;
     }
 

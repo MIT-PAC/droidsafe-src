@@ -120,7 +120,6 @@ public class TextToSpeech {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.488 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "2DEAD8D0CEC9CB7275A5B493F0D280F9")
     private String getPackageName() {
 String var5601F77C1E784C31FA233AB799182FA6_1064570548 =         mPackageName;
@@ -403,7 +402,6 @@ Void var540C13E9E156B687226421B24F2DF178_774945443 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.506 -0400", hash_original_method = "276BC175828DCE484EB0703A6A0D8E9B", hash_generated_method = "265BCC8E7FDAF1C7B61360584544A6BA")
     private Uri makeResourceUri(String packageName, int resourceId) {
         addTaint(resourceId);
@@ -728,7 +726,6 @@ Integer varE12943068FF9423862F1428EAB10C44E_594155218 =             service.stop
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.509 -0400", hash_original_method = "6F277B1B16E884F81974EA73065A64D8", hash_generated_method = "28F7B2CF674EEEAA2C6DAEB8F094369E")
     public String getCurrentEngine() {
 String varF0379D96643374605D6BA399231446A3_1088072200 =         mCurrentEngine;
@@ -1016,7 +1013,6 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.512 -0400", hash_original_method = "98074E19965AB76BE23153F0217E2857", hash_generated_method = "6A2F9DD31162300B877E68390A8619E9")
     public int setOnUtteranceProgressListener(UtteranceProgressListener listener) {
         mUtteranceProgressListener = listener;
@@ -1052,7 +1048,6 @@ String varF168E94075BBE3E03A9472F1231D848D_73500005 =         mEnginesHelper.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.512 -0400", hash_original_method = "FDBC18F088428D1AA4FA407CF8A38EB5", hash_generated_method = "27D856C849EB66A6953B0A78F0850A7F")
     public boolean areDefaultsEnforced() {
         boolean var68934A3E9455FA72420237EB05902327_937697649 = (false);

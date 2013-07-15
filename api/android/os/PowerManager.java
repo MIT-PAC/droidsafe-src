@@ -238,7 +238,6 @@ switch(flags & LOCK_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.346 -0400", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "494115ABA2B3754EECDF64EBFE873031")
         public void setReferenceCounted(boolean value) {
             mRefCounted = value;
@@ -351,7 +350,6 @@ switch(flags & LOCK_MASK){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.349 -0400", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "A658EF33AA31FBD622DA3A9971D1F46C")
         public boolean isHeld() {
             synchronized

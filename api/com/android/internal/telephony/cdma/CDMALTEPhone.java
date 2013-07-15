@@ -41,7 +41,6 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.618 -0400", hash_original_method = "7419DD25F2A8EC5E4F54973E3AF74E7D", hash_generated_method = "E666EC1DEE3712C9AFD8E800BDD4B431")
     @Override
     public void handleMessage(Message msg) {
@@ -68,7 +67,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.618 -0400", hash_original_method = "A724800C9AF8E80E36877A25E474B13E", hash_generated_method = "BB92E66E6A1EC42AB8A8874247EB43E6")
     @Override
     protected void initSstIcc() {
@@ -84,7 +82,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.619 -0400", hash_original_method = "66C432AAD817657842F9394EA9EE83CC", hash_generated_method = "BE28F43C73D1A2ACA840E26EDB7B9BF5")
     @Override
     public void dispose() {
@@ -101,7 +98,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.619 -0400", hash_original_method = "BDA3902BB46E4D338A3093A3F1641F9B", hash_generated_method = "34741DA197EEA964843CD3F86845CD77")
     @Override
     public void removeReferences() {
@@ -161,7 +157,6 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.622 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "ED3994A72D1681C6ED272E38D565CABC")
     @Override
     public void selectNetworkManually(OperatorInfo network,
@@ -213,7 +208,6 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.625 -0400", hash_original_method = "209DB6DC61EA45DEB13BF7CF447B5FBA", hash_generated_method = "95F616D123E9E556BBBAE69A5A247B9F")
     @Override
     public boolean updateCurrentCarrierInProvider() {
@@ -262,7 +256,6 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "3E01D20FCE14548AEDCD05440449A2C4", hash_generated_method = "C0318C47A19F42F3751E8F5DF75E2F6C")
     @Override
     public void setSystemLocale(String language, String country, boolean fromMcc) {
@@ -278,7 +271,6 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "9D5351907D6BC695DF94D64BDA73B6A5")
     @Override
     public String getSubscriberId() {
@@ -290,7 +282,6 @@ String var9E0F6CF9E749066E7163DA637BDC770E_1890310153 =         mIccRecords.getI
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "5AFCBAB8A5BDA69A65622C7BE760B9B5")
     @Override
     public String getImei() {
@@ -302,7 +293,6 @@ String varDEC341D68DE51B3F93C3763FDA1DF1F5_1923884351 =         mImei;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.627 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "134730FC46821F3CA992113221862242")
     @Override
     public String getDeviceSvn() {
@@ -314,7 +304,6 @@ String var440DA0F542A7DF067CD1A564FADAEE1C_943659356 =         mImeiSv;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.627 -0400", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "1A83EA8AB0BBF6276C03B893FCB0151F")
     @Override
     public IsimRecords getIsimRecords() {
@@ -326,7 +315,6 @@ IsimRecords varA54E2F00206ADE38CAE9E5438115660C_800510347 =         mIccRecords.
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.627 -0400", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "5E7081A72EE04339263029385E04B5D6")
     @Override
     public String getMsisdn() {
@@ -338,7 +326,6 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.628 -0400", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "276A7FEC40B6D9144DB1F28951D35976")
     @Override
     public void getAvailableNetworks(Message response) {
@@ -349,7 +336,6 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.628 -0400", hash_original_method = "F8B11B15838465AB38A3DDFE9FF000B6", hash_generated_method = "20892B8ECEDF6A4F71CD9DF7BE70AAC7")
     @Override
     public void requestIsimAuthentication(String nonce, Message result) {
@@ -361,7 +347,6 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.628 -0400", hash_original_method = "69A9D8984C1FC702F097120D9CC0BB90", hash_generated_method = "D617ECE150CDF40841A353EBC76DCAE6")
     @Override
     protected void log(String s) {

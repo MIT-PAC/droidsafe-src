@@ -48,8 +48,7 @@ public class SyncStateContract {
         }
 
 
-                @DSModeled(DSC.SPEC)
-        public static byte[] get(ContentProviderClient provider, Uri uri,
+                public static byte[] get(ContentProviderClient provider, Uri uri,
                 Account account) throws RemoteException {
             Cursor c = provider.query(uri, DATA_PROJECTION, SELECT_BY_ACCOUNT,
                     new String[]{account.name, account.type}, null);
@@ -67,8 +66,7 @@ public class SyncStateContract {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void set(ContentProviderClient provider, Uri uri,
+                public static void set(ContentProviderClient provider, Uri uri,
                 Account account, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -78,8 +76,7 @@ public class SyncStateContract {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri insert(ContentProviderClient provider, Uri uri,
+                public static Uri insert(ContentProviderClient provider, Uri uri,
                 Account account, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -89,8 +86,7 @@ public class SyncStateContract {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void update(ContentProviderClient provider, Uri uri, byte[] data) throws RemoteException {
+                public static void update(ContentProviderClient provider, Uri uri, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
             provider.update(uri, values, null, null);
@@ -117,8 +113,7 @@ public class SyncStateContract {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static ContentProviderOperation newSetOperation(Uri uri,
+                public static ContentProviderOperation newSetOperation(Uri uri,
                 Account account, byte[] data) {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -131,8 +126,7 @@ public class SyncStateContract {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) {
+                public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
             return ContentProviderOperation

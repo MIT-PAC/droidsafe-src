@@ -121,7 +121,6 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.463 -0400", hash_original_method = "E930BE940ED709A9E92F64EC28520C28", hash_generated_method = "5980C3ADD7C4CB167ABB1F7E73B394D7")
     public String toString() {
 String var3CEA0CD315D0C4FE374BE8056D2D2CE1_428880565 =         host + ":" + port + "/" + transport;
@@ -132,7 +131,6 @@ String var3CEA0CD315D0C4FE374BE8056D2D2CE1_428880565 =         host + ":" + port
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.464 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "7E262AFB7BB5138FEF96F22028228046")
     public String getHost() {
 String var872E07117C05F1A34EC24B57B694B8E3_717499807 =         host;
@@ -143,7 +141,6 @@ String var872E07117C05F1A34EC24B57B694B8E3_717499807 =         host;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.464 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "5AD944CDF3ADC1A634FC0B76BDB4E71C")
     public int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_1379896399 = (port);
@@ -154,7 +151,6 @@ String var872E07117C05F1A34EC24B57B694B8E3_717499807 =         host;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.464 -0400", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "249818802AF632BB352459BD380E4B69")
     public String getTransport() {
 String var6D37A12806110C538EDC9272068F264D_768636121 =         transport;
@@ -165,7 +161,6 @@ String var6D37A12806110C538EDC9272068F264D_768636121 =         transport;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.464 -0400", hash_original_method = "7B7F5CA7C760A6206185BE96F86E54F2", hash_generated_method = "87D49A2719A450070417970B9B059D2C")
     public boolean isURIRoute() {
         boolean var177A6DC537A1CE75A7A6EEB2280E832A_1453834759 = (uriRoute);
@@ -176,7 +171,6 @@ String var6D37A12806110C538EDC9272068F264D_768636121 =         transport;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.465 -0400", hash_original_method = "4D177A2C7A5E9A8C62FF46DC5D4CFB65", hash_generated_method = "B3EF0D7F68E6E1C436677D2677199934")
     public void setURIRouteFlag() {
         uriRoute = true;

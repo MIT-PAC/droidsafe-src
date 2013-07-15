@@ -53,8 +53,7 @@ ClassPathPackageInfo varBA00A6319552DBD246ACAD32EC974A7E_2039982539 =           
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setApkPaths(String[] apkPaths) {
+        public static void setApkPaths(String[] apkPaths) {
         ClassPathPackageInfoSource.apkPaths = apkPaths;
     }
 
@@ -365,7 +364,6 @@ Set<String> var765F5FFF692F7D7E6B8C4D556FF7DF0A_626530695 =         entryNames;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.929 -0400", hash_original_method = "EF51D9ADCA3E8F522FB005D173D913A5", hash_generated_method = "278C4AA58E3CC699090BB3856901B327")
     public void setClassLoader(ClassLoader classLoader) {
         this.classLoader = classLoader;

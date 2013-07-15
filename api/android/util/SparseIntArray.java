@@ -167,7 +167,6 @@ SparseIntArray var3DE52045BFD3C1BF3742F994ED6139AD_1081024157 =         clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.339 -0400", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "B0C93397EABD05ED0F5A1E87DB4C99EE")
     public int size() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_5580818 = (mSize);
@@ -178,7 +177,6 @@ SparseIntArray var3DE52045BFD3C1BF3742F994ED6139AD_1081024157 =         clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.340 -0400", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "76FE6B38687ECA232FC4070E3CE35BEF")
     public int keyAt(int index) {
         addTaint(index);
@@ -190,7 +188,6 @@ SparseIntArray var3DE52045BFD3C1BF3742F994ED6139AD_1081024157 =         clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.340 -0400", hash_original_method = "C4C41F7CADA2DF58870780D8F849030A", hash_generated_method = "92E1F9109EC132EDCD6F0A859979146A")
     public int valueAt(int index) {
         addTaint(index);
@@ -213,7 +210,6 @@ SparseIntArray var3DE52045BFD3C1BF3742F994ED6139AD_1081024157 =         clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.342 -0400", hash_original_method = "951F96E1F188074D8F08952A6EB559DF", hash_generated_method = "DC1113CFD1FF2C286288F2214DB773BB")
     public int indexOfValue(int value) {
         addTaint(value);
@@ -235,7 +231,6 @@ for(int i = 0;i < mSize;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.342 -0400", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "2F55AFCAF967A1646FEBDAF6AC2C8455")
     public void clear() {
         mSize = 0;
@@ -286,8 +281,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int binarySearch(int[] a, int start, int len, int key) {
+        private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
             guess = (high + low) / 2;

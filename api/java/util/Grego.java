@@ -100,16 +100,14 @@ class Grego {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long floorDivide(long numerator, long denominator) {
+        public static long floorDivide(long numerator, long denominator) {
         return (numerator >= 0) ?
             numerator / denominator :
             ((numerator + 1) / denominator) - 1;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long floorDivide(long numerator, long denominator, long[] remainder) {
+        private static long floorDivide(long numerator, long denominator, long[] remainder) {
         if (numerator >= 0) {
             remainder[0] = numerator % denominator;
             return numerator / denominator;

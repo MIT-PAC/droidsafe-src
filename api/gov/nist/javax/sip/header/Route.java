@@ -26,7 +26,6 @@ public class Route extends AddressParametersHeader implements javax.sip.header.R
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.939 -0400", hash_original_method = "42825E09BC1306330D357AEB56059051", hash_generated_method = "C3B08F937D6319F6E61F34FC8C8F7CDD")
     public int hashCode() {
         int varA208F299EF1BEAF3A80941A2ED81F585_1677006306 = (this.address.getHostPort().encode().toLowerCase().hashCode());
@@ -37,7 +36,6 @@ public class Route extends AddressParametersHeader implements javax.sip.header.R
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.939 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "FA805982918A0F6F1317669F5934EF9D")
     public String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_1789607222 =         encodeBody(new StringBuffer()).toString();
@@ -48,7 +46,6 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_1789607222 =         encodeBody(new S
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.940 -0400", hash_original_method = "2891D97F5EA93E20B16E0A9272FB4B2C", hash_generated_method = "B0164849BF842D18F855753B00873127")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -88,7 +85,6 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_185304543 =         buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.941 -0400", hash_original_method = "53DB62040F48266C1BBF2CE5E963ACD1", hash_generated_method = "3EC5F8B21D8B5EC51C2ABCDE94DF1BFD")
     public boolean equals(Object other) {
         addTaint(other.getTaint());

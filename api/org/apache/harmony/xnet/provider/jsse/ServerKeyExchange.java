@@ -210,7 +210,6 @@ RSAPublicKey var6A95247616A3A8B93CFF7783DABD08D4_511960425 =         key;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.689 -0400", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "63797F7AD4E910CEFC9B62FC7C6B11B4")
     @Override
     public int getType() {

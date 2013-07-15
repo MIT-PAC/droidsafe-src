@@ -52,7 +52,6 @@ public abstract class SocketImpl implements SocketOptions {
     protected abstract void create(boolean isStreaming) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.301 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "B374A2801461696D3F20B6ED984ADEF3")
     protected FileDescriptor getFileDescriptor() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_431662247 =         fd;
@@ -63,7 +62,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_431662247 =         fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.302 -0400", hash_original_method = "D80DA3748C8C317EA54CA4C7D2D15552", hash_generated_method = "1C87421B2562248429FA247AD6992575")
     public FileDescriptor getFD$() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_25688054 =         fd;
@@ -74,7 +72,6 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_25688054 =         fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.302 -0400", hash_original_method = "9059089CB1C35AC3C53D636B58746A1E", hash_generated_method = "DBDD986C66D74486363469B4C4CF90BE")
     protected InetAddress getInetAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1895356213 =         address;
@@ -88,7 +85,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1895356213 =         address;
     protected abstract InputStream getInputStream() throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.303 -0400", hash_original_method = "01F8313D57DE36AB40371D3553F872FB", hash_generated_method = "DCC4D08CCCC0D54A2383A37103230D8F")
     protected int getLocalPort() {
         int varF7439E9867FD6BB737D74ED95E5B79AC_1089432003 = (localport);
@@ -102,7 +98,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1895356213 =         address;
     protected abstract OutputStream getOutputStream() throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.303 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "E773B29B246BFF1D1D88FA0040BF9035")
     protected int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_1907523259 = (port);
@@ -152,7 +147,6 @@ String varB5AD21B00F743A0FBF2E8A6EC3D084B6_197176898 =         "Socket[address="
     protected abstract void connect(SocketAddress remoteAddr, int timeout) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.305 -0400", hash_original_method = "84442B2358C6BD30716C7D72481FD8C4", hash_generated_method = "808D4DADE0E289F13A6281DEBEF17503")
     protected boolean supportsUrgentData() {
         boolean var68934A3E9455FA72420237EB05902327_2001554333 = (false);
@@ -166,7 +160,6 @@ String varB5AD21B00F743A0FBF2E8A6EC3D084B6_197176898 =         "Socket[address="
     protected abstract void sendUrgentData(int value) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.305 -0400", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "A2731386B114152B586B93B9733BC462")
     protected void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {
         addTaint(bandwidth);

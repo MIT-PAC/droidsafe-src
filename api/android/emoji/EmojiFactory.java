@@ -55,7 +55,6 @@ public final class EmojiFactory {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.645 -0400", hash_original_method = "61A4CE5E0B45509C63F06179C920C9C2", hash_generated_method = "90AD13F1A0BAD69D758E89DA16A900CA")
     public String name() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_316774322 =         mName;
@@ -290,7 +289,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.658 -0400", hash_original_method = "996F154EA43AB1D5A4C151D656C37CF1", hash_generated_method = "306E1F6D8D2B1E2FAFA21FC83BAC450E")
     private void nativeDestructor(int factory) {
     }
@@ -305,7 +303,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
 	}
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.659 -0400", hash_original_method = "3A1554F06CC9CCAF25F7BBE93248CE83", hash_generated_method = "21CA195DD228E0FBB5ECD548ED946C8B")
     private int nativeGetAndroidPuaFromVendorSpecificSjis(int nativeEmojiFactory,
             char sjis) {
@@ -314,7 +311,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.659 -0400", hash_original_method = "C302C3634C2FA6E6CA4CF2CF66D12101", hash_generated_method = "6EDAC1F68D9E30094C781ABA076D7923")
     private int nativeGetVendorSpecificSjisFromAndroidPua(int nativeEmojiFactory,
             int pua) {
@@ -323,7 +319,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.659 -0400", hash_original_method = "75FE7601C9BA865A32982CD0867F654C", hash_generated_method = "6F2BF72A91E1D9E20595A0C05C408AED")
     private int nativeGetAndroidPuaFromVendorSpecificPua(int nativeEmojiFactory,
             int vsp) {
@@ -332,7 +327,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.660 -0400", hash_original_method = "B406416ABF41BEA242E5A40B8BA7386A", hash_generated_method = "81CF200C96B75B89467FB201B3A95950")
     private int nativeGetVendorSpecificPuaFromAndroidPua(int nativeEmojiFactory,
             int pua) {
@@ -341,7 +335,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.660 -0400", hash_original_method = "5A805426DAFA5C3640F25323B1C3B8F5", hash_generated_method = "4483C9E3FFD90919837075CC0124182D")
     private int nativeGetMaximumVendorSpecificPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747136477 = getTaintInt();
@@ -349,7 +342,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.660 -0400", hash_original_method = "0FF4320BBE7657B90285375F65F4DF9D", hash_generated_method = "7E2C76CDDF3A45A429FA3A1D42E608C7")
     private int nativeGetMinimumVendorSpecificPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633485327 = getTaintInt();
@@ -357,7 +349,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.661 -0400", hash_original_method = "800100FBB9205E441349161A70ADF047", hash_generated_method = "1D0A7425A10509C8F49E7B3A9F8AEEF2")
     private int nativeGetMaximumAndroidPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681663681 = getTaintInt();
@@ -365,7 +356,6 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.661 -0400", hash_original_method = "5875EE70D8D47117F3D06FA307D98BB5", hash_generated_method = "AB432FE5CAE37393F1FBBFA2A316E078")
     private int nativeGetMinimumAndroidPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414624735 = getTaintInt();

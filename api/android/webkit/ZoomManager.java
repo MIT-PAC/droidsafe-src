@@ -419,7 +419,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.658 -0400", hash_original_method = "73353D5825B74E55208D73C06ED7146E", hash_generated_method = "35AD912B11F1D387ABF6100DF880F810")
     public boolean willScaleTriggerZoom(float scale) {
         addTaint(scale);
@@ -451,7 +450,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.659 -0400", hash_original_method = "1087ACA9FDE3F82506A02D8DB9B3B812", hash_generated_method = "B443E8FA0C003970BD75581C6627B9D6")
     public boolean zoomIn() {
         boolean varC96C7B9B7FAF53A62021D1FACD428BDF_1432577183 = (zoom(1.25f));
@@ -462,7 +460,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.659 -0400", hash_original_method = "AF303514C2CE6EE62014ED1CD988BE8F", hash_generated_method = "FF169E38E2E8D59F5669E4E432E13AEC")
     public boolean zoomOut() {
         boolean varE40290D775ABE277408E6DFF69232814_880968166 = (zoom(0.8f));
@@ -593,7 +590,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.663 -0400", hash_original_method = "E0C5EE754D896EBEA19BF99FCF86359E", hash_generated_method = "0CC01240AD153DD7FC835159AE84BD12")
     public boolean isZoomAnimating() {
         boolean var20C287154B59DDE014F3FA6F32CC216A_1335933280 = (isFixedLengthAnimationInProgress() || mPinchToZoomAnimating);
@@ -604,7 +600,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.664 -0400", hash_original_method = "351373D4552618F4F14C898A250D84BD", hash_generated_method = "DDA29BB8296F392019C7676094C87EE1")
     public boolean isFixedLengthAnimationInProgress() {
         boolean varF358CE6735E2A71C9FC27D3E9180D57D_400379615 = (mZoomScale != 0 || mInHWAcceleratedZoom);
@@ -615,7 +610,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.664 -0400", hash_original_method = "38BADAFCA13DD410DF65C206538CBBC7", hash_generated_method = "E35B9613CE082137AEF54D573206DF66")
     public void updateDoubleTapZoom(int doubleTapZoom) {
         boolean zoomIn = (mTextWrapScale - mActualScale) < .1f;
@@ -634,7 +628,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.664 -0400", hash_original_method = "D0144FE074B01386F16EF11E861F0A7A", hash_generated_method = "4E610831276BD997A7712312AC7F5DEE")
     public void refreshZoomScale(boolean reflowText) {
         addTaint(reflowText);
@@ -644,7 +637,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.665 -0400", hash_original_method = "0CAC496E58068B9E4E1CC3313C83A17E", hash_generated_method = "D14BD128BEDBE21D008DD99F6F28272E")
     public void setZoomScale(float scale, boolean reflowText) {
         addTaint(reflowText);
@@ -706,7 +698,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.669 -0400", hash_original_method = "6C9BE8F81CD8D5D51E25813EE62B3846", hash_generated_method = "A92274B4B350A76C0666525B11D0FB57")
     public boolean isDoubleTapEnabled() {
         WebSettings settings = mWebView.getSettings();
@@ -786,7 +777,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.672 -0400", hash_original_method = "712C22BAE7AA3B12B6A5A40165B58905", hash_generated_method = "80A23724A250B952CF0FD5DE028ACB94")
     private void setZoomOverviewWidth(int width) {
     if(width == 0)        
@@ -808,7 +798,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.672 -0400", hash_original_method = "B42D229ABB1FC24C49B118C5D42DFED9", hash_generated_method = "FEEC5CBE7AF907F1AB4017EAE0B26753")
      float getZoomOverviewScale() {
         float var60A8AB28A2195A459EDCFBAE60FABE3D_2114722577 = (mWebView.getViewWidth() * mInvZoomOverviewWidth);
@@ -819,7 +808,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.673 -0400", hash_original_method = "C49CAD609BC6A273DA434DC912742003", hash_generated_method = "577D8AA2680E05695B411958601484D7")
     public boolean isInZoomOverview() {
         boolean var7744930A12D21C1DE605C74E0B045D64_984917025 = (mInZoomOverview);
@@ -830,7 +818,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.673 -0400", hash_original_method = "C0C0965039A172A5A5AAF6C9C4472D2A", hash_generated_method = "A0DAFE5222C9D5EDCF485B535A45DA26")
     private void zoomToOverview() {
         int scrollY = mWebView.getScrollY();
@@ -890,7 +877,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.675 -0400", hash_original_method = "77E44A3E983371F616079D37D03C3B6C", hash_generated_method = "CEBF60E56A20958A5BFFCCDAC1E64719")
     public void updateMultiTouchSupport(Context context) {
         final WebSettings settings = mWebView.getSettings();
@@ -916,7 +902,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.675 -0400", hash_original_method = "D759966F5D5714E0336F491E3EEDC527", hash_generated_method = "D07CD72469DD1F0AC760FCC39D5EBB43")
     public boolean supportsMultiTouchZoom() {
         boolean var5C62F021E531A91F9743205810E9E171_1421794645 = (mSupportMultiTouch);
@@ -927,7 +912,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.676 -0400", hash_original_method = "E2CDCD424944BF66C1EED756BC88611C", hash_generated_method = "1E0B4535B4AB94CE2A03BF6989F46A13")
     public boolean supportsPanDuringZoom() {
         boolean varC0A50D2FDF7098353277E4B1046F8BCE_9654694 = (mAllowPanAndScale);
@@ -948,7 +932,6 @@ class ZoomManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.676 -0400", hash_original_method = "D6F4E788215219485BF912038215831B", hash_generated_method = "01B3DA0C210FC6271E4269B0B2A38BDB")
     public ScaleGestureDetector getMultiTouchGestureDetector() {
 ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_2111590888 =         mScaleDetector;
@@ -1199,7 +1182,6 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_2111590888 =         mS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.681 -0400", hash_original_method = "E88F50435C2D2101D935E91DFBA371A3", hash_generated_method = "5657D395C49E0CF098230714AF9A5F33")
     public void saveZoomState(Bundle b) {
         addTaint(b.getTaint());
@@ -1227,7 +1209,6 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_2111590888 =         mS
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.681 -0400", hash_original_method = "03F547EF9A141661565AD38656124362", hash_generated_method = "4E66F138270AB01A249B37098AE9B39D")
     private ZoomControlBase getCurrentZoomControl() {
     if(mWebView.getSettings() != null && mWebView.getSettings().supportZoom())        
@@ -1276,7 +1257,6 @@ ZoomControlBase var540C13E9E156B687226421B24F2DF178_1301062217 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.681 -0400", hash_original_method = "BF64B2CEB07538AA62EA00039BB48680", hash_generated_method = "E8A316D832FF8D0629D764B233F5583E")
     public void invokeZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
@@ -1292,7 +1272,6 @@ ZoomControlBase var540C13E9E156B687226421B24F2DF178_1301062217 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "0CAEEFDB341BFD4D4CACBFA479A18F98", hash_generated_method = "6CDC33CEA64DC4D5D98C550647C2A8D0")
     public void dismissZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
@@ -1308,7 +1287,6 @@ ZoomControlBase var540C13E9E156B687226421B24F2DF178_1301062217 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "DA055704D86885A7F9C5B74974CF851B", hash_generated_method = "4DBFF94733E8926732734BDD06D46126")
     public boolean isZoomPickerVisible() {
         ZoomControlBase control = getCurrentZoomControl();
@@ -1321,7 +1299,6 @@ ZoomControlBase var540C13E9E156B687226421B24F2DF178_1301062217 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "A8AE3510E280FF5955731B404A0A66EC", hash_generated_method = "A8061B19FBF8892A4D6A1B9D79BAFAF9")
     public void updateZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
@@ -1337,7 +1314,6 @@ ZoomControlBase var540C13E9E156B687226421B24F2DF178_1301062217 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "65E0B786CE90103F5573BC67CE254CE7", hash_generated_method = "AF01FB41BF559ECB1434E44EDB66A6CC")
     public void keepZoomPickerVisible() {
         ZoomControlBase control = getCurrentZoomControl();
@@ -1353,7 +1329,6 @@ ZoomControlBase var540C13E9E156B687226421B24F2DF178_1301062217 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "295B8076F41B8CC3FCA3F323BF66F29B", hash_generated_method = "89938DF79E52274B9F3238CA2B92F0DD")
     public View getExternalZoomPicker() {
         ZoomControlBase control = getCurrentZoomControl();
@@ -1379,7 +1354,6 @@ View var540C13E9E156B687226421B24F2DF178_956018557 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "8D458CBEFE5B6426DEF9072097FF3245", hash_generated_method = "9ADC4F4CBEDBCA89924A04F25DE685B9")
     public void setHardwareAccelerated() {
         mHardwareAccelerated = true;
@@ -1388,7 +1362,6 @@ View var540C13E9E156B687226421B24F2DF178_956018557 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.682 -0400", hash_original_method = "35BF52CFA65A672FC707BA33DDD071E9", hash_generated_method = "87431E9868545C347D0F7EC1A24B960B")
      void onPageFinished(String url) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1427,7 +1400,6 @@ View var540C13E9E156B687226421B24F2DF178_956018557 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.683 -0400", hash_original_method = "7BD5EC8FD84F966DA50367EA866227AA", hash_generated_method = "8335069DA08E3ECC73E486A4239E7C8F")
         private void clear() {
             mSize = 0;
@@ -1447,7 +1419,6 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.683 -0400", hash_original_method = "BEA568413C11D502CA7CED6FD222D059", hash_generated_method = "8FD819B1AFAAC1DD87B484EE364FF3BB")
         private void add(float focusDelta) {
             mSum += focusDelta;
@@ -1473,7 +1444,6 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.683 -0400", hash_original_method = "D980EABC4C0F2D2A081289A0764FD494", hash_generated_method = "81E740BEEA1FEB5C657C9A17B5D2E707")
         private float getSum() {
             float varBACF4F47646DA9E5EF6C6786F47B387A_1975354819 = (mSum);
@@ -1503,7 +1473,6 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.684 -0400", hash_original_method = "9075B37C27A1752EF4C1C0179D09116C", hash_generated_method = "D9B51BB4C54C1B3D72720520C748FDC5")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1532,7 +1501,6 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.684 -0400", hash_original_method = "B0E9BE71CCDF607A4C10071A1E309D43", hash_generated_method = "695C7F8B10B53EF737DE0D12C6B09904")
         public boolean isPanningOnly(ScaleGestureDetector detector) {
             addTaint(detector.getTaint());
@@ -1602,7 +1570,6 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.686 -0400", hash_original_method = "ED0E7724FBEBB5F90A0828B68DD48F69", hash_generated_method = "0DF70C45C9E045936181403BC7485307")
         public boolean onScale(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected

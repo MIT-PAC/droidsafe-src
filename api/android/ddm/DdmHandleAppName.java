@@ -18,26 +18,22 @@ public class DdmHandleAppName extends ChunkHandler {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void register() {
+        public static void register() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.301 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.301 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.302 -0400", hash_original_method = "9322B8B253BE8A74DE6E5A2942EC5C84", hash_generated_method = "2B5CD3E1FCDF38E11D3BB9BF9C23BBBC")
     public Chunk handleChunk(Chunk request) {
         addTaint(request.getTaint());
@@ -49,8 +45,7 @@ Chunk var540C13E9E156B687226421B24F2DF178_1427614027 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void setAppName(String name) {
+        public static void setAppName(String name) {
         if (name == null || name.length() == 0)
             return;
         mAppName = name;
@@ -58,14 +53,12 @@ Chunk var540C13E9E156B687226421B24F2DF178_1427614027 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getAppName() {
+        public static String getAppName() {
         return mAppName;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void sendAPNM(String appName) {
+        private static void sendAPNM(String appName) {
         if (false)
             Log.v("ddm", "Sending app name");
         ByteBuffer out = ByteBuffer.allocate(4 + appName.length()*2);

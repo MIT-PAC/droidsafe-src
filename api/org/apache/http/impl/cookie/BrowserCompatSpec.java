@@ -184,7 +184,6 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_2040271547 =         headers;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.452 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "6A28AED12F5118B23C4CA4F888677A19")
     public int getVersion() {
         int varCFCD208495D565EF66E7DFF9F98764DA_257106923 = (0);
@@ -195,7 +194,6 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_2040271547 =         headers;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.453 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "E5324F18919765A96E43A7F614F46759")
     public Header getVersionHeader() {
 Header var540C13E9E156B687226421B24F2DF178_1235930025 =         null;

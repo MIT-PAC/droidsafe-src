@@ -52,14 +52,12 @@ public final class DexFile {
     }
 
     
-        @DSModeled(DSC.BAN)
-    static public DexFile loadDex(String sourcePathName, String outputPathName,
+        static public DexFile loadDex(String sourcePathName, String outputPathName,
         int flags) throws IOException {
         return new DexFile(sourcePathName, outputPathName, flags);
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.259 -0400", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "408A063371426E9FBD55925AF005CFCA")
     public String getName() {
 String var034A1EDD43045D5BE42C7869180FB3DC_1476460469 =         mFileName;
@@ -70,7 +68,6 @@ String var034A1EDD43045D5BE42C7869180FB3DC_1476460469 =         mFileName;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.263 -0400", hash_original_method = "9CC3987533495060FC4949865817E44B", hash_generated_method = "E86A97E31ACA959189568D3FF85B193D")
     public void close() throws IOException {
         guard.close();
@@ -83,7 +80,6 @@ String var034A1EDD43045D5BE42C7869180FB3DC_1476460469 =         mFileName;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.267 -0400", hash_original_method = "292E8055A30ED290AAAD3D0A5C7397D8", hash_generated_method = "63FF1551CFAC881F60018914B9527432")
     public Class loadClass(String name, ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -98,7 +94,6 @@ Class var08DA4FE666A2269C44F6B8F41F5D219D_1562396323 =         loadClassBinaryNa
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.274 -0400", hash_original_method = "66D81951CD1FBB575468E800A0D13125", hash_generated_method = "39B06E4D23C8BADEBF5910352644D4AC")
     public Class loadClassBinaryName(String name, ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -111,7 +106,6 @@ Class varC24D0AC4FF8441C0BBB3D1483BDE602C_551213512 =         defineClass(name, 
     }
 
     
-    @DSModeled(DSC.BAN)
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
     	Class clazz = new Class();
     	clazz.addTaint(name.taint);
@@ -139,7 +133,6 @@ Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1589807603 =         new
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.294 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "271B01A0C286411ADC3A779686EF67E4")
     @Override
     protected void finalize() throws Throwable {
@@ -213,7 +206,6 @@ Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1589807603 =         new
         }
 
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.326 -0400", hash_original_method = "44B49EF070D2DA767A519B4A12A72A0B", hash_generated_method = "4B86A5E010B6DFFDD93BA82469B96668")
         public boolean hasMoreElements() {
             boolean varFFC6890377154B35FEEF0342CDB405EB_1302607442 = ((mIndex < mNameList.length));
@@ -224,7 +216,6 @@ Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1589807603 =         new
         }
 
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.331 -0400", hash_original_method = "EDE97A24B23321A2938B638C5AA975A1", hash_generated_method = "03EE664D5FCD2089D578F2ED25ACC1D8")
         public String nextElement() {
 String varB7F2210AFBB3BA6AEB1F1DD70313C1DA_679087768 =             mNameList[mIndex++];

@@ -205,7 +205,6 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.183 -0400", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "793A288307EBBACB6B82F968AF260698")
     @Override
     public int getRawOffset() {
@@ -217,7 +216,6 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.183 -0400", hash_original_method = "AE2A1B68EBE1FCF14F7860BA64C34CCE", hash_generated_method = "079E0D8D6A4EFB8E0B2D948CAED07A5E")
     @Override
     public void setRawOffset(int off) {
@@ -227,7 +225,6 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.183 -0400", hash_original_method = "81F7D5AE987C5D23D9D894C0567E3722", hash_generated_method = "66D359DAB89553F9C15DFCEA24D27AA2")
     @Override
     public boolean useDaylightTime() {
@@ -340,7 +337,6 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.186 -0400", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "AFCE5774A4A34CF334B5140E5D4A8D05")
     @Override
     public String toString() {

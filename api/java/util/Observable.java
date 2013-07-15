@@ -44,7 +44,6 @@ public class Observable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.311 -0400", hash_original_method = "410A33FBB0A048736175F5104AE7D39A", hash_generated_method = "B10215715AF0B76E324A81488D8CA311")
     protected void clearChanged() {
         changed = false;
@@ -80,7 +79,6 @@ public class Observable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.312 -0400", hash_original_method = "CA74254130B5D4534FA6EDAB1417F30F", hash_generated_method = "8139628CAC5B5648D7383D7EE5956C71")
     public boolean hasChanged() {
         boolean var8977DFAC2F8E04CB96E66882235F5ABA_342635429 = (changed);
@@ -141,7 +139,6 @@ for(Observer observer : arrays)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.314 -0400", hash_original_method = "87048075CC64F75CF8DABD03B4BB9693", hash_generated_method = "0A81876964F964965F16A41F060E97BD")
     protected void setChanged() {
         changed = true;

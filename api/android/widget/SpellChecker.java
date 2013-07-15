@@ -137,7 +137,6 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.810 -0400", hash_original_method = "7E55E284FCAD6408034DF45536DFE0B3", hash_generated_method = "8B3A8307ED24F8C3C27EE61508CF14CF")
     private boolean isSessionActive() {
         boolean varB694535CC8119906BC8E325AD31D84D9_667023224 = (mSpellCheckerSession != null);
@@ -269,7 +268,6 @@ for(int i = 0;i < mLength;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.812 -0400", hash_original_method = "6CA87C3B81B676351D5CE260A5491025", hash_generated_method = "9EB558F4EC5C9E5B0C744066A3010CD5")
     public void spellCheck(int start, int end) {
         addTaint(end);
@@ -314,7 +312,6 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.812 -0400", hash_original_method = "BA5B8BA52678A659BE9D822C4132A8EA", hash_generated_method = "AB67BCC5A01FBF8BEA03192F0BA7FF3B")
     private void spellCheck() {
     if(mSpellCheckerSession == null)        
@@ -448,7 +445,6 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.814 -0400", hash_original_method = "7C6C5A03DA2C9F5FF814A532005DE2A2", hash_generated_method = "0D61409EFEB7B30B8914D0A7C9130108")
     private void createMisspelledSuggestionSpan(Editable editable, SuggestionsInfo suggestionsInfo,
             SpellCheckSpan spellCheckSpan) {

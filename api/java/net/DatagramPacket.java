@@ -98,7 +98,6 @@ public final class DatagramPacket {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.514 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "202F84321EA165D345F9205E8AF747AC")
     public synchronized InetAddress getAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
@@ -109,7 +108,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.515 -0400", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "3320AEC7F42ADE4E379A849942B34452")
     public synchronized byte[] getData() {
         byte[] var8D777F385D3DFEC8815D20F7496026DC_1301930227 = (data);
@@ -120,7 +118,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.515 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "410842D78D65BB116562653640C4B06D")
     public synchronized int getLength() {
         int var2FA47F7C65FEC19CC163B195725E3844_832958853 = (length);
@@ -131,7 +128,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.516 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "AA72BCD11BB5A774DA9ECDBC76B20446")
     public synchronized int getOffset() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_1801315639 = (offset);
@@ -142,7 +138,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.516 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "EADBAF92ED4576C142D3C29408E35E3A")
     public synchronized int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_1512787092 = (port);
@@ -153,7 +148,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.517 -0400", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "D8DF36BE09A5C0C183F7A65469BFBDCD")
     public synchronized void setAddress(InetAddress addr) {
         address = addr;
@@ -185,7 +179,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.519 -0400", hash_original_method = "90578DC03777F39E5EBE6643D9CBD4FE", hash_generated_method = "F1FEFC07A80B686715A77B87B4CF8AB9")
     public synchronized void setData(byte[] buf) {
         length = buf.length;
@@ -200,7 +193,6 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.520 -0400", hash_original_method = "59C864B14A0070866D297CD091E1F29D", hash_generated_method = "B08F1460AC9CE86D3366EFCAF33FE7D7")
     synchronized int getCapacity() {
         int var7BD14A231864E618E1840C7E117E59C1_205682587 = (capacity);

@@ -669,7 +669,6 @@ String var1D0F72A80D62E96CEA3D7B6E37C980FA_1862723491 =         nextToInternal(S
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.852 -0400", hash_original_method = "8E6F2519C4EF5016C5BDFABD97F81370", hash_generated_method = "84B39920C06747FE079741075FDBA024")
     public void back() {
     if(--pos == -1)        
@@ -683,8 +682,7 @@ String var1D0F72A80D62E96CEA3D7B6E37C980FA_1862723491 =         nextToInternal(S
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int dehexchar(char hex) {
+        public static int dehexchar(char hex) {
         if (hex >= '0' && hex <= '9') {
             return hex - '0';
         } else if (hex >= 'A' && hex <= 'F') {

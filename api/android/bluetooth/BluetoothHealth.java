@@ -446,7 +446,6 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.138 -0400", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "7E2810AC4BDE36569F993386C707233F")
      void close() {
         mServiceListener = null;
@@ -501,7 +500,6 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.140 -0400", hash_original_method = "55A0A269422935E819E2C55F9C91FE5D", hash_generated_method = "367D8896D27685A4B3741BFB87879B22")
     private boolean checkAppParam(String name, int role, int channelType,
             BluetoothHealthCallback callback) {

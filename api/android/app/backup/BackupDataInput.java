@@ -220,7 +220,6 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.028 -0400", hash_original_method = "067EEAAC3A307CF566E8560CEDE5923E", hash_generated_method = "7FAA0D6B4979D5127CCA581E4ABD2DEA")
     private int readNextHeader_native(int mBackupReader, EntityHeader entity) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882591691 = getTaintInt();
@@ -228,7 +227,6 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.028 -0400", hash_original_method = "F563013799B99B7F96D96C08DD61A38F", hash_generated_method = "295B5FE9AF82232248446C6915D21ABB")
     private int readEntityData_native(int mBackupReader, byte[] data, int offset, int size) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1633556903 = getTaintInt();
@@ -236,7 +234,6 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.028 -0400", hash_original_method = "13C96EB578BECC22D2FF8487AD4702B6", hash_generated_method = "DC9889478C9DA5CED58E3DAA1656E317")
     private int skipEntityData_native(int mBackupReader) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351843561 = getTaintInt();

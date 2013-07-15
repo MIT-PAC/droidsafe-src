@@ -168,8 +168,7 @@ public final class ZoneInfoDB {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getVersion() {
+        public static String getVersion() {
         return VERSION;
     }
 

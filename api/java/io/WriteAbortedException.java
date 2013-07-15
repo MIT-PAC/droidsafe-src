@@ -42,7 +42,6 @@ String varEDC5B72465A7F0BEE288689BCB1DD141_1043689755 =         msg;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.082 -0400", hash_original_method = "CA6C7AF43E4792C258E5E6922F45606C", hash_generated_method = "B91B7474BBDD96095D3F2C14FADCA2C4")
     @Override
     public Throwable getCause() {

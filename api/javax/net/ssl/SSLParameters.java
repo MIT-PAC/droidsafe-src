@@ -109,7 +109,6 @@ String[] var30954653E130D93F309E891186F9A8E2_913848948 =         protocols.clone
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.876 -0400", hash_original_method = "0562A9D6063DDE1E14D46646F3CBBD06", hash_generated_method = "E604EE52A97213C5DE8FB60D5BD80E9C")
     public boolean getNeedClientAuth() {
         boolean varAB2177731EDE446534AF45C842A8755B_2136712897 = (needClientAuth);
@@ -120,7 +119,6 @@ String[] var30954653E130D93F309E891186F9A8E2_913848948 =         protocols.clone
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.877 -0400", hash_original_method = "22A4FDEF203263AAF8FD895025373324", hash_generated_method = "7190D12EE7B69134109AE618F466102E")
     public void setNeedClientAuth(boolean needClientAuth) {
         this.needClientAuth = needClientAuth;
@@ -131,7 +129,6 @@ String[] var30954653E130D93F309E891186F9A8E2_913848948 =         protocols.clone
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.877 -0400", hash_original_method = "B012F9400DE611969BC8B2969D6766E0", hash_generated_method = "9607834B644DFD3A076CC8598897118D")
     public boolean getWantClientAuth() {
         boolean var86DEF88DB1B1A166C8B59083E28A44E5_1129922069 = (wantClientAuth);
@@ -142,7 +139,6 @@ String[] var30954653E130D93F309E891186F9A8E2_913848948 =         protocols.clone
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.877 -0400", hash_original_method = "363F6F59B4A070AED132C2E96BCCEA5B", hash_generated_method = "9B8353396C409A957C3BF33E58027F47")
     public void setWantClientAuth(boolean wantClientAuth) {
         this.wantClientAuth = wantClientAuth;

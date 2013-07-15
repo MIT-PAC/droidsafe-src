@@ -42,7 +42,6 @@ public final class ImplForType implements ParameterizedType {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.298 -0400", hash_original_method = "467C0CA3F26F8ADD49B2C117FFDDE5B5", hash_generated_method = "B81BA8E52E19F6BA31F7A6942466E127")
     public Type[] getActualTypeArguments() {
 Type[] var9FC3950091FC8332FF1BE9E5D6665212_861170897 =         args.getResolvedTypes().clone();
@@ -53,7 +52,6 @@ Type[] var9FC3950091FC8332FF1BE9E5D6665212_861170897 =         args.getResolvedT
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.299 -0400", hash_original_method = "607EB162392181215E5C2613EAFAE402", hash_generated_method = "D0BC06A41DF02C061575F1D6FB17ACDA")
     public Type getOwnerType() {
     if(ownerTypeRes == null)        
@@ -112,7 +110,6 @@ Class var8EA1D50767FFA9660A4E248B29D3B6ED_1035820156 =         rawType;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.300 -0400", hash_original_method = "62DEF1F574FB703889CA718D111580A0", hash_generated_method = "DCC51F3456FB40075C84D1FA06602F79")
      Type getResolvedType() {
     if(args.getResolvedTypes().length == 0)        
@@ -136,7 +133,6 @@ Type var72A74007B2BE62B849F475C7BDA4658B_820715527 =             this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.301 -0400", hash_original_method = "6D877CB8043423D6A95AF1E4F8482A09", hash_generated_method = "A781AC746C574DC96B722439A024F318")
     @Override
     public String toString() {

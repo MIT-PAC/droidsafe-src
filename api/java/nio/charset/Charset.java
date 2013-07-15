@@ -67,8 +67,7 @@ for(String alias : aliases)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean isValidCharsetNameCharacter(char c) {
+        private static boolean isValidCharsetNameCharacter(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
                 c == '-' || c == '.' || c == ':' || c == '_';
     }
@@ -186,7 +185,6 @@ Set<String> var40C06DD4FB2A29FDD3D9FA27114D7854_815168563 =         Collections.
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.750 -0400", hash_original_method = "73ACF950C7885C6BB8F7DA98628525CE", hash_generated_method = "06EFB1291A73383A1D267DD03B9D5985")
     public String displayName() {
 String var10DFEB18F9F7F9CEB3FED88506D04E0A_1877307095 =         this.canonicalName;
@@ -197,7 +195,6 @@ String var10DFEB18F9F7F9CEB3FED88506D04E0A_1877307095 =         this.canonicalNa
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.751 -0400", hash_original_method = "E11EA2F6EB7DD1956A05FA3724D0F65C", hash_generated_method = "71D43D56FFCDAC2231D0D56847C750FD")
     public String displayName(Locale l) {
         addTaint(l.getTaint());
@@ -219,7 +216,6 @@ String var10DFEB18F9F7F9CEB3FED88506D04E0A_665402086 =         this.canonicalNam
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.751 -0400", hash_original_method = "CFD47AB423921DC9B7AAA90F2EE94666", hash_generated_method = "2425366DE98DAABDA25232B3D55F143E")
     public boolean canEncode() {
         boolean varB326B5062B2F0E69046810717534CB09_1781685818 = (true);
@@ -355,8 +351,7 @@ String varAE5877D4DAD502DC1B608A0F13648963_422464348 =         getClass().getNam
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Charset defaultCharset() {
+        public static Charset defaultCharset() {
         return DEFAULT_CHARSET;
     }
 

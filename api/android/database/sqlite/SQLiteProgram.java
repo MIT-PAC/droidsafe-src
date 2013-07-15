@@ -82,7 +82,6 @@ for(int i = 0;i < size;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.077 -0400", hash_original_method = "EE8899F672BCD12A22959F518D1125AF", hash_generated_method = "0F180997DE6C247BFFF13B002088130B")
     private void compileSql() {
     if((mStatementType & STATEMENT_CACHEABLE) == 0)        
@@ -168,7 +167,6 @@ for(int i = 0;i < size;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.080 -0400", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "A84A95168B876C426101582751B7AF71")
      int getSqlStatementId() {
         synchronized
@@ -184,7 +182,6 @@ for(int i = 0;i < size;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.084 -0400", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "432E1DD1FACC9C0A5D35ACA8E5B1C59F")
      String getSqlString() {
 String varFA0654C7C9BA8BFE449D55D59921973A_116778010 =         mSql;
@@ -195,7 +192,6 @@ String varFA0654C7C9BA8BFE449D55D59921973A_116778010 =         mSql;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.085 -0400", hash_original_method = "B49B29A59D94DA04C289B1136BB98967", hash_generated_method = "046053F787B905BEE6F718979435D937")
     @Deprecated
     protected void compile(String sql, boolean forceCompilation) {

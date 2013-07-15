@@ -92,7 +92,6 @@ public class RatingBar extends AbsSeekBar {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.195 -0400", hash_original_method = "CB44A4D2B638D14CC961BB9C350C60D5", hash_generated_method = "0C38E6D8F5DE50714CF4743825B12928")
     public void setOnRatingBarChangeListener(OnRatingBarChangeListener listener) {
         mOnRatingBarChangeListener = listener;
@@ -101,7 +100,6 @@ public class RatingBar extends AbsSeekBar {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.195 -0400", hash_original_method = "695CB7B11E4FD58B096410402E370F4D", hash_generated_method = "661F8BA377C7887CC6DD0D895AE8B5BD")
     public OnRatingBarChangeListener getOnRatingBarChangeListener() {
 OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =         mOnRatingBarChangeListener;
@@ -123,7 +121,6 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.196 -0400", hash_original_method = "874639FDA9C4F98AD3BF38D7B6BE89CD", hash_generated_method = "7E2326106C273FEC87A9B6B66B907BC8")
     public boolean isIndicator() {
         boolean varC6A597318EF09C03CCEF65798B9CBD4E_1871615935 = (!mIsUserSeekable);
@@ -151,7 +148,6 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.197 -0400", hash_original_method = "D4C4902F9D646F6CD3B3EB2FB6EFDC13", hash_generated_method = "33B13D36A6962A78623A84FCA19C8A9A")
     public int getNumStars() {
         int var040414DF8719A630C798855CE8016CFC_1161246750 = (mNumStars);

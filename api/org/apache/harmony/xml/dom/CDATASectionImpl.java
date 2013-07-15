@@ -18,7 +18,6 @@ public final class CDATASectionImpl extends TextImpl implements CDATASection {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.510 -0400", hash_original_method = "C06D7633E1EEC458B6238549761E1C34", hash_generated_method = "6ECC0879E49582070FD688E0593245A8")
     @Override
     public String getNodeName() {
@@ -30,7 +29,6 @@ String varDC702726E92C9EDAE6B41AC7258DBE79_526653206 =         "#cdata-section";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.510 -0400", hash_original_method = "0AC4013C7F1EC92B6047139E15C869E6", hash_generated_method = "D21A7E977A319879C3D173BA902AF83B")
     @Override
     public short getNodeType() {

@@ -151,7 +151,6 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.930 -0400", hash_original_method = "EDE1166C9C5D6E2371538FA8BF1D31B5", hash_generated_method = "89721D0CEA79F09D9C0737AC06DA189B")
     public void setWidthLimit(int width, boolean strict) {
         mWidthLimit = width;
@@ -164,7 +163,6 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.931 -0400", hash_original_method = "9F648716EF61D229ED05FF998E104A97", hash_generated_method = "B64A2DDCBD4CDF5CA323C99F8D98CF86")
     public void setReserveOverflow(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
@@ -175,7 +173,6 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.931 -0400", hash_original_method = "481A608E0CFB48388247866BAE1C540A", hash_generated_method = "87E2B32D1F0B97A5238894F1E0A59883")
     public void setItemLimit(int itemCount) {
         mMaxItems = itemCount;
@@ -186,7 +183,6 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.939 -0400", hash_original_method = "28685D1CD5555D455AA1245A08028303", hash_generated_method = "DA8155DF8D4813D0B03173FE5C681E23")
     public void setExpandedActionViewsExclusive(boolean isExclusive) {
         mExpandedActionViewsExclusive = isExclusive;
@@ -284,7 +280,6 @@ View var9FA9E3D1D53E248EBA38D0D6FCF32267_416645419 =         actionView;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.940 -0400", hash_original_method = "675BFE60E67D99082131CDB4BA0667CE", hash_generated_method = "D0D7EE23EED2D2F2A26E9BCDDE68CAC3")
     @Override
     public void updateMenuView(boolean cleared) {
@@ -570,7 +565,6 @@ View var540C13E9E156B687226421B24F2DF178_1521360886 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.942 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "9C9F0A405CE7B7F57E553142AFDE51E5")
     public boolean isOverflowReserved() {
         boolean var0E213F9463B6EFE55ADA2109C5E5DC56_1199603562 = (mReserveOverflow);
@@ -581,7 +575,6 @@ View var540C13E9E156B687226421B24F2DF178_1521360886 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.943 -0400", hash_original_method = "3161CCF567C7C41004F1DD2E1141CBA5", hash_generated_method = "0A573BEC1F192E7F8BCFDB4562A19513")
     public boolean flagActionItems() {
         final ArrayList<MenuItemImpl> visibleItems = mMenu.getVisibleItems();
@@ -836,7 +829,6 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_2039076724 =         state;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.945 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "623DB958A5C504A5A4E4BA1D3D66CC18")
         @Override
         public int describeContents() {
@@ -927,7 +919,6 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_2039076724 =         state;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.945 -0400", hash_original_method = "6BA15F1E8189A4801AF337396791DD31", hash_generated_method = "34A3C5EB24240E0EFB3755AD9349187A")
         public boolean needsDividerBefore() {
             boolean var68934A3E9455FA72420237EB05902327_499904152 = (false);
@@ -938,7 +929,6 @@ Parcelable var37C56C9D63C623261861C16DCFB73F6D_2039076724 =         state;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.945 -0400", hash_original_method = "CA065FAE0BB06CECFBFA2C36E268A066", hash_generated_method = "FF530E74F03C7EB8B4AFF3F5A93C758C")
         public boolean needsDividerAfter() {
             boolean var68934A3E9455FA72420237EB05902327_366883549 = (false);

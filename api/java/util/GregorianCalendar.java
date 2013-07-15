@@ -136,7 +136,6 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.086 -0400", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "928A4AFA981F7D60A53B82DF1D37C8F2")
     @Override
     public void add(int field, int value) {
@@ -253,7 +252,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.088 -0400", hash_original_method = "4451E97BB30CB152B3F7FF3125B7AC95", hash_generated_method = "D711214E44B3AE64E63651BD71EC44EC")
     @Override
     public Object clone() {
@@ -843,7 +841,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.116 -0400", hash_original_method = "2A644CA75A846A9F294F6A7DE0BAB232", hash_generated_method = "03B12E37069A3177D8DDBF5602EDCD0E")
     private int computeYearAndDay(long dayCount, long localTime) {
         addTaint(localTime);
@@ -890,7 +887,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.118 -0400", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "CD26A380B6902DC5BBB06ECA8C384866")
     private long daysFromBaseYear(int iyear) {
         addTaint(iyear);
@@ -957,7 +953,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.119 -0400", hash_original_method = "B393AFA9309B3ECCDD74469F481095BD", hash_generated_method = "ACA122D28C4FC030613DA04972E81E19")
     private int daysInMonth() {
         int var215FE7C75DB0BF3B63047BEF73A9EBB3_445957670 = (daysInMonth(isLeapYear(fields[YEAR]), fields[MONTH]));
@@ -968,7 +963,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.120 -0400", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "D1F137DE82E3F9DF519D9A08000C94FA")
     private int daysInMonth(boolean leapYear, int month) {
         addTaint(month);
@@ -990,7 +984,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.121 -0400", hash_original_method = "643B799339D2A3831DACB9C12752109A", hash_generated_method = "6BD8EA16314BC856A47FBB53ECAB99C2")
     private int daysInYear(int year) {
         addTaint(year);
@@ -1018,7 +1011,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.122 -0400", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "10001D92823AF6E7CFD16E804A47B5AE")
     private int daysInYear(boolean leapYear, int month) {
         addTaint(month);
@@ -1040,7 +1032,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.123 -0400", hash_original_method = "61C11EDCA3B03978A14421C2440916AB", hash_generated_method = "98E11243285FB18B369EC6EF15F83C1F")
     @Override
     public boolean equals(Object object) {
@@ -1073,7 +1064,6 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.126 -0400", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "F117B158EB58FB414FCC48B35A5E814C")
     @Override
     public int getActualMaximum(int field) {
@@ -1151,7 +1141,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.128 -0400", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "B8D59B742EFD9900826A8A5DC5087817")
     @Override
     public int getActualMinimum(int field) {
@@ -1164,7 +1153,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.128 -0400", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "6546691D33492F6BAD29240047FEB4AB")
     @Override
     public int getGreatestMinimum(int field) {
@@ -1187,7 +1175,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.130 -0400", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "9562ED3CBC9F917E1E10C4425FB43101")
     @Override
     public int getLeastMaximum(int field) {
@@ -1219,7 +1206,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.130 -0400", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "D99DAD8FF6B25EBF1D2EEE35389F8888")
     @Override
     public int getMaximum(int field) {
@@ -1232,7 +1218,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.131 -0400", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "B804DD3865FC280CBF6F4E703E9CBC80")
     @Override
     public int getMinimum(int field) {
@@ -1245,7 +1230,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.133 -0400", hash_original_method = "A5F3F970AF018D82525827EF3879E8F1", hash_generated_method = "C62DB42C488371A3FD06DB14228D1314")
     private int getOffset(long localTime) {
         addTaint(localTime);
@@ -1305,7 +1289,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.135 -0400", hash_original_method = "6907F2ED2DF57E219AB70EADED509565", hash_generated_method = "EE15D27C3FCDEF89ED1AC4BAAAF2FDB4")
     @Override
     public int hashCode() {
@@ -1319,7 +1302,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.136 -0400", hash_original_method = "FD1210B9D1DAC87CC2975B1EB57E42AE", hash_generated_method = "F3F5EDDBDB73F2B72E2FC2C53CE14770")
     public boolean isLeapYear(int year) {
         addTaint(year);
@@ -1340,7 +1322,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.137 -0400", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "8A7B18D4E811F2AD6771C8345245FF36")
     private int julianError() {
         int var3697CF08EA814E7CEA6F0785303746B7_1538551267 = (changeYear / 100 - changeYear / 400 - 2);
@@ -1351,7 +1332,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.138 -0400", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "CC45EA84081DA9876D409980C0DE2F54")
     private int mod(int value, int mod) {
         addTaint(mod);
@@ -1375,7 +1355,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.138 -0400", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "2961EF03E80BAF2B2AF57B9722331868")
     private int mod7(long num1) {
         addTaint(num1);
@@ -1398,7 +1377,6 @@ Date var30D73D984C20176C0D7FB6C2B553BF0A_605176574 =         new Date(gregorianC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.142 -0400", hash_original_method = "B265969ED1D5B160D0AFF42D0A073F4D", hash_generated_method = "EC9D113378A2D566FEF3F6F101FA477B")
     @Override
     public void roll(int field, int value) {
@@ -1541,7 +1519,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.143 -0400", hash_original_method = "011BFEF6AF7823592586BFF14A1F0FAF", hash_generated_method = "137405C6FC3DEE68159AF69D7F408B1D")
     @Override
     public void roll(int field, boolean increment) {
@@ -1553,7 +1530,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.145 -0400", hash_original_method = "BBA926F39AADCD3D723F5CC72B7A16F3", hash_generated_method = "4933AE1EEBDFC946CD582F25E4B2BBD5")
     public void setGregorianChange(Date date) {
         gregorianCutover = date.getTime();
@@ -1602,7 +1578,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.145 -0400", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "1284A1B8BFD40E947242B6FBDC302E7A")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1612,7 +1587,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.146 -0400", hash_original_method = "6812E7459A56AAC638E0A1455D3A3623", hash_generated_method = "876D110AFE295CBDBB402FE5D0D6EC6A")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
@@ -1627,7 +1601,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.146 -0400", hash_original_method = "803EF27234E46811EE9F1109A1277F23", hash_generated_method = "A4334078C06FF158AFBC6F799AC1C61C")
     @Override
     public void setFirstDayOfWeek(int value) {
@@ -1640,7 +1613,6 @@ switch(field){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.147 -0400", hash_original_method = "77A4B23D11FEBAAF4DA5B074DBE88F4F", hash_generated_method = "5515E6F80BC8E1CEFFE9F4AF765D318F")
     @Override
     public void setMinimalDaysInFirstWeek(int value) {

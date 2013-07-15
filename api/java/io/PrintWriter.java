@@ -116,7 +116,6 @@ public class PrintWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.696 -0400", hash_original_method = "9EE080B9329CC6FAACC493ECC7141CFB", hash_generated_method = "142ACE148ABAB14D975495F03D509B72")
     protected void clearError() {
         synchronized
@@ -455,7 +454,6 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.712 -0400", hash_original_method = "03F201CD8682A0C64485926BB6B35745", hash_generated_method = "E19F709760A48D2E58E1640EA92F744E")
     protected void setError() {
         synchronized

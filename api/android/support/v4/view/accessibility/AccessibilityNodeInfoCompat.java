@@ -24,7 +24,6 @@ public class AccessibilityNodeInfoCompat {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.427 -0400", hash_original_method = "180B11831FF091AFD58918B491DA5734", hash_generated_method = "0D80E28D842867A1C78BBB09740F1F89")
     public Object getImpl() {
 Object var3A968EAC93D51342CCDD9EFE8723F737_432726549 =         mInfo;
@@ -568,7 +567,6 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getCon
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.437 -0400", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "D5D4022990DEAD48A85F705CDB622F5A")
         public Object obtain() {
 Object var540C13E9E156B687226421B24F2DF178_808166371 =             null;
@@ -579,7 +577,6 @@ Object var540C13E9E156B687226421B24F2DF178_808166371 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.438 -0400", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "3316DA34065811E54A817134D83B2F07")
         public Object obtain(View source) {
             addTaint(source.getTaint());
@@ -591,7 +588,6 @@ Object var540C13E9E156B687226421B24F2DF178_889612174 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.438 -0400", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "F65D175F9E8D4235E70A65B85D1D6DF9")
         public Object obtain(Object info) {
             addTaint(info.getTaint());
@@ -603,7 +599,6 @@ Object var540C13E9E156B687226421B24F2DF178_1425950464 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.438 -0400", hash_original_method = "8D71C6A90F236F7F17CE9F0DA3BE99D2", hash_generated_method = "5F00060CAB9B4B2566E623D909A28FE0")
         public void addAction(Object info, int action) {
             addTaint(action);
@@ -612,7 +607,6 @@ Object var540C13E9E156B687226421B24F2DF178_1425950464 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "6B9372E604C01DF70F526B6A8E570148", hash_generated_method = "46FE01FA0CFC681CC6BB779E2143207C")
         public void addChild(Object info, View child) {
             addTaint(child.getTaint());
@@ -633,7 +627,6 @@ List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1417429793 =             Collec
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "62879C9A6873AFA1FE78492502C9E8C1", hash_generated_method = "F15F3C6378A0EB8262B7DB43AE2DAB92")
         public int getActions(Object info) {
             addTaint(info.getTaint());
@@ -645,7 +638,6 @@ List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1417429793 =             Collec
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "194BB4DCA6CDD611708C0DBE13AE8AE6", hash_generated_method = "3C000B93FEEBF5C47B18A21222CC810A")
         public void getBoundsInParent(Object info, Rect outBounds) {
             addTaint(outBounds.getTaint());
@@ -654,7 +646,6 @@ List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1417429793 =             Collec
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "AD025A7E801C16406D0F86CAFA041F7F", hash_generated_method = "5D8984E8D4D82D8FAB88F2396774FB3D")
         public void getBoundsInScreen(Object info, Rect outBounds) {
             addTaint(outBounds.getTaint());
@@ -663,7 +654,6 @@ List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1417429793 =             Collec
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "B71B41DBB9198D4625D271667D1DCF98")
         public Object getChild(Object info, int index) {
             addTaint(index);
@@ -676,7 +666,6 @@ Object var540C13E9E156B687226421B24F2DF178_1652273479 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "DE0573752D5D98EE2B44C4024F5102E5", hash_generated_method = "18E4BFD3CBC3B7C85C1F836576FB2414")
         public int getChildCount(Object info) {
             addTaint(info.getTaint());
@@ -688,7 +677,6 @@ Object var540C13E9E156B687226421B24F2DF178_1652273479 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "6AFC8E1C58F1EF8B49A1E2C09DCA84BB")
         public CharSequence getClassName(Object info) {
             addTaint(info.getTaint());
@@ -700,7 +688,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1241824492 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "FA9ACF20C1D1EECBE251FD87B5AFD1E0")
         public CharSequence getContentDescription(Object info) {
             addTaint(info.getTaint());
@@ -712,7 +699,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1883021215 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "840A10C11F625CFCF0C73C32E040FCF9")
         public CharSequence getPackageName(Object info) {
             addTaint(info.getTaint());
@@ -724,7 +710,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1042185895 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "6E57EFC15A3C835051BC240D78A056B3", hash_generated_method = "E59699C758BD75ECA3EE10C939ED4E79")
         public AccessibilityNodeInfoCompat getParent(Object info) {
             addTaint(info.getTaint());
@@ -736,7 +721,6 @@ AccessibilityNodeInfoCompat var540C13E9E156B687226421B24F2DF178_1877188321 =    
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "2BBBE4890CE78135D8A064EB22399A63")
         public CharSequence getText(Object info) {
             addTaint(info.getTaint());
@@ -748,7 +732,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "EB7D2054B13C972973DD67D9B21CE0E5", hash_generated_method = "39F00A135E0FCDC08564EB6E3D504AC0")
         public int getWindowId(Object info) {
             addTaint(info.getTaint());
@@ -760,7 +743,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "4E39FE68FD90D69FA08C7AD1E979DF07", hash_generated_method = "59AC79102ED947719B0A68AB337E82C3")
         public boolean isCheckable(Object info) {
             addTaint(info.getTaint());
@@ -772,7 +754,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "F2469434A89FA62BE9B2DB78034140F5", hash_generated_method = "1E4BC1BBD7C3C1788A30166BA998FB4A")
         public boolean isChecked(Object info) {
             addTaint(info.getTaint());
@@ -784,7 +765,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "F7781A93E107315385A57825C2B0B78A", hash_generated_method = "BD931D612AE8190488F89D6B8E368336")
         public boolean isClickable(Object info) {
             addTaint(info.getTaint());
@@ -796,7 +776,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "6BAAC3777342DFE283E965C06FC8D874", hash_generated_method = "46AF711618D2C154FE2D10DA39F30350")
         public boolean isEnabled(Object info) {
             addTaint(info.getTaint());
@@ -808,7 +787,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "24826F7A102BA4F82C9D9B08241E284F", hash_generated_method = "764AA6091638EB62DFD6CD04F68E3833")
         public boolean isFocusable(Object info) {
             addTaint(info.getTaint());
@@ -820,7 +798,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "4D0616B5A88718B8558E59C7943E57B4", hash_generated_method = "7E95670C8A616A815A44B6D3F90A7F53")
         public boolean isFocused(Object info) {
             addTaint(info.getTaint());
@@ -832,7 +809,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "3EB36752093CDD3C24048A6DFD7EC73D", hash_generated_method = "EFB04FF8029F59F220C58561DD56EEC3")
         public boolean isLongClickable(Object info) {
             addTaint(info.getTaint());
@@ -844,7 +820,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "CB922389EC3BD00D9BEE74A550F7293C", hash_generated_method = "7DE2B4B0395E660931920AD997CB0642")
         public boolean isPassword(Object info) {
             addTaint(info.getTaint());
@@ -856,7 +831,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "0A24FC3E128A848006031E8724C7F0A9", hash_generated_method = "EAE2E3387051016ED9DBA4DABAC29B55")
         public boolean isScrollable(Object info) {
             addTaint(info.getTaint());
@@ -868,7 +842,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "6AFAC3555346166234EF254615BCA05C", hash_generated_method = "B9F0E6F56D9A90457D724526AA7E6450")
         public boolean isSelected(Object info) {
             addTaint(info.getTaint());
@@ -880,7 +853,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "FCBED87974E8349E51CFE67F3FE8BAAB", hash_generated_method = "8C68181E4C0717CF9F807899FBAE7752")
         public boolean performAction(Object info, int action) {
             addTaint(action);
@@ -893,7 +865,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "C7F581AF90B338E0925C62A3024C6F67")
         public void setBoundsInParent(Object info, Rect bounds) {
             addTaint(bounds.getTaint());
@@ -902,7 +873,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "E05AFA6EA9AAF9FB0ECD646B93254DD9")
         public void setBoundsInScreen(Object info, Rect bounds) {
             addTaint(bounds.getTaint());
@@ -911,7 +881,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "38431A6D5EE00E0099D8DB2DEFF6D601", hash_generated_method = "804DCE913D9E6070F8E550B71AD22B80")
         public void setCheckable(Object info, boolean checkable) {
             addTaint(checkable);
@@ -920,7 +889,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "4FE562645B89F53A2E3F577D51BE4F8C", hash_generated_method = "4543C14DB341621D93F6F2621D639CFB")
         public void setChecked(Object info, boolean checked) {
             addTaint(checked);
@@ -929,7 +897,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "161EF9CD79B216300D2AF4B61D1E4F45")
         public void setClassName(Object info, CharSequence className) {
             addTaint(className.getTaint());
@@ -938,7 +905,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "31E6103163DC809F9F67CE01A33EE87B", hash_generated_method = "D519D0F39A07EEB0AEEBA5E5875F6150")
         public void setClickable(Object info, boolean clickable) {
             addTaint(clickable);
@@ -947,7 +913,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "27D40B14BF3DEDB56AAB9AECA05C82A0")
         public void setContentDescription(Object info, CharSequence contentDescription) {
             addTaint(contentDescription.getTaint());
@@ -956,7 +921,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "CA3CFCFE549F59FC75A446D5BCE0A521")
         public void setEnabled(Object info, boolean enabled) {
             addTaint(enabled);
@@ -965,7 +929,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "6FC489938507A8AC8A67E31F4C0F3485", hash_generated_method = "BD5881FAC223E930D2E2E37E44B33C3C")
         public void setFocusable(Object info, boolean focusable) {
             addTaint(focusable);
@@ -974,7 +937,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "D760A9B869FD1EE026AE8BC4B17036E8", hash_generated_method = "14E41B822435BE880FB3392798601F91")
         public void setFocused(Object info, boolean focused) {
             addTaint(focused);
@@ -983,7 +945,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "FD5EDA58E4935860A3097167F37FF25A", hash_generated_method = "3DDF3ED1B3E0FC0801A2CBFA37667157")
         public void setLongClickable(Object info, boolean longClickable) {
             addTaint(longClickable);
@@ -992,7 +953,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "3D2CB84EBAF7AE0D0E07B4791BF148D9")
         public void setPackageName(Object info, CharSequence packageName) {
             addTaint(packageName.getTaint());
@@ -1001,7 +961,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "4A942148EB5C52DD6E700A02688275C9")
         public void setParent(Object info, View parent) {
             addTaint(parent.getTaint());
@@ -1010,7 +969,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "363672B9055A3FB9061F2E3103405704", hash_generated_method = "B195B3F20A419F8DC07BEA2D24B96A97")
         public void setPassword(Object info, boolean password) {
             addTaint(password);
@@ -1019,7 +977,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "709C7E935F852B3F6266600FDF6B6337", hash_generated_method = "DE0FD2B7B59EB7B909C49C4E237BDD07")
         public void setScrollable(Object info, boolean scrollable) {
             addTaint(scrollable);
@@ -1028,7 +985,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "3EF8627D1C0109EB2B6665EF94BA680A", hash_generated_method = "8F344D2BAB0B685E1E5931897D28D77F")
         public void setSelected(Object info, boolean selected) {
             addTaint(selected);
@@ -1037,7 +993,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "483D361A53672C2015F284EB727D68EB", hash_generated_method = "6E7CE2F4361113870428E586C12141BF")
         public void setSource(Object info, View source) {
             addTaint(source.getTaint());
@@ -1046,7 +1001,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "A82131F0C1B3FA9CC52D0C37845C305A", hash_generated_method = "A869718C721ADA1CBF5B40E6DCF8AA00")
         public void setText(Object info, CharSequence text) {
             addTaint(text.getTaint());
@@ -1055,7 +1009,6 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "9CA19930CBA17161800873D06B09C0C2")
         public void recycle(Object info) {
             addTaint(info.getTaint());

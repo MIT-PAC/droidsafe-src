@@ -139,8 +139,7 @@ public class Resources {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int selectSystemTheme(int curTheme, int targetSdkVersion,
+        public static int selectSystemTheme(int curTheme, int targetSdkVersion,
             int orig, int holo, int deviceDefault) {
         if (curTheme != 0) {
             return curTheme;
@@ -255,8 +254,7 @@ NativePluralRules var745A77A9F3BF173FE40F422A3E58ECD9_1752090615 =             m
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int attrForQuantityCode(int quantityCode) {
+        private static int attrForQuantityCode(int quantityCode) {
         switch (quantityCode) {
             case NativePluralRules.ZERO: return 0x01000005;
             case NativePluralRules.ONE:  return 0x01000006;
@@ -268,8 +266,7 @@ NativePluralRules var745A77A9F3BF173FE40F422A3E58ECD9_1752090615 =             m
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String stringForQuantityCode(int quantityCode) {
+        private static String stringForQuantityCode(int quantityCode) {
         switch (quantityCode) {
             case NativePluralRules.ZERO: return "zero";
             case NativePluralRules.ONE:  return "one";
@@ -1227,7 +1224,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.362 -0400", hash_original_method = "7F0483A9A445222C6F2291914FFD169A", hash_generated_method = "62558D8DBE4C3307CA4C16CE63AD1A06")
     public DisplayMetrics getDisplayMetrics() {
     if(DEBUG_CONFIG){ }DisplayMetrics var7D82C48E7ECD2A8DB0DA9FEEC5DB0C59_1417474414 =         mMetrics;
@@ -1240,7 +1236,6 @@ for(int i=0;i<N;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.363 -0400", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "61D32F0B5343DAF89F90BA3BCF6DD6F7")
     public Configuration getConfiguration() {
 Configuration var759BB2CF8ED035A2ACBBD9EB4DC189C3_1184008746 =         mConfiguration;
@@ -1251,7 +1246,6 @@ Configuration var759BB2CF8ED035A2ACBBD9EB4DC189C3_1184008746 =         mConfigur
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.364 -0400", hash_original_method = "5C840D5EBF5D0071E35FFCF10BAAC7BF", hash_generated_method = "C98EC9BB8F40DF4AB2A340BBAD1FB791")
     public CompatibilityInfo getCompatibilityInfo() {
 CompatibilityInfo var39F9338B9ED8B06ACC5A64055D628208_1811547646 =         mCompatibilityInfo != null ? mCompatibilityInfo

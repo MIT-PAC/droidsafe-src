@@ -92,7 +92,6 @@ public class PackageStats implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.995 -0400", hash_original_method = "3FE5C26F51751E2E83526086B9D94747", hash_generated_method = "88EB71437735669EFDA93D7B67FF9F74")
     public String toString() {
         final StringBuilder sb = new StringBuilder("PackageStats{");
@@ -143,7 +142,6 @@ String var2460B846747F8B22185AD8BE722266A5_321758442 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.996 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC6FC74B11B282DF905FDC81A7CA7BEF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_800195307 = (0);
@@ -154,7 +152,6 @@ String var2460B846747F8B22185AD8BE722266A5_321758442 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.996 -0400", hash_original_method = "458D37590174ACFE991A170204705742", hash_generated_method = "AC049E07A9482650F5A15F2661ABFA24")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

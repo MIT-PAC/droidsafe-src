@@ -40,7 +40,6 @@ public final class DistributionPointName {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.857 -0400", hash_original_method = "F96CAEAAF8BF6CA887E583CF87D57244", hash_generated_method = "6EAC9FA76003CD923B56DCABF994AAC2")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

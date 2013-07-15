@@ -179,8 +179,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean acceptableCountryWildcard(String cn) {
+        public static boolean acceptableCountryWildcard(String cn) {
         int cnLen = cn.length();
         if(cnLen >= 7 && cnLen <= 9) {
             if(cn.charAt(cnLen - 3) == '.') {
@@ -193,8 +192,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String[] getCNs(X509Certificate cert) {
+        public static String[] getCNs(X509Certificate cert) {
         LinkedList<String> cnList = new LinkedList<String>();
         String subjectPrincipal = cert.getSubjectX500Principal().toString();
         StringTokenizer st = new StringTokenizer(subjectPrincipal, ",");

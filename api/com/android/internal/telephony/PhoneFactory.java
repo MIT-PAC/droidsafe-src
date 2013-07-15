@@ -25,8 +25,7 @@ public class PhoneFactory {
     }
 
 
-        @DSModeled(DSC.BAN)
-    public static void makeDefaultPhones(Context context) {
+        public static void makeDefaultPhones(Context context) {
         makeDefaultPhone(context);
     }
 
@@ -142,8 +141,7 @@ public class PhoneFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static Phone getDefaultPhone() {
+        public static Phone getDefaultPhone() {
         if (sLooper != Looper.myLooper()) {
             throw new RuntimeException(
                 "PhoneFactory.getDefaultPhone must be called from Looper thread");
@@ -155,8 +153,7 @@ public class PhoneFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static Phone getCdmaPhone() {
+        public static Phone getCdmaPhone() {
         Phone phone;
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             switch (BaseCommands.getLteOnCdmaModeStatic()) {
@@ -176,8 +173,7 @@ public class PhoneFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static Phone getGsmPhone() {
+        public static Phone getGsmPhone() {
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             Phone phone = new GSMPhone(sContext, sCommandsInterface, sPhoneNotifier);
             return phone;

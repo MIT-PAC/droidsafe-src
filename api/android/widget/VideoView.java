@@ -511,7 +511,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.030 -0400", hash_original_method = "145B809162AC001B5D3448C75D9513F9", hash_generated_method = "6FEF308FD150ABD03EA089803542F5BB")
     public void setVideoURI(Uri uri) {
         addTaint(uri.getTaint());
@@ -645,7 +644,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.034 -0400", hash_original_method = "D1A9D86A0084E612B3B59A1A4238CD00", hash_generated_method = "3710D8ED101BA92E0D7F5A21FDA53560")
     public void setOnPreparedListener(MediaPlayer.OnPreparedListener l) {
         mOnPreparedListener = l;
@@ -654,7 +652,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.034 -0400", hash_original_method = "E72FB4A9E0939C099D3564FC711BE1EB", hash_generated_method = "3DEA5DC4F2B7AF9282FD8AA86CA654D0")
     public void setOnCompletionListener(OnCompletionListener l) {
         mOnCompletionListener = l;
@@ -663,7 +660,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.034 -0400", hash_original_method = "1D9D4DF006E463AA131E1079BD21BB23", hash_generated_method = "F76228A81F30849808D6699A5C1AC6AA")
     public void setOnErrorListener(OnErrorListener l) {
         mOnErrorListener = l;
@@ -965,7 +961,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.041 -0400", hash_original_method = "FEBDDA350C03AAA5C15557B944427C9D", hash_generated_method = "BBBD94A9F9F4145FBD3D9117905C790F")
     public int getBufferPercentage() {
     if(mMediaPlayer != null)        
@@ -985,7 +980,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.041 -0400", hash_original_method = "181624277C30FCEFD8B4CC029FACB2EE", hash_generated_method = "A52A298BD6C466747016AE66AD994483")
     private boolean isInPlaybackState() {
         boolean var1C53704901E4033DF3FE8CE3B2EB3177_1038008698 = ((mMediaPlayer != null &&
@@ -1002,7 +996,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.041 -0400", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "C2EDB225E3372115C65CEB9B09A4E33E")
     public boolean canPause() {
         boolean var9A4623B61542BEC8D3E426C93DD77346_1035230235 = (mCanPause);
@@ -1013,7 +1006,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.042 -0400", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "5AEC876A2E5D34C41B59233D43512134")
     public boolean canSeekBackward() {
         boolean var260CDABACB2B7A4C6F8B739A9531399D_307931919 = (mCanSeekBack);
@@ -1024,7 +1016,6 @@ switch(specMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.042 -0400", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "ED14D37C36D766D8B1AC94B1ADA7D136")
     public boolean canSeekForward() {
         boolean var1042AFD5E2128CC06471C1ED59799B06_1525864080 = (mCanSeekForward);

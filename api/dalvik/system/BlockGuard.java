@@ -20,14 +20,12 @@ public final class BlockGuard {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static Policy getThreadPolicy() {
+        public static Policy getThreadPolicy() {
         return threadPolicy.get();
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static void setThreadPolicy(Policy policy) {
+        public static void setThreadPolicy(Policy policy) {
         if (policy == null) {
             throw new NullPointerException("policy == null");
         }
@@ -69,7 +67,6 @@ public final class BlockGuard {
         }
 
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.808 -0400", hash_original_method = "7E4A409F6FF395255A09FF646F59C182", hash_generated_method = "CD8C3913C7EB3CCF34C7864F8FE9E8CA")
         public int getPolicy() {
             int var6CE6D5E4B5FBA369F3354FE41C84F79F_990335291 = (mPolicyState);
@@ -80,7 +77,6 @@ public final class BlockGuard {
         }
 
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.813 -0400", hash_original_method = "51330C8A3B9EAC192FDD6907E318F7AB", hash_generated_method = "3F3B8B8670E8082E7A9E7472D64B86E4")
         public int getPolicyViolation() {
             int varA48ABC5FD986ABF086D4D9B0811E6099_767496196 = (mPolicyViolated);
@@ -91,7 +87,6 @@ public final class BlockGuard {
         }
 
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.820 -0400", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "B719B4C107072511C6E861C7782D7362")
         public String getMessage() {
 String varF29D773CC11975C29C8B08D549DF4902_120691896 =             "policy=" + mPolicyState + " violation=" + mPolicyViolated +

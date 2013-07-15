@@ -26,7 +26,6 @@ public final class TransceiveResult implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.799 -0400", hash_original_method = "B3157A12430DB97B40C44B33A50DEAC2", hash_generated_method = "95E92869FD17F71B9D1DB16725ACD2F6")
     public byte[] getResponseOrThrow() throws IOException {
 switch(mResult){
@@ -61,7 +60,6 @@ switch(mResult){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.799 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9853AF00360D41A1ACA8B88830DF9980")
     @Override
     public int describeContents() {
@@ -73,7 +71,6 @@ switch(mResult){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.800 -0400", hash_original_method = "561D73418397BF7826CB5BA2EBF58A4C", hash_generated_method = "F395845E4EEF769009C9B78FC7A0C13B")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

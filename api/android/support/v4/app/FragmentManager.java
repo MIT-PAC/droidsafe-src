@@ -108,8 +108,7 @@ FragmentTransaction var0C52C1DD23EDCBCDDE04269B6A21160A_1800670013 =         beg
     public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 
     
-        @DSModeled(DSC.SAFE)
-    public static void enableDebugLogging(boolean enabled) {
+        public static void enableDebugLogging(boolean enabled) {
         FragmentManagerImpl.DEBUG = enabled;
     }
 
@@ -173,7 +172,6 @@ final class FragmentManagerState implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.778 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2568BE2895A47284FDBA56B39C3C2603")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_643803641 = (0);
@@ -2609,7 +2607,6 @@ for(int i=0;i<fms.mBackStack.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.860 -0400", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "B5C7E72CCEE273A62746EE3408615591")
     public void noteStateNotSaved() {
         mStateSaved = false;
@@ -2943,8 +2940,7 @@ for(int i=0;i<mAdded.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int reverseTransit(int transit) {
+        public static int reverseTransit(int transit) {
         int rev = 0;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
@@ -2961,8 +2957,7 @@ for(int i=0;i<mAdded.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int transitToStyleIndex(int transit, boolean enter) {
+        public static int transitToStyleIndex(int transit, boolean enter) {
         int animAttr = -1;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:

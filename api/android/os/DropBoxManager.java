@@ -330,7 +330,6 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.209 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "868108BCF2B3ED8B53C734EF95AA272E")
         public String getTag() {
 String varD6A25044F8E609F6CD67330C1523D33D_1654044854 =             mTag;
@@ -341,7 +340,6 @@ String varD6A25044F8E609F6CD67330C1523D33D_1654044854 =             mTag;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.210 -0400", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "EC780417A3301212D4E29C66C293370F")
         public long getTimeMillis() {
             long var6F3BEB4D53F7C410F1DAD4C6334EE882_316394933 = (mTimeMillis);
@@ -352,7 +350,6 @@ String varD6A25044F8E609F6CD67330C1523D33D_1654044854 =             mTag;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.210 -0400", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "4E8CBFDDAAF75983731ECE55CB81777C")
         public int getFlags() {
             int varB715A5FBEBA48B733FCB394E91827C12_657377187 = (mFlags & ~IS_GZIPPED);
@@ -473,7 +470,6 @@ InputStream varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588 =             (mFlags
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.212 -0400", hash_original_method = "CE12D992AD97C7CB4D92B660FD5831CC", hash_generated_method = "C30CCC2295D7CCEC8AB0B49F1E910F6E")
         public int describeContents() {
             int varCFD07FB51B103FA0811B00D763E3B42D_1152763449 = (mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0);

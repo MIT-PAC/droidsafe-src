@@ -63,8 +63,7 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static CdmaMmiCode newFromDialString(String dialString, CDMAPhone phone) {
+        public static CdmaMmiCode newFromDialString(String dialString, CDMAPhone phone) {
         Matcher m;
         CdmaMmiCode ret = null;
         m = sPatternSuppService.matcher(dialString);
@@ -89,7 +88,6 @@ public final class CdmaMmiCode extends Handler implements MmiCode {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.660 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "7ADDDAED3593938448F4650CB158A64D")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_522716002 =         state;
@@ -100,7 +98,6 @@ State var37C56C9D63C623261861C16DCFB73F6D_522716002 =         state;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.660 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "C8504585C4743F7473F3A0E3CFCC0AFF")
     public CharSequence getMessage() {
 CharSequence varFD182D7074F3848E773A38B067BBB880_1449812741 =         message;
@@ -111,7 +108,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1449812741 =         message;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.660 -0400", hash_original_method = "7D43DA40239536121B4F58148ED0B98B", hash_generated_method = "56B028B32599CFE5108B411FA8B8E454")
     public void cancel() {
     if(state == State.COMPLETE || state == State.FAILED)        
@@ -129,7 +125,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1449812741 =         message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.661 -0400", hash_original_method = "ABB2058860BEBFF25C4A9C7B954D0A37", hash_generated_method = "D9E22CAF6B5A5EA30D5A30A372DFF3DC")
     public boolean isCancelable() {
         boolean var68934A3E9455FA72420237EB05902327_181060800 = (false);
@@ -140,7 +135,6 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_1449812741 =         message;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.661 -0400", hash_original_method = "F83C3F3C3A6997A8F3CDD4D707F81FB0", hash_generated_method = "4F518DDA4C1DF97F84FF35D00DE82282")
      boolean isPukCommand() {
         boolean var5A581E433070AF4838840D8266C34F91_500430437 = (sc != null && sc.equals(SC_PUK));

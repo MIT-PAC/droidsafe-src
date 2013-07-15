@@ -174,7 +174,6 @@ for(int k=0;k<receivers.size();k++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.389 -0400", hash_original_method = "D242868C7C53E8784BBDECD4F038DC32", hash_generated_method = "DCF0CB77673D84CAFC1CB6F7E4F53420")
     public boolean sendBroadcast(Intent intent) {
         addTaint(intent.getTaint());
@@ -263,7 +262,6 @@ for(int i=0;i<receivers.size();i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.390 -0400", hash_original_method = "6A77C49D1FDA5F97149304A23CA19549", hash_generated_method = "06A55254D0C8834ABD9179F35C96405C")
     public void sendBroadcastSync(Intent intent) {
         addTaint(intent.getTaint());

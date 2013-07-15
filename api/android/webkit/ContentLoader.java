@@ -41,7 +41,6 @@ class ContentLoader extends StreamLoader {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.517 -0400", hash_original_method = "3AAB3C35B7568FF6188E6678FD0DC16D", hash_generated_method = "818D7BE7F855618D231F114C5BA0284E")
     private String errString(Exception ex) {
         addTaint(ex.getTaint());
@@ -66,7 +65,6 @@ String varF917352FB1129841F1BC9CC901BB1B99_821843188 =         errString;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.518 -0400", hash_original_method = "F4E0066B6783A6A372AAD1A4891DEB15", hash_generated_method = "D79B9EB63E4973B290E5BE242937502D")
     @Override
     protected boolean setupStreamAndSendStatus() {
@@ -109,7 +107,6 @@ String varF917352FB1129841F1BC9CC901BB1B99_821843188 =         errString;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.518 -0400", hash_original_method = "2D22B97545C25E7E6811FFA13F6C8031", hash_generated_method = "435EAE2EAB5604DA5FDD6019ADE1BF53")
     @Override
     protected void buildHeaders(Headers headers) {

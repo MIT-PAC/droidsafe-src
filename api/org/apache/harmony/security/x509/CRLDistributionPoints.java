@@ -38,7 +38,6 @@ public final class CRLDistributionPoints extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.712 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "AF8B399C2358A249AEF447C3C2E54D54")
     @Override
     public byte[] getEncoded() {
@@ -57,13 +56,11 @@ public final class CRLDistributionPoints extends ExtensionValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
+        public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
         return (CRLDistributionPoints) ASN1.decode(encoding);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.712 -0400", hash_original_method = "B23CB95A086DE744F33B5369D34A5985", hash_generated_method = "6058F2EA7A2DC16CC83419DF3C0D4730")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

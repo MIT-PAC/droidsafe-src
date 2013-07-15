@@ -25,7 +25,6 @@ public final class FinalizerReference<T> extends Reference<T> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.830 -0400", hash_original_method = "832B7710CFA0BEA3E25E81BFE41C7B96", hash_generated_method = "770D12F54568F4FCD1DF141DE609CA78")
     @Override
     public T get() {
@@ -37,7 +36,6 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.830 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
     @Override
     public void clear() {
@@ -47,8 +45,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void add(Object referent) {
+        static void add(Object referent) {
         FinalizerReference<?> reference = new FinalizerReference<Object>(referent, queue);
         synchronized (FinalizerReference.class) {
             reference.prev = null;
@@ -61,8 +58,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void remove(FinalizerReference reference) {
+        public static void remove(FinalizerReference reference) {
         synchronized (FinalizerReference.class) {
             FinalizerReference next = reference.next;
             FinalizerReference prev = reference.prev;

@@ -71,7 +71,6 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.569 -0400", hash_original_method = "AC681E999DAFDF08D7E859E1898D2773", hash_generated_method = "403B02BDEE346B669C1B33996C0EFBB2")
     @Override
     public boolean match(Cookie cookie, CookieOrigin origin) {

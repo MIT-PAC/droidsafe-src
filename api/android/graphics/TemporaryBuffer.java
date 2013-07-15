@@ -15,8 +15,7 @@ public class TemporaryBuffer {
     }
 
 
-        @DSModeled(DSC.BAN)
-    public static char[] obtain(int len) {
+        public static char[] obtain(int len) {
         char[] buf;
         synchronized (TemporaryBuffer.class) {
             buf = sTemp;
@@ -29,8 +28,7 @@ public class TemporaryBuffer {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void recycle(char[] temp) {
+        public static void recycle(char[] temp) {
         if (temp.length > 1000) return;
         synchronized (TemporaryBuffer.class) {
             sTemp = temp;

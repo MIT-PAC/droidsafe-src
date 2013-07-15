@@ -114,7 +114,6 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.740 -0400", hash_original_method = "96E8498F657AF6E41693B86C8B8439F4", hash_generated_method = "28F9B234799F9C637311E3E8C1565891")
     public int getType() {
         synchronized
@@ -130,7 +129,6 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.741 -0400", hash_original_method = "9F9664F87EC47D562C2DFD7EF2768060", hash_generated_method = "E624D1A0ABA6A78588A59D28CE0A4596")
     public int getSubtype() {
         synchronized
@@ -146,7 +144,6 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.741 -0400", hash_original_method = "0924F80CBAE8411743081929219BD54E", hash_generated_method = "FFD0DA7ED7EB63893B066E00941541C9")
      void setSubtype(int subtype, String subtypeName) {
         synchronized
@@ -162,7 +159,6 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.742 -0400", hash_original_method = "55AF35A663CF7527013DF4B2AE75FC8F", hash_generated_method = "1B610BD3AE7A31ED8FA092207F44BEAD")
     public String getTypeName() {
         synchronized
@@ -178,7 +174,6 @@ String varFAA2BB965482198826C78279705D19C6_1738169625 =             mTypeName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.742 -0400", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "94A27930C9E73602A5494297B67EE1FC")
     public String getSubtypeName() {
         synchronized
@@ -194,7 +189,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.743 -0400", hash_original_method = "4340B79C926146F86A68CF1464A26E93", hash_generated_method = "E92315432EE1A413D8850F7BB7F2E67A")
     public boolean isConnectedOrConnecting() {
         synchronized
@@ -210,7 +204,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.743 -0400", hash_original_method = "E81AE1BB2B0829AC31FE0D849F294E67", hash_generated_method = "6E336121CB59B306C12EE5B54B3AD998")
     public boolean isConnected() {
         synchronized
@@ -226,7 +219,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.743 -0400", hash_original_method = "4897D1CF0EA563D6DA8C578331010914", hash_generated_method = "60D1BFE8398C01EB371615578AB8BFC1")
     public boolean isAvailable() {
         synchronized
@@ -242,7 +234,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.744 -0400", hash_original_method = "939E32860F0B0F06BDBD0E17663153C9", hash_generated_method = "03778C8E21993ADE9A96CC553A347AE7")
     public void setIsAvailable(boolean isAvailable) {
         synchronized
@@ -256,7 +247,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.744 -0400", hash_original_method = "9C5319745C341BE120FE9E801220DA42", hash_generated_method = "817406AE02DFADA1990C701631D15801")
     public boolean isFailover() {
         synchronized
@@ -272,7 +262,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.745 -0400", hash_original_method = "F833C30ECD57DCF99CA2522188FA2C07", hash_generated_method = "91F2D1762787A05AAC8F1342F228A08A")
     public void setFailover(boolean isFailover) {
         synchronized
@@ -286,7 +275,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.745 -0400", hash_original_method = "AB8A93C3EDB3BBC79E3580DBDAC7F9AC", hash_generated_method = "5180A90B4049FA6C611C77D2F61A274F")
     public boolean isRoaming() {
         synchronized
@@ -302,7 +290,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.746 -0400", hash_original_method = "B7D7748403F63EB4650DEC0BB363124A", hash_generated_method = "8498442A61A5A37E78537547B58EB68D")
      void setRoaming(boolean isRoaming) {
         synchronized
@@ -316,7 +303,6 @@ String var9853BDE3D68EC39045135DFC6FA71950_1405308202 =             mSubtypeName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.746 -0400", hash_original_method = "7B78C01516FA6C80A9332B33D7F2C1E4", hash_generated_method = "514BD7F54381C67D5569739D7AB71580")
     public State getState() {
         synchronized
@@ -332,7 +318,6 @@ State var8B975C85F13BECB9FD4D21A5F3C8A56D_1340978222 =             mState;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.746 -0400", hash_original_method = "EF299E7A8E902EE5662452C8EC565B0C", hash_generated_method = "6178F31DCAC1FD2E8FF688A9E8FE28C5")
     public DetailedState getDetailedState() {
         synchronized
@@ -367,7 +352,6 @@ DetailedState var824FE49BF4029232CF22A03E7D5285D6_1513816091 =             mDeta
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.747 -0400", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "D416F14BEBBC325B53A7E39AF867E947")
     public String getReason() {
         synchronized
@@ -383,7 +367,6 @@ String var59DFD2A70B3F2D6B9D7CBF9B5624B087_836859674 =             mReason;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.748 -0400", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "D0AAB71262A6D4F1E6BE10CB1786BB7A")
     public String getExtraInfo() {
         synchronized
@@ -399,7 +382,6 @@ String var8C566785696787B06C7B09BA315043CE_1596735784 =             mExtraInfo;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.748 -0400", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "E93331969AC26CCFC8FCD2558C648118")
     @Override
     public String toString() {
@@ -432,7 +414,6 @@ String varF4CF030572656354ACFDF83FEE21D7A6_2074442174 =             builder.toSt
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.749 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E20C2DABDE2FA697E4D4FEAB4E5ED100")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1735205729 = (0);
@@ -443,7 +424,6 @@ String varF4CF030572656354ACFDF83FEE21D7A6_2074442174 =             builder.toSt
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.749 -0400", hash_original_method = "EF9852F5CC5A1C9C509E333ACBA9ED14", hash_generated_method = "AAA1CE22A6902C6CCD845A91BBD53F7D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

@@ -133,7 +133,6 @@ for(int i = 0;i != vec.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.883 -0400", hash_original_method = "61F856A6747C3DB85AB853DB99D560A7", hash_generated_method = "356DFD74C405A7C0AE276191A87A7898")
     private int getLengthOfLength(byte[] data) {
         addTaint(data[0]);
@@ -156,7 +155,6 @@ for(int i = 0;i != vec.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.883 -0400", hash_original_method = "4AFA588B499059410429802033BA5ED0", hash_generated_method = "C13329593B1B30279C06173ABBB29F3B")
     public boolean isConstructed() {
         boolean var81C86C56F2FC47B77A343996A0249448_2082323601 = (isConstructed);
@@ -167,7 +165,6 @@ for(int i = 0;i != vec.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.883 -0400", hash_original_method = "1D312847F188B0EEDCC8340737DDA9DA", hash_generated_method = "3D223049867547EC328041ED1264E571")
     public byte[] getContents() {
         byte[] var48537581B9950DEA59270C7E6A7FC75B_1918899552 = (octets);
@@ -178,7 +175,6 @@ for(int i = 0;i != vec.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.883 -0400", hash_original_method = "8070D9796AF3020498C0A81362041E60", hash_generated_method = "D2E9DD6EE2CD9DB774F376AED9A9EC0B")
     public int getApplicationTag() {
         int varE4D23E841D8E8804190027BCE3180FA5_1290578916 = (tag);
@@ -232,7 +228,6 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_1677426236 =         new ASN1Input
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.885 -0400", hash_original_method = "E93A5605AEDD2C30A620D419DCC3B82A", hash_generated_method = "844DC1361445FD7735AA01CE5CDD994A")
      void encode(DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -252,7 +247,6 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_1677426236 =         new ASN1Input
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.885 -0400", hash_original_method = "2058BDE8789C9C651125E90A6C9106EF", hash_generated_method = "B6B17B2491AA62881034A2685171D39C")
      boolean asn1Equals(
         DERObject o) {
@@ -281,7 +275,6 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_1677426236 =         new ASN1Input
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.886 -0400", hash_original_method = "CE8CF2E74F2DF6C65F2B809B8ECF710B", hash_generated_method = "FA5A0CE94ED078E5D23C3DB6D35E1C69")
     public int hashCode() {
         int var75F6921E5BCCAA342C07FD19F33F5B75_569129203 = ((isConstructed ? 1 : 0) ^ tag ^ Arrays.hashCode(octets));
@@ -292,7 +285,6 @@ DERObject var6973B48E7C58DF1E1DC0711650513E93_1677426236 =         new ASN1Input
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.887 -0400", hash_original_method = "DBC165FE2DD4A16BCAF214B19B914EC2", hash_generated_method = "111D0F469133BA9E0ABCAB7407BF8A41")
     private byte[] replaceTagNumber(int newTag, byte[] input) throws IOException {
         addTaint(input[0]);

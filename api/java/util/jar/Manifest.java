@@ -120,7 +120,6 @@ Map<String, Attributes> var0AAD0D341A96E603A0F87B9A9B535A71_184544192 =         
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.246 -0400", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "0D250C56D182F5FEFDEB2AA418FA544F")
     public Attributes getMainAttributes() {
 Attributes var297AF475E4F0A70B05EE71F0F8C21A0A_2113525924 =         mainAttributes;
@@ -280,7 +279,6 @@ Chunk var90FA681B410416D5DB711643976E02D4_324526152 =         chunks.get(name);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.250 -0400", hash_original_method = "CB43854902C5BB6A2160DF9CF6991C4E", hash_generated_method = "9BF48AA4EEED401D667F1EAB133BFDF9")
      void removeChunks() {
         chunks = null;
@@ -289,7 +287,6 @@ Chunk var90FA681B410416D5DB711643976E02D4_324526152 =         chunks.get(name);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.250 -0400", hash_original_method = "4F9436521007A1D33F6CF267D74BE295", hash_generated_method = "4F8845D833066B6A396991939EC47CDF")
      int getMainAttributesEnd() {
         int varD91B5AEA932CCF7F1674264625D0E318_1084592596 = (mainEnd);

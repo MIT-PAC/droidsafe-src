@@ -59,7 +59,6 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.999 -0400", hash_original_method = "FC96C37EC7CCEA012658804CB9F94924", hash_generated_method = "AB9F18314E4DF06E27ECE87D12F5EA19")
     @Override
     public void dispose() {
@@ -73,7 +72,6 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.999 -0400", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "47E2313715E89937FF7E5BFF3D79C168")
     @Override
     protected String getFormat() {
@@ -85,7 +83,6 @@ String varC345C9016D68CE4F646C76C73C4A46BE_1917115336 =         android.telephon
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.999 -0400", hash_original_method = "789365F05DDE44536DDE00C9B93C643B", hash_generated_method = "D85C24BB39BCB33B5566BF304B4D5843")
     @Override
     public void handleMessage(Message msg) {
@@ -250,7 +247,6 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.004 -0400", hash_original_method = "3D7E3502DD1585858E097F3A6DC759F7", hash_generated_method = "657A9AE8C30AD049265B3E48C19D719A")
     @Override
     protected void sendData(String destAddr, String scAddr, int destPort,
@@ -281,7 +277,6 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.005 -0400", hash_original_method = "5889D931B0AF2BA9EF13AED6A1D3F698", hash_generated_method = "D6BE9A1035E985E74A7C36E539639EE3")
     @Override
     protected void sendText(String destAddr, String scAddr, String text,
@@ -311,7 +306,6 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.005 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "402FD05A94810B44645C7D9F1FC67681")
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
@@ -326,7 +320,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.006 -0400", hash_original_method = "D46F86683A1628DBA1448E14FF571355", hash_generated_method = "C11DE1ED6E4AAC2528E1745135F45B91")
     @Override
     protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -362,7 +355,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.006 -0400", hash_original_method = "FF8E1B494DDC1956B0825172C230EA31", hash_generated_method = "48B236C7123669EC9654E19A333E965F")
     @Override
     protected void sendSms(SmsTracker tracker) {
@@ -381,7 +373,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.006 -0400", hash_original_method = "72A464580F37288F468EE51C88A0917A", hash_generated_method = "E5F61C674358B06759CD39C4B9208A98")
     @Override
     protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
@@ -394,8 +385,7 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int resultToCause(int rc) {
+        private static int resultToCause(int rc) {
         switch (rc) {
             case Activity.RESULT_OK:
             case Intents.RESULT_SMS_HANDLED:
@@ -409,7 +399,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.008 -0400", hash_original_method = "4513E8DEDD790BB664A98AD56B29A135", hash_generated_method = "CDC955E6ACC4186F2A822E4F427C0839")
     private void handleBroadcastSms(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -512,7 +501,6 @@ for(int i = 0;i < pdus.length;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.010 -0400", hash_original_method = "EE152888A937A1561BADC909DEBD7300", hash_generated_method = "36DB82663BA28F6585709DD83912E190")
         @Override
         public int hashCode() {
@@ -524,7 +512,6 @@ for(int i = 0;i < pdus.length;i++)
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.010 -0400", hash_original_method = "A4665EFAF0A95C2E46EAC850D0E6C5D5", hash_generated_method = "E54C2D2EE56E297E38A474FA949D91F3")
         @Override
         public boolean equals(Object obj) {

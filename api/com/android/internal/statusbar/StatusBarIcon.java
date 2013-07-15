@@ -53,7 +53,6 @@ public class StatusBarIcon implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.500 -0400", hash_original_method = "1EE859B2BAC1B0E091951C7E79A1C85B", hash_generated_method = "5C77FE9E4BD13DBC6EC72E862C10AD4C")
     @Override
     public String toString() {
@@ -69,7 +68,6 @@ String varB386A426A810794AFD31502A9A981A90_459044460 =         "StatusBarIcon(pk
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.500 -0400", hash_original_method = "D6D80221D74BF64CC6743E6FD4844F75", hash_generated_method = "4C2413FC67E13149A4993CDCACC6400B")
     @Override
     public StatusBarIcon clone() {
@@ -87,7 +85,6 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.502 -0400", hash_original_method = "80D94D7ADFF35638471EE5AD3E4769D4", hash_generated_method = "F4D3DAC8B468C888AF30D9AE4B6A9A7E")
     public void readFromParcel(Parcel in) {
         this.iconPackage = in.readString();
@@ -106,7 +103,6 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.502 -0400", hash_original_method = "95CFF8C99AE4CB8951821DDD1BE9F05B", hash_generated_method = "C030BA13D2B0189030C4949999941B2B")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -127,7 +123,6 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.503 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "742E0376BFCDC66D1C396B7F23BA4ADD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_67552012 = (0);

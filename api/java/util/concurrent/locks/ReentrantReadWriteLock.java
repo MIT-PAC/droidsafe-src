@@ -38,7 +38,6 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.614 -0400", hash_original_method = "0C7BC9C54BE00E03201ACF18B2913309", hash_generated_method = "E2488D3B7CEE1489E46B213462ACDB08")
     public ReentrantReadWriteLock.WriteLock writeLock() {
 ReentrantReadWriteLock.WriteLock var2DE2F4E52EACF7C4842927B76B85571D_169347648 =         writerLock;
@@ -49,7 +48,6 @@ ReentrantReadWriteLock.WriteLock var2DE2F4E52EACF7C4842927B76B85571D_169347648 =
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.614 -0400", hash_original_method = "22D8B34ECDA1804C5F879E9731CF210D", hash_generated_method = "8CC0A13FE71E6FB0FB9E29EC92B393FE")
     public ReentrantReadWriteLock.ReadLock readLock() {
 ReentrantReadWriteLock.ReadLock var5BE94CD16DAA35A039203EEB9FA0E80B_1787539266 =         readerLock;
@@ -314,14 +312,12 @@ String varF396C8E82331D702AD553E1BB16E0C78_1310107075 =         super.toString()
         }
 
         
-                @DSModeled(DSC.SAFE)
-        static int sharedCount(int c) {
+                static int sharedCount(int c) {
             return c >>> SHARED_SHIFT;
         }
 
         
-                @DSModeled(DSC.SAFE)
-        static int exclusiveCount(int c) {
+                static int exclusiveCount(int c) {
             return c & EXCLUSIVE_MASK;
         }
 

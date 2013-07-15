@@ -105,7 +105,6 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.948 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "389B7E0BCD83456AA72BE6EB66EA5352")
     public String getPropertyName() {
 String varA94EBE08267F8B14AA5B485C2D24900F_759312971 =         mPropertyName;
@@ -336,7 +335,6 @@ ObjectAnimator var72A74007B2BE62B849F475C7BDA4658B_278617228 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.004 -0400", hash_original_method = "AF1F3CF2C666AC410BA38EDE7AFA44BA", hash_generated_method = "3355C1B10B1B086F9616DF4970CB92C2")
     public Object getTarget() {
 Object var1FC339B2A7C7BA226929CA8B7CC3A063_2081998238 =         mTarget;

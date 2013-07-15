@@ -25,8 +25,7 @@ public class BounceInterpolator implements Interpolator {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static float bounce(float t) {
+        private static float bounce(float t) {
         return t * t * 8.0f;
     }
 

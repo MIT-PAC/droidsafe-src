@@ -97,7 +97,6 @@ public class Account implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.152 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "84E4EC676B9CDAC54EF17868080C2AA3")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1169370924 = (0);

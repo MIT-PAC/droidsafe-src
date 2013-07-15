@@ -99,7 +99,6 @@ public class SpellCheckerSession {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.643 -0400", hash_original_method = "DA550B703A137477375C51611DE4E664", hash_generated_method = "F63225B5CF99E0750E6461B3496B22A9")
     public SpellCheckerInfo getSpellChecker() {
 SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellCheckerInfo;
@@ -196,7 +195,6 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellC
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.646 -0400", hash_original_method = "EB5F65A578EB2CF49F3B6FAEDD6A03A1", hash_generated_method = "6E73CA9BC3E01E72AB2E60239D9B9C1E")
     public ITextServicesSessionListener getTextServicesSessionListener() {
 ITextServicesSessionListener var7A9AC5CB3CFF90180D6952883712FBEC_1402889722 =         mInternalListener;
@@ -207,7 +205,6 @@ ITextServicesSessionListener var7A9AC5CB3CFF90180D6952883712FBEC_1402889722 =   
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.646 -0400", hash_original_method = "49E439EC4CF52AA024CAA5A403E07C82", hash_generated_method = "2F7E1B3D12EEA82D9B42FF27517AF972")
     public ISpellCheckerSessionListener getSpellCheckerSessionListener() {
 ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_93984612 =         mSpellCheckerSessionListenerImpl;
@@ -408,7 +405,6 @@ switch(scp.mWhat){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.651 -0400", hash_original_method = "C74449D517ED376786ADEE83EFA902AD", hash_generated_method = "EBD97ADE232D8783FA3D1BA19FE4507F")
         public boolean isDisconnected() {
             boolean var54E1480729898C5F1743C88D3F4A1642_1409992390 = (mOpened && mISpellCheckerSession == null);

@@ -17,7 +17,6 @@ public abstract class X9ECParametersHolder {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.504 -0400", hash_original_method = "DFAA4BD61A3833EE49852C9B8E577AF7", hash_generated_method = "E5BA268F27EC85556395C1A4FA89D3C4")
     public X9ECParameters getParameters() {
     if(params == null)        

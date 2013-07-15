@@ -77,7 +77,6 @@ ServerSocket varE4B9B613713A284A68E30C41D0180672_2046904473 =         new Server
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.865 -0400", hash_original_method = "06342840B51BA72C757680F9FE102AFC", hash_generated_method = "CC153095CE470BC455BAF8EB7C2DE49C")
     public Socket createSocket(InetAddress address, int port) throws IOException {
         addTaint(port);
@@ -128,7 +127,6 @@ SSLServerSocket varDB234CDB256B380882CFCA310DE2E9A9_1908167528 =         (SSLSer
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.867 -0400", hash_original_method = "A69DB4651ABD80BB673808D27D01239A", hash_generated_method = "2CE3571803E45CF0CB7656F77F65FF59")
     public SSLSocket createSSLSocket(InetAddress address, int port) throws IOException {
         addTaint(port);
@@ -141,7 +139,6 @@ SSLSocket var49B70040270D50337C2159532A57C2F2_1757160819 =         (SSLSocket) s
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.867 -0400", hash_original_method = "42E28448C903215260E4CCA841EF7FB7", hash_generated_method = "13D04CDCC685B820212B03B920B2FBB9")
     public SSLSocket createSSLSocket(InetAddress address, int port,
             InetAddress myAddress) throws IOException {
@@ -158,7 +155,6 @@ SSLSocket varEF759514F740B9EA798E50D9AB0AAE35_1735951031 =         (SSLSocket) s
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.868 -0400", hash_original_method = "65BD7B891ADF1B016345452655A0F82B", hash_generated_method = "F6CBC2C966CB470687EC3963720E9E29")
     public Socket createSocket(InetAddress address, int port,
             InetAddress myAddress) throws IOException {
@@ -185,7 +181,6 @@ Socket var5E79725D08CDDFD22D09C6C43A37CB90_980601886 =         new Socket(addres
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.869 -0400", hash_original_method = "79DF1B5079137D62C29C5EAC0F3F40E2", hash_generated_method = "9F3CE4BE1387F352CBC27DA4B9951A5F")
     public Socket createSocket(InetAddress address, int port,
                     InetAddress myAddress, int myPort) throws IOException {

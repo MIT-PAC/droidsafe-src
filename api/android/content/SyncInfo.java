@@ -52,7 +52,6 @@ public class SyncInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.438 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "52B8B122713C58AB697584E38ABC0360")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_859157093 = (0);
@@ -63,7 +62,6 @@ public class SyncInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.440 -0400", hash_original_method = "1C5B91DE7E7E8D04DC252E4EE5F1DBAA", hash_generated_method = "3A08AB990C036BE215594BA3B7F9A0CC")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

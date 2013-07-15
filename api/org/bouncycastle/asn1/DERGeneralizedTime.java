@@ -101,7 +101,6 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.056 -0400", hash_original_method = "FFD2475F957538109629A734D2087930", hash_generated_method = "A9A15B3E42A5A3F815E6D106C3D288C3")
     public String getTimeString() {
 String varA66D020F4BCAB26A12562312D8A04DED_125222305 =         time;

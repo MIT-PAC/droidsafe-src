@@ -79,7 +79,6 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.122 -0400", hash_original_method = "F1282AA19C3183BEA34E2A247A149BD2", hash_generated_method = "73C0F7E1032A9DC09E08AE30982B032D")
     private void startLoadFromDisk() {
         synchronized
@@ -165,8 +164,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static File makeBackupFile(File prefsFile) {
+        private static File makeBackupFile(File prefsFile) {
         return new File(prefsFile.getPath() + ".bak");
     }
 
@@ -191,7 +189,6 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.125 -0400", hash_original_method = "A66A0F368E0CD54CE4119FA6EA4CE2B9", hash_generated_method = "B088751C9F3EFDF390C0412995A25916")
     private boolean hasFileChangedUnexpectedly() {
         synchronized
@@ -235,7 +232,6 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.125 -0400", hash_original_method = "CD8081B759B90CE7833F86EB66B232F5", hash_generated_method = "7242DABCF1140FEF7030451403C108CC")
     public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -251,7 +247,6 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.126 -0400", hash_original_method = "F9E846583CAAA911470841F2FE3AC3FA", hash_generated_method = "70DBE2F44D832760282A1EE45DF0F52C")
     public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         addTaint(listener.getTaint());
@@ -266,7 +261,6 @@ final class SharedPreferencesImpl implements SharedPreferences {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.126 -0400", hash_original_method = "4E41B5524ECBD1AD902DE6B06A01DA71", hash_generated_method = "8C3BC3A151840941EF4D6E130D26CB97")
     private void awaitLoadedLocked() {
     if(!mLoaded)        
@@ -314,7 +308,6 @@ Map<String, ?> var22AE380C67FD9F407F6378E04671F630_1498730386 =             new 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.127 -0400", hash_original_method = "4363C372EF13513A221D5D74A24EBA33", hash_generated_method = "119DF8AA4897BFA0447B46E6B01273B9")
     public String getString(String key, String defValue) {
         addTaint(defValue.getTaint());
@@ -357,7 +350,6 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_1293568086 =             v != nu
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.128 -0400", hash_original_method = "ACC29E9B287DA38F520685100499E9BD", hash_generated_method = "232AC53D8EA09551B0F3C5CC4CBDBD70")
     public int getInt(String key, int defValue) {
         addTaint(defValue);
@@ -379,7 +371,6 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_1293568086 =             v != nu
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.129 -0400", hash_original_method = "44BE6AE8D3AB2ABE731A78B854B12E07", hash_generated_method = "98CA6AAC4E419ABFF5150C1466384C71")
     public long getLong(String key, long defValue) {
         addTaint(defValue);
@@ -401,7 +392,6 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_1293568086 =             v != nu
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.129 -0400", hash_original_method = "E216C3CDDFA2EB08E1EA436EA866244B", hash_generated_method = "5842942976A0EDC8BD9D13F6DD833851")
     public float getFloat(String key, float defValue) {
         addTaint(defValue);
@@ -423,7 +413,6 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_1293568086 =             v != nu
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.130 -0400", hash_original_method = "726255BCC2D6177085677A1712342F0B", hash_generated_method = "146B2AB1B4151A4DB750848BBFDC6490")
     public boolean getBoolean(String key, boolean defValue) {
         addTaint(defValue);
@@ -445,7 +434,6 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_1293568086 =             v != nu
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.131 -0400", hash_original_method = "62FFF74487B278708D1160DE5B5FB2C0", hash_generated_method = "CAEE1F45A8750DCF3442CF65137D0C76")
     public boolean contains(String key) {
         addTaint(key.getTaint());
@@ -464,7 +452,6 @@ Set<String> var5334BDD95C76337E8A1BD5389ACA5D48_1293568086 =             v != nu
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.131 -0400", hash_original_method = "4D22F9B98CC44B257DB4ED7BF7E423CC", hash_generated_method = "0F44E6BB8C49AFA4CD0C1E9E02A1884E")
     public Editor edit() {
         synchronized
@@ -520,8 +507,7 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_800931635 =         new EditorImpl();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static FileOutputStream createFileOutputStream(File file) {
+        private static FileOutputStream createFileOutputStream(File file) {
         FileOutputStream str = null;
         try {
             str = new FileOutputStream(file);
@@ -545,7 +531,6 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_800931635 =         new EditorImpl();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.133 -0400", hash_original_method = "2845FAF740EE3AE38D64734030124734", hash_generated_method = "0B2DC468A044C0061DB30CFADF783EE5")
     private void writeToFile(MemoryCommitResult mcr) {
         addTaint(mcr.getTaint());
@@ -639,7 +624,6 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_800931635 =         new EditorImpl();
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.136 -0400", hash_original_method = "152989348B1D3907F6F06DB9CE213C64", hash_generated_method = "42EC6758C9478DCC3AFC3B660B4B2855")
         public void setDiskWriteResult(boolean result) {
             writeToDiskResult = result;
@@ -669,7 +653,6 @@ Editor varA40BB66FCF28A9654F109FB5063563BE_800931635 =         new EditorImpl();
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.137 -0400", hash_original_method = "EFFD7B235C5590A6C15EA464602A0862", hash_generated_method = "EC4B9FB2EE5011942B417784A56D1D5F")
         public Editor putString(String key, String value) {
             addTaint(value.getTaint());
@@ -708,7 +691,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_679364682 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.140 -0400", hash_original_method = "B5181352BC82403801755A11BC05DCE9", hash_generated_method = "9379945319B27D178E9886BB98F83CC0")
         public Editor putInt(String key, int value) {
             addTaint(value);
@@ -728,7 +710,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_1175251543 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.140 -0400", hash_original_method = "2390F394A779B486378B9C93DB0AC773", hash_generated_method = "331BF2D2E56B24ABAF3F38B3024E056D")
         public Editor putLong(String key, long value) {
             addTaint(value);
@@ -748,7 +729,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_288540271 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.141 -0400", hash_original_method = "913478FEA634AAED5778EE46C57EEF5E", hash_generated_method = "0205E95D055F7697D4DDE987B4588131")
         public Editor putFloat(String key, float value) {
             addTaint(value);
@@ -768,7 +748,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_1941759257 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.142 -0400", hash_original_method = "FBC14C4FFFA5A0EBC88C6D503172C819", hash_generated_method = "AAA956415528581B09EBD45725D6794D")
         public Editor putBoolean(String key, boolean value) {
             addTaint(value);
@@ -788,7 +767,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_458103635 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.142 -0400", hash_original_method = "7C60C1DCB4FF55A3B2BA6A50F523FE33", hash_generated_method = "8050C8802DFFAF5B56B0A91F0E5EC73E")
         public Editor remove(String key) {
             addTaint(key.getTaint());
@@ -807,7 +785,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_2114383039 =                 this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.143 -0400", hash_original_method = "59F9BBF7AADFDAE77F62CA904307DAB9", hash_generated_method = "CF812337FDA8994E4553C59C494624CF")
         public Editor clear() {
             synchronized
@@ -825,7 +802,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_1239350126 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.144 -0400", hash_original_method = "874FED7345E8B1C9E07FEF0510B9D798", hash_generated_method = "5CC8AAF5E6D5D6AB37DD5611809EB508")
         public void apply() {
             final MemoryCommitResult mcr = commitToMemory();
@@ -868,7 +844,6 @@ Editor var72A74007B2BE62B849F475C7BDA4658B_1239350126 =                 this;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.146 -0400", hash_original_method = "686A9AF4CEF5EAEBEB20BB8BD072C7B7", hash_generated_method = "763E1E9656E5B4A3D01336CBD0B6822C")
         private MemoryCommitResult commitToMemory() {
             MemoryCommitResult mcr = new MemoryCommitResult();
@@ -940,7 +915,6 @@ MemoryCommitResult var154B51BCE99D10E07062079308329222_1833686607 =             
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.147 -0400", hash_original_method = "23D73852609E646C4CF9B990F4BA7C23", hash_generated_method = "B45F8A6AEC2C360AE09B522D77185AC6")
         public boolean commit() {
             MemoryCommitResult mcr = commitToMemory();

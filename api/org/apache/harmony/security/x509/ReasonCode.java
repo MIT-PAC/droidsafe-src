@@ -22,7 +22,6 @@ public final class ReasonCode extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.254 -0400", hash_original_method = "410E015295E6E50D0A716577DAE7F9D9", hash_generated_method = "0D548A862740AC19879E03BB89A49586")
     @Override
     public byte[] getEncoded() {
@@ -41,7 +40,6 @@ public final class ReasonCode extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.255 -0400", hash_original_method = "12E79139137D00D785F5C6D5EDD972F8", hash_generated_method = "E8462291E6A8AE6A49DF0459F9F11A76")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

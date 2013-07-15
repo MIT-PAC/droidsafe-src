@@ -118,7 +118,6 @@ class PackedIntVector {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.296 -0400", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "A890ACBC1CA8B56AC017771E7ACC54FE")
     private void setValueInternal(int row, int column, int value) {
     if(row >= mRowGapStart)        
@@ -256,7 +255,6 @@ for(int i = mColumns - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.299 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "C9CF86E7F63EAC004457B34A96CA30AF")
     public int size() {
         int var60FCE0CE49C68973BD6EAD5B2D3866D1_1980156883 = (mRows - mRowGapLength);
@@ -267,7 +265,6 @@ for(int i = mColumns - 1;i >= 0;i--)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.299 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "872D72DB9854A3BDF8BEED9059432DC1")
     public int width() {
         int var11C985F30142FD30ACDDFE7CD3BD4A9B_652213598 = (mColumns);

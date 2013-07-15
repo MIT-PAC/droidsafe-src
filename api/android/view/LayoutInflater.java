@@ -85,7 +85,6 @@ public abstract class LayoutInflater {
     public abstract LayoutInflater cloneInContext(Context newContext);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.286 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "C80107CC1CFF6D19D17665D322CA3787")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_2138007396 =         mContext;
@@ -194,7 +193,6 @@ Factory2 var719195FDDEF7C93B6BEED74314FE4BE8_966945199 =         mFactory2;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.289 -0400", hash_original_method = "140FDA0509CDD22FFA77677DC0A919DF", hash_generated_method = "7B48C17DCCFC347FF964BDAD9D35BB77")
     public void setPrivateFactory(Factory2 factory) {
         mPrivateFactory = factory;
@@ -203,7 +201,6 @@ Factory2 var719195FDDEF7C93B6BEED74314FE4BE8_966945199 =         mFactory2;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.289 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "2C7CE8797E9E4FF4891CA9EEAD0284A5")
     public Filter getFilter() {
 Filter var6104E4BD549FCD2640641D136DD683A6_380344631 =         mFilter;

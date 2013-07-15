@@ -148,7 +148,6 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:38.899 -0400", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "E33C32E52CFE857EB9ED3111281AA940")
     @Override
     public synchronized void mark(int readlimit) {
@@ -160,7 +159,6 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:38.900 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "807893A7BB3E0C949A5454A0AF11B146")
     @Override
     public boolean markSupported() {

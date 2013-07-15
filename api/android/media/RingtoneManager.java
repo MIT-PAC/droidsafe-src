@@ -89,7 +89,6 @@ public class RingtoneManager {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.630 -0400", hash_original_method = "26C25231B8EE38423D74AE317EB8CDCC", hash_generated_method = "93DB5B3AB230B3F1CEBC5B9FF9DEC54C")
     public int inferStreamType() {
 switch(mType){
@@ -118,7 +117,6 @@ switch(mType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.631 -0400", hash_original_method = "A35CDF85342D56F6EFBA8853AE857D3A", hash_generated_method = "A319332DE37A3B6466CE25846A7922D3")
     public void setStopPreviousRingtone(boolean stopPreviousRingtone) {
         mStopPreviousRingtone = stopPreviousRingtone;
@@ -127,7 +125,6 @@ switch(mType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.632 -0400", hash_original_method = "0B3E7FCD199769A7D560D3943A8B1B23", hash_generated_method = "3C15DF4C4B4343FC4AF79F0D19715EF8")
     public boolean getStopPreviousRingtone() {
         boolean var6E1EF126CABB9337F9B6F4F268DFDCC7_1211545183 = (mStopPreviousRingtone);
@@ -151,7 +148,6 @@ switch(mType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.633 -0400", hash_original_method = "9F2D30C6202871DC182E5AD2A88B91B1", hash_generated_method = "87B7156ED3D6113781D6AE09ED643B5E")
     public boolean getIncludeDrm() {
         boolean varE2BB809370A9738D99D955B8499EB4DB_389302988 = (mIncludeDrm);
@@ -162,7 +158,6 @@ switch(mType){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.634 -0400", hash_original_method = "9AE3415FBA2FD0FC22ED2C93FA9F8016", hash_generated_method = "7524A5DEEE7B1595BB0B2B13A3C596AD")
     public void setIncludeDrm(boolean includeDrm) {
         mIncludeDrm = includeDrm;
@@ -217,7 +212,6 @@ Ringtone varE3841A3D763ABF5CA41C4E2D0700A62A_759115349 =         mPreviousRingto
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.636 -0400", hash_original_method = "4D2A1FDA5FCE10764EC2653DD3811CF2", hash_generated_method = "4EC9290C1929706FEEF7A7820A3FA336")
     public Uri getRingtoneUri(int position) {
         addTaint(position);
@@ -240,14 +234,12 @@ Uri var2A644E3E4254A7B4229AC3F3F0E82486_1107119836 =         getUriFromCursor(cu
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Uri getUriFromCursor(Cursor cursor) {
+        private static Uri getUriFromCursor(Cursor cursor) {
         return ContentUris.withAppendedId(Uri.parse(cursor.getString(URI_COLUMN_INDEX)), cursor
                 .getLong(ID_COLUMN_INDEX));
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.637 -0400", hash_original_method = "ED1F9D5C280AF9E93D506709043225B3", hash_generated_method = "6F32CBB11F561113CC7052DB3B70BAE8")
     public int getRingtonePosition(Uri ringtoneUri) {
         addTaint(ringtoneUri.getTaint());
@@ -292,8 +284,7 @@ for(int i = 0;i < cursorCount;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri getValidRingtoneUri(Context context) {
+        public static Uri getValidRingtoneUri(Context context) {
         final RingtoneManager rm = new RingtoneManager(context);
         Uri uri = getValidRingtoneUriFromCursorAndClose(context, rm.getInternalRingtones());
         if (uri == null) {
@@ -306,8 +297,7 @@ for(int i = 0;i < cursorCount;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor cursor) {
+        private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor cursor) {
         if (cursor != null) {
             Uri uri = null;
             if (cursor.moveToFirst()) {
@@ -427,7 +417,6 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1010469940 =         (status.equals(E
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.640 -0400", hash_original_method = "4C1ED3200DB68E8363398CACE6114D33", hash_generated_method = "336A8CD4640E13D7B90E6AA182E10409")
     private Cursor query(Uri uri,
             String[] projection,
@@ -482,8 +471,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri getActualDefaultRingtoneUri(Context context, int type) {
+        public static Uri getActualDefaultRingtoneUri(Context context, int type) {
         String setting = getSettingForType(type);
         if (setting == null) return null;
         final String uriString = Settings.System.getString(context.getContentResolver(), setting);
@@ -491,8 +479,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void setActualDefaultRingtoneUri(Context context, int type, Uri ringtoneUri) {
+        public static void setActualDefaultRingtoneUri(Context context, int type, Uri ringtoneUri) {
         String setting = getSettingForType(type);
         if (setting == null) return;
         Settings.System.putString(context.getContentResolver(), setting,
@@ -500,8 +487,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String getSettingForType(int type) {
+        private static String getSettingForType(int type) {
         if ((type & TYPE_RINGTONE) != 0) {
             return Settings.System.RINGTONE;
         } else if ((type & TYPE_NOTIFICATION) != 0) {
@@ -514,14 +500,12 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isDefault(Uri ringtoneUri) {
+        public static boolean isDefault(Uri ringtoneUri) {
         return getDefaultType(ringtoneUri) != -1;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int getDefaultType(Uri defaultRingtoneUri) {
+        public static int getDefaultType(Uri defaultRingtoneUri) {
         if (defaultRingtoneUri == null) {
             return -1;
         } else if (defaultRingtoneUri.equals(Settings.System.DEFAULT_RINGTONE_URI)) {
@@ -536,8 +520,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri getDefaultUri(int type) {
+        public static Uri getDefaultUri(int type) {
         if ((type & TYPE_RINGTONE) != 0) {
             return Settings.System.DEFAULT_RINGTONE_URI;
         } else if ((type & TYPE_NOTIFICATION) != 0) {

@@ -67,7 +67,6 @@ for(int i = 0;i < values.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.976 -0400", hash_original_method = "286435896BFB2C2EB12779836BDE2B3F", hash_generated_method = "1BEEACF60339FC3E0C38A049DAE54033")
     public boolean getBit(int bit) {
         addTaint(bit);
@@ -83,7 +82,6 @@ for(int i = 0;i < values.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.977 -0400", hash_original_method = "64B37589A76FCD4AF41D04B8A51CCBFB", hash_generated_method = "A9CE8AE95D58FDCF2BD1F021CC72529C")
     public void setBit(int bit, boolean value) {
         addTaint(value);
@@ -109,7 +107,6 @@ for(int i = 0;i < values.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.977 -0400", hash_original_method = "6591A9422CBA64DB7D3ADDA84BA94652", hash_generated_method = "056CC2A12CB928EECBE9A60C4C63FA3A")
     public boolean[] toBooleanArray() {
         boolean[] result = new boolean[bytes.length * 8 - unusedBits];

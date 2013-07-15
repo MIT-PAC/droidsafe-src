@@ -17,7 +17,6 @@ public abstract class ActionMode {
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.516 -0400", hash_original_method = "256DC994AF5E64F19A2C820A8209C31D", hash_generated_method = "744E4F063BB0F5116D0A7B37E397A74C")
     public void setTag(Object tag) {
         mTag = tag;
@@ -26,7 +25,6 @@ public abstract class ActionMode {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.516 -0400", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "5CA5AC6691BCAE1696499C2244C3616C")
     public Object getTag() {
 Object varD6A25044F8E609F6CD67330C1523D33D_294801190 =         mTag;
@@ -73,7 +71,6 @@ Object varD6A25044F8E609F6CD67330C1523D33D_294801190 =         mTag;
     public abstract MenuInflater getMenuInflater();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.518 -0400", hash_original_method = "57D435E5DB9DAA5D06EB98D67411AC43", hash_generated_method = "729DCC380280E701CCCCB6DA14243985")
     public boolean isUiFocusable() {
         boolean varB326B5062B2F0E69046810717534CB09_672298648 = (true);

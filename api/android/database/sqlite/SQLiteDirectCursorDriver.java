@@ -36,7 +36,6 @@ public class SQLiteDirectCursorDriver implements SQLiteCursorDriver {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.970 -0400", hash_original_method = "5238CB269CBA2AF26585CD6CA48FDD07", hash_generated_method = "864918E94103BAAD3D2DF1AB48BE1BFD")
     public Cursor query(CursorFactory factory, String[] selectionArgs) {
         addTaint(selectionArgs[0].getTaint());
@@ -87,7 +86,6 @@ Cursor var2D697C95C6440211C70889796F0139B0_568339794 =             mCursor;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.972 -0400", hash_original_method = "67DCFB7C009E95C4CA139AFBDECCF9F8", hash_generated_method = "A1AA2B64527670EF10F61F806A35135D")
     public void cursorClosed() {
         mCursor = null;
@@ -96,7 +94,6 @@ Cursor var2D697C95C6440211C70889796F0139B0_568339794 =             mCursor;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.973 -0400", hash_original_method = "68EB12D8E06A2397F473CCCC0FA3CBC1", hash_generated_method = "A35823955D9FE8AA1236F146E588D047")
     public void setBindArguments(String[] bindArgs) {
         addTaint(bindArgs[0].getTaint());
@@ -106,14 +103,12 @@ Cursor var2D697C95C6440211C70889796F0139B0_568339794 =             mCursor;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.974 -0400", hash_original_method = "C0D6246B55C05B36F128E1AEE4043F0F", hash_generated_method = "E84BDFE4FD59019EC4205EE197615B17")
     public void cursorDeactivated() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.975 -0400", hash_original_method = "64CFA7C751D35BBE7676514D93F7ECE6", hash_generated_method = "B0873AF2C7C5639BDF0E5508CCA466C2")
     public void cursorRequeried(Cursor cursor) {
         addTaint(cursor.getTaint());
@@ -121,7 +116,6 @@ Cursor var2D697C95C6440211C70889796F0139B0_568339794 =             mCursor;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.975 -0400", hash_original_method = "174FEA46244B347E10EF94A484A1C873", hash_generated_method = "69A27A327783814F72C1F4A945FD6A63")
     @Override
     public String toString() {

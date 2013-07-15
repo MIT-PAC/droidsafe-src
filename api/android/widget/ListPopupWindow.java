@@ -177,7 +177,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.574 -0400", hash_original_method = "7CC61A3797371517F86E3D676D22847C", hash_generated_method = "CE87A26F1F31625F1A82E312F687DB1A")
     public void setPromptPosition(int position) {
         mPromptPosition = position;
@@ -186,7 +185,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.574 -0400", hash_original_method = "DF9D97B46096A1E4CCF9033CE8B43A47", hash_generated_method = "F950C601B0B82A2E25DD824936C24290")
     public int getPromptPosition() {
         int var95DB2E6BA8E93C0D3FFA9A095A684BEB_1393121843 = (mPromptPosition);
@@ -208,7 +206,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.575 -0400", hash_original_method = "195244B0122E9C532D039816F791192C", hash_generated_method = "9331CC482AE2849ACD06A17343DCB9F0")
     public boolean isModal() {
         boolean var126D90D638B8925B7E67DD1602EB9153_1727047864 = (mModal);
@@ -219,7 +216,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.575 -0400", hash_original_method = "B51F6D3B2B582EB2529861E286FFBDAA", hash_generated_method = "C259F7A19612B2ACBFCE0BD237FE9AAB")
     public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         mForceIgnoreOutsideTouch = forceIgnoreOutsideTouch;
@@ -228,7 +224,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.576 -0400", hash_original_method = "0D7558B683A811B4FB459E3A92DCFACB", hash_generated_method = "6C5818E602B53931F3E1B0DBF55A9DBB")
     public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         mDropDownAlwaysVisible = dropDownAlwaysVisible;
@@ -237,7 +232,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.576 -0400", hash_original_method = "452BC62A357E5A143092E81C66B09D6A", hash_generated_method = "9C0B002EC271B803D150A0DA873037A5")
     public boolean isDropDownAlwaysVisible() {
         boolean var943ED63B762C4367544DC0A05775D6AA_1182459586 = (mDropDownAlwaysVisible);
@@ -267,7 +261,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.577 -0400", hash_original_method = "00D6E099D8DC922D12B17B03F893B884", hash_generated_method = "FF67F34E40E9A65B6F576056899652DB")
     public void setListSelector(Drawable selector) {
         mDropDownListHighlight = selector;
@@ -276,7 +269,6 @@ public class ListPopupWindow {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.577 -0400", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "1DEBE3875A23A154F5291021F0FD9D5D")
     public Drawable getBackground() {
 Drawable var7BDA07CC732F6A99E383B1984680564C_1391030963 =         mPopup.getBackground();
@@ -287,7 +279,6 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1391030963 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.577 -0400", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "AF6AA1D78ED766D9CBC696E0057BE10C")
     public void setBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
@@ -306,7 +297,6 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1391030963 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.578 -0400", hash_original_method = "A53F654A1BF514C432C9F43DB9ED5E7B", hash_generated_method = "4FD58AA93503F56DA9C89989BE3D1B41")
     public int getAnimationStyle() {
         int var816B0EC48DB4C372BCF76D1AAEC8966A_1037322788 = (mPopup.getAnimationStyle());
@@ -317,7 +307,6 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1391030963 =         mPopup.getBack
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.578 -0400", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "BD1A8C23DDBDB3815DF711FEC18339B9")
     public View getAnchorView() {
 View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView;
@@ -328,7 +317,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.578 -0400", hash_original_method = "91753F7FEC6E3180927B7B9D55B8E090", hash_generated_method = "63EE2FBCA0AADA3A31B95FC73D9580CE")
     public void setAnchorView(View anchor) {
         mDropDownAnchorView = anchor;
@@ -337,7 +325,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.578 -0400", hash_original_method = "2C5F7D64A15BDC64E0A7D1677E996184", hash_generated_method = "DF45F86F3588E23957294BDCBB2C4224")
     public int getHorizontalOffset() {
         int varD7D5E41A0CA1EEEE2C5B6053B9E223EC_601131283 = (mDropDownHorizontalOffset);
@@ -348,7 +335,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.579 -0400", hash_original_method = "37914D7AC2B7A80AA5FE528B058A9DBC", hash_generated_method = "C126BA21DD750A9AFE1BD084B715A818")
     public void setHorizontalOffset(int offset) {
         mDropDownHorizontalOffset = offset;
@@ -357,7 +343,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.579 -0400", hash_original_method = "06BDE5646BE562A7D86252C676418C82", hash_generated_method = "02BD73DED1D6431892E7A6F17110EF17")
     public int getVerticalOffset() {
     if(!mDropDownVerticalOffsetSet)        
@@ -377,7 +362,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.580 -0400", hash_original_method = "F61671411958DBF85FB58F84EEE162C4", hash_generated_method = "2B910F94073C3EC07961DBEFFADDA58F")
     public void setVerticalOffset(int offset) {
         mDropDownVerticalOffset = offset;
@@ -388,7 +372,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.580 -0400", hash_original_method = "6205F90E667ADE4444482E9AC195FB48", hash_generated_method = "9253430CB033DF6B314A6F70816B0DEB")
     public int getWidth() {
         int var56AD5481B6A7DF9BE8EA5BE42BC8A2A2_602535535 = (mDropDownWidth);
@@ -399,7 +382,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.580 -0400", hash_original_method = "1FDBBF009B47D57DAE1EE309EAA8DA19", hash_generated_method = "9D744DA174B0219B1092FF60AD2FCB92")
     public void setWidth(int width) {
         mDropDownWidth = width;
@@ -431,7 +413,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.581 -0400", hash_original_method = "2B0617362C23A2A1F29E0E83641579F9", hash_generated_method = "26C193581D4EA836C34B57DD3EB64683")
     public int getHeight() {
         int var499A6C77C04E8F3C1E288985743EBBD9_1542163232 = (mDropDownHeight);
@@ -442,7 +423,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.581 -0400", hash_original_method = "CAA84DCA25312E828BE740B15493FB25", hash_generated_method = "4DA8EB017D81399AC9FA9C78A28822F1")
     public void setHeight(int height) {
         mDropDownHeight = height;
@@ -451,7 +431,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.582 -0400", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "2D5D314BA37B280C0EC1EB015FA6FF32")
     public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
         mItemClickListener = clickListener;
@@ -460,7 +439,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.582 -0400", hash_original_method = "77C1F384A6316C978289202E5719DEEE", hash_generated_method = "9F10FF9A076A5EE31B9093767F0F184A")
     public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener selectedListener) {
         mItemSelectedListener = selectedListener;
@@ -606,7 +584,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.588 -0400", hash_original_method = "B4B1B4676A26C0E0D07AD81974E2090B", hash_generated_method = "9DC863547F53C27A47992D34B3B95A71")
     public void dismiss() {
         mPopup.dismiss();
@@ -632,7 +609,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.589 -0400", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "E7D37E557811E1F27F4B96C54D2FAFEC")
     private void removePromptView() {
     if(mPromptView != null)        
@@ -674,7 +650,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.590 -0400", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "6AD9EB2E181CEEFA2EBBAFD072878336")
     public void setSelection(int position) {
         addTaint(position);
@@ -719,7 +694,6 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.592 -0400", hash_original_method = "CA9C4C0CD645F38E1AAA797FE00ECFCE", hash_generated_method = "0FC786B315E4235B117CB04056E9C617")
     public boolean isShowing() {
         boolean var85306F04F495AA80A9692FCC104D9D40_1591511933 = (mPopup.isShowing());
@@ -792,7 +766,6 @@ Object varBFC298C836B1964BD2B82A432050A888_2023393764 =         mDropDownList.ge
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.598 -0400", hash_original_method = "055DCA84E8C7B3F34F7D7819C2CD5AC3", hash_generated_method = "BBC07D914E229F3E64B32CD02559F1DD")
     public int getSelectedItemPosition() {
     if(!isShowing())        
@@ -850,7 +823,6 @@ View varFD47A4584B44CB306821B10C638E0889_30977776 =         mDropDownList.getSel
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.600 -0400", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "F1DD1E9CEA3304DEC8788C04C82BCA16")
     public ListView getListView() {
 ListView var92F502D0F67611E603B0EE7DA4A0DC3B_963953038 =         mDropDownList;
@@ -861,7 +833,6 @@ ListView var92F502D0F67611E603B0EE7DA4A0DC3B_963953038 =         mDropDownList;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.600 -0400", hash_original_method = "21262ED785FC4787FB1F1DE7107BCA92", hash_generated_method = "7D6D8AA3A24EB925896215A339982186")
      void setListItemExpandMax(int max) {
         mListItemExpandMaximum = max;
@@ -1300,7 +1271,6 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.612 -0400", hash_original_method = "BEB5883597D4F7E6EC69D5E4B00F4808", hash_generated_method = "77ED6FEC41ABFE0FF7B87CF1F8DE3B8B")
         @Override
         public void onInvalidated() {
@@ -1324,7 +1294,6 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.612 -0400", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "33F921B8E266BA77FD9A621DF2DFDB10")
         public void run() {
             clearListSelection();
@@ -1346,7 +1315,6 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.613 -0400", hash_original_method = "A0D6625363C0412112380631C620D963", hash_generated_method = "E5AD7BD2D568181CEDE615E1BBA0D397")
         public void run() {
     if(mDropDownList != null && mDropDownList.getCount() > mDropDownList.getChildCount() &&
@@ -1377,7 +1345,6 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.614 -0400", hash_original_method = "6DB51D562B35DA9065539F31B98AD12D", hash_generated_method = "BBA39650591E97DAF1BB655EB79DC78C")
         public boolean onTouch(View v, MotionEvent event) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1428,7 +1395,6 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.615 -0400", hash_original_method = "6B5691236DBDB14CA060F218338C51C6", hash_generated_method = "35BC055BB67FFF42F36C6DE7B71D1A03")
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                 int totalItemCount) {
@@ -1441,7 +1407,6 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.616 -0400", hash_original_method = "50D93865D772C2EF3B15BE53BF421FFA", hash_generated_method = "991F51A7E325FC1E45E5672B58928011")
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             //DSFIXME:  CODE0009: Possible callback target function detected

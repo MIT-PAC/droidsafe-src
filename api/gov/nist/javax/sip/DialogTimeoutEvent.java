@@ -27,7 +27,6 @@ public class DialogTimeoutEvent extends EventObject {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.388 -0400", hash_original_method = "7F25FD43FBEFC286B46F28F64DA890F2", hash_generated_method = "75DE0BBA0AD3BA1D12F52804AB6B02AD")
     public Dialog getDialog() {
 Dialog varFB8739F13FF6A3985D561FE385D47DA0_1204297414 =         m_dialog;
@@ -38,7 +37,6 @@ Dialog varFB8739F13FF6A3985D561FE385D47DA0_1204297414 =         m_dialog;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.388 -0400", hash_original_method = "212BB72EC2D919554993B4E6C5F238C1", hash_generated_method = "0725823CD490DE6287A3FFACF667791E")
     public Reason getReason() {
 Reason var062EAAC5E59BAAF23B89004CBF874C08_489539119 =         m_reason;

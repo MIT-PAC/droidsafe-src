@@ -80,7 +80,6 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.251 -0400", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "46E6B77F197313587BFC095D09FA5111")
     protected String getIndentation() {
         char[] chars = new char[indentation];
@@ -95,14 +94,12 @@ String var300818D7D4F603E5F4346D4E090224B6_479965771 =         new String(chars)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static boolean isCloneable(Object obj) {
+        protected static boolean isCloneable(Object obj) {
         return obj instanceof Cloneable;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isMySubclass(Class<?> other) {
+        public static boolean isMySubclass(Class<?> other) {
         return GenericObjectList.class.isAssignableFrom(other);
     }
 
@@ -130,7 +127,6 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_782499885 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.252 -0400", hash_original_method = "D0155A1FF97450AAAC485CBFCA9B9151", hash_generated_method = "CD555D9A7A572ADB1416682B5064D9A7")
     public void setMyClass(Class cl) {
         myClass = cl;
@@ -250,7 +246,6 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1575801893 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.255 -0400", hash_original_method = "ECC7081A6DE8800C166F28F2C3CCF64F", hash_generated_method = "3761CEDEEDE8B8C61A2B8BEEEE74C3EB")
     private void sprint(String s) {
     if(s == null)        
@@ -350,7 +345,6 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1591904100 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.258 -0400", hash_original_method = "8D0C02EDD4F71C5F926965BFB69DF22C", hash_generated_method = "382CDBE7B59CE5A40C34003CF9834C55")
     public void addFirst(GenericObject objToAdd) {
     if(myClass == null)        
@@ -471,7 +465,6 @@ String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.259 -0400", hash_original_method = "8B5A99905EE1811A879B3378EE7C88B1", hash_generated_method = "BE8D7A91CF35C3CE4342E681E66ABB40")
     public void setSeparator(String sep) {
         separator = sep;
@@ -480,7 +473,6 @@ String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.260 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "762DA5970B0C4592019664F21FBE388D")
     public int hashCode() {
         int varA1D0C6E83F027327D8461063F4AC58A6_801829064 = (42);

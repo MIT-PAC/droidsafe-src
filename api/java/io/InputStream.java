@@ -15,7 +15,6 @@ public abstract class InputStream extends Object implements Closeable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.791 -0400", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "5E195D901BA0EDC476AD43D553F7AB57")
     public int available() throws IOException {
         int varCFCD208495D565EF66E7DFF9F98764DA_87695820 = (0);
@@ -26,14 +25,12 @@ public abstract class InputStream extends Object implements Closeable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.792 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "74372D27DE595543DBC3B69FBB71373E")
     public void close() throws IOException {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.793 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "7B9F66D07F75DF8B4C4E6E1ACAEF159F")
     public void mark(int readlimit) {
         addTaint(readlimit);
@@ -41,7 +38,6 @@ public abstract class InputStream extends Object implements Closeable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.794 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "02AD83BE9BF01AB7ACF37CAFF5E10ADD")
     public boolean markSupported() {
         boolean var68934A3E9455FA72420237EB05902327_1426093727 = (false);

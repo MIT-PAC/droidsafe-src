@@ -90,7 +90,6 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.901 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "F6B7EB031AD974B960E9E01380665FE1")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,

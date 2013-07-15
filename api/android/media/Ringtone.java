@@ -79,7 +79,6 @@ public class Ringtone {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.588 -0400", hash_original_method = "216E9F6C8E5136791318AC3D24F88326", hash_generated_method = "710C3B13AF8327A887699CA3A281AB64")
     public int getStreamType() {
         int var783FA5525F6B978FF64D8BA5B67966D9_1012808579 = (mStreamType);
@@ -107,8 +106,7 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
+        private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
         Cursor cursor = null;
         ContentResolver res = context.getContentResolver();
         String title = null;
@@ -216,7 +214,6 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.593 -0400", hash_original_method = "B6A9AEC7559EAFEEA670C63D280E78C6", hash_generated_method = "CC871095B008BACC4821A90FC2E0903B")
      void open(Uri uri) throws IOException {
         mUri = uri;
@@ -291,7 +288,6 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.594 -0400", hash_original_method = "A4C423176AB11C87E288F89C31FDE32A", hash_generated_method = "AE61B60E95D4F73DC4620FEAE2B8EF54")
      void setTitle(String title) {
         mTitle = title;

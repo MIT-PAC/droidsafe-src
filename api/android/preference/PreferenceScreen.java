@@ -162,7 +162,6 @@ ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_46204206 =         new Preferenc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.748 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "A698D0A15B2476EA8563F85C45922766")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_279382381 =         mDialog;
@@ -200,7 +199,6 @@ Dialog var91E8306796CF70F787962B1CE02ED969_279382381 =         mDialog;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.750 -0400", hash_original_method = "B68456EA6FB78586D0952577C0AE0058", hash_generated_method = "CF25DB06059BA24153F2578D2989595D")
     @Override
     protected boolean isOnSameScreenAsChildren() {

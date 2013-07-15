@@ -119,7 +119,6 @@ Values varDD5B551295F7C93CAA721FF5B869F41E_1083977766 =         current.localVal
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.668 -0400", hash_original_method = "303C743BABF91BBE1D2B949725040AC0", hash_generated_method = "D1B0DE6AE51275C55C2A61AD74262247")
      Values values(Thread current) {
         addTaint(current.getTaint());
@@ -217,7 +216,6 @@ for(int i = table.length - 2;i >= 0;i -= 2)
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.673 -0400", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "C7EB45EBDA4EAA513131B1354BE102DF")
         private void initializeTable(int capacity) {
             this.table = new Object[capacity * 2];
@@ -488,7 +486,6 @@ for(int index = key.hash & mask;;index = next(index))
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.684 -0400", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "050F65DAF140153CCA71BD4CA85E173D")
         private int next(int index) {
             addTaint(index);

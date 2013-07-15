@@ -66,8 +66,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ComponentName getErrorReportReceiver(Context context,
+        public static ComponentName getErrorReportReceiver(Context context,
             String packageName, int appFlags) {
         int enabled = Settings.Secure.getInt(context.getContentResolver(),
                 Settings.Secure.SEND_ACTION_APP_ERROR, 0);
@@ -92,8 +91,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
+        static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
             String receiverPackage) {
         if (receiverPackage == null || receiverPackage.length() == 0) {
             return null;
@@ -198,7 +196,6 @@ switch(type){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.268 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C95013ADA7C7FDC51CFB396FFCC56EE0")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_763390036 = (0);

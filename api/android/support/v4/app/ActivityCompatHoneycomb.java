@@ -18,20 +18,17 @@ class ActivityCompatHoneycomb {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    static void invalidateOptionsMenu(Activity activity) {
+        static void invalidateOptionsMenu(Activity activity) {
         activity.invalidateOptionsMenu();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void startActivities(Activity activity, Intent[] intents) {
+        static void startActivities(Activity activity, Intent[] intents) {
         activity.startActivities(intents);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void dump(Activity activity, String prefix, FileDescriptor fd,
+        static void dump(Activity activity, String prefix, FileDescriptor fd,
             PrintWriter writer, String[] args) {
         activity.dump(prefix, fd, writer, args);
     }

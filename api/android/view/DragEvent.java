@@ -47,7 +47,6 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.654 -0400", hash_original_method = "7C5024523CDDAF1D0113FCBE9F36B975", hash_generated_method = "938EDBDAF55CF15B95F169EDD98664E3")
     private void init(int action, float x, float y, ClipDescription description, ClipData data,
             Object localState, boolean result) {
@@ -101,7 +100,6 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.655 -0400", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "431B1DD21FFB897F348ACBF2939FA6C5")
     public int getAction() {
         int varA3988EEE869C06063B06A0C38A6A1E11_2107625403 = (mAction);
@@ -112,7 +110,6 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "331663EFF3E2EE62701FDAFEDB013F35", hash_generated_method = "93E146EA9390FA7069D52713C9648FFC")
     public float getX() {
         float varE47D03BC59EE2C8B3B45870BE85294FB_785243418 = (mX);
@@ -123,7 +120,6 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "ABC228174E672AD41349CE6D52652626", hash_generated_method = "CF0C69F2DC42D29A5907A593E7E69B79")
     public float getY() {
         float var29DA5B2B864236A2CCB25B548E8F5F0A_1573781833 = (mY);
@@ -134,7 +130,6 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "933F7F307168902744E3973968DC1B74", hash_generated_method = "400A2C1742F228EA86762458252D99C9")
     public ClipData getClipData() {
 ClipData var1977025219EA5CDD9C5515A6C37627CE_993161952 =         mClipData;
@@ -145,7 +140,6 @@ ClipData var1977025219EA5CDD9C5515A6C37627CE_993161952 =         mClipData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "314798A5FB9D41875D673F25B7EDBA77", hash_generated_method = "EDE246224DF7282DFB9C1A9DF98AE91A")
     public ClipDescription getClipDescription() {
 ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_2121712149 =         mClipDescription;
@@ -156,7 +150,6 @@ ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_2121712149 =         mClipDe
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.657 -0400", hash_original_method = "37C7BCFB2F6F270ABDBD12EAE79514EC", hash_generated_method = "246596F6DD44CCC63D040B223C927436")
     public Object getLocalState() {
 Object var7FD3E34206D71BA5A444CCA1F25A17E3_954551146 =         mLocalState;
@@ -167,7 +160,6 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_954551146 =         mLocalState;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.657 -0400", hash_original_method = "137903529BA54F55A1080182FA7064FC", hash_generated_method = "68CEB6FEC770F9AA53BF51E3B8574DD3")
     public boolean getResult() {
         boolean var8927DB6CA9E7C245BB19CB5184DE9194_1020777703 = (mDragResult);
@@ -254,7 +246,6 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_1176131954 =         "DragEvent{" + I
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.659 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B4AE47701E40057D00EFA9652495B29A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1710675107 = (0);

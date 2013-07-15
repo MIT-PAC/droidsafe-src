@@ -60,7 +60,6 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_1340754567 =         copy(this, m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.018 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "864D757E7C42A60FDE888DBA6B489547")
     @Override
     public boolean isReadOnly() {
@@ -94,7 +93,6 @@ LongBuffer var6ED4708F04CD11720ECFFDBFD927116F_1340754567 =         copy(this, m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.019 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "529FAC541AD917691873AF9878E82E42")
     @Override
     protected boolean protectedHasArray() {

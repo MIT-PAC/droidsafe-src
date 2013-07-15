@@ -32,8 +32,7 @@ public class SamplingProfilerIntegration {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static boolean isEnabled() {
+        public static boolean isEnabled() {
         return enabled;
     }
 

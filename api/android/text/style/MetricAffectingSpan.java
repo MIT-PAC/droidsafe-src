@@ -19,7 +19,6 @@ public abstract class MetricAffectingSpan extends CharacterStyle implements Upda
     public abstract void updateMeasureState(TextPaint p);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.234 -0400", hash_original_method = "A42CCA74DCEA4DF7BFE10765D4FB4AEF", hash_generated_method = "B36AA09BBEF9A70885D3A632F01CC1FD")
     @Override
     public MetricAffectingSpan getUnderlying() {

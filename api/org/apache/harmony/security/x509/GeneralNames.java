@@ -45,7 +45,6 @@ public final class GeneralNames {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.085 -0400", hash_original_method = "0BE5F893124FC75916B0920319238607", hash_generated_method = "D56853BE7B2E2ACE97EDE87B4E95CB05")
     public List<GeneralName> getNames() {
     if((generalNames == null) || (generalNames.size() == 0))        
@@ -65,7 +64,6 @@ List<GeneralName> var474A8DB69B4D755AD016C60DFD7D53DB_1112994189 =         new A
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.085 -0400", hash_original_method = "393D0968412D8AD2DE170EB074DB113A", hash_generated_method = "31A5E0321C467C4009447BAB4F287952")
     public Collection<List<?>> getPairsList() {
         Collection<List<?>> result = new ArrayList<List<?>>();
@@ -94,7 +92,6 @@ Collection<List<?>> varDC838461EE2FA0CA4C9BBB70A15456B0_1552203794 =         res
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.086 -0400", hash_original_method = "62FCFAA5CD61EB40B84DD9F5E8E0A72D", hash_generated_method = "8F691EEA5E6D395143447EB83ED647D4")
     public void addName(GeneralName name) {
         addTaint(name.getTaint());
@@ -113,7 +110,6 @@ Collection<List<?>> varDC838461EE2FA0CA4C9BBB70A15456B0_1552203794 =         res
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.086 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "64571C51665568811CB94F4CF2FBEE84")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -131,7 +127,6 @@ Collection<List<?>> varDC838461EE2FA0CA4C9BBB70A15456B0_1552203794 =         res
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.086 -0400", hash_original_method = "78509CF3CFA7027FFCDFED35C29E300D", hash_generated_method = "683FDAC3570FD76E83AF721E6DEF8483")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

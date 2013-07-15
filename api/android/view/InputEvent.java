@@ -49,7 +49,6 @@ InputDevice var6CAF134A410F580D974FCD91E6F3C893_1278464903 =         InputDevice
     public abstract long getEventTimeNano();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.845 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F9C9269EB841FC58029A536B61F02A8D")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1863099920 = (0);

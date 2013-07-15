@@ -157,7 +157,6 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.356 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "92E20BCF8578C62CA3347C0BE7D72809")
     private boolean isClosed() {
         boolean varAE601444E7D588038E147A2CA548E6D7_1627718310 = (out == null);

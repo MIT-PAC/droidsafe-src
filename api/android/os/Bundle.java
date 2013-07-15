@@ -125,8 +125,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Bundle forPair(String key, String value) {
+        public static Bundle forPair(String key, String value) {
         Bundle b = new Bundle(1);
         b.putString(key, value);
         return b;
@@ -179,7 +178,6 @@ String var540C13E9E156B687226421B24F2DF178_390403113 =             null;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.009 -0400", hash_original_method = "98C9A117007F79899B5BBD029ABFD6B8", hash_generated_method = "1DFA79725EDD590714D0602080EA4C5B")
     public void setClassLoader(ClassLoader loader) {
         mClassLoader = loader;
@@ -188,7 +186,6 @@ String var540C13E9E156B687226421B24F2DF178_390403113 =             null;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.009 -0400", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "7F51CEA2DE6AA039F78E64D53CF48ADC")
     public ClassLoader getClassLoader() {
 ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoader;
@@ -199,7 +196,6 @@ ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoade
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.010 -0400", hash_original_method = "3A854A40DC72470BF5CA49CF20D41873", hash_generated_method = "FB4D11113E614632BC1E78610B9FB3EE")
     public boolean setAllowFds(boolean allowFds) {
         boolean orig = mAllowFds;
@@ -311,7 +307,6 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.012 -0400", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "D8FFFB9335B5D904DCE93BB9DED9C703")
     public Object get(String key) {
         addTaint(key.getTaint());
@@ -364,7 +359,6 @@ Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_361472375 =         mMap.keySet(
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.015 -0400", hash_original_method = "4B0480B2866CB29DA37F7AEC68A5E217", hash_generated_method = "2E87EDA5C6DC49EE74A2E42629CEA4F5")
     public boolean hasFileDescriptors() {
     if(!mFdsKnown)        
@@ -453,7 +447,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.016 -0400", hash_original_method = "94490DFEC498722DA435B9597CF0EDDE", hash_generated_method = "AA0232F6D518DCA833F071F38CF1937A")
     public void putBoolean(String key, boolean value) {
         addTaint(value);
@@ -502,7 +495,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.018 -0400", hash_original_method = "C2DD503B984E96C46288CB6F7C364E09", hash_generated_method = "75717305E5DC5CBB1C23249C31B0B731")
     public void putInt(String key, int value) {
         addTaint(value);
@@ -563,7 +555,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.021 -0400", hash_original_method = "23A8E01E039C76712F2C134222EAC45B", hash_generated_method = "9FEC25DABD5FDC79C27E36673337DF25")
     public void putCharSequence(String key, CharSequence value) {
         addTaint(value.getTaint());
@@ -670,7 +661,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.024 -0400", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "2A4FB1229722946DE91D4EF0E38C280D")
     public void putSerializable(String key, Serializable value) {
         addTaint(value.getTaint());
@@ -683,7 +673,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.025 -0400", hash_original_method = "8E721A4E4DD3EA40820BFACA50BE3D1C", hash_generated_method = "ACACC06951724C44CEB31C2C666267E0")
     public void putBooleanArray(String key, boolean[] value) {
         addTaint(value[0]);
@@ -696,7 +685,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.025 -0400", hash_original_method = "1C56E40FECAB1AC7C31C1D64DCBF74F0", hash_generated_method = "5213B1E070335D9401528254C481E52C")
     public void putByteArray(String key, byte[] value) {
         addTaint(value[0]);
@@ -733,7 +721,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.027 -0400", hash_original_method = "6E03156089AB80D54004D251F8CBA9A8", hash_generated_method = "AA0D743CF2BF08A40853D73E8355A710")
     public void putIntArray(String key, int[] value) {
         addTaint(value[0]);
@@ -758,7 +745,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.028 -0400", hash_original_method = "6C49285A06086C4B176330EBC83C2D3B", hash_generated_method = "33F0CA57AA79BA462FC96478C4B6BBF1")
     public void putFloatArray(String key, float[] value) {
         addTaint(value[0]);
@@ -771,7 +757,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.028 -0400", hash_original_method = "BF0DED73B6BC272CA81A76D665AF3892", hash_generated_method = "B5D1C3A1B8E6873420787987F25DD229")
     public void putDoubleArray(String key, double[] value) {
         addTaint(value[0]);
@@ -796,7 +781,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.029 -0400", hash_original_method = "D442CACA5F4C37E249E32A5FC3EA1B00", hash_generated_method = "908F70222D570FC2AD602F222D7078F4")
     public void putCharSequenceArray(String key, CharSequence[] value) {
         addTaint(value[0].getTaint());
@@ -809,7 +793,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.029 -0400", hash_original_method = "8FC0D5E8787A84A268AF6F8743FC18A2", hash_generated_method = "F313ED86E5BFEA7548458BE72E8636BD")
     public void putBundle(String key, Bundle value) {
         addTaint(value.getTaint());
@@ -822,7 +805,6 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.029 -0400", hash_original_method = "0DA9D5A0C7EE7D2AFD4BCC53AD3802F3", hash_generated_method = "1B458E4D89C58743C30A00821425F3A4")
     @Deprecated
     public void putIBinder(String key, IBinder value) {

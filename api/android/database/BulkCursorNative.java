@@ -176,7 +176,6 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.962 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "08F1BF28B99B183D621DCBF73A9D846B")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1307044544 =         this;
@@ -207,7 +206,6 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.964 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "803F7916C12CF2609F8901FA627EACC2")
     public IBinder asBinder() {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_306998301 =         mRemote;
@@ -218,7 +216,6 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_306998301 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.964 -0400", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "59C2E03676387DF7521D125BD4A83EB9")
     public CursorWindow getWindow(int startPos) throws RemoteException {
         addTaint(startPos);
@@ -264,7 +261,6 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.965 -0400", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "3A25E2CA29C678C2E9117CFABCC86AAD")
     public void onMove(int position) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -298,7 +294,6 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.966 -0400", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "D069AC5F83B9FB5D85B7869064F54D8F")
     public int count() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -347,7 +342,6 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.966 -0400", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "F24E437106B7AAEF510F975B583691CE")
     public String[] getColumnNames() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -394,7 +388,6 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.967 -0400", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "B5795C1CD612DC57C918E50A35075092")
     public void deactivate() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -424,7 +417,6 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.967 -0400", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "794ECD036839A74A6AE936598DC14BB4")
     public void close() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -454,7 +446,6 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.968 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "4312EFDFA112A6513764DACC53C6EF1D")
     public int requery(IContentObserver observer) throws RemoteException {
         addTaint(observer.getTaint());
@@ -508,7 +499,6 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.969 -0400", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "A42EE6E3EDEF7D03E863824A47DF8CD9")
     public boolean getWantsAllOnMoveCalls() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -544,7 +534,6 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.969 -0400", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "FF6E6D4AE7ADE27BD6979543188B5A08")
     public Bundle getExtras() throws RemoteException {
     if(mExtras == null)        
@@ -585,7 +574,6 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1968489598 =         mExtras;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.970 -0400", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "3EDBFA6EF4C41694FA8D7B56D2F0608E")
     public Bundle respond(Bundle extras) throws RemoteException {
         addTaint(extras.getTaint());

@@ -63,7 +63,6 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.103 -0400", hash_original_method = "BEB073340466462D0D2D43B235458798", hash_generated_method = "2C1624B406FCF7877DD944AD9568AFA1")
     @Override
     public void dispose() {
@@ -77,7 +76,6 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.104 -0400", hash_original_method = "F3AC7B1645E4B6C17E75361C82F92F71", hash_generated_method = "8135547F7335BCC93E8ADF2EAD79E568")
     @Override
     protected void finalize() {
@@ -88,7 +86,6 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.105 -0400", hash_original_method = "890888F3646E6C0F40397D6A9CAE2069", hash_generated_method = "C164568DFBFDA4D969CE0DF6F4836D64")
     @Override
     protected void onRadioOffOrNotAvailable() {
@@ -107,7 +104,6 @@ public final class RuimRecords extends IccRecords {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.105 -0400", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "B8F1992B1DC6810C46EA447585FBAFFB")
     public String getMdnNumber() {
 String var1FDFB70D070E103265F511CBBD7E87E9_586734361 =         mMyMobileNumber;
@@ -118,7 +114,6 @@ String var1FDFB70D070E103265F511CBBD7E87E9_586734361 =         mMyMobileNumber;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.106 -0400", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "8538A985133D4F9B9C9C91E6B20D2B72")
     public String getCdmaMin() {
 String var3AED8228038CC465260B536B9B728D30_1672547918 =         mMin2Min1;
@@ -129,7 +124,6 @@ String var3AED8228038CC465260B536B9B728D30_1672547918 =         mMin2Min1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.106 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "A91846B73E27B531502EA4394663C909")
     public String getPrlVersion() {
 String varF0DFA2A5AE60E78166448A9BF5899625_1636971454 =         mPrlVersion;
@@ -157,7 +151,6 @@ String varF0DFA2A5AE60E78166448A9BF5899625_1636971454 =         mPrlVersion;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.109 -0400", hash_original_method = "1D5D0C2F4FF0286B2839C7504C536EE3", hash_generated_method = "72BD7942533D93BFB9764D286429D53E")
     @Override
     public void onRefresh(boolean fileChanged, int[] fileList) {
@@ -308,7 +301,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.115 -0400", hash_original_method = "7082FCE9B35AC4F9F043D561172547FE", hash_generated_method = "F63B5B9289591575DB6AD56FDD6563CC")
     @Override
     protected void onRecordLoaded() {
@@ -398,7 +390,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.117 -0400", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "6F33CEDDA1A92A6AF0E269D09793F3C5")
     @Override
     public int getDisplayRule(String plmn) {
@@ -445,7 +436,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.119 -0400", hash_original_method = "BF9176F3CF68AA171F4E13CD5AF3ED9E", hash_generated_method = "DB8AD3E07BE7726A72327FFBE1B7A781")
     private void handleRuimRefresh(int[] result) {
         addTaint(result[0]);

@@ -42,7 +42,6 @@ public class EditText extends TextView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.183 -0400", hash_original_method = "78689D8CF0BA47FA74C236553C6AEDBF", hash_generated_method = "FF305A4EFE6F6CAFC82FF5FE7F50DAC9")
     @Override
     protected boolean getDefaultEditable() {

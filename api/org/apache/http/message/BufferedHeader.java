@@ -70,7 +70,6 @@ public class BufferedHeader implements FormattedHeader, Cloneable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.713 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "78037CBB8BE9FC80A2DE95A780452D01")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_1945637881 =         this.name;
@@ -107,7 +106,6 @@ HeaderElement[] varA090F3687291CDA6DAF632EEA41ADCCE_614256499 =         BasicHea
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.714 -0400", hash_original_method = "E7695A6E14F12AF4805392BEA2D5CE64", hash_generated_method = "76D2A5E66295D2EF8CDA3D17579FDDE2")
     public int getValuePos() {
         int var1747919CF5DB41B03F9FEE684F69A6A5_798550243 = (this.valuePos);
@@ -118,7 +116,6 @@ HeaderElement[] varA090F3687291CDA6DAF632EEA41ADCCE_614256499 =         BasicHea
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.714 -0400", hash_original_method = "E316E251CD3E3ED3EEAF4AEFCAA1831D", hash_generated_method = "6F96B3C30AF0A906BD7AAC50F06EF0DA")
     public CharArrayBuffer getBuffer() {
 CharArrayBuffer var45A7A4931E21905A5463F27B77E1344A_542388146 =         this.buffer;

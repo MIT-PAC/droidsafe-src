@@ -73,7 +73,6 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.141 -0400", hash_original_method = "487ABDFFC7C87077FB337ABC7D22F575", hash_generated_method = "5C084C9A5C4469C5E39311B4A54CBEBA")
     public int getSpanTypeId() {
         int var6AB8F49C46B377A2606471607E7ED458_878187425 = (TextUtils.BULLET_SPAN);
@@ -84,7 +83,6 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.141 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6E6F7041041095079D18B2CC95DDC668")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1560468743 = (0);
@@ -95,7 +93,6 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.141 -0400", hash_original_method = "D1CA1ADAD215DD7AD321DC70F751BAEF", hash_generated_method = "6FA2F406DF5220CDC31A040907A762E5")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -110,7 +107,6 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.142 -0400", hash_original_method = "77C9B4F0913BD5D8F7E0CF3C61E7D063", hash_generated_method = "D851C68CF77EF9E96FCE650BC348B5B7")
     public int getLeadingMargin(boolean first) {
         addTaint(first);
@@ -122,7 +118,6 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.143 -0400", hash_original_method = "BA5CC5CF550A22429CB3793943786FE7", hash_generated_method = "C4FEE5F3203BDCECE94F45D8901C4AAE")
     public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,
                                   int top, int baseline, int bottom,

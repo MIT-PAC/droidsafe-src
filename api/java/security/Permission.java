@@ -25,7 +25,6 @@ String var540C13E9E156B687226421B24F2DF178_1049872263 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.137 -0400", hash_original_method = "C84962AC42FE97CD37014EB04A226348", hash_generated_method = "7B46358E0B69DA0AB94C3564AB046E79")
     public void checkGuard(Object obj) throws SecurityException {
         addTaint(obj.getTaint());
@@ -33,7 +32,6 @@ String var540C13E9E156B687226421B24F2DF178_1049872263 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.137 -0400", hash_original_method = "3B418AF4D3F113F25455A16498EE96FC", hash_generated_method = "48416AE1032F2CBC5A08BE5C205F2F7C")
     public PermissionCollection newPermissionCollection() {
 PermissionCollection varE4C8908E3F49EE48D2B78391A77CE8EC_597181795 =         new AllPermissionCollection();

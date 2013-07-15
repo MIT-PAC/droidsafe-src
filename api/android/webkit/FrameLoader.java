@@ -73,7 +73,6 @@ class FrameLoader {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.084 -0400", hash_original_method = "DAE08684530294543D6392896259C957", hash_generated_method = "92386B791CB1171C17B7ECFBFCCD9818")
     public void setReferrer(String ref) {
     if(URLUtil.isNetworkUrl(ref))        
@@ -83,7 +82,6 @@ class FrameLoader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.084 -0400", hash_original_method = "D2C8C4DED03F288D6E8AB32DB5451075", hash_generated_method = "AFA899BAAE4627D629483619DC707622")
     public void setPostData(byte[] postData) {
         mPostData = postData;
@@ -92,7 +90,6 @@ class FrameLoader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.084 -0400", hash_original_method = "E910F46151D172102331975C2568BBCE", hash_generated_method = "FA7AB8F86BB414F666064016C84E824E")
     public void setContentTypeForPost(String postContentType) {
         mContentType = postContentType;
@@ -101,7 +98,6 @@ class FrameLoader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.085 -0400", hash_original_method = "4FD1C5F2E68FCD3B6425DADD4042F496", hash_generated_method = "07CDE86C3243F89B692735454AED33C1")
     public void setCacheMode(int cacheMode) {
         mCacheMode = cacheMode;
@@ -110,7 +106,6 @@ class FrameLoader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.085 -0400", hash_original_method = "E0E34456BA61E1D94659FB0013B44B13", hash_generated_method = "E4CBCEFCEF3480884B759040661DF0A4")
     public void setHeaders(HashMap headers) {
         mHeaders = headers;
@@ -119,7 +114,6 @@ class FrameLoader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.085 -0400", hash_original_method = "C430EEAE75F5C9BA4DF5580B50F4FE67", hash_generated_method = "AD1043AE497CBFFD7C8FB0EACA08F522")
     public LoadListener getLoadListener() {
 LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
@@ -130,7 +124,6 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.086 -0400", hash_original_method = "C44DBC63D87836D797664A5A599046E9", hash_generated_method = "0AB7F85C33151A6F382FCEE422B8AA38")
     public boolean executeLoad() {
         String url = mListener.url();
@@ -205,8 +198,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static boolean handleLocalFile(String url, LoadListener loadListener,
+        private static boolean handleLocalFile(String url, LoadListener loadListener,
             WebSettings settings) {
         assert !JniUtil.useChromiumHttpStack();
         try {
@@ -273,7 +265,6 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.089 -0400", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "B8212BBCBDC09F749B6A61C95B4EAC9C")
      boolean handleHTTPLoad() {
     if(mHeaders == null)        
@@ -322,7 +313,6 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.090 -0400", hash_original_method = "D628211A63EBF198D6007A9671F95672", hash_generated_method = "EAE83E1A2EF110E3F79827C2EF31B37F")
     private void startCacheLoad(CacheResult result) {
         addTaint(result.getTaint());
@@ -357,7 +347,6 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.090 -0400", hash_original_method = "ED6284595A2927F289F312ED71C4BF2D", hash_generated_method = "E4ED5AEB4C7C57A8420949EC662867AF")
     private boolean handleCache() {
 switch(mCacheMode){
@@ -410,7 +399,6 @@ switch(mCacheMode){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.091 -0400", hash_original_method = "2D0BB20A4C7261DEBC8826658FC12230", hash_generated_method = "4712B931494AD22C3CCFAC85ADE49922")
     private void populateStaticHeaders() {
         String accept = mHeaders.get("Accept");
@@ -446,7 +434,6 @@ switch(mCacheMode){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.092 -0400", hash_original_method = "FC5DAD276D63BF9B93BD19919189EAE8", hash_generated_method = "EEEC9434E0A08CEA31852FC09037CFDA")
     private void populateHeaders() {
     if(mReferrer != null)        

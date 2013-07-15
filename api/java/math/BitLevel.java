@@ -59,8 +59,7 @@ class BitLevel {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
+        static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
         int intCount = numberOfBits >> 5;
         int bitCount = numberOfBits & 31;
         int i;
@@ -71,8 +70,7 @@ class BitLevel {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
+        static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
         int carry = 0;
         for (int i = 0; i < srcLen; i++) {
             int val = source[i];

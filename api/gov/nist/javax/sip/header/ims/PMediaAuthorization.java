@@ -23,7 +23,6 @@ public class PMediaAuthorization extends SIPHeader implements PMediaAuthorizatio
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.991 -0400", hash_original_method = "F23C2C2B4085CBC596D4F9DFFD38C718", hash_generated_method = "E8ACE36B966CA029FF70F4BA456265FE")
     public String getToken() {
 String var84AE1F94A3CF2A5D8DE4571F3693A75E_1268260021 =         token;
@@ -50,7 +49,6 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_1268260021 =         token;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.992 -0400", hash_original_method = "724D317C37CE304AAB82EB39D5595B30", hash_generated_method = "43349C24805A9938842D705C98DE7EA0")
     protected String encodeBody() {
 String var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403 =         token;

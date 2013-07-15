@@ -13,8 +13,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         boolean[]  a,
         boolean[]  b) {
         if (a == b)
@@ -40,8 +39,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         char[]  a,
         char[]  b) {
         if (a == b)
@@ -67,8 +65,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         byte[]  a,
         byte[]  b) {
         if (a == b)
@@ -94,8 +91,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean constantTimeAreEqual(
+        public static boolean constantTimeAreEqual(
         byte[]  a,
         byte[]  b) {
         if (a == b)
@@ -119,8 +115,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean areEqual(
+        public static boolean areEqual(
         int[]  a,
         int[]  b) {
         if (a == b)
@@ -146,8 +141,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void fill(
+        public static void fill(
         byte[] array,
         byte value) {
         for (int i = 0; i < array.length; i++)
@@ -157,8 +151,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void fill(
+        public static void fill(
         long[] array,
         long value) {
         for (int i = 0; i < array.length; i++)
@@ -168,8 +161,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void fill(
+        public static void fill(
         short[] array, 
         short value) {
         for (int i = 0; i < array.length; i++)
@@ -179,8 +171,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int hashCode(byte[] data) {
+        public static int hashCode(byte[] data) {
         if (data == null)
         {
             return 0;
@@ -196,8 +187,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] clone(byte[] data) {
+        public static byte[] clone(byte[] data) {
         if (data == null)
         {
             return null;
@@ -208,8 +198,7 @@ public final class Arrays {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int[] clone(int[] data) {
+        public static int[] clone(int[] data) {
         if (data == null)
         {
             return null;

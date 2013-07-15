@@ -34,7 +34,6 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.501 -0400", hash_original_method = "922B12E08E67C6B8053CA65C059545DA", hash_generated_method = "E560DC24A19628C9937B85323C067523")
     public int getSpanTypeId() {
         int var65668C9F02B7364BCF30E3F3AA6CFF0C_663120060 = (TextUtils.URL_SPAN);
@@ -45,7 +44,6 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.502 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1D11134DF46DFD889E16848834B6654B")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_145516108 = (0);
@@ -56,7 +54,6 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.502 -0400", hash_original_method = "C4C1C8BAFA904799F51D3BBA35A0D0C5", hash_generated_method = "164A2B7E6CB571F4987742457FEDC27F")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -67,7 +64,6 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.503 -0400", hash_original_method = "C929B5C6A842A00D31BD07E0935FD2ED", hash_generated_method = "840A024808F45B12B8DF8ECD8DEE1B53")
     public String getURL() {
 String var550501E49D065ECDEDD352E121BD3166_1649224760 =         mURL;
@@ -78,7 +74,6 @@ String var550501E49D065ECDEDD352E121BD3166_1649224760 =         mURL;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.503 -0400", hash_original_method = "04E55325C1106D52B4E11E13B7EEFAD9", hash_generated_method = "DAB6AA801DD7FA674B91531DADEB1659")
     @Override
     public void onClick(View widget) {

@@ -17,14 +17,12 @@ public abstract class CookieHandler {
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static CookieHandler getDefault() {
+        public static CookieHandler getDefault() {
         return systemWideCookieHandler;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setDefault(CookieHandler cHandler) {
+        public static void setDefault(CookieHandler cHandler) {
         systemWideCookieHandler = cHandler;
     }
 

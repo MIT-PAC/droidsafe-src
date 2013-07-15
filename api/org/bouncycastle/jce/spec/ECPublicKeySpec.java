@@ -23,7 +23,6 @@ public class ECPublicKeySpec extends ECKeySpec {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.741 -0400", hash_original_method = "A7464FB9BEF133E2EB393CD87C3AFDA4", hash_generated_method = "84261B964FFB9F4EB25C7B7F8A74864A")
     public ECPoint getQ() {
 ECPoint varBEF1B7662E10AF6D5747729987514CB6_1402204828 =         q;

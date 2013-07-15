@@ -16,7 +16,6 @@ public final class ViaList extends SIPHeaderList<Via> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.645 -0400", hash_original_method = "4D93C8A8DA65DDEDB364A162E5648CA9", hash_generated_method = "80C000814768D757581C0169D6DD5DFA")
     public Object clone() {
         ViaList retval = new ViaList();

@@ -17,8 +17,7 @@ public class TaskStackBuilderHoneycomb {
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static PendingIntent getActivitiesPendingIntent(Context context, int requestCode,
+        public static PendingIntent getActivitiesPendingIntent(Context context, int requestCode,
             Intent[] intents, int flags) {
         return PendingIntent.getActivities(context, requestCode, intents, flags);
     }

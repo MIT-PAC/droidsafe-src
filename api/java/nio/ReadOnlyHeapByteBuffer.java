@@ -60,7 +60,6 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.987 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "53E69673D3059AD94111388B72AAC256")
     @Override
     public boolean isReadOnly() {
@@ -94,7 +93,6 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.988 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "BDE56401CF801E67E08C9666D573C21A")
     @Override
     protected boolean protectedHasArray() {

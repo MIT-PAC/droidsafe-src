@@ -79,7 +79,6 @@ class CallbackProxy extends Handler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.427 -0400", hash_original_method = "94198B28324F8EDCEFD396927CFF12D2", hash_generated_method = "DE4F5106C007BE6F57AC8D71C62F1D2E")
     public void setWebViewClient(WebViewClient client) {
         mWebViewClient = client;
@@ -88,7 +87,6 @@ class CallbackProxy extends Handler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.428 -0400", hash_original_method = "F1A871AF9A3B10055BFFA9DC06A940C2", hash_generated_method = "A1074CFECF048523D83A686A6A831F9D")
     public WebViewClient getWebViewClient() {
 WebViewClient var219327D82738A9B3892C77985DEA01B6_655279684 =         mWebViewClient;
@@ -99,7 +97,6 @@ WebViewClient var219327D82738A9B3892C77985DEA01B6_655279684 =         mWebViewCl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.428 -0400", hash_original_method = "92EB7E506A2EF4886CBEC1480289BCB6", hash_generated_method = "4C169B04C3730379147B383EFDBF5622")
     public void setWebChromeClient(WebChromeClient client) {
         mWebChromeClient = client;
@@ -108,7 +105,6 @@ WebViewClient var219327D82738A9B3892C77985DEA01B6_655279684 =         mWebViewCl
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.428 -0400", hash_original_method = "578C7E32D2B540B07E657C95C84E837C", hash_generated_method = "692EF137032618DF11218CDA6EBEC90D")
     public WebChromeClient getWebChromeClient() {
 WebChromeClient varA4A83CCFC474F74A3297D64921EA0D20_591228518 =         mWebChromeClient;
@@ -119,7 +115,6 @@ WebChromeClient varA4A83CCFC474F74A3297D64921EA0D20_591228518 =         mWebChro
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "36DD14932709DFA3D074F96EC9039EDA", hash_generated_method = "C93408E62641713A784F45E96AAF15BB")
     public void setDownloadListener(DownloadListener client) {
         mDownloadListener = client;
@@ -128,7 +123,6 @@ WebChromeClient varA4A83CCFC474F74A3297D64921EA0D20_591228518 =         mWebChro
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "2A97B39171573BABF631C9DB7E378DC9", hash_generated_method = "DC83E5EE53C7ADAE81A0F57821D65D36")
     public WebBackForwardList getBackForwardList() {
 WebBackForwardList var1C240D885C886394EFD8991BF7723702_2065109024 =         mBackForwardList;
@@ -139,7 +133,6 @@ WebBackForwardList var1C240D885C886394EFD8991BF7723702_2065109024 =         mBac
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "69271AEE54C61C015B6B50CD212FE110", hash_generated_method = "13A4BC55EE14A943E04C92B28D85EE99")
      void setWebBackForwardListClient(WebBackForwardListClient client) {
         mWebBackForwardListClient = client;
@@ -148,7 +141,6 @@ WebBackForwardList var1C240D885C886394EFD8991BF7723702_2065109024 =         mBac
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "32023A06CFA84B93B3A0030ADE6E4A41", hash_generated_method = "26EB847B6630F7A8A0CE0615A91BAC18")
      WebBackForwardListClient getWebBackForwardListClient() {
 WebBackForwardListClient varFDD512ADED96794B21F9708300A9CF6B_1310232261 =         mWebBackForwardListClient;
@@ -845,7 +837,6 @@ switch(messageLevel){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.448 -0400", hash_original_method = "F4FA55F4EB9CE414FB8C02AF96B11745", hash_generated_method = "E381422A41272317901F7F3449B1221F")
     public int getProgress() {
         int var2696E4DA487A70C034C78C6D39EE32D1_1309453443 = (mLatestProgress);
@@ -956,7 +947,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.451 -0400", hash_original_method = "CAA94892A4D7B008F19D8BD2AD9FB2D3", hash_generated_method = "C0809B9CEB0B717846126AD99662E3B1")
     public void onTooManyRedirects(Message cancelMsg, Message continueMsg) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -966,7 +956,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.451 -0400", hash_original_method = "E5C6F1F12DEE48235072B52E91052ED8", hash_generated_method = "D945CDC7D58363B3C3FADA67CB453973")
     public void onReceivedError(int errorCode, String description,
             String failingUrl) {
@@ -995,7 +984,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.452 -0400", hash_original_method = "5E30734A74D85B2FEB399A04359A0FF5", hash_generated_method = "65DDC04AC43181BB68163679D7F82159")
     public void onFormResubmission(Message dontResend,
             Message resend) {
@@ -1064,7 +1052,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.453 -0400", hash_original_method = "4FA57A455CA03EC6D649ED38E4E56F01", hash_generated_method = "454878E772B11580DD3FCF39931D1F74")
     public void onReceivedHttpAuthRequest(HttpAuthHandler handler,
             String hostName, String realmName) {
@@ -1093,7 +1080,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.453 -0400", hash_original_method = "8BC2AAF24BCB58C98055A520D9453CBA", hash_generated_method = "65108861E9D48F0E27E664564DE50635")
     public void onReceivedSslError(SslErrorHandler handler, SslError error) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1145,7 +1131,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.454 -0400", hash_original_method = "86B49DF771A8EEA4B9DCFCD28BAACF5B", hash_generated_method = "FC7CB539E70C72771C32EEC72C3D0E46")
     public void onReceivedClientCertRequest(ClientCertRequestHandler handler, String host_and_port) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1186,7 +1171,6 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.454 -0400", hash_original_method = "1419AC91B69314146C4F39503A4D545B", hash_generated_method = "BA71C6009B65DC8F60C5E57397F22DC3")
     public void doUpdateVisitedHistory(String url, boolean isReload) {
         addTaint(isReload);
@@ -1234,7 +1218,6 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.455 -0400", hash_original_method = "AE6FAC3658CBE746F7970ADD50E1DD7A", hash_generated_method = "D31D3097E056B5FA7CBB8E40932FD9EF")
     public void onUnhandledKeyEvent(KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1252,7 +1235,6 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.455 -0400", hash_original_method = "32F0A585D03AD391628455766053FDEF", hash_generated_method = "842FEA5E2981E8A19F932454811C0BD3")
     public void onScaleChanged(float oldScale, float newScale) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1279,7 +1261,6 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.456 -0400", hash_original_method = "96CFDF49B56568DC278F123893B1481C", hash_generated_method = "9BB96589F62C0923C2A031B23FD02F39")
      void onReceivedLoginRequest(String realm, String account, String args) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1468,7 +1449,6 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.458 -0400", hash_original_method = "B29F2764BB6A56E843DFC7CBC2F6C034", hash_generated_method = "20F500B19C9F10947F5CC595D793AE61")
     public BrowserFrame createWindow(boolean dialog, boolean userGesture) {
         addTaint(userGesture);
@@ -1514,7 +1494,6 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.459 -0400", hash_original_method = "08655C1DEC40A72DA93F91A66B628CEC", hash_generated_method = "2E75BA126814F868313BF019EE0A11D0")
     public void onRequestFocus() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1531,7 +1510,6 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.459 -0400", hash_original_method = "6FD913BE3AA43F9AAEFF1CB8B9D39A33", hash_generated_method = "E24EEF1CE11ED62624D8C076675BC0F1")
     public void onCloseWindow(WebView window) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1549,7 +1527,6 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.459 -0400", hash_original_method = "F08C9B8424214ACDF6DD6A6D99BF0681", hash_generated_method = "0FC76FCD9CD9FF11D31F0C62D4AE8681")
     public void onReceivedIcon(Bitmap icon) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1576,7 +1553,6 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.460 -0400", hash_original_method = "F0350B43E0ECCB1BDA5D312CA7F06F8A", hash_generated_method = "1327EC36DA83E0AF893DF4E175241E7F")
      void onReceivedTouchIconUrl(String url, boolean precomposed) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1606,7 +1582,6 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.461 -0400", hash_original_method = "91CD241BD0413BEA62EE65C753144C77", hash_generated_method = "6D29343564A2541A49EE8398A00A6849")
     public void onReceivedTitle(String title) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1624,7 +1599,6 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.461 -0400", hash_original_method = "7099C31F609DFFDBC7FE4DB990C0E80D", hash_generated_method = "E31FD8B6479C2570C0E96067422C6DB8")
     public void onJsAlert(String url, String message) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2042,7 +2016,6 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.469 -0400", hash_original_method = "FE04684AB3D72B8C190BB2063ADDA47F", hash_generated_method = "4575AF2110D3731C2665A96C54B0FE5F")
      Uri openFileChooser(String acceptType) {
         addTaint(acceptType.getTaint());
@@ -2146,7 +2119,6 @@ Uri varE22FFCE020DE18FB2CC526226D95C1A9_605172029 =         uploadFile.getResult
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.471 -0400", hash_original_method = "8DF8998B34FE58BC5486ECCDB22BE44D", hash_generated_method = "4B9EC302578FA7D71770AD1E5B9306FC")
      boolean canShowAlertDialog() {
         boolean varE37B05B01B9AB47E90E647D8F707F405_175125664 = (mContext instanceof Activity);
@@ -2261,7 +2233,6 @@ E var8EC17D26103D23643357521909BC2C9A_827145609 =             mResult;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.473 -0400", hash_original_method = "9D48109A15DDC7CFDE503C879117A387", hash_generated_method = "ACA9ED584FDE1599AD91F03B39554C7B")
         public UploadFile getUploadFile() {
 UploadFile var31075088B2A2E9D45AA9874A2DA07598_1294945971 =             mCallback;
@@ -2272,7 +2243,6 @@ UploadFile var31075088B2A2E9D45AA9874A2DA07598_1294945971 =             mCallbac
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "EE5645A876B8829341B5E714F10E353A", hash_generated_method = "6A2115586F0902A55FCA46CB9D23E06D")
         public String getAcceptType() {
 String varE3A067C89E54BBE0AE977695F4311BA7_498917960 =             mAcceptType;
@@ -2299,7 +2269,6 @@ String varE3A067C89E54BBE0AE977695F4311BA7_498917960 =             mAcceptType;
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "4E719BBCA95A35A86F37F83B7E6AA557", hash_generated_method = "DA348449E4089428CF2AC95B16237996")
         public void onReceiveValue(Uri value) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2316,7 +2285,6 @@ String varE3A067C89E54BBE0AE977695F4311BA7_498917960 =             mAcceptType;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "546BF3EDB8840D5BF09D8B66103FFEC6", hash_generated_method = "675168D93DE189131E9720DC82BE2BA6")
         public Uri getResult() {
 Uri varD1FEA3F5EE4618A9C3646312F018E4AC_394999930 =             mValue;

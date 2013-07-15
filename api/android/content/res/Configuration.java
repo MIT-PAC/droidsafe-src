@@ -104,7 +104,6 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.025 -0400", hash_original_method = "7CF138C6ADBDA7579D8D5CA6B783C43E", hash_generated_method = "E7D38C200CC864903EA426877693103F")
     public boolean isLayoutSizeAtLeast(int size) {
         addTaint(size);
@@ -406,7 +405,6 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.036 -0400", hash_original_method = "147ACC888212AB34BF4DFBA0C89EE45F", hash_generated_method = "C9CB6755A580929C7AAF213990A1EEFA")
     public void setToDefaults() {
         fontScale = 1;
@@ -664,13 +662,11 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean needNewResources(int configChanges, int interestingChanges) {
+        public static boolean needNewResources(int configChanges, int interestingChanges) {
         return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.047 -0400", hash_original_method = "B2BFCC713F7EA940A38F0F416218BA87", hash_generated_method = "851564873C6D05CA92154A23E59DD1BA")
     public boolean isOtherSeqNewer(Configuration other) {
         addTaint(other.getTaint());
@@ -720,7 +716,6 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.047 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4783F8532CB6BA9690F4374A810722F7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1680038283 = (0);

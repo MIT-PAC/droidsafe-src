@@ -185,8 +185,7 @@ String var2DE2B0753514113A12D28ABDDE929C04_814924632 =         "MESSAGE DIGEST "
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isEqual(byte[] digesta, byte[] digestb) {
+        public static boolean isEqual(byte[] digesta, byte[] digestb) {
         if (digesta.length != digestb.length) {
             return false;
         }

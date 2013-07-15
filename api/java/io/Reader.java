@@ -51,7 +51,6 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.952 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "21350C4434B8A868B793E9D1839A10B7")
     public boolean markSupported() {
         boolean var68934A3E9455FA72420237EB05902327_1854795426 = (false);
@@ -102,7 +101,6 @@ public abstract class Reader implements Readable, Closeable {
     public abstract int read(char[] buf, int offset, int count) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.954 -0400", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "55B049812EF39A97B075B6B848028795")
     public boolean ready() throws IOException {
         boolean var68934A3E9455FA72420237EB05902327_1271823751 = (false);

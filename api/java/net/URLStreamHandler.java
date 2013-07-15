@@ -20,7 +20,6 @@ public abstract class URLStreamHandler {
     protected abstract URLConnection openConnection(URL u) throws IOException;
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.849 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "A139E3987A08FCD790DB657C9F8C34FE")
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         addTaint(proxy.getTaint());
@@ -33,7 +32,6 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.854 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "85A54D9473FF0A5955B5C9039D79F097")
     protected void parseURL(URL url, String spec, int start, int end) {
         addTaint(end);
@@ -168,7 +166,6 @@ switch(spec.charAt(pos)){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.856 -0400", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "373F74A2E14FD15EA622542FA2AA474D")
     @Deprecated
     protected void setURL(URL u, String protocol, String host, int port,
@@ -194,7 +191,6 @@ switch(spec.charAt(pos)){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.857 -0400", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "2C91DCB13998726761DF21DA9C44F003")
     protected void setURL(URL u, String protocol, String host, int port,
             String authority, String userInfo, String path, String query,
@@ -223,7 +219,6 @@ switch(spec.charAt(pos)){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.858 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "E9EEB13AF3D8B8CC3CE0EFE0828433B8")
     protected String toExternalForm(URL url) {
         addTaint(url.getTaint());
@@ -235,7 +230,6 @@ String varF0A5B50B9B05198AEACF658792F51D87_427063333 =         toExternalForm(ur
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.858 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "4FCFA8CA9A8C25B2B043D26FE54CEECF")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
         addTaint(escapeIllegalCharacters);
@@ -289,7 +283,6 @@ String varE65B3A02759122992CB82C0E651AD408_1935096299 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.860 -0400", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "809701EC78B4E4FF18E2CAB732F1AA4D")
     protected boolean equals(URL a, URL b) {
         addTaint(b.getTaint());
@@ -306,7 +299,6 @@ String varE65B3A02759122992CB82C0E651AD408_1935096299 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.860 -0400", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "B0C49E9F5CBB1595C8F82AC29B831B87")
     protected int getDefaultPort() {
         int var6BB61E3B7BCE0931DA574D19D1D82C88_433745337 = (-1);
@@ -317,7 +309,6 @@ String varE65B3A02759122992CB82C0E651AD408_1935096299 =         result.toString(
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.861 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "1843FFDD9979CE1099F56FEF78FE1426")
     protected InetAddress getHostAddress(URL url) {
         addTaint(url.getTaint());
@@ -353,7 +344,6 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1727335945 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.861 -0400", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "8DC388CB1DE38447F47CECFF6E022C4F")
     protected int hashCode(URL url) {
         addTaint(url.getTaint());
@@ -365,7 +355,6 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1727335945 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.862 -0400", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "FFC792975A0D3860E4A939DCB4991E57")
     protected boolean hostsEqual(URL a, URL b) {
         addTaint(b.getTaint());
@@ -382,7 +371,6 @@ InetAddress var540C13E9E156B687226421B24F2DF178_1727335945 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.862 -0400", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "7E8B8B9C3A61B52BE595420721E3C078")
     protected boolean sameFile(URL a, URL b) {
         addTaint(b.getTaint());

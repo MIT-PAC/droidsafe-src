@@ -61,7 +61,6 @@ public class PreferenceCategory extends PreferenceGroup {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.539 -0400", hash_original_method = "92A62D678EEB31430D80EB6E828940C3", hash_generated_method = "7C63C6578F122CE104B81E20C9C4ED80")
     @Override
     public boolean isEnabled() {

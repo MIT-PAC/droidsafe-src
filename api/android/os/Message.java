@@ -189,7 +189,6 @@ public final class Message implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.696 -0400", hash_original_method = "003296F505672677447BEB837B373395", hash_generated_method = "F35AD71564D31F4319BFDB612E79A606")
     public long getWhen() {
         long varDF491A4DE50739FA9CFFDBD4E3F4B4BB_1303423623 = (when);
@@ -200,7 +199,6 @@ public final class Message implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.696 -0400", hash_original_method = "4206C8A14E5D790EB7EB282A0235F495", hash_generated_method = "BFA69EC1EEA25086C4D9E40A15F143AE")
     public void setTarget(Handler target) {
         this.target = target;
@@ -209,7 +207,6 @@ public final class Message implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.696 -0400", hash_original_method = "71A342D68A16A50B25BC4BF2093BFF62", hash_generated_method = "FEEB8F0F96DDB732C09833C04CCA8E3A")
     public Handler getTarget() {
 Handler varA7DD35DE8EDE4A2FCAF77CE202E687B3_659864432 =         target;
@@ -220,7 +217,6 @@ Handler varA7DD35DE8EDE4A2FCAF77CE202E687B3_659864432 =         target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.697 -0400", hash_original_method = "BE120AA50B796443E57F262EC015813E", hash_generated_method = "93A968A1040D5E1B1F7E19B77595CBD2")
     public Runnable getCallback() {
 Runnable var221B6914C84D3DFBD8B1EDBBC49B8CE3_319013397 =         callback;
@@ -248,7 +244,6 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_2085669608 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.697 -0400", hash_original_method = "82F96E5D1D9A678E87ADC3DA47E10262", hash_generated_method = "7A89545FECD67375F7ED764A56C8A198")
     public Bundle peekData() {
 Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
@@ -259,7 +254,6 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.698 -0400", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "EAE8CA4F21A678E5FDC9CFA85AC5AD0E")
     public void setData(Bundle data) {
         this.data = data;
@@ -276,7 +270,6 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.699 -0400", hash_original_method = "9CE194651C6176A08C0A91B012A85C32", hash_generated_method = "11A13B0F3660F78F0D526315F89EA24B")
      void clearForRecycle() {
         flags = 0;
@@ -303,7 +296,6 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.699 -0400", hash_original_method = "2F71B67A0204C39D3FE8504F70842AAF", hash_generated_method = "19B48906729B976F872251C868C3A73A")
      boolean isInUse() {
         boolean var74582B96000F3154DC110B64F0D6FDDF_1799553454 = (((flags & FLAG_IN_USE) == FLAG_IN_USE));
@@ -314,7 +306,6 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.700 -0400", hash_original_method = "05D8812E72ABC796A0F0FB73D8BB23FD", hash_generated_method = "2406C8342B30A3F95EC80EECA1F8197F")
      void markInUse() {
         flags |= FLAG_IN_USE;
@@ -383,7 +374,6 @@ String var53F188277CD163A95D3D9B5184E22806_1785862232 =         b.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.701 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A2FE4B856800D447713920BEFA0B6324")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1486104355 = (0);

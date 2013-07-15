@@ -19,7 +19,6 @@ public class FtpHandler extends URLStreamHandler {
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.902 -0400", hash_original_method = "3C5B2D25E22696E048ED7556D298C58C", hash_generated_method = "EB57CB9585DBCA86AE876AE03E990F8A")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
@@ -32,7 +31,6 @@ URLConnection var66D3170B0CAFB63BFA8B8A0D23096F3D_1566723653 =         new FtpUR
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.903 -0400", hash_original_method = "1D737A935EF21FF08B15C0F0950C4FF6", hash_generated_method = "BA4E8FF6AC466C2DF7B985F109A6E144")
     @Override
     protected URLConnection openConnection(URL url, Proxy proxy) throws IOException {
@@ -55,7 +53,6 @@ URLConnection varE1935BC5A46185F4F0C5FA8D5BF30C37_255747242 =         new FtpURL
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.903 -0400", hash_original_method = "EEF2A707E6AE293A2B045747E5BC7948", hash_generated_method = "8D6F2C97295F3AEDCF4A67FC65536D24")
     @Override
     protected int getDefaultPort() {

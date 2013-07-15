@@ -27,7 +27,6 @@ public class Unsupported extends SIPHeader implements javax.sip.header.Unsupport
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.548 -0400", hash_original_method = "9C711BE19A8C0E0A7CB116A3F753C6F0", hash_generated_method = "F157BB7E945056FD52F137EE791F25DD")
     public String encodeBody() {
 String var05FAD6E650FDF64778D62F7CDA67F749_1481563964 =         optionTag;
@@ -38,7 +37,6 @@ String var05FAD6E650FDF64778D62F7CDA67F749_1481563964 =         optionTag;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.549 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "03ECADA531E5AC0DD4C53D3D606D14E2")
     public String getOptionTag() {
 String var05FAD6E650FDF64778D62F7CDA67F749_1180891168 =         optionTag;
@@ -49,7 +47,6 @@ String var05FAD6E650FDF64778D62F7CDA67F749_1180891168 =         optionTag;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.549 -0400", hash_original_method = "3B18B091D01592A1C9601DEA63572A7E", hash_generated_method = "7AA81AC52B958BFEA0F91F3060E036A5")
     public void setOptionTag(String o) throws ParseException {
     if(o == null)        

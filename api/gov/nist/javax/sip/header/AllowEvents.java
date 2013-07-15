@@ -27,7 +27,6 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.743 -0400", hash_original_method = "A10AD710FF1C0BA35C48E4F204BD5CD1", hash_generated_method = "2E3876A46F8B418287F86E920C6DF270")
     public void setEventType(String eventType) throws ParseException {
     if(eventType == null)        
@@ -48,7 +47,6 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.744 -0400", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "8FB4FCFFEDE795E35FFF94841823EFCC")
     public String getEventType() {
 String var9BA45280620AE5369B32F31629C1D3A0_25016783 =         eventType;
@@ -59,7 +57,6 @@ String var9BA45280620AE5369B32F31629C1D3A0_25016783 =         eventType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.744 -0400", hash_original_method = "895FBB9B6BA00626F6F635DDC47F48B7", hash_generated_method = "A57A5724EEFA89602137DCE4689E80C6")
     protected String encodeBody() {
 String var9BA45280620AE5369B32F31629C1D3A0_2007097555 =         eventType;

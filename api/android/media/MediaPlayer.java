@@ -106,7 +106,6 @@ public class MediaPlayer {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.299 -0400", hash_original_method = "53B8A3255E430D9C87E415235A089C4A", hash_generated_method = "F5B57F3315662D3ED70CDAF04D4628F0")
     private void _setVideoSurface(Surface surface) {
     }
@@ -188,14 +187,12 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MediaPlayer create(Context context, Uri uri) {
+        public static MediaPlayer create(Context context, Uri uri) {
         return create (context, uri, null);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
+        public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
         try {
             MediaPlayer mp = new MediaPlayer();
             mp.setDataSource(context, uri);
@@ -235,7 +232,6 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.304 -0400", hash_original_method = "40ED5E4D3E36120D5E7C77AB85EB12F0", hash_generated_method = "BD51E02768AFE95BF00E0182B9B96EF5")
     public void setDataSource(Context context, Uri uri) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         addTaint(uri.getTaint());
@@ -297,7 +293,6 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.305 -0400", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "F5B05B6380317717B89E41C25427E8C2")
     public void setDataSource(String path) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
     }
@@ -339,7 +334,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.306 -0400", hash_original_method = "35737102382ABAAE0A83F0ED650DE965", hash_generated_method = "1B2287D7576FA769D7F1C01F8D9C70AA")
     private void _setDataSource(
         String path, String[] keys, String[] values) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
@@ -355,19 +349,16 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "CF807E4C5554BB2848F7651782391DCD", hash_generated_method = "26CA4E702FD63E687650E57F874CD4B8")
     public void setDataSource(FileDescriptor fd, long offset, long length) throws IOException, IllegalArgumentException, IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "BE634EB7B5A47DD549B3D4698CE7CD0F", hash_generated_method = "E7E943D15349F05D8E6452080C3FE19C")
     public void prepare() throws IOException, IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "9BEAA7388253BD2C3E319E2E43B2453F", hash_generated_method = "953CE432DFBBEC63464F146F85A74F11")
     public void prepareAsync() throws IllegalStateException {
     }
@@ -383,7 +374,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "6DEDFC534300C5310A66033260D8A31E", hash_generated_method = "D1FE609F1EBAE49EEF1BACBB02C63952")
     private void _start() throws IllegalStateException {
     }
@@ -399,7 +389,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.308 -0400", hash_original_method = "7A254901D3417D112F523A3CB4C0BACF", hash_generated_method = "E38D7EC8B95A05706550F50CD55A4851")
     private void _stop() throws IllegalStateException {
     }
@@ -415,7 +404,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.308 -0400", hash_original_method = "3CFA64AA4FE31303B150AAAF6D2A439E", hash_generated_method = "85A230E7AF7EEA7FE619291D65BB2491")
     private void _pause() throws IllegalStateException {
     }
@@ -522,7 +510,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.311 -0400", hash_original_method = "33D5C83ED46D1CA5E488AF592A477814", hash_generated_method = "1176079568A1D7CE15A3127BF3E53D1D")
     public int getVideoWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436668441 = getTaintInt();
@@ -530,7 +517,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.311 -0400", hash_original_method = "AA8703DABD049C78A6839F5E3DDBB949", hash_generated_method = "599B9FDFBF2A332511F2FB13B4D7712D")
     public int getVideoHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1901892713 = getTaintInt();
@@ -538,7 +524,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.311 -0400", hash_original_method = "F383FE244E24C0C545B5D975B4462316", hash_generated_method = "5BBD80285A5EEC249D7B7E7A1D24B033")
     public boolean isPlaying() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382980376 = getTaintBoolean();
@@ -546,13 +531,11 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.312 -0400", hash_original_method = "97A3BCAAD25A5F0CCA6DBA135F05FFD4", hash_generated_method = "9C09E9E38768EBB3BE88E178DF59A105")
     public void seekTo(int msec) throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.312 -0400", hash_original_method = "540585A22AA6C1E9C18EA05D71ACEBDE", hash_generated_method = "345045D3817606856C71239CD5FE7D84")
     public int getCurrentPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1729969722 = getTaintInt();
@@ -560,7 +543,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.312 -0400", hash_original_method = "5FCC06EDC9BF2D1AEA92A44CF2A2F31E", hash_generated_method = "4F55CE986FCE430DEF6DE8167732A09B")
     public int getDuration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1017827264 = getTaintInt();
@@ -676,7 +658,6 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.315 -0400", hash_original_method = "D6ED0B9EBF82A338F6093204ADC2E481", hash_generated_method = "AA5F59E16F2B6AC2DE4549F16EAF4890")
     private void _release() {
     }
@@ -694,25 +675,21 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.315 -0400", hash_original_method = "3FFFF13DAAD4B409C984414CD8318D6D", hash_generated_method = "3553160F21F5CD09799179A1C4084CF0")
     private void _reset() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.315 -0400", hash_original_method = "7EA0CD9F896B971C851CD4CA96BFE5FA", hash_generated_method = "99A0AEB1474BFA8AD85F70AF19D36753")
     public void setAudioStreamType(int streamtype) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.316 -0400", hash_original_method = "4C3A78CA2E07F71A05B213D4CFF64128", hash_generated_method = "0C49790A1DD7D1A295D28EB1B65DC925")
     public void setLooping(boolean looping) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.316 -0400", hash_original_method = "0D67125EE341895F5558E4CEF076C5C6", hash_generated_method = "E9AFB64D6287829004ADA34B1AF7E295")
     public boolean isLooping() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928028193 = getTaintBoolean();
@@ -720,7 +697,6 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.316 -0400", hash_original_method = "BE4EAA7A7DB479C280C8B84C90E58238", hash_generated_method = "D76177723C9C7B83B2B950CDE7DB2CDA")
     public void setVolume(float leftVolume, float rightVolume) {
     }
@@ -735,13 +711,11 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.317 -0400", hash_original_method = "63928D15D2C6CC99F2E8386267D06FF3", hash_generated_method = "90A8FC942E771DDCEC53B1C3A67572F9")
     public void setAudioSessionId(int sessionId) throws IllegalArgumentException, IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.317 -0400", hash_original_method = "A9F7BB2486256FFAA61FE97D99C9B85E", hash_generated_method = "C240D4226C6057B44FB0F98AF045A917")
     public int getAudioSessionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072000340 = getTaintInt();
@@ -749,13 +723,11 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.317 -0400", hash_original_method = "267B75456E03BDFBAB6FC1F227BFBD27", hash_generated_method = "308855D822BAB31E9E5D0F3584415B59")
     public void attachAuxEffect(int effectId) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.318 -0400", hash_original_method = "4D1DAD410063C63E8C280A1116B73E03", hash_generated_method = "A661988F25917D0D8693F4930F0533A8")
     public boolean setParameter(int key, Parcel value) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1820334070 = getTaintBoolean();
@@ -803,7 +775,6 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.319 -0400", hash_original_method = "331C8FC44967717E7E0670FCEDE9BFD0", hash_generated_method = "7FD7F9F0D2267E4E3D8F33E6B3FB173B")
     private void getParameter(int key, Parcel reply) {
     }
@@ -862,7 +833,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.320 -0400", hash_original_method = "D28173AB681B94731B1FF3947E2DFEF3", hash_generated_method = "672F3C0FD3FDB80EEF14F3C255A04A14")
     public void setAuxEffectSendLevel(float level) {
     }
@@ -974,7 +944,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.324 -0400", hash_original_method = "652A10B898FA76BB677D4E34679A7B5D", hash_generated_method = "987EBE7B07F0BFE0DA24DF93DF11B855")
     public void setOnPreparedListener(OnPreparedListener listener) {
         mOnPreparedListener = listener;
@@ -983,7 +952,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.325 -0400", hash_original_method = "6CC4251EDF834484FDBD6F0A122C65D9", hash_generated_method = "02AF5E76A57B14C22A8D31C1FD5DA3AF")
     public void setOnCompletionListener(OnCompletionListener listener) {
         mOnCompletionListener = listener;
@@ -992,7 +960,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.325 -0400", hash_original_method = "DDA62D9965B414E96A3CCD5D800217D1", hash_generated_method = "0C9AB338C3C684416FAC16C098DF00A6")
     public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener) {
         mOnBufferingUpdateListener = listener;
@@ -1001,7 +968,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.326 -0400", hash_original_method = "E6C283B9723E51C1AAC734ADC41F741F", hash_generated_method = "09F00DE120F67FA2E06D414F50C2147F")
     public void setOnSeekCompleteListener(OnSeekCompleteListener listener) {
         mOnSeekCompleteListener = listener;
@@ -1010,7 +976,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.326 -0400", hash_original_method = "8379FC1073131EA9347F12938BFC14C4", hash_generated_method = "136130265E2833871182C75F9CC3334A")
     public void setOnVideoSizeChangedListener(OnVideoSizeChangedListener listener) {
         mOnVideoSizeChangedListener = listener;
@@ -1019,7 +984,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.326 -0400", hash_original_method = "EF2D264E164B28DBC06EEC6D3EBE8B23", hash_generated_method = "D337EF32E4653756194FC2A4088DE668")
     public void setOnTimedTextListener(OnTimedTextListener listener) {
         mOnTimedTextListener = listener;
@@ -1028,7 +992,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.327 -0400", hash_original_method = "606EB06B64A07407B83CA5CBEBF309C3", hash_generated_method = "C60A0B1416D18FD751AE5692034CBEE5")
     public void setOnErrorListener(OnErrorListener listener) {
         mOnErrorListener = listener;
@@ -1037,7 +1000,6 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.327 -0400", hash_original_method = "4D9753A45AFF6F50F6DD9F2BE501A438", hash_generated_method = "CC22DF79C368D299CC0E0400ABB99A07")
     public void setOnInfoListener(OnInfoListener listener) {
         mOnInfoListener = listener;

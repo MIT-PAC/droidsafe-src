@@ -110,7 +110,6 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.505 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "B97A3DFBBA7A1A53C03E1DE808EC8EAB")
     @Override
     public ListAdapter getAdapter() {
@@ -122,7 +121,6 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_388333419 =         mAdapter;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.505 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "F411B04A9F1D200E30F181818B8C9DCB")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
@@ -807,7 +805,6 @@ View var7B839F21D0245BE275F8017F44DD4441_33947314 =         sel;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.522 -0400", hash_original_method = "3B93521E4F8B514C6E0E966E64E45808", hash_generated_method = "BBF1E790E1411C8D353BC548D7792598")
     private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
             int numColumns, int rowStart) {
@@ -832,7 +829,6 @@ View var7B839F21D0245BE275F8017F44DD4441_33947314 =         sel;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.522 -0400", hash_original_method = "D0A32123B024D3BD3B829FD608C467F8", hash_generated_method = "F76AF681FC47C642CA462F568BC24C95")
     private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int rowStart) {
         addTaint(rowStart);
@@ -998,7 +994,6 @@ View var7B839F21D0245BE275F8017F44DD4441_319328580 =         sel;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.529 -0400", hash_original_method = "971C7C8872B1F8EEBA5FB107FC6F8364", hash_generated_method = "9AFB77F8E43DA3E545973A6957607FBC")
     private boolean determineColumns(int availableSpace) {
         final int requestedHorizontalSpacing = mRequestedHorizontalSpacing;
@@ -1203,7 +1198,6 @@ for(int i = 0;i < count;i += numColumns)
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.540 -0400", hash_original_method = "22970971C8FD1FE9524617A911939C41", hash_generated_method = "ED0AD9F99E2F1D92620941BDA3C89DC2")
     @Override
     protected void layoutChildren() {
@@ -2188,7 +2182,6 @@ switch(direction){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.566 -0400", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "3DFB8D3A9DCB1D562F65DA53E3DD6C6E")
     public int getStretchMode() {
         int var6A66D00918859F42D851F505ADE6AA46_90784199 = (mStretchMode);
@@ -2229,7 +2222,6 @@ switch(direction){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.567 -0400", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "C4D0B59BEC82536518DAD640B4D7252D")
     @ViewDebug.ExportedProperty
     public int getNumColumns() {

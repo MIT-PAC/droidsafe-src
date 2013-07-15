@@ -231,7 +231,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.917 -0400", hash_original_method = "4D5D490C37798965D77553069E20CD07", hash_generated_method = "2493853BE4052E2639ABC612314A5661")
     public void dispose() {
         cm.unregisterForAvailable(this);
@@ -262,7 +261,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.917 -0400", hash_original_method = "BA9FDB49D0B6CB52D4E369B5C2B6B17A", hash_generated_method = "CB8D35497CBA6F6E8F83868D065A752E")
     @Override
     protected void finalize() {
@@ -273,7 +271,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.917 -0400", hash_original_method = "70290EDA16C74DFE014583BB384DB8B5", hash_generated_method = "6A333C90D495DEF77CBBFC0C9411AC0B")
     public void registerForSubscriptionInfoReady(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -295,7 +292,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.917 -0400", hash_original_method = "19125607721EAC24124C4D5516B60F75", hash_generated_method = "14EE06E3EBF3BFEF4D51121C72D9B227")
     public void unregisterForSubscriptionInfoReady(Handler h) {
         addTaint(h.getTaint());
@@ -543,7 +539,6 @@ switch(msg.what){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.923 -0400", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "526290512860B8A98B544DA0CC02B918")
     @Override
     protected Phone getPhone() {
@@ -555,7 +550,6 @@ Phone var3DF544D9611CD6A47CD50808F9E2E7D5_1374763753 =         phone;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.924 -0400", hash_original_method = "E924685B280F7636BB1194CB1DB8B328", hash_generated_method = "F22C14614B1CFF5C8AFC818FD3CB961A")
     protected void setCdmaTechnology(int radioTechnology) {
         mNewDataConnectionState = radioTechnologyToDataServiceState(radioTechnology);
@@ -733,7 +727,6 @@ switch(what){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.933 -0400", hash_original_method = "1B5F4BD94220D105FC0E737C13196363", hash_generated_method = "94C8ACB881E860FEC146A62277EBFD05")
     @Override
     protected void handlePollStateResult(int what, AsyncResult ar) {
@@ -850,7 +843,6 @@ switch(what){
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.933 -0400", hash_original_method = "6C8071E15167CEBD3E2C13FCDC5BEC69", hash_generated_method = "4F34229AB8DB2417A1A42514981ACCDB")
     protected void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, false);
@@ -902,7 +894,6 @@ switch(cm.getRadioState()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.935 -0400", hash_original_method = "E69BA838DECF1BB5E62D048E955B2CB0", hash_generated_method = "8C00B00E01FE05D5D8FC26D662199017")
     protected void fixTimeZone(String isoCountryCode) {
         addTaint(isoCountryCode.getTaint());
@@ -947,7 +938,6 @@ switch(cm.getRadioState()){
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.938 -0400", hash_original_method = "0FA304F04B86F76391D3D9DA6F1DEA62", hash_generated_method = "D45E0DE265A438DF68B81D30CBF5066C")
     protected void pollStateDone() {
     if(DBG)        
@@ -1103,7 +1093,6 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1900549472 =         guess;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.940 -0400", hash_original_method = "950DB35A634BB86898B3E74AA5BE6013", hash_generated_method = "8F7786E5CE0E64A06A2A178B4C699BB5")
     private TimeZone findTimeZone(int offset, boolean dst, long when) {
         addTaint(when);
@@ -1206,7 +1195,6 @@ TimeZone varA35CE51C1E6ED128CADF188DCC68AF4C_1056431546 =         guess;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.941 -0400", hash_original_method = "DF77DC7CB442AC6CF875159BD0FE26E0", hash_generated_method = "842C9378E7184799C9AC4AB3762BEFC9")
     protected int radioTechnologyToDataServiceState(int code) {
         addTaint(code);
@@ -1304,7 +1292,6 @@ switch(code){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.942 -0400", hash_original_method = "2F7466C178280C26D6BC47DE1AFB7432", hash_generated_method = "A3508C74D01AD527493BBF1E6548D5F4")
     public int getCurrentDataConnectionState() {
         int var2D1929376B7B92F1E40241332CED4F31_1062865549 = (mDataConnectionState);
@@ -1315,7 +1302,6 @@ switch(code){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.942 -0400", hash_original_method = "19036A7D1DADA943DC912DAB6396B9AD", hash_generated_method = "A1E2B4B0CB5BD0BB9FC81BAD840358D8")
     private boolean regCodeIsRoaming(int code) {
         addTaint(code);
@@ -1385,7 +1371,6 @@ for(String homeRoamInd : homeRoamIndicators.split(","))
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.945 -0400", hash_original_method = "7ADA939B474B339ADDF025B993055C9A", hash_generated_method = "74DF54FAC3F466D1D1702476D45BA8CA")
     private void setTimeFromNITZString(String nitz, long nitzReceiveTime) {
         addTaint(nitzReceiveTime);
@@ -1541,7 +1526,6 @@ for(String homeRoamInd : homeRoamIndicators.split(","))
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.946 -0400", hash_original_method = "606CF17A4D40300EAFFE0BD67B82E0B6", hash_generated_method = "B3BF031EDB3912300F88CCA423496BF2")
     private boolean getAutoTime() {
         try 
@@ -1565,7 +1549,6 @@ for(String homeRoamInd : homeRoamIndicators.split(","))
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.946 -0400", hash_original_method = "46A307C7AC0E208B22907DFB9CC04F45", hash_generated_method = "9ABDB6F2ED771071F0A90BBD83CD9E99")
     private boolean getAutoTimeZone() {
         try 
@@ -1589,7 +1572,6 @@ for(String homeRoamInd : homeRoamIndicators.split(","))
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.947 -0400", hash_original_method = "AC4D6B705E7065D39BD6B0621414F077", hash_generated_method = "89E6488BB9B703C7CA9BBABF73A30618")
     private void saveNitzTimeZone(String zoneId) {
         mSavedTimeZone = zoneId;
@@ -1689,7 +1671,6 @@ for(String homeRoamInd : homeRoamIndicators.split(","))
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.948 -0400", hash_original_method = "32C0C58A5E03F7E404DD21382316ACEF", hash_generated_method = "00E5F7FA7CBB4B3007B07D54F264D76E")
     protected boolean isSidsAllZeros() {
     if(mHomeSystemId != null)        
@@ -1719,7 +1700,6 @@ for(int i=0;i < mHomeSystemId.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.949 -0400", hash_original_method = "D3D57AE588662EF8725CB60FCA1C3072", hash_generated_method = "C0F8E21CAC70D3D7F9A50CB9AD76A47A")
     private boolean isHomeSid(int sid) {
         addTaint(sid);
@@ -1750,7 +1730,6 @@ for(int i=0;i < mHomeSystemId.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.949 -0400", hash_original_method = "5C4C41F870A905A307BF05376EE79383", hash_generated_method = "5DD547E56C3BC4E68B476358B6DC60A1")
     public boolean isConcurrentVoiceAndDataAllowed() {
         boolean var68934A3E9455FA72420237EB05902327_876026397 = (false);
@@ -1761,7 +1740,6 @@ for(int i=0;i < mHomeSystemId.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.949 -0400", hash_original_method = "A5028D79B927656E45CDFA536F16F5AB", hash_generated_method = "CBBA137F55E7EBC3974443B7184C3ED4")
     public String getMdnNumber() {
 String var393C1D26E06E9DFB5EBF371AB98AA875_1973736713 =         mMdn;
@@ -1772,7 +1750,6 @@ String var393C1D26E06E9DFB5EBF371AB98AA875_1973736713 =         mMdn;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.949 -0400", hash_original_method = "133C132C72A1734541959456CF27FF0A", hash_generated_method = "D2214C2BC11B01F44E19948FE7BE2D39")
     public String getCdmaMin() {
 String varFF498CE7DB7B276D58AE6690DD82E33E_1166023870 =         mMin;
@@ -1783,7 +1760,6 @@ String varFF498CE7DB7B276D58AE6690DD82E33E_1166023870 =         mMin;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.950 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "7FEFB42FD23E90EBA376458296EF301E")
     public String getPrlVersion() {
 String varF0DFA2A5AE60E78166448A9BF5899625_2016421635 =         mPrlVersion;
@@ -1794,7 +1770,6 @@ String varF0DFA2A5AE60E78166448A9BF5899625_2016421635 =         mPrlVersion;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.950 -0400", hash_original_method = "B26D3610EF4478BB5ED2ADA9EDE43E3B", hash_generated_method = "798B0F520F61702C0E9A010A3EA10880")
      String getImsi() {
         String operatorNumeric = SystemProperties.get(
@@ -1822,7 +1797,6 @@ String var540C13E9E156B687226421B24F2DF178_1196175801 =             null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.950 -0400", hash_original_method = "8F0255C2E086694196AF7CFC36B7EF43", hash_generated_method = "861343477511E475A9A16612A24D94C0")
     public boolean isMinInfoReady() {
         boolean varBA3526A29BD0203FBBE0C94BC5C3805A_1580919404 = (mIsMinInfoReady);
@@ -1879,7 +1853,6 @@ String var540C13E9E156B687226421B24F2DF178_1196175801 =             null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.951 -0400", hash_original_method = "99845E4FDDAE6236D8C7F396E4374533", hash_generated_method = "8E63CE6D461F9471D4482A19BF636C81")
     @Override
     protected void hangupAndPowerOff() {

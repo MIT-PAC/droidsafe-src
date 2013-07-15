@@ -55,7 +55,6 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.716 -0400", hash_original_method = "33812125B5F046930FB02168EEB43D40", hash_generated_method = "9C7A5EFDAC3CEEEECEF7E62B377CAF40")
     private int indexOfAttribute(String name) {
         addTaint(name.getTaint());
@@ -83,7 +82,6 @@ for(int i = 0;i < attributes.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.717 -0400", hash_original_method = "7BDB91D541F3C8F5E0B377A9C520D55B", hash_generated_method = "4B174CAB45B07D780BFFE3FDCF9203CB")
     private int indexOfAttributeNS(String namespaceURI, String localName) {
         addTaint(localName.getTaint());
@@ -114,7 +112,6 @@ for(int i = 0;i < attributes.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.717 -0400", hash_original_method = "813C4DD10F102D6D885192D956222478", hash_generated_method = "1EDAE909CA8C4C0650E700FB33481E8F")
     public String getAttribute(String name) {
         addTaint(name.getTaint());
@@ -137,7 +134,6 @@ String varB8B9307C4FA9D699C8FD1776B5AD3762_908319327 =         attr.getValue();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.718 -0400", hash_original_method = "2AD352ABD4B75CC40A48A87FB5C80EF1", hash_generated_method = "F2B71DCFE12B17AF7B98D5C208CF49B3")
     public String getAttributeNS(String namespaceURI, String localName) {
         addTaint(localName.getTaint());
@@ -161,7 +157,6 @@ String varB8B9307C4FA9D699C8FD1776B5AD3762_120416655 =         attr.getValue();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.718 -0400", hash_original_method = "83D3ED81624F77A7E713E4996ABE0363", hash_generated_method = "4160E80A31CCEB615F3080984A1FC6DE")
     public AttrImpl getAttributeNode(String name) {
         addTaint(name.getTaint());
@@ -184,7 +179,6 @@ AttrImpl var7C95605C4830717EBBBBB4182924624E_1453651806 =         attributes.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.718 -0400", hash_original_method = "3B62D6330977637E22606F97FB7DAA33", hash_generated_method = "42CE9548A422EDEA04ACC43F4E317089")
     public AttrImpl getAttributeNodeNS(String namespaceURI, String localName) {
         addTaint(localName.getTaint());
@@ -208,7 +202,6 @@ AttrImpl var7C95605C4830717EBBBBB4182924624E_1117415959 =         attributes.get
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.719 -0400", hash_original_method = "DB6D276ECDED2CB7A7381953F02FE1C2", hash_generated_method = "427B624F6E86E57D6ADA0A6D542E5A28")
     @Override
     public NamedNodeMap getAttributes() {
@@ -275,7 +268,6 @@ Element var540C13E9E156B687226421B24F2DF178_1266390920 =         null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.720 -0400", hash_original_method = "6E8835CC5AA6D9440E7C33D346671E0B", hash_generated_method = "83937B48267858B2E34341E7B1809460")
     public NodeList getElementsByTagName(String name) {
         addTaint(name.getTaint());
@@ -291,7 +283,6 @@ NodeList varDC838461EE2FA0CA4C9BBB70A15456B0_1746188215 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.720 -0400", hash_original_method = "A5BCB04504E6AD1A3895B6FBC1B390B7", hash_generated_method = "6AB34098414ED01DC8273640D2219BE7")
     public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
         addTaint(localName.getTaint());
@@ -308,7 +299,6 @@ NodeList varDC838461EE2FA0CA4C9BBB70A15456B0_2055768941 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.720 -0400", hash_original_method = "006A1593C2EDDFD80B5C8C9A0B08E49A", hash_generated_method = "6337FAC47C5BB55A0FD799A5FBAFDF18")
     @Override
     public String getLocalName() {
@@ -320,7 +310,6 @@ String var0C105CFCA4C038265B803794FAF25ADA_907724687 =         namespaceAware ? 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.721 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "444E10CCD2675D3BA6D00AD146302AB0")
     @Override
     public String getNamespaceURI() {
@@ -332,7 +321,6 @@ String varE1AD3DA9DA5C12A0140EFDB0C207D211_1016324923 =         namespaceURI;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.721 -0400", hash_original_method = "24A50BD0D938263A925A0CD0D8B09D61", hash_generated_method = "08E0009B292C7F5DD7203FB5F85CAA69")
     @Override
     public String getNodeName() {
@@ -344,7 +332,6 @@ String var0185ABA4FAF03BC080B20EB22D240587_1351663232 =         getTagName();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.721 -0400", hash_original_method = "8EDB6CFF77634EC46F3FE6E39D5C4072", hash_generated_method = "F7750029622D12C81C6351151DF7CB51")
     public short getNodeType() {
         short var849E6A4D821FC7EAD7B4F4E8E8D698B4_1847137427 = (Node.ELEMENT_NODE);
@@ -355,7 +342,6 @@ String var0185ABA4FAF03BC080B20EB22D240587_1351663232 =         getTagName();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.721 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "3BD580477FD3864B70341DC429DFDD8D")
     @Override
     public String getPrefix() {
@@ -367,7 +353,6 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1049008375 =         prefix;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.722 -0400", hash_original_method = "84D6D79E2DD8ACB2C7098589FE413C76", hash_generated_method = "969271D895ED3703274444EC1F608A46")
     public String getTagName() {
 String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
@@ -382,7 +367,6 @@ String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.722 -0400", hash_original_method = "6C8F2E9D9AC7653B36D8183C37FDC271", hash_generated_method = "490AB0BDE727CD1AD16EA0C85E5AF677")
     public boolean hasAttribute(String name) {
         addTaint(name.getTaint());
@@ -394,7 +378,6 @@ String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.722 -0400", hash_original_method = "A72242585FC8C818B78134FE05A6EE18", hash_generated_method = "7B788A26149527FBCE37760D1B98FA24")
     public boolean hasAttributeNS(String namespaceURI, String localName) {
         addTaint(localName.getTaint());
@@ -407,7 +390,6 @@ String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.723 -0400", hash_original_method = "F148456BA584CDD324D3AD480B7851B4", hash_generated_method = "887546AF5EF7462D5EAAF5340A3666ED")
     @Override
     public boolean hasAttributes() {
@@ -419,7 +401,6 @@ String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.723 -0400", hash_original_method = "8DBF320E88520709ECE3A3A8169ED4DA", hash_generated_method = "6AC75651C06A7E611407FDC0CDF4E6F6")
     public void removeAttribute(String name) throws DOMException {
         addTaint(name.getTaint());
@@ -436,7 +417,6 @@ String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.723 -0400", hash_original_method = "DB944C5E777E2AB6A4CA622A526DBBB8", hash_generated_method = "FEA79F59F34902D96B9DAA44A63C7EFE")
     public void removeAttributeNS(String namespaceURI, String localName) throws DOMException {
         addTaint(localName.getTaint());
@@ -454,7 +434,6 @@ String var9A4D264969BCDE86E704E715F3380D7F_1640343451 =         prefix != null
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.724 -0400", hash_original_method = "48A4F4D8663A7BAF5C33913CE98C9411", hash_generated_method = "06D9A1E706348B07EAE31454BB5CE12D")
     public Attr removeAttributeNode(Attr oldAttr) throws DOMException {
         addTaint(oldAttr.getTaint());
@@ -481,7 +460,6 @@ Attr var3775D3B1F75DA32B22BBB9002AEB7B4D_1278454176 =         oldAttrImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.724 -0400", hash_original_method = "6DCEAAD8535FDF367A6D4293F8DE36CE", hash_generated_method = "C8CD6756AAF26BF30CAA070A9FA26AE8")
     public void setAttribute(String name, String value) throws DOMException {
         addTaint(value.getTaint());
@@ -503,7 +481,6 @@ Attr var3775D3B1F75DA32B22BBB9002AEB7B4D_1278454176 =         oldAttrImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.725 -0400", hash_original_method = "F2270012ECC9DDE7A199A2B08906CDAC", hash_generated_method = "FBE6A15A6F88FF11A126D70F3D0F070F")
     public void setAttributeNS(String namespaceURI, String qualifiedName,
             String value) throws DOMException {
@@ -527,7 +504,6 @@ Attr var3775D3B1F75DA32B22BBB9002AEB7B4D_1278454176 =         oldAttrImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.726 -0400", hash_original_method = "2863AD660D70C60FE387E2DF61C003C1", hash_generated_method = "AB4538D09B96AFF221A5C3314F8E1519")
     public Attr setAttributeNode(Attr newAttr) throws DOMException {
         addTaint(newAttr.getTaint());
@@ -576,7 +552,6 @@ Attr var3775D3B1F75DA32B22BBB9002AEB7B4D_311723304 =         oldAttrImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.726 -0400", hash_original_method = "1229E8AF3668CCD52190CAB83AB0EAC8", hash_generated_method = "885DC14DA2449D7E43C86EA9F34A6F1F")
     public Attr setAttributeNodeNS(Attr newAttr) throws DOMException {
         addTaint(newAttr.getTaint());
@@ -625,7 +600,6 @@ Attr var3775D3B1F75DA32B22BBB9002AEB7B4D_1545324552 =         oldAttrImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.727 -0400", hash_original_method = "3E19055116AC2D87625766EB1DC83913", hash_generated_method = "756E644F22A977734EE8F4F9494CEE85")
     @Override
     public void setPrefix(String prefix) {
@@ -635,7 +609,6 @@ Attr var3775D3B1F75DA32B22BBB9002AEB7B4D_1545324552 =         oldAttrImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.727 -0400", hash_original_method = "C51D6ACA797563231B3A9D05774313B4", hash_generated_method = "B161CDFD33A79F24B7CAC24EF1B38EC1")
     public TypeInfo getSchemaTypeInfo() {
 TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO;
@@ -646,7 +619,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.728 -0400", hash_original_method = "E2D0D43F42925D6B235314ECDF3F88D2", hash_generated_method = "25DA0ED7751DC34DB8EFA3892F8C9CEA")
     public void setIdAttribute(String name, boolean isId) throws DOMException {
         addTaint(isId);
@@ -670,7 +642,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.728 -0400", hash_original_method = "EB4B24B3B95C74A915F87535C0F28019", hash_generated_method = "26064CB6E4268CA795ED1DEFA86AD653")
     public void setIdAttributeNS(String namespaceURI, String localName,
             boolean isId) throws DOMException {
@@ -696,7 +667,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.729 -0400", hash_original_method = "D45D107EAB7744EE0777BE918C2E0DD2", hash_generated_method = "533E2E2BBCC05C909A86114E31CA2FE5")
     public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException {
         addTaint(isId);
@@ -716,7 +686,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.729 -0400", hash_original_method = "FF1F71CDD63994FD93D39F9EA196EECF", hash_generated_method = "927E6F6C81F8DBB730453C212380FFAB")
         public int getLength() {
             int var2BA4DDA632844E61F1A45CEAA31A3058_1214875205 = (ElementImpl.this.attributes.size());
@@ -727,7 +696,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.729 -0400", hash_original_method = "DC316EFAFE6C9719F9A6712C7C0724A1", hash_generated_method = "38F2EE32AF6283E70D89E5A6460D3552")
         private int indexOfItem(String name) {
             addTaint(name.getTaint());
@@ -739,7 +707,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.730 -0400", hash_original_method = "258D65E063DA88D4950E14323AAE31E6", hash_generated_method = "DEA434E227F86C40E69CA4ACCCEAEE7F")
         private int indexOfItemNS(String namespaceURI, String localName) {
             addTaint(localName.getTaint());
@@ -752,7 +719,6 @@ TypeInfo varD8306E17977CA965B5A597153127CF99_1024512777 =         NULL_TYPE_INFO
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.730 -0400", hash_original_method = "5386255E2AB4AB2C7C1C9B01DBB08720", hash_generated_method = "D52B995D4FF976EB997E3DFB4A240260")
         public Node getNamedItem(String name) {
             addTaint(name.getTaint());
@@ -764,7 +730,6 @@ Node var9ADABF9109EA948045E3287DA63B2172_559698621 =             ElementImpl.thi
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.730 -0400", hash_original_method = "4A42E6CB38C61058D8EEC911A360EDF7", hash_generated_method = "7C43294F497C0FD4699567051222AACB")
         public Node getNamedItemNS(String namespaceURI, String localName) {
             addTaint(localName.getTaint());
@@ -777,7 +742,6 @@ Node varB35F758FF012FCC2266EB315BF242EEB_667936371 =             ElementImpl.thi
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.731 -0400", hash_original_method = "F60AE240A182D1B0B5E9071C74F61EEF", hash_generated_method = "2254DAC01C523A7AAC991C39709EFC44")
         public Node item(int index) {
             addTaint(index);
@@ -789,7 +753,6 @@ Node var6CCA2ADA67582134BC804BD1B87DB50C_1481364251 =             ElementImpl.th
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.731 -0400", hash_original_method = "92540DEE2EDFF119EB60FC0ECC313E2F", hash_generated_method = "80981433C1C676BB73F29FDC83B9A64A")
         public Node removeNamedItem(String name) throws DOMException {
             addTaint(name.getTaint());
@@ -812,7 +775,6 @@ Node var2AEFB529CCC2154CEF677927EA1DFE1E_1931956850 =             ElementImpl.th
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.732 -0400", hash_original_method = "5947BF939F7AE1F8A4D4CDE5B6951547", hash_generated_method = "70B5FF43A2226F12F0D4437F70D29B45")
         public Node removeNamedItemNS(String namespaceURI, String localName) throws DOMException {
             addTaint(localName.getTaint());
@@ -836,7 +798,6 @@ Node var2AEFB529CCC2154CEF677927EA1DFE1E_1973176 =             ElementImpl.this.
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.732 -0400", hash_original_method = "5D95624F12CAAE730B29BD47EADFC40A", hash_generated_method = "8E3F8A2C51B9BDF5B475110BCF174CB6")
         public Node setNamedItem(Node arg) throws DOMException {
             addTaint(arg.getTaint());
@@ -857,7 +818,6 @@ Node varDFB5B58B24EDFC6C7E746D19DE1542A0_412246717 =             ElementImpl.thi
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.732 -0400", hash_original_method = "74F8A255439FFDD82EF1D14936D16522", hash_generated_method = "F4546190C8B022D5027AD6897DFA8843")
         public Node setNamedItemNS(Node arg) throws DOMException {
             addTaint(arg.getTaint());

@@ -54,8 +54,7 @@ public class AttCertValidityPeriod extends ASN1Encodable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static AttCertValidityPeriod getInstance(
+        public static AttCertValidityPeriod getInstance(
             Object  obj) {
         if (obj instanceof AttCertValidityPeriod)
         {
@@ -69,7 +68,6 @@ public class AttCertValidityPeriod extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.923 -0400", hash_original_method = "61005B71BB5E250DAD749F45259F34BB", hash_generated_method = "A2AEBC7A259EF3C32EE902F932BA4BF1")
     public DERGeneralizedTime getNotBeforeTime() {
 DERGeneralizedTime varD79BF4F5D1C2BF1B626C250DDDC1BBBB_1204964520 =         notBeforeTime;
@@ -80,7 +78,6 @@ DERGeneralizedTime varD79BF4F5D1C2BF1B626C250DDDC1BBBB_1204964520 =         notB
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.923 -0400", hash_original_method = "3C0941D5D83A6A464C361337736D354A", hash_generated_method = "51896EDFECFCCECA583F289AED73B131")
     public DERGeneralizedTime getNotAfterTime() {
 DERGeneralizedTime varA4D5BDCFF20FBB2AB9CF4A743D5EF45E_1920694573 =         notAfterTime;
