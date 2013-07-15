@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
+import soot.BooleanType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -132,6 +133,8 @@ public class ResourcesSoot {
     /** member activity, prevent serialization from crashing when empty */
     private SootField  mActivityField;
     
+    private SootField  mConditionalField;
+    
     /** prebuilt reference for ViewClass */
     private SootClass  mViewClass;   
     
@@ -164,9 +167,14 @@ public class ResourcesSoot {
     //  mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
         Scene.v().addClass(mSootClass);
 
+        mConditionalField = new SootField("randomCond", BooleanType.v(),
+                                        Modifier.PUBLIC | Modifier.STATIC);
+        mSootClass.addField(mConditionalField);
+        
         mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), 
                                         Modifier.PUBLIC | Modifier.STATIC);
         mSootClass.addField(mActivityField);
+        
         mSootClass.setApplicationClass();
 
         mBaseClassList = new LinkedList<SootClass>();
@@ -192,6 +200,13 @@ public class ResourcesSoot {
                             "<android.view.View: void <init>(android.content.Context)>");
     }
 
+    /**
+     * get the conditional field
+     * @return
+     */
+    public SootField getConditionField() {
+    	return mConditionalField;
+    }
     /** 
      * get numericID -> string ID mapping 
      */

@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.BodyTransformer;
+import soot.BooleanType;
 import soot.Immediate;
 import soot.RefType;
 import soot.Type;
@@ -25,7 +26,10 @@ import soot.Value;
 import soot.ValueBox;
 
 import soot.jimple.AssignStmt;
+import soot.jimple.ConditionExpr;
+import soot.jimple.FieldRef;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -142,6 +146,15 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			    
 			    // variable argument getString(int resId, Object[])
 			    methodName = String.format("<%s: java.lang.String getString(int,java.lang.Object[])>",
+			                               className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getVarArgCharSequenceList.add(method);			    
+			    	logger.debug("getVarArgCharSequenceList: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			    methodName = String.format("<%s: java.lang.String getText(int,java.lang.Object[])>",
 			                               className);
 			    try {
 			    	SootMethod method = Scene.v().getMethod(methodName); 
@@ -332,7 +345,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		}
 		
 		
-		Object[] extractObjectArray(StmtBody stmtBody, Stmt stmt) {
+		/**
+		 * extract variable arguments used in this statement, and resolve string constants if possible
+		 * @param stmtBody
+		 * @param stmt
+		 * @return
+		 */
+		Object[] extractVariableArguments(StmtBody stmtBody, Stmt stmt) {
 			// get body's unit as a chain
 			Chain<Unit> units = stmtBody.getUnits();
 
@@ -479,7 +498,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			    assignToBox = defBoxList.get(0);
 			
 			if (assignToBox == null) {
-				logger.warn("assignTo is NULL ");
+				logger.warn("Cannot replace {} ", stmt);
 				return;
 			}
 			 
@@ -508,9 +527,9 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 			
 			InvokeExpr invokeExpr = stmt.getInvokeExpr();
-			logger.warn("invokeExpr args {} ", invokeExpr.getArgs());
+			logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
 			
-			Object[] paramList = extractObjectArray(stmtBody, stmt);
+			Object[] paramList = extractVariableArguments(stmtBody, stmt);
 			
 			if (paramList == null)
 				return;
@@ -519,7 +538,18 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			
 			Local localString = Jimple.v().newLocal(localStringName,  RefType.v("java.lang.String"));
 			stmtBody.getLocals().add(localString);
+			
+			Local localCond = Jimple.v().newLocal("localCond",  BooleanType.v());
+			stmtBody.getLocals().add(localCond);
+			
+			FieldRef fieldRef =  Jimple.v().newStaticFieldRef(
+										ResourcesSoot.v().getConditionField().makeRef());
+			units.insertBefore(Jimple.v().newAssignStmt(localCond, fieldRef), stmt); 
 
+			ConditionExpr condExpr = Jimple.v().newEqExpr(localCond, IntConstant.v(0));
+
+			Stmt afterStmt = (Stmt)units.getSuccOf(stmt);
+			
 			for (String stringValue: ResourcesSoot.v().getStringValues(intId)) {
 				String resolvedString = null;
 				try {
@@ -528,7 +558,12 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				catch(Exception ex) {
 					return;
 				}
-			
+				
+				// condition statement
+				//Stmt condStmt =  Jimple.v().newIfStmt(condExpr, stmt);
+				Stmt ifStmt = Jimple.v().newIfStmt(condExpr, afterStmt);
+				units.insertBefore(ifStmt, stmt);
+				
 				Stmt localAssign = Jimple.v().newAssignStmt(localString, StringConstant.v(resolvedString));
 				units.insertBefore(localAssign, stmt);
 			}
