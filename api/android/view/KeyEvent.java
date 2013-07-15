@@ -542,7 +542,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
-        public static int getMaxKeyCode() {
+        @DSModeled(DSC.SAFE)
+    public static int getMaxKeyCode() {
         return LAST_KEYCODE;
     }
 
@@ -830,12 +831,14 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
     }
 
     
-        public static int getModifierMetaStateMask() {
+        @DSModeled(DSC.SAFE)
+    public static int getModifierMetaStateMask() {
         return META_MODIFIER_MASK;
     }
 
     
-        public static boolean isModifierKey(int keyCode) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isModifierKey(int keyCode) {
         switch (keyCode) {
             case KEYCODE_SHIFT_LEFT:
             case KEYCODE_SHIFT_RIGHT:
@@ -855,7 +858,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
     }
 
     
-        public static int normalizeMetaState(int metaState) {
+        @DSModeled(DSC.SAFE)
+    public static int normalizeMetaState(int metaState) {
         if ((metaState & (META_SHIFT_LEFT_ON | META_SHIFT_RIGHT_ON)) != 0) {
             metaState |= META_SHIFT_ON;
         }
@@ -1483,6 +1487,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.187 -0400", hash_original_method = "7ECA2477AC40357C7C5AFE00DC4BDA17", hash_generated_method = "C892C45A2F5FA5DFB22BD8988A57177A")
     private boolean native_isSystemKey(int keyCode) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1230004241 = getTaintBoolean();
@@ -1490,6 +1495,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.187 -0400", hash_original_method = "B29C954784C1F1FDE17D757BB04FDB3D", hash_generated_method = "093D6C77B2907CD42765D8FFEC966010")
     private boolean native_hasDefaultAction(int keyCode) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377423987 = getTaintBoolean();
@@ -1528,6 +1534,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.188 -0400", hash_original_method = "7A446B7A655E4D7578F3AEB4F96BA0A4", hash_generated_method = "AF2A149108908E36CD546253E260073F")
         public void reset(Object target) {
             addTaint(target.getTaint());

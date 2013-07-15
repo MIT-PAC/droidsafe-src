@@ -157,6 +157,7 @@ CharSequence var0C8B2C9585EB05DD9CD70726CF8CBC07_824094641 =         data;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.390 -0400", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "CFF3194B9727F6348D8D2EF13AF1A858")
     public Drawable loadIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -237,6 +238,7 @@ Drawable varAC1ABD151EC02B2A0CF6C484334129EB_1054254554 =         ci.loadIcon(pm
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.391 -0400", hash_original_method = "64245509A5FC137877FB50AC88C4351E", hash_generated_method = "C6E4CCBF83B7AA29B4668FE8CE407623")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -277,6 +279,7 @@ Drawable varAC1ABD151EC02B2A0CF6C484334129EB_1054254554 =         ci.loadIcon(pm
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.416 -0400", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "56662A3833525C67E354069A486976B2")
     public String toString() {
         ComponentInfo ci = activityInfo != null ? activityInfo : serviceInfo;
@@ -295,6 +298,7 @@ String var2E81D21F4BB04749CB49DF2B60E0DD5F_43156326 =         "ResolveInfo{"
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.417 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EA118DF32A6B46BC25DFAADDACE8F957")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1654366279 = (0);
@@ -305,6 +309,7 @@ String var2E81D21F4BB04749CB49DF2B60E0DD5F_43156326 =         "ResolveInfo{"
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.417 -0400", hash_original_method = "C265C7C58C207232A576E6DBECFC3E71", hash_generated_method = "46CDDE1FEA46B227CC48ED7F8EC9B512")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

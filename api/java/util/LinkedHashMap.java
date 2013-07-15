@@ -64,6 +64,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.812 -0400", hash_original_method = "C3E8210D7C5926509287D8B7A9054888", hash_generated_method = "B6C5484F9803F011BF936D3E7CA26200")
     @Override
      void init() {
@@ -283,6 +284,7 @@ V var540C13E9E156B687226421B24F2DF178_1931909130 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.817 -0400", hash_original_method = "B1ADF7F2DAB1D611A8BB20D2E6FE8BE5", hash_generated_method = "236C33D1774C1D7CBB83343686FA6329")
     @Override
     public boolean containsValue(Object value) {
@@ -334,6 +336,7 @@ for(LinkedEntry<K, V> header = this.header, e = header.nxt;e != header;e = e.nxt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.818 -0400", hash_original_method = "F9D4D1514A1438141913ED2857BCCF60", hash_generated_method = "42D44FE5A2B11F5F7559D39007BEC865")
     public void clear() {
         super.clear();

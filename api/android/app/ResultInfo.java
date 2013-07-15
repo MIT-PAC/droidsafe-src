@@ -77,6 +77,7 @@ String var503AE12A5260321A6845A1C1B1307BB1_1384913567 =         "ResultInfo{who=
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.526 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2709E2E19357417E64DCB96B51C3C824")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2025508357 = (0);

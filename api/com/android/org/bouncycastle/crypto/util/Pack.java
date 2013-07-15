@@ -14,7 +14,8 @@ public abstract class Pack {
     }
 
 
-        public static int bigEndianToInt(byte[] bs, int off) {
+        @DSModeled(DSC.SAFE)
+    public static int bigEndianToInt(byte[] bs, int off) {
         int n = bs[  off] << 24;
         n |= (bs[++off] & 0xff) << 16;
         n |= (bs[++off] & 0xff) << 8;
@@ -23,7 +24,8 @@ public abstract class Pack {
     }
 
     
-        public static void intToBigEndian(int n, byte[] bs, int off) {
+        @DSModeled(DSC.SAFE)
+    public static void intToBigEndian(int n, byte[] bs, int off) {
         bs[  off] = (byte)(n >>> 24);
         bs[++off] = (byte)(n >>> 16);
         bs[++off] = (byte)(n >>>  8);
@@ -44,7 +46,8 @@ public abstract class Pack {
     }
 
     
-        public static int littleEndianToInt(byte[] bs, int off) {
+        @DSModeled(DSC.SAFE)
+    public static int littleEndianToInt(byte[] bs, int off) {
         int n = bs[  off];
         n |= (bs[++off] & 0xff) << 8;
         n |= (bs[++off] & 0xff) << 16;
@@ -53,7 +56,8 @@ public abstract class Pack {
     }
 
     
-        public static void intToLittleEndian(int n, byte[] bs, int off) {
+        @DSModeled(DSC.SAFE)
+    public static void intToLittleEndian(int n, byte[] bs, int off) {
         bs[  off] = (byte)(n       );
         bs[++off] = (byte)(n >>>  8);
         bs[++off] = (byte)(n >>> 16);

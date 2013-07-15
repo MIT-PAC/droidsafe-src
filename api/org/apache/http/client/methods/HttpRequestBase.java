@@ -58,6 +58,7 @@ ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_107137331 =         HttpProt
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.191 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "0F8512D9B387DDF993BE02D26632AEAA")
     public URI getURI() {
 URI varF8A43570A6D9CE873AAA24BBE28B6265_951100121 =         this.uri;
@@ -231,6 +232,7 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166 =         new BasicReq
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.197 -0400", hash_original_method = "2E6315A95F3ECC29CFD4A6E95CF920AD", hash_generated_method = "BE4678D6BB697E981FCF38DAFCB101CF")
     public boolean isAborted() {
         boolean var37D13E93374D4F6A174832DCC5E644B0_760959517 = (this.aborted);

@@ -21,14 +21,16 @@ public class Executors {
     }
 
     
-        public static ExecutorService newFixedThreadPool(int nThreads) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
                                       new LinkedBlockingQueue<Runnable>());
     }
 
     
-        public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
                                       new LinkedBlockingQueue<Runnable>(),
@@ -36,7 +38,8 @@ public class Executors {
     }
 
     
-        public static ExecutorService newSingleThreadExecutor() {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newSingleThreadExecutor() {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
@@ -44,7 +47,8 @@ public class Executors {
     }
 
     
-        public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
@@ -53,14 +57,16 @@ public class Executors {
     }
 
     
-        public static ExecutorService newCachedThreadPool() {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
                                       new SynchronousQueue<Runnable>());
     }
 
     
-        public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
                                       new SynchronousQueue<Runnable>(),
@@ -68,49 +74,57 @@ public class Executors {
     }
 
     
-        public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1));
     }
 
     
-        public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1, threadFactory));
     }
 
     
-        public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
         return new ScheduledThreadPoolExecutor(corePoolSize);
     }
 
     
-        public static ScheduledExecutorService newScheduledThreadPool(
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newScheduledThreadPool(
             int corePoolSize, ThreadFactory threadFactory) {
         return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
     }
 
     
-        public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
         return new DelegatedExecutorService(executor);
     }
 
     
-        public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
         return new DelegatedScheduledExecutorService(executor);
     }
 
     
-        public static ThreadFactory defaultThreadFactory() {
+        @DSModeled(DSC.SAFE)
+    public static ThreadFactory defaultThreadFactory() {
         return new DefaultThreadFactory();
     }
 
     
-        public static ThreadFactory privilegedThreadFactory() {
+        @DSModeled(DSC.SAFE)
+    public static ThreadFactory privilegedThreadFactory() {
         return new PrivilegedThreadFactory();
     }
 

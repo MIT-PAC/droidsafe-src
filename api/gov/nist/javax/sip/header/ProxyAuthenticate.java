@@ -16,6 +16,7 @@ public class ProxyAuthenticate extends AuthenticationHeader implements ProxyAuth
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.720 -0400", hash_original_method = "415F36F94D5D5AF0B0B417563353646C", hash_generated_method = "417BD0270A532E002C54EFBA45B92C6D")
     public URI getURI() {
 URI var540C13E9E156B687226421B24F2DF178_1206584000 =         null;
@@ -26,6 +27,7 @@ URI var540C13E9E156B687226421B24F2DF178_1206584000 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.720 -0400", hash_original_method = "4B2EBAFE6DAB8E15456CC1135D4262EB", hash_generated_method = "EFB37CFD85A05AB0A4932DBCB802E4F4")
     public void setURI(URI uri) {
         addTaint(uri.getTaint());

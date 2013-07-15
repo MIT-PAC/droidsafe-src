@@ -41,6 +41,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.779 -0400", hash_original_method = "A893C7A3BDAFD0F68044E15122EF7C46", hash_generated_method = "64C0F70A319F472D57B0208C83061342")
     public void set(int x, int y) {
         this.x = x;
@@ -83,6 +84,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.783 -0400", hash_original_method = "DE06142D9B61B02A43CEA21E14E7D027", hash_generated_method = "A31BE29A9D73BAABA390E486A78291B4")
     @Override
     public boolean equals(Object o) {
@@ -106,6 +108,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.784 -0400", hash_original_method = "2AEEE1632B8FF7FECD208FC610B72FB6", hash_generated_method = "06FF62C8AC066A7E77551B60EC76FBF9")
     @Override
     public int hashCode() {
@@ -117,6 +120,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.785 -0400", hash_original_method = "9F61E49C995FA3CEC66850F11B9A08CD", hash_generated_method = "C0C4D53CBA539BF050D4EE5AB7AD89AB")
     @Override
     public String toString() {
@@ -128,6 +132,7 @@ String var98609682F4790186030E21B56C8EB153_1300994217 =         "Point(" + x + "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.785 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8C678D5FD8F83EAED67CC19870EDCAA8")
     @Override
     public int describeContents() {
@@ -139,6 +144,7 @@ String var98609682F4790186030E21B56C8EB153_1300994217 =         "Point(" + x + "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.786 -0400", hash_original_method = "54E86A99E3577FA18F65ED6CED3821E9", hash_generated_method = "CFE12704CF49C064749C9253D6CC0898")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -152,6 +158,7 @@ String var98609682F4790186030E21B56C8EB153_1300994217 =         "Point(" + x + "
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.786 -0400", hash_original_method = "AD1ECB5F4974F92B096BCFEAE556C331", hash_generated_method = "7D18C675822037ED05AF6717B3061A57")
     public void readFromParcel(Parcel in) {
         x = in.readInt();

@@ -185,6 +185,7 @@ String var2460B846747F8B22185AD8BE722266A5_44165301 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.822 -0400", hash_original_method = "36728FD5FCF430F65422B3FEF52D0F76", hash_generated_method = "D6F6F3EF499FD012AAB7B77E923846FB")
     public boolean canHandleType(String type) {
         addTaint(type.getTaint());

@@ -57,6 +57,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.681 -0400", hash_original_method = "35E10192FDDDDD39EA519306C2BA1E53", hash_generated_method = "9C747E5585DF5F4FE9454B1E4C4E9226")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -98,6 +99,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.682 -0400", hash_original_method = "289E4B14FC4BAEE8FBED5C03A1D9B634", hash_generated_method = "41CEDEB5E33EFE6B1A6A0CCC10DBF093")
     public void invalidateDrawable(Drawable who) {
         addTaint(who.getTaint());
@@ -114,6 +116,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.683 -0400", hash_original_method = "A01CAF97CFFAA14450A9600E14E88C8D", hash_generated_method = "7093C805993ACF54047727682755EE99")
     public void scheduleDrawable(Drawable who, Runnable what, long when) {
         addTaint(when);
@@ -132,6 +135,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.686 -0400", hash_original_method = "CA144C86313E3C1A3DC044F014305D8E", hash_generated_method = "FFEE17E462526EA539C05FAA6C36C1E2")
     public void unscheduleDrawable(Drawable who, Runnable what) {
         addTaint(what.getTaint());
@@ -149,6 +153,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.686 -0400", hash_original_method = "67F829CCE512EF7E67F091FC7A5204DA", hash_generated_method = "EA924C9431A8D1450120AEABE26176ED")
     @Override
     public int getChangingConfigurations() {
@@ -164,6 +169,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.687 -0400", hash_original_method = "EBC5879EAC2AD881F46A140E8365AA28", hash_generated_method = "42C91072C4B8C06D2986A2A148C11CCD")
     @Override
     public boolean getPadding(Rect padding) {
@@ -176,6 +182,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.688 -0400", hash_original_method = "BCB1CA235EA7FE91BD623275B8F06E4E", hash_generated_method = "A3BFA1EB9B440A32C0A1935F4356B671")
     @Override
     public boolean setVisible(boolean visible, boolean restart) {
@@ -191,6 +198,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.688 -0400", hash_original_method = "8A8063C7E15313BD8D8740621EFCD055", hash_generated_method = "C6BBD33AE4A4514B1B19A4C0444D6170")
     @Override
     public void setAlpha(int alpha) {
@@ -201,6 +209,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.689 -0400", hash_original_method = "4805CD50FD09C28529E6873146205090", hash_generated_method = "A4F877D61DCA0564CAD93E05E9184794")
     @Override
     public void setColorFilter(ColorFilter cf) {
@@ -211,6 +220,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.689 -0400", hash_original_method = "D50D875832F26A4F5A2E593F0458B980", hash_generated_method = "31497C7B96EFF506BF9425F665221436")
     @Override
     public int getOpacity() {
@@ -222,6 +232,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.690 -0400", hash_original_method = "A8A44DACBEBFA3295CF5300D7DD6141E", hash_generated_method = "494DA4B2705A8D7247299E9FFD0FE61E")
     @Override
     public boolean isStateful() {
@@ -233,6 +244,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.691 -0400", hash_original_method = "F2335EB963F31FC1C9D5098F086ABEDC", hash_generated_method = "96A4783BE6D1A7B7A7A059170BA27020")
     @Override
     protected boolean onStateChange(int[] state) {
@@ -246,6 +258,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.692 -0400", hash_original_method = "205025D2BBBB226C56B3B5E3828C12A2", hash_generated_method = "A5CB2B2FC087A54281F0F5AA4697EE50")
     @Override
     protected boolean onLevelChange(int level) {
@@ -263,6 +276,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.693 -0400", hash_original_method = "3381996765F462751820E570B6825F64", hash_generated_method = "37A1FA29FAAC696B6A2A4E30BF85A824")
     @Override
     protected void onBoundsChange(Rect bounds) {
@@ -274,6 +288,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.694 -0400", hash_original_method = "0FB9453D484502FB8FF0BB7F530F2AA8", hash_generated_method = "7ADF341AFC565D079D0B2D1346E1C92D")
     @Override
     public void draw(Canvas canvas) {
@@ -311,6 +326,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.695 -0400", hash_original_method = "042D8C5B60AD594AE3EBCE13D95C97E6", hash_generated_method = "36F52641D2C53A6D61820BCC32D335CE")
     @Override
     public int getIntrinsicWidth() {
@@ -322,6 +338,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.695 -0400", hash_original_method = "2200041BC151EB15073098E0A2FD1970", hash_generated_method = "022276BA3BBCF3E6AF98F86FAFE1E65B")
     @Override
     public int getIntrinsicHeight() {
@@ -333,6 +350,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.695 -0400", hash_original_method = "80C96E88400AA50FF8906D46C3CD5A6C", hash_generated_method = "0B38EE3525861FC78C39241964D9F000")
     @Override
     public ConstantState getConstantState() {
@@ -431,6 +449,7 @@ Drawable varD81A884AF21461479E81269050DAF7A2_1922971291 =             new ClipDr
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.698 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "68E1FC4B55448DCAE6F8874429A612B2")
         @Override
         public int getChangingConfigurations() {

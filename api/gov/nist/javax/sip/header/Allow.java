@@ -27,6 +27,7 @@ public final class Allow extends SIPHeader implements javax.sip.header.AllowHead
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.736 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "36F74D61CC6A8E6B25845DC30FFE574B")
     public String getMethod() {
 String var27E3C5B2D4A798771E5F53D6527EECD0_2107782951 =         method;
@@ -37,6 +38,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_2107782951 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.737 -0400", hash_original_method = "78C1F544F0B2D71B62F1C06FF7335973", hash_generated_method = "859DE418AD3C1706A2C9171594A1C10E")
     public void setMethod(String method) throws ParseException {
     if(method == null)        
@@ -57,6 +59,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_2107782951 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.738 -0400", hash_original_method = "48A673DBBFEBFCB1D74A4ACDDDC3C6AB", hash_generated_method = "F72FFAF9B6911605CD63BA10408842B2")
     protected String encodeBody() {
 String var27E3C5B2D4A798771E5F53D6527EECD0_1466496406 =         method;

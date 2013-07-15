@@ -116,6 +116,7 @@ String var2460B846747F8B22185AD8BE722266A5_259545228 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.282 -0400", hash_original_method = "1DD335886100A2D5B4563E7A7FCB1E25", hash_generated_method = "93AA46C01012055B3F5E59B0B8F94448")
     public void clear() {
         numAuthExceptions = 0;
@@ -140,6 +141,7 @@ String var2460B846747F8B22185AD8BE722266A5_259545228 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.282 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6B7D43EA95FD703D4CB299AEE2AE03A2")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_970050077 = (0);

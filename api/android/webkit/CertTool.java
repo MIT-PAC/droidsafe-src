@@ -24,12 +24,14 @@ final class CertTool {
     }
 
     
-        static String[] getKeyStrengthList() {
+        @DSModeled(DSC.SAFE)
+    static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }
 
     
-        static String getSignedPublicKey(Context context, int index, String challenge) {
+        @DSModeled(DSC.SPEC)
+    static String getSignedPublicKey(Context context, int index, String challenge) {
         try {
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
             generator.initialize((index == 0) ? 2048 : 1024);

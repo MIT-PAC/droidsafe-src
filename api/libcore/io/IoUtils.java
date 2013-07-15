@@ -51,7 +51,8 @@ public final class IoUtils {
     }
 
     
-        public static void closeQuietly(Socket socket) {
+        @DSModeled(DSC.SPEC)
+    public static void closeQuietly(Socket socket) {
         if (socket != null) {
             try {
                 socket.close();
@@ -81,7 +82,8 @@ public final class IoUtils {
     }
 
     
-        public static String readFileAsString(String path) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static String readFileAsString(String path) throws IOException {
         return readFileAsBytes(path).toString(Charsets.UTF_8);
     }
 
@@ -105,7 +107,8 @@ public final class IoUtils {
     }
 
     
-        public static void deleteContents(File dir) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void deleteContents(File dir) throws IOException {
         File[] files = dir.listFiles();
         if (files == null) {
             throw new IllegalArgumentException("not a directory: " + dir);

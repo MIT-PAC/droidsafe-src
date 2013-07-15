@@ -102,6 +102,7 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469 =         getString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.264 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "8A47B53D35D0F399E220CC23C856115D")
     public byte[] getOctets() {
         byte[] varB45CFFE084DD3D20D928BEE85E7B0F21_1105875028 = (string);

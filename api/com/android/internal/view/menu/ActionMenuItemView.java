@@ -111,6 +111,7 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.834 -0400", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "66831D9BECC77227F873F24ECBF9B87A")
     public MenuItemImpl getItemData() {
 MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
@@ -169,6 +170,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.836 -0400", hash_original_method = "D4B10D907261C4745939FD5942191820", hash_generated_method = "270FC8FDA3818D246FF2F1F090AA616A")
     public void setItemInvoker(MenuBuilder.ItemInvoker invoker) {
         mItemInvoker = invoker;
@@ -177,6 +179,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.836 -0400", hash_original_method = "A2F62AB27113ADE9EE493677370BEC6F", hash_generated_method = "188E8EA5571D5FA9518D4DAC93FEBF12")
     public boolean prefersCondensedTitle() {
         boolean varB326B5062B2F0E69046810717534CB09_74906016 = (true);
@@ -187,6 +190,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.836 -0400", hash_original_method = "206C9D092F8D2CE8A945E1A45B818CB4", hash_generated_method = "BA66FBB494F3C28FF06B59EB6EC283AE")
     public void setCheckable(boolean checkable) {
         addTaint(checkable);
@@ -194,6 +198,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.837 -0400", hash_original_method = "98D5E38367DB01B2323D3E891737183A", hash_generated_method = "E13CE4DF4F9AB654448A696784A01853")
     public void setChecked(boolean checked) {
         addTaint(checked);
@@ -269,6 +274,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.838 -0400", hash_original_method = "85A41D343B47A7443CFB0CEF90E94BCA", hash_generated_method = "C06B8F35FB567A3ECE4C1BBF2E09D77F")
     public void setShortcut(boolean showShortcut, char shortcutKey) {
         addTaint(shortcutKey);
@@ -325,6 +331,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.840 -0400", hash_original_method = "757AA99E9D5B690C1E0FFF7AC4DD062B", hash_generated_method = "8C4D4F714439204998B90E240268240E")
     @Override
     public boolean dispatchHoverEvent(MotionEvent event) {
@@ -337,6 +344,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.840 -0400", hash_original_method = "C76AE16CD3DCE07A39A065D6C2B5EB3F", hash_generated_method = "D2B4C97F4956BA74F44115090A195250")
     public boolean showsIcon() {
         boolean varB326B5062B2F0E69046810717534CB09_1866958669 = (true);
@@ -367,6 +375,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1920329424 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.841 -0400", hash_original_method = "10936D3B137771DD6A653DC8F3F943BC", hash_generated_method = "E9F0D0A4D2FB0696BE6B3D0BC3388523")
     @Override
     public boolean onLongClick(View v) {

@@ -39,6 +39,7 @@ public class Base64Encoder implements Encoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.498 -0400", hash_original_method = "21DA0B3C66110012AEC4B0EF8A985DB1", hash_generated_method = "0AC011AA0E77EEFDD36DBDA6E3F424E5")
     protected void initialiseDecodingTable() {
 for(int i = 0;i < encodingTable.length;i++)
@@ -53,6 +54,7 @@ for(int i = 0;i < encodingTable.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.500 -0400", hash_original_method = "9CA1F48AAB7841E0E0CBD16E0BA7D360", hash_generated_method = "76D54AAFEC5B08FC17D83035834EC381")
     public int encode(
         byte[]                data,
@@ -114,6 +116,7 @@ switch(modulus){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.501 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "928FEEC3F4E9F57E02AE5B20005A8F16")
     private boolean ignore(
         char    c) {
@@ -201,6 +204,7 @@ switch(modulus){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.507 -0400", hash_original_method = "304E01512ABEE5D32E29AD105C8F9759", hash_generated_method = "363721EB151E60B8DDE5860EBEF8D7AB")
     public int decode(
         String          data,

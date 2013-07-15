@@ -42,6 +42,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.845 -0400", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "244E0BC75CFF5850A8C23113EBC345ED")
     public int getMode() {
         int varC5AB706852158521E9D44BF62A49B1C9_1823317999 = (mMode);
@@ -76,6 +77,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.846 -0400", hash_original_method = "49E777EBA85E577A92F07DB5E1A4FF69", hash_generated_method = "506A37E6792F21E53D3F6FDBE4ED0F16")
     private void nativeSetMode(int mode) {
     }
@@ -122,6 +124,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.849 -0400", hash_original_method = "779FC85A590DA71DFFB7AE3A48802754", hash_generated_method = "649CA0A7A04D96E68294E9EEAD7DE3F3")
     private void nativeAdd(int mode, int socket, String remoteAddress,
             int remotePort, String codecSpec, int dtmfType) {
@@ -144,6 +147,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.851 -0400", hash_original_method = "B9A11772A106AE9307E1900F5171D964", hash_generated_method = "FB353169F1C9BF8BEE1773EEEE62E147")
     private void nativeRemove(int socket) {
     }
@@ -172,6 +176,7 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.852 -0400", hash_original_method = "679235D0DC30313046A01D4FDDB17DEF", hash_generated_method = "941DDD9A7FDB872AD700C070C8E036BF")
     private void nativeSendDtmf(int event) {
     }

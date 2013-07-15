@@ -103,6 +103,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.377 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DA42183997582C83BEBF40D28AEFC922")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1660030436 = (0);
@@ -113,6 +114,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.377 -0400", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "5541DD5628A3AA4FBACFBF0FC93B0330")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

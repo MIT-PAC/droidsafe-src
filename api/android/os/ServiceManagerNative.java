@@ -100,6 +100,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.588 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "909DA47A6E93E26B8C8B4AAA4CF9E502")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1204088105 =         this;
@@ -125,6 +126,7 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.589 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "65C7437968AD34D5AE269BE3E5F8247B")
     public IBinder asBinder() {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_1238041937 =         mRemote;

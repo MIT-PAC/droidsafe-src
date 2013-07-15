@@ -191,7 +191,8 @@ public class CipherSuite {
     }
 
     
-        private static int registerCipherSuitesByCode(CipherSuite[] cipherSuites) {
+        @DSModeled(DSC.SAFE)
+    private static int registerCipherSuitesByCode(CipherSuite[] cipherSuites) {
         int count = 0;
         for (int i = 0; i < cipherSuites.length; i++) {
             if (cipherSuites[i] == SSL_NULL_WITH_NULL_NULL) {
@@ -209,7 +210,8 @@ public class CipherSuite {
     }
 
     
-        private static void registerSupportedCipherSuites(int offset, CipherSuite[] cipherSuites) {
+        @DSModeled(DSC.SAFE)
+    private static void registerSupportedCipherSuites(int offset, CipherSuite[] cipherSuites) {
         int count = offset;
         for (int i = 0; i < cipherSuites.length; i++) {
             if (cipherSuites[i] == SSL_NULL_WITH_NULL_NULL) {
@@ -257,7 +259,8 @@ public class CipherSuite {
     }
 
     
-        private static CipherSuite getCipherSuiteByCode(int i1, int i2, int i3) {
+        @DSModeled(DSC.SAFE)
+    private static CipherSuite getCipherSuiteByCode(int i1, int i2, int i3) {
         CipherSuite[] cipherSuites;
         if (i1 == 0x00 && i2 == 0x00) {
             cipherSuites = SUITES_BY_CODE_0x00;
@@ -273,6 +276,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.125 -0400", hash_original_method = "92638E1F733B540A4060D31FD00C2E43", hash_generated_method = "8F80C68A54174AC612EF7155975672A1")
     public boolean isAnonymous() {
     if(keyExchange == KEY_EXCHANGE_DH_anon
@@ -296,7 +300,8 @@ public class CipherSuite {
     }
 
     
-        public static CipherSuite[] getSupported() {
+        @DSModeled(DSC.SAFE)
+    public static CipherSuite[] getSupported() {
         return SUPPORTED_CIPHER_SUITES;
     }
 
@@ -306,6 +311,7 @@ public class CipherSuite {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.126 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "399365375F6DE60D49A8D17C095CA6F6")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1878042539 =         name;
@@ -316,6 +322,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1878042539 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.127 -0400", hash_original_method = "914B5E2C4522C674B906D3A88195AF81", hash_generated_method = "89A520770A2198F3F33004E4EB619BB8")
     public byte[] toBytes() {
         byte[] var3FC21B7AC372D5999F431A9049C44F9D_1917238786 = (cipherSuiteCode);
@@ -326,6 +333,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1878042539 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.127 -0400", hash_original_method = "D4E6F2D9338FE775902AE34CF280ED17", hash_generated_method = "5C1ABC74E400FC5EA8ED8B9AF81EECA4")
     @Override
     public String toString() {
@@ -337,6 +345,7 @@ String var4E1F32AEE54BBA17B3F944ADD10671F4_332660241 =         name + ": " + cip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.127 -0400", hash_original_method = "7D208669D7EDDA60D0FD344147D9AAD6", hash_generated_method = "617356012E10A9D6B66791197A63648B")
     public String getBulkEncryptionAlgorithm() {
 String varD43E2A2D54D505FAC5EDABD188F987F8_604333924 =         cipherName;
@@ -347,6 +356,7 @@ String varD43E2A2D54D505FAC5EDABD188F987F8_604333924 =         cipherName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.127 -0400", hash_original_method = "E03DB665D968D86F8F6FEC0B3CE97B35", hash_generated_method = "146D2B049452CA1660067CEF0603A12B")
     public int getBlockSize() {
         int var480D1B61A0432D1319F7504A3D7318DD_1208427254 = (blockSize);
@@ -357,6 +367,7 @@ String varD43E2A2D54D505FAC5EDABD188F987F8_604333924 =         cipherName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.128 -0400", hash_original_method = "58CBEDAB9C64FBF2F046D83798145AD9", hash_generated_method = "73E4AFA571D69D068A684C95C8C54A5F")
     public String getHmacName() {
 String var8E296DCACE90EF558D99060A95FCE057_1434569014 =         hmacName;
@@ -367,6 +378,7 @@ String var8E296DCACE90EF558D99060A95FCE057_1434569014 =         hmacName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.128 -0400", hash_original_method = "D391A3C678BDD6A89326831F4F051E38", hash_generated_method = "72FE44FAD67B82348D96558AA1804E4B")
     public String getHashName() {
 String var532B354B099E2E3FA7C4A781CD40B9A2_2030098570 =         hashName;
@@ -377,6 +389,7 @@ String var532B354B099E2E3FA7C4A781CD40B9A2_2030098570 =         hashName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.128 -0400", hash_original_method = "5CA4B8D3CBACCFD69EE0CC1B72A2F92B", hash_generated_method = "32454A4E9035A95A5A9DAF1F9E420845")
     public int getMACLength() {
         int var17344FAD2A9882D4E6795004CF283C78_1637695713 = (hashSize);
@@ -387,6 +400,7 @@ String var532B354B099E2E3FA7C4A781CD40B9A2_2030098570 =         hashName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.129 -0400", hash_original_method = "3DD67552ED8C1FF65B79535A2E5F00F8", hash_generated_method = "13AE3A9842154B4278114A8E842824A0")
     public boolean isExportable() {
         boolean var32EC2D0C46903E7857469CC8DA8E01DF_1449240967 = (isExportable);
@@ -438,7 +452,8 @@ String var540C13E9E156B687226421B24F2DF178_183170952 =         null;
     }
 
     
-        public static String getClientKeyType(byte keyType) {
+        @DSModeled(DSC.SAFE)
+    public static String getClientKeyType(byte keyType) {
         switch (keyType) {
             case TLS_CT_RSA_SIGN:
                 return KEY_TYPE_RSA; 

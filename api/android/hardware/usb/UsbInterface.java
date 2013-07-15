@@ -42,6 +42,7 @@ public class UsbInterface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.937 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "35DCE1202F840C39E3175385D2F2FC9C")
     public int getId() {
         int var6AC7F06B6413A1BE9C136DC7DF0D2B60_549159475 = (mId);
@@ -52,6 +53,7 @@ public class UsbInterface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.937 -0400", hash_original_method = "3020C5CBFA8B36FE57B171E2A093C23C", hash_generated_method = "1F8508C2F4EB7F63D322EB2F08EF772A")
     public int getInterfaceClass() {
         int var3C06167D41E761EA62261D0BFD22DD5C_1284629420 = (mClass);
@@ -62,6 +64,7 @@ public class UsbInterface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.938 -0400", hash_original_method = "7088B4DB86E16F91D699838E45BCCE2E", hash_generated_method = "9869F0B67E84E917363228594E59E701")
     public int getInterfaceSubclass() {
         int varA9A6C203C9D6DBFDB68228B9097B885C_1292122227 = (mSubclass);
@@ -72,6 +75,7 @@ public class UsbInterface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.938 -0400", hash_original_method = "095D314DB549CF9B46225B9A82ECAABC", hash_generated_method = "83B902D7C1BAC7E6BDE1170013FFD3BE")
     public int getInterfaceProtocol() {
         int var9EA70B4691A5C944EE5FCEFBDDAC80E7_750757715 = (mProtocol);
@@ -82,6 +86,7 @@ public class UsbInterface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.938 -0400", hash_original_method = "B83541EC17993A78C7733C982BB94257", hash_generated_method = "371BDC2412CB5A6B6B2C25D37516507A")
     public int getEndpointCount() {
         int var87FFD3733DF9207D981FE58BA941876A_404429375 = (mEndpoints.length);
@@ -92,6 +97,7 @@ public class UsbInterface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.939 -0400", hash_original_method = "10BF694D0DC13FB211A1D4B783AFDCB8", hash_generated_method = "9DE64B69D672593611DB662A80757EB6")
     public UsbEndpoint getEndpoint(int index) {
         addTaint(index);
@@ -118,6 +124,7 @@ String var03783B3D2CD3446423B1AFCBB32FF247_1988905852 =         "UsbInterface[mI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.940 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A6589745D44952168240D55D44836531")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1114104227 = (0);

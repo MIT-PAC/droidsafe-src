@@ -38,7 +38,8 @@ public class Environment {
     }
 
     
-        public static File getRootDirectory() {
+        @DSModeled(DSC.SAFE)
+    public static File getRootDirectory() {
         return ROOT_DIRECTORY;
     }
 
@@ -66,12 +67,14 @@ public class Environment {
     }
 
     
-        public static File getDataDirectory() {
+        @DSModeled(DSC.SAFE)
+    public static File getDataDirectory() {
         return DATA_DIRECTORY;
     }
 
     
-        public static File getExternalStorageDirectory() {
+        @DSModeled(DSC.SAFE)
+    public static File getExternalStorageDirectory() {
         return EXTERNAL_STORAGE_DIRECTORY;
     }
 
@@ -81,7 +84,8 @@ public class Environment {
     }
 
     
-        public static File getExternalStorageAndroidDataDir() {
+        @DSModeled(DSC.SAFE)
+    public static File getExternalStorageAndroidDataDir() {
         return EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY;
     }
 
@@ -113,7 +117,8 @@ public class Environment {
     }
 
     
-        public static File getDownloadCacheDirectory() {
+        @DSModeled(DSC.SAFE)
+    public static File getDownloadCacheDirectory() {
         return DOWNLOAD_CACHE_DIRECTORY;
     }
 

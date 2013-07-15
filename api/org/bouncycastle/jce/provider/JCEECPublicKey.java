@@ -252,6 +252,7 @@ ECParameterSpec var8C65F275FF8FF83A477F44D642732DE2_528758807 =         new ECPa
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.661 -0400", hash_original_method = "04369E0AD06428BC33AE0A89BD867221", hash_generated_method = "0831EB7941687E56C16DB6DB7DA4DFB1")
     private void populateFromPubKeyInfo(SubjectPublicKeyInfo info) {
         addTaint(info.getTaint());
@@ -322,6 +323,7 @@ ECParameterSpec var8C65F275FF8FF83A477F44D642732DE2_528758807 =         new ECPa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.662 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "91E3B371183A9DE802383F20F4238CCB")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1955553569 =         algorithm;
@@ -332,6 +334,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_1955553569 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.662 -0400", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "29D8E31D367C417ED8D5A40D461E4362")
     public String getFormat() {
 String varF820115C876B7F160DE375988A3E1CA1_653130863 =         "X.509";
@@ -416,6 +419,7 @@ for(int i = 0;i != 32;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.664 -0400", hash_original_method = "F5E9634D462D35EA798E6B23EBFE4406", hash_generated_method = "F44EF27B339626CE4A1B0B4288426116")
     public ECParameterSpec getParams() {
 ECParameterSpec var2050BD22F02FAF79E0E50E99F724B032_2045543333 =         ecSpec;
@@ -446,6 +450,7 @@ org.bouncycastle.jce.spec.ECParameterSpec var50F76CD4865FC2697FA8B52025D95BD0_28
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.665 -0400", hash_original_method = "FA9E01D5B24E77318273BFF81F13FFEE", hash_generated_method = "7465D659EA5019735F99CBC64A5E7535")
     public ECPoint getW() {
 ECPoint varAC1ED615D9C1C7CE6EB4F0B7D3687588_557535968 =         new ECPoint(q.getX().toBigInteger(), q.getY().toBigInteger());
@@ -492,6 +497,7 @@ org.bouncycastle.math.ec.ECPoint varBEF1B7662E10AF6D5747729987514CB6_665005716 =
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.665 -0400", hash_original_method = "08945EEACB289647DD0EEBD7F3D2712E", hash_generated_method = "3A4A59E4CC035732665E060B11351844")
     public org.bouncycastle.math.ec.ECPoint engineGetQ() {
 org.bouncycastle.math.ec.ECPoint varBEF1B7662E10AF6D5747729987514CB6_605569573 =         q;
@@ -522,6 +528,7 @@ org.bouncycastle.jce.spec.ECParameterSpec var24C37D3B3F7EADB894890AFBF82C4655_18
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.666 -0400", hash_original_method = "DA24BA2CA85DFA6FE167BE0F082D0E3F", hash_generated_method = "440796CAF0E07B1174B53036B8A6EB4D")
     public String toString() {
         StringBuffer buf = new StringBuffer();
@@ -550,6 +557,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.667 -0400", hash_original_method = "D60F50DFADDF83A04F7A401D33CE399D", hash_generated_method = "5B38B8366E6481BCB5E8753990F2F11F")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -573,6 +581,7 @@ String var4FC680801218E6372BC708D6FA44AE60_947856697 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.667 -0400", hash_original_method = "218BA141B3E48ED89E83DD04DDAC204C", hash_generated_method = "5A9394344987178F6EF97CD67E12AA58")
     public int hashCode() {
         int varE96486F0260DE6367039D0E23462B514_1414124825 = (engineGetQ().hashCode() ^ engineGetSpec().hashCode());

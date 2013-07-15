@@ -93,6 +93,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.805 -0400", hash_original_method = "D1F4FC32E5186C24AE3390A47EF5E437", hash_generated_method = "CF81A1C669460918C76387BC42D2377A")
     @Override
     public void clear() {
@@ -102,6 +103,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.805 -0400", hash_original_method = "BDDE8348BEC59AA11A27D7FE3ECB76D9", hash_generated_method = "A401B57B6B54FD7232EE62C432E460DC")
     @SuppressWarnings("unchecked")
     @Override
@@ -154,6 +156,7 @@ Comparator<? super E> var0DBA3D9CD77859DED745A0BFA4F2ACEF_1623227004 =         b
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.806 -0400", hash_original_method = "AD711C882942D0735888BB68CE9E534B", hash_generated_method = "1E60747369B3E57CAED1D73121A6F030")
     @Override
     public boolean contains(Object object) {
@@ -166,6 +169,7 @@ Comparator<? super E> var0DBA3D9CD77859DED745A0BFA4F2ACEF_1623227004 =         b
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.806 -0400", hash_original_method = "F7F7DD28C713C48E265211D2C1797222", hash_generated_method = "1B4EE553B1845866A3993350940D8884")
     @Override
     public boolean isEmpty() {
@@ -198,6 +202,7 @@ Iterator<E> varD3454307C396409E194901FB5FF7ED83_1302659798 =         descendingS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.807 -0400", hash_original_method = "F3CD9B8F3305DC4B74C3868451BADF13", hash_generated_method = "0A2C6B1D2748C6D8DB982DCF2F662DEC")
     @Override
     public boolean remove(Object object) {
@@ -210,6 +215,7 @@ Iterator<E> varD3454307C396409E194901FB5FF7ED83_1302659798 =         descendingS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.807 -0400", hash_original_method = "F79E6854B97378719F36DC505CE23018", hash_generated_method = "27F5E3BE09D41B13EB782BEAF52C682C")
     @Override
     public int size() {
@@ -447,6 +453,7 @@ SortedSet<E> var7589F3441938F46E6B7F60EEE098D2C9_1292173341 =         tailSet(st
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.814 -0400", hash_original_method = "99C17ADAEB11E32F56AB0674B65B4A86", hash_generated_method = "940DF24CEADDE5B85FB9004AE02DD3F0")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -477,6 +484,7 @@ SortedSet<E> var7589F3441938F46E6B7F60EEE098D2C9_1292173341 =         tailSet(st
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.814 -0400", hash_original_method = "675A9075CC9828201778F15727C38572", hash_generated_method = "89ACA855706A3BF26CB57C84BA9D9FF8")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,

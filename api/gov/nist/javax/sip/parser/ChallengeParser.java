@@ -26,6 +26,7 @@ public abstract class ChallengeParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.954 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "E6D914E68849AB28C98C072C729961EF")
     protected void parseParameter(AuthenticationHeader header) throws ParseException {
         addTaint(header.getTaint());

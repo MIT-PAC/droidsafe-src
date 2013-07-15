@@ -285,6 +285,7 @@ for(int i = 0, len = ports.length;i < len;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.897 -0400", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "38F409CDB9978DF094B4DAF259207920")
     @Override
     public int getVersion() {

@@ -294,6 +294,7 @@ for(int i = 0;i < mPool.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.503 -0400", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "9D4509CE641891DA5CEC26B706A255AF")
     synchronized void setMaxPoolSize(int size) {
         mMaxPoolSize = size;
@@ -302,6 +303,7 @@ for(int i = 0;i < mPool.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.503 -0400", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "8C08D29D84A7CFF8EC0937BBAEBDC02E")
     synchronized int getMaxPoolSize() {
         int varE09C7B9591348137B71BF1DB7F072E31_1041805989 = (mMaxPoolSize);
@@ -436,6 +438,7 @@ for(int i = 0;i < mPool.size();i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.509 -0400", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "B6E4944986E8B7AAB2ED33686B1B47B9")
         synchronized int getNumHolders() {
             int varB8F40214A10D489952B71239BFD4B30C_1652291736 = (mNumHolders);

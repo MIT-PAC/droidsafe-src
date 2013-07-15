@@ -15,7 +15,8 @@ class JapanesePhoneNumberFormatter {
     }
 
 
-        public static void format(Editable text) {
+        @DSModeled(DSC.SPEC)
+    public static void format(Editable text) {
         int rootIndex = 1;
         int length = text.length();
         if (length > 3

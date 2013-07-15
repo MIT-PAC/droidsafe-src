@@ -27,6 +27,7 @@ public class LazyDERSequence extends DERSequence {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.317 -0400", hash_original_method = "F52BE1D6A2A2A6E978CE6B87E0C287FA", hash_generated_method = "4066B9F0C1E6B43C8F07FEF950399A2A")
     private void parse() {
         Enumeration en = new LazyDERConstructionEnumeration(encoded);

@@ -143,7 +143,8 @@ public class NetworkUtils {
     }
 
     
-        public static boolean addressTypeMatches(InetAddress left, InetAddress right) {
+        @DSModeled(DSC.SAFE)
+    public static boolean addressTypeMatches(InetAddress left, InetAddress right) {
         return (((left instanceof Inet4Address) && (right instanceof Inet4Address)) ||
                 ((left instanceof Inet6Address) && (right instanceof Inet6Address)));
     }

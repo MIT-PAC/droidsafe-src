@@ -363,6 +363,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.399 -0400", hash_original_method = "72B0BA7C11D7E690CFEDBC790E5F02DB", hash_generated_method = "52EC9BD2B64C18BC1661223C54B55626")
         public void resetGroup() {
             groupId = defaultGroupId;
@@ -564,6 +565,7 @@ SubMenu var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_360757177 =             subMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.409 -0400", hash_original_method = "EEE8EEEED979875FD25E1447BB361BB0", hash_generated_method = "EA68BE9856021BCE994A2AD3B53CA591")
         public boolean hasAddedItem() {
             boolean varD151196352EED1C008F77891EF564455_433192570 = (itemAdded);

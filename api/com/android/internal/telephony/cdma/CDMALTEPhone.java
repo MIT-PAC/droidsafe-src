@@ -41,6 +41,7 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.618 -0400", hash_original_method = "7419DD25F2A8EC5E4F54973E3AF74E7D", hash_generated_method = "E666EC1DEE3712C9AFD8E800BDD4B431")
     @Override
     public void handleMessage(Message msg) {
@@ -157,6 +158,7 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.622 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "ED3994A72D1681C6ED272E38D565CABC")
     @Override
     public void selectNetworkManually(OperatorInfo network,
@@ -256,6 +258,7 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "3E01D20FCE14548AEDCD05440449A2C4", hash_generated_method = "C0318C47A19F42F3751E8F5DF75E2F6C")
     @Override
     public void setSystemLocale(String language, String country, boolean fromMcc) {
@@ -282,6 +285,7 @@ String var9E0F6CF9E749066E7163DA637BDC770E_1890310153 =         mIccRecords.getI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "5AFCBAB8A5BDA69A65622C7BE760B9B5")
     @Override
     public String getImei() {
@@ -293,6 +297,7 @@ String varDEC341D68DE51B3F93C3763FDA1DF1F5_1923884351 =         mImei;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.627 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "134730FC46821F3CA992113221862242")
     @Override
     public String getDeviceSvn() {
@@ -347,6 +352,7 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.628 -0400", hash_original_method = "69A9D8984C1FC702F097120D9CC0BB90", hash_generated_method = "D617ECE150CDF40841A353EBC76DCAE6")
     @Override
     protected void log(String s) {

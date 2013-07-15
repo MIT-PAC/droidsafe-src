@@ -178,6 +178,7 @@ String var540C13E9E156B687226421B24F2DF178_390403113 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.009 -0400", hash_original_method = "98C9A117007F79899B5BBD029ABFD6B8", hash_generated_method = "1DFA79725EDD590714D0602080EA4C5B")
     public void setClassLoader(ClassLoader loader) {
         mClassLoader = loader;
@@ -186,6 +187,7 @@ String var540C13E9E156B687226421B24F2DF178_390403113 =             null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.009 -0400", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "7F51CEA2DE6AA039F78E64D53CF48ADC")
     public ClassLoader getClassLoader() {
 ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoader;
@@ -196,6 +198,7 @@ ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.010 -0400", hash_original_method = "3A854A40DC72470BF5CA49CF20D41873", hash_generated_method = "FB4D11113E614632BC1E78610B9FB3EE")
     public boolean setAllowFds(boolean allowFds) {
         boolean orig = mAllowFds;
@@ -359,6 +362,7 @@ Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_361472375 =         mMap.keySet(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.015 -0400", hash_original_method = "4B0480B2866CB29DA37F7AEC68A5E217", hash_generated_method = "2E87EDA5C6DC49EE74A2E42629CEA4F5")
     public boolean hasFileDescriptors() {
     if(!mFdsKnown)        
@@ -805,6 +809,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.029 -0400", hash_original_method = "0DA9D5A0C7EE7D2AFD4BCC53AD3802F3", hash_generated_method = "1B458E4D89C58743C30A00821425F3A4")
     @Deprecated
     public void putIBinder(String key, IBinder value) {

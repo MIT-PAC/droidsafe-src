@@ -107,6 +107,7 @@ for(j = 0;j < numChildren;j++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.955 -0400", hash_original_method = "4993091A11603906CAD34405800B45EB", hash_generated_method = "25B3D951889D2DBC7D8457774E7CB590")
     public int match(Uri uri) {
         addTaint(uri.getTaint());

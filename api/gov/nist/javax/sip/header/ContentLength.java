@@ -87,6 +87,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_875511075 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.290 -0400", hash_original_method = "9921BFF09FACC23B6D23BD0D026EB023", hash_generated_method = "A3B0572A072BB6030D67CA40FED2302A")
     public boolean match(Object other) {
         addTaint(other.getTaint());

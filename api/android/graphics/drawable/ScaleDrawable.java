@@ -62,6 +62,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.696 -0400", hash_original_method = "AEF970ED5616036B7E8018EB225E392F", hash_generated_method = "43F02C865ED0856194B691561F535DAC")
     public Drawable getDrawable() {
 Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mDrawable;
@@ -72,7 +73,8 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
-        private static float getPercent(TypedArray a, int name) {
+        @DSModeled(DSC.SAFE)
+    private static float getPercent(TypedArray a, int name) {
         String s = a.getString(name);
         if (s != null) {
             if (s.endsWith("%")) {
@@ -84,6 +86,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.697 -0400", hash_original_method = "49F4934EE2B25F6F115AF16904B4D689", hash_generated_method = "D0D1E6AF44EE6E03B7A16464E8645D99")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -131,6 +134,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.698 -0400", hash_original_method = "DF6A36F8E9590497BD97E858748A70C0", hash_generated_method = "4A84881D5DFABD53CF58861821BFB1CA")
     public void invalidateDrawable(Drawable who) {
         addTaint(who.getTaint());
@@ -145,6 +149,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.698 -0400", hash_original_method = "18649734DD6C42C2C51CF25B20D68FBF", hash_generated_method = "2FBABF4BE921E820D97AFDA86AEB6986")
     public void scheduleDrawable(Drawable who, Runnable what, long when) {
         addTaint(when);
@@ -161,6 +166,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.699 -0400", hash_original_method = "8711E8318CA3821644E7E9EDAB95B5BC", hash_generated_method = "D5428BD0C3009E8267A2EFB5215B7437")
     public void unscheduleDrawable(Drawable who, Runnable what) {
         addTaint(what.getTaint());
@@ -176,6 +182,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.699 -0400", hash_original_method = "ADD59FF7C9EB5B0D687113ACE781DE45", hash_generated_method = "D3F76CFF2B875FCF8494927DD34ABE0F")
     @Override
     public void draw(Canvas canvas) {
@@ -188,6 +195,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.699 -0400", hash_original_method = "E88B2D3506B9FB1C95A0FECA8D5B6D9F", hash_generated_method = "9E3983E443BA5E2401F5735DB2D3E161")
     @Override
     public int getChangingConfigurations() {
@@ -203,6 +211,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.700 -0400", hash_original_method = "2834251DB4FA1276891A806CA1B46D6D", hash_generated_method = "79C5B32CC91FF329F44AB67AF185E499")
     @Override
     public boolean getPadding(Rect padding) {
@@ -215,6 +224,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.700 -0400", hash_original_method = "DF926DDC801D2CA5859468C5FAF6E2DB", hash_generated_method = "67A0C9DE3CD611202DE866A6E507045B")
     @Override
     public boolean setVisible(boolean visible, boolean restart) {
@@ -230,6 +240,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.701 -0400", hash_original_method = "A9094AF2E7BD2624EE02834D750BE346", hash_generated_method = "3E6C2E3452400390CF16D5196484E50D")
     @Override
     public void setAlpha(int alpha) {
@@ -240,6 +251,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.701 -0400", hash_original_method = "2F836B47975A4E15DB5892CD09923112", hash_generated_method = "79B1790A79853A41BB8B34DB5A143A2F")
     @Override
     public void setColorFilter(ColorFilter cf) {
@@ -250,6 +262,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.702 -0400", hash_original_method = "80BFCB126A2061429F3FFA03D49A8EF5", hash_generated_method = "7A51C51AA0C086D7772B7445B6EE15A7")
     @Override
     public int getOpacity() {
@@ -261,6 +274,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.702 -0400", hash_original_method = "0B20FD6DAF06E7B53C037B30AA0A67FB", hash_generated_method = "4F9C2C9BE002C7F3996662DAA0175D0C")
     @Override
     public boolean isStateful() {
@@ -272,6 +286,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.703 -0400", hash_original_method = "53615D161AB187EDCCE7BACA4EBD5437", hash_generated_method = "B51A16D713A7D4006DD0F42C79EB4FB9")
     @Override
     protected boolean onStateChange(int[] state) {
@@ -289,6 +304,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.703 -0400", hash_original_method = "60A547B14486DD6AB0D2DFD460195C57", hash_generated_method = "0F2799FA8E258CE7E68920C5D3D38765")
     @Override
     protected boolean onLevelChange(int level) {
@@ -308,6 +324,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.704 -0400", hash_original_method = "07137BB41A1EF8F3D963DF117D82A94E", hash_generated_method = "B138EF9D03A9065564B47DC104C3B65D")
     @Override
     protected void onBoundsChange(Rect bounds) {
@@ -339,6 +356,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.705 -0400", hash_original_method = "707D1CC9562C9896640A756558D656DB", hash_generated_method = "9FDB6815A9EFDF03A556ACFEA8633915")
     @Override
     public int getIntrinsicWidth() {
@@ -350,6 +368,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.705 -0400", hash_original_method = "974D81B98CAEE5C460DF640DA8AD364B", hash_generated_method = "5E40EBB031C6E998CE99ACEFC8F33FCE")
     @Override
     public int getIntrinsicHeight() {
@@ -361,6 +380,7 @@ Drawable varCFDEF89FAAF67147C5DB39DD126E8ABC_2088539247 =         mScaleState.mD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.706 -0400", hash_original_method = "F60FC330EC8290C7F4098E941B339581", hash_generated_method = "2018E21187F958B6C0FE19236579E7DE")
     @Override
     public ConstantState getConstantState() {
@@ -383,6 +403,7 @@ ConstantState var540C13E9E156B687226421B24F2DF178_1289651733 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.706 -0400", hash_original_method = "9ABDABB0B6579EA1F785C22EF86AAE91", hash_generated_method = "E38637CBEE027924110C21A3105F3476")
     @Override
     public Drawable mutate() {
@@ -489,6 +510,7 @@ Drawable var82A4E78F82249DE721665224C03FCFD2_920825464 =             new ScaleDr
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.710 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "A7B39FD9017C27C2BD7A07ACC0418FF1")
         @Override
         public int getChangingConfigurations() {

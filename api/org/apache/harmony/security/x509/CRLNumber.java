@@ -23,6 +23,7 @@ public final class CRLNumber extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.717 -0400", hash_original_method = "ABBA63B4278019F3F838A8B1357B04F0", hash_generated_method = "F6E75E9D488603BDC28C5D955095F82B")
     public BigInteger getNumber() {
 BigInteger var63E80DF571E08DAA47BEFBF0BD0EEBAD_679521675 =         number;
@@ -33,6 +34,7 @@ BigInteger var63E80DF571E08DAA47BEFBF0BD0EEBAD_679521675 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.717 -0400", hash_original_method = "264373D11CB6B7A95DC9A45E336ACDCB", hash_generated_method = "2D67D9DC631B4F872A726865442992F4")
     @Override
     public byte[] getEncoded() {
@@ -51,6 +53,7 @@ BigInteger var63E80DF571E08DAA47BEFBF0BD0EEBAD_679521675 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.717 -0400", hash_original_method = "C82E67A30D76F52198943C49A8E53C0F", hash_generated_method = "14D8E9996402DC284C132D873CAB6495")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

@@ -152,6 +152,7 @@ String varB72CC91AEA19C7FA7F561237F68286D5_1793670505 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.542 -0400", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "FDDBB7B201E177729C27E5F20E535125")
     public LocalSocketAddress getLocalSocketAddress() {
 LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1725295271 =         localAddress;
@@ -283,6 +284,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.547 -0400", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "1B3531055F8ADC5D6FBE76FBFC2331BB")
     public synchronized boolean isConnected() {
         boolean var8CADFAB0F66545464EF713B1AEC0C7DD_2026983560 = (isConnected);
@@ -303,6 +305,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.547 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "14AA8CEBE195BF53ACBE23DC9889471F")
     public synchronized boolean isBound() {
         boolean var8E4D35088206920061AAF7F347854388_1147701814 = (isBound);

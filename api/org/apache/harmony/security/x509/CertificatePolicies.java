@@ -36,13 +36,15 @@ public final class CertificatePolicies extends ExtensionValue {
     }
 
     
-        public static CertificatePolicies decode(byte[] encoding) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static CertificatePolicies decode(byte[] encoding) throws IOException {
         CertificatePolicies cps = ((CertificatePolicies) ASN1.decode(encoding));
         cps.encoding = encoding;
         return cps;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.759 -0400", hash_original_method = "183BA6590E2DC5B6BD268518AC8D5EF9", hash_generated_method = "691B28BAD0F4158EC127C00D5A0466DC")
     public List<PolicyInformation> getPolicyInformations() {
 List<PolicyInformation> var6CCDA06F3940A33DB354D86B75B7FE27_754196603 =         new ArrayList<PolicyInformation>(policyInformations);
@@ -53,6 +55,7 @@ List<PolicyInformation> var6CCDA06F3940A33DB354D86B75B7FE27_754196603 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.760 -0400", hash_original_method = "A02C1EF38503FEE398CFC051AC7B3321", hash_generated_method = "09CBC02AC75460E2AE490C8D0319091F")
     public CertificatePolicies addPolicyInformation(PolicyInformation policyInformation) {
         addTaint(policyInformation.getTaint());
@@ -75,6 +78,7 @@ CertificatePolicies var72A74007B2BE62B849F475C7BDA4658B_72081126 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.760 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5EDC8B506C0931DDA2DA20BC4151F5C1")
     @Override
     public byte[] getEncoded() {
@@ -93,6 +97,7 @@ CertificatePolicies var72A74007B2BE62B849F475C7BDA4658B_72081126 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.761 -0400", hash_original_method = "B37538291358B4289176EF26A3BFC720", hash_generated_method = "9964310256E79850122CC41E4A2EE6A9")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

@@ -41,6 +41,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.269 -0400", hash_original_method = "DF63005BC1AE5B0B1E3F7DD90D14732F", hash_generated_method = "1D754612D6D29CDE39BA9598FA69A8C0")
     public void reset(int valueCount) {
         addTaint(valueCount);
@@ -50,6 +51,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.269 -0400", hash_original_method = "C5023085042082F0979BC336BA173BAC", hash_generated_method = "B929C65A068EE7C8CD773E3398DF04E7")
     public void reset(int valueCount, int frameCount) {
         mValueCount = valueCount;
@@ -82,6 +84,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.270 -0400", hash_original_method = "8B845648DDEC7EC4E813052052B8A4ED", hash_generated_method = "803B934524809F06FDEC2A9CD457E0F9")
     public void setKeyFrame(int index, int msec, float[] values) {
         addTaint(values[0]);
@@ -93,6 +96,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.271 -0400", hash_original_method = "0A4BD1EDAE26740EE7CE301C3AD23A04", hash_generated_method = "8888C9B657F0860F0B4477E84D0E9952")
     public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
         addTaint(blend[0]);
@@ -132,6 +136,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.272 -0400", hash_original_method = "951FAF18C8FD28DC8D0B362372C0DCF6", hash_generated_method = "A79EA8DACC83F54C101FC7ABE9771D08")
     public void setRepeatMirror(float repeatCount, boolean mirror) {
         addTaint(mirror);
@@ -147,6 +152,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.272 -0400", hash_original_method = "BDADB3549C258921F869033B8AFE985D", hash_generated_method = "A5B660D99BE3E5CE67E695CCFF81358B")
     public Result timeToValues(float[] values) {
         addTaint(values[0]);
@@ -158,6 +164,7 @@ Result var83E6FAA72EB76B38707B749FFF307395_734732888 =         timeToValues((int
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.272 -0400", hash_original_method = "B04849E47B71B5E874F7B8DA72F507BD", hash_generated_method = "498AE0CDB2C595BB5EB6DEAFB56847E4")
     public Result timeToValues(int msec, float[] values) {
         addTaint(values[0]);
@@ -194,6 +201,7 @@ Result var607877E62AB94E691FECF4B996EA77B1_1578859783 =         Result.FREEZE_EN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.273 -0400", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "731B1C9A23DC747F95D123894CD0AB39")
     @Override
     protected void finalize() throws Throwable {

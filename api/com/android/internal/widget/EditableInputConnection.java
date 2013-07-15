@@ -137,6 +137,7 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "DB06BCD96079AC12D626255A3932F1C1", hash_generated_method = "0D01EF3775943DA3514034DB8F3B3423")
     @Override
     public boolean commitCorrection(CorrectionInfo correctionInfo) {

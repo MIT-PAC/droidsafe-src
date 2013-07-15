@@ -282,6 +282,7 @@ Node<E> var96AB332339E0E5CFEEDCBAEFBC25BC0C_1943616109 =                     has
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.624 -0400", hash_original_method = "5BBCBCAD5CC8F01475F9C33B1A8BDA76", hash_generated_method = "5B6EE25C85C936DDB8CC3C4512F780A0")
     public boolean isEmpty() {
         boolean var85FADA70E940F9843AC6C44F04024FA4_1585976066 = (first() == null);
@@ -292,6 +293,7 @@ Node<E> var96AB332339E0E5CFEEDCBAEFBC25BC0C_1943616109 =                     has
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.625 -0400", hash_original_method = "8378A4BA724609F4EE8D701FE95A4146", hash_generated_method = "3977F64D429AEAF5050EBAC825C213EA")
     public int size() {
         int count = 0;
@@ -312,6 +314,7 @@ for(Node<E> p = first();p != null;p = succ(p))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.625 -0400", hash_original_method = "D3CFD955C2206E78AC2D6D0AA96542FF", hash_generated_method = "CF65781E2F3D49A04DE1772C519B2876")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -345,6 +348,7 @@ for(Node<E> p = first();p != null;p = succ(p))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.626 -0400", hash_original_method = "47B1B9EE8A66BF6628AC85F9580DDA03", hash_generated_method = "7EB2D0BAEAD8E3508DDFF8E3CA1B218B")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -451,6 +455,7 @@ for(Node<E> t = tail, p = t;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.628 -0400", hash_original_method = "9AE75EDD15A5D634A14FDDC5ABF53B75", hash_generated_method = "2877605C76E375A09D2A319EC9AE8AAB")
     public Object[] toArray() {
         ArrayList<E> al = new ArrayList<E>();
@@ -537,6 +542,7 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1168628771 =         new Itr();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.630 -0400", hash_original_method = "2DB3995911F14A1266042DB21211C241", hash_generated_method = "9A9EEB9CFF7C391D2CFCCB2B2CD0E570")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -559,6 +565,7 @@ for(Node<E> p = first();p != null;p = succ(p))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.631 -0400", hash_original_method = "4C4E4F1C2555347B7DA11DAA134BF488", hash_generated_method = "A35953104F72E0350AB56B538DA6704A")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -603,7 +610,8 @@ for(Node<E> p = first();p != null;p = succ(p))
     }
 
     
-        private static void checkNotNull(Object v) {
+        @DSModeled(DSC.SAFE)
+    private static void checkNotNull(Object v) {
         if (v == null)
             throw new NullPointerException();
     }
@@ -775,6 +783,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_78716230 =                     x;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.636 -0400", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "9E3DC0B4E42301D3FBDBD2FA61BC1C5D")
         public boolean hasNext() {
             boolean var055287C88A3BCA17E817C22C28D72D59_1527372399 = (nextNode != null);

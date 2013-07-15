@@ -17,6 +17,7 @@ public class PathEffect {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.703 -0400", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "0F8C7E32A99795A8E0AEE47F785754CE")
     protected void finalize() throws Throwable {
         nativeDestructor(native_instance);

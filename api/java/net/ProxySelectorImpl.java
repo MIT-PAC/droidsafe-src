@@ -17,6 +17,7 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.152 -0400", hash_original_method = "01DD13242757A7D8F74EE28AFD708C0E", hash_generated_method = "AE7C8864ED0A3D6886FD4C3A982C0A27")
     @Override
     public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
@@ -48,6 +49,7 @@ List<Proxy> var5E22424134D08E91E6B049D6790CF264_517089611 =         Collections.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.155 -0400", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "25C489AE9D0222042A99B5F7E79B1CD3")
     private Proxy selectOneProxy(URI uri) {
         addTaint(uri.getTaint());

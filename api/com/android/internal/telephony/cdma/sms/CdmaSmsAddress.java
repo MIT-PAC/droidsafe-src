@@ -91,7 +91,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_404243725 =         builder.toString(
     }
 
     
-        private static String filterWhitespace(String address) {
+        @DSModeled(DSC.SPEC)
+    private static String filterWhitespace(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
         for (int i = 0; i < len; i++) {

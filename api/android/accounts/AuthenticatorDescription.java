@@ -125,6 +125,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.176 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BB9373B5D6E9FFEA2D09B7D325C705F7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2039973022 = (0);

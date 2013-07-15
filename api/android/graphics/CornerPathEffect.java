@@ -16,6 +16,7 @@ public class CornerPathEffect extends PathEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate(float radius) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317499148 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317499148;

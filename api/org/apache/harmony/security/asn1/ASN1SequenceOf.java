@@ -16,6 +16,7 @@ public class ASN1SequenceOf extends ASN1ValueCollection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.683 -0400", hash_original_method = "1210CAF0851F865D477F96ED0B5EA47B", hash_generated_method = "F12DE105633079F74EB15BD61FFE615C")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());

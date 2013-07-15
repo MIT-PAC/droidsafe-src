@@ -94,6 +94,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.032 -0400", hash_original_method = "CA5CD09DA796000F712B45157C41B130", hash_generated_method = "304A193E4872BA697D07B1C14019B9BC")
      void setText(String text) {
         addTaint(text.getTaint());
@@ -132,6 +133,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.032 -0400", hash_original_method = "517F2A554CEE09599D2CC8534059CD71", hash_generated_method = "9AB4181D6CBFE14F8EDFE3B74CD60F76")
     private void findNext(boolean next) {
         addTaint(next);
@@ -225,6 +227,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.034 -0400", hash_original_method = "B14DB7FB68096A0CF2748CFEA9518F79", hash_generated_method = "65A7F4013D689C1D187A7CDFB99DE6BD")
     public void showSoftInput() {
         mInput.startGettingWindowFocus(mEditText.getRootView());
@@ -237,6 +240,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.034 -0400", hash_original_method = "9E7B5524BD9C2F1CDB061DB60C13ABB6", hash_generated_method = "DF8262429EEF61D69B655993320B6881")
     private void updateMatchesString() {
         String template = mResources.getQuantityString(
@@ -251,6 +255,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.035 -0400", hash_original_method = "AFE6187BDD69B153F64B909F5043D2E4", hash_generated_method = "AAE8837042F05BBFBD2A4A18D329136B")
     @Override
     public boolean onLongClick(View v) {
@@ -275,6 +280,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.036 -0400", hash_original_method = "1F388F0F12B5A9063A03CB19D68FC9E8", hash_generated_method = "EEF4C3C9A121B481B86FAAF01E1BB30D")
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
@@ -332,6 +338,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.037 -0400", hash_original_method = "6F9DAEA6D666DAEBDC5BF41A6DC31573", hash_generated_method = "ADDABBB80ACB65786797CF0041A0FEA9")
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
@@ -394,6 +401,7 @@ switch(item.getItemId()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.038 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "3FCEEE4D826A68B3157D53F259506F87")
     @Override
     public void beforeTextChanged(CharSequence s,
@@ -425,6 +433,7 @@ switch(item.getItemId()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.038 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "4E9426C0C70F36D91AD564261B4FF2B0")
     @Override
     public void afterTextChanged(Editable s) {

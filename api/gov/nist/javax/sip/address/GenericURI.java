@@ -46,6 +46,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.060 -0400", hash_original_method = "82D33A5986E24A5B49AA621812B7822B", hash_generated_method = "C7E1D7B677E06243F273B36460FF1DE2")
     public String encode() {
 String varA4F4B44693A1936015581C1F7D6F4DAF_460354654 =         uriString;
@@ -56,6 +57,7 @@ String varA4F4B44693A1936015581C1F7D6F4DAF_460354654 =         uriString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.060 -0400", hash_original_method = "054F173715F55BDEA2A1E3378F0F2AB7", hash_generated_method = "AA554ADE28F37AA61953AD48868F1652")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -67,6 +69,7 @@ StringBuffer varF6413B9B0E7E2F46B03F689845D050B5_631095691 =         buffer.appe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.060 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "DB98E7ABCA5E20A74CBD52536A531335")
     public String toString() {
 String varB17575D7C845B2C662583710539AAEBB_361875861 =         this.encode();
@@ -77,6 +80,7 @@ String varB17575D7C845B2C662583710539AAEBB_361875861 =         this.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.061 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "F288A0CCE7A39F2295AFE9C86EAC0BF0")
     public String getScheme() {
 String varFD3305CF8340E40F0AC0AB554909AEBC_143294473 =         scheme;
@@ -87,6 +91,7 @@ String varFD3305CF8340E40F0AC0AB554909AEBC_143294473 =         scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.061 -0400", hash_original_method = "B3806A07425B89767F09A244B77901C0", hash_generated_method = "84ED8AD2228A8DD3B90DD63BDF66C8AC")
     public boolean isSipURI() {
         boolean var223EE2316B20EDC6AC0AB79DDD935082_1482563668 = (this instanceof SipUri);
@@ -127,6 +132,7 @@ String varFD3305CF8340E40F0AC0AB554909AEBC_143294473 =         scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.062 -0400", hash_original_method = "52D4A3951B7E10EC34FBEDB345A7DD44", hash_generated_method = "A370CC3872FA71D308DA8875ED23DAD4")
     public int hashCode() {
         int varF69BA08EDCBBC4B1AB26B0553043CBEF_685597719 = (this.toString().hashCode());

@@ -62,6 +62,7 @@ public class TextMessage implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.511 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7E8DFD7888C9A1A48D4D2C2F771FB995")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1335485399 = (0);

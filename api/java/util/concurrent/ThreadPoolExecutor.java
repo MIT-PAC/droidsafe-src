@@ -150,36 +150,43 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
-        private static int runStateOf(int c) {
+        @DSModeled(DSC.SAFE)
+    private static int runStateOf(int c) {
         return c & ~CAPACITY;
     }
 
     
-        private static int workerCountOf(int c) {
+        @DSModeled(DSC.SAFE)
+    private static int workerCountOf(int c) {
         return c & CAPACITY;
     }
 
     
-        private static int ctlOf(int rs, int wc) {
+        @DSModeled(DSC.SAFE)
+    private static int ctlOf(int rs, int wc) {
         return rs | wc;
     }
 
     
-        private static boolean runStateLessThan(int c, int s) {
+        @DSModeled(DSC.SAFE)
+    private static boolean runStateLessThan(int c, int s) {
         return c < s;
     }
 
     
-        private static boolean runStateAtLeast(int c, int s) {
+        @DSModeled(DSC.SAFE)
+    private static boolean runStateAtLeast(int c, int s) {
         return c >= s;
     }
 
     
-        private static boolean isRunning(int c) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isRunning(int c) {
         return c < SHUTDOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.590 -0400", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "7C7A7163FA17EA2D35C896A6C4D7A07C")
     private boolean compareAndIncrementWorkerCount(int expect) {
         addTaint(expect);
@@ -191,6 +198,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.590 -0400", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "D9E883CCDEA25A33AA0AF2F73101847C")
     private boolean compareAndDecrementWorkerCount(int expect) {
         addTaint(expect);
@@ -309,6 +317,7 @@ for(Worker w : workers)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.592 -0400", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "CD273599E9E004032DAC6E5A1850A95E")
     private void interruptWorkers() {
         final ReentrantLock mainLock = this.mainLock;
@@ -432,6 +441,7 @@ for(Worker w : workers)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.594 -0400", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "A8810A0A581CC8BD0FA906871342B1C5")
      void onShutdown() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -847,6 +857,7 @@ List<Runnable> var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479 =         tasks;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.603 -0400", hash_original_method = "968CAF504B3356CA71CED595275477F9", hash_generated_method = "87C9C80CCD045942E715C44607B5D8B0")
     public boolean isShutdown() {
         boolean var4F365FA39DD9B6B15FB3A09F0927D40E_374448476 = (! isRunning(ctl.get()));
@@ -869,6 +880,7 @@ List<Runnable> var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479 =         tasks;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.603 -0400", hash_original_method = "9F60EBE4EAB8D07AF1E9485C91ACF37E", hash_generated_method = "623543AC919010E51E5F0AD8B7557F03")
     public boolean isTerminated() {
         boolean varD51322F449BE555009645EFF83261349_1753310655 = (runStateAtLeast(ctl.get(), TERMINATED));
@@ -879,6 +891,7 @@ List<Runnable> var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479 =         tasks;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.604 -0400", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "E44D4350B7176B754AA870414FBD7D28")
     public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -951,6 +964,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.605 -0400", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "DFEE187B1CC880CEE5BD00DB8A8E2DC8")
     public ThreadFactory getThreadFactory() {
 ThreadFactory var3580E08ED69603FA4F15CD8F2CD0B9D9_468285180 =         threadFactory;
@@ -977,6 +991,7 @@ ThreadFactory var3580E08ED69603FA4F15CD8F2CD0B9D9_468285180 =         threadFact
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.606 -0400", hash_original_method = "6DBE484B7F2A61BE5C5EC698F3E381D8", hash_generated_method = "3FAEE695C855C4E7881691E0CC2A0CCF")
     public RejectedExecutionHandler getRejectedExecutionHandler() {
 RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =         handler;
@@ -1027,6 +1042,7 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.607 -0400", hash_original_method = "51C354BC1AFFD9D1E19ED52BB81EBE2C", hash_generated_method = "9757D55B49C83EE4A96651E2FD6500F3")
     public int getCorePoolSize() {
         int varBC84A0387FED241C4B869E825402E08F_712704149 = (corePoolSize);
@@ -1066,6 +1082,7 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.609 -0400", hash_original_method = "B47D14DD952D3505364B334F55BDAD78", hash_generated_method = "65C01DB0019D91AE7719F4DF822477C6")
     public boolean allowsCoreThreadTimeOut() {
         boolean var8479D8297F4B7D8A1CB6952389C8EDC1_1966400091 = (allowCoreThreadTimeOut);
@@ -1121,6 +1138,7 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.610 -0400", hash_original_method = "4164BA9A7B4677354D8831E6C94ADF71", hash_generated_method = "F5CB28116E84E1B887F12E4CF21B7724")
     public int getMaximumPoolSize() {
         int var54A9EC393DB750BE987C30FFF3A375D2_672825829 = (maximumPoolSize);
@@ -1267,6 +1285,7 @@ for(Object r : q.toArray())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.614 -0400", hash_original_method = "F897DAAB3F6E4FA542BB8276CD2A7AD3", hash_generated_method = "1BF9377A45799DF42ED12E4EDC06898A")
     public int getActiveCount() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1300,6 +1319,7 @@ for(Worker w : workers)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.615 -0400", hash_original_method = "B4A579D5588949E5556CF38ABCB55065", hash_generated_method = "C686F247C306374C56A269B50D9C0BF7")
     public int getLargestPoolSize() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1435,6 +1455,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.618 -0400", hash_original_method = "4C3878CDFFA0878930C89982189B5032", hash_generated_method = "56B6C8F5D1AFC7ADF196D539D3B9EE18")
     protected void beforeExecute(Thread t, Runnable r) {
         addTaint(r.getTaint());
@@ -1443,6 +1464,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.618 -0400", hash_original_method = "1E835AC60F46FC4FB8E958FFB42880D4", hash_generated_method = "03812D400E0817EB73EE3728ED506683")
     protected void afterExecute(Runnable r, Throwable t) {
         addTaint(t.getTaint());
@@ -1451,6 +1473,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.618 -0400", hash_original_method = "A29D7F7280B94AB8E3FBFAF6674D4BBC", hash_generated_method = "F157B5EF4A6890FC5741BB31F75810D9")
     protected void terminated() {
         // ---------- Original Method ----------
@@ -1584,6 +1607,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.622 -0400", hash_original_method = "1E8BCB605E875657A6EC0245732A9544", hash_generated_method = "41E8071271B295178CB10118669124D1")
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             addTaint(e.getTaint());
@@ -1639,6 +1663,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.624 -0400", hash_original_method = "81B7AD8C9B3A9908C7C41F3CCCB6E30B", hash_generated_method = "6F29E6E993E435A8F0C32060F4A39C0C")
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             addTaint(e.getTaint());

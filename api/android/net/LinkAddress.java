@@ -101,6 +101,7 @@ String var36CF141E9317AA4912392021807AA049_2146540309 =         (address == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.316 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "330A72BAEDBA17286D4F80DF4376B3F4")
     public InetAddress getAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1503227868 =         address;
@@ -111,6 +112,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1503227868 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.316 -0400", hash_original_method = "2E2106DAF5193DB540436A7E1AE68959", hash_generated_method = "F66E73EB9E094DE2C1983C66EA19DB79")
     public int getNetworkPrefixLength() {
         int var66E8BBB112C8BE88E6A5CE871B315D9D_748351198 = (prefixLength);
@@ -121,6 +123,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1503227868 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.317 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A9E1693C690FD4AC21A5503C86B48663")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_663378027 = (0);

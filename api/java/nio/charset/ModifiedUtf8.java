@@ -69,7 +69,8 @@ public class ModifiedUtf8 {
     }
 
     
-        public static void encode(byte[] dst, int offset, String s) {
+        @DSModeled(DSC.SPEC)
+    public static void encode(byte[] dst, int offset, String s) {
         final int length = s.length();
         for (int i = 0; i < length; i++) {
             char ch = s.charAt(i);

@@ -187,6 +187,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.863 -0400", hash_original_method = "680F026D747328AC88C64FC8C5845240", hash_generated_method = "939D984A7088BFC70E0A97943BE89E32")
     private void reflow(CharSequence s, int where, int before, int after) {
         addTaint(after);
@@ -339,6 +340,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.864 -0400", hash_original_method = "152FA51B02D5FF2B246CE19D3B6F70D3", hash_generated_method = "FCEB390EABBF1EBD8A6C6169D3BA2C04")
     @Override
     public int getLineCount() {
@@ -350,6 +352,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.865 -0400", hash_original_method = "D6F378A47E9DC69D83D62FCE6E90C326", hash_generated_method = "DF215F08CEBD19F2C8C663CC3864ACA2")
     @Override
     public int getLineTop(int line) {
@@ -362,6 +365,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.865 -0400", hash_original_method = "730DAEEEE356A285055D20F0106F731A", hash_generated_method = "22FB247660A48FD1541F7B3238D0B3EE")
     @Override
     public int getLineDescent(int line) {
@@ -374,6 +378,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.865 -0400", hash_original_method = "2D0F6CD810E708D2F846F779125A5CEA", hash_generated_method = "5211BD40BB9FC73ABCBB013BB656FBAE")
     @Override
     public int getLineStart(int line) {
@@ -386,6 +391,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.865 -0400", hash_original_method = "A0EC5BA65111126AB58C28059BDF3DD2", hash_generated_method = "0E8DEB69488A30060F0EF920C355CE21")
     @Override
     public boolean getLineContainsTab(int line) {
@@ -398,6 +404,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.866 -0400", hash_original_method = "54E53FDCC15DB3057A5F7E1DF0F2D93F", hash_generated_method = "628A15754E54475447FEAF8FEA1B9AED")
     @Override
     public int getParagraphDirection(int line) {
@@ -422,6 +429,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.866 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "0C5A58A28ADE0AC11D86AE29B0EB6794")
     @Override
     public int getTopPadding() {
@@ -433,6 +441,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.866 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "104F9E7B7E4C7702AE7C7A24AFC9A288")
     @Override
     public int getBottomPadding() {
@@ -444,6 +453,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.867 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "2F3438A12CE5F9EF25A08D0AA1454576")
     @Override
     public int getEllipsizedWidth() {
@@ -455,6 +465,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.867 -0400", hash_original_method = "C2BA24D83CCF8B46DBDB9E42876D7FC0", hash_generated_method = "2353C89EBA9FC5A91B0BC554E06FE0AD")
     @Override
     public int getEllipsisStart(int line) {
@@ -476,6 +487,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.867 -0400", hash_original_method = "8861D8B0168294A81E05E00D1A35F6B4", hash_generated_method = "E23CFFB574F59C79A8C4487757F91D3F")
     @Override
     public int getEllipsisCount(int line) {
@@ -531,6 +543,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.869 -0400", hash_original_method = "95E45B237E67DBC952009C430C254747", hash_generated_method = "12846E2D58F047016FD5A94EDD3F1FEF")
         public void beforeTextChanged(CharSequence s, int where, int before, int after) {
             addTaint(after);
@@ -554,6 +567,7 @@ Directions var6768B65A7C0556A0B36601923B74AF73_1089840084 =         mObjects.get
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.869 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
         public void afterTextChanged(Editable s) {
             addTaint(s.getTaint());

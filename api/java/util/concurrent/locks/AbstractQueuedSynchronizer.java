@@ -96,6 +96,7 @@ Node varE0D714D758F1540A8DF364A965AF9150_1585764816 =                     t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.806 -0400", hash_original_method = "7269E5EC16B8883F661BF745CCC5E6A6", hash_generated_method = "DF5D35EDD80839B17D0ED55AA310494E")
     private Node addWaiter(Node mode) {
         addTaint(mode.getTaint());
@@ -131,6 +132,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_493017457 =         node;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.806 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "E532E4CBBEBFF44C610D0F95E73E8319")
     private void setHead(Node node) {
         head = node;
@@ -143,6 +145,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_493017457 =         node;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.807 -0400", hash_original_method = "F262A3A18BABECF7EC492736953EAF6E", hash_generated_method = "A93A115F239F2D3D3F010BE781B1A7F1")
     private void unparkSuccessor(Node node) {
         addTaint(node.getTaint());
@@ -175,6 +178,7 @@ for(Node t = tail;t != null && t != node;t = t.prev)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.808 -0400", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "70DCCB5937F13D53C20996F49C5243FC")
     private void doReleaseShared() {
 for(;;)
@@ -217,6 +221,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.808 -0400", hash_original_method = "A2FB30DAE399AEFA487E20396027BD36", hash_generated_method = "40E839A4C9B6A476B26404E2C51E7F79")
     private void setHeadAndPropagate(Node node, int propagate) {
         addTaint(propagate);
@@ -240,6 +245,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.815 -0400", hash_original_method = "1CA41B58715410C4216B9DE6C43BB9D4", hash_generated_method = "C5F79ACF849694CECD07366B161DDD11")
     private void cancelAcquire(Node node) {
         addTaint(node.getTaint());
@@ -279,7 +285,8 @@ for(;;)
     }
 
     
-        private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
+        @DSModeled(DSC.SAFE)
+    private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
         int ws = pred.waitStatus;
         if (ws == Node.SIGNAL)
             return true;
@@ -295,7 +302,8 @@ for(;;)
     }
 
     
-        private static void selfInterrupt() {
+        @DSModeled(DSC.SAFE)
+    private static void selfInterrupt() {
         Thread.currentThread().interrupt();
     }
 
@@ -365,6 +373,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.818 -0400", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "7FECF21AFB77F939B61FEE09CFCDA5B3")
     private void doAcquireInterruptibly(int arg) throws InterruptedException {
         addTaint(arg);
@@ -419,6 +428,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.819 -0400", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "7B71C0BA9771A46E26B7E803CAADCD1E")
     private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
         addTaint(nanosTimeout);
@@ -470,6 +480,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.820 -0400", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "706DE7BF41217D97C1B1C0111FA50E7F")
     private void doAcquireShared(int arg) {
         addTaint(arg);
@@ -509,6 +520,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.821 -0400", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "01E0C09DE38458EE6780774EB82E7E04")
     private void doAcquireSharedInterruptibly(int arg) throws InterruptedException {
         addTaint(arg);
@@ -570,6 +582,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.823 -0400", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "68FC54D3018689B52D284C311E49E324")
     private boolean doAcquireSharedNanos(int arg, long nanosTimeout) throws InterruptedException {
         addTaint(nanosTimeout);
@@ -625,6 +638,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.823 -0400", hash_original_method = "FADA99D99649E8B049B596B89A86AFE3", hash_generated_method = "9FF64669226D86D9146C77CC68042C06")
     protected boolean tryAcquire(int arg) {
         addTaint(arg);
@@ -636,6 +650,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.824 -0400", hash_original_method = "0AA9B3926B88397CF769442818D9CA16", hash_generated_method = "01BDDE76E9B5F58D18CF4D4D82966AF8")
     protected boolean tryRelease(int arg) {
         addTaint(arg);
@@ -647,6 +662,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.824 -0400", hash_original_method = "143AB2DE4C7A8CA8F45FD3C862AFB93B", hash_generated_method = "81ED5743C4946D4168015CAAF4E76BD6")
     protected int tryAcquireShared(int arg) {
         addTaint(arg);
@@ -658,6 +674,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.824 -0400", hash_original_method = "57760B0E19163CFD26451EB4C702B2B7", hash_generated_method = "ED6CCB57E2F3318037DF6CF80AE3DE43")
     protected boolean tryReleaseShared(int arg) {
         addTaint(arg);
@@ -669,6 +686,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.825 -0400", hash_original_method = "B1A3EF7BA2A74EEB6B3236F0A99ED9FE", hash_generated_method = "B3FD0C3D0CB92153BFAE4DCE8C4C9C3F")
     protected boolean isHeldExclusively() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1670870256 = new UnsupportedOperationException();
@@ -863,6 +881,7 @@ Thread var870C75E9F1DE61C9DB12235564677748_1030701080 =         (head == tail) ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.830 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "FC4878F382CE34BEDF715327065866F3")
     private Thread fullGetFirstQueuedThread() {
         Node h;
@@ -1076,6 +1095,7 @@ Collection<Thread> varED12C351C2E8CA4F85F097DDC7E77B4D_11689867 =         list;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.835 -0400", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "388DA8BF10A5A3517ED076AED01E355A")
     public String toString() {
         int s = getState();
@@ -1119,6 +1139,7 @@ String var4EB727B8FD98B5F7ED6D14E18A4FCCA4_448468103 =         super.toString() 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.836 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "BFF81108CB8C6D408924E6ABC96AE8F9")
     private boolean findNodeFromTail(Node node) {
         addTaint(node.getTaint());
@@ -1475,6 +1496,7 @@ Node var74E4690D9F2A026504928C017944E149_1619547431 =             p;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.867 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "13D8345615024EA5EEED7C1F7E6725BF")
         private Node addConditionWaiter() {
             Node t = lastWaiter;
@@ -1508,6 +1530,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.868 -0400", hash_original_method = "74B8316ED8B5F40365D8BD9CF002AB2D", hash_generated_method = "5A26EDA37C913BD6A78C85A0B826BA92")
         private void doSignal(Node first) {
             addTaint(first.getTaint());
@@ -1529,6 +1552,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.869 -0400", hash_original_method = "DE4F68C515AD9FDEF86DCFCC83AF390E", hash_generated_method = "538AA885639A6DAD8B8C761ACEA5BCCC")
         private void doSignalAll(Node first) {
             addTaint(first.getTaint());
@@ -1552,6 +1576,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.870 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "80733A3444837168288E85B20119B428")
         private void unlinkCancelledWaiters() {
             Node t = firstWaiter;
@@ -1663,6 +1688,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.872 -0400", hash_original_method = "5CA3F4E55230C1BE0E77A65DF87A61F3", hash_generated_method = "674DDAFF2F9C5E0E556D1B4F96D6FB3A")
         private int checkInterruptWhileWaiting(Node node) {
             addTaint(node.getTaint());
@@ -1678,6 +1704,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.872 -0400", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "60B5C79AA85F58765815D8F341BAD1B7")
         private void reportInterruptAfterWait(int interruptMode) throws InterruptedException {
             addTaint(interruptMode);

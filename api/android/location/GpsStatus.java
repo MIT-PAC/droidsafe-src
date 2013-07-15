@@ -43,6 +43,7 @@ for(int i = 0;i < mSatellites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.808 -0400", hash_original_method = "4D31391A39726BDC955321B1E3DBD71C", hash_generated_method = "A28F53ECC274DFA52ECD3C33E343ED71")
     synchronized void setStatus(int svCount, int[] prns, float[] snrs,
             float[] elevations, float[] azimuths, int ephemerisMask,
@@ -113,6 +114,7 @@ for(int i = 0;i < mSatellites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.810 -0400", hash_original_method = "DB9D2F6104F17C34589316947F2A601E", hash_generated_method = "67EFC13BBD63DDF4ED5824FCE6033C6E")
      void setTimeToFirstFix(int ttff) {
         mTimeToFirstFix = ttff;
@@ -121,6 +123,7 @@ for(int i = 0;i < mSatellites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.810 -0400", hash_original_method = "75FBD0BC51265BCFA2480910110E8F36", hash_generated_method = "379A11AA44D1E96B6F26DAF3707CD9A6")
     public int getTimeToFirstFix() {
         int varFCBDFF9CD61B42CBD11DCD3DF89F6516_1346574244 = (mTimeToFirstFix);
@@ -141,6 +144,7 @@ Iterable<GpsSatellite> varE7F4188585FE55A58108466B6F8F81B3_48896212 =         mS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.811 -0400", hash_original_method = "30B567DEF49ED207BED02E25B8D7701A", hash_generated_method = "FA2CB0BD9896F06CB766714528EFF524")
     public int getMaxSatellites() {
         int varE993D75990E944E225140A81B1DBF272_1440028154 = (NUM_SATELLITES);
@@ -167,6 +171,7 @@ Iterable<GpsSatellite> varE7F4188585FE55A58108466B6F8F81B3_48896212 =         mS
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.812 -0400", hash_original_method = "280A0F6C9C24DB057056B6AC4648E027", hash_generated_method = "02C7DC5A50DCE29E5C93549882488EA6")
         public boolean hasNext() {
 for(int i = mIndex;i < mSatellites.length;i++)

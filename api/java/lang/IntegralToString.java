@@ -205,7 +205,8 @@ public final class IntegralToString {
     }
 
     
-        private static int intIntoCharArray(char[] buf, int cursor, int n) {
+        @DSModeled(DSC.SAFE)
+    private static int intIntoCharArray(char[] buf, int cursor, int n) {
         while ((n & 0xffff0000) != 0) {
             int q = (int) ((0x51EB851FL * (n >>> 2)) >>> 35);
             int r = n - 100*q;

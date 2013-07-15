@@ -460,6 +460,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1668423608 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.212 -0400", hash_original_method = "BE42CB64719A7E35581BD2552BC2391A", hash_generated_method = "ACF10DE12CA463C1B6584374D140AF0A")
     @Override
     protected int protectedArrayOffset() {

@@ -44,6 +44,7 @@ public final class OtherName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.221 -0400", hash_original_method = "7B542DE43DC21978E6F04336AAB05EBD", hash_generated_method = "1A52B556E7F9D2509506FB25B56E94D6")
     public byte[] getValue() {
         byte[] var2063C1608D6E0BAF80249C42E2BE5804_1091574093 = (value);
@@ -54,6 +55,7 @@ public final class OtherName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.221 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "F8A042C9C70DF18D5CF9FB60962BA5D0")
     public byte[] getEncoded() {
     if(encoding == null)        

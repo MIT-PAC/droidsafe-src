@@ -231,7 +231,8 @@ public class AlertController {
     }
 
     
-        static boolean canTextInput(View v) {
+        @DSModeled(DSC.SPEC)
+    static boolean canTextInput(View v) {
         if (v.onCheckIsTextEditor()) {
             return true;
         }
@@ -287,6 +288,7 @@ public class AlertController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.482 -0400", hash_original_method = "94C17D404D39F375178D63AA6F858393", hash_generated_method = "9AE38CE4ED732D893D2FAE27057216F6")
     public void setCustomTitle(View customTitleView) {
         mCustomTitleView = customTitleView;
@@ -310,6 +312,7 @@ public class AlertController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.483 -0400", hash_original_method = "042A2BE3A9972DB9108969963EFE2152", hash_generated_method = "1380E8C1F04845590815286ECEC42D4D")
     public void setView(View view) {
         mView = view;
@@ -320,6 +323,7 @@ public class AlertController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.483 -0400", hash_original_method = "2847E990E96B77DB4BD87DDDB577F2D4", hash_generated_method = "C1AF1001A46546F3ACEDC1DB21C0A963")
     public void setView(View view, int viewSpacingLeft, int viewSpacingTop, int viewSpacingRight,
             int viewSpacingBottom) {
@@ -389,6 +393,7 @@ switch(whichButton){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.484 -0400", hash_original_method = "FB4271E4605E30D98972B290FB7DEC88", hash_generated_method = "64DA2043EAACEF45E7481B1A047D3916")
     public void setIcon(int resId) {
         mIconId = resId;
@@ -431,6 +436,7 @@ switch(whichButton){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.484 -0400", hash_original_method = "19D779B93DDFF4465E595606B06C3EFE", hash_generated_method = "2877CEF8117E45CC2D5B31E05B27DD1D")
     public void setInverseBackgroundForced(boolean forceInverseBackground) {
         mForceInverseBackground = forceInverseBackground;
@@ -439,6 +445,7 @@ switch(whichButton){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.484 -0400", hash_original_method = "3273CA9467A607A59D9BD9C18D0394BC", hash_generated_method = "0BFE802FF10488CFCE8508FC59F1AF7C")
     public ListView getListView() {
 ListView varD1B2FEEA91DDD2A777490FD0D2D97D45_2097831279 =         mListView;
@@ -449,6 +456,7 @@ ListView varD1B2FEEA91DDD2A777490FD0D2D97D45_2097831279 =         mListView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.484 -0400", hash_original_method = "3833583B80F66F9531985629B1AE2E3F", hash_generated_method = "65A01486F2BBFD634AEF7329E297D9AC")
     public Button getButton(int whichButton) {
         addTaint(whichButton);
@@ -512,6 +520,7 @@ Button var540C13E9E156B687226421B24F2DF178_1699386424 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.485 -0400", hash_original_method = "0CE32455CB333C36B4EB85B89D65D186", hash_generated_method = "AE804F87FF9C732A76621C7D609125EF")
     private void setupView() {
         LinearLayout contentPanel = (LinearLayout) mWindow.findViewById(R.id.contentPanel);
@@ -570,6 +579,7 @@ Button var540C13E9E156B687226421B24F2DF178_1699386424 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.486 -0400", hash_original_method = "291261EC5A45F15B0AF035A0FADD9120", hash_generated_method = "FEE4E6428DDC4A3729D50A62AC045E1D")
     private boolean setupTitle(LinearLayout topPanel) {
         addTaint(topPanel.getTaint());
@@ -626,6 +636,7 @@ Button var540C13E9E156B687226421B24F2DF178_1699386424 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.486 -0400", hash_original_method = "887622C8B8EC01B1F9012F53B044827B", hash_generated_method = "F359A7C03078FD262952FA0D9953A7A2")
     private void setupContent(LinearLayout contentPanel) {
         addTaint(contentPanel.getTaint());
@@ -728,6 +739,7 @@ Button var540C13E9E156B687226421B24F2DF178_1699386424 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.487 -0400", hash_original_method = "28BC3CB500322D129CBA8E7C7A78AD5A", hash_generated_method = "949041D966EAE0F7020A1C774161C6B8")
     private void centerButton(Button button) {
         addTaint(button.getTaint());
@@ -943,6 +955,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.489 -0400", hash_original_method = "9DCA0509220194E0D65C0AA0793BD261", hash_generated_method = "1A544E8412B412F855CA54EBD977B9CB")
         @Override
         protected boolean recycleOnMeasure() {

@@ -24,6 +24,7 @@ public class HandshakeCompletedEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.757 -0400", hash_original_method = "2F35DBDDEE25D44180770FC68EA02FBF", hash_generated_method = "FF033B955DCDAE8E871B63CB46295FC3")
     public SSLSession getSession() {
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1036168708 =         session;
@@ -74,6 +75,7 @@ X509Certificate[] varDD253E96FEFE5AFA9B8333B5E04E8D52_210821848 =         sessio
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.759 -0400", hash_original_method = "E52328DA42ED4C7658029875D0FD2A85", hash_generated_method = "C45AC8F9BF802BD5F501B2B7D4854DB5")
     public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
 Principal varE32C5C017D2564D4CA9314996F3A7199_1125130394 =         session.getPeerPrincipal();
@@ -84,6 +86,7 @@ Principal varE32C5C017D2564D4CA9314996F3A7199_1125130394 =         session.getPe
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.760 -0400", hash_original_method = "9AEFAC82D29E63E6CA9E21A60A8B85D0", hash_generated_method = "36732E1DC64FA9F1AB14B6984012BD16")
     public Principal getLocalPrincipal() {
 Principal var1392FB01BD123E39BCC698D8FF713577_1920073809 =         session.getLocalPrincipal();
@@ -94,6 +97,7 @@ Principal var1392FB01BD123E39BCC698D8FF713577_1920073809 =         session.getLo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.760 -0400", hash_original_method = "D59F011BF3B2DFBF72B84D897263E8E1", hash_generated_method = "67A68340575EFF8D23F588214518F365")
     public SSLSocket getSocket() {
 SSLSocket varB4DBB6057745BC2AB2ECD0D5AFD60222_1760842237 =         (SSLSocket) this.source;

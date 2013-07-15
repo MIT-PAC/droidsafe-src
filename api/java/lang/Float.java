@@ -34,6 +34,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.749 -0400", hash_original_method = "C4AC6F26EC342AC8CCBAB08E832A244F", hash_generated_method = "FD4B74DBFBC4F0558CACCC7CC5D138FC")
     public int compareTo(Float object) {
         addTaint(object.getTaint());
@@ -45,6 +46,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.750 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "EB6B50133C83539DA5DE667F9D0FBE6C")
     @Override
     public byte byteValue() {
@@ -56,6 +58,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.750 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "C8964B47B2FE5066A88F6703D9EB47D1")
     @Override
     public double doubleValue() {
@@ -67,6 +70,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.751 -0400", hash_original_method = "D5A6527E8F740E6B81FAC1E35F94CBE1", hash_generated_method = "48390EBD51AD619EB9D7D8A22F6E871B")
     @Override
     public boolean equals(Object object) {
@@ -93,6 +97,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.752 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "1EE88EF8C7381A2E66E134C2E520CC1D")
     @Override
     public float floatValue() {
@@ -104,6 +109,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.752 -0400", hash_original_method = "08993E3A95048E3B463477EA75421A52", hash_generated_method = "3FEA80CFB0F774DCBAFE93778190BFEE")
     @Override
     public int hashCode() {
@@ -121,6 +127,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.753 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "3C52F67F3BFD6A8BFB979E9BC33D745D")
     @Override
     public int intValue() {
@@ -132,6 +139,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.754 -0400", hash_original_method = "82C3193F23F6D7770C948A8F860700C8", hash_generated_method = "51F508D6F6925C78F60EA11FA7970C79")
     public boolean isInfinite() {
         boolean varED07AD9C4CE3E6B7E975E781387699CA_2116751725 = (isInfinite(value));
@@ -142,11 +150,13 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
-        public static boolean isInfinite(float f) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isInfinite(float f) {
         return (f == POSITIVE_INFINITY) || (f == NEGATIVE_INFINITY);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.754 -0400", hash_original_method = "9E74C322CF79FFEBE378AFAB98D56D96", hash_generated_method = "160DFE23B1348DE610874BC47CF295AE")
     public boolean isNaN() {
         boolean varA99476A90E68FD60B10540ABE2E1DC0D_1044811095 = (isNaN(value));
@@ -157,11 +167,13 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
-        public static boolean isNaN(float f) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isNaN(float f) {
         return f != f;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.755 -0400", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "CB60CC5D635E73F1CE3C9FB2D21792BD")
     @Override
     public long longValue() {
@@ -173,11 +185,13 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
-        public static float parseFloat(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static float parseFloat(String string) throws NumberFormatException {
         return StringToReal.parseFloat(string);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.756 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "8F7C79E93EB3D7A1CDC611877641C2CB")
     @Override
     public short shortValue() {
@@ -189,6 +203,7 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.756 -0400", hash_original_method = "A363CDE834C704519FC1C85052C83F92", hash_generated_method = "089AD7E031E6B6E786DC68D38CC9D94D")
     @Override
     public String toString() {
@@ -200,17 +215,20 @@ String var1670CC6E6AAA264EB645B58AB0074081_1887096770 =         Float.toString(v
     }
 
     
-        public static String toString(float f) {
+        @DSModeled(DSC.SAFE)
+    public static String toString(float f) {
         return RealToString.getInstance().floatToString(f);
     }
 
     
-        public static Float valueOf(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Float valueOf(String string) throws NumberFormatException {
         return parseFloat(string);
     }
 
     
-        public static int compare(float float1, float float2) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(float float1, float float2) {
         if (float1 > float2) {
             return 1;
         }
@@ -234,12 +252,14 @@ String var1670CC6E6AAA264EB645B58AB0074081_1887096770 =         Float.toString(v
     }
 
     
-        public static Float valueOf(float f) {
+        @DSModeled(DSC.SAFE)
+    public static Float valueOf(float f) {
         return new Float(f);
     }
 
     
-        public static String toHexString(float f) {
+        @DSModeled(DSC.SAFE)
+    public static String toHexString(float f) {
         if (f != f) {
             return "NaN";
         }

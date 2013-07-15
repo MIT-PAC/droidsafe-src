@@ -30,6 +30,7 @@ abstract class GLES20Layer extends HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.983 -0400", hash_original_method = "1433CF09BAF49EB0158C4CBA390321AC", hash_generated_method = "82085099D0E6A4B13361E56187376929")
     public int getLayer() {
         int var005B4338173753DA1B50DCC47C3EC00C_156292498 = (mLayer);

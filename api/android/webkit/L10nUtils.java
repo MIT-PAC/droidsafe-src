@@ -33,7 +33,8 @@ public class L10nUtils {
     }
 
     
-        public static String getLocalisedString(int id) {
+        @DSModeled(DSC.SPEC)
+    public static String getLocalisedString(int id) {
         if (mStrings == null) {
             return loadString(id);
         }

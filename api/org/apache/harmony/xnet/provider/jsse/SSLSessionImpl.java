@@ -122,6 +122,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.500 -0400", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "D2A9292801C9F9B54EAF71577DE1E7F1")
     public int getApplicationBufferSize() {
         int var241C2B32F58EBF2C562C0D8BE125FE0C_1553647346 = (SSLRecordProtocol.MAX_DATA_LENGTH);
@@ -142,6 +143,7 @@ String var80FBB7E6B734C861203B0EF1B8AB804F_923241733 =         cipherSuite.getNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.501 -0400", hash_original_method = "09A0842085DDEEEFFBE4843237FA7655", hash_generated_method = "9C58435F649200811770B80F218AE9CF")
     public long getCreationTime() {
         long var8799ECF12F308B9267E84384F8C130BF_2031512254 = (creationTime);
@@ -152,6 +154,7 @@ String var80FBB7E6B734C861203B0EF1B8AB804F_923241733 =         cipherSuite.getNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.501 -0400", hash_original_method = "6FF1AD4C2D68C6B37F5B643FEDAC8BE4", hash_generated_method = "B2DEB6EC0A503265BFB78A8D24D8B4AA")
     public byte[] getId() {
         byte[] varB80BB7740288FDA1F201890375A60C8F_1590308076 = (id);
@@ -162,6 +165,7 @@ String var80FBB7E6B734C861203B0EF1B8AB804F_923241733 =         cipherSuite.getNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.502 -0400", hash_original_method = "79FEA1654BACC0D1C8F52D94037731AA", hash_generated_method = "8082F6C10ECCF91D1EC505D76C5BEB58")
     public long getLastAccessedTime() {
         long varD52BF263BB592DFD5C99BCFC956503E4_560632351 = (lastAccessedTime);
@@ -172,6 +176,7 @@ String var80FBB7E6B734C861203B0EF1B8AB804F_923241733 =         cipherSuite.getNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.502 -0400", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "036AA02C1C6A85F59E623C246760CA34")
     public Certificate[] getLocalCertificates() {
 Certificate[] var4C5AE20413882C8DD1DF3FE09B18641D_2009165099 =         localCertificates;
@@ -201,6 +206,7 @@ Principal var540C13E9E156B687226421B24F2DF178_944546976 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.503 -0400", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "57357E4E414D4AE6638B99984A9AAAE9")
     public int getPacketBufferSize() {
         int varC83B5DF623EDEFDB0686BE40106F81D9_679394393 = (SSLRecordProtocol.MAX_SSL_PACKET_SIZE);
@@ -273,6 +279,7 @@ Certificate[] varF937CE92F117196F80CD35B09BCDC7EA_1569890517 =         peerCerti
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.504 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "CD6C5018026D1702C4F118D6086EE13F")
     public String getPeerHost() {
 String varFEF815055C97D4B621404BF729E85DA2_223717088 =         peerHost;
@@ -283,6 +290,7 @@ String varFEF815055C97D4B621404BF729E85DA2_223717088 =         peerHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.505 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "028BCB00E8D36733EA764E658BFB944E")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1581720676 = (peerPort);
@@ -312,6 +320,7 @@ Principal var9A28761194D2D1E856FBE408F69063AC_1946620011 =         peerCertifica
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.505 -0400", hash_original_method = "70FFC4864CFD3FC7BC69978E71944D24", hash_generated_method = "DF5870D494BFDC1A653FACAE6ED329C3")
     public String getProtocol() {
 String varC1869FB983D83359EAFE829125122338_2119704046 =         (protocol == null) ? "NONE" : protocol.name;
@@ -322,6 +331,7 @@ String varC1869FB983D83359EAFE829125122338_2119704046 =         (protocol == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.506 -0400", hash_original_method = "E54F5411F9B3E4DD60F47670618D45C7", hash_generated_method = "1EB75247AB97E164F18D6EA122B811CB")
     public SSLSessionContext getSessionContext() {
 SSLSessionContext var4C2DD4015CB4BB3F876A587F79816595_1897751854 =         context;
@@ -362,6 +372,7 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.507 -0400", hash_original_method = "81658CAC0BD01D20DC226803375A1EFC", hash_generated_method = "1607D36240D420C7B62C0493DECE3B97")
     public void invalidate() {
         isValid = false;
@@ -424,6 +435,7 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet()
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.509 -0400", hash_original_method = "EC2DC464BD3BB987F4ACA997202AA983", hash_generated_method = "2DAE9E81B53F1B2337E482EBD3CBB395")
     public void removeValue(String name) {
         addTaint(name.getTaint());
@@ -475,6 +487,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1006216671 =             super.clone(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.510 -0400", hash_original_method = "1B64858E0F9CF91B520A55B4E94E3F8D", hash_generated_method = "0E66339A36DC0FF9D4F6EB65322A02EE")
      void setPeer(String peerHost, int peerPort) {
         this.peerHost = peerHost;

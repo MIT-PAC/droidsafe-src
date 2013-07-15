@@ -457,6 +457,7 @@ Editor varED224B1BF4EAE660E8B6808A4D079108_1697270305 =         editor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.488 -0400", hash_original_method = "0F452AFCA1F8F7ACF1A711B33CB47BDA", hash_generated_method = "A1A4584BBF9CB6C119624A39FA8A7379")
     public File getDirectory() {
 File varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378 =         directory;
@@ -467,6 +468,7 @@ File varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378 =         directory;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.488 -0400", hash_original_method = "4A03A0F188DC0124026C9315925210D3", hash_generated_method = "4CF1DE5FFD969E140F15A4718D9BDBFE")
     public long maxSize() {
         long varB78E1120B12ABD7215D67324FE9476FF_990030433 = (maxSize);
@@ -477,6 +479,7 @@ File varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378 =         directory;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.488 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "2629D326656B2E81DF02B8AEB1AD56E3")
     public synchronized long size() {
         long varF7BD60B75B29D79B660A2859395C1A24_1025877627 = (size);
@@ -625,6 +628,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.492 -0400", hash_original_method = "DD17EBB3E7F8098B41E8CF3D3DB045E0", hash_generated_method = "D752C1AE89BDB35B297F3344F3601B7E")
     public boolean isClosed() {
         boolean var3949878E9780388AD98891E1C4F733E8_1135482051 = (journalWriter == null);
@@ -755,6 +759,7 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.497 -0400", hash_original_method = "1265F3570693D55B3F128D89D3B629D2", hash_generated_method = "C3C7E06795CEBCB72FAB9FE1FA415116")
         public InputStream getInputStream(int index) {
             addTaint(index);

@@ -430,6 +430,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "BCA6EFC1210C838BF4CD916790946AA6", hash_generated_method = "912E76BE560A0DDE6E9DC645753D71CC")
     public boolean getIccLockEnabled() {
         boolean var98241A760904A8071026171FB5F891EF_1537214631 = (mIccPinLocked);
@@ -440,6 +441,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.343 -0400", hash_original_method = "F2BBF6EB30564DA8841F6D4A48D01D80", hash_generated_method = "75EF38D476865F39FF68CB5327539A42")
     public boolean getIccFdnEnabled() {
         boolean var5D26F052B120A0C24B0BF31105E0F878_1550469319 = (mIccFdnEnabled);
@@ -635,6 +637,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.348 -0400", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "B509E0B2F3B300F4D599576F13AFE3ED")
     private void onIccSwap(boolean isAdded) {
         addTaint(isAdded);
@@ -774,6 +777,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.350 -0400", hash_original_method = "531282E014DCDC26F790CA6DADE3C8C6", hash_generated_method = "C877E460BC8719B85C9B0D4EE7DFECD0")
     public State getIccCardState() {
     if(mIccCardStatus == null)        
@@ -898,6 +902,7 @@ State var02D409DFF15E9D7C28B89B1EDC402D16_879521334 =         IccCard.State.NOT_
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.353 -0400", hash_original_method = "292BB37BE4996383C23DC23B1670D1D7", hash_generated_method = "DF536A31BE2F10EEC061DFC2375BEDBF")
     private State getConsolidatedState(State left, State right, State preferredState) {
         addTaint(preferredState.getTaint());
@@ -1034,9 +1039,11 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
         READY,
         NOT_READY,
         PERM_DISABLED;
+        @DSModeled(DSC.SAFE)
         public boolean isPinLocked() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED));
         }
+        @DSModeled(DSC.SAFE)
         public boolean iccCardExist() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED)
                     || (this == NETWORK_LOCKED) || (this == READY)

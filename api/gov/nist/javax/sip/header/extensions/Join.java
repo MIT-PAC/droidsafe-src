@@ -32,6 +32,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.698 -0400", hash_original_method = "62D967C94A5AE3381329492B03B8E183", hash_generated_method = "30429FFEBB1F39E5BF15A5F6E96F4E33")
     public String encodeBody() {
     if(callId == null)        
@@ -64,6 +65,7 @@ String var906583DF257E5B26DD99AC8582D137B0_1616671218 =             retVal;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.698 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "4100DF9667D1CB31915877A5BBA31AD8")
     public String getCallId() {
 String var5E6A5595C014DC7657F3E7EDB5AB9AD0_1998201629 =         callId;
@@ -74,6 +76,7 @@ String var5E6A5595C014DC7657F3E7EDB5AB9AD0_1998201629 =         callId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.699 -0400", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "88EECF618B045E3ED53F182E440D3C72")
     public CallIdentifier getCallIdentifer() {
 CallIdentifier varA526B294D67900709C29EF73993671CB_233584768 =         callIdentifier;
@@ -84,6 +87,7 @@ CallIdentifier varA526B294D67900709C29EF73993671CB_233584768 =         callIdent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.699 -0400", hash_original_method = "18B0F6F776471BD79AF2D65BB23B3FDC", hash_generated_method = "6992A879D69ED0B331E4999AE9EC11CE")
     public void setCallId(String cid) {
         callId = cid;
@@ -92,6 +96,7 @@ CallIdentifier varA526B294D67900709C29EF73993671CB_233584768 =         callIdent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.700 -0400", hash_original_method = "76D6B9E3FB2D7381056714796D175A19", hash_generated_method = "BC500CAB746BFEA9CABDC759AB4FDB6D")
     public void setCallIdentifier(CallIdentifier cid) {
         callIdentifier = cid;
@@ -100,6 +105,7 @@ CallIdentifier varA526B294D67900709C29EF73993671CB_233584768 =         callIdent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.700 -0400", hash_original_method = "B211B6A9EDFBB72196EA1C1405552E2E", hash_generated_method = "8FF8FBC26B85CED6EB7E3615C8CFE204")
     public String getToTag() {
     if(parameters == null)        
@@ -118,6 +124,7 @@ String varBC9E54483CF9A23A50F4FB068EFADA5A_1705158872 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.700 -0400", hash_original_method = "11B74AD04734B3C61566E9250AEBA382", hash_generated_method = "E0DA3B602400900E3E1240423A4560CD")
     public void setToTag(String t) throws ParseException {
         addTaint(t.getTaint());
@@ -144,6 +151,7 @@ String varBC9E54483CF9A23A50F4FB068EFADA5A_1705158872 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.701 -0400", hash_original_method = "8119C72F0478CFCCBAF29A53C28985A0", hash_generated_method = "0ABAA92698A3C9D5F774E4F40474B063")
     public boolean hasToTag() {
         boolean var70CBDDB41017F054700046FE795EF3BF_1397757458 = (hasParameter(ParameterNames.TO_TAG));
@@ -154,6 +162,7 @@ String varBC9E54483CF9A23A50F4FB068EFADA5A_1705158872 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.701 -0400", hash_original_method = "C0C59EBD9F5AF1603D81C107186D4E66", hash_generated_method = "8F5C24D1B4E10E96F090DB388EB7CB97")
     public void removeToTag() {
         parameters.delete(ParameterNames.TO_TAG);
@@ -162,6 +171,7 @@ String varBC9E54483CF9A23A50F4FB068EFADA5A_1705158872 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.701 -0400", hash_original_method = "31D6F2518E32939467AAA449E3B07BF0", hash_generated_method = "9F32A6409BB6346F7B4CD22DCC5053AD")
     public String getFromTag() {
     if(parameters == null)        
@@ -180,6 +190,7 @@ String varD6615A55A79DDF4AB00B28EDFDDE0CF2_1654651909 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.702 -0400", hash_original_method = "06D289B84B93DB0101D64879F61C1049", hash_generated_method = "44B34249971E645C5C35CA1BB5C35D81")
     public void setFromTag(String t) throws ParseException {
         addTaint(t.getTaint());
@@ -206,6 +217,7 @@ String varD6615A55A79DDF4AB00B28EDFDDE0CF2_1654651909 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.702 -0400", hash_original_method = "0268276F0AF2F185A8A983DF4EA54EFF", hash_generated_method = "559DC92A94AB48B3EF0A7D6E2699E578")
     public boolean hasFromTag() {
         boolean var49E814D07FF38DAE7998C7FEF2B9AB27_1001338924 = (hasParameter(ParameterNames.FROM_TAG));
@@ -216,6 +228,7 @@ String varD6615A55A79DDF4AB00B28EDFDDE0CF2_1654651909 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.702 -0400", hash_original_method = "77DF4F38C27826586F02F5EEDFEC8C8D", hash_generated_method = "B61172F24259436FBA34D6DD3E3FE321")
     public void removeFromTag() {
         parameters.delete(ParameterNames.FROM_TAG);
@@ -224,6 +237,7 @@ String varD6615A55A79DDF4AB00B28EDFDDE0CF2_1654651909 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.703 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "142A9BDDB720AB9D0361BDB0D8D98C01")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());

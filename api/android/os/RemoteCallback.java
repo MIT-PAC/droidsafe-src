@@ -90,6 +90,7 @@ public abstract class RemoteCallback implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.480 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4F15F82CC6001D306B926A8E2DC9D811")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1323276851 = (0);
@@ -167,6 +168,7 @@ public abstract class RemoteCallback implements Parcelable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.484 -0400", hash_original_method = "C1383866A4D5D22E2E944ECBE9D44118", hash_generated_method = "53C9A15F32E108D2F7A58D17A06027A8")
         protected void onResult(Bundle bundle) {
             //DSFIXME:  CODE0009: Possible callback target function detected

@@ -30,6 +30,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.516 -0400", hash_original_method = "A6A60BDDB9B869E20670F0D4B71173B1", hash_generated_method = "5BAF0F1EA2E231DFAE63AC79C1ADDBDC")
     private String getTimeStampAsString() {
     if(timeStamp == -1 && timeStampFloat == -1)        
@@ -61,6 +62,7 @@ String var7989E3F135E688AB6BA1B117FE333CA6_1817865769 =         Float.toString(t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.516 -0400", hash_original_method = "BFD0E29F8DBDA29B6D5527F4C53FF1F0", hash_generated_method = "C9FED023E571A17705D93B507B0D3A83")
     private String getDelayAsString() {
     if(delay == -1 && delayFloat == -1)        
@@ -92,6 +94,7 @@ String varD42ABEA32CCCF01A1859876730865E96_713998981 =         Float.toString(de
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.517 -0400", hash_original_method = "9C6948D2F9ACB5C855CB1B70AF4DF1F8", hash_generated_method = "0603E0B43BCFDBC0EB62F122FC8E1677")
     public String encodeBody() {
         StringBuffer retval = new StringBuffer();
@@ -124,6 +127,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.517 -0400", hash_original_method = "085907F485A51FAD6B2086211DEE0B83", hash_generated_method = "0594FA006259E5DB9E875ABAFA1E571A")
     public boolean hasDelay() {
         boolean var5170D6C26EF26E11B67739BB10040110_155952705 = (delay != -1);
@@ -134,6 +138,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.517 -0400", hash_original_method = "EEC7FFF2C35A5C091F00D880A66433E4", hash_generated_method = "4957208ED2900548BE9C2858F9A52B7B")
     public void removeDelay() {
         delay = -1;
@@ -142,6 +147,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.518 -0400", hash_original_method = "4E9675E31226E40B31535DE558B43882", hash_generated_method = "AD921DD1F821D4EDF16EE00F2F0EAF27")
     public void setTimeStamp(float timeStamp) throws InvalidArgumentException {
     if(timeStamp < 0)        
@@ -164,6 +170,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.518 -0400", hash_original_method = "01E7C97794DF2BDF54B9432179BAF6F0", hash_generated_method = "6B1BD81BE4C20DB9815387E7C49237BB")
     public float getTimeStamp() {
         float varA1D55C2097A168DE135F7BC9CC5E7C55_1273175928 = (this.timeStampFloat == -1 ? Float.valueOf(timeStamp).floatValue()
@@ -176,6 +183,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.518 -0400", hash_original_method = "E76077CCC1CFE0A65C8B9469FD12F639", hash_generated_method = "34885A8D7C2E0648D66F43207D1C06EA")
     public float getDelay() {
         float varF8E7D13292243AEE217733300B912A7F_772508317 = (delayFloat == -1 ? Float.valueOf(delay).floatValue() : delayFloat);
@@ -186,6 +194,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.519 -0400", hash_original_method = "614287DF965A55EC9CE805B49E8E8F7E", hash_generated_method = "C3353F8E87A89085F418E7FB95B778B4")
     public void setDelay(float delay) throws InvalidArgumentException {
     if(delay < 0 && delay != -1)        
@@ -208,6 +217,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.519 -0400", hash_original_method = "21D089BD1FDC44EC84A18CFADDD04289", hash_generated_method = "7EE710FC1758FD7BC0520EC76E7BCF45")
     public long getTime() {
         long var53282C9BBBF7B78DB63E8EBD606128BC_329970282 = (this.timeStamp == -1 ? (long) timeStampFloat : timeStamp);
@@ -218,6 +228,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.520 -0400", hash_original_method = "BF53496596C6E194CBAA97C816B19B22", hash_generated_method = "8939D5F53EC8F5C495F89230B7FEC530")
     public int getTimeDelay() {
         int varA586C7CA5165EB205CF69A2F0D1397B0_1726006229 = (this.delay == -1 ? (int) delayFloat : delay);
@@ -228,6 +239,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.520 -0400", hash_original_method = "930714F3CC3A7BF7C1984F60EB3E864F", hash_generated_method = "B652633B426E0E68DFA00E929D8BAD74")
     public void setTime(long timeStamp) throws InvalidArgumentException {
     if(timeStamp < -1)        
@@ -246,6 +258,7 @@ String var1B324365A764C077A55854483509F4AB_807766155 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.521 -0400", hash_original_method = "D3E64583B8501E5C3510C5471B1277F7", hash_generated_method = "F141AC61D88179B522901BDEF034D104")
     public void setTimeDelay(int delay) throws InvalidArgumentException {
     if(delay < -1)        

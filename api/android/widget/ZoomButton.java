@@ -97,6 +97,7 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.124 -0400", hash_original_method = "DEDF5C76C1376B1670A66754E8A8EB41", hash_generated_method = "D68C36E9625129F28B8BB01C9B1C450E")
     public void setZoomSpeed(long speed) {
         mZoomSpeed = speed;

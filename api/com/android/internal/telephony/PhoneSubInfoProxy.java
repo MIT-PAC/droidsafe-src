@@ -30,6 +30,7 @@ public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.357 -0400", hash_original_method = "2283D2DC026CDBFF3477BE41D42C9914", hash_generated_method = "D262168F541585EBD460EBA7053A0B05")
     public void setmPhoneSubInfo(PhoneSubInfo phoneSubInfo) {
         this.mPhoneSubInfo = phoneSubInfo;

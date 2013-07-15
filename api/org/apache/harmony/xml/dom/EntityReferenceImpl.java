@@ -22,6 +22,7 @@ public class EntityReferenceImpl extends LeafNodeImpl implements EntityReference
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.736 -0400", hash_original_method = "5A3E3202FC8B21204CAC945442E54540", hash_generated_method = "55B9F9A76D3D92EF423FF27089B491A0")
     @Override
     public String getNodeName() {
@@ -33,6 +34,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_2001480160 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.737 -0400", hash_original_method = "3C28BE11A99788526FD11A7F01EE97F6", hash_generated_method = "1224FFBB6FBFC491DFF87A49CEB98FD7")
     @Override
     public short getNodeType() {

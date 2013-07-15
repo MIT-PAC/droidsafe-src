@@ -110,6 +110,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.221 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "D56F86DA2A9819B5D2B87D42B11E5CBE")
     @Override
     public Object clone() {
@@ -134,6 +135,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_82330705 =             super.clone();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.222 -0400", hash_original_method = "B2DF95EC92791D38C85586E37BBFDFD0", hash_generated_method = "859A5CD5F87E11EF1E6FCDB502F841F9")
     @Override
     public boolean equals(Object object) {
@@ -170,11 +172,13 @@ Object var46F3A0D86742C1D6E099C2B166941A33_82330705 =             super.clone();
     }
 
     
-        public static Locale[] getAvailableLocales() {
+        @DSModeled(DSC.SAFE)
+    public static Locale[] getAvailableLocales() {
         return ICU.getAvailableLocales();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.222 -0400", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "70D34F9068FFC846A3222A48BF509EB4")
     public String getCountry() {
 String var306B1C24BC0EE091C63E09C6178972F6_318282570 =         countryCode;
@@ -185,7 +189,8 @@ String var306B1C24BC0EE091C63E09C6178972F6_318282570 =         countryCode;
     }
 
     
-        public static Locale getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static Locale getDefault() {
         return defaultLocale;
     }
 
@@ -200,6 +205,7 @@ String var4162A28D46B1DE98D12901CC8E93D248_2027484436 =         getDisplayCountr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.223 -0400", hash_original_method = "6391C14D02F936975118F82A1E774FAD", hash_generated_method = "419255CDAD9E03374174740E8BEDDBF8")
     public String getDisplayCountry(Locale locale) {
         addTaint(locale.getTaint());
@@ -239,6 +245,7 @@ String var7EDF4DE2945252F485BCACF7DA7023A8_1321342128 =         getDisplayLangua
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.224 -0400", hash_original_method = "C0028041B7C295EE912CA1345544B282", hash_generated_method = "6CC439DB213840F00C3F90C61782E70E")
     public String getDisplayLanguage(Locale locale) {
         addTaint(locale.getTaint());
@@ -278,6 +285,7 @@ String var5FFBDDC73BB3304503DF2B5423E14A46_1034007881 =         getDisplayName(g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.225 -0400", hash_original_method = "82746EC2958D563F59B7A18594C66ADB", hash_generated_method = "2DBF7319875C6499B9B027CF00AD8A03")
     public String getDisplayName(Locale locale) {
         addTaint(locale.getTaint());
@@ -336,6 +344,7 @@ String varB73190F85C04E5DCE591881F28A0B6BC_496161677 =         getDisplayVariant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.226 -0400", hash_original_method = "4A12574A7D5205BB7F7224B1AB3BA842", hash_generated_method = "B283175BE606BF4AC49E466AAF65A29C")
     public String getDisplayVariant(Locale locale) {
         addTaint(locale.getTaint());
@@ -365,6 +374,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2022929872 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.226 -0400", hash_original_method = "E7148683E6358C89AEF160E990AAEE93", hash_generated_method = "EF61DE697FD79181698F3D3154135D82")
     public String getISO3Country() {
     if(countryCode.length() == 0)        
@@ -384,6 +394,7 @@ String varC3479BF156E1D68A215A279AC7D244A6_1901343478 =         ICU.getISO3Count
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.227 -0400", hash_original_method = "10ED62717CAC900A278627831D37EC4E", hash_generated_method = "967274AF1711FADD07AAA383BDE2CBA8")
     public String getISO3Language() {
     if(languageCode.length() == 0)        
@@ -403,16 +414,19 @@ String var1E83AAAD5E709395BB9CA6BB58BCA009_893236265 =         ICU.getISO3Langua
     }
 
     
-        public static String[] getISOCountries() {
+        @DSModeled(DSC.SAFE)
+    public static String[] getISOCountries() {
         return ICU.getISOCountries();
     }
 
     
-        public static String[] getISOLanguages() {
+        @DSModeled(DSC.SAFE)
+    public static String[] getISOLanguages() {
         return ICU.getISOLanguages();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.228 -0400", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "FE9AB723EBF10CC93F5FA2224C265AC0")
     public String getLanguage() {
 String var3B648CECCAFE6CC0C14E6B5112DF42CA_200599859 =         languageCode;
@@ -423,6 +437,7 @@ String var3B648CECCAFE6CC0C14E6B5112DF42CA_200599859 =         languageCode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.228 -0400", hash_original_method = "A8C86ADBDB8FE1FD75DA90D3A9B92BDE", hash_generated_method = "3C3159F4C243E7CFA6529BF75659F21D")
     public String getVariant() {
 String varFF6608C6BB8A10EA44ED34D897B0E991_1509048259 =         variantCode;
@@ -433,6 +448,7 @@ String varFF6608C6BB8A10EA44ED34D897B0E991_1509048259 =         variantCode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.228 -0400", hash_original_method = "206F92E8CAE7869CD0834AB1BBCCF6BE", hash_generated_method = "E5A385399063879D6EF7504F7FCE8727")
     @Override
     public synchronized int hashCode() {
@@ -446,7 +462,8 @@ String varFF6608C6BB8A10EA44ED34D897B0E991_1509048259 =         variantCode;
     }
 
     
-        public synchronized static void setDefault(Locale locale) {
+        @DSModeled(DSC.SAFE)
+    public synchronized static void setDefault(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();
         }
@@ -467,6 +484,7 @@ String var66D22B56B8793B92BBBBA1F207965C13_502136214 =         (result == null) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.229 -0400", hash_original_method = "C73C94720A0586E8BA389B0E4B761A7E", hash_generated_method = "47522CF4350ADAD532182B4C91C28EE4")
     private String toNewString() {
     if(languageCode.length() == 0 && countryCode.length() == 0)        
@@ -508,6 +526,7 @@ String varE65B3A02759122992CB82C0E651AD408_139052928 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.230 -0400", hash_original_method = "03500CE785032DF09CF1C69BAF02C627", hash_generated_method = "451531EC6CFF215571930AE6226FD5CC")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -527,6 +546,7 @@ String varE65B3A02759122992CB82C0E651AD408_139052928 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.230 -0400", hash_original_method = "119900B43F45E61950B2C4FD2DBBE050", hash_generated_method = "D3338A68F22AB0AA28E6AF440D44E529")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());

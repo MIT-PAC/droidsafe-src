@@ -25,6 +25,7 @@ public class ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.932 -0400", hash_original_method = "377D44A9A27BF814250295098F20477B", hash_generated_method = "2A7444502A820F5B275D8C1E76291334")
     public byte[] getEncoded() {
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_201101934 = (encoding);

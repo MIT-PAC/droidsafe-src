@@ -29,6 +29,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.937 -0400", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "F69D427B4A2E72BA43563F8DEC741F82")
     public void lock() {
         sync.lock();
@@ -37,6 +38,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
     public void lockInterruptibly() throws InterruptedException {
         sync.acquireInterruptibly(1);
@@ -45,6 +47,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "8A53927C4D3AFD3BEC42BA0686BF8CBB")
     public boolean tryLock() {
         boolean var140F1A0621DD0BDEC215647F86BCA4E3_41565368 = (sync.nonfairTryAcquire(1));
@@ -55,6 +58,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "A2339DACCE4819EB9D8DE999D13B80E4")
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -67,6 +71,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
     public void unlock() {
         sync.release(1);
@@ -75,6 +80,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "F5D569EBECBD4EC9A5F5FF6E605AA1FF")
     public Condition newCondition() {
 Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondition();
@@ -85,6 +91,7 @@ Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "49C1080CD2F34E54D065E7F7411C1A36")
     public int getHoldCount() {
         int var033BBA9FBC78AAE10A48F197A19D4736_1793241613 = (sync.getHoldCount());
@@ -95,6 +102,7 @@ Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "A6DA77649687890E86B9A9C2430AB7B1")
     public boolean isHeldByCurrentThread() {
         boolean var67B4017CD59F5DDCE7498E8483F9CFB0_522369742 = (sync.isHeldExclusively());
@@ -105,6 +113,7 @@ Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "14699BE99FCFE398FCA550A5B901F191")
     public boolean isLocked() {
         boolean var45109197DB21CBB6F15ECEF830DA6904_506141976 = (sync.isLocked());
@@ -125,6 +134,7 @@ Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "69CEB7CFAC383EE5794F9CF958258F1A")
     protected Thread getOwner() {
 Thread var86C22E9219AA4C3398E9F9B969B294CC_1034654486 =         sync.getOwner();
@@ -176,6 +186,7 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653 =         sync
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.940 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "71AF9424BB70C09FD0C6D8E95E903A6B")
     public boolean hasWaiters(Condition condition) {
         addTaint(condition.getTaint());
@@ -203,6 +214,7 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653 =         sync
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.941 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "2E633C6396020ABE3FD9EB6C09A29488")
     public int getWaitQueueLength(Condition condition) {
         addTaint(condition.getTaint());
@@ -257,6 +269,7 @@ Collection<Thread> var2F6B35A4A5F0D194270D94D1FD44EBD7_1701860147 =         sync
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.941 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "74AA1892173EA0A3F8E3E9CF7BA5DC97")
     public String toString() {
         Thread o = sync.getOwner();

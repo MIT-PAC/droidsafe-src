@@ -26,6 +26,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.660 -0400", hash_original_method = "A44A96B9BD8D4010644191EEAB137884", hash_generated_method = "D9C7BA7D47C4FB0715F8057C432933B0")
     @Override
     public byte byteValue() {
@@ -37,6 +38,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.661 -0400", hash_original_method = "BB597B75ED281325D8B4388243F4CDF9", hash_generated_method = "7D4A1E1810BB605AE4A8D19EC0BCC99D")
     public int compareTo(Byte object) {
         addTaint(object.getTaint());
@@ -48,12 +50,14 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
-        public static int compare(byte lhs, byte rhs) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(byte lhs, byte rhs) {
         return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
     }
 
     
-        public static Byte decode(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Byte decode(String string) throws NumberFormatException {
         int intValue = Integer.decode(string);
         byte result = (byte) intValue;
         if (result == intValue) {
@@ -63,6 +67,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.665 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "FD245E4A498468DBCF41E0F1B6F39E2E")
     @Override
     public double doubleValue() {
@@ -74,6 +79,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.666 -0400", hash_original_method = "C5FA8B05FD4F870ED8BC1DBD5FAAA797", hash_generated_method = "C6F15FEF12DE27A981FF5D37A8AA7AA6")
     @Override
     public boolean equals(Object object) {
@@ -86,6 +92,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.667 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "62B9CA384CB83EA9B733009CF3E4D010")
     @Override
     public float floatValue() {
@@ -97,6 +104,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.668 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "F00BADBD20733406D29BB1296FB13F3B")
     @Override
     public int hashCode() {
@@ -108,6 +116,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.669 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "F8310C6070D5F857CEE7C259A1DB8C9A")
     @Override
     public int intValue() {
@@ -119,6 +128,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.669 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "E24CE3800A049D52A1720FA75627CDF2")
     @Override
     public long longValue() {
@@ -130,12 +140,14 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
-        public static byte parseByte(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static byte parseByte(String string) throws NumberFormatException {
         return parseByte(string, 10);
     }
 
     
-        public static byte parseByte(String string, int radix) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static byte parseByte(String string, int radix) throws NumberFormatException {
         int intValue = Integer.parseInt(string, radix);
         byte result = (byte) intValue;
         if (result == intValue) {
@@ -145,6 +157,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.671 -0400", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "42BCE37F6F9D93138D3D585A6BFCEF13")
     @Override
     public short shortValue() {
@@ -156,6 +169,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.672 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "4B878DE7CDEE51397470F96E0BF7DE36")
     @Override
     public String toString() {
@@ -167,27 +181,32 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_293872736 =         Integer.toString(
     }
 
     
-        public static String toHexString(byte b, boolean upperCase) {
+        @DSModeled(DSC.SAFE)
+    public static String toHexString(byte b, boolean upperCase) {
         return IntegralToString.byteToHexString(b, upperCase);
     }
 
     
-        public static String toString(byte value) {
+        @DSModeled(DSC.SAFE)
+    public static String toString(byte value) {
         return Integer.toString(value);
     }
 
     
-        public static Byte valueOf(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Byte valueOf(String string) throws NumberFormatException {
         return valueOf(parseByte(string));
     }
 
     
-        public static Byte valueOf(String string, int radix) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Byte valueOf(String string, int radix) throws NumberFormatException {
         return valueOf(parseByte(string, radix));
     }
 
     
-        public static Byte valueOf(byte b) {
+        @DSModeled(DSC.SAFE)
+    public static Byte valueOf(byte b) {
         return VALUES[b + 128];
     }
 

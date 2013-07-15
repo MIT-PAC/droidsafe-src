@@ -36,6 +36,7 @@ public class HandlerThread extends Thread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.375 -0400", hash_original_method = "7869505C1EE96F329E4F7F0EA5AF9C5D", hash_generated_method = "FB28300AB029F1A68D6A159EC4AF6459")
     protected void onLooperPrepared() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -134,6 +135,7 @@ Looper var0D78717954912E9F181D5C0583378DCC_1278228616 =         mLooper;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.377 -0400", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "E800AEF4A19FD1C46A717B385BE4E0B4")
     public int getThreadId() {
         int var112D67724C3A8F952B4AC2B5A69FBC94_827878585 = (mTid);

@@ -145,6 +145,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.196 -0400", hash_original_method = "B31E7F9449B862015CEE60B6F703FDEF", hash_generated_method = "5D21943CC08F55C3F4F9C2EEE2A953CF")
     public void onBackoffChanged(Account account, String providerName, long backoff) {
         //DSFIXME:  CODE0009: Possible callback target function detected

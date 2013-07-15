@@ -49,6 +49,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.693 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "339E3E5DAFF848E35C2FE2F7C23E257D")
     public int length() {
         int var429F431E8CD8AC287AA27460675EAEFE_1384299439 = (mLength);
@@ -59,6 +60,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.693 -0400", hash_original_method = "E11A0D9421BCBF5642F2B23C8115E006", hash_generated_method = "9FECEAFC8ECC1A4C6198ABD3E6FAF6A4")
     public int getIndexCount() {
         int varCBCFD99B62F4085DE81B9C51AEF99317_1678511388 = (mIndices[0]);
@@ -69,6 +71,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.694 -0400", hash_original_method = "757B3D64706707A79AF98EFF90D4FA5D", hash_generated_method = "1268861A5FB745CFC1FCC11EAE9DB90C")
     public int getIndex(int at) {
         addTaint(at);
@@ -80,6 +83,7 @@ public class TypedArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.694 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "5268A35CD79309A892F5BE570F6F694E")
     public Resources getResources() {
 Resources var346B953D96D762F7FED561E83C1656CA_1086665936 =         mResources;
@@ -774,6 +778,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.711 -0400", hash_original_method = "DF47714E2511EE2CB8E5736FC0D36FFE", hash_generated_method = "663937278DC662A10D210FF72DFD7377")
     public int getResourceId(int index, int defValue) {
         addTaint(defValue);
@@ -900,6 +905,7 @@ CharSequence[] var540C13E9E156B687226421B24F2DF178_712422274 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.714 -0400", hash_original_method = "0EF762AB49E40F4FF6959DF2595733A2", hash_generated_method = "EB4E6201FFC3FA3C784A4190BB714692")
     public boolean hasValue(int index) {
         addTaint(index);
@@ -949,6 +955,7 @@ String var71429891338B1C00981D47483975D6BA_1856794583 =         mXml != null ? m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.718 -0400", hash_original_method = "A1E6C58584B412829C21C498310464D0", hash_generated_method = "E2D95A3B760CCDC32B6CA5663CCFF342")
     public void recycle() {
         synchronized

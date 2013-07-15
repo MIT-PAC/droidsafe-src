@@ -64,6 +64,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.117 -0400", hash_original_method = "5B9E7BA75E1ADB49B9D7BF05321EEAAC", hash_generated_method = "C69094AE531324E916D6ECED92924926")
     @Override
     public void clear() {
@@ -73,6 +74,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.117 -0400", hash_original_method = "FBFDCAC8150A508191130E5D508BCC64", hash_generated_method = "0E8895AB82B41B2948F782CA6FCB7C24")
     @Override
     public boolean equals(Object object) {
@@ -138,6 +140,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     public abstract E get(int location);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.118 -0400", hash_original_method = "4C126AEA105405AEB8FC6F1BC74D780D", hash_generated_method = "67287E27C3F5F4E402B45DE40BF38B62")
     @Override
     public int hashCode() {
@@ -163,6 +166,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.119 -0400", hash_original_method = "33CCCA11E9065665C3CB5AA775E1CF23", hash_generated_method = "596E791499AE4A35E1A9DD575B028A49")
     public int indexOf(Object object) {
         addTaint(object.getTaint());
@@ -226,6 +230,7 @@ Iterator<E> var98A17F5C644EE571B50E8AB722E91624_657998174 =         new SimpleLi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.120 -0400", hash_original_method = "D9C6E95DB4589560C406CE5442E4EDF7", hash_generated_method = "A062C475A4C84EF79C0D19A776488387")
     public int lastIndexOf(Object object) {
         addTaint(object.getTaint());
@@ -310,6 +315,7 @@ ListIterator<E> varA850735745ADA094DBCC6D2BBBE0CA4F_1219493974 =         new Ful
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.122 -0400", hash_original_method = "D592F953402A10CA44AACBE4A2DEE99F", hash_generated_method = "6D6A2347514B81060D28B96CAA380E0C")
     protected void removeRange(int start, int end) {
         addTaint(end);
@@ -569,6 +575,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.127 -0400", hash_original_method = "9E39925604BB7D82864E9E0B4A9B04C9", hash_generated_method = "CBBBC0A7F7B8021869A19A5DB5F09291")
         public boolean hasPrevious() {
             boolean var716A4D992467E57E8EC4184695D584B8_1067398531 = (pos >= 0);
@@ -579,6 +586,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.127 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "5977224826A5C2880FAC6FA6DE9CE73D")
         public int nextIndex() {
             int varF9B06598B7E41FEBC3492F881D35DA6D_1152113754 = (pos + 1);
@@ -627,6 +635,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.128 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "3A98FE066B33FCF746F0494BDF97CE51")
         public int previousIndex() {
             int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_910777287 = (pos);
@@ -1025,6 +1034,7 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.137 -0400", hash_original_method = "E4C79C12269E967D1174070754018639", hash_generated_method = "9CDE73BCB1714573BB8FFEB74FFC6CC6")
          void sizeChanged(boolean increment) {
             addTaint(increment);

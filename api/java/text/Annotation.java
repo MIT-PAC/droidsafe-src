@@ -18,6 +18,7 @@ public class Annotation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.676 -0400", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "79697A7EDADCDDB5AB0EAE442C83735F")
     public Object getValue() {
 Object varAF280DA2BC37D8BE783D8499160168DE_1599590957 =         value;
@@ -28,6 +29,7 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1599590957 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.676 -0400", hash_original_method = "439CE19804D9002003DD6A4835AE4496", hash_generated_method = "2D28C613AC45E38764DBB36A8D28D5EF")
     @Override
     public String toString() {

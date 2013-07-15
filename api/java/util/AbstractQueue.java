@@ -84,6 +84,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_1529907421 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.264 -0400", hash_original_method = "01DAFC6C5F0E6FF4922B6201FE3DA7B9", hash_generated_method = "80F296E9F7E3230003391D844A959F3A")
     public void clear() {
         while

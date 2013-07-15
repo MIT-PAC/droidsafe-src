@@ -13,6 +13,7 @@ public class Stack<E> extends Vector<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.663 -0400", hash_original_method = "3F97FF544B92201B8032D3FE94BC3E20", hash_generated_method = "33FEBD006D96C89DA461A1FF73D711F3")
     public boolean empty() {
         boolean var2FFE4DE88739498F1C07BDE62E7A2403_1848317059 = (isEmpty());
@@ -88,6 +89,7 @@ E var6F3B27511D98F0E852A24482F031265F_1170225929 =         object;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.664 -0400", hash_original_method = "F96799DE4EC4413EE3D35D731594FD43", hash_generated_method = "46E6BE37E53091826612E140AAD89B2C")
     public synchronized int search(Object o) {
         addTaint(o.getTaint());

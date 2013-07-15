@@ -129,6 +129,7 @@ FileLock varF5D9544336A16D8E74D4CBEA85C52705_1811543885 =         tryLock(0L, Lo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.612 -0400", hash_original_method = "224E04BA70E2891F43254A5C70CBC214", hash_generated_method = "902BFE0B77FE98FD5AA39A0785D4B2DF")
         @Override
         public String toString() {

@@ -83,6 +83,7 @@ public abstract class ServiceStateTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.374 -0400", hash_original_method = "34F755352C02DF9FD9E8CDE125547BA1", hash_generated_method = "5F21128ECA585D33E8E9E59C7C15056C")
     public boolean getDesiredPowerState() {
         boolean varC89D1AF0AEE8D0A2CF4FED65DAD30DE6_1369310093 = (mDesiredPowerState);
@@ -476,6 +477,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.385 -0400", hash_original_method = "67059C8AF83909E1964C0331470598CC", hash_generated_method = "E3227FB4AA91ABF44EE1CB591824E9C8")
     public boolean processPendingRadioPowerOffAfterDataOff() {
         synchronized
@@ -512,6 +514,7 @@ switch(msg.what){
     protected abstract void hangupAndPowerOff();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.386 -0400", hash_original_method = "CCBC34A7562606F2023BFC5649B6E19A", hash_generated_method = "F6D15879E1DF2FFC771820A47AF4ACD6")
     protected void cancelPollState() {
         pollingContext = new int[1];

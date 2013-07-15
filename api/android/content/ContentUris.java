@@ -15,7 +15,8 @@ public class ContentUris {
     }
 
 
-        public static long parseId(Uri contentUri) {
+        @DSModeled(DSC.SPEC)
+    public static long parseId(Uri contentUri) {
         String last = contentUri.getLastPathSegment();
         return last == null ? -1 : Long.parseLong(last);
     }
@@ -26,7 +27,8 @@ public class ContentUris {
     }
 
     
-        public static Uri withAppendedId(Uri contentUri, long id) {
+        @DSModeled(DSC.SPEC)
+    public static Uri withAppendedId(Uri contentUri, long id) {
         return appendId(contentUri.buildUpon(), id).build();
     }
 

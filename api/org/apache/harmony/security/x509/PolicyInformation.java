@@ -27,6 +27,7 @@ public final class PolicyInformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.242 -0400", hash_original_method = "012FFA67DCC82ECD3E1505D0CB12E6E1", hash_generated_method = "55E5262BF01030255F8DD50B2468C59E")
     public String getPolicyIdentifier() {
 String var042D1F5662848EDA928AD6E741377A61_1600068448 =         policyIdentifier;
@@ -37,6 +38,7 @@ String var042D1F5662848EDA928AD6E741377A61_1600068448 =         policyIdentifier
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.242 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "2E7722460F70D087517981A5392BC6BB")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -54,6 +56,7 @@ String var042D1F5662848EDA928AD6E741377A61_1600068448 =         policyIdentifier
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.242 -0400", hash_original_method = "76E469F93D4AF204B8C17A8AD4618A81", hash_generated_method = "833700E728FE3DDB33EA1D44455CD57E")
     public void dumpValue(StringBuilder sb) {
         addTaint(sb.getTaint());

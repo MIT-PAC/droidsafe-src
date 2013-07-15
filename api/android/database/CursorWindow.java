@@ -270,6 +270,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.153 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "1017747B3DD425566EC6FF588AC3E42C")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
@@ -311,6 +312,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.155 -0400", hash_original_method = "E83B1D6D3C97BD3B3A2AA134F51457E7", hash_generated_method = "BB57CD42F8ED3EDEE79EC7C187ADC667")
     public int getStartPosition() {
         int var4770B54049ADFE51BD91A1F9D13B56D1_825639039 = (mStartPos);
@@ -321,6 +323,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.155 -0400", hash_original_method = "A3D22CBF25891D62569B204C4A11C84D", hash_generated_method = "494AFECC1CA5EB1938A9EB7987E5F3E4")
     public void setStartPosition(int pos) {
         mStartPos = pos;
@@ -817,6 +820,7 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.168 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BA562CDCE9C6D94D1559AE20C0D33BA0")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_589340360 = (0);

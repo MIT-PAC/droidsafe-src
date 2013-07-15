@@ -182,7 +182,8 @@ public class ThumbnailUtils {
     }
 
     
-        private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
+        @DSModeled(DSC.SPEC)
+    private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
             Uri uri, ContentResolver cr, ParcelFileDescriptor pfd,
             BitmapFactory.Options options) {
         Bitmap b = null;
@@ -214,7 +215,8 @@ public class ThumbnailUtils {
     }
 
     
-        private static void closeSilently(ParcelFileDescriptor c) {
+        @DSModeled(DSC.SPEC)
+    private static void closeSilently(ParcelFileDescriptor c) {
         if (c == null) return;
         try {
           c.close();
@@ -223,7 +225,8 @@ public class ThumbnailUtils {
     }
 
     
-        private static ParcelFileDescriptor makeInputStream(
+        @DSModeled(DSC.SPEC)
+    private static ParcelFileDescriptor makeInputStream(
             Uri uri, ContentResolver cr) {
         try {
             return cr.openFileDescriptor(uri, "r");
@@ -233,7 +236,8 @@ public class ThumbnailUtils {
     }
 
     
-        private static Bitmap transform(Matrix scaler,
+        @DSModeled(DSC.SPEC)
+    private static Bitmap transform(Matrix scaler,
             Bitmap source,
             int targetWidth,
             int targetHeight,

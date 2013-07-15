@@ -113,7 +113,8 @@ ParcelFileDescriptor var8F8003894920E6C8D79BF232DC1A425D_264586404 =         dup
     }
 
     
-        public static ParcelFileDescriptor fromSocket(Socket socket) {
+        @DSModeled(DSC.SPEC)
+    public static ParcelFileDescriptor fromSocket(Socket socket) {
         FileDescriptor fd = socket.getFileDescriptor$();
         return fd != null ? new ParcelFileDescriptor(fd) : null;
     }
@@ -153,6 +154,7 @@ ParcelFileDescriptor var8F8003894920E6C8D79BF232DC1A425D_264586404 =         dup
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.130 -0400", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "A5D6CA424ABACC9D74CAAF85CD03807D")
     public FileDescriptor getFileDescriptor() {
 FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescriptor;
@@ -163,6 +165,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.131 -0400", hash_original_method = "77F816B0B1C349FF3A8882E701737452", hash_generated_method = "9D70C95D5FB4E303E592A675849DC7FD")
     public long getStatSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_795381302 = getTaintLong();
@@ -170,6 +173,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.131 -0400", hash_original_method = "0F9A3950A7A9E5BB31D919F8BB19673E", hash_generated_method = "34A2525E138418C3D949ECEBA789EBC5")
     public long seekTo(long pos) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_994367706 = getTaintLong();
@@ -196,6 +200,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.132 -0400", hash_original_method = "48F8D374A617845984C88F484B28408C", hash_generated_method = "CB685F8C97FD578BA21C5BA044675FC3")
     private int getFdNative() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_456331374 = getTaintInt();
@@ -306,6 +311,7 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.134 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "ECDE7F7D56D6E23A69B53860674B5960")
     public int describeContents() {
         int var7D45AD2A24206A9DE492E2B68DB53120_1162905991 = (Parcelable.CONTENTS_FILE_DESCRIPTOR);

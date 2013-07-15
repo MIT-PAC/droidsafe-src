@@ -185,7 +185,8 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
-        public static int getLength(byte[] encoding) {
+        @DSModeled(DSC.SAFE)
+    public static int getLength(byte[] encoding) {
         int length = encoding[1] & 0xFF;
         int numOctets = 0;
         if ((length & 0x80) != 0) { 
@@ -566,6 +567,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.891 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "95F8349A55ACF7071C5FC92AFAC815A9")
     private ASN1Exception expected(String what) throws ASN1Exception {
         addTaint(what.getTaint());
@@ -939,6 +941,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.936 -0400", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "F982AFECE3173308946B4FA9325526D9")
     protected int read() throws IOException {
     if(offset == buffer.length)        
@@ -1107,6 +1110,7 @@ for(;i < pool[0].length && pool[0][i] != null;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.939 -0400", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "D9CF83BABE567FFCE009A8242FBFABB6")
     public Object get(Object key) {
         addTaint(key.getTaint());

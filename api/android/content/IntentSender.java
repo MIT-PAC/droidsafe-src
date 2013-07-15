@@ -38,6 +38,7 @@ public class IntentSender implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.145 -0400", hash_original_method = "D1640EC79CDF4472CD1CED043D9B375E", hash_generated_method = "8E2EA0208115788DCDA81893B480133E")
     public void sendIntent(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws SendIntentException {
@@ -52,6 +53,7 @@ public class IntentSender implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.146 -0400", hash_original_method = "5984C2C3625490063272E3C39EF4CC1F", hash_generated_method = "97CB3BA7D0670978C5A210D7007134B4")
     public void sendIntent(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission) throws SendIntentException {
@@ -185,6 +187,7 @@ String var2460B846747F8B22185AD8BE722266A5_2141059968 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.147 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C27B7FC70EC53A1A2BBB7C3810AFD085")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_538672899 = (0);
@@ -218,6 +221,7 @@ String var2460B846747F8B22185AD8BE722266A5_2141059968 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.148 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "E2EE4B23C941CF1CF7C16A2287683A2A")
     public IIntentSender getTarget() {
 IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
@@ -291,6 +295,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.151 -0400", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "E6DB147736FD6A8CF56D8AA16E4190C8")
         public void performReceive(Intent intent, int resultCode,
                 String data, Bundle extras, boolean serialized, boolean sticky) {

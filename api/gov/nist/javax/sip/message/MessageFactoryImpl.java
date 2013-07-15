@@ -27,6 +27,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.675 -0400", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "C6177A909B65F45400E04967CBC68CBF")
     public void setStrict(boolean strict) {
         this.strict = strict;
@@ -35,6 +36,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.676 -0400", hash_original_method = "4DD923E2326A355154686E3A31C60072", hash_generated_method = "5E20E9296F487C26CA8E7594FEC2C6CF")
     public void setTest(boolean flag) {
         this.testing = flag;
@@ -326,6 +328,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_400448291 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.681 -0400", hash_original_method = "A7A78E739513CEBA7D925C6C5ED3F852", hash_generated_method = "5A0ABE001B57409DBC47EA2C15867962")
     public Response createResponse(int statusCode, CallIdHeader callId,
             CSeqHeader cSeq, FromHeader from, ToHeader to, List via,
@@ -708,6 +711,7 @@ javax.sip.message.Request var3A0DD2F3DF1CA3ABF8090503156E6432_1194358680 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.687 -0400", hash_original_method = "8329107E7147BB5F0DCDAFE41A50D91D", hash_generated_method = "98B9DB264BB5FE53FC4015504C30F6A3")
     public Response createResponse(String responseString) throws java.text.ParseException {
         addTaint(responseString.getTaint());
@@ -739,6 +743,7 @@ Response varCB1C328DEADD598C5350BF81734F0282_1421796288 =         (SIPResponse) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.687 -0400", hash_original_method = "F6370A15361A54B6EDEFA955061D514D", hash_generated_method = "3D40FEC77C6384E42F8318075B55B80B")
     public void setDefaultUserAgentHeader(UserAgentHeader userAgent) {
         addTaint(userAgent.getTaint());
@@ -748,6 +753,7 @@ Response varCB1C328DEADD598C5350BF81734F0282_1421796288 =         (SIPResponse) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.688 -0400", hash_original_method = "86783F390E61522F639FC7DF78604B5D", hash_generated_method = "37DD24912CBF3A3A4D14C400540C0069")
     public void setDefaultServerHeader(ServerHeader server) {
         addTaint(server.getTaint());
@@ -757,16 +763,19 @@ Response varCB1C328DEADD598C5350BF81734F0282_1421796288 =         (SIPResponse) 
     }
 
     
-        public static UserAgentHeader getDefaultUserAgentHeader() {
+        @DSModeled(DSC.SAFE)
+    public static UserAgentHeader getDefaultUserAgentHeader() {
         return userAgent;
     }
 
     
-        public static ServerHeader getDefaultServerHeader() {
+        @DSModeled(DSC.SAFE)
+    public static ServerHeader getDefaultServerHeader() {
         return server;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.689 -0400", hash_original_method = "7A37B9B6512C6512FDCFFA4B5CE85073", hash_generated_method = "0F851291032840E58BACAC67A5530DA6")
     public void setDefaultContentEncodingCharset(String charset) throws NullPointerException,
     IllegalArgumentException {
@@ -784,11 +793,13 @@ Response varCB1C328DEADD598C5350BF81734F0282_1421796288 =         (SIPResponse) 
     }
 
     
-        public static String getDefaultContentEncodingCharset() {
+        @DSModeled(DSC.SAFE)
+    public static String getDefaultContentEncodingCharset() {
         return MessageFactoryImpl.defaultContentEncodingCharset;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.690 -0400", hash_original_method = "86E485BB3E030FD77D4D70ABB6598D25", hash_generated_method = "861C278BBD00CF336F787F6958B5A4D3")
     public MultipartMimeContent createMultipartMimeContent(ContentTypeHeader multipartMimeCth,
             String[] contentType,

@@ -45,7 +45,8 @@ public final class ContactsContract {
     }
 
 
-        public static boolean isProfileId(long id) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isProfileId(long id) {
         return id >= Profile.MIN_ID;
     }
 
@@ -385,7 +386,8 @@ public final class ContactsContract {
         }
 
         
-                public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
             final Cursor c = resolver.query(contactUri, new String[] {
                     Contacts.LOOKUP_KEY, Contacts._ID
             }, null, null, null);
@@ -405,13 +407,15 @@ public final class ContactsContract {
         }
 
         
-                public static Uri getLookupUri(long contactId, String lookupKey) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getLookupUri(long contactId, String lookupKey) {
             return ContentUris.withAppendedId(Uri.withAppendedPath(Contacts.CONTENT_LOOKUP_URI,
                     lookupKey), contactId);
         }
 
         
-                public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
             if (lookupUri == null) {
                 return null;
             }
@@ -439,7 +443,8 @@ public final class ContactsContract {
         }
 
         
-                public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
+                @DSModeled(DSC.SPEC)
+        public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
                 boolean preferHighres) {
             if (preferHighres) {
                 final Uri displayPhotoUri = Uri.withAppendedPath(contactUri,
@@ -476,7 +481,8 @@ public final class ContactsContract {
         }
 
         
-                public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
+                @DSModeled(DSC.SPEC)
+        public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
             return openContactPhotoInputStream(cr, contactUri, false);
         }
 
@@ -566,6 +572,7 @@ public final class ContactsContract {
                 }
 
 
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "9AAB1F7A5A7D8D5960972B4CBC4F52B3", hash_generated_method = "AEA3C98C0E042D44A6AC732F57092F63")
                 public Builder setContactId(long contactId) {
                     this.mContactId = contactId;
@@ -599,6 +606,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_859430777 =                     this
                 }
 
                 
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "C603E268BE9EB815AE093A2C036882D2", hash_generated_method = "B9A36D5A53365F047FC6F58855569959")
                 public Builder setLimit(int limit) {
                     mLimit = limit;
@@ -611,6 +619,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_983555315 =                     this
                 }
 
                 
+                @DSModeled(DSC.SPEC)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "CC75446D812A1F4BC170E31BF0668A44", hash_generated_method = "CBD620BDA8FAECD1CECAB454A6027959")
                 public Uri build() {
                     android.net.Uri.Builder builder = Contacts.CONTENT_URI.buildUpon();
@@ -775,7 +784,8 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
         }
 
         
-                public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
             final Uri dataUri = Uri.withAppendedPath(rawContactUri, Data.CONTENT_DIRECTORY);
             final Cursor cursor = resolver.query(dataUri, new String[] {
                     RawContacts.CONTACT_ID, Contacts.LOOKUP_KEY
@@ -1085,7 +1095,8 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         }
 
         
-                public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
             final Cursor cursor = resolver.query(dataUri, new String[] {
                     RawContacts.CONTACT_ID, Contacts.LOOKUP_KEY
             }, null, null, null);
@@ -2350,7 +2361,8 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         }
 
 
-                public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
+                @DSModeled(DSC.SPEC)
+        public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
                 String[] excludeMimes) {
             final float appScale = context.getResources().getCompatibilityInfo().applicationScale;
             final int[] pos = new int[2];
@@ -2364,7 +2376,8 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         }
 
         
-                public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,
+                @DSModeled(DSC.SPEC)
+        public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,
                 String[] excludeMimes) {
             final Intent intent = new Intent(ACTION_QUICK_CONTACT);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP

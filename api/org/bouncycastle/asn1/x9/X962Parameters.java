@@ -57,13 +57,15 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        public static X962Parameters getInstance(
+        @DSModeled(DSC.SPEC)
+    public static X962Parameters getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(obj.getObject());
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.452 -0400", hash_original_method = "1C39324908CB279AE84BA869E213B319", hash_generated_method = "1A4F2914343C7F3A24D57ED902EA13E1")
     public boolean isNamedCurve() {
         boolean varCC13642C5FED417B9FCE9EF3642230AD_1241275064 = ((params instanceof DERObjectIdentifier));
@@ -74,6 +76,7 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.453 -0400", hash_original_method = "475403761996D653CB6A92100ADDE6B9", hash_generated_method = "F652234D766D9BFD74BE4C9488580023")
     public boolean isImplicitlyCA() {
         boolean varCFE7CCBAFFCA97FC47C2B1E1CB22A937_1406385149 = ((params instanceof ASN1Null));
@@ -84,6 +87,7 @@ public class X962Parameters extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.453 -0400", hash_original_method = "43CDC3C01D01649D40574BDD3C664EE0", hash_generated_method = "B6F48A1048823EE50564EF1040CD15EB")
     public DERObject getParameters() {
 DERObject varD15CEB6F45B18F7EB233792D020C6115_1983846232 =         params;
@@ -94,6 +98,7 @@ DERObject varD15CEB6F45B18F7EB233792D020C6115_1983846232 =         params;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.453 -0400", hash_original_method = "C7E96020927A19D3FB38FF97469ACE2C", hash_generated_method = "E1CA69BCD761E2F166CB5F0ECC773EE3")
     public DERObject toASN1Object() {
 DERObject varD15CEB6F45B18F7EB233792D020C6115_511662193 =         params;

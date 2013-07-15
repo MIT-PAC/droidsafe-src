@@ -50,6 +50,7 @@ public class AdnRecordLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.743 -0400", hash_original_method = "E52409147EA4C18E8F78BAF12B808BF8", hash_generated_method = "6EB46D6941E8B29BDE235893777C0E24")
     public void loadFromEF(int ef, int extensionEF, int recordNumber,
                 Message response) {
@@ -71,6 +72,7 @@ public class AdnRecordLoader extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.744 -0400", hash_original_method = "3B75C101082AA8B5F76E21C5AC0D856A", hash_generated_method = "DF4256CB7896A805A14912C7FC61BE58")
     public void loadAllFromEF(int ef, int extensionEF,
                 Message response) {

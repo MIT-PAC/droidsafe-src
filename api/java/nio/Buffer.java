@@ -100,6 +100,7 @@ public abstract class Buffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.910 -0400", hash_original_method = "BA880ED8E3C58CA5885B3C340E7A6A66", hash_generated_method = "DAFA0E19E47E74F10ADC36F7175073B4")
      int checkGetBounds(int bytesPerElement, int length, int offset, int count) {
         addTaint(count);
@@ -136,6 +137,7 @@ public abstract class Buffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.910 -0400", hash_original_method = "A9251187BC2FC71988179BCFBD0F334A", hash_generated_method = "B11A120B89E487961CADD3FF0798AB14")
      int checkPutBounds(int bytesPerElement, int length, int offset, int count) {
         addTaint(count);
@@ -181,6 +183,7 @@ public abstract class Buffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.911 -0400", hash_original_method = "37F8609F5279E5BC0D8BC318C47B5ADC", hash_generated_method = "1691C4166EEB896F8D603005A38033DA")
      void checkStartEndRemaining(int start, int end) {
         addTaint(end);
@@ -355,6 +358,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_149826459 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.918 -0400", hash_original_method = "291AA3CEE66D23BDF7C966DCE30CC485", hash_generated_method = "D43158302179FB9AAA124DB49AE5DE97")
      void positionImpl(int newPosition) {
     if(newPosition < 0 || newPosition > limit)        
@@ -424,6 +428,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_763283914 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.920 -0400", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "980C63FDD7E09380B0E467022332EE23")
     @Override
     public String toString() {

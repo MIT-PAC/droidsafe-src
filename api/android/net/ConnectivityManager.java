@@ -26,7 +26,8 @@ public class ConnectivityManager {
     }
 
     
-        public static boolean isNetworkTypeValid(int networkType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isNetworkTypeValid(int networkType) {
         return networkType >= 0 && networkType <= MAX_NETWORK_TYPE;
     }
 
@@ -67,7 +68,8 @@ public class ConnectivityManager {
     }
 
     
-        public static boolean isNetworkTypeMobile(int networkType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isNetworkTypeMobile(int networkType) {
         switch (networkType) {
             case TYPE_MOBILE:
             case TYPE_MOBILE_MMS:
@@ -417,6 +419,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.889 -0400", hash_original_method = "6498894EA2E4C7DBE6A13B3BD05F6504", hash_generated_method = "FE813DBC143B3FE92D50CDECE2106F3D")
     @Deprecated
     public boolean getBackgroundDataSetting() {
@@ -428,6 +431,7 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.890 -0400", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "DD5713BFAEAD7937DCF087E006B8A5CE")
     @Deprecated
     public void setBackgroundDataSetting(boolean allowBackgroundData) {

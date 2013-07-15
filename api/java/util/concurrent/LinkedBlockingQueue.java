@@ -114,6 +114,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.089 -0400", hash_original_method = "15D22B562F85AEAC3F4AC4996FFD23A3", hash_generated_method = "C88CC2A92019BFE63FC44817948B087E")
     private void signalNotEmpty() {
         final ReentrantLock takeLock = this.takeLock;
@@ -137,6 +138,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.090 -0400", hash_original_method = "23256B84FD63DB25D1FF9FA99CF29C9A", hash_generated_method = "72C992F6506997D32138FF21DE2D90EF")
     private void signalNotFull() {
         final ReentrantLock putLock = this.putLock;
@@ -190,6 +192,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "8626572E0FE15707F18ECC5A9712CA34", hash_generated_method = "3646A04C6AE367BA0A6AA42D1CCE1C16")
      void fullyLock() {
         putLock.lock();
@@ -200,6 +203,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "5557FE5692936575245483F7CDC5CE2B", hash_generated_method = "DB6AEC1BC900D9A1E58F0AE1939A9554")
      void fullyUnlock() {
         takeLock.unlock();
@@ -210,6 +214,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "FC3CFC9E56AD635CFF4ED177A60462DA", hash_generated_method = "C7EA02A46EC74F4935771B2FF852AEF5")
     public int size() {
         int varF07AF9B5EBE1BDA12C06190B44E1F695_564188709 = (count.get());
@@ -220,6 +225,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.092 -0400", hash_original_method = "F6FFB0DBE2C073472862E76EB78E2D9E", hash_generated_method = "AC4D89C7277413D54827388C0ACC3AE5")
     public int remainingCapacity() {
         int var3C1171412FC071707DFA3A3D59A03AD0_1663170439 = (capacity - count.get());
@@ -418,6 +424,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.095 -0400", hash_original_method = "022306A077B45DC674F98467F25F93CD", hash_generated_method = "0D8B55611074D550C570D4DB4AB88BFC")
     public E take() throws InterruptedException {
         E x;
@@ -469,6 +476,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_1243331420 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.096 -0400", hash_original_method = "AA8094BF5AEC46D297071331A526D258", hash_generated_method = "A05100EBE43044EC2412FABB33010E5C")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -532,6 +540,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_800526200 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.097 -0400", hash_original_method = "D22B106AF12DCACC53C408D22FAEA025", hash_generated_method = "B1B813049B49A64C8696FB2C86CF5C38")
     public E poll() {
         final AtomicInteger count = this.count;
@@ -588,6 +597,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_338865570 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.097 -0400", hash_original_method = "6BD887DAC1ACD373E1861DD85FA5D83B", hash_generated_method = "8F12978D611BE6A567FF4A216ED63296")
     public E peek() {
     if(count.get() == 0)        
@@ -654,6 +664,7 @@ E var30B383EF1E5A298C086E51BB7B7C5921_1084538550 =             first.item;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.099 -0400", hash_original_method = "43DA2AA0857729B72806FF0ABDC45219", hash_generated_method = "AF9C551BD52AA17369D231186AFCA796")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -703,6 +714,7 @@ for(Node<E> trail = head, p = trail.next;p != null;trail = p,p = p.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.100 -0400", hash_original_method = "A4E3D89F8C47A7118ADD1757BF8D3A46", hash_generated_method = "C6907FBD5F332A70552046A7F86B1865")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -744,6 +756,7 @@ for(Node<E> p = head.next;p != null;p = p.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.101 -0400", hash_original_method = "A06A302045E6771EA320A7223F86E4E8", hash_generated_method = "095BB8E063A0970787CEF9A1283A4C12")
     public Object[] toArray() {
         fullyLock();
@@ -820,6 +833,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1439153755 =             a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.102 -0400", hash_original_method = "74ADAA84A44AA4C99AF60EA5FA9916C8", hash_generated_method = "710DFC9267982D1481F721B21163BA21")
     public String toString() {
         fullyLock();
@@ -874,6 +888,7 @@ String var9C07C753C7E9BC277E7521552478C668_1606931693 =                 sb.appen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.103 -0400", hash_original_method = "2B97B8EA201FFE74530152ABDF41ED91", hash_generated_method = "2579CD725F5E3B0D02F69C687EF47762")
     public void clear() {
         fullyLock();
@@ -989,6 +1004,7 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1543783174 =         new Itr();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.106 -0400", hash_original_method = "407E789BCFB8527B31EA0FCB2D45014F", hash_generated_method = "3FC85FCF0701BFD63D43A7F2EA01AB0D")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -1017,6 +1033,7 @@ for(Node<E> p = head.next;p != null;p = p.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.106 -0400", hash_original_method = "2A845E5CA6C44D2307376F014D4A5DD1", hash_generated_method = "A3E6A002B5F48C4FDF8D7D334C83F6BF")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -1100,6 +1117,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.108 -0400", hash_original_method = "930D47D628EF4F4226A6936FD0C40F3E", hash_generated_method = "C2DB4269EC3C8157422A50E5C75B51AA")
         public boolean hasNext() {
             boolean var97D04F0DD15D17F3CFE71371925A4C92_1139515096 = (current != null);
@@ -1142,6 +1160,7 @@ Node<E> var0478718F0636FB61899C13801CE9FE09_87483396 =                 s;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.110 -0400", hash_original_method = "B1551F09E1CC1CE37F95082545A7F15D", hash_generated_method = "6862ED38DA8964035EE37FD2D699345B")
         public E next() {
             fullyLock();

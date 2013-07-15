@@ -36,7 +36,8 @@ public final class SqliteWrapper {
     }
 
     
-        public static Cursor query(Context context, ContentResolver resolver, Uri uri,
+        @DSModeled(DSC.SPEC)
+    public static Cursor query(Context context, ContentResolver resolver, Uri uri,
             String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         try {
             return resolver.query(uri, projection, selection, selectionArgs, sortOrder);
@@ -59,7 +60,8 @@ public final class SqliteWrapper {
     }
 
     
-        public static int update(Context context, ContentResolver resolver, Uri uri,
+        @DSModeled(DSC.SPEC)
+    public static int update(Context context, ContentResolver resolver, Uri uri,
             ContentValues values, String where, String[] selectionArgs) {
         try {
             return resolver.update(uri, values, where, selectionArgs);
@@ -71,7 +73,8 @@ public final class SqliteWrapper {
     }
 
     
-        public static int delete(Context context, ContentResolver resolver, Uri uri,
+        @DSModeled(DSC.SPEC)
+    public static int delete(Context context, ContentResolver resolver, Uri uri,
             String where, String[] selectionArgs) {
         try {
             return resolver.delete(uri, where, selectionArgs);
@@ -83,7 +86,8 @@ public final class SqliteWrapper {
     }
 
     
-        public static Uri insert(Context context, ContentResolver resolver,
+        @DSModeled(DSC.SPEC)
+    public static Uri insert(Context context, ContentResolver resolver,
             Uri uri, ContentValues values) {
         try {
             return resolver.insert(uri, values);

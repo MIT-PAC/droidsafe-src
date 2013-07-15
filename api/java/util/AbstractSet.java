@@ -13,6 +13,7 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.290 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "24BB3F415C56C73FEEF98BA9C84212B6")
     @Override
     public boolean equals(Object object) {
@@ -66,6 +67,7 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.291 -0400", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "A932B71A4D0C0B01614858C5FB3CC3CB")
     @Override
     public int hashCode() {

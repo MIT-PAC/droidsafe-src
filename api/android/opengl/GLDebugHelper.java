@@ -17,7 +17,8 @@ public class GLDebugHelper {
     }
 
 
-        public static GL wrap(GL gl, int configFlags, Writer log) {
+        @DSModeled(DSC.SAFE)
+    public static GL wrap(GL gl, int configFlags, Writer log) {
         if ( configFlags != 0 ) {
             gl = new GLErrorWrapper(gl, configFlags);
         }

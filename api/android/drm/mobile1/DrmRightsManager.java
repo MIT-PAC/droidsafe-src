@@ -23,6 +23,7 @@ public class DrmRightsManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.602 -0400", hash_original_method = "DFEBA1171CC4BD5C340A5F7D201F4250", hash_generated_method = "88A67A797715AB82D07C186EF19C2899")
     public synchronized DrmRights installRights(InputStream rightsData, int len, String mimeTypeStr) throws DrmException, IOException {
         addTaint(mimeTypeStr.getTaint());
@@ -65,6 +66,7 @@ DrmRights var770D803EEC850C2A47B729548E6F300C_1580863840 =         rights;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.603 -0400", hash_original_method = "F869914CDBD46FC071FA033F543D25F0", hash_generated_method = "D181B014F5BE9BB184522076804032A0")
     public synchronized DrmRights queryRights(DrmRawContent content) {
         addTaint(content.getTaint());
@@ -137,6 +139,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_561150146 =         rightsList;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.607 -0400", hash_original_method = "017D692B38F8FD212CF524C82FCE2BD9", hash_generated_method = "217C2B5EB2E5F2AE6FCACA9CA4D6C2C2")
     public synchronized void deleteRights(DrmRights rights) {
         addTaint(rights.getTaint());
@@ -150,6 +153,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_561150146 =         rightsList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.608 -0400", hash_original_method = "4EFCC19418AEA2B988CE34DFC9464C6A", hash_generated_method = "B873EBD2223C20FD1E9D57B4192C6E32")
     private int nativeInstallDrmRights(InputStream data, int len, int mimeType, DrmRights rights) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1274044244 = getTaintInt();
@@ -157,6 +161,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_561150146 =         rightsList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.609 -0400", hash_original_method = "D2E0FD9FD256FCE483409E8A0B1A737B", hash_generated_method = "3D8DC35378491975C1B05BF8750C6608")
     private int nativeQueryRights(DrmRawContent content, DrmRights rights) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_90511707 = getTaintInt();
@@ -164,6 +169,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_561150146 =         rightsList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.609 -0400", hash_original_method = "53C2DF882AFDD7A7897768491F6FD437", hash_generated_method = "F082C4460425858DA36B229E5859F493")
     private int nativeGetNumOfRights() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975170364 = getTaintInt();
@@ -178,6 +184,7 @@ List var9AD584CC2B54A36DD742B42DE81DBB32_561150146 =         rightsList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.610 -0400", hash_original_method = "75A731730EAFA84E0B65F7039A32C61B", hash_generated_method = "B69C23F210D4759E838CFE47CA3AA9CC")
     private int nativeDeleteRights(DrmRights rights) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386163308 = getTaintInt();

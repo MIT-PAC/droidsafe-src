@@ -111,6 +111,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.434 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "E1B51716BCE9A0C6359188D250797BE4")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -122,6 +123,7 @@ public class RelativeLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.434 -0400", hash_original_method = "4B00B99E3D4A35B389EB4D3ED9BF824A", hash_generated_method = "2B6D5ACAF56866BE8DAC45848378F798")
     @android.view.RemotableViewMethod
     public void setIgnoreGravity(int viewId) {
@@ -1132,6 +1134,7 @@ ViewGroup.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_665959576 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.465 -0400", hash_original_method = "7AAD3A1C062434D08215151012F2CF47", hash_generated_method = "CA3D604DFCEB69F897D36EF34E3DC6C3")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -1422,6 +1425,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_1780992422 =             output + "Vi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.471 -0400", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "93452E0A48B7041D6E93F6CB23E7C08D")
         public void addRule(int verb) {
             mRules[verb] = TRUE;
@@ -1430,6 +1434,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_1780992422 =             output + "Vi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.471 -0400", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "15C34D41A65E9FA80EF1B69E592566CD")
         public void addRule(int verb, int anchor) {
             mRules[verb] = anchor;
@@ -1438,6 +1443,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_1780992422 =             output + "Vi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.472 -0400", hash_original_method = "42AF2398E9BA5CDF378E196E0674D4AF", hash_generated_method = "1144BB59F681DC26E78E734CAFDFADB5")
         public int[] getRules() {
             int[] varE219E87C8357C550D274AF6AD77D1221_491619492 = (mRules);
@@ -1684,6 +1690,7 @@ for(Node node : roots)
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "A08BF9EBBE4B2747346D150314791002", hash_generated_method = "2FE07B58E0CD5DBB314046E4692100A0")
             public void setNextPoolable(Node element) {
                 mNext = element;
@@ -1692,6 +1699,7 @@ for(Node node : roots)
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "3B74D9DA1E659E0940912A17ED2BA31C", hash_generated_method = "C5E4CF79F8CE0E6F6D796878FDAEEDAC")
             public Node getNextPoolable() {
 Node varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520 =                 mNext;
@@ -1702,6 +1710,7 @@ Node varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520 =                 mNext;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "E60D2BFBDF1CCA9957CACBE594B83140")
             public boolean isPooled() {
                 boolean var224D05F4261498DA1D9DF38424832532_1218349950 = (mIsPooled);
@@ -1712,6 +1721,7 @@ Node varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520 =                 mNext;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.479 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;

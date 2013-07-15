@@ -72,6 +72,7 @@ ComponentName varB1E306C5C480708721962AF755EE9EB4_1509986364 =         mWho;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.470 -0400", hash_original_method = "B5AB3987ECA0392723BA81C8F9C984A4", hash_generated_method = "702C180364C39425B1BE3898623ED50F")
     public void onEnabled(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -81,6 +82,7 @@ ComponentName varB1E306C5C480708721962AF755EE9EB4_1509986364 =         mWho;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.471 -0400", hash_original_method = "B030DD992F331571B7C674C361AA5021", hash_generated_method = "B2BC56F9F7127BA330E255473EFC7291")
     public CharSequence onDisableRequested(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -94,6 +96,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_66683444 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.471 -0400", hash_original_method = "3AE73024A5AE1632BF7BF3FF39ABC61B", hash_generated_method = "CB388A76D7739A15A014932B8A128C9C")
     public void onDisabled(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -103,6 +106,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_66683444 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.472 -0400", hash_original_method = "5C5796A973779ABAC966AF8BF648505D", hash_generated_method = "186A548C593FEFEB09A397F6C2EB7585")
     public void onPasswordChanged(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -112,6 +116,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_66683444 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.473 -0400", hash_original_method = "CF78327402B2C2123E9EC601B6F31A15", hash_generated_method = "09C393F37E8C3579BE3E927C02234CCB")
     public void onPasswordFailed(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -121,6 +126,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_66683444 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.473 -0400", hash_original_method = "2AC7C3B5C72B40DDF68FA801C448C7B7", hash_generated_method = "320108A4444499864A3DA7A7C97DA01E")
     public void onPasswordSucceeded(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -130,6 +136,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_66683444 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.474 -0400", hash_original_method = "412B859F7B36388642359BACAD05594E", hash_generated_method = "3F627A1982ACDAE3D4B220531982A2D4")
     public void onPasswordExpiring(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -139,6 +146,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_66683444 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.475 -0400", hash_original_method = "2445129A1CDA7F03AFDA7F9C777F984A", hash_generated_method = "183A62B492D8611CE9726698B9B716DA")
     @Override
     public void onReceive(Context context, Intent intent) {

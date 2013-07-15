@@ -25,6 +25,7 @@ public class ComparisonFailure extends AssertionFailedError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.183 -0400", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "0E1DC168268BB63CF1AF8ABE24A1EFE4")
     public String getMessage() {
     if(fExpected == null || fActual == null)        

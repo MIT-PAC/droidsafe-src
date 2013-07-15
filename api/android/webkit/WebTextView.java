@@ -394,6 +394,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "71A9668D278E13BFA32002A31F00CE22")
      ResultReceiver getResultReceiver() {
 ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceiver;
@@ -404,6 +405,7 @@ ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceive
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "6E1F9F12A85A5A438978D5E5B13A3A1B")
      boolean isSameTextField(int ptr) {
         addTaint(ptr);
@@ -930,6 +932,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.156 -0400", hash_original_method = "2AA5BA571DA39EAF8290098D28F58BC6", hash_generated_method = "9F7A21E2A62CF641E1F6B7CD175B9B70")
     @Override
     public boolean requestRectangleOnScreen(Rect rectangle, boolean immediate) {
@@ -1309,6 +1312,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "00DFCCEAEBCA5AF7E29ED7EACECB08F0")
      void setAutoFillProfileIsSet(boolean autoFillProfileIsSet) {
         mAutoFillProfileIsSet = autoFillProfileIsSet;
@@ -1421,6 +1425,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "5784D116F3F796E4D5324F7E68A41209", hash_generated_method = "DCDCC287CA9BC5217D3FA2BC94984F3E")
         @Override
         public void setAlpha(int alpha) {
@@ -1429,6 +1434,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "77240A7357C6E5E7293BFF14ACDD79D8", hash_generated_method = "18D8B35FAE562ED5B4F19A1CD78B9AEE")
         @Override
         public void setColorFilter(ColorFilter cf) {
@@ -1437,6 +1443,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "75B5E7D017875A02959B632C64D863F1")
         @Override
         public int getOpacity() {
@@ -1558,6 +1565,7 @@ View var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969 =             tv;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
         private void setTextView(TextView tv) {
             mTextView = tv;

@@ -306,6 +306,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.557 -0400", hash_original_method = "838D9E0EFB087A153045FCBAD3FD613D", hash_generated_method = "536C7051BB882BF5271FE2006DB7E498")
     protected void onActionIntentReconnectAlarm(Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -333,6 +334,7 @@ public abstract class DataConnectionTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.557 -0400", hash_original_method = "A1F89C02319CA5D605879D459A1AC731", hash_generated_method = "1C71AFF88AAA89DB68FA022702215CC6")
     protected void onActionIntentDataStallAlarm(Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -383,6 +385,7 @@ for(DataConnectionAc dcac : mDataConnectionAsyncChannels.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.558 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "00D6C51F0128ACD3AA288D536B99AF7C")
     public Activity getActivity() {
 Activity var3D4F4FFFAA1A051817B4856E624EDB92_591224138 =         mActivity;
@@ -447,6 +450,7 @@ ApnSetting var65439A79463534529915DF75B559437E_1375255120 =         ApnSetting.f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.560 -0400", hash_original_method = "F0E40F922DBB5D19CCBEC497FB284EC5", hash_generated_method = "3266295F856DD17AA9E378B276A86986")
     public String[] getActiveApnTypes() {
         String[] result;
@@ -474,6 +478,7 @@ String[] varDC838461EE2FA0CA4C9BBB70A15456B0_81340707 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.560 -0400", hash_original_method = "8A278F7563F3F2CC899D3E200DD135CD", hash_generated_method = "708FB7DD74344545737B919CAE1818FC")
     public String getActiveApnString(String apnType) {
         addTaint(apnType.getTaint());
@@ -494,6 +499,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1381137663 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.560 -0400", hash_original_method = "B18C74BBD4D71B87D6CD20822DAEB60C", hash_generated_method = "C97E710BBC1DD84173B78B810F47DD49")
     public void setDataOnRoamingEnabled(boolean enabled) {
         addTaint(enabled);
@@ -1105,6 +1111,7 @@ for(int id = 0;id < APN_NUM_TYPES;id++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.568 -0400", hash_original_method = "453A43A7EADEB97159250F7F1E9B04E5", hash_generated_method = "E197F70994DEC26AC8B2AFBEC1E23649")
     protected synchronized boolean isApnIdEnabled(int id) {
         addTaint(id);
@@ -1274,6 +1281,7 @@ for(int id = 0;id < APN_NUM_TYPES;id++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.598 -0400", hash_original_method = "6346C217AE811F98B5143DCE05848411", hash_generated_method = "4267FD85DCE15342EEDB209B8F62FA93")
     protected void onEnableApn(int apnId, int enabled) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1335,6 +1343,7 @@ for(int id = 0;id < APN_NUM_TYPES;id++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.599 -0400", hash_original_method = "FBAA4A80E4538BA497646C5AED60D911", hash_generated_method = "32D68D2D8870859115DE7BFCF2679FE7")
     protected void onEnableNewApn() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1479,6 +1488,7 @@ for(int id = 0;id < APN_NUM_TYPES;id++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.602 -0400", hash_original_method = "CE2949FE6361D634BBA79ED70CC5EAE2", hash_generated_method = "6C55747F0D53D60AFFB55AB705104FF9")
     protected void onSetDependencyMet(String apnType, boolean met) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1633,6 +1643,7 @@ for(DataConnection dc : mDataConnections.values())
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.624 -0400", hash_original_method = "169C7D81EE3F2154C9E94D652CC4F700", hash_generated_method = "F220FA53DE08D00ACFA4F090899C9734")
         @Override
         public void onChange(boolean selfChange) {
@@ -1684,6 +1695,7 @@ for(DataConnection dc : mDataConnections.values())
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.624 -0400", hash_original_method = "AC7E7693FF46B721A881337A05B09C85", hash_generated_method = "8B79F23D5DA55C534A1AF5C4055F1390")
         public void reset() {
             txPkts = -1;

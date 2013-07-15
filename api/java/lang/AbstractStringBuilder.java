@@ -108,6 +108,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.261 -0400", hash_original_method = "8DE386E9EA04BE56519C8A6264F91502", hash_generated_method = "F483F597C52285B82C03EDA25CF66C3A")
     private void enlargeBuffer(int min) {
         addTaint(min);
@@ -288,6 +289,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.270 -0400", hash_original_method = "4EDD82B1AA77527A58B2DDD935211532", hash_generated_method = "03586E4A628021B462143CCB0718E227")
     public int capacity() {
         int var014C1DEA33AEAA22508575E6FA159FEE_1048915659 = (value.length);
@@ -298,6 +300,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.276 -0400", hash_original_method = "447DEA66ED097ABAE0E9735DA732DBDF", hash_generated_method = "348552A86B3EA9A2F7000216586B000D")
     public char charAt(int index) {
         addTaint(index);
@@ -318,6 +321,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.276 -0400", hash_original_method = "FC4FB8D4DBB369ED29C378FB60B58B5D", hash_generated_method = "048D8B70168BEE28208B4F313E14CF7B")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
         addTaint(index);
@@ -329,6 +333,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.277 -0400", hash_original_method = "ABFB3D9F0C982EE0B945F30A8DA651B2", hash_generated_method = "229900B0633F992C8ADC11B013235C38")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
         addTaint(end);
@@ -429,6 +434,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.305 -0400", hash_original_method = "DB245C34644491EEEAB0523333BD6692", hash_generated_method = "E44A018038A2E7B7BA940DECDC42960D")
     public void ensureCapacity(int min) {
         addTaint(min);
@@ -445,6 +451,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.315 -0400", hash_original_method = "AE7F72EED3837594CFBBCCC4060D7909", hash_generated_method = "59CE66A501175AF60D170B40299E5BE7")
     public void getChars(int start, int end, char[] dst, int dstStart) {
         addTaint(dstStart);
@@ -623,6 +630,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.341 -0400", hash_original_method = "A4F75F4D0C7ABF3196500E489B73A8D4", hash_generated_method = "2AA488740D36070C1ACA0BB150D8EE78")
     public int length() {
         int varE2942A04780E223B215EB8B663CF5353_1990755844 = (count);
@@ -633,6 +641,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.343 -0400", hash_original_method = "E2C445AFFEE441B211B71B3E0E3E89EA", hash_generated_method = "624012EDA1A9446A3F17269E2BA17F00")
     private void move(int size, int index) {
         addTaint(index);
@@ -839,6 +848,7 @@ for(int i = 0, end = count;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.379 -0400", hash_original_method = "5EFF2E769F54F3F7450C4FCC35538F65", hash_generated_method = "E5BC2947B2277E2E64E5C91E731E048F")
     public void setCharAt(int index, char ch) {
     if(index < 0 || index >= count)        
@@ -865,6 +875,7 @@ for(int i = 0, end = count;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.381 -0400", hash_original_method = "CCD67F72D75D83378F17335F6F9DC00A", hash_generated_method = "1190E7C186901A5EF9A4D5B4C03F058B")
     public void setLength(int length) {
     if(length < 0)        
@@ -917,6 +928,7 @@ for(int i = 0, end = count;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.391 -0400", hash_original_method = "1708C6B44328EC2FA5364A52800D811B", hash_generated_method = "76DECDBCEDFB6074012B60B7E62A27C8")
     public String substring(int start) {
         addTaint(start);
@@ -946,6 +958,7 @@ String var941456B7B2856A00B402ED3619A20844_539145990 =             new String(va
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.399 -0400", hash_original_method = "7121FB14814A84CA4ADE1E9CCF3D54F6", hash_generated_method = "E3406F91A9ED49CC36A2DD5E36CB27A6")
     public String substring(int start, int end) {
         addTaint(end);
@@ -976,6 +989,7 @@ String varD817CE0CE55587478ECBA12712F5EB2E_2122504235 =             new String(v
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.401 -0400", hash_original_method = "F5CABA8208B35CC620F77C4ED2D48018", hash_generated_method = "7B52A5AD236855189CB256B39C1FB6A6")
     @Override
     public String toString() {
@@ -1011,6 +1025,7 @@ String var51CD9F80628198C4B5CFEE108014BFB8_1125886420 =         new String(0, co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.402 -0400", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "4470F62793F260D98C6515CB6C83B90C")
     public CharSequence subSequence(int start, int end) {
         addTaint(end);
@@ -1023,6 +1038,7 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_194966827 =         substring(s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.402 -0400", hash_original_method = "7103B0EDA0D88809AB4D74CA424F106F", hash_generated_method = "F24C3E614773547DCA2597882F03FCA0")
     public int indexOf(String string) {
         addTaint(string.getTaint());
@@ -1034,6 +1050,7 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_194966827 =         substring(s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.405 -0400", hash_original_method = "58EF09653819A20604D2729AAEA1E73D", hash_generated_method = "1C17EFA78BED18598FF315DB31622FE0")
     public int indexOf(String subString, int start) {
         addTaint(start);
@@ -1094,6 +1111,7 @@ for(;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.407 -0400", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "1E19799CE7E190408AAE51709A056D46")
     public int lastIndexOf(String string) {
         addTaint(string.getTaint());
@@ -1105,6 +1123,7 @@ for(;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.409 -0400", hash_original_method = "7130CA0E46A667075374433A3B5D2D85", hash_generated_method = "E06A677357605A35A1D4661A768B5D5B")
     public int lastIndexOf(String subString, int start) {
         addTaint(start);
@@ -1166,6 +1185,7 @@ for(;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.412 -0400", hash_original_method = "DFFDB9C5FDBA0FB3D8B8BAEB0765C9A3", hash_generated_method = "012E50662FD544CBDF434085556C87E2")
     public void trimToSize() {
     if(count < value.length)        
@@ -1185,6 +1205,7 @@ for(;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.421 -0400", hash_original_method = "E01C43C5D144342C7BDF51C53F549AB8", hash_generated_method = "5E31267E763BF3FDDDF0C98326280C20")
     public int codePointAt(int index) {
         addTaint(index);
@@ -1205,6 +1226,7 @@ for(;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.433 -0400", hash_original_method = "F58237612B89D3EA2A0CCEABA41468D6", hash_generated_method = "8D73501B2FEFFAB473E7BF4D1D1AF632")
     public int codePointBefore(int index) {
         addTaint(index);
@@ -1225,6 +1247,7 @@ for(;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.447 -0400", hash_original_method = "012FBC57A3E4CD6B3DAD71A54F843207", hash_generated_method = "07E99D3575435AAE0DA930D509D66C6B")
     public int codePointCount(int start, int end) {
         addTaint(end);
@@ -1246,6 +1269,7 @@ for(;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.447 -0400", hash_original_method = "AC95F45AA90228D3C037EE242B5DE1AD", hash_generated_method = "7382C32BE2A2F5B3A50139E60BCEDF17")
     public int offsetByCodePoints(int index, int codePointOffset) {
         addTaint(codePointOffset);

@@ -88,6 +88,7 @@ public final class CookieOrigin {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.845 -0400", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "EAC6A96B96FC0F809ABD2EA2B7B6B109")
     public String getHost() {
 String var66CBD60FD8EB006652E02A446703F8AC_2098672108 =         this.host;
@@ -98,6 +99,7 @@ String var66CBD60FD8EB006652E02A446703F8AC_2098672108 =         this.host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.846 -0400", hash_original_method = "1447F7E138124D077576DF2B2413D348", hash_generated_method = "ABC3304CC0EAE9C7BC6DFB2AE183AC8A")
     public String getPath() {
 String varCEA6D4C764DAAC99DE6B9EB26F6F3E54_844796093 =         this.path;
@@ -108,6 +110,7 @@ String varCEA6D4C764DAAC99DE6B9EB26F6F3E54_844796093 =         this.path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.846 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "444BFE3D3EC068FB94627023AD3D3524")
     public int getPort() {
         int var02075052AFB1BA5EC4413B52BC401B14_749988338 = (this.port);
@@ -118,6 +121,7 @@ String varCEA6D4C764DAAC99DE6B9EB26F6F3E54_844796093 =         this.path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.846 -0400", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "F9A4D1518093CF40BF34AB85307680E9")
     public boolean isSecure() {
         boolean var1A6CF3022022F86E5EAF7A933D51276A_1747323755 = (this.secure);

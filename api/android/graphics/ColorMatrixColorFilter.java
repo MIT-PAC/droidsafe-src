@@ -40,12 +40,14 @@ public class ColorMatrixColorFilter extends ColorFilter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeColorMatrixFilter(float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nColorMatrixFilter(int nativeFilter, float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373;

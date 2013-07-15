@@ -103,14 +103,16 @@ public class HexDump {
     }
 
     
-        public static byte[] toByteArray(byte b) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(byte b) {
         byte[] array = new byte[1];
         array[0] = b;
         return array;
     }
 
     
-        public static byte[] toByteArray(int i) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(int i) {
         byte[] array = new byte[4];
         array[3] = (byte)(i & 0xFF);
         array[2] = (byte)((i >> 8) & 0xFF);

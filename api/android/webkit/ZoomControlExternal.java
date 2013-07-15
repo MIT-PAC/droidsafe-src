@@ -35,6 +35,7 @@ class ZoomControlExternal implements ZoomControlBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.454 -0400", hash_original_method = "9D13A62EAC4908646E1616576C006DF1", hash_generated_method = "491EEBDC9DC87D6A0891139054DB4E8E")
     public void show() {
     if(mZoomControlRunnable != null)        
@@ -82,6 +83,7 @@ class ZoomControlExternal implements ZoomControlBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.455 -0400", hash_original_method = "DB08A4E4B606EDAC2519981C47E0CF53", hash_generated_method = "FB43C517C4395D2CF5B50D0CBB01D588")
     public void update() {
         // ---------- Original Method ----------
@@ -141,6 +143,7 @@ ExtendedZoomControls var81227494FA945C379941C3696371DB2A_1825216330 =         mZ
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.458 -0400", hash_original_method = "3D12A1B47B98985E80612C99D260C6E1", hash_generated_method = "944D9F3D397B2276A3B5F2B7BD8C9302")
     private ExtendedZoomControls createZoomControls() {
         ExtendedZoomControls zoomControls = new ExtendedZoomControls(mWebView.getContext());
@@ -226,6 +229,7 @@ ExtendedZoomControls var15711BF4EB3B131E4CFE980AA922F862_1061593747 =         zo
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.460 -0400", hash_original_method = "9BED0A47A1FCF93930F77C8CDDC09D0D", hash_generated_method = "1E5CB067E3CEB98E43F612AE3706CF55")
         private void fade(int visibility, float startAlpha, float endAlpha) {
             addTaint(endAlpha);

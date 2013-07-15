@@ -27,51 +27,61 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
-        public static Locale[] getAvailableLocales() {
+        @DSModeled(DSC.SAFE)
+    public static Locale[] getAvailableLocales() {
         return ICU.getAvailableBreakIteratorLocales();
     }
 
     
-        public static BreakIterator getCharacterInstance() {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getCharacterInstance() {
         return getCharacterInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getCharacterInstance(Locale where) {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getCharacterInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getCharacterInstance(where));
     }
 
     
-        public static BreakIterator getLineInstance() {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getLineInstance() {
         return getLineInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getLineInstance(Locale where) {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getLineInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getLineInstance(where));
     }
 
     
-        public static BreakIterator getSentenceInstance() {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getSentenceInstance() {
         return getSentenceInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getSentenceInstance(Locale where) {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getSentenceInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getSentenceInstance(where));
     }
 
     
-        public static BreakIterator getWordInstance() {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getWordInstance() {
         return getWordInstance(Locale.getDefault());
     }
 
     
-        public static BreakIterator getWordInstance(Locale where) {
+        @DSModeled(DSC.SAFE)
+    public static BreakIterator getWordInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getWordInstance(where));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.442 -0400", hash_original_method = "A8CE13377E2BE8338E384DB518A75EF1", hash_generated_method = "7F44276447ABC8B4A6CC116EB8BC0902")
     public boolean isBoundary(int offset) {
         addTaint(offset);
@@ -83,6 +93,7 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.442 -0400", hash_original_method = "2EB9AD97D64682279E3EECC38916DED9", hash_generated_method = "BF69631ABB6069C25A008A5418B0D738")
     public int preceding(int offset) {
         addTaint(offset);
@@ -94,6 +105,7 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.442 -0400", hash_original_method = "09A01C59FC40671D2FFB70D6D2572999", hash_generated_method = "C256B883E92C1415C66968FF9184E557")
     public void setText(String newText) {
         addTaint(newText.getTaint());
@@ -130,6 +142,7 @@ public abstract class BreakIterator implements Cloneable {
     public abstract void setText(CharacterIterator newText);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.444 -0400", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "D479DA585894382F211D512AC5D22F6F")
     @Override
     public Object clone() {

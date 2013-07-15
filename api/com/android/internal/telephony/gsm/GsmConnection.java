@@ -144,6 +144,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.084 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
@@ -155,6 +156,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.085 -0400", hash_original_method = "0553AC873EBF02DCE0ECDD52D690154B", hash_generated_method = "F18CE226B0AE62ECAF10E7B9E58D7813")
      boolean compareTo(DriverCall c) {
         addTaint(c.getTaint());
@@ -175,6 +177,7 @@ public class GsmConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.085 -0400", hash_original_method = "1A89DAB454CED0757504258169B34CDA", hash_generated_method = "C8C1D5C7EE310913C04993FD61D092A2")
     public String getAddress() {
 String var814577DDD37BAFB17E08CBEFDB411BAE_77198904 =         address;
@@ -185,6 +188,7 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_77198904 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.085 -0400", hash_original_method = "B5FB9A2BDC3179E224BACAD787EF2D05", hash_generated_method = "9BE5BA059696A636ECDE484559B577EB")
     public GsmCall getCall() {
 GsmCall var0F49909EA73F8892C338E4DCA6EB9906_27952058 =         parent;
@@ -195,6 +199,7 @@ GsmCall var0F49909EA73F8892C338E4DCA6EB9906_27952058 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.085 -0400", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "2F834C1F9CE9F9159BD60D605B5933DA")
     public long getCreateTime() {
         long var1ED2E1B19B6E55D52D2473BE17A4AFD9_954571273 = (createTime);
@@ -205,6 +210,7 @@ GsmCall var0F49909EA73F8892C338E4DCA6EB9906_27952058 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.086 -0400", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "17C254B6B3A4EB895B57BA434B23F710")
     public long getConnectTime() {
         long var2A390E9117109AD2E2B8D0011E8B167F_148441320 = (connectTime);
@@ -215,6 +221,7 @@ GsmCall var0F49909EA73F8892C338E4DCA6EB9906_27952058 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.086 -0400", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "5D5C61E6CC3A22B61CA869D4E3BED50F")
     public long getDisconnectTime() {
         long varAD92DC1F9C0B5401DB7C9C68DE643AD5_68497368 = (disconnectTime);
@@ -280,6 +287,7 @@ GsmCall var0F49909EA73F8892C338E4DCA6EB9906_27952058 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.087 -0400", hash_original_method = "217FE2B36472CD2DEDDE3A4CE2A1C951", hash_generated_method = "B1E2ACDC4B3F4EFADFC3494189429E5F")
     public DisconnectCause getDisconnectCause() {
 DisconnectCause var3C8F3313F49435961542E8707E527956_1946890852 =         cause;
@@ -290,6 +298,7 @@ DisconnectCause var3C8F3313F49435961542E8707E527956_1946890852 =         cause;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.087 -0400", hash_original_method = "7EA17727186891EE64F6BAA03D5CD808", hash_generated_method = "34C5AB644C03A083887FA198C388B194")
     public boolean isIncoming() {
         boolean varBC23EBAFF55FFCC779696072ED387D2F_1064758746 = (isIncoming);
@@ -365,6 +374,7 @@ GsmCall.State varB2F6DC77C80BF408EE3A0FF5E79E41E6_1351029234 =             super
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.088 -0400", hash_original_method = "4EE87D2E41D94C18F614BA2D1494AD36", hash_generated_method = "F90BB3BFB62332B9A3814530C62F9395")
     public PostDialState getPostDialState() {
 PostDialState varA5212BBA7CEDC5476DB20427B201984F_69930283 =         postDialState;
@@ -451,6 +461,7 @@ for(int i=0;i<len;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.090 -0400", hash_original_method = "1D26914F95E4E8CAB857832B14C412F2", hash_generated_method = "AF613E28B4B81657ADA567229F15BFC2")
      void onHangupLocal() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -616,6 +627,7 @@ DisconnectCause varC8CDCB9D5A5BB9B45130E99DF5EA2CE8_24673545 =             Disco
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.093 -0400", hash_original_method = "96B42EEDFF6F1EDC58573CD6BAE53841", hash_generated_method = "611CD3A58ADFC948069072EDAD32008B")
      boolean update(DriverCall dc) {
         GsmCall newParent;
@@ -878,6 +890,7 @@ String var1129EB08E954CD256D4EF667275C80A7_1458454526 =         postDialString.s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.098 -0400", hash_original_method = "42A83CA5C5D82F280A6650571B6091DC", hash_generated_method = "48EDF2A2F1A5B6250FF27D8FCFDCBB04")
     private boolean isConnectingInOrOut() {
         boolean var9DDCB50C00CA33B6E52C4B0D27604257_1613536418 = (parent == null || parent == owner.ringingCall
@@ -1015,6 +1028,7 @@ GsmCall varC0AC0CA56D4A71D743E3F1BD12ED290B_1397655211 =         owner.ringingCa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.101 -0400", hash_original_method = "B2C780D7BF03A84FC8B3CC6F33ADADA1", hash_generated_method = "918472C7DC3A72894BECC9762BF2FF88")
     @Override
     public int getNumberPresentation() {
@@ -1026,6 +1040,7 @@ GsmCall varC0AC0CA56D4A71D743E3F1BD12ED290B_1397655211 =         owner.ringingCa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.101 -0400", hash_original_method = "00708DAD150C484ADEE163A005CDF57B", hash_generated_method = "EAD3A5D19E43366B88218B0E2C647F5E")
     @Override
     public UUSInfo getUUSInfo() {

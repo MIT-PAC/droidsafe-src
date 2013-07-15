@@ -20,6 +20,7 @@ public class ParseException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.802 -0400", hash_original_method = "738B6139CDE89AFA00D1C6F31524980A", hash_generated_method = "2F620C0A75F3211D64C6E5F78D7228D0")
     public int getErrorOffset() {
         int var57D19B3FC2AF605BB9ADD6379EF4F14F_763548116 = (errorOffset);

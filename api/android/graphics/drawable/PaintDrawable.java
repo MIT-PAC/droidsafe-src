@@ -27,6 +27,7 @@ public class PaintDrawable extends ShapeDrawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.581 -0400", hash_original_method = "29D687C39F10D3A684C3799EDBB48EFB", hash_generated_method = "DD6D7AA9CCA6C07DFFA82A81BED3D395")
     public void setCornerRadius(float radius) {
         addTaint(radius);
@@ -52,6 +53,7 @@ for(int i = 0;i < 8;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.582 -0400", hash_original_method = "458539BDB31F16A86FED0FC05CC292D2", hash_generated_method = "AA2193EDD7BAB7075681D1D029ADA281")
     public void setCornerRadii(float[] radii) {
         addTaint(radii[0]);
@@ -79,6 +81,7 @@ for(int i = 0;i < 8;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.582 -0400", hash_original_method = "B0701038A568952969848F330DE56979", hash_generated_method = "0ABCD2AE3C82DDA83E207AD6D8C76457")
     @Override
     protected boolean inflateTag(String name, Resources r, XmlPullParser parser,

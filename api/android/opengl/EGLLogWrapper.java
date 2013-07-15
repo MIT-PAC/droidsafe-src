@@ -87,6 +87,7 @@ class EGLLogWrapper implements EGL11 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.129 -0400", hash_original_method = "6247B7AE810F729296017888684B59EB", hash_generated_method = "7F35D69637A1BB6BB60D4E427EE128A1")
     public boolean eglCopyBuffers(EGLDisplay display, EGLSurface surface,
             Object native_pixmap) {
@@ -152,6 +153,7 @@ EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_545719346 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.130 -0400", hash_original_method = "E582D9CBB0191E5220367BD0744C6983", hash_generated_method = "50FED8837738FB63804234D4BB062658")
     public EGLSurface eglCreatePbufferSurface(EGLDisplay display,
             EGLConfig config, int[] attrib_list) {
@@ -184,6 +186,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_171157302 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.131 -0400", hash_original_method = "765CEBF62D7B9322979603163DA8F5D9", hash_generated_method = "296D8CD566381A4FE88F41AA34074A22")
     public EGLSurface eglCreatePixmapSurface(EGLDisplay display,
             EGLConfig config, Object native_pixmap, int[] attrib_list) {
@@ -219,6 +222,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1181382364 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.131 -0400", hash_original_method = "CDAC490304CF100FCC182FE43316F1FE", hash_generated_method = "A9649D29EB7CB6EF5B75AE7CB821E3A5")
     public EGLSurface eglCreateWindowSurface(EGLDisplay display,
             EGLConfig config, Object native_window, int[] attrib_list) {
@@ -506,6 +510,7 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.138 -0400", hash_original_method = "BB07DB3ECE14A6EF231877217C9BD366", hash_generated_method = "3CA5158A40B93F763B96050D0316B5C4")
     public boolean eglMakeCurrent(EGLDisplay display, EGLSurface draw,
             EGLSurface read, EGLContext context) {
@@ -635,6 +640,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.140 -0400", hash_original_method = "1B282CDB7FEAA67B60FE87995BF0D6A0", hash_generated_method = "B994DBA822D164AB979D545CBBA838D5")
     public boolean eglReleaseThread() {
         begin("eglReleaseThread");
@@ -785,6 +791,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.142 -0400", hash_original_method = "55C0C6DBDFA700D90D9FD20B92BCF082", hash_generated_method = "1FD69062587B8774F2FBFC9AB6BCAD1D")
     private void log(String message) {
         addTaint(message.getTaint());
@@ -814,6 +821,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.143 -0400", hash_original_method = "54C70E45C8BA9C703732EB10FD7BBF7B", hash_generated_method = "DF33C133291E9F393FF306B9A4B6373D")
     private void arg(String name, String value) {
         addTaint(value.getTaint());
@@ -1151,7 +1159,8 @@ String var4FC680801218E6372BC708D6FA44AE60_2107898270 =         buf.toString();
     }
 
     
-        private static String getHex(int value) {
+        @DSModeled(DSC.SPEC)
+    private static String getHex(int value) {
         return "0x" + Integer.toHexString(value);
     }
 

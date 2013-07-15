@@ -45,6 +45,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.724 -0400", hash_original_method = "CCB9F44E02BA506AC13DF4A6CD3FA45F", hash_generated_method = "615F6945D3D63EB8E92E583530FC0FF9")
     @Override
     public int getChangingConfigurations() {
@@ -56,6 +57,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.724 -0400", hash_original_method = "55968084A6009D3A7FE038F60520CF52", hash_generated_method = "A69E03821D7ABBC0BA7311B64B2FC031")
     @Override
     public void draw(Canvas canvas) {
@@ -73,6 +75,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.725 -0400", hash_original_method = "12CB188AAA441342DA340C647E5F4CB8", hash_generated_method = "ADAB84E3192DD11B9D5C1792D7BB8D99")
     public int getColor() {
         int var04D41FDEDF15939E8CE4323AF0576B0B_204213153 = (mState.mUseColor);
@@ -83,6 +86,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.726 -0400", hash_original_method = "BF4E5D15208BCF2CD8D02BB100F40081", hash_generated_method = "5AF696FBDF35C99FD360BFD33E5FF701")
     public void setColor(int color) {
     if(mState.mBaseColor != color || mState.mUseColor != color)        
@@ -98,6 +102,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.727 -0400", hash_original_method = "5CD88AD7EDD59028127023DB7F8765AB", hash_generated_method = "FA67552B8D61AE8AAC7645AF613F9DD7")
     public int getAlpha() {
         int varCCC2B71E02C5EB9BFB2D3C210D954BB8_1579158017 = (mState.mUseColor >>> 24);
@@ -108,6 +113,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.729 -0400", hash_original_method = "459E9D088A35A829F6316FAAD661A311", hash_generated_method = "0A4E461CC5854FB9B18BB688BEA5D0B6")
     public void setAlpha(int alpha) {
         addTaint(alpha);
@@ -132,6 +138,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.729 -0400", hash_original_method = "A617079D3CF57FB47B0EF9E1F05040EF", hash_generated_method = "607C53DAEBDA2ED67847FBFFF6FC8251")
     public void setColorFilter(ColorFilter colorFilter) {
         addTaint(colorFilter.getTaint());
@@ -139,6 +146,7 @@ public class ColorDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.730 -0400", hash_original_method = "B5DEC9C614B60B544E3B9333F2490C35", hash_generated_method = "4AD73F171B310E065D3F5354489BAD99")
     public int getOpacity() {
 switch(mState.mUseColor >>> 24){
@@ -164,6 +172,7 @@ switch(mState.mUseColor >>> 24){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.730 -0400", hash_original_method = "9E06540C925D15124E32C083B6C47AE0", hash_generated_method = "26A5763142E43AE386D98CC1D2863E66")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -186,6 +195,7 @@ switch(mState.mUseColor >>> 24){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.731 -0400", hash_original_method = "4A867A0EE58AB54D1A1755C00D03A40D", hash_generated_method = "72587A98898BDC847ABE0732F29AB138")
     @Override
     public ConstantState getConstantState() {
@@ -248,6 +258,7 @@ Drawable var5002F1B2961599D4FF2B1F6F731A3C2C_1333489651 =             new ColorD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.734 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "C4A5EEC70A8C428096AF3C9FF7937D01")
         @Override
         public int getChangingConfigurations() {

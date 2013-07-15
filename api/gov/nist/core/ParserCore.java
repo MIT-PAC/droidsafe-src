@@ -85,6 +85,7 @@ NameValue varBAC8C205DFE70B1E08EB9CE4F0171A33_1900304504 =                 new N
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.735 -0400", hash_original_method = "FEF315A443660226B56655DBFD660360", hash_generated_method = "5A4DCF2DF2E206560721120A8EA05450")
     protected void dbg_enter(String rule) {
         addTaint(rule.getTaint());
@@ -113,6 +114,7 @@ for(int i = 0;i < nesting_level;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.736 -0400", hash_original_method = "1BC6FB469729E22F0BBD9E3870285FA5", hash_generated_method = "74352E2BDC3D668C345F76CE81634AE1")
     protected void dbg_leave(String rule) {
         addTaint(rule.getTaint());
@@ -143,6 +145,7 @@ for(int i = 0;i < nesting_level;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.736 -0400", hash_original_method = "96EC2DBFF0EC1BA1DEDB704D9ED6E4AE", hash_generated_method = "9DA2A6CAC5A3FE77A0AFEE70E502C857")
     protected NameValue nameValue() throws ParseException {
 NameValue var52FFE96DF188A662888F079EBA8775A7_1452138498 =         nameValue('=');
@@ -153,6 +156,7 @@ NameValue var52FFE96DF188A662888F079EBA8775A7_1452138498 =         nameValue('='
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.737 -0400", hash_original_method = "9816EEB9F7DF054BEDA3076A1CE20DA0", hash_generated_method = "BF8BB688FC34A47C30963622DA3C58F0")
     protected void peekLine(String rule) {
         addTaint(rule.getTaint());

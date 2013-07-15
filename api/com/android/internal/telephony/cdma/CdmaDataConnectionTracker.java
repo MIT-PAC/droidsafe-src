@@ -150,6 +150,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.332 -0400", hash_original_method = "D7D3BFC7AEBB4A854053D0E671EEEB9F", hash_generated_method = "FE4B0CA0759BD685AB39AF74717B1307")
     @Override
     public void dispose() {
@@ -197,6 +198,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.332 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "EDF6AB68233AEF98A4557E88688983D7")
     @Override
     protected String getActionIntentReconnectAlarm() {
@@ -208,6 +210,7 @@ String var329BD4E79853976212F297A2D79B9594_1982353819 =         INTENT_RECONNECT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.333 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "7E3910F406479878E849A6CFDE6A203B")
     @Override
     protected String getActionIntentDataStallAlarm() {
@@ -241,6 +244,7 @@ String var91B284560FDB6DF833F06E9F3D4A1EF3_57160619 =         INTENT_DATA_STALL_
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.333 -0400", hash_original_method = "53DA179904795C28B8C89E7D1C885E11", hash_generated_method = "0F585238B64608ADD246C8A8A6904E61")
     @Override
     public synchronized State getState(String apnType) {
@@ -361,6 +365,7 @@ for(String s : mSupportedApnTypes)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.337 -0400", hash_original_method = "394F83083B165868EFF2D0029A637488", hash_generated_method = "BAF2884920DF8E4626BEF95D20A7BC39")
     private boolean trySetupData(String reason) {
         addTaint(reason.getTaint());
@@ -539,6 +544,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.341 -0400", hash_original_method = "4334EC28628BC2618150E7F73B49358F", hash_generated_method = "CA71E84F421FB531DEE0DB608D05FC5A")
     private void resetPollStats() {
         mTxPkts = -1;
@@ -606,6 +612,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.342 -0400", hash_original_method = "7D555C87655E096A1AB206CCF6046FBB", hash_generated_method = "10CB814415FA70A0FB84BF7A995CB8BB")
     private boolean shouldPostNotification(FailCause cause) {
         addTaint(cause.getTaint());
@@ -757,6 +764,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "EA596D7E6B7BB6E966347390783DCB75", hash_generated_method = "928C176826E83B168C4FA2AB3091EDBA")
     @Override
     protected void onEnableNewApn() {
@@ -767,6 +775,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "D1EA04ADDFE8BEB96FCA5B0EBDBE27E4", hash_generated_method = "3AC891FAA179A6E2213F12DACA70185D")
     @Override
     protected boolean onTrySetupData(String reason) {
@@ -780,6 +789,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "456B5B4117DFD69A8357ABE29B636ADA", hash_generated_method = "5809DD5928A3761F6A7669039A1B830A")
     @Override
     protected void onRoamingOff() {
@@ -803,6 +813,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.346 -0400", hash_original_method = "05517986BB1CA537C6FCF607816BF093", hash_generated_method = "A43C2BAAE51C314CB5B984D2457C0671")
     @Override
     protected void onRoamingOn() {
@@ -831,6 +842,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.346 -0400", hash_original_method = "F74A764B82D382E1DF4133E695EBD591", hash_generated_method = "781D9550DDE70B054BCF4BB515D66B50")
     @Override
     protected void onRadioAvailable() {
@@ -859,6 +871,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.347 -0400", hash_original_method = "13044BD14789126E4C7F4A6581DB22DE", hash_generated_method = "5FE64ED2AB322C5FD15B0FDAE71EEBCA")
     @Override
     protected void onRadioOffOrNotAvailable() {
@@ -885,6 +898,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.347 -0400", hash_original_method = "F38E677B8F89E946D32F2D1EC6556506", hash_generated_method = "A38B0B6CF4EB0D53BA4440D453EC45FE")
     @Override
     protected void onDataSetupComplete(AsyncResult ar) {
@@ -930,6 +944,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.348 -0400", hash_original_method = "B64AD173877EB61F2BA995A6B9586953", hash_generated_method = "DFC81BA76AB345B641BFE76CE215A2D8")
     @Override
     protected void onDisconnectDone(int connId, AsyncResult ar) {
@@ -983,6 +998,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.349 -0400", hash_original_method = "8669708C7F9DB85ADE9303FE8B7AF6BC", hash_generated_method = "956DAA5B465A8D40CC1CBDE2B69093F3")
     @Override
     protected void onVoiceCallStarted() {
@@ -1040,6 +1056,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.349 -0400", hash_original_method = "1767BD771DD5F6B59CD03646F3315F79", hash_generated_method = "FBAF9C086BCC793D56D46036746FD672")
     @Override
     protected void onCleanUpConnection(boolean tearDown, int apnId, String reason) {
@@ -1053,6 +1070,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.350 -0400", hash_original_method = "6A2ACA33DA32338447596FF020294793", hash_generated_method = "B80D5F9B327B51B1A60F6F0F1430B62B")
     @Override
     protected void onCleanUpAllConnections(String cause) {
@@ -1064,6 +1082,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.350 -0400", hash_original_method = "7F3FB415E824AE28DE838EAC0023F542", hash_generated_method = "FC98E5742FDC33CCB1E2F638E8845C2C")
     private void createAllDataConnectionList() {
         CdmaDataConnection dataConn;
@@ -1218,6 +1237,7 @@ switch(otaPrivision[0]){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.355 -0400", hash_original_method = "D056F1F93E1FCCA005B3D5C4043A4B41", hash_generated_method = "6BAE02B38689D67F1D6D57048BBACD01")
     protected void onDataStateChanged(AsyncResult ar) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1328,6 +1348,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.355 -0400", hash_original_method = "40E4BCBCB488969F7D8EBF5CAA1BFE5A", hash_generated_method = "5621D3AD3C086B6CBB30F4C8C9D97A64")
     @Override
     public boolean isDisconnected() {

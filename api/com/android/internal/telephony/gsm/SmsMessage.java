@@ -78,6 +78,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.825 -0400", hash_original_method = "AD0C1E28FA77467C1A6AC08BEE60D8C5", hash_generated_method = "63CE86C186A79B90FCB663F421F8E8C3")
     public boolean isTypeZero() {
         boolean varE398FDF7B25594026191CAEB46522C80_2043688760 = ((protocolIdentifier == 0x40));
@@ -100,7 +101,8 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
-        public static SmsMessage newFromCDS(String line) {
+        @DSModeled(DSC.SPEC)
+    public static SmsMessage newFromCDS(String line) {
         try {
             SmsMessage msg = new SmsMessage();
             msg.parsePdu(IccUtils.hexStringToBytes(line));
@@ -336,6 +338,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.828 -0400", hash_original_method = "E7C032F027F70A1B6B025F651AAD0755", hash_generated_method = "BC12339B4A8EC8FC509DFFDE58C97F0D")
     @Override
     public int getProtocolIdentifier() {
@@ -347,6 +350,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.828 -0400", hash_original_method = "5E449C3565950C318CBD3ECE2F1F0BD6", hash_generated_method = "370C8E83E696722D168489B011282D6F")
      int getDataCodingScheme() {
         int var35CE477420B8D0FBD7AD0A0ED5C35EDB_808031812 = (dataCodingScheme);
@@ -357,6 +361,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.829 -0400", hash_original_method = "BDE809523E280561E9C29F7B9A7C7DBF", hash_generated_method = "972EA6E2739ECB15C2106869E822B6F0")
     @Override
     public boolean isReplace() {
@@ -372,6 +377,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.829 -0400", hash_original_method = "8C882F4C280C6C8CC6957F303C6657A2", hash_generated_method = "A8D69D4A709212976DCFDFDF1DAFCBFC")
     @Override
     public boolean isCphsMwiMessage() {
@@ -385,6 +391,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.829 -0400", hash_original_method = "70DC4C6B18CE83A6EFAF90F534A37766", hash_generated_method = "CDC1A82CB6F832B54E5A831959CE5A3A")
     @Override
     public boolean isMWIClearMessage() {
@@ -407,6 +414,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.830 -0400", hash_original_method = "29E72ED32BDC3692E9219EFE428EB222", hash_generated_method = "C618DE06F0DFD33D2F908A91FC8BC05B")
     @Override
     public boolean isMWISetMessage() {
@@ -465,6 +473,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.830 -0400", hash_original_method = "A6874122EB6D2A9BF852845259D73D4C", hash_generated_method = "67DCFC2120A0C0059C16921A9C92ADBD")
     @Override
     public int getStatus() {
@@ -476,6 +485,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.831 -0400", hash_original_method = "234314E66EB58BCF2E45191C1F3D0599", hash_generated_method = "90D5113B2AF9C327838282BC3D7CA51F")
     @Override
     public boolean isStatusReportMessage() {
@@ -487,6 +497,7 @@ public class SmsMessage extends SmsMessageBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.831 -0400", hash_original_method = "D49F3476E255463D6592CF4849CB4273", hash_generated_method = "7826CC90AC511A31B467647364CFAF66")
     @Override
     public boolean isReplyPathPresent() {
@@ -584,6 +595,7 @@ switch(mti){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.834 -0400", hash_original_method = "7E3F60FEC92AD175AC8D63C56FC781E1", hash_generated_method = "B5350F1A0F300B75C28B617699B873BD")
     private void parseSmsDeliver(PduParser p, int firstByte) {
         replyPathPresent = (firstByte & 0x80) == 0x80;
@@ -758,6 +770,7 @@ switch(dataCodingScheme & 0x3){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.839 -0400", hash_original_method = "A363CB6F91B76BEA5906C381D551632B", hash_generated_method = "101FA996EC2B31E15B4BD0A337D0AF84")
     @Override
     public MessageClass getMessageClass() {
@@ -769,6 +782,7 @@ MessageClass varBFA743AA68FAB2987074675DD944EFDD_489327473 =         messageClas
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.839 -0400", hash_original_method = "E16A5CBE2AF5641D1FC19A09E4EADBC9", hash_generated_method = "C8FC91A64AEB2A9E2F904EF4678EF6A6")
      boolean isUsimDataDownload() {
         boolean var23C721EBDC542947E3AE5B4A94E882EB_1381887165 = (messageClass == MessageClass.CLASS_2 &&
@@ -872,6 +886,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_717896580 =             ret;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.843 -0400", hash_original_method = "2F75C981EB64A28A85FF5D6FE13A88A1", hash_generated_method = "60E5346EB90F6354D1BC2ED16A12CEE4")
          int getByte() {
             int varDAABF7463F2146A31643F60EA25A58D8_236423169 = (pdu[cur++] & 0xff);
@@ -882,6 +897,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_717896580 =             ret;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.843 -0400", hash_original_method = "F408E9DA0C4025DEBACF10CB13B7E7DC", hash_generated_method = "9E2DBF3F6DC66C85FE25E3DA82FE3D55")
          GsmSmsAddress getAddress() {
             GsmSmsAddress ret;
@@ -982,6 +998,7 @@ GsmSmsAddress varEDFF4FBBF053B5DC2B444ADFA049EE0F_1433282097 =             ret;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.847 -0400", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "09DF07B34D919BD59BDA7B3C146EB2E6")
          byte[] getUserData() {
             byte[] var56491F2E1C74898E18BB6E47D2425B19_1720299867 = (userData);
@@ -992,6 +1009,7 @@ GsmSmsAddress varEDFF4FBBF053B5DC2B444ADFA049EE0F_1433282097 =             ret;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.847 -0400", hash_original_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9", hash_generated_method = "46A6852CEFE15B49DA845161462477F2")
          int getUserDataSeptetPadding() {
             int var6944462409EAAFC73113C0FD4675221D_949408396 = (mUserDataSeptetPadding);
@@ -1002,6 +1020,7 @@ GsmSmsAddress varEDFF4FBBF053B5DC2B444ADFA049EE0F_1433282097 =             ret;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.847 -0400", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "2726852895F68DC982227706A01F40AE")
          SmsHeader getUserDataHeader() {
 SmsHeader varC667C99DB117EC88666F8C8FC671A339_1425059241 =             userDataHeader;
@@ -1089,6 +1108,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1140342447 =             ret;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.848 -0400", hash_original_method = "AB0388E5C4230464C7FA98166E0C9557", hash_generated_method = "C3F9E79E938BF5A2C5D53A2ED0002561")
          boolean moreDataPresent() {
             boolean varB30B76D69E77C4C4884D1A5B07F0584E_2027594981 = ((pdu.length > cur));

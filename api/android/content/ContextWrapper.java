@@ -37,6 +37,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.096 -0400", hash_original_method = "C93782FE26B0F4F6F9B761D03AD74E79", hash_generated_method = "066905D89BDC055A650C0005D1012740")
     protected void attachBaseContext(Context base) {
     if(mBase != null)        
@@ -54,6 +55,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.097 -0400", hash_original_method = "348D9A1AC27363C49C4D9EF878F36A33", hash_generated_method = "526E349042DB87E698E97A52C04E6A1E")
     public Context getBaseContext() {
 Context varA148490A8BFC4E02B4B251DB8934259F_1512515247 =         mBase;
@@ -162,6 +164,7 @@ Resources.Theme var76B6B77AD887645DC7839F859C86DB3B_2122336811 =         mBase.g
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.103 -0400", hash_original_method = "325690D530E21A0AB255EE9D69D84488", hash_generated_method = "B04E6E0C0E09B4E871218F0DFCFE9B7D")
     @Override
     public ClassLoader getClassLoader() {
@@ -509,6 +512,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.117 -0400", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "6C0DD6BCBBFEDC54885AA9284A0144DE")
     @Override
     public void startActivity(Intent intent) {
@@ -529,6 +533,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.118 -0400", hash_original_method = "D7C74DA04A5B79EC6630FAD526B70ED6", hash_generated_method = "A632291B20B3DE68B7E953C351EB0FF0")
     @Override
     public void startIntentSender(IntentSender intent,
@@ -546,6 +551,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.118 -0400", hash_original_method = "CD7D57CF51FEE3E0548133C9C2D084D1", hash_generated_method = "2D4547361562E88556ED9736EB460F84")
     @Override
     public void sendBroadcast(Intent intent) {
@@ -556,6 +562,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.119 -0400", hash_original_method = "0D532949C3012CD33C142E9B5D03BB61", hash_generated_method = "A8FB3D04861B2339CDAE5E4596923A4A")
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
@@ -567,6 +574,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.119 -0400", hash_original_method = "F587D697CC21A22CF1C16322E48A38D4", hash_generated_method = "C9C94ADA00BA37E857FAA86E21A31BC7")
     @Override
     public void sendOrderedBroadcast(Intent intent,
@@ -579,6 +587,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.120 -0400", hash_original_method = "DEE55BD129D883E4F2F6F72EA9382082", hash_generated_method = "082C177ACFA1C32AABD3FB1FE7240D4E")
     @Override
     public void sendOrderedBroadcast(
@@ -602,6 +611,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.120 -0400", hash_original_method = "E4D0FD66C31D49EF8A28B259CA31F5AB", hash_generated_method = "433BD975A8F7FD246F85B9A7F3CA304F")
     @Override
     public void sendStickyBroadcast(Intent intent) {
@@ -612,6 +622,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.121 -0400", hash_original_method = "7E21CD2A51D6CF22EBBD91300928AE98", hash_generated_method = "A71CA7EDD1C215242F89D9F6DDE7F0F4")
     @Override
     public void sendStickyOrderedBroadcast(
@@ -634,6 +645,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.121 -0400", hash_original_method = "F6F4D7B74D392C087E12FF2E322B2B45", hash_generated_method = "BB41DCBD5702AF661DEFFC83F1A9A7E4")
     @Override
     public void removeStickyBroadcast(Intent intent) {
@@ -644,6 +656,7 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.122 -0400", hash_original_method = "D33A933E89CAAB59BCB5CB9CA20F9A5A", hash_generated_method = "9E3FAE62FAAB1243C426756B6F93F385")
     @Override
     public Intent registerReceiver(
@@ -659,6 +672,7 @@ Intent varAAEB1FD17C7C2C043C7061A56E2F4939_1592084704 =         mBase.registerRe
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.122 -0400", hash_original_method = "C498ADCED351E80E96A53362B4745838", hash_generated_method = "7B7783EC1051F09D68D997082DBFA54F")
     @Override
     public Intent registerReceiver(
@@ -689,6 +703,7 @@ Intent var59A1EE21EC52E3621468EDA989E22DE4_1112668110 =         mBase.registerRe
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.123 -0400", hash_original_method = "460FA5078659EEF29B84A9C36C1BA43F", hash_generated_method = "DF84EAD3CC9618C064C57B2ABAED1091")
     @Override
     public ComponentName startService(Intent service) {
@@ -701,6 +716,7 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.123 -0400", hash_original_method = "2538E8D6E7BE6E9AB177EECCCE1CB620", hash_generated_method = "83144571358D607A4863707AB807BA88")
     @Override
     public boolean stopService(Intent name) {
@@ -713,6 +729,7 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.124 -0400", hash_original_method = "67132A5BC1B8EF0B15B0E872390898A0", hash_generated_method = "046F545F87BBD35B604C5F5B33AD3582")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn,
@@ -840,6 +857,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.128 -0400", hash_original_method = "C92445D33E31E73A915DF30F0CA49E37", hash_generated_method = "132BCFF17972778D1A25AAD25445FF99")
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
@@ -852,6 +870,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.128 -0400", hash_original_method = "10A2FB283E31FE469317FAE71C7AF4F8", hash_generated_method = "1679A68408B187F348A87F616C937E3F")
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
@@ -863,6 +882,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.129 -0400", hash_original_method = "F52277BFC8F41FE72798C9E8418C1E24", hash_generated_method = "4340D7FC38C4770DED9FF3F4BCC9A04C")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -878,6 +898,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.133 -0400", hash_original_method = "43D2E9446750BEAA21B381D934BB37A3", hash_generated_method = "A6AEF7DB6914888ECB63D32432101608")
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
@@ -891,6 +912,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.134 -0400", hash_original_method = "4761F75E9F6B51877289AE555068D313", hash_generated_method = "6194C0764CC0102C41DF0956BADBAEAF")
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
@@ -904,6 +926,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.137 -0400", hash_original_method = "2B7D942FC66EB790715A21C2BF13434D", hash_generated_method = "F0998A30BC18E11B4149625B9C7B5D73")
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
@@ -924,6 +947,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.139 -0400", hash_original_method = "BB196C48EA062CF760A21CBEDF203044", hash_generated_method = "7C03E4DB56E7305AF6AE41949E41BC7E")
     @Override
     public void enforceUriPermission(
@@ -939,6 +963,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.139 -0400", hash_original_method = "B8C6D02BD75567C0C6C58E522F178982", hash_generated_method = "DE6C889E3693A351428610E1ACF6025F")
     @Override
     public void enforceCallingUriPermission(
@@ -952,6 +977,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.140 -0400", hash_original_method = "7C2103EAC397ACBBFFA65707A1212FAD", hash_generated_method = "3351654B17DB77690AFE3B21DB48B639")
     @Override
     public void enforceCallingOrSelfUriPermission(
@@ -965,6 +991,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.141 -0400", hash_original_method = "2C0B32E644AD3E21F1765D96680E56CD", hash_generated_method = "CE3F3633A60AF1182BE1E840ED3A323A")
     @Override
     public void enforceUriPermission(

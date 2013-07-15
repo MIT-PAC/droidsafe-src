@@ -49,11 +49,13 @@ public final class AccessController {
     }
 
     
-        public static void checkPermission(Permission permission) throws AccessControlException {
+        @DSModeled(DSC.SAFE)
+    public static void checkPermission(Permission permission) throws AccessControlException {
     }
 
     
-        public static AccessControlContext getContext() {
+        @DSModeled(DSC.SPEC)
+    public static AccessControlContext getContext() {
         return new AccessControlContext(null);
     }
 

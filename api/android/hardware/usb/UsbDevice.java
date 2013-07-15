@@ -54,6 +54,7 @@ public class UsbDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.854 -0400", hash_original_method = "271D12AC1725A6D768ED59A731E22C7D", hash_generated_method = "E5AC393BDB86FBA2A3E84E3170218798")
     public String getDeviceName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
@@ -74,6 +75,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.855 -0400", hash_original_method = "D8945A991BD9144132914298D2B7FC76", hash_generated_method = "1BE6DF397A849012EE3E7A243474B9B9")
     public int getVendorId() {
         int var0C697C350A03A7E88A6376DE08D4E014_1734060183 = (mVendorId);
@@ -84,6 +86,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.855 -0400", hash_original_method = "A32B17A7DCA377FC904869E22B60DAE0", hash_generated_method = "99D969218AD3C48C41113721406927EC")
     public int getProductId() {
         int varD83984F84CEEC24EF6A3FCCFE377A0CC_353809674 = (mProductId);
@@ -94,6 +97,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.856 -0400", hash_original_method = "45BD51C898E5D7F479BD37DC16F7713C", hash_generated_method = "3929D1823555FC2E2317CB1A3DF904A6")
     public int getDeviceClass() {
         int var3C06167D41E761EA62261D0BFD22DD5C_1345859453 = (mClass);
@@ -104,6 +108,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.856 -0400", hash_original_method = "13162F24DC75BB4BAAF33D909DA8EE5C", hash_generated_method = "FDDD3FCCF7D6A1F03E5F36B00F5E0F87")
     public int getDeviceSubclass() {
         int varA9A6C203C9D6DBFDB68228B9097B885C_560438530 = (mSubclass);
@@ -114,6 +119,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.857 -0400", hash_original_method = "5B59FED3FAC8826DFB249AE836C6A83B", hash_generated_method = "3ECD3687D02D910888FBB67D78492A3D")
     public int getDeviceProtocol() {
         int var9EA70B4691A5C944EE5FCEFBDDAC80E7_481687895 = (mProtocol);
@@ -124,6 +130,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.857 -0400", hash_original_method = "3245218866A20CE01DF5327E310A1077", hash_generated_method = "B52A1545726284A465476C01C777FA6A")
     public int getInterfaceCount() {
         int var7EA4F1DED4594980DF738F95F96A720C_2005803378 = (mInterfaces.length);
@@ -134,6 +141,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_91853060 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.858 -0400", hash_original_method = "CB4E75DEC838C411BA866F14CD6483BC", hash_generated_method = "47CFF018ECC791D39DF96AD26EF3F599")
     public UsbInterface getInterface(int index) {
         addTaint(index);
@@ -207,6 +215,7 @@ String var698D883E8B5EB48E4AB16093FCE6D05D_1394053699 =         "UsbDevice[mName
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.859 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "450A94A299243DF53BC33D2E92CA3A04")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_182549473 = (0);

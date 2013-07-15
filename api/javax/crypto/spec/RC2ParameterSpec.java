@@ -86,6 +86,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.435 -0400", hash_original_method = "1ACACD69299A3BB8DC7106B43ACB3CF4", hash_generated_method = "9EC7B6B8C0EB0714CF6DE7BB57BD702A")
     public int getEffectiveKeyBits() {
         int var427C938A30E3C42A31441455E9C82C81_1183960011 = (effectiveKeyBits);
@@ -153,6 +154,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.437 -0400", hash_original_method = "006AB7CB427D2D70245D98F537F7CF42", hash_generated_method = "E3528A1C8672BC8E92DDA12711640C65")
     @Override
     public int hashCode() {

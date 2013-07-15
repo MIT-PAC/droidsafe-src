@@ -123,6 +123,7 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.503 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "742E0376BFCDC66D1C396B7F23BA4ADD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_67552012 = (0);

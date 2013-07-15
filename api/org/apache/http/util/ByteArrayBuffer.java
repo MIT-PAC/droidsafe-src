@@ -179,6 +179,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.038 -0400", hash_original_method = "A450C39265F5D0A0BD0BDC87E4C74433", hash_generated_method = "337424E6F35DDD475218DC5AB9D00E92")
     public void clear() {
         this.len = 0;
@@ -206,6 +207,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.039 -0400", hash_original_method = "613A69635B934E492B5C1ACCF6550798", hash_generated_method = "E0C5AB073575BFDD467C6F681AE5BE28")
     public int byteAt(int i) {
         addTaint(i);
@@ -217,6 +219,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.039 -0400", hash_original_method = "E6DBC98D148FFCF2E5C7804935F48006", hash_generated_method = "77C43A642F896FEFB161278EB1ACCB06")
     public int capacity() {
         int var52B286FBAC396E14EB741753BEC48E2E_1425375528 = (this.buffer.length);
@@ -227,6 +230,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.040 -0400", hash_original_method = "2CD8E08F4F467579BB3BB8F7D0C8447F", hash_generated_method = "3829829029BDE9D8D1E94C36604C3BEF")
     public int length() {
         int varAAF77C96E17DBD2484969826EE87EC7C_1386414081 = (this.len);
@@ -237,6 +241,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.040 -0400", hash_original_method = "7FCD7FDEC66BB92B19CC1167E6D11C2F", hash_generated_method = "C9949C2CAD5D785CDBD74066974FA842")
     public byte[] buffer() {
         byte[] var397661C75635A0FA840423E8342CE0C1_838482677 = (this.buffer);
@@ -264,6 +269,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.040 -0400", hash_original_method = "469F2C344B75CE70282CF1EAB0C57115", hash_generated_method = "8A677DA05BF6B1F5660E3F29930AC1E8")
     public boolean isEmpty() {
         boolean var57A5224D99B6BA900B7758F06CD5187E_959399520 = (this.len == 0);
@@ -274,6 +280,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.041 -0400", hash_original_method = "174E21FDFCCB8A5F3AFE842BEA806892", hash_generated_method = "5D4CCCAB44E991BB49AD02FACA3284C7")
     public boolean isFull() {
         boolean varD708B71DF33C050A22F18E0A4D966659_653598398 = (this.len == this.buffer.length);

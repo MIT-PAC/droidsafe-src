@@ -23,6 +23,7 @@ public class Shader {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.343 -0400", hash_original_method = "68EE3A19E97B552C55745306F03EBBEA", hash_generated_method = "D775D13F22B91E308EDD8EC980AA97A2")
     public boolean getLocalMatrix(Matrix localM) {
         addTaint(localM.getTaint());
@@ -45,6 +46,7 @@ public class Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.344 -0400", hash_original_method = "D9D7C5F09B6958B88F23796DCADEE0F6", hash_generated_method = "54D857A280BC189FD9876713FE1AEB6C")
     public void setLocalMatrix(Matrix localM) {
         mLocalMatrix = localM;
@@ -57,6 +59,7 @@ public class Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.344 -0400", hash_original_method = "C66C3B2CF2D4E3C25A1D8C5724E65539", hash_generated_method = "82D789A5FB22E6C4C0B20EAD25E7E744")
     protected void finalize() throws Throwable {
         try 

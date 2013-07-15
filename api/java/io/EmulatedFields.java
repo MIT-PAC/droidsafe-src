@@ -441,6 +441,7 @@ ObjectSlot[] varBC44ACCD034244AA8201EA5D1A2C18F9_1171517405 =         slotsToSer
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.881 -0400", hash_original_method = "59E78F3DAFAB25C124D589BA3544A531", hash_generated_method = "C864F4B42604A6CFEFA65A191273516D")
         public ObjectStreamField getField() {
 ObjectStreamField varFD00DDA829A3FEC584386A3762542DE0_1195644435 =             field;
@@ -451,6 +452,7 @@ ObjectStreamField varFD00DDA829A3FEC584386A3762542DE0_1195644435 =             f
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.884 -0400", hash_original_method = "31B3B47C28245F569D31AEBE619B4C79", hash_generated_method = "98C52048E067F76E4AAA4F7A4041F133")
         public Object getFieldValue() {
 Object var4E4D2A3682724C167ABDF0C5A29E0CEB_908907073 =             fieldValue;

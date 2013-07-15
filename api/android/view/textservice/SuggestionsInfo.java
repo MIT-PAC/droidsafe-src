@@ -100,6 +100,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.714 -0400", hash_original_method = "D6F7E488E85F5F73C07F51AB39369D4C", hash_generated_method = "C50B0F63077B2CBB179C94674822DE16")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -119,6 +120,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.714 -0400", hash_original_method = "BC94DA38979C8D1C8B1C739567CEFAB2", hash_generated_method = "9E4966E6F8955843BFFC0570250F1A39")
     public void setCookieAndSequence(int cookie, int sequence) {
         mCookie = cookie;
@@ -129,6 +131,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.715 -0400", hash_original_method = "AC1EDA43FC7023F4D4E1DFBFEFAF3924", hash_generated_method = "36A52792FA02E1B2B1DC5660ABA1928E")
     public int getCookie() {
         int var6E854C680205E153D6A9DE7BA337DEAC_2059772014 = (mCookie);
@@ -139,6 +142,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.715 -0400", hash_original_method = "FE2AB8ECE26FD7A4F1B7769F13B3F465", hash_generated_method = "B5264C68CC4406BEC45613B57B36A75D")
     public int getSequence() {
         int varDFA2A9B34C4EF6A435AC62654D16526E_297701161 = (mSequence);
@@ -149,6 +153,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.715 -0400", hash_original_method = "CAB4876CFD4A091BA905BB4AD514BA41", hash_generated_method = "6606A8FCC0B2B8F54DA1ABE75F5A6104")
     public int getSuggestionsAttributes() {
         int var659339316F0FA48E105689F448D3DD36_1290923342 = (mSuggestionsAttributes);
@@ -159,6 +164,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.715 -0400", hash_original_method = "F830DF6AFB67D9BA96245AE6E3B04D1C", hash_generated_method = "3F659B800A3012CFE64953DBE0892D57")
     public int getSuggestionsCount() {
     if(!mSuggestionsAvailable)        
@@ -178,6 +184,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.716 -0400", hash_original_method = "303722B2FF6B72DC10F6A88905A65E92", hash_generated_method = "7812BECD5A50FEEB76667D9DB1249948")
     public String getSuggestionAt(int i) {
         addTaint(i);
@@ -189,6 +196,7 @@ String var09A13D800FB7522D7DD400180F60E984_2087783859 =         mSuggestions[i];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.716 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B99EC8E3DB874808ACBB85613EB78C53")
     @Override
     public int describeContents() {

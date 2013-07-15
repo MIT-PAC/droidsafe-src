@@ -161,6 +161,7 @@ String varA736130F7261BDD046BD91E8F9411BA0_1577613387 =             canonicalStr
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.642 -0400", hash_original_method = "F650F61C4EF367763857B0C83C9384E7", hash_generated_method = "6485BB27FB06BBAA2AEDFE772A79687E")
     private String getName0(String format) {
         addTaint(format.getTaint());

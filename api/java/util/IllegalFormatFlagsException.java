@@ -28,6 +28,7 @@ public class IllegalFormatFlagsException extends IllegalFormatException implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.633 -0400", hash_original_method = "29D28F2D87A5BF440E9E6F54EB537F58", hash_generated_method = "EF3F24228D9C207328F6769486CDBB61")
     public String getFlags() {
 String varD39F51C38FBA335F3A30D14A3811A82C_1324575957 =         flags;
@@ -38,6 +39,7 @@ String varD39F51C38FBA335F3A30D14A3811A82C_1324575957 =         flags;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.633 -0400", hash_original_method = "EC94AFCF80AA730DDC49A1A93BB12591", hash_generated_method = "5E79F49B24C624C77A9511B4DA90CE30")
     @Override
     public String getMessage() {

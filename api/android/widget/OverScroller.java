@@ -234,6 +234,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.708 -0400", hash_original_method = "4391FF82C7FA76BDB2CDCD1D85612F8D", hash_generated_method = "37223A6C5483F7F8D6FEBAB42587C45F")
     public boolean computeScrollOffset() {
     if(isFinished())        
@@ -548,6 +549,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.711 -0400", hash_original_method = "9532D02E94E4EAFA434C124BD0A8F760", hash_generated_method = "9C1BF5881133CE15D3AD6937E2102C77")
          void setFriction(float friction) {
             mFlingFriction = friction;
@@ -564,7 +566,8 @@ switch(mMode){
         }
 
         
-                static private float getDeceleration(int velocity) {
+                @DSModeled(DSC.SAFE)
+        static private float getDeceleration(int velocity) {
             return velocity > 0 ? -GRAVITY : GRAVITY;
         }
 
@@ -623,6 +626,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.712 -0400", hash_original_method = "435B8A6291C462C3A88DC285D8A7A1BB", hash_generated_method = "E81E47C77DE0F2409607E7F653A93387")
          void finish() {
             mCurrentPosition = mFinal;
@@ -633,6 +637,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.712 -0400", hash_original_method = "0F10BE4F5BE9DF7795DBE421341ADDA6", hash_generated_method = "AD197AA15C3F2929E140667F0D116CA7")
          void setFinalPosition(int position) {
             mFinal = position;

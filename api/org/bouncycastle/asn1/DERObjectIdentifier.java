@@ -117,6 +117,7 @@ switch((int)value / 40){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.130 -0400", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "5787045685227C34151F2F7D8AC190AE")
     public String getId() {
 String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
@@ -200,6 +201,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.132 -0400", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "C4A793797058EDA1528B5704E5A956A4")
      void encode(
         DEROutputStream out) throws IOException {

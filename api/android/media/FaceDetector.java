@@ -124,10 +124,12 @@ for(int i=0;i<numFaces;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.837 -0400", hash_original_method = "D8B51518847CA27E06A5D5CCCEFE0583", hash_generated_method = "0271A03F8296EC9660DAAA0B1AC61E78")
     private int fft_initialize(int width, int height, int maxFaces) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568846977 = getTaintInt();
@@ -135,6 +137,7 @@ for(int i=0;i<numFaces;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.838 -0400", hash_original_method = "0EFAC765C015AB65F15820DF03280C70", hash_generated_method = "6B24CD91ED01C94175BB1A45D12BB141")
     private int fft_detect(Bitmap bitmap) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_393648706 = getTaintInt();
@@ -142,11 +145,13 @@ for(int i=0;i<numFaces;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.838 -0400", hash_original_method = "CB86BCB7657566AD08727E53423C77D8", hash_generated_method = "8662A1DE4A4B8DE549C38F3796471A14")
     private void fft_get_face(Face face, int i) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.838 -0400", hash_original_method = "7408AB46012CCA5768269842BF780619", hash_generated_method = "676CA60B71ACB1DA9EFD2C5C1886ACF8")
     private void fft_destroy() {
     }
@@ -181,6 +186,7 @@ for(int i=0;i<numFaces;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.840 -0400", hash_original_method = "C4C15952E1E232D46597A87ECAFE1945", hash_generated_method = "CF15D7FFBE017735100166E7621205D7")
         public float confidence() {
             float varE794D0ADC53728A5ABD87B319A179821_569476158 = (mConfidence);
@@ -200,6 +206,7 @@ for(int i=0;i<numFaces;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.840 -0400", hash_original_method = "80E9D70CB6ACD6183E07186EDB4A95C5", hash_generated_method = "8896FE2AD6A17B77ED44068B0D507C02")
         public float eyesDistance() {
             float var08BB0117896C2E0A1E26DAA06F2494D6_202823962 = (mEyesDist);
@@ -210,6 +217,7 @@ for(int i=0;i<numFaces;i++)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.841 -0400", hash_original_method = "50883A0AF140E51AB6B8450738DEEEF4", hash_generated_method = "6AD8D84C8B53F7560F6941CB14D24A34")
         public float pose(int euler) {
             addTaint(euler);

@@ -15,6 +15,7 @@ public class WarningList extends SIPHeaderList<Warning> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.682 -0400", hash_original_method = "266F52C906228C3D1DC5D5C7E03D3C84", hash_generated_method = "4BF0F6034C268956C17BF4F4613887BA")
     public Object clone() {
         WarningList retval = new WarningList();

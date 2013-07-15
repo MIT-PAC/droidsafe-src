@@ -40,6 +40,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.700 -0400", hash_original_method = "C51C4513003EDC9EA86A76A3037140C3", hash_generated_method = "39E1DB1685B71CBB7026B24F81570F04")
     public void reset() {
         adnLikeFiles.clear();
@@ -103,6 +104,7 @@ ArrayList<AdnRecord> var3D961DBCF8C551D2B336F2C2F608BD6B_1962589484 =         ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.702 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "4750BB12034F98EDF4770777EB0989CC")
      int extensionEfForEf(int efid) {
         addTaint(efid);

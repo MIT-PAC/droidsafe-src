@@ -27,6 +27,7 @@ public class BCStyle implements X500NameStyle {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.807 -0400", hash_original_method = "BD2E63080765E1C5F0301383BAEA0055", hash_generated_method = "4403B85FA7F94133CFB5568EFBC0B5EC")
     public ASN1Encodable stringToValue(ASN1ObjectIdentifier oid, String value) {
         addTaint(value.getTaint());
@@ -206,6 +207,7 @@ for(int i = 0;i != possRDNs.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.812 -0400", hash_original_method = "D45006114E7131F95F9CCEC1C09C1466", hash_generated_method = "17DC5B232956F8FB86F2FB69D1277464")
     protected boolean rdnAreEqual(RDN rdn1, RDN rdn2) {
         addTaint(rdn2.getTaint());
@@ -343,6 +345,7 @@ RDN[] varB4707AA258BA2978AA365DCAAA9F4D7C_1797998652 =         IETFUtils.rDNsFro
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.815 -0400", hash_original_method = "EA77324623CE6D0B04D0F275B161435F", hash_generated_method = "C2DE4A464758E5F26092C9EA9571D6FB")
     public int calculateHashCode(X500Name name) {
         addTaint(name.getTaint());
@@ -407,6 +410,7 @@ for(int j = 0;j != atv.length;j++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.816 -0400", hash_original_method = "C53C9B056BF6D42B40010FA6E5F8B1BD", hash_generated_method = "1F2B056F366ACFDA739032F406F6D321")
     public String toString(X500Name name) {
         addTaint(name.getTaint());

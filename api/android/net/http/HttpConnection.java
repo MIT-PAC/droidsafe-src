@@ -85,6 +85,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.216 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
      void restartConnection(boolean abort) {
         addTaint(abort);
@@ -92,6 +93,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.216 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "47E41E4EAB614CFB35D520A8333FB623")
      String getScheme() {
 String var44B57466CD1C2BC7FBE96906897504B6_934017218 =         "http";

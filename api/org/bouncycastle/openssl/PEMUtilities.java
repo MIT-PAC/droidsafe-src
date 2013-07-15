@@ -89,7 +89,8 @@ final class PEMUtilities {
     }
 
     
-        static byte[] crypt(
+        @DSModeled(DSC.SPEC)
+    static byte[] crypt(
         boolean encrypt,
         Provider provider,
         byte[]  bytes,

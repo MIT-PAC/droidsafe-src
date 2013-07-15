@@ -21,14 +21,16 @@ public class X962NamedCurves {
     }
 
 
-        static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
+        @DSModeled(DSC.SPEC)
+    static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
         objIds.put(name, oid);
         names.put(oid, name);
         curves.put(oid, holder);
     }
 
     
-        public static X9ECParameters getByName(
+        @DSModeled(DSC.SPEC)
+    public static X9ECParameters getByName(
         String name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
         if (oid != null)

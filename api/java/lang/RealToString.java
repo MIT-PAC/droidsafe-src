@@ -369,11 +369,13 @@ for(int i = k + 1;i < 0;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.247 -0400", hash_original_method = "83E7E0138396E030AA4AE60F27CCD6BF", hash_generated_method = "E4714EA4E71BB41E4DA00CDB72CD4BD6")
     private void bigIntDigitGenerator(long f, int e, boolean isDenormalized, int p) {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.251 -0400", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "E43B3BEE7A9C7BCE6E3CD8D745468F89")
     private void longDigitGenerator(long f, int e, boolean isDenormalized,
             boolean mantissaIsZero, int p) {

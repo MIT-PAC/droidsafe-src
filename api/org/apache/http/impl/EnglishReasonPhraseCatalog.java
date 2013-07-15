@@ -49,7 +49,8 @@ String varD602C4C1684F7464133CA1A6851CC44A_387996384 =         reason;
     }
 
     
-        private static void setReason(int status, String reason) {
+        @DSModeled(DSC.SAFE)
+    private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;
         REASON_PHRASES[category][subcode] = reason;

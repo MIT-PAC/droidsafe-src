@@ -319,7 +319,8 @@ class Conversion {
     }
 
     
-        static long divideLongByBillion(long a) {
+        @DSModeled(DSC.SAFE)
+    static long divideLongByBillion(long a) {
         long quot;
         long rem;
         if (a >= 0) {

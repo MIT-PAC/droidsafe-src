@@ -37,6 +37,7 @@ public class ChoiceFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.487 -0400", hash_original_method = "61054E3E36618E298A5F058604E71A93", hash_generated_method = "5E5CC576179BDD11A5072FC090211519")
     public void applyPattern(String template) {
         addTaint(template.getTaint());
@@ -117,6 +118,7 @@ switch(ch){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.488 -0400", hash_original_method = "0E78DE057CBD16D1EEA99DBEA20DA3A1", hash_generated_method = "DC5C6A00F20B4637A78CC7060A34BD9F")
     @Override
     public Object clone() {
@@ -134,6 +136,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1060535345 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.489 -0400", hash_original_method = "F2D7C03023A3AAC9DFCE95AB2EC2A780", hash_generated_method = "3E193EC63040FAB116FA8618BE0BF1C3")
     @Override
     public boolean equals(Object object) {
@@ -168,6 +171,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1060535345 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.489 -0400", hash_original_method = "BC91D466505972771C623F66D301FB6D", hash_generated_method = "43E47CA2DE420B0DD6EACBEACFDA20F2")
     @Override
     public StringBuffer format(double value, StringBuffer buffer,
@@ -199,6 +203,7 @@ StringBuffer varFE1AF0FC425B0517A12FB0D99DC93E0B_64160906 =         choiceFormat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.490 -0400", hash_original_method = "F9B960B049B919C822FEECA2E3BD7537", hash_generated_method = "33B6B00C86C3CD6550E61FEA4C922550")
     @Override
     public StringBuffer format(long value, StringBuffer buffer,
@@ -214,6 +219,7 @@ StringBuffer var4279DFD88F47264B789C0548FD6DCA8B_1690290145 =         format((do
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.490 -0400", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "22F08E8B06568AB38688B00B94299A46")
     public Object[] getFormats() {
 Object[] var90D971D276260C19EE1F729DAA26FA65_1303755815 =         choiceFormats;
@@ -224,6 +230,7 @@ Object[] var90D971D276260C19EE1F729DAA26FA65_1303755815 =         choiceFormats;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.491 -0400", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "70AB6D339E61076A876F78535EC3D737")
     public double[] getLimits() {
         double[] varDACC316D060F4EC4A159A2F45A706659_893396536 = (choiceLimits);
@@ -234,6 +241,7 @@ Object[] var90D971D276260C19EE1F729DAA26FA65_1303755815 =         choiceFormats;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.492 -0400", hash_original_method = "9AF9F658465E6920280B1655C8022A86", hash_generated_method = "9A89529794BC014670625A4B07DFBCEA")
     @Override
     public int hashCode() {
@@ -270,11 +278,13 @@ for(int i = 0;i < choiceLimits.length;i++)
     }
 
     
-        public static double nextDouble(double value, boolean increment) {
+        @DSModeled(DSC.SAFE)
+    public static double nextDouble(double value, boolean increment) {
         return increment ? nextDouble(value) : previousDouble(value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.493 -0400", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "939EC569AD39D4DD5F0B164573DE4975")
     @Override
     public Number parse(String string, ParsePosition position) {
@@ -322,6 +332,7 @@ Number var96FCA40988E63EBA31357867B6B325E4_1901631751 =         new Double(Doubl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.494 -0400", hash_original_method = "A68DB2E05654867D5DABBF703FA90F00", hash_generated_method = "B3EC702E4C4F0F80A44FF1B1CA9FFC7A")
     public void setChoices(double[] limits, String[] formats) {
     if(limits.length != formats.length)        
@@ -341,6 +352,7 @@ Number var96FCA40988E63EBA31357867B6B325E4_1901631751 =         new Double(Doubl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.495 -0400", hash_original_method = "55E8B28E1CF4E8D52478B124E3FA683B", hash_generated_method = "78F287CD151E72BBA19A982A56EC7AE7")
     private int skipWhitespace(String string, int index) {
         addTaint(index);
@@ -363,6 +375,7 @@ Number var96FCA40988E63EBA31357867B6B325E4_1901631751 =         new Double(Doubl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.495 -0400", hash_original_method = "C892C3517E889BA7A99732103703F353", hash_generated_method = "9CBAA547562301706CCC9F87FDC0F224")
     public String toPattern() {
         StringBuilder buffer = new StringBuilder();

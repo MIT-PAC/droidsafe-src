@@ -100,6 +100,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.135 -0400", hash_original_method = "CF8913A55801AA3E419E95D1888FBD68", hash_generated_method = "791E854378503806A83FE508B80FB7F1")
     private void init(String publicId, String systemId,
                int lineNumber, int columnNumber) {
@@ -115,6 +116,7 @@ public class SAXParseException extends SAXException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.135 -0400", hash_original_method = "651ECBF976325F0553967BB40DF656D7", hash_generated_method = "7F58288925ED66D6F3936173B909E7CB")
     public String getPublicId() {
 String var1AC6044011EA8BF87DD1848A6670336D_1576123531 =         this.publicId;
@@ -125,6 +127,7 @@ String var1AC6044011EA8BF87DD1848A6670336D_1576123531 =         this.publicId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.135 -0400", hash_original_method = "600C253C44A23EDB0A978A11FA5F90C2", hash_generated_method = "4DD844A56F7574B54C16794D0EDC446F")
     public String getSystemId() {
 String varAECD18EE9EA1CBFED723C63E29874344_569789300 =         this.systemId;
@@ -135,6 +138,7 @@ String varAECD18EE9EA1CBFED723C63E29874344_569789300 =         this.systemId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.136 -0400", hash_original_method = "1D6EF9406E829BF96953F811A8A7C017", hash_generated_method = "5523F3D2A432D3302A7EDD2C9A0B60EB")
     public int getLineNumber() {
         int varA15531C220A3C6DFF396A4178F65880E_1161960015 = (this.lineNumber);
@@ -145,6 +149,7 @@ String varAECD18EE9EA1CBFED723C63E29874344_569789300 =         this.systemId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.136 -0400", hash_original_method = "0DEBF9F56751828220A5A7801C031403", hash_generated_method = "B5DC2518C3CD24E4CF79887AF08B3FCD")
     public int getColumnNumber() {
         int var0227595DA9BA84A7A7B5E14C9F5EB3A9_24647709 = (this.columnNumber);

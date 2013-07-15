@@ -89,6 +89,7 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.931 -0400", hash_original_method = "E4D2DD64F276F5C1793412D257C8C8A2", hash_generated_method = "A9D66F406D866E62779A07E177DA3E42")
     public void recycleArgs(SomeArgs args) {
         synchronized

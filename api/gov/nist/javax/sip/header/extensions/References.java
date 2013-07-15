@@ -21,6 +21,7 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.726 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "1D86390EEE27886727F9BF659D02B974")
     public String getCallId() {
 String var5E6A5595C014DC7657F3E7EDB5AB9AD0_1245966909 =         callId;
@@ -41,6 +42,7 @@ String varEA085D01929B1B42394A68C55CC5EB34_342568854 =         this.getParameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.727 -0400", hash_original_method = "6391CCCA5D3045DA0366706159D24F88", hash_generated_method = "89EAE1F620DB52540F2B1E2C4575CE19")
     public void setCallId(String callId) {
         this.callId = callId;
@@ -103,6 +105,7 @@ Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_310469284 =         super.getParame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.729 -0400", hash_original_method = "E46EA6665F0CD807BC3E748EE65E1EE2", hash_generated_method = "2112FEBF1CD89EDE43D48E4C1DBAC918")
     public String getName() {
 String var3CAE5995445ABD1DAEB0EE0A43C2A8EA_1830584497 =         ReferencesHeader.NAME;

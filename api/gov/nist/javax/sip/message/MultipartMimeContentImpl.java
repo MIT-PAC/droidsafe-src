@@ -49,6 +49,7 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.731 -0400", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "B7DC8B85CDB6C8C569586889D4A8694A")
     public ContentTypeHeader getContentTypeHeader() {
 ContentTypeHeader varB0AA2702CAE096DD9EF25111BD0D4CE0_1362556418 =         multipartMimeContentTypeHeader;
@@ -79,6 +80,7 @@ String varAF2C4DDBAB4CE8345BFD016271B18ED0_1640941662 =         stringBuffer.toS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.735 -0400", hash_original_method = "968D057F7853F8246DB89EBE38C4B30E", hash_generated_method = "5B737CF4F78BF66244DB1710F06AA72E")
     public void createContentList(String body) throws ParseException {
         addTaint(body.getTaint());

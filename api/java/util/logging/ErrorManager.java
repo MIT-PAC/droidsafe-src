@@ -16,6 +16,7 @@ public class ErrorManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.047 -0400", hash_original_method = "88D78C1D6CF19D14D0670D7F86679469", hash_generated_method = "CAF7317F7B9A37C7951787C25FA8FEFB")
     public void error(String message, Exception exception, int errorCode) {
         addTaint(errorCode);

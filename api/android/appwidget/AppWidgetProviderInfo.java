@@ -157,6 +157,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.646 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3CFC99A25BFD8F89D32A635E68BEDDD7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1267148957 = (0);
@@ -167,6 +168,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.647 -0400", hash_original_method = "53CD7F02665BA9CCD92FD799E19E76A8", hash_generated_method = "E2279406137B37D32736DBDEC2AFCF54")
     public String toString() {
 String var86602826B3CB97BCAACAB7E54F86BD12_241150945 =         "AppWidgetProviderInfo(provider=" + this.provider + ")";

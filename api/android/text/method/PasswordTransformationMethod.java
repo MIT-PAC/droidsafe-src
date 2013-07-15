@@ -28,6 +28,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.754 -0400", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "D8AD284EBAC98C26DA502ABF59336302")
     public CharSequence getTransformation(CharSequence source, View view) {
         addTaint(view.getTaint());
@@ -64,7 +65,8 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     }
 
     
-        public static PasswordTransformationMethod getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static PasswordTransformationMethod getInstance() {
         if (sInstance != null)
             return sInstance;
         sInstance = new PasswordTransformationMethod();
@@ -72,6 +74,7 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.755 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "63445082BCC7E22464CE7B1B497FEB87")
     public void beforeTextChanged(CharSequence s, int start,
                                   int count, int after) {
@@ -83,6 +86,7 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.756 -0400", hash_original_method = "E9233B27956FDFC70D77F5557A52BB47", hash_generated_method = "4F20B40A16DC180C1EDB2213A1D7D6B5")
     public void onTextChanged(CharSequence s, int start,
                               int before, int count) {
@@ -128,6 +132,7 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.757 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
@@ -135,6 +140,7 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.757 -0400", hash_original_method = "D64B8AB73A1F5CA65D62622D3C82E686", hash_generated_method = "FAEAA3C6FC2994A1670F5B504938EEBA")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
@@ -163,7 +169,8 @@ for(int i = 0;v == null && i < vr.length;i++)
     }
 
     
-        private static void removeVisibleSpans(Spannable sp) {
+        @DSModeled(DSC.SAFE)
+    private static void removeVisibleSpans(Spannable sp) {
         Visible[] old = sp.getSpans(0, sp.length(), Visible.class);
         for (int i = 0; i < old.length; i++) {
             sp.removeSpan(old[i]);

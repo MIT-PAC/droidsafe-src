@@ -14,6 +14,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.047 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "A114617378D32729BFE7D1C819C15DF3")
     public boolean add(E object) {
         addTaint(object.getTaint());
@@ -53,6 +54,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.048 -0400", hash_original_method = "2F749DB5FEA27C5D543B69C11E8665E6", hash_generated_method = "94B53645345716ACF0F00CE71C5A8EA8")
     public void clear() {
         Iterator<E> it = iterator();
@@ -71,6 +73,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.049 -0400", hash_original_method = "9D755B12CFAC53130BB68496AAAEDB9E", hash_generated_method = "637418171667F96BDEF9382693524FB2")
     public boolean contains(Object object) {
         addTaint(object.getTaint());
@@ -151,6 +154,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.050 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "477EA4B527BCCFE5782FABA6CAC8C711")
     public boolean isEmpty() {
         boolean var5BD3446419BAE72903C4742BF777F0E0_295279526 = (size() == 0);
@@ -164,6 +168,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     public abstract Iterator<E> iterator();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.051 -0400", hash_original_method = "CCD29C39CF9628BFB1346470270188CD", hash_generated_method = "5E9E4A49FB4A959E58C9DA17674F23A0")
     public boolean remove(Object object) {
         addTaint(object.getTaint());
@@ -283,6 +288,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     public abstract int size();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.053 -0400", hash_original_method = "678F4AFF67E7BF51A720327536D164F3", hash_generated_method = "0AA4F87D074615A07B366AB245BE2216")
     public Object[] toArray() {
         int size = size();
@@ -308,6 +314,7 @@ Object[] var1270D5B74B756F17D644A15D775499D9_1751470086 =         array;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.053 -0400", hash_original_method = "A29AB27B8881BCEC42B6770CA33A7C59", hash_generated_method = "40078E6FA41D90A0787717335A7627BD")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {
@@ -346,6 +353,7 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_1564238356 =         contents;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.054 -0400", hash_original_method = "A06C3538162F748E28317896970387BE", hash_generated_method = "939C6603D1775F2DC0196C175FC77A69")
     @Override
     public String toString() {

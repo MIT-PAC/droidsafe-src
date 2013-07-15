@@ -22,7 +22,8 @@ public class ProviderUtil {
     }
 
 
-        static void setParameter(String parameterName, Object parameter) {
+        @DSModeled(DSC.BAN)
+    static void setParameter(String parameterName, Object parameter) {
         SecurityManager securityManager = System.getSecurityManager();
         if (parameterName.equals(ConfigurableProvider.THREAD_LOCAL_EC_IMPLICITLY_CA))
         {

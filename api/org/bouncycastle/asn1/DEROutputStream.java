@@ -183,6 +183,7 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.153 -0400", hash_original_method = "F19F4C73BB689B28C331EE3D14B18253", hash_generated_method = "B2B38922847BB8BA83F7C2D79E0FD728")
     public void writeObject(
         Object    obj) throws IOException {

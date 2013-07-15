@@ -48,6 +48,7 @@ public abstract class Call {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.982 -0400", hash_original_method = "2C555626402D649349C7BBEAA2F56B58", hash_generated_method = "731BCA96425C23FC58318524BA009299")
     public boolean hasConnections() {
         List connections = getConnections();
@@ -69,6 +70,7 @@ public abstract class Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.982 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "E37E3535EA07F9390B9991812880AF11")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_1336782150 =         state;
@@ -79,6 +81,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_1336782150 =         state;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.982 -0400", hash_original_method = "647027C18C356B0A148CD756E9A6C1F9", hash_generated_method = "8B321507C3C644570A239ECAD7CFFD2D")
     public boolean isIdle() {
         boolean var61C8D6A3C0D4E365494B575547857403_1228081488 = (!getState().isAlive());
@@ -275,6 +278,7 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_1694810233 =         latest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.987 -0400", hash_original_method = "26476B959AA4096CC4669AF0A1E29ED1", hash_generated_method = "D6252F568DA99D53DC4E80E776F76B2A")
     public boolean isGeneric() {
         boolean varF023E590C1EFC66385B243FFA97DE5FF_1782335090 = (isGeneric);
@@ -285,6 +289,7 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_1694810233 =         latest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.988 -0400", hash_original_method = "3EA9E9B35830CEB0D3B80D105DCC59E2", hash_generated_method = "514423FE597FCFBA9E7023F2C6BFEFDF")
     public void setGeneric(boolean generic) {
         isGeneric = generic;
@@ -318,12 +323,15 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_1694810233 =         latest;
     
     public enum State {
         IDLE, ACTIVE, HOLDING, DIALING, ALERTING, INCOMING, WAITING, DISCONNECTED, DISCONNECTING;
+        @DSModeled(DSC.SAFE)
         public boolean isAlive() {
             return !(this == IDLE || this == DISCONNECTED || this == DISCONNECTING);
         }
+        @DSModeled(DSC.SAFE)
         public boolean isRinging() {
             return this == INCOMING || this == WAITING;
         }
+        @DSModeled(DSC.SAFE)
         public boolean isDialing() {
             return this == DIALING || this == ALERTING;
         }

@@ -338,6 +338,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.697 -0400", hash_original_method = "0A94C2599C7A34FBFDE0162C017FE126", hash_generated_method = "830817A3A3EFD5FBEC94E746CF6D05FE")
     public boolean sameFile(URL otherURL) {
         addTaint(otherURL.getTaint());
@@ -506,6 +507,7 @@ URLConnection varA729B66CE0E41412E468FE52B258A462_1617134805 =         streamHan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.711 -0400", hash_original_method = "1E43ADB2B24E4AEE234C287749830ABE", hash_generated_method = "88FCA175EB07FF87A1A2F13E3370C0B9")
     public URI toURI() throws URISyntaxException {
 URI varABE6DEE154A7C8840C60A090742E451F_358152102 =         new URI(toExternalForm());
@@ -516,6 +518,7 @@ URI varABE6DEE154A7C8840C60A090742E451F_358152102 =         new URI(toExternalFo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.711 -0400", hash_original_method = "9819CA3EECC28CF10D8C0CAB99E6CDCB", hash_generated_method = "00058F7242FE59A76513679ECFA404C9")
     public URI toURILenient() throws URISyntaxException {
     if(streamHandler == null)        
@@ -632,6 +635,7 @@ String varDCCA36446C90D2AF904BB9935AD90339_1358681858 =         streamHandler.to
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.715 -0400", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "025E4EBEDB7DAAFAF4BF77BDB998E9C4")
     public String getProtocol() {
 String varDD56EE388A0FA5696BF9686AC14D2DB9_577842848 =         protocol;
@@ -642,6 +646,7 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_577842848 =         protocol;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.716 -0400", hash_original_method = "36971585CF0AC7121D34C5DBA5E7B5AD", hash_generated_method = "A8D109BADDBE5829CE185817A209E476")
     public String getAuthority() {
 String var9A4A00E403B4898E9807F68E9EBE5A8B_422789349 =         authority;
@@ -652,6 +657,7 @@ String var9A4A00E403B4898E9807F68E9EBE5A8B_422789349 =         authority;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.716 -0400", hash_original_method = "C7599F6C2A9D16B1F9E84177D4C93D75", hash_generated_method = "07A93642F9340B235CB898D1A139C666")
     public String getUserInfo() {
 String varBCE8ED9572054839A8E4DF19F3B230E6_856925868 =         userInfo;
@@ -662,6 +668,7 @@ String varBCE8ED9572054839A8E4DF19F3B230E6_856925868 =         userInfo;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.716 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "ED842AF5D195484C206BDAC974F05AC3")
     public String getHost() {
 String var872E07117C05F1A34EC24B57B694B8E3_1244493231 =         host;
@@ -672,6 +679,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_1244493231 =         host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.717 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "71C7A1648D66E7016476A9BE4192A1FA")
     public int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_835458787 = (port);
@@ -692,6 +700,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_1244493231 =         host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.717 -0400", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "8743A2B05399DF5EEB5525F619A2054A")
     public String getFile() {
 String varADCB75793FA1DABACC5DEBFFAE466050_1878550918 =         file;
@@ -702,6 +711,7 @@ String varADCB75793FA1DABACC5DEBFFAE466050_1878550918 =         file;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.717 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "43B08A72B0BE67B21A17BDD8B6340B54")
     public String getPath() {
 String var535F4D9720F3B0C96D8143873CE0638C_1643840546 =         path;
@@ -712,6 +722,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_1643840546 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.718 -0400", hash_original_method = "1E279BC97111B7B33A732EF157351512", hash_generated_method = "EBF9E1D0836995F87981B0A62BA1EECF")
     public String getQuery() {
 String varA8A0683638E4CE91D85122D8CD8F3BAC_1188394492 =         query;
@@ -722,6 +733,7 @@ String varA8A0683638E4CE91D85122D8CD8F3BAC_1188394492 =         query;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.718 -0400", hash_original_method = "3AAC0179CDFA195C747754E7ED20A392", hash_generated_method = "6D7EDF6F452BB2FC907965ABB1D68833")
     public String getRef() {
 String varEFC1DBC79AB9D4D6FF46C815132543A5_2145506082 =         ref;

@@ -24,6 +24,7 @@ public class NumberParseException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.423 -0400", hash_original_method = "D589126B13584B530A9FB2F071914799", hash_generated_method = "56108EC99249D9264E5EE1C2E5761ACE")
     public ErrorType getErrorType() {
 ErrorType var5A5A63BBE4A031A8D09DACEEAC4789E0_1243480726 =         errorType;

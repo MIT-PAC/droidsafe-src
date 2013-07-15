@@ -323,7 +323,8 @@ public class ASN1Dump {
     }
 
     
-        public static String dumpAsString(
+        @DSModeled(DSC.SPEC)
+    public static String dumpAsString(
         Object   obj) {
         return dumpAsString(obj, false);
     }

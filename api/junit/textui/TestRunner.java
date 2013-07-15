@@ -63,6 +63,7 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_474898517 =         new Stan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.508 -0400", hash_original_method = "3C8F23863ACC349D5F634378B8407602", hash_generated_method = "343C81A91A376A476B6E63854712BD10")
     public void testFailed(int status, Test test, Throwable t) {
         addTaint(t.getTaint());
@@ -72,6 +73,7 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_474898517 =         new Stan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.508 -0400", hash_original_method = "1FEF70E96102D7304D006BBFDC4DE6B7", hash_generated_method = "4FAFD7517E2617F717E5C9E85C0A14FE")
     public void testStarted(String testName) {
         addTaint(testName.getTaint());
@@ -79,6 +81,7 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_474898517 =         new Stan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.509 -0400", hash_original_method = "95F90AC078029D49ABA36F5E39CE4989", hash_generated_method = "9E4B00FBBA1794C65D5334E8AFC03502")
     public void testEnded(String testName) {
         addTaint(testName.getTaint());
@@ -246,6 +249,7 @@ TestResult var0587DB1BDD70DA1527F4D4358ADF9C9F_277301524 =             doRun(sui
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.512 -0400", hash_original_method = "9253563C68D91F28BA53FF0274CE60A8", hash_generated_method = "291C442331B1EA2F3572AA450FACC064")
     public void setPrinter(ResultPrinter printer) {
         fPrinter= printer;

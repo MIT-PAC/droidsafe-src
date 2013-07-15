@@ -35,7 +35,8 @@ class JniUtil {
     }
 
     
-        protected static synchronized Context getContext() {
+        @DSModeled(DSC.SAFE)
+    protected static synchronized Context getContext() {
         return sContext;
     }
 
@@ -120,14 +121,16 @@ class JniUtil {
     }
 
     
-        private static synchronized String getAutofillQueryUrl() {
+        @DSModeled(DSC.SPEC)
+    private static synchronized String getAutofillQueryUrl() {
         checkInitialized();
         return Settings.Secure.getString(sContext.getContentResolver(),
                 Settings.Secure.WEB_AUTOFILL_QUERY_URL);
     }
 
     
-        private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
+        @DSModeled(DSC.SPEC)
+    private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
         checkInitialized();
         ActivityManager manager = (ActivityManager) sContext.getSystemService(
                 Context.ACTIVITY_SERVICE);

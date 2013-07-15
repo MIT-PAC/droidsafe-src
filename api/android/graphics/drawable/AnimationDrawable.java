@@ -51,6 +51,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.551 -0400", hash_original_method = "F207A8C7EE9B62CDAD2CDEF6C9E1E05A", hash_generated_method = "9B96B16AC055EAD9A4E2A32C46549E24")
     @Override
     public boolean setVisible(boolean visible, boolean restart) {
@@ -84,6 +85,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.551 -0400", hash_original_method = "B2F55F064A30629408E9D67D650C8080", hash_generated_method = "EC0B19409B80B0791F1EB4909F6766B3")
     public void start() {
     if(!isRunning())        
@@ -97,6 +99,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.551 -0400", hash_original_method = "13ACD75B58E729F7C9E7DE6208579581", hash_generated_method = "53C11BAFB191CDBD4971943005900B92")
     public void stop() {
     if(isRunning())        
@@ -110,6 +113,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.552 -0400", hash_original_method = "58F8F26763BA19E1F1B373F32B389D6B", hash_generated_method = "AA90744769D0744D4B6AD4EAEA886F01")
     public boolean isRunning() {
         boolean varB13D098C873A2C979776046FBFB77EA9_1136532147 = (mCurFrame > -1);
@@ -120,6 +124,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.552 -0400", hash_original_method = "B6B243EB70C5F724D188154EAF209167", hash_generated_method = "B68A4DACC752E288041F7CFA46B6D54E")
     public void run() {
         nextFrame(false);
@@ -128,6 +133,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.553 -0400", hash_original_method = "A4EA0ABEB4B95482FCBDF5ED15C3D56A", hash_generated_method = "042C22AA283F353A6C950406C408B229")
     @Override
     public void unscheduleSelf(Runnable what) {
@@ -140,6 +146,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.553 -0400", hash_original_method = "078F231D1E4DEE307E947B896715B9FA", hash_generated_method = "CB5A6E076B91315BD6EA2A3017404FEB")
     public int getNumberOfFrames() {
         int var49D7324FC1570CC3E57576B411A488B9_667265240 = (mAnimationState.getChildCount());
@@ -150,6 +157,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.553 -0400", hash_original_method = "924497ADC8C942C05D9D7A5BCA11BCAD", hash_generated_method = "6E24379087D9A58FD040FF3564D6563E")
     public Drawable getFrame(int index) {
         addTaint(index);
@@ -161,6 +169,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.554 -0400", hash_original_method = "F1980307C7F7FBBB813440E411F73714", hash_generated_method = "CDC38B01BA0CDD0A59B9B38B6932EE68")
     public int getDuration(int i) {
         addTaint(i);
@@ -172,6 +181,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.554 -0400", hash_original_method = "F5C3EDF3EE4DBDBAFAA19B210BF98AFC", hash_generated_method = "B30BFA7B137518A94A4913BF0767B33E")
     public boolean isOneShot() {
         boolean varE79A063CC7E1C1620F6A53E3B407D24D_456509030 = (mAnimationState.mOneShot);
@@ -182,6 +192,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.555 -0400", hash_original_method = "E8F5482B51D48B1DAA2F24BE9877736B", hash_generated_method = "323509116D1A453EB4E6DE2EBA7CA601")
     public void setOneShot(boolean oneShot) {
         mAnimationState.mOneShot = oneShot;
@@ -190,6 +201,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.555 -0400", hash_original_method = "1C98A9B62B655827C0439A8A5D392C10", hash_generated_method = "55514C302C32CA2645A5D53F39C82993")
     public void addFrame(Drawable frame, int duration) {
         addTaint(duration);
@@ -207,6 +219,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.556 -0400", hash_original_method = "5BF496D6A5AC4A1943AFC092E55892DA", hash_generated_method = "6675B8FE44905DA9FFD973246CC2786C")
     private void nextFrame(boolean unschedule) {
         addTaint(unschedule);
@@ -227,6 +240,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.557 -0400", hash_original_method = "B59ABD564D6BE8E67E70E520C58F1693", hash_generated_method = "BC34A338D4C6C10B3D40432E71599F26")
     private void setFrame(int frame, boolean unschedule, boolean animate) {
         addTaint(animate);
@@ -260,6 +274,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.560 -0400", hash_original_method = "7089458E2F1E271024E158C172450FE4", hash_generated_method = "D1B98B9E646377E77E945329295D061F")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -337,6 +352,7 @@ Drawable varE0AB1D3BEF0F8EC2A36A9087A870E1EA_3684648 =         mAnimationState.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.561 -0400", hash_original_method = "91217E14A6A0FB93E4A43550FB5F1C23", hash_generated_method = "E966456877ACFD17902007B9B813AEB6")
     @Override
     public Drawable mutate() {

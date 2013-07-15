@@ -96,6 +96,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.112 -0400", hash_original_method = "85E45C4D26BDFDA8B8A891EEA2149544", hash_generated_method = "D5BBC55D73ED0BC6A03D3C4BE00465B1")
     @Override
     protected void onFinishInflate() {
@@ -121,6 +122,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.113 -0400", hash_original_method = "5092F6390AF72578BEED6176B75C91D1", hash_generated_method = "ECA5DB92E6F45AE6E8CEA972B9504B66")
     public void initialize(MenuItemImpl itemData, int menuType) {
         mItemData = itemData;
@@ -143,6 +145,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.114 -0400", hash_original_method = "D8A614357C6F3F0E863735D7939D36DF", hash_generated_method = "000029833D7B44F7160178B4662C1051")
     public void setForceShowIcon(boolean forceShow) {
         mPreserveIconSpacing = mForceShowIcon = forceShow;
@@ -151,6 +154,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.114 -0400", hash_original_method = "D643CEDDD2281EA2D982E86A77F53965", hash_generated_method = "7B943DD86CEAEA3A765348DAB2E192F1")
     public void setTitle(CharSequence title) {
         addTaint(title.getTaint());
@@ -175,6 +179,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.115 -0400", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "4BEAB9BE339E7B27D302DE7D047E6DF3")
     public MenuItemImpl getItemData() {
 MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
@@ -185,6 +190,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.115 -0400", hash_original_method = "10ED998AF45E09E3692DBD756F730611", hash_generated_method = "806E03B3338CB9F1701D77FBC79CE4D5")
     public void setCheckable(boolean checkable) {
         addTaint(checkable);
@@ -237,6 +243,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.116 -0400", hash_original_method = "1046275995CFEC2A71A54D8E1F9C97CC", hash_generated_method = "3F0AC1043DF9ABCF8904647F5CBC41D6")
     public void setChecked(boolean checked) {
         addTaint(checked);
@@ -275,6 +282,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.117 -0400", hash_original_method = "4983CC204EB78339386267D8C73D5694", hash_generated_method = "BB3455A20D68F28C065108466A11990C")
     public void setShortcut(boolean showShortcut, char shortcutKey) {
         addTaint(shortcutKey);
@@ -301,6 +309,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.117 -0400", hash_original_method = "19EB37BE18B7BC088A147E31A5EAA2CE", hash_generated_method = "EAD1FB0638B5D0F1469DDE8BA0FDDA40")
     public void setIcon(Drawable icon) {
         addTaint(icon.getTaint());
@@ -379,6 +388,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.118 -0400", hash_original_method = "10F5F40E2932688DF3201248310D8E11", hash_generated_method = "EC98767F367014966ED63E3EF0789564")
     private void insertIconView() {
         LayoutInflater inflater = getInflater();
@@ -393,6 +403,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.119 -0400", hash_original_method = "3AE05F112F28FE467A439CFB98DC5418", hash_generated_method = "15CE423BB152D917B454510BB59793B1")
     private void insertRadioButton() {
         LayoutInflater inflater = getInflater();
@@ -409,6 +420,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.119 -0400", hash_original_method = "C1CFD343D3CE36D4657F4BFD8E338B9A", hash_generated_method = "7247AEBE06DD9AC00AEB216787940048")
     private void insertCheckBox() {
         LayoutInflater inflater = getInflater();
@@ -425,6 +437,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.119 -0400", hash_original_method = "D007E81C6798ACEA5420D15C2FEE6142", hash_generated_method = "97AE7F85F1963F4FACECCA4E0FEE12D6")
     public boolean prefersCondensedTitle() {
         boolean var68934A3E9455FA72420237EB05902327_331633612 = (false);
@@ -435,6 +448,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.119 -0400", hash_original_method = "21090C746FF264700C0D2226436C9966", hash_generated_method = "B6DF46C14B4D959217B5F9FBEF56E716")
     public boolean showsIcon() {
         boolean varEB2F9A6DA3D97AE9E64619D6EA497A82_365679989 = (mForceShowIcon);
@@ -445,6 +459,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_1200045310 =         mItemData;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.120 -0400", hash_original_method = "800EDA97716EBA1ECAA54C866B1D88CB", hash_generated_method = "567616DC8FBEA465E6FFC4CD3C32029A")
     private LayoutInflater getInflater() {
     if(mInflater == null)        

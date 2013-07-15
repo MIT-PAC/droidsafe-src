@@ -36,6 +36,7 @@ public abstract class LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.476 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "C0736FE1DEA9E5A4D0675D98F4D9338C")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_914656587 =         mName;

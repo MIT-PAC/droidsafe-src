@@ -63,6 +63,7 @@ public class StringTokenizer implements Enumeration<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.112 -0400", hash_original_method = "F396A87D2BE9368C37D12C0E764C04A1", hash_generated_method = "B9E4A1ACC2DDC785D6AB9AEAF95D19F1")
     public int countTokens() {
         int count = 0;
@@ -110,6 +111,7 @@ for(int i = position, length = string.length();i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.113 -0400", hash_original_method = "8165B2FDF405707BFEA9EF223873FBB9", hash_generated_method = "DDC967E22F449E5C632F174D48490BFC")
     public boolean hasMoreElements() {
         boolean var9F4E475B63003C851520033472409ACA_1508531969 = (hasMoreTokens());
@@ -120,6 +122,7 @@ for(int i = position, length = string.length();i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.113 -0400", hash_original_method = "15C5B981D98A46AC76B0A556FC01F2CE", hash_generated_method = "4BFCA8F62D0B6759E41EC6C582017D0C")
     public boolean hasMoreTokens() {
     if(delimiters == null)        
@@ -164,6 +167,7 @@ for(int i = position;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.114 -0400", hash_original_method = "0727048C65431FDBB400A5F8931A38E2", hash_generated_method = "430C866981E42F57FE6C19A5F8ABCA1A")
     public Object nextElement() {
 Object var1E85D5DD28517B6F091CC30DA1235BD1_1807422213 =         nextToken();
@@ -174,6 +178,7 @@ Object var1E85D5DD28517B6F091CC30DA1235BD1_1807422213 =         nextToken();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.115 -0400", hash_original_method = "195590523F66664753FCC18930183C87", hash_generated_method = "4CE56FB0FB839A60DE487733526DC352")
     public String nextToken() {
     if(delimiters == null)        
@@ -231,6 +236,7 @@ String var62F48227EB0C9AD4B78CE3F1FCA71075_315307280 =                 string.su
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.116 -0400", hash_original_method = "A244E208DF1B5D62AF8E286FEDEE9DEC", hash_generated_method = "F1DF1EAA4E704BCA2C9929BA71970F02")
     public String nextToken(String delims) {
         this.delimiters = delims;

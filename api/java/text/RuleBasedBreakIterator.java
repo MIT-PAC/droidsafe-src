@@ -52,6 +52,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.647 -0400", hash_original_method = "49EE36B5C8835D510AEEA1B2E4051F58", hash_generated_method = "32C5D4579C4DC622303B81DCBA409555")
     private void validateOffset(int offset) {
         addTaint(offset);

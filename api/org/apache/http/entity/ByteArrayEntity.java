@@ -32,6 +32,7 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.936 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "040C1140A3D008EF6EE27A353A604B52")
     public boolean isRepeatable() {
         boolean varB326B5062B2F0E69046810717534CB09_51475802 = (true);
@@ -42,6 +43,7 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.937 -0400", hash_original_method = "161FF0185286748984501E39486F36ED", hash_generated_method = "C1C2A217E4413A89E46A3138D86FBB8E")
     public long getContentLength() {
         long varFF3D4578F788B008DD2D7570337D294B_990396490 = (this.content.length);
@@ -82,6 +84,7 @@ InputStream varEFD22E670A1626295FDBD437906D30FE_381162454 =         new ByteArra
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.939 -0400", hash_original_method = "1C9916E491D93B6DAF758D3D738C6EEB", hash_generated_method = "FA9C5DE607574E62EB4CEFA57E69D855")
     public boolean isStreaming() {
         boolean var68934A3E9455FA72420237EB05902327_646303520 = (false);

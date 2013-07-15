@@ -72,6 +72,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.782 -0400", hash_original_method = "1A2D4AB1416848B6CAAD7584C5AE9825", hash_generated_method = "D164EEFBB01C83A43827366C6CBE6463")
     public int getRingtoneType() {
         int var429D9ED5263EDB27ACD4DEA6BD2ED8B4_1863997454 = (mRingtoneType);
@@ -82,6 +83,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.783 -0400", hash_original_method = "D7B05FA08D1473DF1FF0F577252B94E4", hash_generated_method = "925E3007BFB79B5DD997814CAF0A2A83")
     public void setRingtoneType(int type) {
         mRingtoneType = type;
@@ -90,6 +92,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.783 -0400", hash_original_method = "1EDF917BBB16A2DD7FDEFF560CC91C95", hash_generated_method = "F51DE0EC086B9DBC3A06E0625330D4B2")
     public boolean getShowDefault() {
         boolean var514AD2406CE06E7C36514763A6C232EE_565953083 = (mShowDefault);
@@ -100,6 +103,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.784 -0400", hash_original_method = "14F174C1761E0E1021260A615E0701C9", hash_generated_method = "58C0CBC734FA51C993C87DFEF109783C")
     public void setShowDefault(boolean showDefault) {
         mShowDefault = showDefault;
@@ -108,6 +112,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.784 -0400", hash_original_method = "78493F49FCDC7F2B17EDE4C6D3C9ED80", hash_generated_method = "0F0DC7BC3233B470DF727BC580EDF578")
     public boolean getShowSilent() {
         boolean var79773116418F632DB2912626C537E0DC_21189623 = (mShowSilent);
@@ -118,6 +123,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.785 -0400", hash_original_method = "96AD95F70E483549E08CF3AF9865FE34", hash_generated_method = "B26664B56E3CC7B2E9360E3FA7D3F7AA")
     public void setShowSilent(boolean showSilent) {
         mShowSilent = showSilent;
@@ -153,6 +159,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.786 -0400", hash_original_method = "3115FC99B9C3EE3EE3896CF41F72D355", hash_generated_method = "0921D75130DB11864792D26D2454F05C")
     protected void onPrepareRingtonePickerIntent(Intent ringtonePickerIntent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -182,6 +189,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.786 -0400", hash_original_method = "61F749C53ECEF8AEA7C45AB0E864D889", hash_generated_method = "645D8CF6C8F6B76200310492D5D2805F")
     protected void onSaveRingtone(Uri ringtoneUri) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -192,6 +200,7 @@ public class RingtonePreference extends Preference implements PreferenceManager.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.787 -0400", hash_original_method = "0D14EAB00EC2474BC71AEF293B196DEA", hash_generated_method = "D9BD357E7CCACBBE3775750920CC72EA")
     protected Uri onRestoreRingtone() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -259,6 +268,7 @@ Object var0AC0FFFECD61C5D7F483CEEBDC224FAC_349189300 =         a.getString(index
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.788 -0400", hash_original_method = "E8C8E72048A77FCD0D377098E6D641A4", hash_generated_method = "998ECE5CC6CFD21767843F3A7D2BF9C0")
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
         //DSFIXME:  CODE0009: Possible callback target function detected

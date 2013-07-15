@@ -56,6 +56,7 @@ public final class AlgorithmIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.678 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "98F093FAE1CDB32CEE4EC3CD59329A65")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_426371867 =         algorithm;
@@ -66,6 +67,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_426371867 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.679 -0400", hash_original_method = "EFA02412B3D98573C0B83612EF561CD2", hash_generated_method = "96211F9CE5B3C9198E875A6FE4B81D67")
     public String getAlgorithmName() {
     if(algorithmName == null)        
@@ -90,6 +92,7 @@ String var2F10FAEB775F4B5DF3001375F37870C3_1356601153 =         algorithmName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.679 -0400", hash_original_method = "360B58AAED509D402161560B83FBF1AD", hash_generated_method = "C42E6A26AAE378104DD51747600B1A53")
     public byte[] getParameters() {
         byte[] var166E64F6C3677D0C513901242A3E702D_346624652 = (parameters);
@@ -100,6 +103,7 @@ String var2F10FAEB775F4B5DF3001375F37870C3_1356601153 =         algorithmName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.679 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "4A5E13FFAD2EC4FC4F3AAC845694C7C0")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -117,6 +121,7 @@ String var2F10FAEB775F4B5DF3001375F37870C3_1356601153 =         algorithmName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.679 -0400", hash_original_method = "CF4BFB68A01F84A2E157841F7FC296C6", hash_generated_method = "64CC213FF41AA85F4AAA70D6597B59C7")
     @Override
     public boolean equals(Object ai) {
@@ -146,6 +151,7 @@ String var2F10FAEB775F4B5DF3001375F37870C3_1356601153 =         algorithmName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.680 -0400", hash_original_method = "E65C54FCC20A7D2FAC5D39EC6758FF2C", hash_generated_method = "755910449AC99F484016384B064F5463")
     @Override
     public int hashCode() {
@@ -157,6 +163,7 @@ String var2F10FAEB775F4B5DF3001375F37870C3_1356601153 =         algorithmName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.680 -0400", hash_original_method = "BB3CE84D97D9ED23CA58D78F5AD0AB33", hash_generated_method = "ED9C4B999F2E0516BDA8743856A6566D")
     public void dumpValue(StringBuilder sb) {
         addTaint(sb.getTaint());

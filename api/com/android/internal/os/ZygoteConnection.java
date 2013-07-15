@@ -607,6 +607,7 @@ for(FileDescriptor fd : descriptors)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.232 -0400", hash_original_method = "A5A16DB5966812C0B6C21E171E7DEF94", hash_generated_method = "5BFB956212478E9B0A9275A55802037F")
     private void setChildPgid(int pid) {
         addTaint(pid);

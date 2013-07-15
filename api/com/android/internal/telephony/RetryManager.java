@@ -216,6 +216,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.061 -0400", hash_original_method = "74B9CFC0074F7A248036F63581582633", hash_generated_method = "9D305FDB184DCC81936A5772588F61E5")
     public boolean isRetryNeeded() {
         boolean retVal = mRetryForever || (mRetryCount < mMaxRetryCount);
@@ -274,6 +275,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.062 -0400", hash_original_method = "7864A3188C49B1562B5127F41B9781EB", hash_generated_method = "06795BF4146A93153EC577B50E1F9663")
     public int getRetryCount() {
     if(DBG)        
@@ -287,6 +289,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.062 -0400", hash_original_method = "BFFEAAE12F87E8C46DFE1D4E07480604", hash_generated_method = "974F315906E5ADCC7ABF2C3C9C5657C1")
     public void increaseRetryCount() {
         mRetryCount++;
@@ -305,6 +308,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.063 -0400", hash_original_method = "A052AF31F22F35CA9E6DDD61D99CA6EF", hash_generated_method = "7DE42C7DA7113CBBEBADB0E25395BD76")
     public void setRetryCount(int count) {
         mRetryCount = count;
@@ -332,6 +336,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.063 -0400", hash_original_method = "17739E86F508FAF2AC931D73653ADB87", hash_generated_method = "D36F3260FDC760F7AD5172F592EFFFD9")
     public void resetRetryCount() {
         mRetryCount = 0;
@@ -343,6 +348,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.063 -0400", hash_original_method = "28FA3A141006A5A6B2A507757230F8F2", hash_generated_method = "58E62390435641786CCC4B6740F6DE8A")
     public void retryForeverUsingLastTimeout() {
         mRetryCount = mMaxRetryCount;
@@ -356,6 +362,7 @@ for(int i = 0;i < strArray.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.064 -0400", hash_original_method = "A096FCFC79F5CC1E2EDA08CBC5F004E8", hash_generated_method = "D45EA95DFD634FE46733F852226AFAFC")
     public boolean isRetryForever() {
     if(DBG)        

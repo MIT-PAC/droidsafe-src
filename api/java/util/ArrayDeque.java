@@ -45,6 +45,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.298 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "7880F76458629820F33A005C779B0222")
     private void allocateElements(int numElements) {
         addTaint(numElements);
@@ -79,6 +80,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.300 -0400", hash_original_method = "35225802D7F18BE5673FDDFDE4B70B2E", hash_generated_method = "E4219F5A662CDA7DF3953A3D54FFFB1D")
     private void doubleCapacity() {
         int p = head;
@@ -361,6 +363,7 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.306 -0400", hash_original_method = "2655E37A6129D552BDB18D712FBDBB78", hash_generated_method = "4CA33911EB983BAD4AC0D2149A8C8D4C")
     public boolean removeFirstOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -405,6 +408,7 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.306 -0400", hash_original_method = "67D061371E16CEF717EF2A58AA73F6CB", hash_generated_method = "96592FC28524D7AC28BAD8470F219F45")
     public boolean removeLastOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -532,6 +536,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.308 -0400", hash_original_method = "BBF79E0ADE5790277B99F1D7AA727B20", hash_generated_method = "1D9C6F57BCDE2C7294D7BB32ACA5DF67")
     private void checkInvariants() {
         // ---------- Original Method ----------
@@ -543,6 +548,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.309 -0400", hash_original_method = "6B28B7CDDDC5837E98E272935A4DA74A", hash_generated_method = "687DD7CBA6DEC3A1EE5BFD52B31E6E12")
     private boolean delete(int i) {
         addTaint(i);
@@ -600,6 +606,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.310 -0400", hash_original_method = "D58AA3C48B1B36CF35B203F4633D4120", hash_generated_method = "E0EDD6CA4D052B0929AC0E990AAB3BAC")
     public int size() {
         int var53753E05B8FB8484B39EF846CAB8CEDF_1201820863 = ((tail - head) & (elements.length - 1));
@@ -610,6 +617,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.310 -0400", hash_original_method = "029A9450FF46747D2F1AB4761630FBFA", hash_generated_method = "BC30E759B0D249D83F0AAA32E564B760")
     public boolean isEmpty() {
         boolean varB2DD0C25DFB38C2E9B584FF5E8E2A5EA_193647773 = (head == tail);
@@ -640,6 +648,7 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.311 -0400", hash_original_method = "76B0F415E6F814FE548D14BC6D5843EE", hash_generated_method = "E038C062F25BB7D737F7DD2A989AAD0D")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -681,6 +690,7 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.311 -0400", hash_original_method = "953726349F424E37042C19BD0C0A52B8", hash_generated_method = "44B444A20F0FECF1187C62BD5533D503")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -692,6 +702,7 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.312 -0400", hash_original_method = "AB065CB5BA1D923138DE6DFF9B806E2B", hash_generated_method = "3BCD3849948858A40A885C9B955FBE53")
     public void clear() {
         int h = head;
@@ -723,6 +734,7 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.312 -0400", hash_original_method = "33D76C50C1E8C0374668B986897D9D9E", hash_generated_method = "EECD777348082AE7032A970F05F6D9E3")
     public Object[] toArray() {
 Object[] var6FD0027538EDD1DC845C98DBD6A35104_1052444438 =         copyElements(new Object[size()]);
@@ -785,6 +797,7 @@ ArrayDeque<E> varDC838461EE2FA0CA4C9BBB70A15456B0_528796972 =             result
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "5A84D35A2C5A040CC18139106D665D0E", hash_generated_method = "93EB7642BA8BB24E3533817E9BA3E16B")
     private void writeObject(ObjectOutputStream s) throws IOException {
         addTaint(s.getTaint());
@@ -802,6 +815,7 @@ for(int i = head;i != tail;i = (i + 1) & mask)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "ABF871D717FCC2D87CA02E500CE54CBF", hash_generated_method = "247F5C6B322A797807EB5831518B08F7")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
@@ -840,6 +854,7 @@ for(int i = 0;i < size;i++)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "3A79DAD59E65E3487D948FA6BCEA0772")
         public boolean hasNext() {
             boolean varBB2FFB801149738DC5BBBE92D097852F_1962929142 = (cursor != fence);
@@ -929,6 +944,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077 =             result;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.316 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "6365C8E9384BF696C7C4D56DF1C27B7F")
         public boolean hasNext() {
             boolean varBB2FFB801149738DC5BBBE92D097852F_1578215704 = (cursor != fence);

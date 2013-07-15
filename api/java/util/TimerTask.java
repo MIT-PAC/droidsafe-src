@@ -31,6 +31,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "61DD03075FF1927377D7CEC2AE97ED1A", hash_generated_method = "2AFF3D5046FCAE960C8C46DAD299DB87")
      long getWhen() {
         synchronized
@@ -46,6 +47,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "AE139E2AB369CB1B1C48D00C62C96DCB", hash_generated_method = "A9573B48ADB09ADFE8DADC78CC51F376")
      void setScheduledTime(long time) {
         synchronized
@@ -59,6 +61,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "0BC3D740AEEAEAE472C572E03A1906A5", hash_generated_method = "EFCAA4942CD8B52F1390536D44FDA5B1")
      boolean isScheduled() {
         synchronized
@@ -74,6 +77,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "1700D6DAFB7BC2815E6FE0B3C1768102", hash_generated_method = "BD0461B6CCF2DDF9A67DA5F21C81FD89")
     public boolean cancel() {
         synchronized
@@ -93,6 +97,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.937 -0400", hash_original_method = "BAEF9B11043548CD5E25A5F175F23300", hash_generated_method = "54B5C10B813ECBF9F70042BD4FDAEC7C")
     public long scheduledExecutionTime() {
         synchronized

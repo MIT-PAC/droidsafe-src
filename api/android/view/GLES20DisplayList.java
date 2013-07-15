@@ -91,6 +91,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.974 -0400", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "C3A5BD67E95404BFBF8AA35F264E0438")
     @Override
      boolean isValid() {

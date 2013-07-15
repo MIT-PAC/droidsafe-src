@@ -74,6 +74,7 @@ public class PhoneProxy extends Handler implements Phone {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.290 -0400", hash_original_method = "E195EC1A1EABBEB6AA309412029DC755", hash_generated_method = "4EC7E7070072C95BC7C7CA4B02330777")
     @Override
     public void handleMessage(Message msg) {
@@ -135,7 +136,8 @@ switch(msg.what){
     }
 
     
-        private static void logd(String msg) {
+        @DSModeled(DSC.SPEC)
+    private static void logd(String msg) {
         Log.d(LOG_TAG, "[PhoneProxy] " + msg);
     }
 
@@ -987,6 +989,7 @@ String varE7F307187646B548EFAC44A59EF31EBA_1197743588 =         mActivePhone.get
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.312 -0400", hash_original_method = "D1C747624B6D1D0F21E7BC1753211E26", hash_generated_method = "2481A9659831E0548FEF6837612A0D0F")
     public int getVoiceMessageCount() {
         int var50F99E7353D3DAF7CE4A9C6A6EFB1EB5_237710712 = (mActivePhone.getVoiceMessageCount());
@@ -1592,6 +1595,7 @@ String varFBAA172F150BFFB1490E4FAFF06EF198_2078417219 =         mActivePhone.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.325 -0400", hash_original_method = "C3F5107FB4E93BC1C37D52CD5D46B8CE", hash_generated_method = "12041D3D4DC7E3A010E88179279D74AE")
     public Phone getActivePhone() {
 Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
@@ -1861,6 +1865,7 @@ IsimRecords varCB282C5CF39647CE67B46523B0308458_62889743 =         mActivePhone.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.333 -0400", hash_original_method = "941A6F344732C9909039B3394C47476B", hash_generated_method = "8F2FA52A6A5BE925E2E227EC9D5B436B")
     @Override
     public int getLteOnCdmaMode() {

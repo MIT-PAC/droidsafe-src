@@ -124,6 +124,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.915 -0400", hash_original_method = "E60578C52DB7CB76AFDFFD6E54EB94BA", hash_generated_method = "35D9C218769DBB65C67D4D4C3BC8EE1C")
     public String getExtnID() {
     if(extnID_str == null)        
@@ -141,6 +142,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.916 -0400", hash_original_method = "369AB9F41A626798BB3BCC89236BACDA", hash_generated_method = "A9935CB87232ADCF8D4A8B88AB6DB888")
     public boolean getCritical() {
         boolean var7E85BCB66FB9A809D5AB4F62A8B8BEA8_203814760 = (critical);
@@ -151,6 +153,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.916 -0400", hash_original_method = "F9C60F4D31E709EEBAC29B8CD2952B48", hash_generated_method = "F39117071267DCACBDC2EEA1AE1103C6")
     public byte[] getExtnValue() {
         byte[] varC508F11B9788D23F670969FC1FC8CE29_815923773 = (extnValue);
@@ -161,6 +164,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.916 -0400", hash_original_method = "B972EB2ABEF1534D23452658D280F82C", hash_generated_method = "FBA509D8A71F217EF18753593E2C19E8")
     public byte[] getRawExtnValue() {
     if(rawExtnValue == null)        
@@ -178,6 +182,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.917 -0400", hash_original_method = "289715FCA6A05E78591BCAEFF536AB92", hash_generated_method = "27979AE4C911D0BDA826E46792562CC2")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -195,6 +200,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.917 -0400", hash_original_method = "20B333A0BC1DB524B0482115BC352DF4", hash_generated_method = "50123FAEE052007441415B888DFDCA1F")
     @Override
     public boolean equals(Object ext) {
@@ -222,6 +228,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.917 -0400", hash_original_method = "0E35AAFACBBEB06CE332961CEFE27EA0", hash_generated_method = "7EB8C865776424F9658D0F4303ACACF4")
     @Override
     public int hashCode() {
@@ -233,6 +240,7 @@ String var8F66140B46B5973A28748A3D560AEC2C_425624776 =         extnID_str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.918 -0400", hash_original_method = "95AE85BA4B02CE08CCFC1E936A7A9C52", hash_generated_method = "EDA626F7FC7F2966E9A9DAD58CB0AE10")
     public ExtensionValue getDecodedExtensionValue() throws IOException {
     if(!valueDecoded)        
@@ -250,6 +258,7 @@ ExtensionValue varE7E3C400D255B1408ABF769598DAC171_465097421 =         extnValue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.918 -0400", hash_original_method = "E99A050D2989B02D8A38B58525424B82", hash_generated_method = "D95B71D2ACF611CC4D2BC24932E8C67E")
     public KeyUsage getKeyUsageValue() {
     if(!valueDecoded)        
@@ -289,6 +298,7 @@ KeyUsage var540C13E9E156B687226421B24F2DF178_1988394197 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.918 -0400", hash_original_method = "685788692D49D3921B7D2E066C2897C4", hash_generated_method = "451426EF021766C567A004024721C44C")
     public BasicConstraints getBasicConstraintsValue() {
     if(!valueDecoded)        
@@ -328,6 +338,7 @@ BasicConstraints var540C13E9E156B687226421B24F2DF178_640953324 =             nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.921 -0400", hash_original_method = "9C77FF45155916489182A216F1E7CCEA", hash_generated_method = "2E2617D9F2DDD3E30F07A88E2AC59519")
     private void decodeExtensionValue() throws IOException {
     if(valueDecoded)        
@@ -441,6 +452,7 @@ BasicConstraints var540C13E9E156B687226421B24F2DF178_640953324 =             nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.923 -0400", hash_original_method = "42AE8F5966FF1390F79700B69123055B", hash_generated_method = "57D2BC24FB8E6FA5F7FC75B8518FF69E")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

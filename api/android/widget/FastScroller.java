@@ -196,6 +196,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.572 -0400", hash_original_method = "FE4F6BFF00D7A9534103DEC6DDA5B37C", hash_generated_method = "414118CB8C38B5858722D8735F8D5143")
     public boolean isAlwaysShowEnabled() {
         boolean varD8301B9D37BE0AB158BABDD736CFE57D_445732875 = (mAlwaysShow);
@@ -228,6 +229,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.573 -0400", hash_original_method = "4A2BCFB2C4534D1665C92142AF186787", hash_generated_method = "07B056C0210F9EEF558E4805B7F55C32")
     public void setScrollbarPosition(int position) {
         mPosition = position;
@@ -256,6 +258,7 @@ switch(position){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.573 -0400", hash_original_method = "B47561E95C2F1E64B16085B75AB60280", hash_generated_method = "7D3FB1E9E2EEB34C02E1CD7F8C135C92")
     public int getWidth() {
         int varEF5497FDB3AFB7DB29B7861C625072A7_2117054271 = (mThumbW);
@@ -310,6 +313,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.574 -0400", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "B00CC0079AC94EEFE6C69DD32C8D2751")
     public int getState() {
         int var48A902C1D749B47EBC75C77370D5A1F0_423196799 = (mState);
@@ -347,6 +351,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.575 -0400", hash_original_method = "5C6D13F417D5AA8E0A1553C57F0CD3F0", hash_generated_method = "1586DA41E264BEF8F098FBE82F888BAD")
     private void useThumbDrawable(Context context, Drawable drawable) {
         mThumbDrawable = drawable;
@@ -424,6 +429,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.578 -0400", hash_original_method = "DC69F15A6278F37206902D3451EB4A27", hash_generated_method = "13D31C151CEF689EA2C778D1BFDDF4D4")
      boolean isVisible() {
         boolean var0DDEEBD624D90EE5951F15D57317E182_423236349 = (!(mState == STATE_NONE));
@@ -579,6 +585,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.582 -0400", hash_original_method = "33CBCEE809BB980D8FD69134B46323D0", hash_generated_method = "4D77060341FDD8F9F27379D21A230BA9")
      void onItemCountChanged(int oldCount, int newCount) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -646,6 +653,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.585 -0400", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "E8F050F76124C1B61041C62A78425BDA")
      SectionIndexer getSectionIndexer() {
 SectionIndexer var2661E5C5004D8E16E116544E6D9A6497_2036728793 =         mSectionIndexer;
@@ -673,6 +681,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.587 -0400", hash_original_method = "800EB68723F3F3F4CE4E1BDE2BD8DC58", hash_generated_method = "3B628F4ADF7445B58B93AC7445A9BC59")
      void getSectionsFromIndexer() {
         Adapter adapter = mList.getAdapter();
@@ -715,6 +724,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.587 -0400", hash_original_method = "B72F5DA2B803BA6E8807DBDDDB2D9463", hash_generated_method = "3DA083163E23080BFCF30DF5DB399931")
     public void onSectionsChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -929,6 +939,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.593 -0400", hash_original_method = "12EF9C1930DF387CC333A7C9F1E54726", hash_generated_method = "54E86991FCEBB17870550D0D11749463")
      void beginDrag() {
         setState(STATE_DRAGGING);
@@ -955,6 +966,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.594 -0400", hash_original_method = "D950A8D9B3AA1D87B11E428662FC0A13", hash_generated_method = "AFB45ECC786188C851F38D547E215FF5")
      boolean onInterceptTouchEvent(MotionEvent ev) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1227,6 +1239,7 @@ switch(mPosition){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.600 -0400", hash_original_method = "3A2ADC6F19B17BA5C164F36207FFFC0C", hash_generated_method = "7B7CE1C94D1A29A670474515B8D1579D")
         public void run() {
     if(getState() != STATE_EXIT)            

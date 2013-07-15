@@ -117,6 +117,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.179 -0400", hash_original_method = "B507EE9C677C6BEF8443BBEED19F5F42", hash_generated_method = "B10139042087416449F77039E04156FB")
     public int getUsedLength() {
         int highestIntPos = m_ints.length;
@@ -174,6 +175,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.180 -0400", hash_original_method = "8733B39F158A323B90B7B7708BEF842A", hash_generated_method = "19C891D585FC5A3F086D01EA392613F6")
     public int bitLength() {
         int intLen = getUsedLength();
@@ -312,6 +314,7 @@ BigInteger varCBBE36781BB4993B8A3D24E59AFD4F6E_975115777 =         new BigIntege
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.181 -0400", hash_original_method = "EBDDD2C6998D211B0908F9BCC5704DCD", hash_generated_method = "600127F06DC3EAF9F9AC6F5353F76021")
     public void shiftLeft() {
         int usedLen = getUsedLength();
@@ -427,6 +430,7 @@ IntArray varC42A0063A519C6F77098E2B47C3EB303_1820232652 =         new IntArray(n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.181 -0400", hash_original_method = "183D6916993CED67CC764EA8E5C66CEC", hash_generated_method = "FD551B95FC73DE7D4DCC8C0219176718")
     public void addShifted(IntArray other, int shift) {
         int usedLenOther = other.getUsedLength();
@@ -453,6 +457,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "690E47F400DCE7124DE7B026A4F32194", hash_generated_method = "D17095B085328871845F56011606C34A")
     public int getLength() {
         int var48385E2AA796608B29CB75E0EFDFAB5F_40365776 = (m_ints.length);
@@ -463,6 +468,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "FE79684DF1E438A3896471D5404784E8", hash_generated_method = "356A3DC1C666354330EF92F7659DBF26")
     public boolean testBit(int n) {
         addTaint(n);
@@ -480,6 +486,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "FC348D5A638DB94C0F8ADD1343AE7EDF", hash_generated_method = "B8F2C85887D16BFCD65B085C7733CE67")
     public void flipBit(int n) {
         addTaint(n);
@@ -495,6 +502,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "F9C9D5AAA5BDCC63A2223BBDEFA54345", hash_generated_method = "15A83915FCF3C53CF78B58BFEDD01110")
     public void setBit(int n) {
         addTaint(n);
@@ -600,6 +608,7 @@ for(int i = m + m - 2;i >= m;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.183 -0400", hash_original_method = "D2D9CEFDA97A342DED6902D248733471", hash_generated_method = "436FC0DDD88DB1A87CD9D4B7B2DEB65E")
     public IntArray square(int m) {
         addTaint(m);

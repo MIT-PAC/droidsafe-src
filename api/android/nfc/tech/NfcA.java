@@ -43,6 +43,7 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.023 -0400", hash_original_method = "0C48EFD3E17B27EC975A7F66A0C95A20", hash_generated_method = "F08FF1999AE761B5FD7815119F263680")
     public byte[] getAtqa() {
         byte[] var4EF49BE6708038B4A5F17316299AFECA_1253793270 = (mAtqa);
@@ -53,6 +54,7 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.023 -0400", hash_original_method = "82922CBBC94A0186459AA7EC846F5755", hash_generated_method = "98FDE62431CDBC7B7D136DB2F3F34C1A")
     public short getSak() {
         short var24C549BDE566021D468B833DEAD531B5_962468347 = (mSak);

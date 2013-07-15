@@ -62,6 +62,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.908 -0400", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "9FA6390392605119A81D7D3A6DDA9003")
     public int getIndex() {
         int varFE04D40BAE669C85DC9915B41E74EBC1_730434724 = (interfaceIndex);
@@ -72,6 +73,7 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.909 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "78713B056FB86F4F3519E2ADC34DDED4")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_944716827 =         name;
@@ -92,6 +94,7 @@ Enumeration<InetAddress> varD3B470D483B8F9354A0737BFC5858998_1807495023 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.909 -0400", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "4E2E0197ECCFA00A50DDD1011025F9B1")
     public String getDisplayName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1568993641 =         name;
@@ -362,6 +365,7 @@ Enumeration<NetworkInterface> varFB917036CF4C112A6E28D983C9E7D865_2073447740 =  
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.915 -0400", hash_original_method = "0171D836B0B5DAF8B2EBF67B786C53D8", hash_generated_method = "AE09CBC66151CAC83DB9637BEF29BD8D")
     public NetworkInterface getParent() {
 NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent;
@@ -483,6 +487,7 @@ for(int i = 0;i < result.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.944 -0400", hash_original_method = "8D88E2F84D40F104BBA78B3610BC12B1", hash_generated_method = "CA9A0608358FAE9370FC0C3EF5F4D797")
     public boolean isVirtual() {
         boolean var01B1E92D3155F4DF341F8D5C1B791189_1972456112 = (parent != null);

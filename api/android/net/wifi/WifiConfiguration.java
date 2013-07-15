@@ -364,6 +364,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1672313368 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.889 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DFABEEE0BC305F02453E5DEFB1880DCE")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2035370345 = (0);
@@ -424,6 +425,7 @@ for(EnterpriseField field : enterpriseFields)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.892 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "811C079A212601355D5034023F0D4C0B")
         public void setValue(String value) {
             this.value = value;
@@ -432,6 +434,7 @@ for(EnterpriseField field : enterpriseFields)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.892 -0400", hash_original_method = "1FBB233886BBDFBC3AF13BD83F42443E", hash_generated_method = "3724C64029E02F02B03FD901D36A0ED2")
         public String varName() {
 String var01CEF6CAB564B83EC5A19C54824001C0_393241636 =             varName;
@@ -442,6 +445,7 @@ String var01CEF6CAB564B83EC5A19C54824001C0_393241636 =             varName;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.893 -0400", hash_original_method = "75F20E3AB28F2448BFFE64E6D18AFDB6", hash_generated_method = "D26B6B6FE57307C67CEEEEA87393AF21")
         public String value() {
 String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;

@@ -33,6 +33,7 @@ abstract class BasicTagTechnology implements TagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.818 -0400", hash_original_method = "FC84E29499397B8918F938A8205313A1", hash_generated_method = "A88B29D080902B16D1C0A4D725811A1E")
     @Override
     public Tag getTag() {

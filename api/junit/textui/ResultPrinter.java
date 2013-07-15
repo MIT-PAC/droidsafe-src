@@ -29,6 +29,7 @@ public class ResultPrinter implements TestListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.485 -0400", hash_original_method = "D4B791E5BAEACC439CFB8DF7C803AC90", hash_generated_method = "1D482A413074E153AE99233AFF7E840A")
     synchronized void print(TestResult result, long runTime) {
         addTaint(runTime);
@@ -111,6 +112,7 @@ for(int i= 1;booBoos.hasMoreElements();i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.487 -0400", hash_original_method = "8F594E1BD06A99868D35353516D32E3A", hash_generated_method = "CF47FF37D89C4F27271D8ACAC84D013A")
     public void printDefect(TestFailure booBoo, int count) {
         addTaint(count);
@@ -123,6 +125,7 @@ for(int i= 1;booBoos.hasMoreElements();i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.487 -0400", hash_original_method = "1947DB161F7BEBD07EBB8FC713F6E38E", hash_generated_method = "DC349A5EB909F0FA651946E1F18F48B1")
     protected void printDefectHeader(TestFailure booBoo, int count) {
         addTaint(count);
@@ -133,6 +136,7 @@ for(int i= 1;booBoos.hasMoreElements();i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.487 -0400", hash_original_method = "540A4B5A8D4E612454C45A1AF7BA14D6", hash_generated_method = "268A96001146C260E3D7E80090EA5E8F")
     protected void printDefectTrace(TestFailure booBoo) {
         addTaint(booBoo.getTaint());
@@ -142,6 +146,7 @@ for(int i= 1;booBoos.hasMoreElements();i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.488 -0400", hash_original_method = "EE49A8AE172A75BE26948C083027FB54", hash_generated_method = "6DB805DD7D2BDBEE78DB443994104225")
     protected void printFooter(TestResult result) {
         addTaint(result.getTaint());
@@ -176,6 +181,7 @@ for(int i= 1;booBoos.hasMoreElements();i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.489 -0400", hash_original_method = "0FE324461208CCFE4D6285DE537F7763", hash_generated_method = "AE99DA206692B38FD68065987562F792")
     protected String elapsedTimeAsString(long runTime) {
         addTaint(runTime);
@@ -187,6 +193,7 @@ String var782B052027FDBC1BF731D4722FE1CEA6_2137775224 =         Double.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.489 -0400", hash_original_method = "E39F1A78CDD5A4CC126B77217AA8CF1F", hash_generated_method = "68974D01644C475FEC66BBA746DDDB75")
     public PrintStream getWriter() {
 PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
@@ -207,6 +214,7 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.489 -0400", hash_original_method = "CBE875AE1CC49C40C27CB7367A3CF890", hash_generated_method = "1E4A1B85ECBE1BCC1195742497B0AD92")
     public void addFailure(Test test, AssertionFailedError t) {
         addTaint(t.getTaint());
@@ -217,6 +225,7 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.490 -0400", hash_original_method = "290F55CBC59AB09188EC6F36DCD12F0B", hash_generated_method = "FC02CD50599BCB5038979A7D0E8D57CB")
     public void endTest(Test test) {
         addTaint(test.getTaint());
@@ -224,6 +233,7 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.490 -0400", hash_original_method = "49677EED3B6788809859A7BA2623E664", hash_generated_method = "BF8E8CB8C73007EAD86B36369D9A10D3")
     public void startTest(Test test) {
         addTaint(test.getTaint());

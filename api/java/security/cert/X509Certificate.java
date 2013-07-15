@@ -134,6 +134,7 @@ X500Principal varF762730623832F6B2DE9205975DF8C9C_1509249571 =             cert.
     public abstract boolean[] getKeyUsage();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.657 -0400", hash_original_method = "418B9B73EF0BB9A94B6F38EF0D0811CB", hash_generated_method = "B74B5DDF97479B94CDAD3B27DEC13CC7")
     public List<String> getExtendedKeyUsage() throws CertificateParsingException {
 List<String> var540C13E9E156B687226421B24F2DF178_988736461 =         null;

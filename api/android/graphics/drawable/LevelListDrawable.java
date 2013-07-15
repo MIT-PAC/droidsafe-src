@@ -42,6 +42,7 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.471 -0400", hash_original_method = "034C59859D302C36E8258EB9CAEDE0AF", hash_generated_method = "F3CE64CF0E5519D168420D6A03918457")
     public void addLevel(int low, int high, Drawable drawable) {
         addTaint(drawable.getTaint());
@@ -60,6 +61,7 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.472 -0400", hash_original_method = "69975FEB6AC4D6000EB731D154CA4016", hash_generated_method = "781938E2D95915DB9508329CF92F658C")
     @Override
     protected boolean onLevelChange(int level) {
@@ -84,6 +86,7 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.473 -0400", hash_original_method = "D1DA3B3E6F995A3C0C835AA99D4132D2", hash_generated_method = "AD40F1D40ED170E3F0CAAC9F4CABD676")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -154,6 +157,7 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.474 -0400", hash_original_method = "2F3DD5E6B39B84FDED94D3B2A7A7FBE8", hash_generated_method = "112B38DDE58639F908281CD991A780DE")
     @Override
     public Drawable mutate() {

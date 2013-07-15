@@ -19,6 +19,7 @@ public class SIPDateHeader extends SIPHeader implements DateHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.116 -0400", hash_original_method = "C034912C24C8AA492A55E1DAB6749820", hash_generated_method = "E4A93EFC48AAA2DD551E94F7ACC29FE2")
     public String encodeBody() {
 String varAB0A6A99E7ADC519115C61506D7E0E96_1245296964 =         date.encode();
@@ -29,6 +30,7 @@ String varAB0A6A99E7ADC519115C61506D7E0E96_1245296964 =         date.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.116 -0400", hash_original_method = "6C9EAA9AEBF2DE9AF857C9766729F95B", hash_generated_method = "79D01558A8C4EA0E589F8A4773D04A84")
     public void setDate(SIPDate d) {
         date = d;
@@ -37,6 +39,7 @@ String varAB0A6A99E7ADC519115C61506D7E0E96_1245296964 =         date.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.117 -0400", hash_original_method = "593883A7F1E198F7FABAA636FE37D3D4", hash_generated_method = "4F5C43478833B68B5E8F7B037A53E638")
     public void setDate(Calendar dat) {
     if(dat != null)        
@@ -47,6 +50,7 @@ String varAB0A6A99E7ADC519115C61506D7E0E96_1245296964 =         date.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.117 -0400", hash_original_method = "8348440FA7E2BF46CE5F14E959934430", hash_generated_method = "D7691046099EB2AA473BDE77393F2CF2")
     public Calendar getDate() {
     if(date == null)        
@@ -65,6 +69,7 @@ Calendar var4FD0607D72EE0073FA4AD42201EADE7F_1652722091 =         date.getJavaCa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.117 -0400", hash_original_method = "D8FA67BA672B59A2560C827929374032", hash_generated_method = "D3FDA24B1F2EB535622C9B98264E4718")
     public Object clone() {
         SIPDateHeader retval = (SIPDateHeader) super.clone();

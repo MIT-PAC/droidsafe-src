@@ -23,6 +23,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.332 -0400", hash_original_method = "A4884809092D405A6CA5F6BEFDF8445C", hash_generated_method = "2BE6B35A23D6BD41692196B6C331F0C6")
     public int getCommandOrResult() {
         int varEEE63384C5EEC1D1F26BE7F607885436_1701381325 = (buffer[INDEX_COMMAND]);
@@ -33,6 +34,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.332 -0400", hash_original_method = "338C1B26BFB9D7C284F2A4F94981D480", hash_generated_method = "AB61003D3B9ED48A84B27CC2A1E7703D")
     public void setCommandOrResult(int command) {
         buffer[INDEX_COMMAND] = (byte) command;
@@ -41,6 +43,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.333 -0400", hash_original_method = "469B36103954E60DA4EDBA1638A3DCA3", hash_generated_method = "BCB582224BCA777124B85BD9DB133BE8")
     public int getPort() {
         int varB511F2DC5EB97FB588E4FF68674CB533_1210208411 = (Memory.peekShort(buffer, INDEX_PORT, ByteOrder.BIG_ENDIAN));
@@ -51,6 +54,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.333 -0400", hash_original_method = "5ADD361358F9B7D845CC4C6A0E6C787A", hash_generated_method = "FDB203FECF84024288521347C8C8FF5A")
     public void setPort(int port) {
         addTaint(port);
@@ -60,6 +64,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.333 -0400", hash_original_method = "2791CEFF5B7A34F564852C42E861A745", hash_generated_method = "066E63CCC427558FB40CEA39B05A08AF")
     public int getIP() {
         int var43169D413FEAC3CEDA9A813B7443971C_647344312 = (Memory.peekInt(buffer, INDEX_IP, ByteOrder.BIG_ENDIAN));
@@ -70,6 +75,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.334 -0400", hash_original_method = "CD63C26544B74E77AC58BA3597D39036", hash_generated_method = "5BCA823E0F4C72375C8EB1DA49BCFC44")
     public void setIP(byte[] ip) {
         buffer[INDEX_IP] = ip[0];
@@ -84,6 +90,7 @@ class Socks4Message {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.335 -0400", hash_original_method = "6684A79AEF4191DE9F243F196998CD91", hash_generated_method = "9FFB82DE7CA4AA545F15CD756077937A")
     public String getUserId() {
 String var3DD5599848628D833D4D71F889062CED_792779263 =         getString(INDEX_USER_ID, MAX_USER_ID_LENGTH);
@@ -94,6 +101,7 @@ String var3DD5599848628D833D4D71F889062CED_792779263 =         getString(INDEX_U
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.335 -0400", hash_original_method = "D89FFAAC0CE83481287E79A931367547", hash_generated_method = "A0E7EA3A91B7443981EE6682AFBEDAF6")
     public void setUserId(String id) {
         addTaint(id.getTaint());
@@ -136,6 +144,7 @@ String var4FC680801218E6372BC708D6FA44AE60_634002430 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.336 -0400", hash_original_method = "C6D8DA97966902AB2F65AB6185B0BF06", hash_generated_method = "514521C2E3BA87074999C13790FA496D")
     public int getLength() {
         int index = 0;
@@ -155,6 +164,7 @@ for(index = INDEX_USER_ID;buffer[index] != 0;index++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.336 -0400", hash_original_method = "B4F98C9F9790743D28172709107A8C07", hash_generated_method = "075AEAEF4D2F041E93D4D1AF778DF90D")
     public String getErrorString(int error) {
         addTaint(error);
@@ -190,6 +200,7 @@ String var75B00C229FB73EC955B2048ABEF9CD64_1142432287 =         "Success";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.337 -0400", hash_original_method = "3E8202366775B7F03BFD8ECC0DED5E39", hash_generated_method = "0DB72FCE47D7448D6157FD8B96F33C80")
     public byte[] getBytes() {
         byte[] var7F2DB423A49B305459147332FB01CF87_1837627739 = (buffer);
@@ -224,6 +235,7 @@ String varD6DBB704B6C19F3F537EF08C38038191_1919335089 =         new String(buffe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.338 -0400", hash_original_method = "7A63CD666B1834D5EA2D981ACB832F0E", hash_generated_method = "1900F7CBE172FAB5FC5591A40954B047")
     private int getVersionNumber() {
         int var3BDC3373F100A77A4D510F10D3356443_1847244460 = (buffer[INDEX_VERSION]);
@@ -250,6 +262,7 @@ String varD6DBB704B6C19F3F537EF08C38038191_1919335089 =         new String(buffe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.339 -0400", hash_original_method = "551CE4AE0E4E79E50F85783B3E28117C", hash_generated_method = "057034333245897DECAF09231E016CBC")
     private void setVersionNumber(int number) {
         buffer[INDEX_VERSION] = (byte) number;

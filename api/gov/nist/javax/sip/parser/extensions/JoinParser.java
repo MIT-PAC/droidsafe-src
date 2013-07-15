@@ -27,6 +27,7 @@ public class JoinParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.700 -0400", hash_original_method = "66B10ECC601C3201E5F156FEACCA3B45", hash_generated_method = "D4E31217E23778B0A50805C2C54EE1E0")
     public SIPHeader parse() throws ParseException {
     if(debug)        

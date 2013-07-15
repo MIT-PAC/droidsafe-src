@@ -106,6 +106,7 @@ public class Input implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.301 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6D4344D8B7F3E5BF30F14BDF54AACB82")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_578195277 = (0);
@@ -116,6 +117,7 @@ public class Input implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.302 -0400", hash_original_method = "B53B93ABACC072A2D5F958A02DC16FEB", hash_generated_method = "62FE11E4E09A13FA877C65CE5133C729")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -148,6 +150,7 @@ public class Input implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.303 -0400", hash_original_method = "B234C4FFCAD94565C16D3A43A2454835", hash_generated_method = "7EC097EFE7AF104EBEA282B3AB0EDC91")
      boolean setIcon(Bitmap Icon) {
         addTaint(Icon.getTaint());

@@ -96,6 +96,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.055 -0400", hash_original_method = "140E1DA8E8861D1C317B4255A250B320", hash_generated_method = "1D9F2176CD8F8A42E69682A7CFB28B12")
     private void readChunkSize() throws IOException {
     if(bytesRemainingInChunk != NO_CHUNK_YET)        

@@ -32,6 +32,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.319 -0400", hash_original_method = "C2E273380763004C4C8E32A154731A96", hash_generated_method = "3F34410310382647A72BB5CD4C81A400")
     public int getSpanTypeId() {
         int varF3183A428FC8564EC11BCC1E3FF8D45E_1321704882 = (TextUtils.STYLE_SPAN);
@@ -42,6 +43,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.320 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "45E18C47D6850684886739D2BC72B271")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_177497718 = (0);
@@ -52,6 +54,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.320 -0400", hash_original_method = "9FF3B3C6BD83D888752F465547E6E91F", hash_generated_method = "1F0A2BF71A3CCA0A43B05AC2E6EBA757")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -62,6 +65,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.321 -0400", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "6CD1BD717AF5D217B5DB467721FCB77E")
     public int getStyle() {
         int var16896C9E7463BF6DF9DB6B58257F1327_816038722 = (mStyle);
@@ -72,6 +76,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.321 -0400", hash_original_method = "71A0215A3FEBF509106C7457A8525E21", hash_generated_method = "95D3F0B6584DF4F6EAD90DAEF95D6B83")
     @Override
     public void updateDrawState(TextPaint ds) {
@@ -82,6 +87,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.322 -0400", hash_original_method = "78F275D913B08D5544D3EE3C8B4C4B82", hash_generated_method = "45465076BF238EB8F479180D3B7FE967")
     @Override
     public void updateMeasureState(TextPaint paint) {
@@ -92,7 +98,8 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-        private static void apply(Paint paint, int style) {
+        @DSModeled(DSC.SAFE)
+    private static void apply(Paint paint, int style) {
         int oldStyle;
         Typeface old = paint.getTypeface();
         if (old == null) {

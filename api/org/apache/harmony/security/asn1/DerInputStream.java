@@ -109,6 +109,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.994 -0400", hash_original_method = "71C8318A9CAF457AECB9A25AEA0B0620", hash_generated_method = "3F3ED9FFF8F74F763E0366FDA53B92C1")
     public void readOctetString() throws IOException {
     if(tag == ASN1Constants.TAG_C_OCTETSTRING)        
@@ -146,6 +147,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.995 -0400", hash_original_method = "E88A2C471E1F01453D6E283D611B31B1", hash_generated_method = "D7FD8EF9B0CA0450813AF87E5F76A564")
     public void readString(ASN1StringType type) throws IOException {
         addTaint(type.getTaint());

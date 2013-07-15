@@ -727,6 +727,7 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.921 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "74E15B6456AE67D52A1ABB86B720AA70")
         public int getItemViewType(int position) {
             addTaint(position);
@@ -738,6 +739,7 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.921 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "D499556D0CDCEF6D30221EFFFEF25622")
         public int getViewTypeCount() {
             int varC4CA4238A0B923820DCC509A6F75849B_481167442 = (1);
@@ -800,6 +802,7 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.923 -0400", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "2A0FFE64737AEA0CAA4489A819F70A16")
         public void setAdapter(ListAdapter adapter) {
             mListAdapter = adapter;
@@ -808,6 +811,7 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.923 -0400", hash_original_method = "9624F776B01A0F54225A1B393847DC0B", hash_generated_method = "BB0F0F2687998277E739EA69AA391DAB")
         public void setPromptText(CharSequence hintText) {
             mPrompt = hintText;
@@ -816,6 +820,7 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.924 -0400", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "6F3EB1E8F679A3B4F2A60AD7D645C00B")
         public CharSequence getHintText() {
 CharSequence var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550 =             mPrompt;
@@ -918,6 +923,7 @@ CharSequence var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550 =             mPromp
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.926 -0400", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "D9AE9778F086325506FE34809DA9E765")
         public CharSequence getHintText() {
 CharSequence var0C76325C74E482106577E009928E6B9E_673855326 =             mHintText;
@@ -928,6 +934,7 @@ CharSequence var0C76325C74E482106577E009928E6B9E_673855326 =             mHintTe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.927 -0400", hash_original_method = "5C072498C5CF07F19C35B82F77A3E1EC", hash_generated_method = "16E5231AF70EBF4E19AB1B172E7CB522")
         public void setPromptText(CharSequence hintText) {
             mHintText = hintText;

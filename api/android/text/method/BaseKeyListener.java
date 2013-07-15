@@ -19,6 +19,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.335 -0400", hash_original_method = "C743EFD1D596571F6949DCD9BEFE98FE", hash_generated_method = "3CF245821B784A58BF17DCB8811A7CE5")
     public boolean backspace(View view, Editable content, int keyCode, KeyEvent event) {
         addTaint(event.getTaint());
@@ -33,6 +34,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.335 -0400", hash_original_method = "44D414C093A103E2D46C2C9EBFB633B7", hash_generated_method = "588E450185E2EEF1281B80C4B85DECA3")
     public boolean forwardDelete(View view, Editable content, int keyCode, KeyEvent event) {
         addTaint(event.getTaint());
@@ -47,6 +49,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.336 -0400", hash_original_method = "070DF95C0353A773EEB24BBDC2D8297C", hash_generated_method = "C425B4149CDFB6184579DBC9D5FEB85D")
     private boolean backspaceOrForwardDelete(View view, Editable content, int keyCode,
             KeyEvent event, boolean isForwardDelete) {
@@ -103,6 +106,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.337 -0400", hash_original_method = "2C36007D0B232577504AED53A81D7DC4", hash_generated_method = "2153E3237345E644D1D44FF4E4AD298B")
     private boolean deleteSelection(View view, Editable content) {
         addTaint(content.getTaint());
@@ -141,6 +145,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.338 -0400", hash_original_method = "AAA6731DEEEC720845223B285BF37660", hash_generated_method = "CB05633C6C3235CADACA048274277528")
     private boolean deleteLine(View view, Editable content) {
         addTaint(content.getTaint());
@@ -182,7 +187,8 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-        static int makeTextContentType(Capitalize caps, boolean autoText) {
+        @DSModeled(DSC.SAFE)
+    static int makeTextContentType(Capitalize caps, boolean autoText) {
         int contentType = InputType.TYPE_CLASS_TEXT;
         switch (caps) {
             case CHARACTERS:
@@ -202,6 +208,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.340 -0400", hash_original_method = "60BF1BEA0D6A99B2655081BEC42DA13C", hash_generated_method = "C2793D00C6637F419A661941B1B8A085")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
@@ -248,6 +255,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.341 -0400", hash_original_method = "D291AC92E2A4746C8F1BADA03A5CE619", hash_generated_method = "87626ED1620C54864E4A82C148121A55")
     public boolean onKeyOther(View view, Editable content, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected

@@ -245,6 +245,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.139 -0400", hash_original_method = "4EB99ACA5BA34A284707803087697EF8", hash_generated_method = "BB5F635A8854257C75F3E39227EB8F20")
     public void setProvider(ActionProvider provider) {
         mProvider = provider;
@@ -476,6 +477,7 @@ ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1313562084 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.144 -0400", hash_original_method = "3D692CC2129791FB098BE485AC739689", hash_generated_method = "AFEDE7910A1B37993DCCD6535D2798FB")
     public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mOnDismissListener = listener;
@@ -484,6 +486,7 @@ ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1313562084 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.144 -0400", hash_original_method = "861F24EC23ECA4CA4EF104A377B2D34D", hash_generated_method = "706332B7EEAD1AE51173D975872ABB45")
     public void setInitialActivityCount(int itemCount) {
         mInitialActivityCount = itemCount;
@@ -492,6 +495,7 @@ ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1313562084 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.144 -0400", hash_original_method = "A16FFC5DB1EC302B931A83E3D5524FB1", hash_generated_method = "3AA11D7A925E1612E7FB383801FF727D")
     public void setDefaultActionButtonContentDescription(int resourceId) {
         mDefaultActionButtonContentDescription = resourceId;
@@ -813,6 +817,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.153 -0400", hash_original_method = "A69A431394F21E5FD61198963B3D5202", hash_generated_method = "84982FCFB6CC7F15B19273AEE9F12DB6")
         @Override
         public int getViewTypeCount() {
@@ -892,6 +897,7 @@ Object varFD4721BD12B3F49C4BC4EEF9814EA0E3_884571731 =             mDataModel.ge
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.155 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "EDFBFC884945B284C55340C20846FB4E")
         public long getItemId(int position) {
             addTaint(position);
@@ -1053,6 +1059,7 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_727005548 =             mDataMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.158 -0400", hash_original_method = "3E4531A24528D01DAB939C9C71B2C3DE", hash_generated_method = "296D773E34282119D912C97C790CB5E5")
         public int getMaxActivityCount() {
             int varA17198F82E11562FD1D05379D0C79E84_1367355630 = (mMaxActivityCount);
@@ -1063,6 +1070,7 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_727005548 =             mDataMod
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.158 -0400", hash_original_method = "5525C6AC91C9709046E305FD9A15863B", hash_generated_method = "B55CA5DD592B43301B8A7C3DBA4FC9D8")
         public ActivityChooserModel getDataModel() {
 ActivityChooserModel var782E6E6245C8EB180C46FAFCB220D82B_424804604 =             mDataModel;
@@ -1093,6 +1101,7 @@ ActivityChooserModel var782E6E6245C8EB180C46FAFCB220D82B_424804604 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.159 -0400", hash_original_method = "1922E89BA39A7DE83F0D6E6EABDFE98E", hash_generated_method = "362F8775FCFFB476E1AFCC055F0795E1")
         public boolean getShowDefaultActivity() {
             boolean var87ABBEC987619D585AA0E13F787A82A2_200685495 = (mShowDefaultActivity);

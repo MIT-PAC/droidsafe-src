@@ -48,7 +48,8 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-        public static DERGeneralString getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DERGeneralString getInstance(
         ASN1TaggedObject obj, 
         boolean explicit) {
         DERObject o = obj.getObject();
@@ -63,6 +64,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.003 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "10FEA651623B9A80BFEE5F39A8563C51")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_196912068 =         string;
@@ -73,6 +75,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_196912068 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.003 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "64CF1647452E27B5B062CEDEA5E0E3CC")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_1782255316 =         string;

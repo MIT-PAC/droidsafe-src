@@ -38,6 +38,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.290 -0400", hash_original_method = "F55567A3E3F95227EEE521C36E220AEC", hash_generated_method = "B718E5497CCE7D7295E3FA73A34F2871")
     @Override
     public SparseBooleanArray clone() {
@@ -66,6 +67,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.290 -0400", hash_original_method = "1186B1642AA4116A541B7A05AB024C1E", hash_generated_method = "02BC1485E5FA53F92262184247AD851A")
     public boolean get(int key) {
         addTaint(key);
@@ -77,6 +79,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.291 -0400", hash_original_method = "421C2461F361B34EC4C9F82A0C8C35E5", hash_generated_method = "C13FAB2658673448D20967A7AE1ECF22")
     public boolean get(int key, boolean valueIfKeyNotFound) {
         addTaint(valueIfKeyNotFound);
@@ -104,6 +107,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.291 -0400", hash_original_method = "18B11B5534C55393394DE082DEBB04D1", hash_generated_method = "3C72FEDD304301BB9CA4A1B86CA40DCF")
     public void delete(int key) {
         addTaint(key);
@@ -124,6 +128,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.293 -0400", hash_original_method = "D051F7BD1248EC7F2DE7541E7D2B2D2A", hash_generated_method = "41704751587ECE283C4D0EA5C5304009")
     public void put(int key, boolean value) {
         int i = binarySearch(mKeys, 0, mSize, key);
@@ -158,6 +163,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.293 -0400", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "E54F3BC80F5EB9B218FDE19DC18918FB")
     public int size() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_874187463 = (mSize);
@@ -168,6 +174,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.294 -0400", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "1B8E606B6B440B51BD5878A2112CD84F")
     public int keyAt(int index) {
         addTaint(index);
@@ -179,6 +186,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.294 -0400", hash_original_method = "29A1BAF882E385B3C84A3B34D45CFC9E", hash_generated_method = "40762A12C5A2A9378201474C1A33D645")
     public boolean valueAt(int index) {
         addTaint(index);
@@ -190,6 +198,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.295 -0400", hash_original_method = "AE2F6996EFD9E2EE7383268F20118C3E", hash_generated_method = "5680B29633BB59343AD3F755658A92B3")
     public int indexOfKey(int key) {
         addTaint(key);
@@ -201,6 +210,7 @@ SparseBooleanArray var3DE52045BFD3C1BF3742F994ED6139AD_154192975 =         clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.296 -0400", hash_original_method = "7EFAF81E1CDED3A683A46526F2D63473", hash_generated_method = "1C62BDC67DCE40DF2EB44E07499C7131")
     public int indexOfValue(boolean value) {
         addTaint(value);
@@ -222,6 +232,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.297 -0400", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "2F55AFCAF967A1646FEBDAF6AC2C8455")
     public void clear() {
         mSize = 0;
@@ -230,6 +241,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.299 -0400", hash_original_method = "1A2B721538032798B5FC0916FF4BED9A", hash_generated_method = "9977A5B2E75382EB32270E2B6859C96E")
     public void append(int key, boolean value) {
     if(mSize != 0 && key <= mKeys[mSize - 1])        
@@ -272,7 +284,8 @@ for(int i = 0;i < mSize;i++)
     }
 
     
-        private static int binarySearch(int[] a, int start, int len, int key) {
+        @DSModeled(DSC.SAFE)
+    private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
             guess = (high + low) / 2;

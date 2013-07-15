@@ -222,6 +222,7 @@ X509Extension var7E62EE1C49D22F5FBC312C60676B04AD_1691040926 =         (X509Exte
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.432 -0400", hash_original_method = "A84942282634A7C86CBBB6C3F2ED59CC", hash_generated_method = "BD123B0B36C88CCC98A83CB97F1AA6FD")
     public X509Extension getExtension(
         DERObjectIdentifier oid) {

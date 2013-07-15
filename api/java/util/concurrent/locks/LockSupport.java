@@ -15,18 +15,21 @@ public class LockSupport {
     }
 
     
-        private static void setBlocker(Thread t, Object arg) {
+        @DSModeled(DSC.SAFE)
+    private static void setBlocker(Thread t, Object arg) {
         unsafe.putObject(t, parkBlockerOffset, arg);
     }
 
     
-        public static void unpark(Thread thread) {
+        @DSModeled(DSC.SAFE)
+    public static void unpark(Thread thread) {
         if (thread != null)
             unsafe.unpark(thread);
     }
 
     
-        public static void park(Object blocker) {
+        @DSModeled(DSC.SAFE)
+    public static void park(Object blocker) {
         Thread t = Thread.currentThread();
         setBlocker(t, blocker);
         unsafe.park(false, 0L);
@@ -34,7 +37,8 @@ public class LockSupport {
     }
 
     
-        public static void parkNanos(Object blocker, long nanos) {
+        @DSModeled(DSC.SAFE)
+    public static void parkNanos(Object blocker, long nanos) {
         if (nanos > 0) {
             Thread t = Thread.currentThread();
             setBlocker(t, blocker);
@@ -44,7 +48,8 @@ public class LockSupport {
     }
 
     
-        public static void parkUntil(Object blocker, long deadline) {
+        @DSModeled(DSC.SAFE)
+    public static void parkUntil(Object blocker, long deadline) {
         Thread t = Thread.currentThread();
         setBlocker(t, blocker);
         unsafe.park(true, deadline);
@@ -52,23 +57,27 @@ public class LockSupport {
     }
 
     
-        public static Object getBlocker(Thread t) {
+        @DSModeled(DSC.SAFE)
+    public static Object getBlocker(Thread t) {
         return unsafe.getObjectVolatile(t, parkBlockerOffset);
     }
 
     
-        public static void park() {
+        @DSModeled(DSC.SAFE)
+    public static void park() {
         unsafe.park(false, 0L);
     }
 
     
-        public static void parkNanos(long nanos) {
+        @DSModeled(DSC.SAFE)
+    public static void parkNanos(long nanos) {
         if (nanos > 0)
             unsafe.park(false, nanos);
     }
 
     
-        public static void parkUntil(long deadline) {
+        @DSModeled(DSC.SAFE)
+    public static void parkUntil(long deadline) {
         unsafe.park(true, deadline);
     }
 

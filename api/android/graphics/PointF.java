@@ -104,11 +104,13 @@ public class PointF implements Parcelable {
     }
 
     
-        public static float length(float x, float y) {
+        @DSModeled(DSC.SAFE)
+    public static float length(float x, float y) {
         return FloatMath.sqrt(x * x + y * y);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.813 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "989DACFD5B3BD92DB98229F286E89665")
     @Override
     public int describeContents() {
@@ -120,6 +122,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.813 -0400", hash_original_method = "498F687E010E97B616DAA29FD28A4DFC", hash_generated_method = "A45D20B26148C0903A1696AC7FF266CC")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -133,6 +136,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.814 -0400", hash_original_method = "1ADDB8AA93A41CBDC98F8DD97BD3942F", hash_generated_method = "0BFCD1D65346AFF3FD9BA0C6DFBDDA42")
     public void readFromParcel(Parcel in) {
         x = in.readFloat();

@@ -53,6 +53,7 @@ String varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375 =         CarrierSpnMap.get
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.869 -0400", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "930E5D7DFDBB1312A74B7E4998026AA9")
     private void loadSpnOverrides() {
         FileReader spnReader;

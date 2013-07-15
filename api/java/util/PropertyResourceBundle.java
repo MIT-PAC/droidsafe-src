@@ -171,6 +171,7 @@ String varC31A54EE9D4A2AA28C7FB87214BBE87B_30465780 =             pEnum.nextElem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.470 -0400", hash_original_method = "23544B256E22E0E7C2784DAFEBE5A56C", hash_generated_method = "9920EDE4B3ECE4BF7B1FE328112FD175")
     @Override
     public Object handleGetObject(String key) {

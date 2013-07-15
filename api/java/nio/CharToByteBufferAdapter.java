@@ -229,6 +229,7 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1913012187 =         byteBuffer.or
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.092 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "1F1B58DB59182B72D05C836C600C31D0")
     @Override
     protected boolean protectedHasArray() {

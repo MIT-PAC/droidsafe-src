@@ -14,7 +14,8 @@ class JSON {
     }
 
 
-        static double checkDouble(double d) throws JSONException {
+        @DSModeled(DSC.SPEC)
+    static double checkDouble(double d) throws JSONException {
         if (Double.isInfinite(d) || Double.isNaN(d)) {
             throw new JSONException("Forbidden numeric value: " + d);
         }

@@ -54,6 +54,7 @@ public class Properties extends Hashtable<Object, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.319 -0400", hash_original_method = "8670FB32C289DA514C35A14528148A6D", hash_generated_method = "DB4D712D977768F08744F22087605AA7")
     private void dumpString(StringBuilder buffer, String string, boolean key) {
         addTaint(key);
@@ -107,6 +108,7 @@ for(int j = 0;j < 4 - hex.length();j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.320 -0400", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "64D938A519C839ABD7BB68CA41778F49")
     public String getProperty(String name) {
         addTaint(name.getTaint());
@@ -129,6 +131,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_125606913 =         property;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.321 -0400", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "C12679FDF697CF827AB9173E384C33D2")
     public String getProperty(String name, String defaultValue) {
         addTaint(defaultValue.getTaint());
@@ -161,6 +164,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_48565127 =         property;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.321 -0400", hash_original_method = "C9FDCBF4B35B89B1D79FB5B2779CDC77", hash_generated_method = "CBE2DDE6E4F552DA015DD74E7E1B9271")
     public void list(PrintStream out) {
         addTaint(out.getTaint());
@@ -170,6 +174,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_48565127 =         property;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.321 -0400", hash_original_method = "2577CE734D2D6BD05EB3CE3808D03445", hash_generated_method = "C5884C59C3680F2F741CCE12AB527B87")
     public void list(PrintWriter out) {
         addTaint(out.getTaint());
@@ -179,6 +184,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_48565127 =         property;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.322 -0400", hash_original_method = "68CAE489B2B77D788FAF807067B604BA", hash_generated_method = "49D9DFA9BAAF6AC45052EDE5510BF6A3")
     private void listToAppendable(Appendable out) {
         addTaint(out.getTaint());
@@ -231,6 +237,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_48565127 =         property;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.323 -0400", hash_original_method = "B8EDE929B09671D07A2F603EF776CD24", hash_generated_method = "16581405B6AE17BD7C7C3B03E349E383")
     public synchronized void load(InputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -249,6 +256,7 @@ String varA1B66E00F250B2004594D11D7A1EDAF2_48565127 =         property;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.327 -0400", hash_original_method = "3CECE8DDCAF4401F719C3D407BA79CAE", hash_generated_method = "F310F69FF865693208FC08EED5C82255")
     @SuppressWarnings("fallthrough")
     public synchronized void load(Reader in) throws IOException {
@@ -522,6 +530,7 @@ Set<String> var1DD546152BB75C36ADB53C3247459F46_535073900 =         Collections.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.330 -0400", hash_original_method = "4460892848C3864FEFFB544B0F6CDF7A", hash_generated_method = "2907924549EF5AD58CEB1F833FD3C166")
     @Deprecated
     public void save(OutputStream out, String comment) {
@@ -542,6 +551,7 @@ Set<String> var1DD546152BB75C36ADB53C3247459F46_535073900 =         Collections.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.331 -0400", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "68F6D02BEC4581F1C2F714E225AB9109")
     public Object setProperty(String name, String value) {
         addTaint(value.getTaint());
@@ -554,6 +564,7 @@ Object varF4258CA79FCE8127789B8A196F5E12F0_2107488641 =         put(name, value)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.331 -0400", hash_original_method = "97010F07EC41CFBEB746B7A1A80A2C1A", hash_generated_method = "1848F7881E3CEF4A766A0A5ACFE66A19")
     public synchronized void store(OutputStream out, String comment) throws IOException {
         addTaint(comment.getTaint());
@@ -564,6 +575,7 @@ Object varF4258CA79FCE8127789B8A196F5E12F0_2107488641 =         put(name, value)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.332 -0400", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "9CBEEA0A0BD6CBEF5B88B71D71A9DCE4")
     public synchronized void store(Writer writer, String comment) throws IOException {
         addTaint(comment.getTaint());
@@ -612,6 +624,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.335 -0400", hash_original_method = "2CD21803BBD0B22DE3395585690DDBAE", hash_generated_method = "68FD53FEB1F37E315AC5F25728A2F061")
     public synchronized void loadFromXML(InputStream in) throws IOException,
             InvalidPropertiesFormatException {
@@ -725,6 +738,7 @@ for(int i = 0;i < entriesListLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.336 -0400", hash_original_method = "CF08828D5EA0BDD9B2ACD5D46AA8D14C", hash_generated_method = "B717234FF9BED9A1726641D81063AE94")
     public void storeToXML(OutputStream os, String comment) throws IOException {
         addTaint(comment.getTaint());
@@ -735,6 +749,7 @@ for(int i = 0;i < entriesListLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.337 -0400", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "82DD2AE5784E0BE797FA0BD1DB1821E1")
     public synchronized void storeToXML(OutputStream os, String comment,
             String encoding) throws IOException {
@@ -796,6 +811,7 @@ for(Map.Entry<Object, Object> entry : entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.338 -0400", hash_original_method = "C245FBB3FF946795FFB47FE71F12C3B1", hash_generated_method = "E07D31756838EB6FA0C9348366079EA4")
     private String substitutePredefinedEntries(String s) {
         addTaint(s.getTaint());

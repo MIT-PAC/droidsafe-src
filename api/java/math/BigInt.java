@@ -55,6 +55,7 @@ String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.706 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "207B7A97DFBCD2EF292DD267FC341775")
      int getNativeBIGNUM() {
         int var2F62ECB1E1BFD54CAB557BA7F701A0DB_795313843 = (this.bignum);
@@ -88,7 +89,8 @@ String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString()
     }
 
     
-        private static void Check(boolean success) {
+        @DSModeled(DSC.SPEC)
+    private static void Check(boolean success) {
         if (!success) {
             StringBuilder sb = new StringBuilder("(openssl)ERR: ");
             int cnt = consumeErrors(sb);
@@ -174,6 +176,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.710 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "3A56FA635A03F5D24C5FD0F3F40EB5C6")
     private NumberFormatException invalidBigInteger(String s) {
         addTaint(s.getTaint());

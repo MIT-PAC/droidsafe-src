@@ -286,6 +286,7 @@ InputStream varA0C6C26B40703E7D9482EAE0B79E45D2_1141016750 =         impl.getInp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.263 -0400", hash_original_method = "B81D9B2A12700622583B88DBCF07EC2E", hash_generated_method = "1A748F3248CCBD9246A0CC16A09DBD89")
     public InetAddress getLocalAddress() {
 InetAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1619344915 =         localAddress;
@@ -355,6 +356,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1435732048 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.265 -0400", hash_original_method = "8044EC6E5CF2F698E1FE570A36824B05", hash_generated_method = "35387D5F63F532D56E85EEBC7291C37C")
     public int getSoLinger() throws SocketException {
         checkOpenAndCreate(true);
@@ -494,6 +496,7 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_1435732048 =         impl.getOu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.270 -0400", hash_original_method = "89C38D96E5FBD4D1BD6CE4BD573A4473", hash_generated_method = "FE540F873941A49AC9DE61E3CFD758CE")
     public void setSoLinger(boolean on, int timeout) throws SocketException {
         addTaint(timeout);
@@ -803,6 +806,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1330540332 =         new InetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.277 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "6177552155E297AB4F376CE7B02850BC")
     public boolean isBound() {
         boolean var8E4D35088206920061AAF7F347854388_610081471 = (isBound);
@@ -813,6 +817,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1330540332 =         new InetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.277 -0400", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "880DE7101935228C124053C8FD5F18CA")
     public boolean isConnected() {
         boolean var8CADFAB0F66545464EF713B1AEC0C7DD_1149274003 = (isConnected);
@@ -823,6 +828,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1330540332 =         new InetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.277 -0400", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "3529F9988631EB25B5D8479E6366A385")
     public boolean isClosed() {
         boolean var7587750400D3C39AEAD7C1489F6FE7F3_211730987 = (isClosed);
@@ -960,6 +966,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1330540332 =         new InetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.280 -0400", hash_original_method = "2FA07403172C73A0B79A0DF7F37DEBFB", hash_generated_method = "5EA44B2E63433601D942F480F4FA3019")
     public boolean isInputShutdown() {
         boolean var9258EF3F2889DB3AFCC9F028A10B247C_339441769 = (isInputShutdown);
@@ -970,6 +977,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1330540332 =         new InetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.281 -0400", hash_original_method = "C1B1C01C4973B5698673C5D09FA67185", hash_generated_method = "346876FC3A24FF32447DB5954A7B536E")
     public boolean isOutputShutdown() {
         boolean var16CA59BF2EA6FD0D585BF0BE01D21C5E_1349027523 = (isOutputShutdown);
@@ -1085,6 +1093,7 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1330540332 =         new InetS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.284 -0400", hash_original_method = "A7DB57A03C94477191BD1BBD8D530AC8", hash_generated_method = "0544181E0153111117884C50A945CECB")
     public SocketChannel getChannel() {
 SocketChannel var540C13E9E156B687226421B24F2DF178_197594865 =         null;
@@ -1095,6 +1104,7 @@ SocketChannel var540C13E9E156B687226421B24F2DF178_197594865 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.285 -0400", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "AB8757C2CC24FE74D723E6DE767318E4")
     public FileDescriptor getFileDescriptor$() {
 FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1530794477 =         impl.fd;
@@ -1105,6 +1115,7 @@ FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1530794477 =         impl.fd;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.285 -0400", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "2EE8865BF17B91491774A6BE2B19EEC0")
     public void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {
         addTaint(bandwidth);

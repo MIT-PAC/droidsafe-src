@@ -21,7 +21,8 @@ public class Touch {
     }
 
     
-        public static void scrollTo(TextView widget, Layout layout, int x, int y) {
+        @DSModeled(DSC.SAFE)
+    public static void scrollTo(TextView widget, Layout layout, int x, int y) {
         final int horizontalPadding = widget.getTotalPaddingLeft() + widget.getTotalPaddingRight();
         final int availableWidth = widget.getWidth() - horizontalPadding;
         final int top = layout.getLineForVertical(y);
@@ -58,7 +59,8 @@ public class Touch {
     }
 
     
-        public static boolean onTouchEvent(TextView widget, Spannable buffer,
+        @DSModeled(DSC.SAFE)
+    public static boolean onTouchEvent(TextView widget, Spannable buffer,
                                        MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         DragState[] ds;
@@ -130,13 +132,15 @@ public class Touch {
     }
 
     
-        public static int getInitialScrollX(TextView widget, Spannable buffer) {
+        @DSModeled(DSC.SAFE)
+    public static int getInitialScrollX(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollX : -1;
     }
 
     
-        public static int getInitialScrollY(TextView widget, Spannable buffer) {
+        @DSModeled(DSC.SAFE)
+    public static int getInitialScrollY(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollY : -1;
     }

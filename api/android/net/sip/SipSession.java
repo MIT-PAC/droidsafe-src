@@ -195,6 +195,7 @@ String var540C13E9E156B687226421B24F2DF178_1000383944 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.488 -0400", hash_original_method = "DF1CB7C0481108A53612C7FB72F6204A", hash_generated_method = "B57A845A372FD6A039C823BE04B31497")
     public void setListener(Listener listener) {
         mListener = listener;
@@ -320,6 +321,7 @@ String var540C13E9E156B687226421B24F2DF178_1000383944 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.492 -0400", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "689D4739BECD8C1AEEEB23409ECAD4F6")
      ISipSession getRealSession() {
 ISipSession var4330E14CA251960F6A23F8F7761A1A41_1959189509 =         mSession;
@@ -546,7 +548,8 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
-                public static String toString(int state) {
+                @DSModeled(DSC.SAFE)
+        public static String toString(int state) {
             switch (state) {
                 case READY_TO_CALL:
                     return "READY_TO_CALL";
@@ -623,6 +626,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.505 -0400", hash_original_method = "AE0E913F9E3F8804DBC653BF8673EC2F", hash_generated_method = "DEA829A09039A527CA98846EDC2F4ACF")
         public void onCalling(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -631,6 +635,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.506 -0400", hash_original_method = "A6495E0C14482D9554C3F987B616D040", hash_generated_method = "82E31F1EE9EA1D2D69826ED3176D1339")
         public void onRinging(SipSession session, SipProfile caller,
                 String sessionDescription) {
@@ -642,6 +647,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.507 -0400", hash_original_method = "3040682D1BCFEA9BA338FA9FE200A62D", hash_generated_method = "734D120B16431C158B81B709F8D3F8DF")
         public void onRingingBack(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -650,6 +656,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.507 -0400", hash_original_method = "E5D299BA3CDE0EE166AC2795783FB427", hash_generated_method = "94A782AF16BA608B7DD3B8B3191BD3F0")
         public void onCallEstablished(SipSession session,
                 String sessionDescription) {
@@ -660,6 +667,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.508 -0400", hash_original_method = "711404AF80F30F53943AF0817E2DC7DA", hash_generated_method = "4B4B0C8857AD559F3C6FAE56F4202E36")
         public void onCallEnded(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -668,6 +676,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.508 -0400", hash_original_method = "DF73FA582D888219D7BAD8AC6A6DFD56", hash_generated_method = "3CB7A353A87EFF26ADA549ED713B3DD5")
         public void onCallBusy(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -676,6 +685,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.509 -0400", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "4EC63AE57CEAA7272E7AAD95E1142F4F")
         public void onCallTransferring(SipSession newSession,
                 String sessionDescription) {
@@ -686,6 +696,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.509 -0400", hash_original_method = "4CD681E2D11D80A916993A5E2A67B6D2", hash_generated_method = "F83149F4BD4EA11D29727C61E0F0CECC")
         public void onError(SipSession session, int errorCode,
                 String errorMessage) {
@@ -697,6 +708,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.510 -0400", hash_original_method = "98747504BDA403336DDC3899112D7C4E", hash_generated_method = "BB943BDAA6E193FB7EB38A804D912599")
         public void onCallChangeFailed(SipSession session, int errorCode,
                 String errorMessage) {
@@ -708,6 +720,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.510 -0400", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "49556F3917EE074EE7287D4C2426EBC3")
         public void onRegistering(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -716,6 +729,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.511 -0400", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "47AF0550681D0CFCDB1972F11C6B9630")
         public void onRegistrationDone(SipSession session, int duration) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -725,6 +739,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.511 -0400", hash_original_method = "3E873AF3736F468DF3025CAE14D73D95", hash_generated_method = "CFAACD510C8227276A30DC44ACC20937")
         public void onRegistrationFailed(SipSession session, int errorCode,
                 String errorMessage) {
@@ -736,6 +751,7 @@ ISipSessionListener var62156A043DEFA336FA475DFB40F6B5B3_142580936 =         new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.512 -0400", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "92DD4357599040EC3BD89E95FDDF4AD7")
         public void onRegistrationTimeout(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected

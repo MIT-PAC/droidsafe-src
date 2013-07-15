@@ -261,6 +261,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.643 -0400", hash_original_method = "19954EF3B060E791A26DF845CEE18A7B", hash_generated_method = "0CCB65086BCEEB0323D3B2CEE66D10D1")
     @Override
     public boolean areAllItemsEnabled() {
@@ -294,6 +295,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.643 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "CDD9EDB699155CEDB6E7F08B99BF76F2")
     @Override
     public boolean hasStableIds() {

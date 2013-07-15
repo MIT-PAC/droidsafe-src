@@ -29,7 +29,8 @@ public class IETFUtils {
     }
 
 
-        public static RDN[] rDNsFromString(String name, X500NameStyle x500Style) {
+        @DSModeled(DSC.SPEC)
+    public static RDN[] rDNsFromString(String name, X500NameStyle x500Style) {
         X500NameTokenizer nTok = new X500NameTokenizer(name);
         X500NameBuilder builder = new X500NameBuilder(x500Style);
         while (nTok.hasMoreTokens())
@@ -111,7 +112,8 @@ public class IETFUtils {
     }
 
     
-        public static ASN1Encodable valueFromHexString(
+        @DSModeled(DSC.SPEC)
+    public static ASN1Encodable valueFromHexString(
         String  str,
         int     off) throws IOException {
         str = Strings.toLowerCase(str);
@@ -159,7 +161,8 @@ public class IETFUtils {
     }
 
     
-        public static String valueToString(ASN1Encodable value) {
+        @DSModeled(DSC.SPEC)
+    public static String valueToString(ASN1Encodable value) {
         StringBuffer vBuf = new StringBuffer();
         if (value instanceof ASN1String && !(value instanceof DERUniversalString))
         {
@@ -230,7 +233,8 @@ public class IETFUtils {
     }
 
     
-        private static ASN1Object decodeObject(String oValue) {
+        @DSModeled(DSC.SPEC)
+    private static ASN1Object decodeObject(String oValue) {
         try
         {
             return ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));

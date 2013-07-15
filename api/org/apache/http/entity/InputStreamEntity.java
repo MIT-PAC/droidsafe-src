@@ -39,6 +39,7 @@ public class InputStreamEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.981 -0400", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "A03AB1ED5203EF75F4411FBFADB11A94")
     public boolean isRepeatable() {
         boolean var68934A3E9455FA72420237EB05902327_2085818802 = (false);
@@ -49,6 +50,7 @@ public class InputStreamEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.981 -0400", hash_original_method = "120309BFFDD6935F8B30886147626A04", hash_generated_method = "FB0D54DACD6B689EA04BC83FA93AC929")
     public long getContentLength() {
         long varB9E8DC303FCECCA10418D2C0EA295E0F_462758058 = (this.length);
@@ -59,6 +61,7 @@ public class InputStreamEntity extends AbstractHttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.981 -0400", hash_original_method = "ED2F9B5D6194544F22CDAF63FF5B39F6", hash_generated_method = "90CA8990B00AF49C322D8DDFB25374BD")
     public InputStream getContent() throws IOException {
 InputStream var5B4E22E160A1A738CCEDC8C85B064397_546528831 =         this.content;
@@ -131,6 +134,7 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_546528831 =         this.content
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.981 -0400", hash_original_method = "3E82383C0A86BE67DCD75D0F1508916B", hash_generated_method = "BEA77A262F47FFC2950121D1442D42D3")
     public boolean isStreaming() {
         boolean varC5881E5585D5F83BFC38268C8395B4AF_76323512 = (!this.consumed);

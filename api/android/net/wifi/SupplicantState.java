@@ -21,6 +21,7 @@ public enum SupplicantState implements Parcelable {
     DORMANT,
     UNINITIALIZED,
     INVALID;
+    @DSModeled(DSC.SAFE)
     public static boolean isValidState(SupplicantState state) {
         return state != UNINITIALIZED && state != INVALID;
     }
@@ -87,6 +88,7 @@ public enum SupplicantState implements Parcelable {
                 throw new IllegalArgumentException("Unknown supplicant state");
         }
     }
+    @DSModeled(DSC.SAFE)
     public int describeContents() {
         return 0;
     }

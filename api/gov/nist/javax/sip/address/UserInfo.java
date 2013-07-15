@@ -23,6 +23,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.426 -0400", hash_original_method = "A09C3D32ACE02300A3630780DF7DA73F", hash_generated_method = "AC015369A280623ED22B63F740738DCA")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -87,6 +88,7 @@ public final class UserInfo extends NetObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.426 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "85BB6A3DD802686F7A955897D141F603")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_1337227620 =         encode(new StringBuffer()).toString();
@@ -97,6 +99,7 @@ String var678B6FE61D54E5BD4E109D01C318C133_1337227620 =         encode(new Strin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.427 -0400", hash_original_method = "7AE7B8A415769E92878FFEC035C52AE0", hash_generated_method = "1E35C1F463264226AE2BAD432816E1D0")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -116,6 +119,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1257918735 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.427 -0400", hash_original_method = "B45A9D19151CAED15569D78F83AD2095", hash_generated_method = "C8505DC09422B6CFF865611C6AB8A6C3")
     public void clearPassword() {
         this.password = null;
@@ -124,6 +128,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1257918735 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.428 -0400", hash_original_method = "0304D4B17F9026D87C6633B5EFA54170", hash_generated_method = "16892FC8A438F7E939B7EAD6FA8D16D3")
     public int getUserType() {
         int var3D88FCBAA3581C4957147EF9AD47EC5E_758874359 = (userType);
@@ -134,6 +139,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1257918735 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.428 -0400", hash_original_method = "067A1216625EE4AD320B5B1536FC853E", hash_generated_method = "949C7112D97A03C06AF7487697F7E4B8")
     public String getUser() {
 String var1ABA5703084F105A1CF02655AEDE82C9_1824270919 =         user;
@@ -144,6 +150,7 @@ String var1ABA5703084F105A1CF02655AEDE82C9_1824270919 =         user;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.428 -0400", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "8F50B30DFB3332A5FEA7426BD46F2579")
     public String getPassword() {
 String var8371B008E722D01F0CA3A116DA23853F_1279613163 =         password;
@@ -177,6 +184,7 @@ String var8371B008E722D01F0CA3A116DA23853F_1279613163 =         password;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.430 -0400", hash_original_method = "914969AC5F0FD02943850406A5ADB2DF", hash_generated_method = "F4C8503980BC4D291DEAF6570BD57166")
     public void setPassword(String p) {
         password = p;
@@ -185,6 +193,7 @@ String var8371B008E722D01F0CA3A116DA23853F_1279613163 =         password;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.430 -0400", hash_original_method = "D88C19BFECDFF9E40F4106FE0C0D9444", hash_generated_method = "3AF5E78B9CD82078D1CDB7574192D179")
     public void setUserType(int type) throws IllegalArgumentException {
     if(type != TELEPHONE_SUBSCRIBER && type != USER)        

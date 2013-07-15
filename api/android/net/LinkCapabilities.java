@@ -152,6 +152,7 @@ Collection<String> varA9D5CC32CED998FAD23DBA7A946F0A52_795047133 =         mCapa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.373 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DF75504A69C43EACE3F9B6883CDF726A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2075414398 = (0);

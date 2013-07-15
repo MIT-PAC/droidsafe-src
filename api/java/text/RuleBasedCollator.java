@@ -65,6 +65,7 @@ public class RuleBasedCollator extends Collator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.660 -0400", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "FD4C9052A04ED9FC75AB1982F733198D")
     public CollationElementIterator getCollationElementIterator(CharacterIterator source) {
         addTaint(source.getTaint());
@@ -85,6 +86,7 @@ CollationElementIterator var85D8D9BBFD7633380922301BECEE0F71_786166059 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.660 -0400", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "84DCD0291CE363E26909E392AE3573F2")
     public CollationElementIterator getCollationElementIterator(String source) {
         addTaint(source.getTaint());
@@ -105,6 +107,7 @@ CollationElementIterator var85D8D9BBFD7633380922301BECEE0F71_1679622688 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.660 -0400", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "DFB8A3BDDC39D14C70A9106CB75586AE")
     public String getRules() {
 String var8A90C9DBB22B3B738EF7F72CD72CE87A_6326798 =         icuColl.getRules();
@@ -115,6 +118,7 @@ String var8A90C9DBB22B3B738EF7F72CD72CE87A_6326798 =         icuColl.getRules();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.661 -0400", hash_original_method = "FBA963D7A9FB0658F4932AD387478243", hash_generated_method = "0CCAEEDCEAFAC17D61A84873DFE79997")
     @Override
     public Object clone() {
@@ -128,6 +132,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_2136767315 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.661 -0400", hash_original_method = "6590B43BC0A35CBDE76A6B18FA6459C5", hash_generated_method = "D6B0359E7E6D13FA5C2C54EE791F9B00")
     @Override
     public int compare(String source, String target) {
@@ -150,6 +155,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_2136767315 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.661 -0400", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "36F6AD9117159F00BAC8CB8904EC2FC9")
     @Override
     public CollationKey getCollationKey(String source) {
@@ -162,6 +168,7 @@ CollationKey var4C5119C68CB04FD6795DE91A08425B93_1138960968 =         icuColl.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.662 -0400", hash_original_method = "B4EBBD96DB20771CAD5EB8825D399E3B", hash_generated_method = "93ED650EDF2F48208E6F4CFB50A4DC98")
     @Override
     public int hashCode() {
@@ -173,6 +180,7 @@ CollationKey var4C5119C68CB04FD6795DE91A08425B93_1138960968 =         icuColl.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.662 -0400", hash_original_method = "1D9A70F4229C9ABE49C60D2B9C1F5E2A", hash_generated_method = "CBEDBFD06A67E4CA533E7CEABD9D5CEE")
     @Override
     public boolean equals(Object obj) {

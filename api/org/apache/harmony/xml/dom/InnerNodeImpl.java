@@ -181,6 +181,7 @@ Node var27D66BDD904EAAAD70983474F8274FA5_478543656 =         newChild;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.765 -0400", hash_original_method = "EAC92D1975EC52765900D3EB8DB15DFE", hash_generated_method = "6D3AD9C50CFE1B966B72C2296AAB5573")
     public boolean isParentOf(Node node) {
         addTaint(node.getTaint());

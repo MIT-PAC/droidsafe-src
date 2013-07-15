@@ -48,7 +48,8 @@ public class MiniThumbFile {
     }
 
     
-        public static synchronized MiniThumbFile instance(Uri uri) {
+        @DSModeled(DSC.SPEC)
+    public static synchronized MiniThumbFile instance(Uri uri) {
         String type = uri.getPathSegments().get(1);
         MiniThumbFile file = sThumbFiles.get(type);
         if (file == null) {

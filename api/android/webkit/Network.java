@@ -67,7 +67,8 @@ class Network {
     }
 
     
-        public static synchronized Network getInstance(Context context) {
+        @DSModeled(DSC.SPEC)
+    public static synchronized Network getInstance(Context context) {
         if (sNetwork == null) {
             sNetwork = new Network(context.getApplicationContext());
             if (sPlatformNotifications) {
@@ -103,6 +104,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.806 -0400", hash_original_method = "7636534D5021AA0AC5AC07906EACA40E", hash_generated_method = "573E850B74569715EC91B0516CBFD4A2")
     private void monitorRoaming() {
         mRoamingMonitor = new RoamingMonitor();
@@ -192,6 +194,7 @@ class Network {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.807 -0400", hash_original_method = "80DD6C6B450A5637726B61D58132A867", hash_generated_method = "B2787C666E98C6A7CA491C0586DB7910")
     public boolean isValidProxySet() {
         synchronized
@@ -217,6 +220,7 @@ String var5E0DBFD0A810C9DF79D4FDF52FBF6DA2_1981576967 =         mRequestQueue.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.808 -0400", hash_original_method = "1266E72491C7223244252637AD0BEC00", hash_generated_method = "3395A905D822DE58BEB4C62F2014476C")
     public synchronized String getProxyUsername() {
 String var25846F855CBEDE427E929DAB6DAE06CB_2041978291 =         mProxyUsername;
@@ -227,6 +231,7 @@ String var25846F855CBEDE427E929DAB6DAE06CB_2041978291 =         mProxyUsername;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.808 -0400", hash_original_method = "F385770A128D43043A61D29E35184FCC", hash_generated_method = "09BDC173FCC3971926FE697FB23E9A0C")
     public synchronized void setProxyUsername(String proxyUsername) {
     if(DebugFlags.NETWORK)        
@@ -242,6 +247,7 @@ String var25846F855CBEDE427E929DAB6DAE06CB_2041978291 =         mProxyUsername;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.808 -0400", hash_original_method = "B46568E038B4519332317A487603C5DC", hash_generated_method = "75A2AAB5929E33C6DECBC1D8ACAA0E4B")
     public synchronized String getProxyPassword() {
 String varF4020F95A180D57F86F89B67CE207E73_1035627609 =         mProxyPassword;
@@ -252,6 +258,7 @@ String varF4020F95A180D57F86F89B67CE207E73_1035627609 =         mProxyPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.809 -0400", hash_original_method = "F4CD508AF44DC7CAF5CD08EB1469791C", hash_generated_method = "54075A54FCF7A683DB6DDED89B3F4ECB")
     public synchronized void setProxyPassword(String proxyPassword) {
     if(DebugFlags.NETWORK)        
@@ -301,6 +308,7 @@ String varF4020F95A180D57F86F89B67CE207E73_1035627609 =         mProxyPassword;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.810 -0400", hash_original_method = "8F59473C5B0D895146F3319CE625D311", hash_generated_method = "3153B4EE6AA3E66C716C0C9142D18748")
     public void clearUserSslPrefTable() {
         mSslErrorHandler.clear();
@@ -348,6 +356,7 @@ String varF4020F95A180D57F86F89B67CE207E73_1035627609 =         mProxyPassword;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.811 -0400", hash_original_method = "2D361BDF919FB90BFEE4AC2A951EDF8C", hash_generated_method = "C2E11E251BEB6263B27AED4FA3A67120")
     public void handleAuthRequest(LoadListener loader) {
         addTaint(loader.getTaint());
@@ -390,6 +399,7 @@ String varF4020F95A180D57F86F89B67CE207E73_1035627609 =         mProxyPassword;
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.811 -0400", hash_original_method = "FF6D86ABCD7F084A4EADD45C592C2902", hash_generated_method = "9B961E2B1C87E83CCA1A001240A369AE")
         @Override
         public void onReceive(Context context, Intent intent) {

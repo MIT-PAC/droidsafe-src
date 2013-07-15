@@ -152,6 +152,7 @@ for(CdmaConnection c : connections)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.010 -0400", hash_original_method = "A19F9CA037C5D9E07B1DD2AD491B323A", hash_generated_method = "E27CAF9935D2468457687BCD0D4A34D3")
     public void registerForVoiceCallStarted(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -228,6 +229,7 @@ for(CdmaConnection c : connections)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.012 -0400", hash_original_method = "B11C1D24F61F5A9ABEB7D187928BEC26", hash_generated_method = "9AB3F2F39380BAE5E0A799C34165AB19")
     private void fakeHoldForegroundBeforeDial() {
         List<Connection> connCopy;
@@ -247,6 +249,7 @@ for(int i = 0, s = connCopy.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.013 -0400", hash_original_method = "FEC4E6BC08FD10A2C518984DAAD113C7", hash_generated_method = "849DE3DC8FB6F709B51E457E1CFAF5D2")
      Connection dial(String dialString, int clirMode) throws CallStateException {
         clearDisconnected();
@@ -315,6 +318,7 @@ Connection varE8109EC8026230EB0B66EDCCD607E699_767260115 =         dial(dialStri
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.014 -0400", hash_original_method = "88840CD76FEAD0D0B90DCB96EA4A4A27", hash_generated_method = "A8B874DCD92D34DF9A8F75CEE8997CE5")
     private Connection dialThreeWay(String dialString) {
     if(!foregroundCall.isIdle())        
@@ -642,6 +646,7 @@ Message var7D44CBDF570B5CB81D544F0887CE90C1_1435866789 =         obtainMessage(w
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.028 -0400", hash_original_method = "63502DE56EE8A86B2DF78F720505C320", hash_generated_method = "6E790D96BF927AD05504AD16F034F463")
     protected void handlePollCalls(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -878,6 +883,7 @@ for(int i = droppedDuringPoll.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.031 -0400", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "A0E547083DC38927985A44513BC7C4C8")
      void hangup(CdmaConnection conn) throws CallStateException {
         addTaint(conn.getTaint());
@@ -962,6 +968,7 @@ for(int i = droppedDuringPoll.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.032 -0400", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "6475B01210118667B5CE173E568F3A69")
      boolean getMute() {
         boolean var8C4FD417B21794EC88BA7D0D7F766EFA_1619459106 = (desiredMute);
@@ -1143,6 +1150,7 @@ CdmaConnection var540C13E9E156B687226421B24F2DF178_1932669545 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.035 -0400", hash_original_method = "EB39E7AA8B070FEFE523D7C5104C422F", hash_generated_method = "F2B22B9C2961AD4C91E3828C52AE1EE4")
     private void flashAndSetGenericTrue() throws CallStateException {
         cm.sendCDMAFeatureCode("", obtainMessage(EVENT_SWITCH_RESULT));
@@ -1155,6 +1163,7 @@ CdmaConnection var540C13E9E156B687226421B24F2DF178_1932669545 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.036 -0400", hash_original_method = "65CD53B5AAA831AF61B9937ED3D66C8B", hash_generated_method = "E489F1507A0FEEB6ECDF7A14200F8F57")
     private Phone.SuppService getFailedService(int what) {
         addTaint(what);
@@ -1193,6 +1202,7 @@ Phone.SuppService var3A80E047DEE6FAD19C2D6A342608C348_1722578909 =         Phone
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.036 -0400", hash_original_method = "6E2D3B844106C3BA4166C29F96BB7EA0", hash_generated_method = "3D35CA8E198B65065816E56AAB25BAB7")
     private void handleRadioNotAvailable() {
         pollCallsWhenSafe();
@@ -1215,6 +1225,7 @@ Phone.SuppService var3A80E047DEE6FAD19C2D6A342608C348_1722578909 =         Phone
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.036 -0400", hash_original_method = "8AEB0E73C414AF95EF44C542FCF55311", hash_generated_method = "64D97BF275CB00A21BC4AF2757ACAFD3")
     private void handleCallWaitingInfo(CdmaCallWaitingNotification cw) {
         addTaint(cw.getTaint());
@@ -1329,6 +1340,7 @@ for(int i = 0, s =  droppedDuringPoll.size();i < s;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.038 -0400", hash_original_method = "53D0BC70C94C51E4941A4869C727C1EF", hash_generated_method = "995B6294B11CCF29EC04DAAC7C70E58D")
     private void handleEcmTimer(int action) {
         addTaint(action);
@@ -1439,6 +1451,7 @@ Connection var94D414EAF654DC6D341716982125A4F3_478927189 =         newRinging;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.041 -0400", hash_original_method = "1842D0C2283B311B2A29E474687D9235", hash_generated_method = "86E4F5566FEBDAD7E96A66879053E7B1")
      boolean isInEmergencyCall() {
         boolean var2A38944C11BF5A57D2726A92DC4FCE09_1365096593 = (mIsInEmergencyCall);

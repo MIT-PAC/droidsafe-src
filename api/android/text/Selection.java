@@ -30,7 +30,8 @@ public class Selection {
     }
 
     
-        public static void setSelection(Spannable text, int start, int stop) {
+        @DSModeled(DSC.SAFE)
+    public static void setSelection(Spannable text, int start, int stop) {
         int ostart = getSelectionStart(text);
         int oend = getSelectionEnd(text);
         if (ostart != start || oend != stop) {
@@ -64,7 +65,8 @@ public class Selection {
     }
 
     
-        public static boolean moveUp(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean moveUp(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -94,7 +96,8 @@ public class Selection {
     }
 
     
-        public static boolean moveDown(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean moveDown(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -124,7 +127,8 @@ public class Selection {
     }
 
     
-        public static boolean moveLeft(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean moveLeft(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -141,7 +145,8 @@ public class Selection {
     }
 
     
-        public static boolean moveRight(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean moveRight(Spannable text, Layout layout) {
         int start = getSelectionStart(text);
         int end = getSelectionEnd(text);
         if (start != end) {
@@ -158,7 +163,8 @@ public class Selection {
     }
 
     
-        public static boolean extendUp(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean extendUp(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int line = layout.getLineForOffset(end);
         if (line > 0) {
@@ -180,7 +186,8 @@ public class Selection {
     }
 
     
-        public static boolean extendDown(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean extendDown(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int line = layout.getLineForOffset(end);
         if (line < layout.getLineCount() - 1) {
@@ -202,7 +209,8 @@ public class Selection {
     }
 
     
-        public static boolean extendLeft(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean extendLeft(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int to = layout.getOffsetToLeftOf(end);
         if (to != end) {
@@ -213,7 +221,8 @@ public class Selection {
     }
 
     
-        public static boolean extendRight(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean extendRight(Spannable text, Layout layout) {
         int end = getSelectionEnd(text);
         int to = layout.getOffsetToRightOf(end);
         if (to != end) {
@@ -224,35 +233,40 @@ public class Selection {
     }
 
     
-        public static boolean extendToLeftEdge(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean extendToLeftEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, -1);
         extendSelection(text, where);
         return true;
     }
 
     
-        public static boolean extendToRightEdge(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean extendToRightEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, 1);
         extendSelection(text, where);
         return true;
     }
 
     
-        public static boolean moveToLeftEdge(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean moveToLeftEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, -1);
         setSelection(text, where);
         return true;
     }
 
     
-        public static boolean moveToRightEdge(Spannable text, Layout layout) {
+        @DSModeled(DSC.SAFE)
+    public static boolean moveToRightEdge(Spannable text, Layout layout) {
         int where = findEdge(text, layout, 1);
         setSelection(text, where);
         return true;
     }
 
     
-        public static boolean moveToPreceding(
+        @DSModeled(DSC.SAFE)
+    public static boolean moveToPreceding(
             Spannable text, PositionIterator iter, boolean extendSelection) {
         final int offset = iter.preceding(getSelectionEnd(text));
         if (offset != PositionIterator.DONE) {
@@ -266,7 +280,8 @@ public class Selection {
     }
 
     
-        public static boolean moveToFollowing(
+        @DSModeled(DSC.SAFE)
+    public static boolean moveToFollowing(
             Spannable text, PositionIterator iter, boolean extendSelection) {
         final int offset = iter.following(getSelectionEnd(text));
         if (offset != PositionIterator.DONE) {
@@ -280,7 +295,8 @@ public class Selection {
     }
 
     
-        private static int findEdge(Spannable text, Layout layout, int dir) {
+        @DSModeled(DSC.SAFE)
+    private static int findEdge(Spannable text, Layout layout, int dir) {
         int pt = getSelectionEnd(text);
         int line = layout.getLineForOffset(pt);
         int pdir = layout.getParagraphDirection(line);
@@ -296,7 +312,8 @@ public class Selection {
     }
 
     
-        private static int chooseHorizontal(Layout layout, int direction,
+        @DSModeled(DSC.SAFE)
+    private static int chooseHorizontal(Layout layout, int direction,
                                         int off1, int off2) {
         int line1 = layout.getLineForOffset(off1);
         int line2 = layout.getLineForOffset(off2);

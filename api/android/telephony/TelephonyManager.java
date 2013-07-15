@@ -59,7 +59,8 @@ public class TelephonyManager {
     }
 
     
-        public static TelephonyManager getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static TelephonyManager getDefault() {
         return sInstance;
     }
 
@@ -428,7 +429,8 @@ String var8CFF43696043E49880EFA10219C0A265_953958393 =         SystemProperties.
     }
 
     
-        public static int getNetworkClass(int networkType) {
+        @DSModeled(DSC.SAFE)
+    public static int getNetworkClass(int networkType) {
         switch (networkType) {
             case NETWORK_TYPE_GPRS:
             case NETWORK_TYPE_EDGE:
@@ -464,7 +466,8 @@ String var92831851986B8D91B76559793762AEFE_1652538462 =         getNetworkTypeNa
     }
 
     
-        public static String getNetworkTypeName(int type) {
+        @DSModeled(DSC.SAFE)
+    public static String getNetworkTypeName(int type) {
         switch (type) {
             case NETWORK_TYPE_GPRS:
                 return "GPRS";
@@ -1032,6 +1035,7 @@ String[] var540C13E9E156B687226421B24F2DF178_2066334682 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.660 -0400", hash_original_method = "0499CDF49B310038A9BEEA0F802EAB63", hash_generated_method = "76C1B88A5473D88A8D3BB9F92CD97438")
     private IPhoneSubInfo getSubscriberInfo() {
 IPhoneSubInfo var7BACB97921B95FA085BBBBACC7480C10_94451353 =         IPhoneSubInfo.Stub.asInterface(ServiceManager.getService("iphonesubinfo"));

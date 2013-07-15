@@ -57,6 +57,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.422 -0400", hash_original_method = "D0981A681D74F230E15D58DC6CAB4B12", hash_generated_method = "6C5BAF6F2F11B93DFDBE2A7B4FA1E0F5")
     public void setPaint(Paint p) {
         mPaint = p;
@@ -65,6 +66,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.422 -0400", hash_original_method = "EAF50CB5C0E6A8C8743BB0867CC2AAFE", hash_generated_method = "A32484557F9DB6B2067C2D353CD740E4")
     public void draw(Canvas canvas, RectF location) {
         addTaint(location.getTaint());
@@ -92,6 +94,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.422 -0400", hash_original_method = "0ABE1DB59D00B8D3A7DF4CB4F149C27D", hash_generated_method = "AC439821CB8F5764A85B383BD3632006")
     public void draw(Canvas canvas, Rect location) {
         addTaint(location.getTaint());
@@ -121,6 +124,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.422 -0400", hash_original_method = "CF14EE2D4C6547AB65BEAA94D29C006C", hash_generated_method = "6EAB0819AE11A04776E4F87DD4267693")
     public void draw(Canvas canvas, Rect location, Paint paint) {
         addTaint(paint.getTaint());
@@ -149,6 +153,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.423 -0400", hash_original_method = "27EBBFC0A49FBB6B32AE88535DB257BA", hash_generated_method = "A5B4B951578C0FA6BBDDA419143F67D5")
     public int getDensity() {
         int var9E30D0A74E195321DF2F63FF8FEFFFBD_1289247420 = (mBitmap.mDensity);
@@ -159,6 +164,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.423 -0400", hash_original_method = "248DEDBBF8E87ACAD7F5460B83DB8F69", hash_generated_method = "F947E5F34EE3EE81F7F5427AF21015D9")
     public int getWidth() {
         int varF582257C9BC06C3475683DA9F9AE7919_236772919 = (mBitmap.getWidth());
@@ -169,6 +175,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.423 -0400", hash_original_method = "2785E3A64A823A27985D4386D66934E2", hash_generated_method = "A97AC37153E8514D3DE040ED98E6A338")
     public int getHeight() {
         int varC25E084EBC4D9358C01EBD9A3B801212_1123227476 = (mBitmap.getHeight());

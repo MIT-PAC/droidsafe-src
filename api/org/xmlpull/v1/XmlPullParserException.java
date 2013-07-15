@@ -45,6 +45,7 @@ public class XmlPullParserException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.166 -0400", hash_original_method = "94BA5080D380911C58CAC3733D4C69AF", hash_generated_method = "7A1895EB218AC4C7356291E377991C1B")
     public Throwable getDetail() {
 Throwable var7D32F5AE0FDCBBF6DD3F34C021592055_1624294504 =         detail;
@@ -55,6 +56,7 @@ Throwable var7D32F5AE0FDCBBF6DD3F34C021592055_1624294504 =         detail;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.166 -0400", hash_original_method = "0760FB4E162E5971E2E765B2D1FE0093", hash_generated_method = "2D07B7EAB0C6EA2F399C7950236FE04B")
     public int getLineNumber() {
         int varF1965A857BC285D26FE22023AA5AB50D_2147287920 = (row);
@@ -65,6 +67,7 @@ Throwable var7D32F5AE0FDCBBF6DD3F34C021592055_1624294504 =         detail;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.166 -0400", hash_original_method = "52272B3AE5723072E22E93854866B927", hash_generated_method = "67F267B94732BAD4B0C5ACCD660B1AF7")
     public int getColumnNumber() {
         int var1AFD32818D1C9525F82AFF4C09EFD254_932728045 = (column);

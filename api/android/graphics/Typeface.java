@@ -29,6 +29,7 @@ public class Typeface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.424 -0400", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "511C9D05BA1066745813F16DE26DAA45")
     public int getStyle() {
         int varB7050576F2925C21EF90B7165C471A32_857690634 = (nativeGetStyle(native_instance));
@@ -59,12 +60,14 @@ public class Typeface {
     }
 
     
-        public static Typeface create(String familyName, int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface create(String familyName, int style) {
         return new Typeface(nativeCreate(familyName, style));
     }
 
     
-        public static Typeface create(Typeface family, int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface create(Typeface family, int style) {
         int ni = 0;
         if (family != null) {
             ni = family.native_instance;
@@ -73,26 +76,31 @@ public class Typeface {
     }
 
     
-        public static Typeface defaultFromStyle(int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface defaultFromStyle(int style) {
         return sDefaults[style];
     }
 
     
-        public static Typeface createFromAsset(AssetManager mgr, String path) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface createFromAsset(AssetManager mgr, String path) {
         return new Typeface(nativeCreateFromAsset(mgr, path));
     }
 
     
-        public static Typeface createFromFile(File path) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface createFromFile(File path) {
         return new Typeface(nativeCreateFromFile(path.getAbsolutePath()));
     }
 
     
-        public static Typeface createFromFile(String path) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.429 -0400", hash_original_method = "365BC48BBC32364F202A52D242C543E7", hash_generated_method = "542BA0200575B34094B0AA4D80DE2CA4")
     protected void finalize() throws Throwable {
         super.finalize();

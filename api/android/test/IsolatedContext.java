@@ -67,6 +67,7 @@ List<Intent> varE605E6FF378E732B20AE622708ABD1E5_1756568544 =         intents;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.113 -0400", hash_original_method = "DB3EFD57F21462C44953D7817E2D1D0B", hash_generated_method = "3AAF8260B2BF14316CCD5FA8AD16D4E3")
     @Override
     public ContentResolver getContentResolver() {
@@ -78,6 +79,7 @@ ContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_961678017 =         mResolve
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.113 -0400", hash_original_method = "D151ADEF319006893C279FF639241601", hash_generated_method = "D5236996010CDE7957E1203B76F0C27B")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -92,6 +94,7 @@ ContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_961678017 =         mResolve
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.113 -0400", hash_original_method = "D63A733B99C939E3B044BECFC3A4F3E0", hash_generated_method = "3EAC4B92C3510F9EDB7B3BD91A74B6AB")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -106,6 +109,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.114 -0400", hash_original_method = "5B78FE35E60043EEBC860B3845D6E056", hash_generated_method = "F3D4B94E17AF977F24D9B43015DBAC9F")
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
@@ -114,6 +118,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.114 -0400", hash_original_method = "8D436BAC12DD3DE12E9B49520E96DCDA", hash_generated_method = "5C8ED5CBBE2966ACA64812CDF5F94AD0")
     @Override
     public void sendBroadcast(Intent intent) {
@@ -124,6 +129,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.114 -0400", hash_original_method = "AE03E44313266CC18BE47C7921C18AFC", hash_generated_method = "5AFD2661FFA5F7D8AA1E3BDEF1B73C5E")
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission) {
@@ -135,6 +141,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.115 -0400", hash_original_method = "D4A194640702A8287472737CF0B51049", hash_generated_method = "21AEB8895021F99B810A6A0F6B1880B1")
     @Override
     public int checkUriPermission(
@@ -154,6 +161,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.115 -0400", hash_original_method = "D9147C12C0591AE2DF9A07380B6C581A", hash_generated_method = "C08FC206452BFAD68CD23B2153879AC3")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -210,6 +218,7 @@ File varCDB4F0E70BC9453804DFE6CD3611F6BF_1236998301 =         new File("/dev/nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.117 -0400", hash_original_method = "CD3E43A96A9D76110323C3B9341CE036", hash_generated_method = "012C3EEEBEDE720FBB789686E20AD01E")
         public void addOnAccountsUpdatedListener(OnAccountsUpdateListener listener,
                 Handler handler, boolean updateImmediately) {
@@ -220,6 +229,7 @@ File varCDB4F0E70BC9453804DFE6CD3611F6BF_1236998301 =         new File("/dev/nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.117 -0400", hash_original_method = "C22581F9BCE56EDC1300FA008A2943C3", hash_generated_method = "0B28FE5C70881498C4DB8E3E39535478")
         public Account[] getAccounts() {
 Account[] varF35A7B4D3EBC7623DF9EB3A949846B5B_1103712996 =             new Account[]{};
@@ -246,6 +256,7 @@ AccountManagerFuture<Account[]> varA1C77EF2D49EC78A818761662FAD417E_1097970719 =
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.118 -0400", hash_original_method = "10417FE58833E3F01D4F5638C5F0722A", hash_generated_method = "AD1824DB575D1E9AD8C39118C69A8F5D")
         public String blockingGetAuthToken(Account account, String authTokenType,
                 boolean notifyAuthFailure) throws OperationCanceledException, IOException, AuthenticatorException {
@@ -273,6 +284,7 @@ String var540C13E9E156B687226421B24F2DF178_2034189897 =             null;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.119 -0400", hash_original_method = "E7E050BF43F9AAADC8EA5FB3113867CE", hash_generated_method = "A1B31A7096DB108DC5F107B871DF9C25")
             public boolean cancel(boolean mayInterruptIfRunning) {
                 addTaint(mayInterruptIfRunning);
@@ -284,6 +296,7 @@ String var540C13E9E156B687226421B24F2DF178_2034189897 =             null;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.119 -0400", hash_original_method = "BCC8FFB68E7C7F6096B18A3AB81987E9", hash_generated_method = "FF8A35E84E889B6F4DDDEA3651E896D5")
             public boolean isCancelled() {
                 boolean var68934A3E9455FA72420237EB05902327_1387216205 = (false);
@@ -294,6 +307,7 @@ String var540C13E9E156B687226421B24F2DF178_2034189897 =             null;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.119 -0400", hash_original_method = "2FACCCF2AE69DF9C18B4C967A20C9877", hash_generated_method = "4107BCA17685BC328D66D41955C2564E")
             public boolean isDone() {
                 boolean varB326B5062B2F0E69046810717534CB09_1646093526 = (true);

@@ -165,6 +165,7 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirs
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.080 -0400", hash_original_method = "823F243F1FE2DDA7035072AD49FCCD96", hash_generated_method = "97409C3981FDC451175FE28FED7F4BF6")
     private Chunk obtainChunk(int length) {
         addTaint(length);

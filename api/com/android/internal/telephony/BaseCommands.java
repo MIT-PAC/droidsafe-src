@@ -209,6 +209,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.913 -0400", hash_original_method = "9B72FF4B03FA7DBB789195860BAD353E", hash_generated_method = "43FFBB8F728D240F374012BEF4FD6264")
     public RadioState getRadioState() {
 RadioState var8B975C85F13BECB9FD4D21A5F3C8A56D_1904379094 =         mState;
@@ -219,6 +220,7 @@ RadioState var8B975C85F13BECB9FD4D21A5F3C8A56D_1904379094 =         mState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.914 -0400", hash_original_method = "683B910DC6B22521B92A68335EE5839B", hash_generated_method = "9C3F9B23CEDC2F527886C4B3AC4CBDC7")
     public RadioState getSimState() {
 RadioState varD1D6E3D81133E46F67B78341F3AF951B_554101020 =         mSimState;
@@ -229,6 +231,7 @@ RadioState varD1D6E3D81133E46F67B78341F3AF951B_554101020 =         mSimState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.914 -0400", hash_original_method = "109C4CEB2CE04AD161352D599FB1B09F", hash_generated_method = "2907865A7802FB3FA478C4C18A2AEC2B")
     public RadioState getRuimState() {
 RadioState var0229485BF2FFEF7361B1DE369234BA11_1900654891 =         mRuimState;
@@ -239,6 +242,7 @@ RadioState var0229485BF2FFEF7361B1DE369234BA11_1900654891 =         mRuimState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.914 -0400", hash_original_method = "903DF1C2B5F50A021347F02D35C70B16", hash_generated_method = "832FB701D8A0B04AF9000908CC496715")
     public RadioState getNvState() {
 RadioState varE1DDC0A8ADF5084887B95C24F591CAB0_401063192 =         mNvState;
@@ -1509,6 +1513,7 @@ RadioState varE1DDC0A8ADF5084887B95C24F591CAB0_401063192 =         mNvState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.937 -0400", hash_original_method = "9E4D177DE2C4D1C0BCFAAE47CCC59231", hash_generated_method = "4213F91204D502CD576FBCFFBFDC54D6")
     @Override
     public void setCurrentPreferredNetworkType() {
@@ -1625,6 +1630,7 @@ RadioState varE1DDC0A8ADF5084887B95C24F591CAB0_401063192 =         mNvState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.939 -0400", hash_original_method = "1193518C5021D5365FC51C472C5050CB", hash_generated_method = "69A42F2EFF74FEEABD1AC7F929142872")
     protected void onRadioAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected

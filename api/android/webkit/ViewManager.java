@@ -54,6 +54,7 @@ ChildView var8A3190BB88EBE69DB41074FCFE3B369D_1403357910 =         new ChildView
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.357 -0400", hash_original_method = "2B29D777BD882375E9FE491E62B8E4F4", hash_generated_method = "328305B226EDD7D9F01320BBAD402C3F")
     private void requestLayout(ChildView v) {
         addTaint(v.getTaint());
@@ -149,6 +150,7 @@ ChildView var8A3190BB88EBE69DB41074FCFE3B369D_1403357910 =         new ChildView
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.358 -0400", hash_original_method = "4F661FC74F7E1A720FEE3022046A7DAD", hash_generated_method = "A1669D7EFC5E91A1C2431496C0B82E56")
      void startZoom() {
         mZoomInProgress = true;
@@ -164,6 +166,7 @@ for(ChildView v : mChildren)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.359 -0400", hash_original_method = "F0F47054709F050065D565E243DB8138", hash_generated_method = "2F391B4B259977D73AFFFA42D3682276")
      void endZoom() {
         mZoomInProgress = false;
@@ -179,6 +182,7 @@ for(ChildView v : mChildren)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.359 -0400", hash_original_method = "C82C75EA2573C85D59C63AD0662E50B7", hash_generated_method = "5110AFD9926B9EDC2F5CDEE0E17B367F")
      void scaleAll() {
 for(ChildView v : mChildren)
@@ -192,6 +196,7 @@ for(ChildView v : mChildren)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.359 -0400", hash_original_method = "4F028387E717D291F0C61AFA65DDC151", hash_generated_method = "899EEA859992131FDE618D4D2A6C7D40")
      void hideAll() {
     if(mHidden)        
@@ -214,6 +219,7 @@ for(ChildView v : mChildren)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.360 -0400", hash_original_method = "B75BBFE8728E55E21A97BD827A74F550", hash_generated_method = "B8376291755508591E874DDA1C30F9ED")
      void showAll() {
     if(!mHidden)        
@@ -284,6 +290,7 @@ for(ChildView v : mChildren)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.361 -0400", hash_original_method = "69EC682FAEAFF2A8235362C63F30F73F", hash_generated_method = "146D0F3F890A9C5AC9AA49814C83FE90")
      ChildView hitTest(int contentX, int contentY) {
         addTaint(contentY);
@@ -349,6 +356,7 @@ ChildView var540C13E9E156B687226421B24F2DF178_206987639 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.363 -0400", hash_original_method = "49948859AFA14B35AAA713D3429ED265", hash_generated_method = "1647B31ED8A57F0659AE086FB95F7A06")
          void setBounds(int x, int y, int width, int height) {
             this.x = x;
@@ -363,6 +371,7 @@ ChildView var540C13E9E156B687226421B24F2DF178_206987639 =         null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.363 -0400", hash_original_method = "C5CB26D6C1A4635E70554CC63D76B563", hash_generated_method = "F8766B19830C35308C2A2B68B33543F5")
          void attachView(int x, int y, int width, int height) {
             addTaint(height);
@@ -448,6 +457,7 @@ ChildView var540C13E9E156B687226421B24F2DF178_206987639 =         null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.365 -0400", hash_original_method = "2FC5BD33F15E4B580397FED329387FB1", hash_generated_method = "766AEA0F1F8FC4C35F207C999F4B4121")
         private void removeViewOnUIThread() {
             mWebView.removeView(mView);

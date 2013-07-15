@@ -15,11 +15,13 @@ public final class ASN1Boolean extends ASN1Primitive {
     }
 
     
-        public static ASN1Boolean getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1Boolean getInstance() {
         return ASN1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.536 -0400", hash_original_method = "4CABEEE4334687B876309AFB865CC60D", hash_generated_method = "9A5B816C2507BCFA3CB7CB019F3E94E4")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -42,6 +44,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_820899395 =         getDecodedObject(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.537 -0400", hash_original_method = "61E80FB6E60B72FAF41ECC8283C8390E", hash_generated_method = "B759BE955BD8C2DF6A25369C07DE9FFC")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -72,6 +75,7 @@ Object varA0859487E5CB2E75775DF67E6DA72EE1_1389835050 =         Boolean.TRUE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.537 -0400", hash_original_method = "E10D3150F01479FE85EBF9E119EE1844", hash_generated_method = "ADD6B66DD5F7D62A67493A1B7F36DBC6")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());

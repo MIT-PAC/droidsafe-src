@@ -87,6 +87,7 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_450775086 =         copy(this, ma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.075 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "90797DFA61554814F3288FD3E0AE8712")
     @Override
     public boolean isReadOnly() {

@@ -32,6 +32,7 @@ public class RegistrantList {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.454 -0400", hash_original_method = "8738C2928375831BBA08E54EFA7A0387", hash_generated_method = "599815918E584BB248E86CA3FA837C29")
     public synchronized void addUnique(Handler h, int what, Object obj) {
         addTaint(obj.getTaint());

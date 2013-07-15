@@ -40,7 +40,8 @@ public class DEREnumerated extends ASN1Object {
     }
 
     
-        public static DEREnumerated getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DEREnumerated getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DEREnumerated)
         {

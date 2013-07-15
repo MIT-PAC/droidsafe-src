@@ -58,6 +58,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.265 -0400", hash_original_method = "A93F195BA36C5C6DC02ECFC655EFA07D", hash_generated_method = "CC0B2F8B62006ACE9D4C68D54C0E7138")
     public String getAlgorithmName() {
 String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
@@ -68,6 +69,7 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.265 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "E3A8AF639271E58A27F3059EE240FF05")
     public int getDigestSize() {
         int var4582481E693E9037762BFFA6D99AC172_949686236 = (DIGEST_LENGTH);
@@ -181,6 +183,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.266 -0400", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "7A596A419272FE55426C1C8F8F275D9A")
     private int f(
         int    u,
@@ -197,6 +200,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.266 -0400", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "11FD5BC79042F838CF83665AB701E0E2")
     private int h(
         int    u,
@@ -213,6 +217,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.266 -0400", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "03F9B8A034BB92D6276A5BBA7FF8CEFA")
     private int g(
         int    u,

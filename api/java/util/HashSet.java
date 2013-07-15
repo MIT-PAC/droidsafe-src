@@ -74,6 +74,7 @@ for(E e : collection)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.429 -0400", hash_original_method = "D1F4FC32E5186C24AE3390A47EF5E437", hash_generated_method = "CF81A1C669460918C76387BC42D2377A")
     @Override
     public void clear() {
@@ -83,6 +84,7 @@ for(E e : collection)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.429 -0400", hash_original_method = "955CE9C49A99D547E9A8BE3B956E5B23", hash_generated_method = "F107DF35BEDE79766149605ABEA037E7")
     @Override
     @SuppressWarnings("unchecked")
@@ -112,6 +114,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1848498191 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.430 -0400", hash_original_method = "AD711C882942D0735888BB68CE9E534B", hash_generated_method = "F41DAD28B1970E3826F55DA449A1F0AD")
     @Override
     public boolean contains(Object object) {
@@ -124,6 +127,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1848498191 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.430 -0400", hash_original_method = "F7F7DD28C713C48E265211D2C1797222", hash_generated_method = "0B18EE10F82994B5E18087C6172634A2")
     @Override
     public boolean isEmpty() {
@@ -146,6 +150,7 @@ Iterator<E> var286E0827A1FF5574E4CA8F3B053AEA56_1882392333 =         backingMap.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.431 -0400", hash_original_method = "F3CD9B8F3305DC4B74C3868451BADF13", hash_generated_method = "A47F1B41922D00086353AAB81D41EE3A")
     @Override
     public boolean remove(Object object) {
@@ -158,6 +163,7 @@ Iterator<E> var286E0827A1FF5574E4CA8F3B053AEA56_1882392333 =         backingMap.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.431 -0400", hash_original_method = "F79E6854B97378719F36DC505CE23018", hash_generated_method = "548BB9F7B585CE4F22CA3976C77EF96A")
     @Override
     public int size() {
@@ -169,6 +175,7 @@ Iterator<E> var286E0827A1FF5574E4CA8F3B053AEA56_1882392333 =         backingMap.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.432 -0400", hash_original_method = "338B1A875F3BC7E4991A09D0F5CEB0AA", hash_generated_method = "07AF6EC737A10200DDD2FAF359C27B81")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -191,6 +198,7 @@ for(E e : this)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.432 -0400", hash_original_method = "A3FDF0D301AE73958000FBEC5434608A", hash_generated_method = "E8E7D5F7F203631BFBFB53FE54177525")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,

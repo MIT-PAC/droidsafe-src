@@ -128,7 +128,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static Uri addToMyContactsGroup(ContentResolver resolver, long personId) {
             long groupId = tryGetMyContactsGroupId(resolver);
             if (groupId == 0) {
@@ -138,7 +139,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static Uri addToGroup(ContentResolver resolver, long personId, String groupName) {
             long groupId = 0;
             Cursor groupsCursor = resolver.query(Groups.CONTENT_URI, GROUPS_PROJECTION,
@@ -159,7 +161,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static Uri addToGroup(ContentResolver resolver, long personId, long groupId) {
             ContentValues values = new ContentValues();
             values.put(GroupMembership.PERSON_ID, personId);
@@ -168,7 +171,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static Uri createPersonInMyContactsGroup(ContentResolver resolver,
                 ContentValues values) {
             Uri contactUri = resolver.insert(People.CONTENT_URI, values);
@@ -191,7 +195,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static void setPhotoData(ContentResolver cr, Uri person, byte[] data) {
             Uri photoUri = Uri.withAppendedPath(person, Contacts.Photos.CONTENT_DIRECTORY);
             ContentValues values = new ContentValues();
@@ -200,7 +205,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri person) {
             Uri photoUri = Uri.withAppendedPath(person, Contacts.Photos.CONTENT_DIRECTORY);
             Cursor cursor = cr.query(photoUri, new String[]{Photos.DATA}, null, null, null);
@@ -219,7 +225,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SPEC)
+        @Deprecated
         public static Bitmap loadContactPhoto(Context context, Uri person,
                 int placeholderImageResource, BitmapFactory.Options options) {
             if (person == null) {
@@ -565,7 +572,8 @@ public class Contacts {
         }
 
         
-                @Deprecated
+                @DSModeled(DSC.SAFE)
+        @Deprecated
         public static String lookupProviderNameFromId(int protocol) {
             switch (protocol) {
                 case PROTOCOL_GOOGLE_TALK:

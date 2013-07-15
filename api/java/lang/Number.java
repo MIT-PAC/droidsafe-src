@@ -13,6 +13,7 @@ public abstract class Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.039 -0400", hash_original_method = "CE1931476457BE311793F2D350973D7B", hash_generated_method = "EE4917FF7FB020A32687DC16DECB1894")
     public byte byteValue() {
         byte varAB6A0977A2AC1051631C41A28EA37E35_1958161933 = ((byte) intValue());
@@ -35,6 +36,7 @@ public abstract class Number implements java.io.Serializable {
     public abstract long longValue();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.040 -0400", hash_original_method = "C1E7C69DF6DC74A923544E16C9C68CB8", hash_generated_method = "075E8BCAF882F52F811344A390CC3F59")
     public short shortValue() {
         short var608412D86CCC90218FD932B136578864_551288196 = ((short) intValue());

@@ -28,6 +28,7 @@ public class BitwiseInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.634 -0400", hash_original_method = "66AE1F5CE6A7D22DCB733CBBD166C2BB", hash_generated_method = "7E7A07A0DF92F098FD4DE0543FBECE2C")
     public int available() {
         int var25F27EDFF759489C17F7B43F667E4B74_488341496 = (mEnd - mPos);

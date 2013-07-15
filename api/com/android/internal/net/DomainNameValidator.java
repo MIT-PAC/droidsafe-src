@@ -25,7 +25,8 @@ public class DomainNameValidator {
     }
 
 
-        public static boolean match(X509Certificate certificate, String thisDomain) {
+        @DSModeled(DSC.SPEC)
+    public static boolean match(X509Certificate certificate, String thisDomain) {
         if (certificate == null || thisDomain == null || thisDomain.length() == 0) {
             return false;
         }
@@ -38,7 +39,8 @@ public class DomainNameValidator {
     }
 
     
-        private static boolean isIpAddress(String domain) {
+        @DSModeled(DSC.SPEC)
+    private static boolean isIpAddress(String domain) {
         boolean rval = (domain != null && domain.length() != 0);
         if (rval) {
             try {
@@ -55,7 +57,8 @@ public class DomainNameValidator {
     }
 
     
-        private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
+        @DSModeled(DSC.SPEC)
+    private static boolean matchIpAddress(X509Certificate certificate, String thisDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchIpAddress(): this domain: " + thisDomain);
         }
@@ -88,7 +91,8 @@ public class DomainNameValidator {
     }
 
     
-        private static boolean matchDns(X509Certificate certificate, String thisDomain) {
+        @DSModeled(DSC.SPEC)
+    private static boolean matchDns(X509Certificate certificate, String thisDomain) {
         boolean hasDns = false;
         try {
             Collection subjectAltNames = certificate.getSubjectAlternativeNames();
@@ -136,7 +140,8 @@ public class DomainNameValidator {
     }
 
     
-        public static boolean matchDns(String thisDomain, String thatDomain) {
+        @DSModeled(DSC.SPEC)
+    public static boolean matchDns(String thisDomain, String thatDomain) {
         if (LOG_ENABLED) {
             Log.v(TAG, "DomainNameValidator.matchDns():" +
                       " this domain: " + thisDomain +
@@ -176,7 +181,8 @@ public class DomainNameValidator {
     }
 
     
-        private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
+        @DSModeled(DSC.SPEC)
+    private static boolean domainTokenMatch(String thisDomainToken, String thatDomainToken) {
         if (thisDomainToken != null && thatDomainToken != null) {
             int starIndex = thatDomainToken.indexOf('*');
             if (starIndex >= 0) {

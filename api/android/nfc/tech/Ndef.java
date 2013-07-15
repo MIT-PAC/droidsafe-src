@@ -71,6 +71,7 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.977 -0400", hash_original_method = "522E1BD05C0F58597909DF2D37B1E51E", hash_generated_method = "399F10DAB861BA0EAA69165285BF24AE")
     public NdefMessage getCachedNdefMessage() {
 NdefMessage var50637A8CAA6C154F069E6CB5B77579E1_338314332 =         mNdefMsg;
@@ -81,6 +82,7 @@ NdefMessage var50637A8CAA6C154F069E6CB5B77579E1_338314332 =         mNdefMsg;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.977 -0400", hash_original_method = "A8A4A8CA63E3E206537FB1A4A1A58DE6", hash_generated_method = "10204BDF40E4ECD7D8B8642ECB041EA1")
     public String getType() {
 switch(mNdefType){
@@ -133,6 +135,7 @@ String var49B0340B189DF21DA2EA3B0C615D6956_1816627683 =         UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.977 -0400", hash_original_method = "4EADEE4A8AA14EA957D69BF1EB117D34", hash_generated_method = "4F634272A829D01691C8A2A70F40F197")
     public int getMaxSize() {
         int var86DEF057D6C153F9465C3DFD099AF5F7_1683567870 = (mMaxNdefSize);
@@ -143,6 +146,7 @@ String var49B0340B189DF21DA2EA3B0C615D6956_1816627683 =         UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.978 -0400", hash_original_method = "9C15355B29C0704385FAC8BA222CAFE7", hash_generated_method = "43EF999DCA08CB0F0CCBFDB8DDBBDB52")
     public boolean isWritable() {
         boolean varA0046E7AEC22D68949B4767022B18C54_2031903712 = ((mCardState == NDEF_MODE_READ_WRITE));

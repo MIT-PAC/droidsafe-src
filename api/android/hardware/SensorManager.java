@@ -47,7 +47,8 @@ public class SensorManager {
                     {
                         sRotation = sWindowManager.watchRotation(
                                 new IRotationWatcher.Stub() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.643 -0400", hash_original_method = "BE005D6720C412EC6EF9D753DC3A6572", hash_generated_method = "8EA42E6D43241D0206B6DC60B9F6F77A")
+        @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.643 -0400", hash_original_method = "BE005D6720C412EC6EF9D753DC3A6572", hash_generated_method = "8EA42E6D43241D0206B6DC60B9F6F77A")
         public void onRotationChanged(int rotation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(rotation);
@@ -86,6 +87,7 @@ public class SensorManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.643 -0400", hash_original_method = "F97F3FCBB2B92661C96383BC3925201E", hash_generated_method = "3CFD196B365044A1A5FFD2FAAE2176A0")
     private int getLegacySensorType(int type) {
         addTaint(type);
@@ -784,7 +786,8 @@ for(Sensor sensor : l.getSensors())
     }
 
     
-        private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
+        @DSModeled(DSC.SAFE)
+    private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
             float[] outR) {
         final int length = outR.length;
         if (inR.length != length)
@@ -843,6 +846,7 @@ for(Sensor sensor : l.getSensors())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.650 -0400", hash_original_method = "E0193DACD15BA8C3AC5F2C441048790B", hash_generated_method = "B34A525C381EDA5A5B0DE28BF7161FD3")
     public void onRotationChanged(int rotation) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -858,7 +862,8 @@ for(Sensor sensor : l.getSensors())
     }
 
     
-        static int getRotation() {
+        @DSModeled(DSC.SAFE)
+    static int getRotation() {
         synchronized(sListeners) {
             return sRotation;
         }
@@ -1100,6 +1105,7 @@ SensorEvent varE0D714D758F1540A8DF364A965AF9150_1960276003 =             t;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.659 -0400", hash_original_method = "C46016A1870C47E495A9527702944C16", hash_generated_method = "53B1EAA66C1F07A1BB242EC8E13B94A3")
          void returnToPool(SensorEvent t) {
             synchronized
@@ -1140,6 +1146,7 @@ SensorEvent varE0D714D758F1540A8DF364A965AF9150_1960276003 =             t;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.659 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "0065A500F2AC1D21DA0CBFBF0E28A56E")
         @Override
         protected void finalize() {
@@ -1338,6 +1345,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.663 -0400", hash_original_method = "02DCCE55D13DD3643E30DA559E9BDE85", hash_generated_method = "D6A57A9A1A4C320FDEEFEFACFFDCF443")
          Object getListener() {
 Object varFAD396F42DA56E191298301CDF4D94E9_1471828066 =             mSensorEventListener;
@@ -1459,6 +1467,7 @@ List<Sensor> var36B0792504C876866982C584D92C4023_1670422809 =             mSenso
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.666 -0400", hash_original_method = "4097E1683A40A6DEAB5492A2296E3879", hash_generated_method = "8131930ADF7BA919DC4A2597B2FC2264")
          void registerSensor(int legacyType) {
             //DSFIXME: CODE0010: Possible callback registration function detected
@@ -1468,6 +1477,7 @@ List<Sensor> var36B0792504C876866982C584D92C4023_1670422809 =             mSenso
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.666 -0400", hash_original_method = "737F8C4556D577A83A29D9000B85627C", hash_generated_method = "0AF180BCC45B915D7C4FB2753D41AC7E")
          boolean unregisterSensor(int legacyType) {
             mSensors &= ~legacyType;
@@ -1560,6 +1570,7 @@ List<Sensor> var36B0792504C876866982C584D92C4023_1670422809 =             mSenso
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.673 -0400", hash_original_method = "7A14D827894C3DC6FC1EC81B36F33A0A", hash_generated_method = "4C265B1CB28A54021A32BEA4EF697D14")
         private void mapSensorDataToWindow(int sensor,
                 float[] values, int orientation) {

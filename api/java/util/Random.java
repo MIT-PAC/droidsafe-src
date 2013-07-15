@@ -34,6 +34,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.396 -0400", hash_original_method = "9E0494734DCD804B33C2E0A263F97885", hash_generated_method = "131B072C7E6B40C4AD58239C17A7BCDE")
     protected synchronized int next(int bits) {
         addTaint(bits);
@@ -47,6 +48,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.397 -0400", hash_original_method = "D8D2D3A52478C6F30DF9DDCAD352622E", hash_generated_method = "9AAC1E3CB898B8F232484D5B14F13932")
     public boolean nextBoolean() {
         boolean varCA8861120F0AB941311FD606936AD1E5_1154875379 = (next(1) != 0);
@@ -57,6 +59,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.397 -0400", hash_original_method = "43464E5BE3E8DA331BE8CD0E59C0FE2A", hash_generated_method = "E9ECC67DEADF617B8F2DD9375940BA04")
     public void nextBytes(byte[] buf) {
         addTaint(buf[0]);
@@ -93,6 +96,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.397 -0400", hash_original_method = "B5A1D72A0CE7841EEF7745ACB102A3D0", hash_generated_method = "554C5271871A57398B337F7491030B40")
     public double nextDouble() {
         double varD27B6CEA75917D0FF15F2CFB3386F105_1642359510 = (((((long) next(26) << 27) + next(27)) / (double) (1L << 53)));
@@ -103,6 +107,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.397 -0400", hash_original_method = "D1E3B2B06AA527A72663F03AD501BB2B", hash_generated_method = "F0A04B9031939C73E2822F28CBCE94ED")
     public float nextFloat() {
         float varE1AE47DB80FF00F3FF88DE1244CB9468_822637563 = ((next(24) / 16777216f));
@@ -113,6 +118,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.398 -0400", hash_original_method = "ABAEC318233CC46845A76D8E695280DE", hash_generated_method = "BE8BEC6B4A4EF768FB899C9C43C74CE1")
     public synchronized double nextGaussian() {
     if(haveNextNextGaussian)        
@@ -156,6 +162,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.398 -0400", hash_original_method = "82F6347EB6C4A01CB76B611DAE5AF092", hash_generated_method = "28FB1138F7F5EA0DDC0F48C84E28E6E2")
     public int nextInt() {
         int var8B0AC68F59BC17A78A9F256008379710_643016228 = (next(32));
@@ -166,6 +173,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.398 -0400", hash_original_method = "173DEE1A34208F3BEEC0CED47E74657B", hash_generated_method = "AF843E51DBC4090F13967C02AE5AC416")
     public int nextInt(int n) {
         addTaint(n);
@@ -208,6 +216,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.399 -0400", hash_original_method = "A03CC01D80C9639D8965955A7EA1BA6B", hash_generated_method = "247C32715084435AF796FD7DE5ADFD1B")
     public long nextLong() {
         long var962C6FCA0D63E465F54D35D48BD9AD0A_2066765862 = (((long) next(32) << 32) + next(32));
@@ -218,6 +227,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.399 -0400", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "698784A92CF20D1A4151BF7CEB8BC18D")
     public synchronized void setSeed(long seed) {
         this.seed = (seed ^ multiplier) & ((1L << 48) - 1);

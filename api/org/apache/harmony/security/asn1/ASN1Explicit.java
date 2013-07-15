@@ -31,6 +31,7 @@ public final class ASN1Explicit extends ASN1Constructed {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.589 -0400", hash_original_method = "BF5194A9A90A1C345CA0C933EC20C89E", hash_generated_method = "BCAA1C3327D86DC612F57AB7AB96C8E3")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());

@@ -54,6 +54,7 @@ public class RSAPrivateCrtKeySpec extends RSAPrivateKeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.003 -0400", hash_original_method = "ACBFCDB81BF18ABF0A77938A5EED41BC", hash_generated_method = "2A81288F2D5F1893DCD15FFDA6E65469")
     public BigInteger getCrtCoefficient() {
 BigInteger varE176544C9DF7D922EBBC7594A3F6EDA9_1675677343 =         crtCoefficient;
@@ -64,6 +65,7 @@ BigInteger varE176544C9DF7D922EBBC7594A3F6EDA9_1675677343 =         crtCoefficie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.003 -0400", hash_original_method = "F0E07FFA226AFDFA80184533230F10C0", hash_generated_method = "5485B9A7318F7137F06205D9DA5BDDE8")
     public BigInteger getPrimeExponentP() {
 BigInteger varAA074CC88CC92AEA2D4E4081F7594053_391275279 =         primeExponentP;
@@ -74,6 +76,7 @@ BigInteger varAA074CC88CC92AEA2D4E4081F7594053_391275279 =         primeExponent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.004 -0400", hash_original_method = "E723F3703FB87A9BEB77BD8EB83B9C01", hash_generated_method = "3BDF7D2DE0BF9EE30F31F1F74CF5D702")
     public BigInteger getPrimeExponentQ() {
 BigInteger var898B8E46AFF67FEE963239579DEFDFFC_464109959 =         primeExponentQ;
@@ -84,6 +87,7 @@ BigInteger var898B8E46AFF67FEE963239579DEFDFFC_464109959 =         primeExponent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.004 -0400", hash_original_method = "6B317E4DBB0CE4C27ED249BB287307E9", hash_generated_method = "95BD16221A3C412A40B917B5FBE0B880")
     public BigInteger getPrimeP() {
 BigInteger var829C658792E2A4C4CA698B35893B0ED5_683769495 =         primeP;
@@ -94,6 +98,7 @@ BigInteger var829C658792E2A4C4CA698B35893B0ED5_683769495 =         primeP;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.004 -0400", hash_original_method = "A63916054BB1CFBFE5DBD277F62696D2", hash_generated_method = "BAB7C319DFE48E39A1AABA4C3B5C51C8")
     public BigInteger getPrimeQ() {
 BigInteger varB065CE22BAA70D9D54312187FCC8B215_1639043277 =         primeQ;
@@ -104,6 +109,7 @@ BigInteger varB065CE22BAA70D9D54312187FCC8B215_1639043277 =         primeQ;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.004 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "D01EFA45A2C87DB75777B2D7FAEADA9E")
     public BigInteger getPublicExponent() {
 BigInteger varB360105573401CCC465D10C242BA5623_1953915569 =         publicExponent;

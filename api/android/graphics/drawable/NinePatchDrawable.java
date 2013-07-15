@@ -104,6 +104,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.554 -0400", hash_original_method = "0EDC8E1D8196DBA7E3430735EBC66D6F", hash_generated_method = "DCE32EDE24D2471C53AF18C0A7D9C77A")
     private void setNinePatchState(NinePatchState state, Resources res) {
         mNinePatchState = state;
@@ -134,6 +135,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.554 -0400", hash_original_method = "82585E992AABF5984A06ED90552A1C77", hash_generated_method = "08ADEC9348B823ADA440A2B50003FC7E")
     public void setTargetDensity(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -143,6 +145,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.555 -0400", hash_original_method = "4AE49AE83EF2F62C9A584A758B5178F3", hash_generated_method = "A780DDFCC4CBE80D7EFC83D56CFDF67F")
     public void setTargetDensity(DisplayMetrics metrics) {
         addTaint(metrics.getTaint());
@@ -152,6 +155,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.556 -0400", hash_original_method = "F1F344BB6765FE54A2E40BB8E2AEB010", hash_generated_method = "663F370820EEE6B0F09592798FB8B7FE")
     public void setTargetDensity(int density) {
     if(density != mTargetDensity)        
@@ -174,6 +178,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.557 -0400", hash_original_method = "E8279E2F004E74E2D3A3C9AE5B1B6A96", hash_generated_method = "2F9B40EE02EDB2B79413BDB88C9DB922")
     private void computeBitmapSize() {
         final int sdensity = mNinePatch.getDensity();
@@ -208,6 +213,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.558 -0400", hash_original_method = "D590BE7B225C8366E27B182C22714F49", hash_generated_method = "68817A4D82208748CCCB18662DE8F22C")
     @Override
     public void draw(Canvas canvas) {
@@ -218,6 +224,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.558 -0400", hash_original_method = "F3B5E1AA8DCA42FBC0209DF5DE34A528", hash_generated_method = "734E9DA91708C062EC61C703D46792FD")
     @Override
     public int getChangingConfigurations() {
@@ -229,6 +236,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.558 -0400", hash_original_method = "6A7A0B10486EA74D6FDB7CE40BB96DCF", hash_generated_method = "5EBEB93CE7DE80ED1C7C6437B3935C57")
     @Override
     public boolean getPadding(Rect padding) {
@@ -243,6 +251,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.559 -0400", hash_original_method = "DDA2062A293BD75777B2540266427F8E", hash_generated_method = "F8A78663CF2F4AC718440E66820427BE")
     @Override
     public void setAlpha(int alpha) {
@@ -262,6 +271,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.559 -0400", hash_original_method = "D5833F804B1FB713A7DF2F016B869F27", hash_generated_method = "89715F17A80D029628E79EDC871F41CC")
     @Override
     public void setColorFilter(ColorFilter cf) {
@@ -281,6 +291,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.560 -0400", hash_original_method = "CFE043442F57EFE9659FF8A6FEAF97CC", hash_generated_method = "409BC327B8F2379309AF89351EAE4A5D")
     @Override
     public void setDither(boolean dither) {
@@ -300,6 +311,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.560 -0400", hash_original_method = "49680E18787729BA4FD04D8979679DC0", hash_generated_method = "EDBDDF9F19B2257AC18DC725CB72BD76")
     @Override
     public void setFilterBitmap(boolean filter) {
@@ -312,6 +324,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.561 -0400", hash_original_method = "14B4EEBEDACB44F7F53A884DE9C011A3", hash_generated_method = "483B6F54D6E5AF9CF6384DFE93D51BC5")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -374,6 +387,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.562 -0400", hash_original_method = "075C514CB6C74FC258CE8B3440B31BB9", hash_generated_method = "7B02B4F33F7C8D2E9136EA2BD2CBA980")
     public Paint getPaint() {
     if(mPaint == null)        
@@ -393,6 +407,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.563 -0400", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "260BA9FD7EDB5B2CA0030730348F0ADE")
     @Override
     public int getIntrinsicWidth() {
@@ -404,6 +419,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.563 -0400", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "223DB29D550EC208F07F53FCFF212F91")
     @Override
     public int getIntrinsicHeight() {
@@ -415,6 +431,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.564 -0400", hash_original_method = "F677AE1ECA1CBA7AB5A76B8BE368A72F", hash_generated_method = "05A6EE8C28470E9AE7A809CF92730282")
     @Override
     public int getMinimumWidth() {
@@ -426,6 +443,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.564 -0400", hash_original_method = "0C368C2268B0130C3ACD75434C6C4889", hash_generated_method = "CA97E18E0F6318B3113CCA583443559F")
     @Override
     public int getMinimumHeight() {
@@ -437,6 +455,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.564 -0400", hash_original_method = "B22FBB09C864D64632C83D9F48FAF25E", hash_generated_method = "D60C44E148120CDC7339DFB768493A62")
     @Override
     public int getOpacity() {
@@ -450,6 +469,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.565 -0400", hash_original_method = "015B10918498A51630C2035B52469361", hash_generated_method = "7D29B8BE533BE6A79D734F0469E85F3A")
     @Override
     public Region getTransparentRegion() {
@@ -461,6 +481,7 @@ Region var8C9A2FFDF223620D1B8C5F01ABD6446A_1819782474 =         mNinePatch.getTr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.565 -0400", hash_original_method = "4F3C3B017CDA56F4212D4719D10B45C1", hash_generated_method = "BDCD3A006EE038DC3E8380623919E8EC")
     @Override
     public ConstantState getConstantState() {
@@ -474,6 +495,7 @@ ConstantState varE83629E35F6F9864AC8A339BA860BD8D_908196033 =         mNinePatch
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.566 -0400", hash_original_method = "EEABBB7B802F633C5D2C005A94C5FF68", hash_generated_method = "A2FF01FF94466BF5747BECA3A18F55C7")
     @Override
     public Drawable mutate() {
@@ -573,6 +595,7 @@ Drawable var19C30D5C28617817A3DDE2E024CBC4EE_10788500 =             new NinePatc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.570 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "1A925A097CA84964C60499D5123A49E9")
         @Override
         public int getChangingConfigurations() {

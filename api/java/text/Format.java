@@ -14,6 +14,7 @@ public abstract class Format implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.678 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "AE2BDB91C20849CF6DB7908F342316E3")
     @Override
     public Object clone() {
@@ -55,6 +56,7 @@ String var8CB4AA7B650AA7040D828797C5473E3E_458678430 =         format(object, ne
             FieldPosition field);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.680 -0400", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "0B767908623DAC78138F653602E4FFFA")
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         addTaint(object.getTaint());
@@ -66,6 +68,7 @@ AttributedCharacterIterator var55BEE374F3F96F74248D37376B200680_287148818 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.680 -0400", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "29EED93628B8ED5C4DC41AE1A6539BF7")
     public Object parseObject(String string) throws ParseException {
         addTaint(string.getTaint());
@@ -93,7 +96,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_627065926 =         result;
     public abstract Object parseObject(String string, ParsePosition position);
 
     
-        static boolean upTo(String string, ParsePosition position,
+        @DSModeled(DSC.SAFE)
+    static boolean upTo(String string, ParsePosition position,
             StringBuffer buffer, char stop) {
         int index = position.getIndex(), length = string.length();
         boolean lastQuote = false, quote = false;
@@ -118,7 +122,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_627065926 =         result;
     }
 
     
-        static boolean upToWithQuotes(String string, ParsePosition position,
+        @DSModeled(DSC.SAFE)
+    static boolean upToWithQuotes(String string, ParsePosition position,
             StringBuffer buffer, char stop, char start) {
         int index = position.getIndex(), length = string.length(), count = 1;
         boolean quote = false;

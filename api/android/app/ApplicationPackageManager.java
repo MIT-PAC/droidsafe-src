@@ -153,6 +153,7 @@ String[] var7E7E7838A1BF04C6EBC5094AE21CEB27_662491329 =             mPM.canonic
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.472 -0400", hash_original_method = "A679E3857CF73FF4B9C2EA4F09C7DBB7", hash_generated_method = "175E8C5788F2B45A5A2DA85B6D6DC5A1")
     @Override
     public Intent getLaunchIntentForPackage(String packageName) {
@@ -396,6 +397,7 @@ ApplicationInfo varF0D6783F85B950884EE206D023A357C0_908217089 =                 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.480 -0400", hash_original_method = "9B4FC7EA40C0BB7AEEEEEF1D86D28DE8", hash_generated_method = "9E857E75207012D5CBD811957FEFEB06")
     @Override
     public ActivityInfo getActivityInfo(ComponentName className, int flags) throws NameNotFoundException {
@@ -433,6 +435,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1985263562 =                 ai
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.482 -0400", hash_original_method = "399255B19735D8EC733B05B14D3B4711", hash_generated_method = "CB9A99559EAD8F6E25D57D6644F381E2")
     @Override
     public ActivityInfo getReceiverInfo(ComponentName className, int flags) throws NameNotFoundException {
@@ -470,6 +473,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_354165559 =                 ai;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.483 -0400", hash_original_method = "50C1BC4F3995D229FF03E27E05E5BE36", hash_generated_method = "F5435ECFEEB22550E6DCCFEDD937F50E")
     @Override
     public ServiceInfo getServiceInfo(ComponentName className, int flags) throws NameNotFoundException {
@@ -507,6 +511,7 @@ ServiceInfo var316474D4DA67FD8479E170FE8E19F283_2040483510 =                 si;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.484 -0400", hash_original_method = "895E4F29ECA72E6836B6F503A466760A", hash_generated_method = "B3C3ECE3D921362BC1D0461791CC5259")
     @Override
     public ProviderInfo getProviderInfo(ComponentName className, int flags) throws NameNotFoundException {
@@ -942,6 +947,7 @@ List<ApplicationInfo> var476DDE830C1E7D654398FCDB6BE91BEE_105482440 =           
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.511 -0400", hash_original_method = "0CD7CD39AE65A355BC33F2BA54C4DC37", hash_generated_method = "F4274A646A8A98F29BFAC8FC3584B4D2")
     @Override
     public ResolveInfo resolveActivity(Intent intent, int flags) {
@@ -1089,6 +1095,7 @@ List<ResolveInfo> var8B6E5F8859DD8885402EF5F1767EE1FF_284700824 =             mP
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.522 -0400", hash_original_method = "D7D4C733DB611C9D18D346868F9BD0BD", hash_generated_method = "C65DEB5B24439D36D3EEB2647CEF05D9")
     @Override
     public ResolveInfo resolveService(Intent intent, int flags) {
@@ -1208,6 +1215,7 @@ List<ProviderInfo> var649783037687051D01975EFAA3A897C3_1648267626 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.529 -0400", hash_original_method = "3120887453BFC9391A593077A4EB2D8C", hash_generated_method = "C919073F7EB1BBC28BA4AB0E3D6E7EFC")
     @Override
     public InstrumentationInfo getInstrumentationInfo(
@@ -1346,6 +1354,7 @@ Drawable var0D423A11B11A8CD7FA1178796A4F2B7F_715556877 =         getActivityInfo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.539 -0400", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "BBDB7990CDE5AC800373BC61EEA38587")
     @Override
     public Drawable getActivityIcon(Intent intent) throws NameNotFoundException {
@@ -1429,6 +1438,7 @@ Drawable varE23F661D14D7DE981F8F4A7E8A778432_1316197640 =         getActivityInf
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.550 -0400", hash_original_method = "3B1A86BB5E25FB8EFA7A1AD1A88B3B01", hash_generated_method = "2A80931DE83924C23539D79F6A9E0458")
     @Override
     public Drawable getActivityLogo(Intent intent) throws NameNotFoundException {
@@ -1593,6 +1603,7 @@ Resources var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932 =         getResourcesF
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.562 -0400", hash_original_method = "805BC435FDAE098AFC4F53B40E89D7C1", hash_generated_method = "1645948CFCE7074B6A2875A16B6EC861")
     private Drawable getCachedIcon(ResourceName name) {
         addTaint(name.getTaint());
@@ -1639,7 +1650,8 @@ Drawable var540C13E9E156B687226421B24F2DF178_716524834 =         null;
     }
 
     
-        static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo) {
+        @DSModeled(DSC.BAN)
+    static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo) {
         boolean immediateGc = false;
         if (cmd == IApplicationThread.EXTERNAL_STORAGE_UNAVAILABLE) {
             immediateGc = true;
@@ -1681,6 +1693,7 @@ Drawable var540C13E9E156B687226421B24F2DF178_716524834 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.569 -0400", hash_original_method = "B66098C8E55783775B73FA7D73879D41", hash_generated_method = "94134107A668F6EA901AFFE0A5C3180E")
     private CharSequence getCachedString(ResourceName name) {
         addTaint(name.getTaint());
@@ -1854,6 +1867,7 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.580 -0400", hash_original_method = "99610A6DD5E10C01303307EBA6938AA8", hash_generated_method = "2A5B0EA45A3D6EA2D700B737770C1E15")
     @Override
     public void installPackage(Uri packageURI, IPackageInstallObserver observer, int flags,
@@ -1877,6 +1891,7 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.581 -0400", hash_original_method = "769145FCC72852B2314845C8A89A2DAD", hash_generated_method = "444D9A5DE967A3750EA4B71318F6E866")
     @Override
     public void installPackageWithVerification(Uri packageURI, IPackageInstallObserver observer,
@@ -1905,6 +1920,7 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.582 -0400", hash_original_method = "E593338881B3E45506EA974F446D2A6B", hash_generated_method = "62CA204D9551A58E7372CB12E6B5754E")
     @Override
     public void verifyPendingInstall(int id, int response) {
@@ -1925,6 +1941,7 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.583 -0400", hash_original_method = "A168A8E169316429D31E261AD639AED4", hash_generated_method = "F58CD5A8DA31BE565243A0A5975D77BF")
     @Override
     public void setInstallerPackageName(String targetPackage,
@@ -1946,6 +1963,7 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.585 -0400", hash_original_method = "D8F1CA3B8F90BF876B114DD825F09703", hash_generated_method = "03A2C558F2A010B045FEEADA53758B3C")
     @Override
     public void movePackage(String packageName, IPackageMoveObserver observer, int flags) {
@@ -1967,6 +1985,7 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.586 -0400", hash_original_method = "13C0F9FC5FF4142BD538C8A3AADB3621", hash_generated_method = "9DDD8AFAF91E096423E588E645359712")
     @Override
     public String getInstallerPackageName(String packageName) {
@@ -1992,6 +2011,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.588 -0400", hash_original_method = "6B4A8C0BA02325B97A4B696E509E27F1", hash_generated_method = "C4B0DF22FF374AD59393240959C2E93A")
     @Override
     public void deletePackage(String packageName, IPackageDeleteObserver observer, int flags) {
@@ -2013,6 +2033,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.589 -0400", hash_original_method = "41D4F7CDEA8F3FA97A215E5DB5AE3B7F", hash_generated_method = "039208596E478E2ECAE772814A90F585")
     @Override
     public void clearApplicationUserData(String packageName,
@@ -2034,6 +2055,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.590 -0400", hash_original_method = "9E003FA712762A764BBDA3187B8255C1", hash_generated_method = "5BC33433D6FF6317367938E5077B9381")
     @Override
     public void deleteApplicationCacheFiles(String packageName,
@@ -2055,6 +2077,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.592 -0400", hash_original_method = "E7A7F0006F405C835ECAAE7B969343FA", hash_generated_method = "0DFC32E806D142AE27C062EF41564979")
     @Override
     public void freeStorageAndNotify(long idealStorageSize, IPackageDataObserver observer) {
@@ -2075,6 +2098,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.593 -0400", hash_original_method = "8531AD2E443F843CDBBD03DDCC5F2882", hash_generated_method = "96740309BB7679BBF21F654441046A5F")
     @Override
     public void freeStorage(long freeStorageSize, IntentSender pi) {
@@ -2095,6 +2119,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.595 -0400", hash_original_method = "00314015F36B785D35449EC7724DA4A0", hash_generated_method = "283CDB9FA37FC104E9108C08680C4FF1")
     @Override
     public void getPackageSizeInfo(String packageName,
@@ -2116,6 +2141,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.596 -0400", hash_original_method = "A9291C102B2FAAEF4C90A57E1B6DE098", hash_generated_method = "CEDBC66756B184FDFD6BD726CFE9C0B4")
     @Override
     public void addPackageToPreferred(String packageName) {
@@ -2135,6 +2161,7 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.598 -0400", hash_original_method = "F1B5214867A85B15353BE55995A19BB6", hash_generated_method = "95F674AB1D65C5BD91757ED9E1C0D26D")
     @Override
     public void removePackageFromPreferred(String packageName) {
@@ -2179,6 +2206,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.601 -0400", hash_original_method = "E5D2F7A75D600839A582F36FB9BA5425", hash_generated_method = "0CA7B05C47AD238DC8969FE5C9314B73")
     @Override
     public void addPreferredActivity(IntentFilter filter,
@@ -2202,6 +2230,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.604 -0400", hash_original_method = "2885B1E40721D55CC13EAA30EB1BAE52", hash_generated_method = "9C7807BF4DEA56696EE16ECA89DE8227")
     @Override
     public void replacePreferredActivity(IntentFilter filter,
@@ -2225,6 +2254,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.605 -0400", hash_original_method = "818084167B76F544DAE31D40EA850683", hash_generated_method = "47FF1463C70C2B3A5407D561B0CEF8EB")
     @Override
     public void clearPackagePreferredActivities(String packageName) {
@@ -2272,6 +2302,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.608 -0400", hash_original_method = "324289EEBFA692363CEA9B4C548C82A7", hash_generated_method = "175E90ECB2108950DE129925BC549CBB")
     @Override
     public void setComponentEnabledSetting(ComponentName componentName,
@@ -2294,6 +2325,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.609 -0400", hash_original_method = "214E6E4C94F679DC0FE6A4159B821EAF", hash_generated_method = "327D4A049B11F56EAB0F8167CD6B22DD")
     @Override
     public int getComponentEnabledSetting(ComponentName componentName) {
@@ -2319,6 +2351,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.610 -0400", hash_original_method = "893989AE0F295A10184FE7AD874B7991", hash_generated_method = "9AFCF0E334670CF211CE58750D6849C7")
     @Override
     public void setApplicationEnabledSetting(String packageName,
@@ -2341,6 +2374,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.611 -0400", hash_original_method = "786754E395F784476E8D899ABD01121D", hash_generated_method = "E39C84EDEBB2DA40889656A78E8671D2")
     @Override
     public int getApplicationEnabledSetting(String packageName) {
@@ -2366,6 +2400,7 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.611 -0400", hash_original_method = "26D19368C79A5889D2D25A72A45789A8", hash_generated_method = "5B4FACE291B3743B58B2A7B0BFB201F6")
     @Override
     public UserInfo createUser(String name, int flags) {
@@ -2411,6 +2446,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.614 -0400", hash_original_method = "7D391C716B6EBFD3B4233647A1DCBC34", hash_generated_method = "686BDFEC2AC7B57082B42E99E91E9BAE")
     @Override
     public boolean removeUser(int id) {
@@ -2436,6 +2472,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.615 -0400", hash_original_method = "C52981B6B26B608864F1952FFD2E785F", hash_generated_method = "768E22F6EBCD52428AB6C0593A94E9CB")
     @Override
     public void updateUserName(int id, String name) {
@@ -2445,6 +2482,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.616 -0400", hash_original_method = "B193A8F9463928060D13777D952477CD", hash_generated_method = "4CD5B965E87522729F955C64A5544391")
     @Override
     public void updateUserFlags(int id, int flags) {
@@ -2454,6 +2492,7 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.618 -0400", hash_original_method = "05FAEEF75E7B74D35A0F0687A4ACD32C", hash_generated_method = "D7F409BA880335DF49F329855BE8BFA9")
     @Override
     public VerifierDeviceIdentity getVerifierDeviceIdentity() {
@@ -2577,6 +2616,7 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.631 -0400", hash_original_method = "19C1C9668D8A7EEF540F3D9429936D14", hash_generated_method = "A1ECE9EE59FB553E853384C992BA45DD")
         @Override
         public String toString() {

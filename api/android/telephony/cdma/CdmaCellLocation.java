@@ -56,6 +56,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "5BA2DB973405907BCB7576020C4BB767", hash_generated_method = "ED79183241E911A02CADDEB67E7995B1")
     public int getBaseStationId() {
         int var83DE69BDE54D9DD130453E5F2CB98A4F_59585234 = (this.mBaseStationId);
@@ -66,6 +67,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "8D32771FFADF2E37F4C4C4E7BB2945F8", hash_generated_method = "FDBBB60D6486707E8F8E62B504326D2C")
     public int getBaseStationLatitude() {
         int varD18636815E0D0DF6EA3F7C118258ED98_1135826708 = (this.mBaseStationLatitude);
@@ -76,6 +78,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "B2E759A184D0C15083668122E08B0641", hash_generated_method = "A47F9B97D7616B259EF552A745EC3326")
     public int getBaseStationLongitude() {
         int var0C827E6E4C71764E5957681DD67AB006_1598289313 = (this.mBaseStationLongitude);
@@ -86,6 +89,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "04EC874B8F75B1ECBFD7677D98579191")
     public int getSystemId() {
         int varDC9AC627E8999951F7D1333DA260C4E1_504554422 = (this.mSystemId);
@@ -96,6 +100,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.722 -0400", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "284F46BFEF2A56E12E4AA9C18DC301B9")
     public int getNetworkId() {
         int varC36C789BAAC39C6FF0348461365E3AA8_569870999 = (this.mNetworkId);
@@ -106,6 +111,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.723 -0400", hash_original_method = "0C9042B8D6AE69440E11B69CE7953639", hash_generated_method = "677DCE7DC5322BDEF3694C512B2DB3B9")
     public void setStateInvalid() {
         this.mBaseStationId = -1;
@@ -122,6 +128,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.724 -0400", hash_original_method = "61B794D65EE283C3FD04A14E94D0946D", hash_generated_method = "95DF98EF65A56ED2B9C5F0DB04FA3610")
     public void setCellLocationData(int baseStationId, int baseStationLatitude,
          int baseStationLongitude) {
@@ -135,6 +142,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.725 -0400", hash_original_method = "4013196C0844C1883550E95EB904B1DA", hash_generated_method = "8A3DA43B0D301E0F9071C09FBAB3053B")
     public void setCellLocationData(int baseStationId, int baseStationLatitude,
          int baseStationLongitude, int systemId, int networkId) {
@@ -152,6 +160,7 @@ public class CdmaCellLocation extends CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.725 -0400", hash_original_method = "E85418559CBFBFDF0470CD6A904DEAD1", hash_generated_method = "BBC2EFAE3337287FD5918DC403AFB421")
     @Override
     public int hashCode() {
@@ -254,6 +263,7 @@ String varD00AE8B4DB8250B02A118CD67CC66F17_955463290 =         "[" + this.mBaseS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.727 -0400", hash_original_method = "8DF1697B3E0EEA68CA131C0067500EBA", hash_generated_method = "1794D8401C4AD6551BA43E8E7C63CC7B")
     public boolean isEmpty() {
         boolean var27982435A14BB8D93E80836A7CB07524_1431264457 = ((this.mBaseStationId == -1 &&

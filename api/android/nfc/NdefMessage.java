@@ -111,6 +111,7 @@ for(int i = 0;i < mRecords.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.531 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E31B4C49DD4EBE0A21B84FED4C0079C7")
     @Override
     public int describeContents() {
@@ -135,6 +136,7 @@ for(int i = 0;i < mRecords.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.532 -0400", hash_original_method = "58C82E5C0DBA98ED651A9002B9916229", hash_generated_method = "CE01ADC8DDB25FC358733D7B0668DACF")
     private int parseNdefMessage(byte[] data) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905133781 = getTaintInt();

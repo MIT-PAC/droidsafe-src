@@ -133,6 +133,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.492 -0400", hash_original_method = "57CB6888179AFBC1686AC8B460D38FA6", hash_generated_method = "F8C3FB414434B0F703F0AB1887F53A20")
     public boolean isRunning() {
         boolean varEDF4C7A103D013E4C010EA6C8903F47F_152215261 = (mRunning);
@@ -153,6 +154,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.492 -0400", hash_original_method = "47627FAA36D08729C94EAD6CAAA95F6C", hash_generated_method = "B72324DC5BF99CE998CCD4E6FD3A5032")
     public void run() {
         mCurrentDegrees += mIncrement;
@@ -209,6 +211,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.493 -0400", hash_original_method = "CE08CCF44A5C011BE03C2CE7D256555D", hash_generated_method = "A4EEC2109DDA0A9251ECA736814A28EF")
     public Drawable getDrawable() {
 Drawable varF9B456849C7B5DD9BFF89D3152C1C062_1806429315 =         mState.mDrawable;
@@ -450,6 +453,7 @@ ConstantState var540C13E9E156B687226421B24F2DF178_1566120816 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.502 -0400", hash_original_method = "B458BF95D94A39224F760F42AF094AE9", hash_generated_method = "C62AE0432E269CE7FBBF9D025C9EDB42")
     public void setFramesCount(int framesCount) {
         mState.mFramesCount = framesCount;
@@ -460,6 +464,7 @@ ConstantState var540C13E9E156B687226421B24F2DF178_1566120816 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.502 -0400", hash_original_method = "CDF8A4A058FBB62E5E21EBF9FD2DD694", hash_generated_method = "A03827D13AD31602F15D5BCB5CBA16BF")
     public void setFramesDuration(int framesDuration) {
         mState.mFrameDuration = framesDuration;
@@ -585,6 +590,7 @@ Drawable var1D65B721316462C507882262DDF59C8D_666503942 =             new Animate
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.510 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "6F7E308B8F34B1B50F72EC0ACB08F521")
         @Override
         public int getChangingConfigurations() {

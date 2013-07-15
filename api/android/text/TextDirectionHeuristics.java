@@ -16,7 +16,8 @@ public class TextDirectionHeuristics {
     }
 
 
-        private static TriState isRtlText(int directionality) {
+        @DSModeled(DSC.SAFE)
+    private static TriState isRtlText(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
                 return TriState.FALSE;
@@ -29,7 +30,8 @@ public class TextDirectionHeuristics {
     }
 
     
-        private static TriState isRtlTextOrFormat(int directionality) {
+        @DSModeled(DSC.SAFE)
+    private static TriState isRtlTextOrFormat(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING:
@@ -150,6 +152,7 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.979 -0400", hash_original_method = "F33559B09616EA1059BD515D9BD28DCA", hash_generated_method = "A4D175FDB5770CED5042A49F17B86302")
         @Override
         protected boolean defaultIsRtl() {

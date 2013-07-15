@@ -15,7 +15,8 @@ public final class Base64 {
     }
 
     
-        public static byte[] decode(byte[] in) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] decode(byte[] in) {
         return decode(in, in.length);
     }
 
@@ -84,7 +85,8 @@ public final class Base64 {
     }
 
     
-        public static String encode(byte[] in) {
+        @DSModeled(DSC.SAFE)
+    public static String encode(byte[] in) {
         int length = (in.length + 2) * 4 / 3;
         byte[] out = new byte[length];
         int index = 0, end = in.length - in.length % 3;

@@ -37,6 +37,7 @@ public class SipFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.285 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "371DE14694E31FB9B3B13865AB150E98")
     public synchronized SipStack createSipStack(Properties properties) throws PeerUnavailableException {
         addTaint(properties.getTaint());

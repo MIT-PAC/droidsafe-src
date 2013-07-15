@@ -29,7 +29,8 @@ public class BinderInternal {
     }
 
     
-        public static long getLastGcTime() {
+        @DSModeled(DSC.SAFE)
+    public static long getLastGcTime() {
         return mLastGcTime;
     }
 

@@ -26,6 +26,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.416 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "DC0814CD5BE8F2175EF3ABC5DA9CA6B6")
     @Override
     public byte byteValue() {
@@ -37,6 +38,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.417 -0400", hash_original_method = "9451F44BD5942680EA0D419B40FE27E5", hash_generated_method = "5E386943CB0CEDD2AFD5C2E8CCDCDAF3")
     public int compareTo(Short object) {
         addTaint(object.getTaint());
@@ -48,12 +50,14 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
-        public static int compare(long lhs, long rhs) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(long lhs, long rhs) {
         return lhs > rhs ? 1 : (lhs < rhs ? -1 : 0);
     }
 
     
-        public static Short decode(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Short decode(String string) throws NumberFormatException {
         int intValue = Integer.decode(string).intValue();
         short result = (short) intValue;
         if (result == intValue) {
@@ -63,6 +67,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.425 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "FA5336F4FCEC68AD14FADF69B3611110")
     @Override
     public double doubleValue() {
@@ -74,6 +79,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.430 -0400", hash_original_method = "0E7C562AADA4AAAABF3DA1440DB603BB", hash_generated_method = "45A51663C3CAB6D76756EF24F23FDEF8")
     @Override
     public boolean equals(Object object) {
@@ -86,6 +92,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.431 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "EBFE7F9BCFA0DA4182627C29FDA62BF1")
     @Override
     public float floatValue() {
@@ -97,6 +104,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.431 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "19736A14F0F637E10ABCD1862B905E32")
     @Override
     public int hashCode() {
@@ -108,6 +116,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.432 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "F667956BA449DF24FEBE8E2AA91C7FAC")
     @Override
     public int intValue() {
@@ -119,6 +128,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.432 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "4C674459D9A6B35E19D3DAF7492AFEB9")
     @Override
     public long longValue() {
@@ -130,12 +140,14 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
-        public static short parseShort(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static short parseShort(String string) throws NumberFormatException {
         return parseShort(string, 10);
     }
 
     
-        public static short parseShort(String string, int radix) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static short parseShort(String string, int radix) throws NumberFormatException {
         int intValue = Integer.parseInt(string, radix);
         short result = (short) intValue;
         if (result == intValue) {
@@ -145,6 +157,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.440 -0400", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "D366C5027317DAE2ADBAE9473D1EC256")
     @Override
     public short shortValue() {
@@ -156,6 +169,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.440 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "F17E5B1D3FA5D6B66233B02CD9EA4056")
     @Override
     public String toString() {
@@ -167,27 +181,32 @@ String var695C2C3E368F8F994F8F1E388D82E0AE_1702463623 =         Integer.toString
     }
 
     
-        public static String toString(short value) {
+        @DSModeled(DSC.SAFE)
+    public static String toString(short value) {
         return Integer.toString(value);
     }
 
     
-        public static Short valueOf(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Short valueOf(String string) throws NumberFormatException {
         return valueOf(parseShort(string));
     }
 
     
-        public static Short valueOf(String string, int radix) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Short valueOf(String string, int radix) throws NumberFormatException {
         return valueOf(parseShort(string, radix));
     }
 
     
-        public static short reverseBytes(short s) {
+        @DSModeled(DSC.SAFE)
+    public static short reverseBytes(short s) {
         return (short) ((s << 8) | ((s >>> 8) & 0xFF));
     }
 
     
-        public static Short valueOf(short s) {
+        @DSModeled(DSC.SAFE)
+    public static Short valueOf(short s) {
         return s < -128 || s >= 128 ? new Short(s) : SMALL_VALUES[s + 128];
     }
 

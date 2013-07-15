@@ -180,6 +180,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.963 -0400", hash_original_method = "51F7D06C1A64E7B90214CEB0BC04A311", hash_generated_method = "96747EF1BD1CF5922850839F6C990C67")
     public void encodeOID() {
         int[] oid = (int[]) content;

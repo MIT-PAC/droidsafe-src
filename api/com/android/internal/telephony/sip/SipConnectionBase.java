@@ -106,6 +106,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.157 -0400", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "378E2199DF3D70EFEDA80B8D61E9C491")
     @Override
     public long getCreateTime() {
@@ -117,6 +118,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.158 -0400", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "746DA34C3C1FF43B9187EB075D919383")
     @Override
     public long getConnectTime() {
@@ -128,6 +130,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.158 -0400", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "C123EE14DD295B345BBA31E4FD667534")
     @Override
     public long getDisconnectTime() {
@@ -196,6 +199,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.159 -0400", hash_original_method = "28455B27DA94996FB17C07BF72898FB4", hash_generated_method = "298AC2390E01AFF0382F969A458E4B36")
     @Override
     public DisconnectCause getDisconnectCause() {
@@ -207,6 +211,7 @@ DisconnectCause var60156825EF99DA17AB9694F744F3E9A9_2016479274 =         mCause;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.159 -0400", hash_original_method = "04AFA3AB4AAFB99A0A1522AC045EFCCB", hash_generated_method = "CC2251B1F2D7B949CA5CE6AAB3C0D01C")
      void setDisconnectCause(DisconnectCause cause) {
         mCause = cause;
@@ -215,6 +220,7 @@ DisconnectCause var60156825EF99DA17AB9694F744F3E9A9_2016479274 =         mCause;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.159 -0400", hash_original_method = "4EE87D2E41D94C18F614BA2D1494AD36", hash_generated_method = "53E3E8B79EA785AC954DE6FB5FA22390")
     @Override
     public PostDialState getPostDialState() {
@@ -226,6 +232,7 @@ PostDialState varA5212BBA7CEDC5476DB20427B201984F_261314949 =         postDialSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.160 -0400", hash_original_method = "0751315CA6FC4E16145F947C7FEC6A28", hash_generated_method = "BB3C4E9784C28AF1655F838F726D7EED")
     @Override
     public void proceedAfterWaitChar() {
@@ -233,6 +240,7 @@ PostDialState varA5212BBA7CEDC5476DB20427B201984F_261314949 =         postDialSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.160 -0400", hash_original_method = "1CC81519C3754B491F6AACE2E776B1AA", hash_generated_method = "9904AF5CB47E02718508F28B9EA971B1")
     @Override
     public void proceedAfterWildChar(String str) {
@@ -241,6 +249,7 @@ PostDialState varA5212BBA7CEDC5476DB20427B201984F_261314949 =         postDialSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.160 -0400", hash_original_method = "A990DB72552DFD3D94264491EEB59CEC", hash_generated_method = "34D7B16591BBD4AA8BCBE387281F2D17")
     @Override
     public void cancelPostDial() {
@@ -277,6 +286,7 @@ String var1129EB08E954CD256D4EF667275C80A7_1203851448 =         postDialString.s
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.161 -0400", hash_original_method = "780D5AE6347C99C37A99BA1F1D4E1D8E", hash_generated_method = "A88AD19EFB9A9466F8AF36631B462DDA")
     private void log(String msg) {
         addTaint(msg.getTaint());
@@ -286,6 +296,7 @@ String var1129EB08E954CD256D4EF667275C80A7_1203851448 =         postDialString.s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.161 -0400", hash_original_method = "6B6F8D6F29C0FEAF9C52CC30010D6FE2", hash_generated_method = "852AF4B9C6A4B1BE0EC481A485E12A9F")
     @Override
     public int getNumberPresentation() {
@@ -297,6 +308,7 @@ String var1129EB08E954CD256D4EF667275C80A7_1203851448 =         postDialString.s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.162 -0400", hash_original_method = "8B171385F62C7AA97B0882209EC3A206", hash_generated_method = "593595A1C8FACBA91E1D9087D0F4B384")
     @Override
     public UUSInfo getUUSInfo() {

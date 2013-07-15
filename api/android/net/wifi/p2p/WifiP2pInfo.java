@@ -61,6 +61,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_945638731 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.245 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0A86670341B055491757FE5BCD974E26")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_148176744 = (0);

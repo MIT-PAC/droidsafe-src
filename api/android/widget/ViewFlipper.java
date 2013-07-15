@@ -186,6 +186,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.106 -0400", hash_original_method = "FE23BFE06BF9BB8E822638D81DB338AA", hash_generated_method = "188583DA2B863DCE0CA05C073A880E59")
     @android.view.RemotableViewMethod
     public void setFlipInterval(int milliseconds) {
@@ -265,6 +266,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.107 -0400", hash_original_method = "DA5270F6FAC446A7F1E0A4F7A45712B2", hash_generated_method = "F251C9EC03A0D1EC8A7DD2B46043FA2D")
     public boolean isFlipping() {
         boolean var7103AE9E2C0D3B676C4EDC763D39DFCF_1857064561 = (mStarted);
@@ -275,6 +277,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.108 -0400", hash_original_method = "718522AE4DB02C55EF285DE2125FBBC5", hash_generated_method = "08DBE650A810C02E22CB6F0FC46C6DBE")
     public void setAutoStart(boolean autoStart) {
         mAutoStart = autoStart;
@@ -283,6 +286,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.108 -0400", hash_original_method = "0E315A42E6B247C6D130CCD7ADAB21A6", hash_generated_method = "44592060E426572EF13160542E620BE4")
     public boolean isAutoStart() {
         boolean varDCC34F800E29708C501869F2DC7EB795_1246783056 = (mAutoStart);

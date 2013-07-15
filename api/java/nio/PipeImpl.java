@@ -48,6 +48,7 @@ final class PipeImpl extends Pipe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.912 -0400", hash_original_method = "C0C603D3286C71D643834A21D35D5621", hash_generated_method = "C030505E16C2988312C0F7B2003250DE")
     @Override
     public SinkChannel sink() {
@@ -59,6 +60,7 @@ SinkChannel var9F52798A617E8085E84A971BADA1AE49_4473272 =         sink;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.912 -0400", hash_original_method = "06051B335F1A44C7022D361E395E201A", hash_generated_method = "D9627D87D728EB04956F8F4135D9D7AD")
     @Override
     public SourceChannel source() {
@@ -168,6 +170,7 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.916 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "85E864B9C17F6AC90A25753CF70618CD")
         public FileDescriptor getFD() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
@@ -255,6 +258,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.920 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "442F8A5F1A33A9FFCB3194F446222B4E")
         public FileDescriptor getFD() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1665417238 =             fd;

@@ -26,6 +26,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.661 -0400", hash_original_method = "1B85A65FB948A1CAE41CDDDF947CA953", hash_generated_method = "4FF37B0E078D7D1277E9EC8657DC0599")
     public int compareTo(Double object) {
         addTaint(object.getTaint());
@@ -37,6 +38,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.661 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "B214CB0C6AD400603642BC580AF0366C")
     @Override
     public byte byteValue() {
@@ -60,6 +62,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.663 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "B3C2FCE477EC148ACDFDC252AB25DE5E")
     @Override
     public double doubleValue() {
@@ -71,6 +74,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.663 -0400", hash_original_method = "EE93E703109A76630ADBE20E58BC1ACE", hash_generated_method = "F925752A51A3FC243FF82285692E898B")
     @Override
     public boolean equals(Object object) {
@@ -85,6 +89,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.664 -0400", hash_original_method = "118855AC112B739ED1B5D8D57CEDA105", hash_generated_method = "57EFD7A51469722BF15E4FBEA88ABC08")
     @Override
     public float floatValue() {
@@ -96,6 +101,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.664 -0400", hash_original_method = "66DA7C954B623D2BD7B3A96EB7989DA3", hash_generated_method = "E4FE985818319048C860BD82212FB956")
     @Override
     public int hashCode() {
@@ -109,6 +115,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.665 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "6FB4EA5BB1C1D17B3B1BB9DAEE1C4D41")
     @Override
     public int intValue() {
@@ -120,6 +127,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.666 -0400", hash_original_method = "82C3193F23F6D7770C948A8F860700C8", hash_generated_method = "9DFCB6D60D920BD5F22FF368ADC374B8")
     public boolean isInfinite() {
         boolean varED07AD9C4CE3E6B7E975E781387699CA_834572003 = (isInfinite(value));
@@ -130,11 +138,13 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
-        public static boolean isInfinite(double d) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isInfinite(double d) {
         return (d == POSITIVE_INFINITY) || (d == NEGATIVE_INFINITY);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.668 -0400", hash_original_method = "9E74C322CF79FFEBE378AFAB98D56D96", hash_generated_method = "011B8CF4D1D8C541E41D7D26F32208FF")
     public boolean isNaN() {
         boolean varA99476A90E68FD60B10540ABE2E1DC0D_88396467 = (isNaN(value));
@@ -145,7 +155,8 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
-        public static boolean isNaN(double d) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isNaN(double d) {
         return d != d;
     }
 
@@ -156,6 +167,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.670 -0400", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "187EE94CC93F593427439E35225D278E")
     @Override
     public long longValue() {
@@ -167,11 +179,13 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
-        public static double parseDouble(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static double parseDouble(String string) throws NumberFormatException {
         return StringToReal.parseDouble(string);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.671 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "F117331A8E93BF6A93CCF5AA1922C614")
     @Override
     public short shortValue() {
@@ -183,6 +197,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.671 -0400", hash_original_method = "CC4885D60C7843DD614D40299C63463C", hash_generated_method = "AA5DA0B9EA6E0441E6BA248E65DADC2E")
     @Override
     public String toString() {
@@ -194,17 +209,20 @@ String varD70FE175CAFA46C2C14A238B40D64876_1660966809 =         Double.toString(
     }
 
     
-        public static String toString(double d) {
+        @DSModeled(DSC.SAFE)
+    public static String toString(double d) {
         return RealToString.getInstance().doubleToString(d);
     }
 
     
-        public static Double valueOf(String string) throws NumberFormatException {
+        @DSModeled(DSC.SAFE)
+    public static Double valueOf(String string) throws NumberFormatException {
         return parseDouble(string);
     }
 
     
-        public static int compare(double double1, double double2) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(double double1, double double2) {
         if (double1 > double2) {
             return 1;
         }
@@ -228,12 +246,14 @@ String varD70FE175CAFA46C2C14A238B40D64876_1660966809 =         Double.toString(
     }
 
     
-        public static Double valueOf(double d) {
+        @DSModeled(DSC.SAFE)
+    public static Double valueOf(double d) {
         return new Double(d);
     }
 
     
-        public static String toHexString(double d) {
+        @DSModeled(DSC.SAFE)
+    public static String toHexString(double d) {
         if (d != d) {
             return "NaN";
         }

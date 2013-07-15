@@ -43,6 +43,7 @@ Type var62B4DAC76A381C72E7C16DCF7E120C0E_1761714208 =             componentType;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.289 -0400", hash_original_method = "4E93C574A33186DE87D5834EAA369B51", hash_generated_method = "BFB36E40CC2279A2A32B64E414F12BAF")
     public String toString() {
 String varA243640258685B816D0B9D5AF9381898_539473302 =         componentType.toString() + "[]";

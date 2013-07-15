@@ -81,6 +81,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.340 -0400", hash_original_method = "B0D60F12FAFD1CE95A6EC9A16242DD4A", hash_generated_method = "05178B25CDE3B67F7E232AF91946EFBF")
     public void addTest(Test test) {
         addTaint(test.getTaint());
@@ -90,6 +91,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.340 -0400", hash_original_method = "5E5F33FEDF0C0EFDF119171FAEDAFD32", hash_generated_method = "6CFD0503B09D63BD095D6EB7A3EB02CD")
     public void addTestSuite(Class testClass) {
         addTaint(testClass.getTaint());
@@ -99,6 +101,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.340 -0400", hash_original_method = "A640EC9003137483798EE7A767F176ED", hash_generated_method = "EB9357559CC18E0E634C71F7CD139CBD")
     private void addTestMethod(Method m, Vector names, Class theClass) {
         addTaint(theClass.getTaint());
@@ -129,7 +132,8 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
-        static public Test createTest(Class theClass, String name) {
+        @DSModeled(DSC.SAFE)
+    static public Test createTest(Class theClass, String name) {
         Constructor constructor;
         try {
             constructor= getTestConstructor(theClass);
@@ -156,7 +160,8 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
-        private static String exceptionToString(Throwable t) {
+        @DSModeled(DSC.SAFE)
+    private static String exceptionToString(Throwable t) {
         StringWriter stringWriter= new StringWriter();
         PrintWriter writer= new PrintWriter(stringWriter);
         t.printStackTrace(writer);
@@ -164,6 +169,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.341 -0400", hash_original_method = "97313544C5808DC71CDB6C5E60051996", hash_generated_method = "C3CF39ABF9330428EFEE25832528C423")
     public int countTestCases() {
         int count = 0;
@@ -185,7 +191,8 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
-        public static Constructor getTestConstructor(Class theClass) throws NoSuchMethodException {
+        @DSModeled(DSC.SAFE)
+    public static Constructor getTestConstructor(Class theClass) throws NoSuchMethodException {
         Class[] args= { String.class };
         try {
             return theClass.getConstructor(args);
@@ -195,6 +202,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.342 -0400", hash_original_method = "473CCC3375A8D379896F6F0BA14357FA", hash_generated_method = "638BA0F2EF9FB6CE4C8763F4C5724E7D")
     private boolean isPublicTestMethod(Method m) {
         addTaint(m.getTaint());
@@ -206,6 +214,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.342 -0400", hash_original_method = "F90105657E9B98DED7B6D12FD1F09EBC", hash_generated_method = "C6F7CAE20F8DACF38351E24F9152F585")
     private boolean isTestMethod(Method m) {
         addTaint(m.getTaint());
@@ -223,6 +232,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.343 -0400", hash_original_method = "9C37034A26A50FB27EDBD0F4F43B733F", hash_generated_method = "E0A942EEBA0EB5AEEE1A6D2018D96C90")
     public void run(TestResult result) {
         addTaint(result.getTaint());
@@ -243,6 +253,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.343 -0400", hash_original_method = "72CC76A3223CEB1EEB432C33F48F7C56", hash_generated_method = "C84288FAA08D03A80F4707F04221A38C")
     public void runTest(Test test, TestResult result) {
         addTaint(result.getTaint());
@@ -253,6 +264,7 @@ for(Enumeration e= tests();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.343 -0400", hash_original_method = "7408A183124CA9C5AD907B0700EAE7FB", hash_generated_method = "0A10A78DC7DCF81046638B7E49CE0B0C")
     public Test testAt(int index) {
         addTaint(index);
@@ -264,6 +276,7 @@ Test varE475EB1CBBC65BBAF0BB971E7BE4BD70_1566249558 =         (Test)fTests.eleme
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.343 -0400", hash_original_method = "5EA215DA9294B33CBBC0BB090BEF7D0B", hash_generated_method = "BF631850BFE83102785D7FB572533B65")
     public int testCount() {
         int var6A2C65EAA1DBEAB7A067E61E49925D4A_1357389825 = (fTests.size());
@@ -274,6 +287,7 @@ Test varE475EB1CBBC65BBAF0BB971E7BE4BD70_1566249558 =         (Test)fTests.eleme
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.344 -0400", hash_original_method = "57D1A40E229C18FE8565EDC5A0EA03E1", hash_generated_method = "010E55E630DFF73298E557846A7D7627")
     public Enumeration tests() {
 Enumeration var29E37B82B015CC762CB187233998C059_1967358861 =         fTests.elements();
@@ -284,6 +298,7 @@ Enumeration var29E37B82B015CC762CB187233998C059_1967358861 =         fTests.elem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.344 -0400", hash_original_method = "F367A28EAE938EF24D795301F789D610", hash_generated_method = "F9275C4CC944BA46A67E9741939A3A9F")
     public String toString() {
     if(getName() != null)        
@@ -302,6 +317,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_1465764302 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.344 -0400", hash_original_method = "6B586B3A073E23F7D2AE9C8A9582E34C", hash_generated_method = "61CBF5B9E74EA314A73D0181F1AF068A")
     public void setName(String name) {
         fName= name;
@@ -310,6 +326,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_1465764302 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.345 -0400", hash_original_method = "2EA0F9602490A1D20696A18728516755", hash_generated_method = "0DA86F48B49F2D4A3AF5D3F9103DED65")
     public String getName() {
 String var7008830BBF5901458C7F9C81D44DB32A_32055543 =         fName;

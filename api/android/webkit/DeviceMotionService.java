@@ -103,6 +103,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.874 -0400", hash_original_method = "CDFAD74C98E46044259B3BCC3613C4C6", hash_generated_method = "B9E0563BAE7A353CA42311754FDB9912")
     private void sendErrorEvent() {
     if(mHaveSentErrorEvent)        
@@ -142,6 +143,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.875 -0400", hash_original_method = "9B63FE7EDAA2DFAC9F6DE1381BA682EF", hash_generated_method = "4C846DBA652883F8D365FCF45693C10C")
     private void createHandler() {
     if(mHandler != null)        
@@ -270,6 +272,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_725769314 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.878 -0400", hash_original_method = "7AFE6EE6D4C15EE2C452A64798BB4D96", hash_generated_method = "BDAE4616D6B845250A585D6884DDBB0D")
     public void onSensorChanged(SensorEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -298,6 +301,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_725769314 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.878 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "3B735DACA44A7088C201CD04E68BCC26")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //DSFIXME:  CODE0009: Possible callback target function detected

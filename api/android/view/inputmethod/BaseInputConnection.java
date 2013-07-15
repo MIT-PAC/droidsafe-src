@@ -153,6 +153,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.080 -0400", hash_original_method = "E28DA299470AFBBB55E3F0E22CB4A567", hash_generated_method = "DB98A8A72401F402057B24EC7C08B714")
     public boolean beginBatchEdit() {
         boolean var68934A3E9455FA72420237EB05902327_104615228 = (false);
@@ -163,6 +164,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.081 -0400", hash_original_method = "68C20202F4C35ADB2F9CDE7850BF84CC", hash_generated_method = "DB96F0E57C7118FAD0E51A4E209A9A88")
     public boolean endBatchEdit() {
         boolean var68934A3E9455FA72420237EB05902327_1039160252 = (false);
@@ -195,6 +197,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.081 -0400", hash_original_method = "AA7244FCF81F32F7DEF3D51FAE032B7D", hash_generated_method = "0D5B813BB093CA31CBA2C0262C1EA745")
     public boolean commitCompletion(CompletionInfo text) {
         addTaint(text.getTaint());
@@ -206,6 +209,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.082 -0400", hash_original_method = "8ECFF7D6DBED10855DA2C653047584D7", hash_generated_method = "379FF6DE81B2BC298D12E4A7F612EA4F")
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
         addTaint(correctionInfo.getTaint());
@@ -363,6 +367,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.087 -0400", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "2176D6FFBFB184BF2631512223A4628A")
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
         addTaint(flags);
@@ -579,6 +584,7 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.090 -0400", hash_original_method = "CC9943DA76C04BDA8199AB8562F111EF", hash_generated_method = "C3718773EC631C9751D63BE8B19BA7AD")
     public boolean performContextMenuAction(int id) {
         addTaint(id);
@@ -590,6 +596,7 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.091 -0400", hash_original_method = "E554B360562612AFCC9A87837C58FB1E", hash_generated_method = "9F53D70F9ED1677AA23FFE6284AAD7EF")
     public boolean performPrivateCommand(String action, Bundle data) {
         addTaint(data.getTaint());

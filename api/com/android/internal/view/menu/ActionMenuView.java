@@ -65,6 +65,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.023 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "2D2E0A69D628FF0C713DCBD58D8FEF6B")
     public void setPresenter(ActionMenuPresenter presenter) {
         mPresenter = presenter;
@@ -73,6 +74,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.023 -0400", hash_original_method = "309FFF524EE8C98ED8919EC0ED593079", hash_generated_method = "4DAACA12339968EF0454766F3050567B")
     public boolean isExpandedFormat() {
         boolean var91949478145170F53463EA7B1D93DAAB_1349607086 = (mFormatItems);
@@ -474,6 +476,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.038 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "4A541722BAB683D3F8F9CC4C1F18340E")
     public boolean isOverflowReserved() {
         boolean var0E213F9463B6EFE55ADA2109C5E5DC56_1992868213 = (mReserveOverflow);
@@ -484,6 +487,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.039 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "15B323109E8BF25E66710A01C5BEDE02")
     public void setOverflowReserved(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
@@ -551,6 +555,7 @@ LayoutParams var0E81305CCB52037DAA521CD210230A11_405161328 =         generateDef
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.041 -0400", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "6F186FAF802BF712258A322803C35EAD")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -588,6 +593,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.041 -0400", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "0B305C2971E98375BC871586DF29AF88")
     public int getWindowAnimations() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2123009705 = (0);
@@ -598,6 +604,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.042 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "E50EB2D0FDCBBA00CCFEFF4A83375DDF")
     public void initialize(MenuBuilder menu) {
         mMenu = menu;
@@ -638,6 +645,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.043 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "13653DC0ECECEAC82CDEBC5217F29C58")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         addTaint(event.getTaint());

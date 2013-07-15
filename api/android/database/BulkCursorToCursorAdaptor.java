@@ -32,6 +32,7 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.001 -0400", hash_original_method = "BDEAB060DBF06B617753E5FD68DF3DA6", hash_generated_method = "CF17B3F2DAC2067844F40FF84CF8C685")
     public void initialize(IBulkCursor bulkCursor, int count, int idIndex,
             boolean wantsAllOnMoveCalls) {
@@ -99,6 +100,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.003 -0400", hash_original_method = "A467CB6464BEC42A874BA0630DE4F114", hash_generated_method = "5FDAE91A1EDF61E7FC4F2BC5E5D27063")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
@@ -156,6 +158,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.003 -0400", hash_original_method = "DCD3F558B41192D9CD395623901FE4A3", hash_generated_method = "ED7A593E1FCB5ECE9BD6FCEFF4B73CDD")
     @Override
     public void deactivate() {
@@ -214,6 +217,7 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.005 -0400", hash_original_method = "2BB8C0DB5A3CE31D75C859DF8A5992AB", hash_generated_method = "BDBEEC9DF9B39A61C8C91A042F031EC1")
     @Override
     public boolean requery() {
@@ -300,6 +304,7 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_1079731183 =         mColumns;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.006 -0400", hash_original_method = "5109D579D87DF77312539D6DDC351AB2", hash_generated_method = "4620EF584F69894E5FD9C80DDC9BA6A0")
     @Override
     public Bundle getExtras() {
@@ -326,6 +331,7 @@ Bundle varC9D220A55BC9FCE6E848D4BF5278F31D_2101728474 =             mBulkCursor.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.008 -0400", hash_original_method = "EAE7773B95560E382A302B739F6438AF", hash_generated_method = "0EC1AA2494B840D129421A63A640A894")
     @Override
     public Bundle respond(Bundle extras) {

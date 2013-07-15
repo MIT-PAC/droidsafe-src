@@ -242,11 +242,13 @@ public final class InputMethodManager {
     }
 
     
-        static public InputMethodManager peekInstance() {
+        @DSModeled(DSC.SAFE)
+    static public InputMethodManager peekInstance() {
         return mInstance;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.457 -0400", hash_original_method = "3D9C93A013E7DC300254687B6593E9DE", hash_generated_method = "7BAD767D5472314AA334A20D2D7A9EF9")
     public IInputMethodClient getClient() {
 IInputMethodClient varC088D1DF075112E0906917C9520017A1_1267598167 =         mClient;
@@ -257,6 +259,7 @@ IInputMethodClient varC088D1DF075112E0906917C9520017A1_1267598167 =         mCli
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.457 -0400", hash_original_method = "BB1CC2AA4E519DFF3D7BB1A17FAAA9A1", hash_generated_method = "01207D2CC8403B0638DEB8E6BCCEACED")
     public IInputContext getInputContext() {
 IInputContext var3882EE78855F016992A015D7D670188F_1836917192 =         mIInputContext;
@@ -409,6 +412,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.461 -0400", hash_original_method = "E3510526CEDC6D4EEDFFA989F1389EB2", hash_generated_method = "DBF532BC0434234D838BC6C0A047FC02")
     public void setFullscreenMode(boolean fullScreen) {
         mFullscreenMode = fullScreen;
@@ -464,6 +468,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.463 -0400", hash_original_method = "FCDCA2DC24AB76EAA903F8369A9A45F8", hash_generated_method = "444EEE6259545778FBE12E3E8C7DB0C9")
     public boolean isFullscreenMode() {
         boolean var21C88B20DA84168713D6AAB9A7589738_1060537557 = (mFullscreenMode);
@@ -541,6 +546,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.465 -0400", hash_original_method = "7C74580464CD8E195E3FB8BED8B93C53", hash_generated_method = "EFB7670AA252AD66E15371A32A6F6C81")
      void clearConnectionLocked() {
         mCurrentTextBoxAttribute = null;
@@ -1048,6 +1054,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.475 -0400", hash_original_method = "CA0F410F50592B0E0C8F6A16050EA193", hash_generated_method = "475A287226C5A66FD9EF549C33DD228D")
     public void focusOut(View view) {
         addTaint(view.getTaint());
@@ -1184,6 +1191,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.478 -0400", hash_original_method = "1A7A85BD07D131CBE39BA9D28F0E6F2A", hash_generated_method = "0A208EAE955229328DAD0F6EFFFA781D")
     public void startGettingWindowFocus(View rootView) {
         synchronized
@@ -1275,6 +1283,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.480 -0400", hash_original_method = "385DC57C25B266614A0F3F767A2E43B1", hash_generated_method = "0453E634C975C2CBFF38EAE554982EF3")
     public boolean isWatchingCursor(View view) {
         addTaint(view.getTaint());
@@ -1954,6 +1963,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.493 -0400", hash_original_method = "FB049513493D8EDB25EAFF891B2EE0A9", hash_generated_method = "8636D8CEF05422F00300E37EFDDD85AB")
         @Override
         public boolean isActive() {

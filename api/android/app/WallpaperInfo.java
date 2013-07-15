@@ -132,6 +132,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.244 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "1981BDCBD7CC1A9EA6D2BB83D4147DAB")
     public String getPackageName() {
 String var255A04E9345861413C0ACB855498FFE1_634143389 =         mService.serviceInfo.packageName;
@@ -142,6 +143,7 @@ String var255A04E9345861413C0ACB855498FFE1_634143389 =         mService.serviceI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.244 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "F2E559496B20C0A46044D96D17922370")
     public String getServiceName() {
 String varD4631640EAF59249824E850938835B61_58607003 =         mService.serviceInfo.name;
@@ -152,6 +154,7 @@ String varD4631640EAF59249824E850938835B61_58607003 =         mService.serviceIn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.244 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "E912890D9A843E057AD033E9DDF7590B")
     public ServiceInfo getServiceInfo() {
 ServiceInfo var28B71D71C22FF17E2913DF471BE53524_76491477 =         mService.serviceInfo;
@@ -162,6 +165,7 @@ ServiceInfo var28B71D71C22FF17E2913DF471BE53524_76491477 =         mService.serv
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.245 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "A28682F156A47466A15869DD4A00AEAD")
     public ComponentName getComponent() {
 ComponentName var93E6F91556E618C88339096F31BDB937_1196189050 =         new ComponentName(mService.serviceInfo.packageName,
@@ -185,6 +189,7 @@ CharSequence var2E9E378F798705D673A3CD2955015CB9_369321520 =         mService.lo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.246 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "B9D7D2F570748592B4BD83F767D4884D")
     public Drawable loadIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -218,6 +223,7 @@ Drawable var4348016AAF788F05EADA2157D91AE065_368648990 =         pm.getDrawable(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.247 -0400", hash_original_method = "9EB36950261646858CECEB28CEC974AC", hash_generated_method = "49381F7884B2565926F4DB1664D869AF")
     public CharSequence loadAuthor(PackageManager pm) throws NotFoundException {
         addTaint(pm.getTaint());
@@ -249,6 +255,7 @@ CharSequence varFE7FE420E7443373E8CC4AD0F8CFC84C_980933704 =         pm.getText(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.248 -0400", hash_original_method = "ECA3C93288FC3A8841FE238CFCF9AD1A", hash_generated_method = "EA91A2B4C7BA93CAF5E207B52B65FB19")
     public CharSequence loadDescription(PackageManager pm) throws NotFoundException {
         addTaint(pm.getTaint());
@@ -293,6 +300,7 @@ CharSequence var14E19B841891B10CBA32CD92E4F4FA1D_1313587926 =         pm.getText
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.249 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "15DA6295A8E33F4B8186D85B1534B996")
     public String getSettingsActivity() {
 String varF52598D579FB7EF6DE23C12DD22DC004_783180784 =         mSettingsActivityName;
@@ -303,6 +311,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_783180784 =         mSettingsActivity
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.250 -0400", hash_original_method = "01A70486818EE80E3925B6A989FED93F", hash_generated_method = "5C53276B0A02CB986B326D0A5B555762")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -317,6 +326,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_783180784 =         mSettingsActivity
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.250 -0400", hash_original_method = "01F16DDF22698F82DBFF601E0002CE8F", hash_generated_method = "1EF07B1F2CF7C71C2FAC92333D5B3C58")
     @Override
     public String toString() {
@@ -332,6 +342,7 @@ String var74D6B0CBF1B60D7089F268183AE6E814_1788035773 =         "WallpaperInfo{"
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.251 -0400", hash_original_method = "E04AD845315D2630A943DB9D13064432", hash_generated_method = "19F40B7C882670751F9872FD41138884")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -350,6 +361,7 @@ String var74D6B0CBF1B60D7089F268183AE6E814_1788035773 =         "WallpaperInfo{"
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.251 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC162C15D0F11558574B7F95DE422D5F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1225436550 = (0);

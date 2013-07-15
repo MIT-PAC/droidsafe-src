@@ -29,11 +29,13 @@ public final class ByteOrder {
     }
 
     
-        public static ByteOrder nativeOrder() {
+        @DSModeled(DSC.SAFE)
+    public static ByteOrder nativeOrder() {
         return NATIVE_ORDER;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.978 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "5B600F38AFBD6F96119734AA6BC1EB88")
     @Override
     public String toString() {

@@ -56,12 +56,14 @@ public class AnticipateOvershootInterpolator implements Interpolator {
     }
 
     
-        private static float a(float t, float s) {
+        @DSModeled(DSC.SAFE)
+    private static float a(float t, float s) {
         return t * t * ((s + 1) * t - s);
     }
 
     
-        private static float o(float t, float s) {
+        @DSModeled(DSC.SAFE)
+    private static float o(float t, float s) {
         return t * t * ((s + 1) * t + s);
     }
 

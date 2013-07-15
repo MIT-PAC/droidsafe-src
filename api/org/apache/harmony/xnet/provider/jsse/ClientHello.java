@@ -157,6 +157,7 @@ for(int i = 0;i < cipher_suites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.150 -0400", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "B14597BF86D209FD8A2BBB6F8E95E874")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -193,6 +194,7 @@ for(int i = 0;i < compression_methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.150 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "F1CF4F7F6C2913E867938921546A1EEB")
     public byte[] getRandom() {
         byte[] var7DDF32E17A6AC5CE04A8ECBF782CA509_475078483 = (random);
@@ -203,6 +205,7 @@ for(int i = 0;i < compression_methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.151 -0400", hash_original_method = "CF19DA1ECE12A56ABD61504AAFBBFE23", hash_generated_method = "FFA7C40C3CB9258706847A42638636DC")
     @Override
     public int getType() {

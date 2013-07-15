@@ -23,6 +23,7 @@ public class ECDHBasicAgreement implements BasicAgreement {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.820 -0400", hash_original_method = "C673BA12443BA4859FBCFCA898D52D2A", hash_generated_method = "E19C4EAC31689C280C3CB5FC55C9A89F")
     public void init(
         CipherParameters key) {

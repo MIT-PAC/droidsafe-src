@@ -114,6 +114,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.027 -0400", hash_original_method = "E9FF7BF71184D5918A5528B39387C05B", hash_generated_method = "18CCE81ABD65A10D68A1CBBC40B99539")
     public void setIntent(Intent intent) {
         synchronized
@@ -136,6 +137,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.027 -0400", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "77ABD44B9D8F61CE9BB5AB6B101AB3AA")
     public Intent getIntent() {
         synchronized
@@ -213,6 +215,7 @@ for(int i = 0;i < activityCount;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.029 -0400", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "B0E9A5ED63AB4F9A396283F5587CCCC4")
     public Intent chooseActivity(int index) {
         addTaint(index);
@@ -245,6 +248,7 @@ Intent varE44B24DC285915FA809667F86F15DD6A_167663593 =         choiceIntent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.029 -0400", hash_original_method = "56E3863DC4DFDE24EBD2068470DB48E1", hash_generated_method = "502DB08B7514528D4C4579AC10A6BA23")
     public void setOnChooseActivityListener(OnChooseActivityListener listener) {
         mActivityChoserModelPolicy = listener;
@@ -452,6 +456,7 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.033 -0400", hash_original_method = "EBCBD4C754CE0391425067ED25453667", hash_generated_method = "A8FC30E53376B527FEB1470AA1C77A25")
     public int getHistoryMaxSize() {
         synchronized

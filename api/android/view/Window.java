@@ -125,6 +125,7 @@ TypedArray varE5D89730C76964B19AE0B3B4D5D0266A_1168940584 =             mWindowS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.824 -0400", hash_original_method = "8852F0C837DC7060948A60A90C2A9042", hash_generated_method = "91556CB3AAC867AB9985DBFC953233DC")
     public void setContainer(Window container) {
         mContainer = container;
@@ -219,6 +220,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1618215079 =         mContainer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.827 -0400", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "93087EC7FB2A2F65820233A8013909FA")
     public WindowManager getWindowManager() {
 WindowManager varC209C60BFE9D7B593AFE54EB902C1459_1279367762 =         mWindowManager;
@@ -229,6 +231,7 @@ WindowManager varC209C60BFE9D7B593AFE54EB902C1459_1279367762 =         mWindowMa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.828 -0400", hash_original_method = "DD1DEB01F922CA329B6B6BD86F551D46", hash_generated_method = "C7938EB55EEAA39F9972B5240A5CA9B0")
     public void setCallback(Callback callback) {
         mCallback = callback;
@@ -506,6 +509,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_2036557780 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.837 -0400", hash_original_method = "A665A75B43AC6644089B2FAB21289091", hash_generated_method = "0CBE03D8878DA6B3055F2BC397378281")
     public void setCloseOnTouchOutside(boolean close) {
         mCloseOnTouchOutside = close;
@@ -516,6 +520,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_2036557780 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.837 -0400", hash_original_method = "585D2A4E90DC505694C50AFA60811C60", hash_generated_method = "BCF6D3153CBF82853BAE2A8C284E5D74")
     public void setCloseOnTouchOutsideIfNotSet(boolean close) {
     if(!mSetCloseOnTouchOutside)        
@@ -581,6 +586,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_2036557780 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.839 -0400", hash_original_method = "56D6FF40FC7BCA35CBE5379E385EA86C", hash_generated_method = "3BB2B818E02378B60233CCEECF96AFE5")
     public boolean requestFeature(int featureId) {
         addTaint(featureId);
@@ -598,6 +604,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_2036557780 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.839 -0400", hash_original_method = "24AB1A47189F5640F802580999D5EF0B", hash_generated_method = "51319D33017B41F04E4A916C38F9F5CE")
     protected void removeFeature(int featureId) {
         addTaint(featureId);
@@ -827,6 +834,7 @@ View var4A691E6E01A019BBE376A012F4AAC75B_1833508895 =         getDecorView().fin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.845 -0400", hash_original_method = "765B449347DE858F4538165B748C680A", hash_generated_method = "447D909330EC98272B7C93EDB298CD51")
     protected boolean haveDimAmount() {
         boolean varEBD748F40F1824CE253B65FC97383B87_318947719 = (mHaveDimAmount);
@@ -852,6 +860,7 @@ View var4A691E6E01A019BBE376A012F4AAC75B_1833508895 =         getDecorView().fin
     public abstract int getVolumeControlStream();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.846 -0400", hash_original_method = "5C7A5DC825C127CAEB67314627C1344D", hash_generated_method = "41402CC6B89BFAB78A866C7788612094")
     public void setUiOptions(int uiOptions) {
         addTaint(uiOptions);
@@ -859,6 +868,7 @@ View var4A691E6E01A019BBE376A012F4AAC75B_1833508895 =         getDecorView().fin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.846 -0400", hash_original_method = "DD14EAF3AEC819DEC25B96FED2D2DF84", hash_generated_method = "E45DD96DC91929140767CFFEF651CA13")
     public void setUiOptions(int uiOptions, int mask) {
         addTaint(mask);
@@ -884,6 +894,7 @@ View var4A691E6E01A019BBE376A012F4AAC75B_1833508895 =         getDecorView().fin
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.847 -0400", hash_original_method = "93C5B5997EB72284CF079AECD506D640", hash_generated_method = "A6D915C41DF6CDDB7A45000495642554")
         public boolean isHardwareAccelerated() {
             boolean var6AB4A5F453379ED66BAA79CE64FDFD98_473921847 = (mHardwareAccelerated);

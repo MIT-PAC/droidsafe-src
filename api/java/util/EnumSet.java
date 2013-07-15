@@ -156,6 +156,7 @@ EnumSet<E> varEF0FA5E6D5CDFF5EA3B5838CC968F234_1312346977 =             (EnumSet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.654 -0400", hash_original_method = "04E56AE18F38E72A8E3B6B437517B693", hash_generated_method = "704E9070063C85D5EDC2E867313B8910")
      boolean isValidType(Class<?> cls) {
         addTaint(cls.getTaint());
@@ -167,6 +168,7 @@ EnumSet<E> varEF0FA5E6D5CDFF5EA3B5838CC968F234_1312346977 =             (EnumSet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.655 -0400", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "7A5BB76BA2EA44A02CBA0031C6F3548C")
     @SuppressWarnings("unchecked")
      Object writeReplace() {

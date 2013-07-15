@@ -247,6 +247,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.385 -0400", hash_original_method = "3C738FD66B9E4F046395F2884F1D431C", hash_generated_method = "869CE8DED294E5F9A7541771BC6C9D80")
     @Override
     public int getCount() {
@@ -258,6 +259,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.386 -0400", hash_original_method = "438CBE048C14BFF65A950EB22F18A5DC", hash_generated_method = "EEA81837275BF5DCD5118484A8634B4E")
     @Override
     public String[] getColumnNames() {

@@ -73,6 +73,7 @@ IContentObserver var61D75B28C94E2275AC66248604AA2B96_1380456584 =             ol
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.039 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "8C699D353DDA64E02894757F30DD3B90")
     public boolean deliverSelfNotifications() {
         boolean var68934A3E9455FA72420237EB05902327_1339616288 = (false);
@@ -83,6 +84,7 @@ IContentObserver var61D75B28C94E2275AC66248604AA2B96_1380456584 =             ol
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.039 -0400", hash_original_method = "6EAEE94A5AFBBE3CB405FFF6432059B8", hash_generated_method = "43E4B8EB52312D77453544CB6778AF9B")
     public void onChange(boolean selfChange) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -124,6 +126,7 @@ IContentObserver var61D75B28C94E2275AC66248604AA2B96_1380456584 =             ol
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.042 -0400", hash_original_method = "ADCF046F07EA9B09E2364857C3DDF0F7", hash_generated_method = "30ECC851BB12D6B371695B1BC5CB6757")
         public void run() {
             ContentObserver.this.onChange(mSelf);
@@ -149,6 +152,7 @@ IContentObserver var61D75B28C94E2275AC66248604AA2B96_1380456584 =             ol
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.044 -0400", hash_original_method = "158F530B046C6D686908DD95065C53F9", hash_generated_method = "F99FE4FAA9E59A55E750FA52EFFF6AE5")
         public boolean deliverSelfNotifications() {
             ContentObserver contentObserver = mContentObserver;
@@ -170,6 +174,7 @@ IContentObserver var61D75B28C94E2275AC66248604AA2B96_1380456584 =             ol
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.045 -0400", hash_original_method = "71BABE68DF8E341DA3CAF0778B2BD246", hash_generated_method = "14133A945816033F06407340BD36D671")
         public void onChange(boolean selfChange) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -187,6 +192,7 @@ IContentObserver var61D75B28C94E2275AC66248604AA2B96_1380456584 =             ol
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.046 -0400", hash_original_method = "A0916E3A0DA123DBB345BC81644B70F3", hash_generated_method = "ADD05F525B1B13738DD98FA14B241126")
         public void releaseContentObserver() {
             mContentObserver = null;

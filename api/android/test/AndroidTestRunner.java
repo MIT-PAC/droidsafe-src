@@ -263,6 +263,7 @@ TestResult varB1D52DB2FC7B844B35F46763F5119AF7_1360309060 =         new TestResu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.804 -0400", hash_original_method = "35C6F654589DD3EA8896BA4A5DEE7BCB", hash_generated_method = "52A0B91FB5E6FFC3CAC7A12EB59B5758")
      void setSkipExecution(boolean skip) {
         mSkipExecution = skip;
@@ -281,6 +282,7 @@ List<TestCase> var8F97DD99F42FF73EAB8CDB477DFEE3E9_561792965 =         mTestCase
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.805 -0400", hash_original_method = "F2D7E2FB778FC0649CC40AF9C1142527", hash_generated_method = "1B9792FF5C6553CA83BE8721B7558EAA")
     public String getTestClassName() {
 String var1CB478C44ABEF9FA32CEDB99E8709D2F_143442411 =         mTestClassName;
@@ -291,6 +293,7 @@ String var1CB478C44ABEF9FA32CEDB99E8709D2F_143442411 =         mTestClassName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.805 -0400", hash_original_method = "5B53C1B8ED988918C7336B043C531676", hash_generated_method = "9A4F310A0990337919F52142D165DB26")
     public TestResult getTestResult() {
 TestResult var437D81FF8A497B3A9605171F4D29C8AB_207503714 =         mTestResult;
@@ -339,6 +342,7 @@ for(TestCase testCase : mTestCases)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.806 -0400", hash_original_method = "949353832C2D9CAB570B13ECD24DC64F", hash_generated_method = "808065C7833D1F85AE2C8B8012A988E9")
     private void setContextIfAndroidTestCase(Test test, Context context, Context testContext) {
         addTaint(testContext.getTaint());
@@ -357,6 +361,7 @@ for(TestCase testCase : mTestCases)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.807 -0400", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "6F13A8B42448B2C5D39C1B275EFDE141")
     public void setContext(Context context) {
         mContext = context;
@@ -397,6 +402,7 @@ for(TestCase testCase : mTestCases)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.808 -0400", hash_original_method = "0EFFD9B799AED609D4828DB6F7AAB0E5", hash_generated_method = "3ACD0016E8612A780C3363D803A8AF08")
     public void setInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
@@ -405,6 +411,7 @@ for(TestCase testCase : mTestCases)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.808 -0400", hash_original_method = "8B0B0B0117FF17F8E6C78456D5FA2528", hash_generated_method = "3EF8B0CB7FF92401818A0D3175C4DD53")
     @Deprecated
     public void setInstrumentaiton(Instrumentation instrumentation) {
@@ -415,6 +422,7 @@ for(TestCase testCase : mTestCases)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.808 -0400", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "B9C8894AFEBF94656C66FAA8B38F355F")
     public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
         mPerfWriter = writer;
@@ -435,6 +443,7 @@ Class var46F17594A492923407012C376C374B95_1754615885 =         mContext.getClass
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.809 -0400", hash_original_method = "1FEF70E96102D7304D006BBFDC4DE6B7", hash_generated_method = "4FAFD7517E2617F717E5C9E85C0A14FE")
     public void testStarted(String testName) {
         addTaint(testName.getTaint());
@@ -442,6 +451,7 @@ Class var46F17594A492923407012C376C374B95_1754615885 =         mContext.getClass
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.809 -0400", hash_original_method = "95F90AC078029D49ABA36F5E39CE4989", hash_generated_method = "9E4B00FBBA1794C65D5334E8AFC03502")
     public void testEnded(String testName) {
         addTaint(testName.getTaint());
@@ -449,6 +459,7 @@ Class var46F17594A492923407012C376C374B95_1754615885 =         mContext.getClass
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.809 -0400", hash_original_method = "3C8F23863ACC349D5F634378B8407602", hash_generated_method = "343C81A91A376A476B6E63854712BD10")
     public void testFailed(int status, Test test, Throwable t) {
         addTaint(t.getTaint());

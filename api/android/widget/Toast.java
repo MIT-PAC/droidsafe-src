@@ -91,6 +91,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "A152CAEDF892AE03EF7992276FE51073", hash_generated_method = "BEBF20515F3CF648B66FD299727BC65E")
     public void setView(View view) {
         mNextView = view;
@@ -99,6 +100,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "2CED2C577EBE287B42B9009F6CFBB820", hash_generated_method = "85144BB14607A72CF56964EC14F9D0D6")
     public View getView() {
 View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
@@ -109,6 +111,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "CFB561A2B5CB71F6E4A1F9C7A12A3738", hash_generated_method = "F9C7C4EC13468CD19CD7C7E3AFD925F1")
     public void setDuration(int duration) {
         mDuration = duration;
@@ -117,6 +120,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "9B9136AF447A00E58753D65FFEEF18A4")
     public int getDuration() {
         int var25395741BFE51A7D136A5C7109AAD2D8_396519610 = (mDuration);
@@ -127,6 +131,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.835 -0400", hash_original_method = "F425C47FB7437E78AF178C34F14EA79B", hash_generated_method = "F83E15EA06D82C079894A843F93CA717")
     public void setMargin(float horizontalMargin, float verticalMargin) {
         mTN.mHorizontalMargin = horizontalMargin;
@@ -137,6 +142,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.835 -0400", hash_original_method = "F7B8097D0A28A7644F4CAA36263A6BC5", hash_generated_method = "F58416482C0874D4E36958DDBFB8763F")
     public float getHorizontalMargin() {
         float varDF514617DE53B1EF9217C0FEF8317F13_717779514 = (mTN.mHorizontalMargin);
@@ -147,6 +153,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.835 -0400", hash_original_method = "08E3924FC925E4DE8E371EC71C6F9BB2", hash_generated_method = "2A33CB52D6E89A3A4365263B22A1B190")
     public float getVerticalMargin() {
         float var7727757C0A1FC1ED9E73F93E7C322D59_1560569787 = (mTN.mVerticalMargin);
@@ -157,6 +164,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.836 -0400", hash_original_method = "0F798A7E93CD7957534C3E69090E738D", hash_generated_method = "C5E35E16B7D1472EF7531715FE78EC40")
     public void setGravity(int gravity, int xOffset, int yOffset) {
         mTN.mGravity = gravity;
@@ -169,6 +177,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.836 -0400", hash_original_method = "2C9BD84752A31EC6F5E143771739878E", hash_generated_method = "7E13F7CC981161C5A2F7ECB350CDF6CE")
     public int getGravity() {
         int var4E7026CC5A290E65914E34A9471C1765_1957898403 = (mTN.mGravity);
@@ -179,6 +188,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.837 -0400", hash_original_method = "2AE943B633C6B771A3DBDC9830EE282D", hash_generated_method = "5D0AB79BB4EF3238360464AC2C143EBA")
     public int getXOffset() {
         int varBD97F6BD1F2018E407E89BCB4E9D862C_1184481132 = (mTN.mX);
@@ -189,6 +199,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.837 -0400", hash_original_method = "3212505834221ECE93D6F08E5BDF4AC5", hash_generated_method = "361C462575304E4BD615BF1AE013C49A")
     public int getYOffset() {
         int varF71F6618D90D3064567B08C6118A822C_1181988992 = (mTN.mY);

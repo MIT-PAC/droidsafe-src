@@ -89,7 +89,8 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
-        public static ObjectDigestInfo getInstance(
+        @DSModeled(DSC.SAFE)
+    public static ObjectDigestInfo getInstance(
         Object obj) {
         if (obj == null || obj instanceof ObjectDigestInfo)
         {
@@ -104,13 +105,15 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
-        public static ObjectDigestInfo getInstance(
+        @DSModeled(DSC.SAFE)
+    public static ObjectDigestInfo getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.165 -0400", hash_original_method = "6F0ED6AFEE9055594DCEF2A3E1A2F111", hash_generated_method = "3F1F2E43DB0EA0F29E766F38C9C20CC2")
     public DEREnumerated getDigestedObjectType() {
 DEREnumerated varBB51C18A55805846B64487D1DBD2CFE5_409680361 =         digestedObjectType;
@@ -121,6 +124,7 @@ DEREnumerated varBB51C18A55805846B64487D1DBD2CFE5_409680361 =         digestedOb
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.165 -0400", hash_original_method = "ED88D29FA12F8D28E30CF15EC0719828", hash_generated_method = "346CD0794390EF988CE151EA945B8EA7")
     public DERObjectIdentifier getOtherObjectTypeID() {
 DERObjectIdentifier varCA62BB60C11C0113F3CD8E01BF7E92A9_1608187455 =         otherObjectTypeID;
@@ -131,6 +135,7 @@ DERObjectIdentifier varCA62BB60C11C0113F3CD8E01BF7E92A9_1608187455 =         oth
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.166 -0400", hash_original_method = "80A095D2CD5C912E5290805C4F2E95A6", hash_generated_method = "D439B95023EF804F0B693D274D403295")
     public AlgorithmIdentifier getDigestAlgorithm() {
 AlgorithmIdentifier var8B0C3F647118591D6E144CA7824FEB70_1525645147 =         digestAlgorithm;
@@ -141,6 +146,7 @@ AlgorithmIdentifier var8B0C3F647118591D6E144CA7824FEB70_1525645147 =         dig
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.166 -0400", hash_original_method = "591AAD603948030260B8B2B98E27FE31", hash_generated_method = "6032999505DBA854EC454659A527DA22")
     public DERBitString getObjectDigest() {
 DERBitString var1128EBB681DA936639CDE82641A6C31D_1867873205 =         objectDigest;

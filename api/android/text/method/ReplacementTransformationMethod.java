@@ -28,6 +28,7 @@ public abstract class ReplacementTransformationMethod implements TransformationM
     protected abstract char[] getReplacement();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.900 -0400", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "D4A5BF3DABADE06EF1E9551501B369E7")
     public CharSequence getTransformation(CharSequence source, View v) {
         addTaint(v.getTaint());
@@ -90,6 +91,7 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.901 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "F6B7EB031AD974B960E9E01380665FE1")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,

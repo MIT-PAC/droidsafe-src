@@ -146,6 +146,7 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_180389765 =         mPathPe
     public abstract boolean onCreate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.479 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -154,6 +155,7 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_180389765 =         mPathPe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.480 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -161,6 +163,7 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_180389765 =         mPathPe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.480 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -207,6 +210,7 @@ for(int i = 0;i < numValues;i++)
             String[] selectionArgs);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.483 -0400", hash_original_method = "DCC5B23EAE3536B2EEFB8F5A1AA89B13", hash_generated_method = "BB60EACF0AB1FBBAAB5A9386D5852835")
     public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
         addTaint(mode.getTaint());
@@ -221,6 +225,7 @@ for(int i = 0;i < numValues;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.483 -0400", hash_original_method = "58BEA9E66A4FD3FC19246F4A2CA5B928", hash_generated_method = "9138B1A6B04624DA9FD92852416358A4")
     public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
         addTaint(mode.getTaint());
@@ -277,6 +282,7 @@ ParcelFileDescriptor varBAB37DE04A5B7A40E055BD5EA30CAC7D_715317859 =         Par
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.485 -0400", hash_original_method = "BEF8B956D915C9CD914319D11D9F55DF", hash_generated_method = "6041F981ED1A08F8ED6A70A208E0EB54")
     public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
         addTaint(mimeTypeFilter.getTaint());
@@ -289,6 +295,7 @@ String[] var540C13E9E156B687226421B24F2DF178_1609726229 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.485 -0400", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "F27A6AE100B2D97D045387F2B6F41A1A")
     public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bundle opts) throws FileNotFoundException {
         addTaint(opts.getTaint());
@@ -361,6 +368,7 @@ ParcelFileDescriptor var0A32740862433E6F4A2B631AD9C65F9E_207390444 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.487 -0400", hash_original_method = "5727E4CF3A64759CEEBA62DE047537C3", hash_generated_method = "4D08BF1EB00335422B5EB180110E1297")
     protected boolean isTemporary() {
         boolean var68934A3E9455FA72420237EB05902327_1055443931 = (false);
@@ -371,6 +379,7 @@ ParcelFileDescriptor var0A32740862433E6F4A2B631AD9C65F9E_207390444 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.487 -0400", hash_original_method = "883A061900350051FBA62F6F6FD9E085", hash_generated_method = "B95B58BA423DEA58516FBB9436696F1D")
     public IContentProvider getIContentProvider() {
 IContentProvider varF2CB7A1EAFE712633AC71AFDD720A221_639581215 =         mTransport;
@@ -435,6 +444,7 @@ ContentProviderResult[] var238ECCC9872FFCA0B3C3DB83598FF044_1541909471 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.490 -0400", hash_original_method = "FDEF25FCA992321C96D9ED3D525FD124", hash_generated_method = "00B9E306A083E8B59F99C1EDE86F0FA4")
     public Bundle call(String method, String arg, Bundle extras) {
         addTaint(extras.getTaint());
@@ -465,6 +475,7 @@ Bundle var540C13E9E156B687226421B24F2DF178_1681377404 =         null;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.491 -0400", hash_original_method = "D85CC82248E7B34649DA1C02380D9E2C", hash_generated_method = "60F7249A8D113A609890AF5C2E67BCAD")
          ContentProvider getContentProvider() {
 ContentProvider varC964AD0B3FDDC5F592DBC6B2E7A7AF92_1459021034 =             ContentProvider.this;
@@ -486,6 +497,7 @@ String varED11270F9E13FAAC581C2CCBE7C2F48C_206486987 =             getContentPro
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.492 -0400", hash_original_method = "C07C2CC52F2EA8ADD199B18CF964D47B", hash_generated_method = "DAE200F7D0658B934406560AD7CCA122")
         public Cursor query(Uri uri, String[] projection,
                 String selection, String[] selectionArgs, String sortOrder) {
@@ -506,6 +518,7 @@ Cursor var5BED765E00858C646DF14C0893EB6B41_1494618190 =             ContentProvi
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.492 -0400", hash_original_method = "BE9D1875DBA635C7BA04B42A3E893DA2", hash_generated_method = "C1E23BACFAD26A7D9034DE38CAE0F4BA")
         public String getType(Uri uri) {
             addTaint(uri.getTaint());
@@ -517,6 +530,7 @@ String var5B9B0993930B2F3B1729C74908362C2C_1079083253 =             ContentProvi
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.493 -0400", hash_original_method = "2D883DF9190F17ADC9F3F05EDAD4CA9E", hash_generated_method = "746ABCE0F7D3FD5A6BA9B5FBA4731DDA")
         public Uri insert(Uri uri, ContentValues initialValues) {
             addTaint(initialValues.getTaint());
@@ -575,6 +589,7 @@ ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =        
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.494 -0400", hash_original_method = "9F536F247E1CDAAB23A0513292709CB1", hash_generated_method = "28B621AEB31ED124585CF76E37BBD589")
         public int delete(Uri uri, String selection, String[] selectionArgs) {
             addTaint(selectionArgs[0].getTaint());
@@ -590,6 +605,7 @@ ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =        
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.495 -0400", hash_original_method = "A4C580D76A4BE435F05FDF3658D031E7", hash_generated_method = "31BEC81B34CA2AEFD75D794DE3D28811")
         public int update(Uri uri, ContentValues values, String selection,
                 String[] selectionArgs) {
@@ -607,6 +623,7 @@ ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =        
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.495 -0400", hash_original_method = "A3B5DD3A6EF0BED7F3109E14959CA5EF", hash_generated_method = "BBBADA0D90E2D9F47A2E954F89A131C4")
         public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
             addTaint(mode.getTaint());
@@ -625,6 +642,7 @@ ParcelFileDescriptor var92B3985CCA3575439B2C1D8C87C145BD_2134652306 =           
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.496 -0400", hash_original_method = "9FC3CF0D01502503E6A8E959789D91E0", hash_generated_method = "3A254281863B254E3F4B7A880CFCE773")
         public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
             addTaint(mode.getTaint());
@@ -656,6 +674,7 @@ Bundle varE50CAEED571D4508C1B829BFA060E554_1091371413 =             ContentProvi
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.497 -0400", hash_original_method = "8E1F3128EE5808B485D05EE809576B99", hash_generated_method = "3F8D46B5209E15E5799D33FF7FA83081")
         @Override
         public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
@@ -669,6 +688,7 @@ String[] var9C4CD0F20752BB51B9C837E84E409BD1_444445777 =             ContentProv
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.497 -0400", hash_original_method = "C18E75C38B25261EF8CFA8F7B83C6E2D", hash_generated_method = "833FEBCF74B5955E7324D58C2ECA42D9")
         @Override
         public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeType, Bundle opts) throws FileNotFoundException {
@@ -685,6 +705,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.498 -0400", hash_original_method = "E57399204B1619B526E92C84388A407F", hash_generated_method = "79E1C2F56976B63B1B6CE84E8A09D9CC")
         private void enforceReadPermission(Uri uri) {
             addTaint(uri.getTaint());
@@ -742,6 +763,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.499 -0400", hash_original_method = "329C06E4068EEDF4ECCAEC3BA5AB45CE", hash_generated_method = "AD3DA02C67883C05E3F2D0935019D647")
         private boolean hasWritePermission(Uri uri) {
             addTaint(uri.getTaint());
@@ -802,6 +824,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.500 -0400", hash_original_method = "7CEC600BB70206A61DA89C0C0D2014C1", hash_generated_method = "E1150802EE346EF34326C3D7649BF9CC")
         private void enforceWritePermission(Uri uri) {
             addTaint(uri.getTaint());

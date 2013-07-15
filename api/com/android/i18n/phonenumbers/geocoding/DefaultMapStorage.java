@@ -23,6 +23,7 @@ class DefaultMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.349 -0400", hash_original_method = "F69095453A9ABCA4791C551DEF1AF820", hash_generated_method = "8B04EF1004EEC42AAE6A78FD04112888")
     @Override
     public boolean isFlyweight() {
@@ -34,6 +35,7 @@ class DefaultMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.350 -0400", hash_original_method = "499E30A17B0C3429D0791D94BC3FA75F", hash_generated_method = "6F4DEDE8D30854802B182011E84EA472")
     @Override
     public int getPrefix(int index) {
@@ -46,6 +48,7 @@ class DefaultMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.350 -0400", hash_original_method = "9F6ED4FEDAB6F7BCB8C7B74F1377FE11", hash_generated_method = "D816F94B78D8891127A830DB4650C22E")
     @Override
     public String getDescription(int index) {
@@ -58,6 +61,7 @@ String varD8B172789CC5D7844F668D15871503C1_209220406 =         descriptions[inde
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.352 -0400", hash_original_method = "133A71C9726C43F724F7FEB46F2DAD1A", hash_generated_method = "9E66C90FC877B55894C8044C918ECCF0")
     @Override
     public void readFromSortedMap(SortedMap<Integer, String> sortedAreaCodeMap) {

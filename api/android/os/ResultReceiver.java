@@ -83,6 +83,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.545 -0400", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "D0C901DD2478013571E63246BE50F411")
     protected void onReceiveResult(int resultCode, Bundle resultData) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -92,6 +93,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.546 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4BE18E19DB9062D11920AB8B8A4B6CEF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_516726065 = (0);

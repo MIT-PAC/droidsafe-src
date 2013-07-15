@@ -26,6 +26,7 @@ public class ExpiresParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.503 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "24CE0BB2D2600B0C0AF5118FBB49845C")
     public SIPHeader parse() throws ParseException {
         Expires expires = new Expires();

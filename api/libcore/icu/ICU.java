@@ -45,7 +45,8 @@ public final class ICU {
     }
 
     
-        public static Locale[] localesFromStrings(String[] localeNames) {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] localesFromStrings(String[] localeNames) {
         LinkedHashSet<Locale> set = new LinkedHashSet<Locale>();
         for (String localeName : localeNames) {
             set.add(localeFromString(localeName));

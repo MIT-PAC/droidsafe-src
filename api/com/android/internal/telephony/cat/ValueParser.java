@@ -50,7 +50,8 @@ abstract class ValueParser {
     }
 
     
-        static Duration retrieveDuration(ComprehensionTlv ctlv) throws ResultException {
+        @DSModeled(DSC.SPEC)
+    static Duration retrieveDuration(ComprehensionTlv ctlv) throws ResultException {
         int timeInterval = 0;
         TimeUnit timeUnit = TimeUnit.SECOND;
         byte[] rawValue = ctlv.getRawValue();
@@ -65,7 +66,8 @@ abstract class ValueParser {
     }
 
     
-        static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
+        @DSModeled(DSC.SPEC)
+    static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
         Item item = null;
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -98,7 +100,8 @@ abstract class ValueParser {
     }
 
     
-        static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
+        @DSModeled(DSC.SPEC)
+    static IconId retrieveIconId(ComprehensionTlv ctlv) throws ResultException {
         IconId id = new IconId();
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();
@@ -112,7 +115,8 @@ abstract class ValueParser {
     }
 
     
-        static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv) throws ResultException {
+        @DSModeled(DSC.SPEC)
+    static ItemsIconId retrieveItemsIconId(ComprehensionTlv ctlv) throws ResultException {
         CatLog.d("ValueParser", "retrieveItemsIconId:");
         ItemsIconId id = new ItemsIconId();
         byte[] rawValue = ctlv.getRawValue();
@@ -170,7 +174,8 @@ abstract class ValueParser {
     }
 
     
-        static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
+        @DSModeled(DSC.SPEC)
+    static String retrieveAlphaId(ComprehensionTlv ctlv) throws ResultException {
         if (ctlv != null) {
             byte[] rawValue = ctlv.getRawValue();
             int valueIndex = ctlv.getValueIndex();

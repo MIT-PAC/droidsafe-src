@@ -15,17 +15,20 @@ class KeyEventCompatHoneycomb {
     }
 
 
-        public static int normalizeMetaState(int metaState) {
+        @DSModeled(DSC.SPEC)
+    public static int normalizeMetaState(int metaState) {
         return KeyEvent.normalizeMetaState(metaState);
     }
 
     
-        public static boolean metaStateHasModifiers(int metaState, int modifiers) {
+        @DSModeled(DSC.SPEC)
+    public static boolean metaStateHasModifiers(int metaState, int modifiers) {
         return KeyEvent.metaStateHasModifiers(metaState, modifiers);
     }
 
     
-        public static boolean metaStateHasNoModifiers(int metaState) {
+        @DSModeled(DSC.SPEC)
+    public static boolean metaStateHasNoModifiers(int metaState) {
         return KeyEvent.metaStateHasNoModifiers(metaState);
     }
 

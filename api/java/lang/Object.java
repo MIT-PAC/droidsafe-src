@@ -13,6 +13,7 @@ public class Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.051 -0400", hash_original_method = "6E1D6DBADCF2AAA505FF9A52A4C04C6C", hash_generated_method = "FE87500C80F4239FEAD9AD81D730B2F5")
     protected Object clone() throws CloneNotSupportedException {
     if(!(this instanceof Cloneable))        
@@ -41,6 +42,7 @@ Object var5D97285CC21650E6D41723F3E22233BE_31365219 =         internalClone((Clo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.052 -0400", hash_original_method = "9AE1611573D7E7CF89E7E933B2D1DCAF", hash_generated_method = "1EDDF6D71EB35041F0C774CE64A4480E")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -52,6 +54,7 @@ Object var5D97285CC21650E6D41723F3E22233BE_31365219 =         internalClone((Clo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.052 -0400", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "822E50DAC95823FB20C4852B1A92C75F")
     protected void finalize() throws Throwable {
         // ---------- Original Method ----------
@@ -63,6 +66,7 @@ Object var5D97285CC21650E6D41723F3E22233BE_31365219 =         internalClone((Clo
     public final native Class<?> getClass();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.053 -0400", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "CDC00AF590C96B2F3248107D4B410133")
     public int hashCode() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_505944210 = getTaintInt();
@@ -80,6 +84,7 @@ Object var5D97285CC21650E6D41723F3E22233BE_31365219 =         internalClone((Clo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.054 -0400", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "F6B90F5EF9FFD57BE3AEF09E66DB2DE3")
     public String toString() {
 String varAE0EADF9464BE15954001C46E90E161A_1273813275 =         getClass().getName() + '@' + Integer.toHexString(hashCode());

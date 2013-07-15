@@ -48,6 +48,7 @@ public final class PhoneNumberMatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.434 -0400", hash_original_method = "3AF6887A924E6E03501A94FECACFA30D", hash_generated_method = "5AA388F08595ED254D185F3B34FC769A")
     public PhoneNumber number() {
 PhoneNumber var63E80DF571E08DAA47BEFBF0BD0EEBAD_1962592817 =         number;
@@ -58,6 +59,7 @@ PhoneNumber var63E80DF571E08DAA47BEFBF0BD0EEBAD_1962592817 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.434 -0400", hash_original_method = "5948F380AB147474B7B360324D01D8A7", hash_generated_method = "2C8CCF491EE854D19FDEF002227CE39C")
     public int start() {
         int varEA2B2676C28C0DB26D39331A336C6B92_542662325 = (start);
@@ -78,6 +80,7 @@ PhoneNumber var63E80DF571E08DAA47BEFBF0BD0EEBAD_1962592817 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.435 -0400", hash_original_method = "9FB54278FE2075E29BA0E55156E431DE", hash_generated_method = "40CC8EF0BA15F6AB7D31CF49A9BB10E8")
     public String rawString() {
 String var4B9D0983C640FEFA2A1CCD188F4CB7B8_1521522879 =         rawString;

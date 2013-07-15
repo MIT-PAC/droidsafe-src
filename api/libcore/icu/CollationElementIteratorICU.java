@@ -19,6 +19,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.520 -0400", hash_original_method = "71B44ACA4CC3DD57553E99908AFF2FC7", hash_generated_method = "F0D2C833BB8D0379FDD92C770F5BEBD6")
     public void reset() {
         NativeCollation.reset(address);
@@ -27,6 +28,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.521 -0400", hash_original_method = "D76B0B21507A74EBC38ECF8BA836254A", hash_generated_method = "4F39B1DFDB9EB95DE9C1F9A054D5424B")
     public int next() {
         int var95757B31B679D2A32A7D126F2DEDAC6C_190747693 = (NativeCollation.next(address));
@@ -37,6 +39,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.521 -0400", hash_original_method = "EA54CCD4F91FD8A9A4140D3CDE5AE34D", hash_generated_method = "7EBAA9C77629680943E24AFA02C5B332")
     public int previous() {
         int var5AEBBA9FD332AEE232AB905DB54649B0_286589488 = (NativeCollation.previous(address));
@@ -58,6 +61,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.523 -0400", hash_original_method = "603C380ACC11CC522426235C8A41DEB0", hash_generated_method = "485FAE18358D5DBA1308C3F9E141EF0D")
     public void setText(String source) {
         addTaint(source.getTaint());
@@ -67,6 +71,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.523 -0400", hash_original_method = "1B43DCD00444559B9B02AC0B455E987E", hash_generated_method = "2DD6F3AE200AE7528488648E8A6B6733")
     public void setText(CharacterIterator source) {
         addTaint(source.getTaint());
@@ -76,6 +81,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.524 -0400", hash_original_method = "1F41E721FB3FAE28539A76645F583C29", hash_generated_method = "51B75406082485F8610B66FD743CB2C5")
     public int getOffset() {
         int var91C2613C29FBE71DA1D8A5CBBA969EFD_1791157107 = (NativeCollation.getOffset(address));
@@ -86,6 +92,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.524 -0400", hash_original_method = "452F12B7AA1A7AC5FD41D10DD72719C4", hash_generated_method = "EA4DBBBF535114AF26EAB883ADED02ED")
     public void setOffset(int offset) {
         addTaint(offset);
@@ -95,23 +102,27 @@ public final class CollationElementIteratorICU {
     }
 
     
-        public static int primaryOrder(int order) {
+        @DSModeled(DSC.SAFE)
+    public static int primaryOrder(int order) {
         return ((order & PRIMARY_ORDER_MASK_) >> PRIMARY_ORDER_SHIFT_) &
                 UNSIGNED_16_BIT_MASK_;
     }
 
     
-        public static int secondaryOrder(int order) {
+        @DSModeled(DSC.SAFE)
+    public static int secondaryOrder(int order) {
         return (order & SECONDARY_ORDER_MASK_) >> SECONDARY_ORDER_SHIFT_;
     }
 
     
-        public static int tertiaryOrder(int order) {
+        @DSModeled(DSC.SAFE)
+    public static int tertiaryOrder(int order) {
         return order & TERTIARY_ORDER_MASK_;
     }
 
     
-        public static CollationElementIteratorICU getInstance(int collatorAddress, String source) {
+        @DSModeled(DSC.SAFE)
+    public static CollationElementIteratorICU getInstance(int collatorAddress, String source) {
         int iteratorAddress = NativeCollation.getCollationElementIterator(collatorAddress, source);
         return new CollationElementIteratorICU(iteratorAddress);
     }

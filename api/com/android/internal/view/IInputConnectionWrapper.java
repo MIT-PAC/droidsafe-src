@@ -40,6 +40,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.126 -0400", hash_original_method = "51DFD52266A16587BB1D688A25EC9E53", hash_generated_method = "1E814109F512C419BDA073E20CCB825E")
     public boolean isActive() {
         boolean varB326B5062B2F0E69046810717534CB09_1151900955 = (true);
@@ -260,6 +261,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.133 -0400", hash_original_method = "F5A5E3786D2DDCB2FEFEBA688154C5D7", hash_generated_method = "72494AAF0D1938806AC67090231D7CA3")
      void dispatchMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -280,6 +282,7 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.134 -0400", hash_original_method = "78BA9F6D5AE481CC7127DB3741BBDA1E", hash_generated_method = "86009720EF1448C83B84C392473AACDB")
      void executeMessage(Message msg) {
         addTaint(msg.getTaint());

@@ -74,6 +74,7 @@ public final class MathContext implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.302 -0400", hash_original_method = "426953F7355AB3CD325EF2685FB1287C", hash_generated_method = "7BF89FFA0647A481B39798F2F3641A5A")
     private IllegalArgumentException invalidMathContext(String reason, String s) {
         addTaint(s.getTaint());
@@ -86,6 +87,7 @@ public final class MathContext implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.302 -0400", hash_original_method = "D8DAE7CCCFF0DCEAE4D1ED9221F38BDC", hash_generated_method = "EEBC37DC074D6510E971D3394FB7F11E")
     private void checkValid() {
     if(precision < 0)        
@@ -110,6 +112,7 @@ public final class MathContext implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.303 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "1EB236C286725216FA5EB19CCF9AC164")
     public int getPrecision() {
         int varE2794D8F12719281EFF5601251C8A680_1581266719 = (precision);
@@ -120,6 +123,7 @@ public final class MathContext implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.303 -0400", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "E2F726522ECA5B545CA1CD950731AE21")
     public RoundingMode getRoundingMode() {
 RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMode;
@@ -130,6 +134,7 @@ RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.304 -0400", hash_original_method = "297627CFD1856C2678820F72FEC54301", hash_generated_method = "FBD59ABF05422C6C92B3FBFB533630A0")
     @Override
     public boolean equals(Object x) {
@@ -146,6 +151,7 @@ RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.304 -0400", hash_original_method = "CDDF05FC589C0F0146B62DD26D215A30", hash_generated_method = "4380144ACEA0DDC79EFF988EA37111B2")
     @Override
     public int hashCode() {
@@ -157,6 +163,7 @@ RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.304 -0400", hash_original_method = "537ED30546F81713B44C66AB9FEB6470", hash_generated_method = "3ED21B6C159C0FFB7F714A597B1A6D81")
     @Override
     public String toString() {
@@ -168,6 +175,7 @@ String var939940AE6DFAF48A015D25E5ACE18ECD_935157246 =         "precision=" + pr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.305 -0400", hash_original_method = "323BCE51E980C267DF7F7C47AD5D1D50", hash_generated_method = "829DEEEEB6A1705438C8CA3A7DA01733")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         addTaint(s.getTaint());

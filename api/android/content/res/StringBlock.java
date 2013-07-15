@@ -78,6 +78,7 @@ final class StringBlock {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.592 -0400", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "B787B43C3656DA320C550CA2D409769B")
     public CharSequence get(int idx) {
         synchronized

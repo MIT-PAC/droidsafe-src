@@ -122,6 +122,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.217 -0400", hash_original_method = "B6D5379ECD830F8ABC23D18179CF1E64", hash_generated_method = "717BC576018DEAEFA0809961CD23495A")
     private float computeDeceleration(float friction) {
         addTaint(friction);
@@ -396,6 +397,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.227 -0400", hash_original_method = "685B5069D17FA4EA234CACB4808C2E58", hash_generated_method = "3080BC0F4CADDDC7981DD8286E6C232A")
     public void abortAnimation() {
         mCurrX = mFinalX;
@@ -422,6 +424,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.229 -0400", hash_original_method = "2E2DDE91830A97E8B4307DB61F63C9CC", hash_generated_method = "37BA3FE8AA8C40550B42F26BC1A645D6")
     public int timePassed() {
         int var8BC71A871FB53CCEC5CBB2277EB0DE39_1285284300 = ((int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime));
@@ -432,6 +435,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.229 -0400", hash_original_method = "EE7294042EF8679A239A5BDA33848B52", hash_generated_method = "21EC3B2014C84C3EE583448EE5BD5FA3")
     public void setFinalX(int newX) {
         mFinalX = newX;
@@ -444,6 +448,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.230 -0400", hash_original_method = "E7F00F8A662510F71298FE30A619B84A", hash_generated_method = "695711FF07897043DCFF9272D8CE7BA1")
     public void setFinalY(int newY) {
         mFinalY = newY;

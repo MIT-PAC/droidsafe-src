@@ -70,6 +70,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.854 -0400", hash_original_method = "7DD647D65429090EAAF6E9E0252444A1", hash_generated_method = "0E54E39C51CE246207F04421FABC92D5")
     @Override
      LayerState createConstantState(LayerState state, Resources res) {
@@ -83,6 +84,7 @@ LayerState varFFA472989BFBC8AFAFFFC0942052C9D3_887684586 =         new Transitio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.855 -0400", hash_original_method = "97CEB1054BCE489E9912047DDD2569CF", hash_generated_method = "F9D2E61B8448C0EE75387020F1EB758E")
     public void startTransition(int durationMillis) {
         mFrom = 0;
@@ -103,6 +105,7 @@ LayerState varFFA472989BFBC8AFAFFFC0942052C9D3_887684586 =         new Transitio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.856 -0400", hash_original_method = "08F42BFD1EBF12CF3276DCDF0956FF23", hash_generated_method = "01E2910E8D9B446F13286E8FD4E61ED2")
     public void resetTransition() {
         mAlpha = 0;
@@ -115,6 +118,7 @@ LayerState varFFA472989BFBC8AFAFFFC0942052C9D3_887684586 =         new Transitio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.857 -0400", hash_original_method = "46AFBEEBA20F3F34CF5FEC703E9F1E57", hash_generated_method = "20C9EC76B5FC8287A5A5E6DFDF51AF6B")
     public void reverseTransition(int duration) {
         final long time = SystemClock.uptimeMillis();
@@ -150,6 +154,7 @@ LayerState varFFA472989BFBC8AFAFFFC0942052C9D3_887684586 =         new Transitio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.859 -0400", hash_original_method = "1FBAB3689755625C733FF3C6D865C65F", hash_generated_method = "437D900A71B2C5DEBF93B2342ED6AF4C")
     @Override
     public void draw(Canvas canvas) {
@@ -213,6 +218,7 @@ switch(mTransitionState){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.860 -0400", hash_original_method = "2CD6D3E73358D8CBD280E6EE92F2D07C", hash_generated_method = "2A0623106A5089E5FAC47F6638E31C5E")
     public void setCrossFadeEnabled(boolean enabled) {
         mCrossFade = enabled;
@@ -221,6 +227,7 @@ switch(mTransitionState){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.860 -0400", hash_original_method = "CD2EAE34D95290C8C0E6CBB8BD3A8C00", hash_generated_method = "562DD29BA0DFB8CD3B2245AF831050F6")
     public boolean isCrossFadeEnabled() {
         boolean varFE86BE5975CEB5DDCB3330F16B6C060D_457303077 = (mCrossFade);
@@ -267,6 +274,7 @@ Drawable var48E8606C81CF3892E5F36CD4FED5C949_1521783010 =             new Transi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.863 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "D5DE744BA1697487978A4A0072003B5F")
         @Override
         public int getChangingConfigurations() {

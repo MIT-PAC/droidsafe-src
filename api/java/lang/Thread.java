@@ -232,6 +232,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.496 -0400", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "8CD03064E9444E26FE9E865D699EF5D9")
     private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         Thread currentThread = Thread.currentThread();
@@ -272,7 +273,8 @@ public class Thread implements Runnable {
     }
 
     
-        public static int activeCount() {
+        @DSModeled(DSC.SPEC)
+    public static int activeCount() {
         return currentThread().getThreadGroup().activeCount();
     }
 
@@ -283,6 +285,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.498 -0400", hash_original_method = "6B880F3A25E0C40C35D8EAA702DA9116", hash_generated_method = "674EBD876BA068F6148E932C6EEB7966")
     @Deprecated
     public int countStackFrames() {
@@ -294,11 +297,13 @@ public class Thread implements Runnable {
     }
 
     
-        public static Thread currentThread() {
+        @DSModeled(DSC.SPEC)
+    public static Thread currentThread() {
         return VMThread.currentThread();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.498 -0400", hash_original_method = "E295DBEBB7624DABB0FA2D3E0377892B", hash_generated_method = "AAC50DEFEEDD4BF3E7AF73E5FDF67A8E")
     @Deprecated
     public void destroy() {
@@ -310,12 +315,14 @@ public class Thread implements Runnable {
     }
 
     
-        public static void dumpStack() {
+        @DSModeled(DSC.SPEC)
+    public static void dumpStack() {
         new Throwable("stack dump").printStackTrace();
     }
 
     
-        public static int enumerate(Thread[] threads) {
+        @DSModeled(DSC.SPEC)
+    public static int enumerate(Thread[] threads) {
         Thread thread = Thread.currentThread();
         return thread.getThreadGroup().enumerate(threads);
     }
@@ -333,6 +340,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.500 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "F858D604933D6354BAA79FB8133F71C7")
     public ClassLoader getContextClassLoader() {
 ClassLoader varCDB6A46B81C356659A30478714667CAA_2000297776 =         contextClassLoader;
@@ -343,11 +351,13 @@ ClassLoader varCDB6A46B81C356659A30478714667CAA_2000297776 =         contextClas
     }
 
     
-        public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
+        @DSModeled(DSC.SPEC)
+    public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
         return defaultUncaughtHandler;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.500 -0400", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "65042993FB88CFA38ADBE0B317C8AE60")
     public long getId() {
         long varB80BB7740288FDA1F201890375A60C8F_308727485 = (id);
@@ -378,6 +388,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1548546710 =         name;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.501 -0400", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "6956B779EF327367D8D65669EF396C24")
     public StackTraceElement[] getStackTrace() {
         StackTraceElement ste[] = VMStack.getThreadStackTrace(this);
@@ -390,6 +401,7 @@ StackTraceElement[] var4BE632EBE6A3388F93FE2D88ACD3A469_360630139 =         ste 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.502 -0400", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "FCE4420724D8E1329F48763FF17239D5")
     public State getState() {
         VMThread vmt = this.vmThread;
@@ -443,6 +455,7 @@ ThreadGroup varD15A27BD67EB0D670CD5C298FF20B74F_1202712973 =             group;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.503 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "8F2423F23787477B292CB4C3CC81965A")
     public UncaughtExceptionHandler getUncaughtExceptionHandler() {
     if(uncaughtHandler != null)        
@@ -465,6 +478,7 @@ UncaughtExceptionHandler varD15A27BD67EB0D670CD5C298FF20B74F_1697957473 =       
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.503 -0400", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "60E0257AEA965A5EAB759BF80F11520F")
     public void interrupt() {
         synchronized
@@ -492,7 +506,8 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-        public static boolean interrupted() {
+        @DSModeled(DSC.SPEC)
+    public static boolean interrupted() {
         return VMThread.interrupted();
     }
 
@@ -517,6 +532,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.506 -0400", hash_original_method = "8001B196EB7A1BAE7873C2E86818FA5F", hash_generated_method = "BDA1D2999F71127D46869ED0DB05E0E8")
     public boolean isInterrupted() {
         VMThread vmt = this.vmThread;
@@ -639,6 +655,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.511 -0400", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "03477583C250A36BA8909E553E5BD078")
     public void run() {
     if(target != null)        
@@ -652,6 +669,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.511 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "3571A2A1E3CF85993D3F0CF0F870AA51")
     public void setContextClassLoader(ClassLoader cl) {
         contextClassLoader = cl;
@@ -682,7 +700,8 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-        public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
+        @DSModeled(DSC.SPEC)
+    public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         Thread.defaultUncaughtHandler = handler;
     }
 
@@ -792,6 +811,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.518 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "32052A607317B2CF4FD95D37AFA858D8")
     public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         uncaughtHandler = handler;
@@ -800,16 +820,19 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
-        public static void sleep(long time) throws InterruptedException {
+        @DSModeled(DSC.SPEC)
+    public static void sleep(long time) throws InterruptedException {
         Thread.sleep(time, 0);
     }
 
     
-        public static void sleep(long millis, int nanos) throws InterruptedException {
+        @DSModeled(DSC.SPEC)
+    public static void sleep(long millis, int nanos) throws InterruptedException {
         VMThread.sleep(millis, nanos);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.520 -0400", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "E54725B4A6D8EBCC5C0D04CDE0B199CE")
     public synchronized void start() {
     if(hasBeenStarted)        
@@ -861,6 +884,7 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.523 -0400", hash_original_method = "E21D755A7854968438B35D363D61DC14", hash_generated_method = "4506463D9D79CBDFD7D1C89AC5834DF9")
     @Override
     public String toString() {
@@ -872,16 +896,19 @@ String varBD9870DFC52F401CAC874F07B86030A0_338731243 =         "Thread[" + name 
     }
 
     
-        public static void yield() {
+        @DSModeled(DSC.SPEC)
+    public static void yield() {
         VMThread.yield();
     }
 
     
-        public static boolean holdsLock(Object object) {
+        @DSModeled(DSC.SPEC)
+    public static boolean holdsLock(Object object) {
         return currentThread().vmThread.holdsLock(object);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.525 -0400", hash_original_method = "A23472E398F1697320641EE9BCE07378", hash_generated_method = "43F89B373C1350806380D74769796ED0")
     public void unpark() {
         VMThread vmt = vmThread;
@@ -935,6 +962,7 @@ switch(parkState){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.526 -0400", hash_original_method = "25C50086F373F8B2A1357A67BAD56EA4", hash_generated_method = "96FD6AD1269350685F94EA0B2B3D5E6E")
     public void parkFor(long nanos) {
         addTaint(nanos);
@@ -989,6 +1017,7 @@ switch(parkState){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.527 -0400", hash_original_method = "98F10CBBB26C44644E065EAD29E052AC", hash_generated_method = "2EC7DFE54C9CE6CBACF8CCBCCC252B01")
     public void parkUntil(long time) {
         addTaint(time);

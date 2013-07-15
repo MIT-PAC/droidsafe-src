@@ -55,6 +55,7 @@ public abstract class AbstractPoolEntry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.736 -0400", hash_original_method = "079ECF1B585CB82D2480C2A65F324FB6", hash_generated_method = "A85759C94F4A635E14952D976AAAA7F1")
     public Object getState() {
 Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
@@ -254,6 +255,7 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.741 -0400", hash_original_method = "9A8AC70CC76BCE1A1C90EAA4BDE4B23E", hash_generated_method = "B91CAD5B2338FFE73AC3E521D4481C73")
     protected void shutdownEntry() {
         tracker = null;

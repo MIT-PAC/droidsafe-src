@@ -34,7 +34,8 @@ public abstract class CellLocation {
     }
 
     
-        public static CellLocation newFromBundle(Bundle bundle) {
+        @DSModeled(DSC.SPEC)
+    public static CellLocation newFromBundle(Bundle bundle) {
         switch(TelephonyManager.getDefault().getCurrentPhoneType()) {
         case Phone.PHONE_TYPE_CDMA:
             return new CdmaCellLocation(bundle);

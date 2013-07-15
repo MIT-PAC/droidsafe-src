@@ -176,6 +176,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.962 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "08F1BF28B99B183D621DCBF73A9D846B")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1307044544 =         this;
@@ -206,6 +207,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.964 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "803F7916C12CF2609F8901FA627EACC2")
     public IBinder asBinder() {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_306998301 =         mRemote;
@@ -216,6 +218,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_306998301 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.964 -0400", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "59C2E03676387DF7521D125BD4A83EB9")
     public CursorWindow getWindow(int startPos) throws RemoteException {
         addTaint(startPos);
@@ -446,6 +449,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.968 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "4312EFDFA112A6513764DACC53C6EF1D")
     public int requery(IContentObserver observer) throws RemoteException {
         addTaint(observer.getTaint());

@@ -56,6 +56,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.408 -0400", hash_original_method = "6BBC2B3892833CAF7F05465AB80866BD", hash_generated_method = "5DEF47D911B9C45E0EA22FDFE487B5FA")
     public boolean hasValue() {
         boolean var976B418A652F6F5885E6187F73F4BE48_608948678 = (mHasValue);
@@ -72,6 +73,7 @@ public abstract class Keyframe implements Cloneable {
     public abstract void setValue(Object value);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.414 -0400", hash_original_method = "35C097CFF55F90D1886F0C54195244F1", hash_generated_method = "C9C89F1C9583E895F7AEE9A33F343957")
     public float getFraction() {
         float var8F2259335A204727B633197C1255E450_1714927079 = (mFraction);
@@ -82,6 +84,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.417 -0400", hash_original_method = "D865B000D8DE764D2EF6EBC1ED2A153F", hash_generated_method = "B828439CB960C667E31928238589D41F")
     public void setFraction(float fraction) {
         mFraction = fraction;
@@ -90,6 +93,7 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.419 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "5E6BF685EBB189A4407FB334E758B348")
     public TimeInterpolator getInterpolator() {
 TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_1127903348 =         mInterpolator;
@@ -100,6 +104,7 @@ TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_1127903348 =         mInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.420 -0400", hash_original_method = "DFEEC0662B39CED0069D1B2AE05648AB", hash_generated_method = "47F1226E1202976956E07A77F6CEA7FC")
     public void setInterpolator(TimeInterpolator interpolator) {
         mInterpolator = interpolator;
@@ -108,6 +113,7 @@ TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_1127903348 =         mInter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.422 -0400", hash_original_method = "464D9B25E7EBB7EEA5039E323C745893", hash_generated_method = "59FA923B4BA2AC9AF9263B4EDEDE8B75")
     public Class getType() {
 Class varEB4C76CBDB3A6E5E3E03E299B7E6BC66_342498191 =         mValueType;
@@ -142,6 +148,7 @@ public abstract Keyframe clone();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.428 -0400", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "C708559D3693CCA261B96DAD71D37500")
         public Object getValue() {
 Object varD1FEA3F5EE4618A9C3646312F018E4AC_304041970 =             mValue;
@@ -152,6 +159,7 @@ Object varD1FEA3F5EE4618A9C3646312F018E4AC_304041970 =             mValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.430 -0400", hash_original_method = "A57ED313A37784FB1DA17FC9F39344A7", hash_generated_method = "BCD44A16AB81E639720244E80BED9701")
         public void setValue(Object value) {
             mValue = value;
@@ -212,6 +220,7 @@ ObjectKeyframe varA9EDFBA5634D9136F6D4A7121F574350_787121439 =             kfClo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.445 -0400", hash_original_method = "7D27B9B7622273E5F87FD5AC6ACFC5AE", hash_generated_method = "7F7502D081EF295298AA907D0AA11672")
         public int getIntValue() {
             int varCBAFE11E7BAE23358D70D54D132C3064_1946437599 = (mValue);
@@ -297,6 +306,7 @@ IntKeyframe varA9EDFBA5634D9136F6D4A7121F574350_136699292 =             kfClone;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.456 -0400", hash_original_method = "4878123D1CBF5008E7E0955AB5FB61F2", hash_generated_method = "77163B8BE1F2D47C986E1988D16F5460")
         public float getFloatValue() {
             float varCBAFE11E7BAE23358D70D54D132C3064_1549366853 = (mValue);

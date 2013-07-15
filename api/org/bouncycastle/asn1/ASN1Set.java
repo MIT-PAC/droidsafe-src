@@ -93,6 +93,7 @@ DEREncodable var6CD5E39B7034494BC59B1A7630973DF6_1547332896 =         (DEREncoda
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.689 -0400", hash_original_method = "283365B7154686D5E09A8541EE47F429", hash_generated_method = "1F68B017594BD31E42CD6C4544B2F4A3")
     public int size() {
         int varC11C5BB059CE54FB66F4294B0D28BA2A_1690840946 = (set.size());
@@ -286,6 +287,7 @@ DERObject var9F6A5CC5D0E8FDBA0198C27DF56526D2_1701115850 =             outer;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.694 -0400", hash_original_method = "A69C6C665FC9D3DE250A324544079C85", hash_generated_method = "262AB73FFC64AA0C364D4039324AEF62")
     private DEREncodable getNext(Enumeration e) {
         addTaint(e.getTaint());
@@ -309,6 +311,7 @@ DEREncodable var142E4525AFF6FB7F5C03BA975A3F000D_1901256887 =         encObj;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.694 -0400", hash_original_method = "207A76DA1E8D21F977EB59C485DCA4E9", hash_generated_method = "3B4490DCEEC0B899D6E0F2CAD2A18B45")
     private boolean lessThanOrEqual(
          byte[] a,

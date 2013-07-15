@@ -238,6 +238,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.673 -0400", hash_original_method = "0CBFF056CB46F189F8DC45AFB469D5F9", hash_generated_method = "52F7C3656875F2F1D825245BDCF5A258")
     public String toString() {
 String var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785 =         Integer.toString(get());
@@ -248,6 +249,7 @@ String var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785 =         Integer.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.673 -0400", hash_original_method = "B90EC926C8275C97256DF1E0AD9FC076", hash_generated_method = "76CD00BBCEABA9E662EBF1BD1E31FED8")
     public int intValue() {
         int var712109514C51D8578A1A5952B71603F1_989662081 = (get());
@@ -258,6 +260,7 @@ String var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785 =         Integer.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.673 -0400", hash_original_method = "41D936CCD9A9D16949AE3FD60738B8AD", hash_generated_method = "C0D6DA988002ADFE51D4CFE7BF79DC51")
     public long longValue() {
         long varEF8EBDCB13F038D7FE9358CB4031A910_1679481521 = ((long)get());
@@ -268,6 +271,7 @@ String var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785 =         Integer.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.674 -0400", hash_original_method = "F8181329F165428C51D2197BB97797EF", hash_generated_method = "335B54511E9CD4E357B63E7A8088189A")
     public float floatValue() {
         float varD2E2C7D4AF1D6700F4955F8F274EC437_1867034678 = ((float)get());
@@ -278,6 +282,7 @@ String var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785 =         Integer.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.674 -0400", hash_original_method = "486C42E34E3619D90E05BCBEDA3844AE", hash_generated_method = "22AC321DAE0BEB1E5E7FB26F35A49FB5")
     public double doubleValue() {
         double varCE9198F98D4461AFF8CDC2D1ABAB9B8A_995666189 = ((double)get());

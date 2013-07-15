@@ -140,6 +140,7 @@ ViewGroup.LayoutParams varA9C1E0D45A20413F2EC8A49EDAEEEDFF_1224172833 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.761 -0400", hash_original_method = "E121C7CF679CE7DED988221EA3AFEDE0", hash_generated_method = "66CADDE2C8641AB2B4F1FBBF6DD868C8")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -164,6 +165,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1340780962 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.762 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "3F6EB9D4F1E319BC532186733BE36AC0")
     @Override
     public boolean shouldDelayChildPressedState() {

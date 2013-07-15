@@ -36,6 +36,7 @@ public class BasicHeader implements Header, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.292 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "C63B9344E7A2A0D13B47D86A0A5778A2")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_1995769392 =         this.name;
@@ -46,6 +47,7 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_1995769392 =         this.name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.293 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "39BC0351337F4E1697288DF15B89A89D")
     public String getValue() {
 String varD64EF4B55BF21CB8765EC6BE5560B5B8_699538575 =         this.value;

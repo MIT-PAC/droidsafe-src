@@ -24,6 +24,7 @@ public class Vibrator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.805 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "7D9E8CA44EA90635EDE1B76D1A7A6E42")
     public boolean hasVibrator() {
     if(mService == null)        
@@ -57,6 +58,7 @@ public class Vibrator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.805 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
     public void vibrate(long milliseconds) {
         addTaint(milliseconds);
@@ -125,6 +127,7 @@ public class Vibrator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.808 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "8D41DB29BDA8014ECBFFAFF7A98E566E")
     public void cancel() {
     if(mService == null)        

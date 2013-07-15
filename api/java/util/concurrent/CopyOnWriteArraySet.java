@@ -30,6 +30,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.792 -0400", hash_original_method = "3CEC44303CC022BBEC9F119BC403FDBC", hash_generated_method = "00673E6958626F19B6E28259BE2A2A3A")
     public int size() {
         int varC60094971D0DC1BA2308A4430FB51AA2_285598330 = (al.size());
@@ -40,6 +41,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.792 -0400", hash_original_method = "3B66E92AC54A2F386067AD3C16431654", hash_generated_method = "9BB18B3CD817661D6C4B66CAA7CFD2C4")
     public boolean isEmpty() {
         boolean var0C66FAF77C910DA93FC2B96790B002D0_186075429 = (al.isEmpty());
@@ -50,6 +52,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.792 -0400", hash_original_method = "45B83D89DB9565F8F2123157436CF2DA", hash_generated_method = "3F97F18F070A2C5BE6008495DB23DF9C")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -61,6 +64,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.793 -0400", hash_original_method = "59659636145935A673C89066DF38E15C", hash_generated_method = "9EC2145155B4E544BE72B9CF05E8C1AA")
     public Object[] toArray() {
 Object[] varEE356BC8028D35EDB407C2CD6F5C7F86_1752199058 =         al.toArray();
@@ -82,6 +86,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1997563438 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.793 -0400", hash_original_method = "3A8225B3804E9179BE65F5C2B01036E9", hash_generated_method = "51E35B8C0D9675FA92693C3EC2EACF08")
     public void clear() {
         al.clear();
@@ -90,6 +95,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1997563438 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.794 -0400", hash_original_method = "4B916DD49AA1C881C6B40C3BB12114A0", hash_generated_method = "7E112A54CD2102576CB1D973C4922A22")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -166,6 +172,7 @@ Iterator<E> var9170DAE396001991D3A16AF07A4247B9_1715885084 =         al.iterator
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.797 -0400", hash_original_method = "EF3132D176498E8C292078B60C02B2A5", hash_generated_method = "DB5E8194C0B3A1EB643D0A5FF7BF0D99")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -240,7 +247,8 @@ for(int i = 0;i < len;++i)
     }
 
     
-        private static boolean eq(Object o1, Object o2) {
+        @DSModeled(DSC.SAFE)
+    private static boolean eq(Object o1, Object o2) {
         return (o1 == null ? o2 == null : o1.equals(o2));
     }
 

@@ -29,6 +29,7 @@ DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_438738312 =         _parser.rea
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.991 -0400", hash_original_method = "E08AB982B1429E7FF32DFAFFCE3445B5", hash_generated_method = "234553DF4B13AAA41AA2394E91D92C99")
     public DERObject getLoadedObject() throws IOException {
         try 

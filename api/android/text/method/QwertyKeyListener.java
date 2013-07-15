@@ -43,7 +43,8 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
-        public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
+        @DSModeled(DSC.SAFE)
+    public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
         int off = cap.ordinal() * 2 + (autoText ? 1 : 0);
         if (sInstance[off] == null) {
             sInstance[off] = new QwertyKeyListener(cap, autoText);
@@ -52,7 +53,8 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
-        public static QwertyKeyListener getInstanceForFullKeyboard() {
+        @DSModeled(DSC.SAFE)
+    public static QwertyKeyListener getInstanceForFullKeyboard() {
         if (sFullKeyboardInstance == null) {
             sFullKeyboardInstance = new QwertyKeyListener(Capitalize.NONE, false, true);
         }
@@ -60,6 +62,7 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.867 -0400", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "4079F5B55317F5D74185BECCDA06C17C")
     public int getInputType() {
         int varE5795ACE23B9034FFE40B80EEAF10896_1758341616 = (makeTextContentType(mAutoCap, mAutoText));
@@ -70,6 +73,7 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.872 -0400", hash_original_method = "516B59E01E71ED9ADC80D2A022ED13A5", hash_generated_method = "E006B5C52189467876DC8C1FA5DFF268")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
@@ -359,6 +363,7 @@ for(int j = selEnd - 3;j > 0;j--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.876 -0400", hash_original_method = "56CD99307A3C343252D0E9D8CB37E313", hash_generated_method = "D6E3184FFD2722F5C47E7C5127C0B441")
     private String getReplacement(CharSequence src, int start, int end,
                                   View view) {
@@ -416,7 +421,8 @@ String varFE81D892BE5757A0E16305825903D324_1953475984 =         out;
     }
 
     
-        public static void markAsReplaced(Spannable content, int start, int end,
+        @DSModeled(DSC.SAFE)
+    public static void markAsReplaced(Spannable content, int start, int end,
                                       String original) {
         Replaced[] repl = content.getSpans(0, content.length(), Replaced.class);
         for (int a = 0; a < repl.length; a++) {
@@ -430,6 +436,7 @@ String varFE81D892BE5757A0E16305825903D324_1953475984 =         out;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.877 -0400", hash_original_method = "2E7DB5AEEB189920125EB7B1E5F21218", hash_generated_method = "C74005D828BFA17E45C4DE69C7E5F920")
     private boolean showCharacterPicker(View view, Editable content, char c,
                                         boolean insert, int count) {
@@ -466,7 +473,8 @@ String varFE81D892BE5757A0E16305825903D324_1953475984 =         out;
     }
 
     
-        private static String toTitleCase(String src) {
+        @DSModeled(DSC.SAFE)
+    private static String toTitleCase(String src) {
         return Character.toUpperCase(src.charAt(0)) + src.substring(1);
     }
 

@@ -128,6 +128,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.986 -0400", hash_original_method = "2BDEB44F3F77270286A692320830ED18", hash_generated_method = "9B40E4C47CDE36CF92B5E26F821BE980")
     private void cd() throws IOException {
         int idx = url.getFile().lastIndexOf('/');
@@ -165,6 +166,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.987 -0400", hash_original_method = "1FC662ADE026A6EC6E72DFD849EB4C0C", hash_generated_method = "B3AC9FCFF6E14E5809976F739C4FF18D")
     @Override
     public void connect() throws IOException {
@@ -223,6 +225,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.990 -0400", hash_original_method = "C4AF18B7DC35179EB8C42F6F6880E61F", hash_generated_method = "EB35FF8EE97947721E210B28E7B981FA")
     private void connectInternal() throws IOException {
         int port = url.getPort();
@@ -288,6 +291,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.990 -0400", hash_original_method = "EC8528293B0BAB1F2E4332771D0B26FB", hash_generated_method = "44E0ACBCABDD08E2B2D39730232C7741")
     @Override
     public String getContentType() {
@@ -398,6 +402,7 @@ OutputStream var0A60C763AC2C950C297DA7D4666CB315_1759116766 =         dataSocket
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.993 -0400", hash_original_method = "754446702A2F2C82AEEC6CF269039EFC", hash_generated_method = "325D806B70EB575E9755B3CB6FA9F8A0")
     private int getReply() throws IOException {
         byte[] code = new byte[3];
@@ -669,6 +674,7 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.001 -0400", hash_original_method = "507EB2691A7ADEA1CDA7F73F8F57152E", hash_generated_method = "32689D6CC12D8E9C19D4B728B159EEF1")
     private void setType() throws IOException {
         write("TYPE I\r\n");

@@ -16,7 +16,8 @@ public final class ASN1Enumerated extends ASN1Primitive {
     }
 
     
-        public static ASN1Enumerated getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1Enumerated getInstance() {
         return ASN1;
     }
 
@@ -63,6 +64,7 @@ Object var799D9F18AD20BC40A384FA5E7CC005DE_2076221912 =         Arrays.copyOfRan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.569 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "CF6C0D89125D265A070FAEF45137B38D")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());

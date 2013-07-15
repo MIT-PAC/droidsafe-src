@@ -164,6 +164,7 @@ Writer var72A74007B2BE62B849F475C7BDA4658B_1928818764 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.100 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "B1FDE7C63DEB2588834DDAE6E775F979")
      boolean checkError() {
         boolean var68934A3E9455FA72420237EB05902327_757902764 = (false);

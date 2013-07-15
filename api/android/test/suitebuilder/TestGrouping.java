@@ -191,6 +191,7 @@ TestGrouping var72A74007B2BE62B849F475C7BDA4658B_1098533928 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.523 -0400", hash_original_method = "C38D4C4BAAACEDDA4FA2C460C27FC791", hash_generated_method = "25E36F10A0E3FFF5D1AA16A8FD4FFD58")
     public String getFirstIncludedPackage() {
 String varF8D28C66D98E8F5E93FEBFB5E22AE752_2106810384 =         firstIncludedPackage;
@@ -265,6 +266,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.525 -0400", hash_original_method = "EF51D9ADCA3E8F522FB005D173D913A5", hash_generated_method = "278C4AA58E3CC699090BB3856901B327")
     public void setClassLoader(ClassLoader classLoader) {
         this.classLoader = classLoader;

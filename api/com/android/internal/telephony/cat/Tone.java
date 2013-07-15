@@ -54,6 +54,7 @@ public enum Tone implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ordinal());
     }
+    @DSModeled(DSC.SAFE)
     public int describeContents() {
         return 0;
     }

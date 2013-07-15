@@ -43,6 +43,7 @@ public class Item implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.328 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B260B2A63DFA7D3D4A7B3D30EEA06A68")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1719698586 = (0);
@@ -67,6 +68,7 @@ public class Item implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.330 -0400", hash_original_method = "D77DEAB1CC7B5FDE4A537F56E3011951", hash_generated_method = "ABCE4975655EE57665269EE903277312")
     public String toString() {
 String var79CC641C1148018540A26F7ADC424893_1697698746 =         text;

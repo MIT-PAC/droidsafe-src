@@ -101,6 +101,7 @@ ClientConnectionOperator var5302AB2ADD1B4945976DC003AFE0BD75_1374227233 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.169 -0400", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "663F38AEA7317FF7841935355BA0554E")
     public SchemeRegistry getSchemeRegistry() {
 SchemeRegistry var88A9F5243E7E93089AA8FDF949007087_937005648 =         this.schemeRegistry;
@@ -251,6 +252,7 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.172 -0400", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "F8DA8F615D1B7CDB1E2EA9BC5DCA8E85")
     public int getConnectionsInPool() {
         synchronized

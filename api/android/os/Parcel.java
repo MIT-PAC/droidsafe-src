@@ -222,6 +222,7 @@ for(int i=0;i<POOL_SIZE;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.032 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "B7B1791B1819FAA4AC4DF261A54493B1")
     private void writeNative(byte[] b, int offset, int len) {
     }
@@ -2892,21 +2893,25 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.090 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
     private void freeBuffer() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.091 -0400", hash_original_method = "70F6A5F1801DEC2DB8BE38968C81061C", hash_generated_method = "2B68B9C20AB085D1D67AAC97913FD822")
     private void init(int obj) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.091 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "870C0C4D9949E316DFA0E367EFD712A9")
     private void destroy() {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.092 -0400", hash_original_method = "377C79A0AFFA00A75F96A5842171AC58", hash_generated_method = "C3E38E9D387FCF808198E9F74199C991")
      void readMapInternal(Map outVal, int N,
         ClassLoader loader) {
@@ -2931,6 +2936,7 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.092 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "6B5827457146BEB0975595F45FF3C4BD")
     private void readListInternal(List outVal, int N,
         ClassLoader loader) {
@@ -2953,6 +2959,7 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.093 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "6A537B36D083B1B8A5017BE43AA2DBBB")
     private void readArrayInternal(Object[] outVal, int N,
         ClassLoader loader) {
@@ -2972,6 +2979,7 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.093 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "AF3AB278C20FB2120ED94E0370ECB013")
     private void readSparseArrayInternal(SparseArray outVal, int N,
         ClassLoader loader) {

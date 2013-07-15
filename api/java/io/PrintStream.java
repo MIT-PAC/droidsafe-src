@@ -178,6 +178,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.582 -0400", hash_original_method = "785F4CCF429F72C42E20A1AABCB6C5CE", hash_generated_method = "CC852D7FE95E7B5290039A783A243D73")
     protected void clearError() {
         ioError = false;
@@ -523,6 +524,7 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.597 -0400", hash_original_method = "203605AE3CB77711209DB798B89166F2", hash_generated_method = "F8950940439079B93D22633B21205292")
     protected void setError() {
         ioError = true;

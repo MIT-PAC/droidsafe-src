@@ -40,7 +40,8 @@ public class DERInteger extends ASN1Object {
     }
 
     
-        public static DERInteger getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DERInteger getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERInteger)
         {
@@ -95,6 +96,7 @@ BigInteger var7698F9817E45674D2D13D01E9A3007E4_121561974 =         new BigIntege
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.089 -0400", hash_original_method = "473F358B008FFCD851D487BD1750243E", hash_generated_method = "4CDD57FD11C0F60C153F5E3CDB73C119")
     public int hashCode() {
         int value = 0;

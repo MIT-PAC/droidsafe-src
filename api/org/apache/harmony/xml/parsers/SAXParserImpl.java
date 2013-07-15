@@ -117,6 +117,7 @@ Object var5BBB273B259F736B50FEB008BF3FDB91_1267632004 =         reader.getProper
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.707 -0400", hash_original_method = "2EF684CE098290C07222DD88BA41AEFB", hash_generated_method = "487FCC13C313CA92C516C2959EED2F00")
     @Override
     public XMLReader getXMLReader() {
@@ -152,6 +153,7 @@ XMLReader var681AFDDDB48FD166DFCBFA04C65E6269_801799135 =         reader;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.708 -0400", hash_original_method = "BC62268279A4D4DB4B44A495D4290EBF", hash_generated_method = "264EDAC666532EF9F6F95FF45A51097E")
     @Override
     public boolean isValidating() {

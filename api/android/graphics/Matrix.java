@@ -27,6 +27,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.380 -0400", hash_original_method = "2841C18D225FF732B7B2ED26420E0D84", hash_generated_method = "48A77A7AD902BEBAF631C7CB83B99CA7")
     public boolean isIdentity() {
         boolean var4EE96B036FE973191E69A90717EECFBD_371671723 = (native_isIdentity(native_instance));
@@ -37,6 +38,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.380 -0400", hash_original_method = "79ACBDB454C166CD18416C9311332315", hash_generated_method = "18134CD03457D2A2A1BF113DA9C43EC4")
     public boolean rectStaysRect() {
         boolean var4CCFD8F49D54FFCBB9CF77D912926451_2140794907 = (native_rectStaysRect(native_instance));
@@ -47,6 +49,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.380 -0400", hash_original_method = "FFD47BD973F843026149EBC467C90A81", hash_generated_method = "37F6B59D51C8BAF0DEC168B419C2B2D8")
     public void set(Matrix src) {
         addTaint(src.getTaint());
@@ -67,6 +70,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.380 -0400", hash_original_method = "EBE703D7B768F6481174C59F67FA3100", hash_generated_method = "0112D091CC280A9FE1E66BE2C6DC0E25")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
@@ -82,6 +86,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.381 -0400", hash_original_method = "9189F6751C365D24C86F2BCF8029966A", hash_generated_method = "13B89CEA14A3F1070B2312BA6829A32E")
     public void reset() {
         native_reset(native_instance);
@@ -90,6 +95,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.381 -0400", hash_original_method = "4ABE67590F26D49A748F83E05B922D6E", hash_generated_method = "EB3DF6C908136674011222CB2B1CCF5E")
     public void setTranslate(float dx, float dy) {
         addTaint(dy);
@@ -100,6 +106,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.381 -0400", hash_original_method = "82025887E943FB82D92D7647B1CDD6A4", hash_generated_method = "E74561CAABA574F7665E7807F388DCCE")
     public void setScale(float sx, float sy, float px, float py) {
         addTaint(py);
@@ -112,6 +119,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.382 -0400", hash_original_method = "405981B5032E505B7ADC1B41B7C8A53D", hash_generated_method = "984E47E55547A616808B810C820B8331")
     public void setScale(float sx, float sy) {
         addTaint(sy);
@@ -122,6 +130,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.382 -0400", hash_original_method = "D24D75386C6A7BC2522B54B98C5D5387", hash_generated_method = "B47DBF19DA1772CA3DABC65E5244F079")
     public void setRotate(float degrees, float px, float py) {
         addTaint(py);
@@ -133,6 +142,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.382 -0400", hash_original_method = "43C7C737EFC6B994F84E937D3F6AAF6A", hash_generated_method = "5124A68F22B5621DEE6F599A43A04C55")
     public void setRotate(float degrees) {
         addTaint(degrees);
@@ -142,6 +152,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.382 -0400", hash_original_method = "D62ED30BDB09648860C12F4C33D5D2F5", hash_generated_method = "EE772C204E4A82740FF582E9C00998B7")
     public void setSinCos(float sinValue, float cosValue, float px, float py) {
         addTaint(py);
@@ -154,6 +165,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.382 -0400", hash_original_method = "BF18F19C125E14226E94998F97574605", hash_generated_method = "6FE55AA392A99B38CF12C191C1AF04AB")
     public void setSinCos(float sinValue, float cosValue) {
         addTaint(cosValue);
@@ -164,6 +176,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.383 -0400", hash_original_method = "D80C969913C1752CC5799F53218DDBF4", hash_generated_method = "48D755E11553201B261F1BE9E4FF02F2")
     public void setSkew(float kx, float ky, float px, float py) {
         addTaint(py);
@@ -176,6 +189,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.383 -0400", hash_original_method = "C307AACAFF9D5B23D5D1BDAB3825341D", hash_generated_method = "24CBB5EE8A9E4B21F5C1487F27EBB0F6")
     public void setSkew(float kx, float ky) {
         addTaint(ky);
@@ -186,6 +200,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.383 -0400", hash_original_method = "56B420A7A69DF5D45E01C2D78C2CB3D0", hash_generated_method = "7114827CF81882971AD2317E0200BC69")
     public boolean setConcat(Matrix a, Matrix b) {
         addTaint(b.getTaint());
@@ -200,6 +215,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.383 -0400", hash_original_method = "F46062CE4D887C63D2B52C9E41EB2542", hash_generated_method = "1C6738A7362FB7017CD919368A151923")
     public boolean preTranslate(float dx, float dy) {
         addTaint(dy);
@@ -212,6 +228,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.385 -0400", hash_original_method = "F666E80378D32154F2306C1184D58E89", hash_generated_method = "B3E9315B5165F4ED22DD8D28AA61541B")
     public boolean preScale(float sx, float sy, float px, float py) {
         addTaint(py);
@@ -226,6 +243,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.385 -0400", hash_original_method = "527D02A9319A5AC738DC088F9CE2DF28", hash_generated_method = "0D6B60F2165C2E8F806854AA9E7E1B79")
     public boolean preScale(float sx, float sy) {
         addTaint(sy);
@@ -238,6 +256,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.386 -0400", hash_original_method = "957DD3FA3C951D0A3D8ED4D51FD4EA92", hash_generated_method = "60687BEE5DD4AA7D80901B1FC70CA20A")
     public boolean preRotate(float degrees, float px, float py) {
         addTaint(py);
@@ -251,6 +270,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.386 -0400", hash_original_method = "07B5A36535E24ED5890CD9963836825B", hash_generated_method = "055B1E97DFE8C0456D9EBC624D11D41F")
     public boolean preRotate(float degrees) {
         addTaint(degrees);
@@ -262,6 +282,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.386 -0400", hash_original_method = "BCDAF6F2AF0C49197BF18278F335520E", hash_generated_method = "998858E202B3605765AAEF62B919EFB3")
     public boolean preSkew(float kx, float ky, float px, float py) {
         addTaint(py);
@@ -276,6 +297,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.386 -0400", hash_original_method = "421231502648E6DE11C6B4476FBB4CB5", hash_generated_method = "AD870EB45916348B7C5C1F0DA2EEF36F")
     public boolean preSkew(float kx, float ky) {
         addTaint(ky);
@@ -288,6 +310,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.387 -0400", hash_original_method = "5465FF6869EFECF5658D42C575F011EC", hash_generated_method = "B29004D7E14F520B0BCB4699F1F23AF9")
     public boolean preConcat(Matrix other) {
         addTaint(other.getTaint());
@@ -299,6 +322,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.387 -0400", hash_original_method = "C79C9E0E75F4298B5359E17C43CD6BA7", hash_generated_method = "185BDC56E7CC95CE9FB62566B0BFC471")
     public boolean postTranslate(float dx, float dy) {
         addTaint(dy);
@@ -311,6 +335,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.387 -0400", hash_original_method = "158FF341C93FCD549341DC9F548B9A8C", hash_generated_method = "6B6D5CAFBC1F9C5EBA85268E329CAF3A")
     public boolean postScale(float sx, float sy, float px, float py) {
         addTaint(py);
@@ -325,6 +350,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.387 -0400", hash_original_method = "2747525819A92C185D4EAB6F550FCCE3", hash_generated_method = "73E3305ED36BC47802749B8D9BBF241F")
     public boolean postScale(float sx, float sy) {
         addTaint(sy);
@@ -337,6 +363,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.387 -0400", hash_original_method = "C0257612FFE5AA7DE5163F0B0AB9F855", hash_generated_method = "3285E18E4A4044F129F9AE4FCB2846DC")
     public boolean postRotate(float degrees, float px, float py) {
         addTaint(py);
@@ -350,6 +377,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.388 -0400", hash_original_method = "DB293F0AFDDF18839C895B754EC55E8F", hash_generated_method = "128F723AB700DF626CB1D6EABD976676")
     public boolean postRotate(float degrees) {
         addTaint(degrees);
@@ -361,6 +389,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.388 -0400", hash_original_method = "57CA592FACEF6BD09A9AB3838326FC82", hash_generated_method = "9CF1A43760498BD78EDAA05B45E7739F")
     public boolean postSkew(float kx, float ky, float px, float py) {
         addTaint(py);
@@ -375,6 +404,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.388 -0400", hash_original_method = "0C899E968246F5B1F6489525332C2DAA", hash_generated_method = "CE6E5E56F6FBA6D77FCF31950334E058")
     public boolean postSkew(float kx, float ky) {
         addTaint(ky);
@@ -387,6 +417,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.388 -0400", hash_original_method = "C3D775738E645A4A21D169FF31B7CB59", hash_generated_method = "299BFF09E775B7D729546800BC5B3677")
     public boolean postConcat(Matrix other) {
         addTaint(other.getTaint());
@@ -398,6 +429,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.388 -0400", hash_original_method = "AEF4FE63E4C98EDC4913C94ED23B0046", hash_generated_method = "5C44A65CD9DD94946DE01CB7B20F7CE5")
     public boolean setRectToRect(RectF src, RectF dst, ScaleToFit stf) {
         addTaint(stf.getTaint());
@@ -420,7 +452,8 @@ public class Matrix {
     }
 
     
-        private static void checkPointArrays(float[] src, int srcIndex,
+        @DSModeled(DSC.SAFE)
+    private static void checkPointArrays(float[] src, int srcIndex,
                                          float[] dst, int dstIndex,
                                          int pointCount) {
         int srcStop = srcIndex + (pointCount << 1);
@@ -432,6 +465,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.389 -0400", hash_original_method = "81F71DB7C56D04B1A3A5BEE1ABC9313F", hash_generated_method = "CB7312D3AE377CDA3191E32040A513AA")
     public boolean setPolyToPoly(float[] src, int srcIndex,
                                  float[] dst, int dstIndex,
@@ -462,6 +496,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.389 -0400", hash_original_method = "E353C96DCEC77FF20275C37C83D4D335", hash_generated_method = "8261203E262CDF03F9203BA0B67AF27B")
     public boolean invert(Matrix inverse) {
         addTaint(inverse.getTaint());
@@ -473,6 +508,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.389 -0400", hash_original_method = "B69F96FB84D81823B3FB4BA4E2DA7623", hash_generated_method = "5DCDC1AA48579930959280DB496826AB")
     public void mapPoints(float[] dst, int dstIndex, float[] src, int srcIndex,
                           int pointCount) {
@@ -491,6 +527,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.389 -0400", hash_original_method = "E01BB240D3A8AF79E8CA96ADF8A93B02", hash_generated_method = "9624EFCD46B6B6EAE7D20D464B6B3D04")
     public void mapVectors(float[] dst, int dstIndex, float[] src, int srcIndex,
                           int vectorCount) {
@@ -509,6 +546,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.390 -0400", hash_original_method = "9EB430E2EA11CE20A0728D1BC77C5684", hash_generated_method = "FA6A670E46C273B18099D849B122E530")
     public void mapPoints(float[] dst, float[] src) {
         addTaint(src[0]);
@@ -528,6 +566,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.390 -0400", hash_original_method = "88563DD2DA99100452A3E727EF621773", hash_generated_method = "BE09142863C02B31B4C3048B11EB4F4A")
     public void mapVectors(float[] dst, float[] src) {
         addTaint(src[0]);
@@ -547,6 +586,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.390 -0400", hash_original_method = "B621EF9C19B6D800D2C8FEF0AEB101A2", hash_generated_method = "478E8C091C483D7923156D415D095C14")
     public void mapPoints(float[] pts) {
         addTaint(pts[0]);
@@ -556,6 +596,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.390 -0400", hash_original_method = "35DF34CB8A8DD69940AA879A74BDB59C", hash_generated_method = "53E01C380D49B72A8D207E1E455316C2")
     public void mapVectors(float[] vecs) {
         addTaint(vecs[0]);
@@ -565,6 +606,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.390 -0400", hash_original_method = "ED0A1CF18B9884BD196B57BA9AB3D4D4", hash_generated_method = "6B565BE78836ECCB942CA40451B63C7E")
     public boolean mapRect(RectF dst, RectF src) {
         addTaint(src.getTaint());
@@ -586,6 +628,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.390 -0400", hash_original_method = "E67F1023A30815D48967A785552726F7", hash_generated_method = "25062756A61C61DB4EC5812EEEF82F64")
     public boolean mapRect(RectF rect) {
         addTaint(rect.getTaint());
@@ -597,6 +640,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.391 -0400", hash_original_method = "10B4872CA843B84CAABA7086757B6AA8", hash_generated_method = "803008998EBED3C154E85FD163DC175A")
     public float mapRadius(float radius) {
         addTaint(radius);
@@ -608,6 +652,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.391 -0400", hash_original_method = "E9A30A056D591CF546BBF753077E713D", hash_generated_method = "0FF5E299F970F84D9C1F1AC541217646")
     public void getValues(float[] values) {
         addTaint(values[0]);
@@ -626,6 +671,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.391 -0400", hash_original_method = "A66AD9F1BFFA0584B04714786DBE2DC1", hash_generated_method = "AD80F4DF5412694CE019F6457BCFD7C5")
     public void setValues(float[] values) {
         addTaint(values[0]);
@@ -644,6 +690,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.391 -0400", hash_original_method = "790F3515038F276DF7A46D3A4B29621A", hash_generated_method = "482B03FAF84D160BF40673977038070D")
     public String toString() {
         StringBuilder sb = new StringBuilder(64);
@@ -662,6 +709,7 @@ String var2460B846747F8B22185AD8BE722266A5_784276747 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.391 -0400", hash_original_method = "9DDD7B6FB851EDEB6218261EF1A63117", hash_generated_method = "CAEE03E82141A95C758902ECA34E3B3E")
     public String toShortString() {
         StringBuilder sb = new StringBuilder(64);
@@ -676,6 +724,7 @@ String var2460B846747F8B22185AD8BE722266A5_1656700004 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.392 -0400", hash_original_method = "F87637A67413F385021CCAE210B2BF25", hash_generated_method = "C93A56F5B4B25B9088C3CD55959CD473")
     public void toShortString(StringBuilder sb) {
         addTaint(sb.getTaint());
@@ -725,6 +774,7 @@ String var2460B846747F8B22185AD8BE722266A5_1656700004 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.392 -0400", hash_original_method = "8B9E48E860ED3F94388D797BB2BE65D6", hash_generated_method = "D8CC2CEED807133F12131FC90035468D")
     public void printShortString(PrintWriter pw) {
         addTaint(pw.getTaint());
@@ -774,6 +824,7 @@ String var2460B846747F8B22185AD8BE722266A5_1656700004 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.392 -0400", hash_original_method = "29B0241D689448242FFD9C9D7DE21563", hash_generated_method = "15CC57087C95B7D9B74DEAC06F3C409E")
     protected void finalize() throws Throwable {
         finalizer(native_instance);

@@ -25,6 +25,7 @@ public class CallIDParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.932 -0400", hash_original_method = "1EBE66F04307D347AFA5B564B58F8AB6", hash_generated_method = "B5431CA1C1FC5FA22EF1337B89628BD9")
     public SIPHeader parse() throws ParseException {
     if(debug)        

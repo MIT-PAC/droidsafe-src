@@ -27,6 +27,7 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.305 -0400", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "7FC650199DD18F9F92FAB70C45FE18AE")
      KeyManager[] getKeyManagers() throws GeneralSecurityException, IOException {
     if(KEY_MANAGERS != null)        
@@ -74,6 +75,7 @@ KeyManager[] varE51930CD0E72C78868ADFB1CB33F038E_135523360 =         KEY_MANAGER
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.306 -0400", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "CA4C35B13D1CF1F96AFCC31F4616B31B")
      TrustManager[] getTrustManagers() throws GeneralSecurityException, IOException {
     if(TRUST_MANAGERS != null)        
@@ -121,6 +123,7 @@ TrustManager[] var156E2C36687C9A83D6CBE6ED027CD2EC_2056932074 =         TRUST_MA
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.307 -0400", hash_original_method = "C6A638FBF6A76AC1A136D02168ED58AC", hash_generated_method = "E2514C0D05FC2FFA5D67AAAD5EE4682A")
     @Override
     public void engineInit(KeyManager[] kms, TrustManager[] tms,

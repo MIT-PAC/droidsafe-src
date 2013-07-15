@@ -79,6 +79,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.060 -0400", hash_original_method = "587B198236267AC63B96064EC21D7789", hash_generated_method = "B633690EE10B06BF4C97A68CC4DE8064")
     public boolean isActionModeStarted() {
         boolean varDA8565957A542E3140746B0CEB2A49C1_1729682286 = (mActionMode != null);
@@ -158,6 +159,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.063 -0400", hash_original_method = "F1AD782B0CD2259E0BE9FDDD0EC2ADD5", hash_generated_method = "EA5142F85218179C74E31C4344F7840C")
         @Override
         public void setTitle(CharSequence title) {
@@ -166,6 +168,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.063 -0400", hash_original_method = "B30C6763E9E5F305FC4AC0CFECBEE869", hash_generated_method = "C6BC91ECFE1C379B9775192FE76B7EE1")
         @Override
         public void setTitle(int resId) {
@@ -174,6 +177,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.064 -0400", hash_original_method = "EB006AC48BB7A6AA8B2958DC91304E5C", hash_generated_method = "9DFEDFD3C97DB086294C2841AEBA9335")
         @Override
         public void setSubtitle(CharSequence subtitle) {
@@ -182,6 +186,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.065 -0400", hash_original_method = "1F86E8EB25240C47EC24308D126D97B9", hash_generated_method = "D51D417B20F4E43280CDC3BCD8EA2931")
         @Override
         public void setSubtitle(int resId) {
@@ -190,6 +195,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.065 -0400", hash_original_method = "3E94F533B6F67EA66D83CADA4353AF33", hash_generated_method = "A18B374E9FE9E6972BDC43896DF58822")
         @Override
         public void setCustomView(View view) {
@@ -269,6 +275,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.067 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "8BD1B838593F29C003CFF1481CBA437A")
         @Override
         public Menu getMenu() {
@@ -280,6 +287,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_292018835 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.068 -0400", hash_original_method = "CD9B990298CF856E49A643E530553914", hash_generated_method = "C5584AA4941E9CFA103793172CB08342")
         @Override
         public CharSequence getTitle() {
@@ -291,6 +299,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_130141734 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.068 -0400", hash_original_method = "F475DA391A1931FE20FFD2579FFFF5AF", hash_generated_method = "5B3DD6543AE7F43D712D6AFEA702AC70")
         @Override
         public CharSequence getSubtitle() {
@@ -302,6 +311,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_213167180 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.069 -0400", hash_original_method = "7A49E6A1A0BF55D8D926541A71E4907E", hash_generated_method = "84B7E26A8AFD55DADBC0E410BA90C2D7")
         @Override
         public View getCustomView() {
@@ -347,6 +357,7 @@ MenuInflater varF9281FDCAD705FC65F86153FDD312F6B_1365730470 =             new Me
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.071 -0400", hash_original_method = "BD3281B75359F57929C0B7D8E3BC0065", hash_generated_method = "4DC0BAA3678E3B1F051D28FC48B7B7DA")
         @Override
         public void onMenuModeChange(MenuBuilder menu) {

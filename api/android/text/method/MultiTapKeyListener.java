@@ -31,7 +31,8 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
-        public static MultiTapKeyListener getInstance(boolean autotext,
+        @DSModeled(DSC.SAFE)
+    public static MultiTapKeyListener getInstance(boolean autotext,
                                                   Capitalize cap) {
         int off = cap.ordinal() * 2 + (autotext ? 1 : 0);
         if (sInstance[off] == null) {
@@ -41,6 +42,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.686 -0400", hash_original_method = "0F62DAE08CCEDDF88EBED8C62070D6C5", hash_generated_method = "3E4FFF5898B3E794EABECC41222E7DDA")
     public int getInputType() {
         int var89C976C03165A22A08FDF991404C4F1F_1625758688 = (makeTextContentType(mCapitalize, mAutoText));
@@ -51,6 +53,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.690 -0400", hash_original_method = "A5D3B5CD1C27B709A733246605C23357", hash_generated_method = "F2363FEAADD933C88BBB48CEED64628D")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
@@ -192,6 +195,7 @@ for(Object method : methods)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.693 -0400", hash_original_method = "32D49D04D14DFD2D5D5762D6E8E59602", hash_generated_method = "F68DAE41F814022918F8B4AA93EB4204")
     public void onSpanChanged(Spannable buf,
                               Object what, int s, int e, int start, int stop) {
@@ -215,7 +219,8 @@ for(Object method : methods)
     }
 
     
-        private static void removeTimeouts(Spannable buf) {
+        @DSModeled(DSC.SAFE)
+    private static void removeTimeouts(Spannable buf) {
         Timeout[] timeout = buf.getSpans(0, buf.length(), Timeout.class);
         for (int i = 0; i < timeout.length; i++) {
             Timeout t = timeout[i];
@@ -226,6 +231,7 @@ for(Object method : methods)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.694 -0400", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "0F24BCA6C9426B0673BF35264E746E85")
     public void onSpanAdded(Spannable s, Object what, int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -237,6 +243,7 @@ for(Object method : methods)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.695 -0400", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "A2BA261E44A26E34D865E62CBB58DEB1")
     public void onSpanRemoved(Spannable s, Object what, int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected

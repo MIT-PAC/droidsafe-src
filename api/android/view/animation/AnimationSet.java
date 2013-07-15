@@ -113,6 +113,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.627 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "8A7BB69AA36E9A4190E2455BA21998A6")
     private void setFlag(int mask, boolean value) {
         addTaint(value);
@@ -133,6 +134,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.628 -0400", hash_original_method = "96CA9C56EEADA219CA715399206CF9BC", hash_generated_method = "C0944DDBBB8FF4378AF642CA83ECA72A")
     private void init() {
         mStartTime = 0;
@@ -622,6 +624,7 @@ List<Animation> var2FFA33FE67F05C81C7BA6EEA1AA0C608_771909556 =         mAnimati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.642 -0400", hash_original_method = "007230E9C632DD7C25BB9E67DB11C3C3", hash_generated_method = "B00E61762EF85D0E9342D61036DC52EE")
     @Override
     public boolean willChangeTransformationMatrix() {
@@ -633,6 +636,7 @@ List<Animation> var2FFA33FE67F05C81C7BA6EEA1AA0C608_771909556 =         mAnimati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.642 -0400", hash_original_method = "A538326162AE4CED46022318A3520B17", hash_generated_method = "1408C24DFA4D9988B8C57BE6DB6ACA4F")
     @Override
     public boolean willChangeBounds() {

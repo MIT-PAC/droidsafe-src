@@ -15,6 +15,7 @@ public class CallInfoList extends SIPHeaderList<CallInfo> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.144 -0400", hash_original_method = "95B657F1A1F55E6349A24A49AE286459", hash_generated_method = "A515F2BB365CEEA13290B54629653059")
     public Object clone() {
         CallInfoList retval = new CallInfoList ();

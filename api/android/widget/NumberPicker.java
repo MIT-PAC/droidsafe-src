@@ -825,6 +825,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.508 -0400", hash_original_method = "A5D52728D322EA76B9FE19A001AC2619", hash_generated_method = "6947FA1AD406D8D6FAD675CA4842198A")
     @Override
     public int getSolidColor() {
@@ -836,6 +837,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.508 -0400", hash_original_method = "B8FD740B950D37D2ACEC32CDC9BBCB3E", hash_generated_method = "D55BA1C0A2CC4BCD0E3EE7C50853AF06")
     public void setOnValueChangedListener(OnValueChangeListener onValueChangedListener) {
         mOnValueChangeListener = onValueChangedListener;
@@ -844,6 +846,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.508 -0400", hash_original_method = "E07C1A1F4DD9D0D02072D75B16D4DB8B", hash_generated_method = "8D444529148A09F38F528175C920BB2D")
     public void setOnScrollListener(OnScrollListener onScrollListener) {
         mOnScrollListener = onScrollListener;
@@ -966,6 +969,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.512 -0400", hash_original_method = "0DE9A61E4C9F0206942BD1BD5DBB2993", hash_generated_method = "95F815AE7A4023C9C0075C0D51F4855F")
     public boolean getWrapSelectorWheel() {
         boolean varFC769FBB094551A074259CD0A7B6736A_93220430 = (mWrapSelectorWheel);
@@ -1000,6 +1004,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.513 -0400", hash_original_method = "8C354EDC01FB7FE8E35D5D03601EF310", hash_generated_method = "A112829F0E2370B87C41F6E6B0002254")
     public void setOnLongPressUpdateInterval(long intervalMillis) {
         mLongPressUpdateInterval = intervalMillis;
@@ -1008,6 +1013,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.513 -0400", hash_original_method = "873C7D38131A035B7F6055170D432634", hash_generated_method = "B78618EAE5F8C8C940FF7269531391B7")
     public int getValue() {
         int varCBAFE11E7BAE23358D70D54D132C3064_1810829450 = (mValue);
@@ -1018,6 +1024,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.513 -0400", hash_original_method = "734B6103B2E180B236F243E5AD573634", hash_generated_method = "0EE8F761E31069AF1B54A898CD436327")
     public int getMinValue() {
         int varC996577FD89E2D9ACA600D3AF5442EB3_1876177702 = (mMinValue);
@@ -1069,6 +1076,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.514 -0400", hash_original_method = "D9333690652DA8538B4523261E9BBD48", hash_generated_method = "911A49AF8EA66A2AFDE7B5A62E52F15F")
     public int getMaxValue() {
         int varEB798AAFC3D0D018951E684107D8CF72_1412004956 = (mMaxValue);
@@ -1120,6 +1128,7 @@ for(int i = 0;i < valueCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.514 -0400", hash_original_method = "7D8D8A804F018648196BF68A974CA568", hash_generated_method = "9EA0999E235397F20EEC9FB1994C852B")
     public String[] getDisplayedValues() {
 String[] var0B87CE87A92799FAB05539CDBFD795AD_1941108022 =         mDisplayedValues;
@@ -1166,6 +1175,7 @@ String[] var0B87CE87A92799FAB05539CDBFD795AD_1941108022 =         mDisplayedValu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "26009EEE98735F9AF4C2D76E4A1AFAB0", hash_generated_method = "F49802677772A291C24879F392816D31")
     @Override
     protected float getTopFadingEdgeStrength() {
@@ -1177,6 +1187,7 @@ String[] var0B87CE87A92799FAB05539CDBFD795AD_1941108022 =         mDisplayedValu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "A0CE61C0CAF5846D2D470684E7070854", hash_generated_method = "9CFB7075078012475CA300514A59425C")
     @Override
     protected float getBottomFadingEdgeStrength() {
@@ -1215,6 +1226,7 @@ String[] var0B87CE87A92799FAB05539CDBFD795AD_1941108022 =         mDisplayedValu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "8827C1FA31E6998965C439129AE20899")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -1304,6 +1316,7 @@ for(int i = 0;i < selectorIndices.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.517 -0400", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "6A09BD8EA53A915AB5F822E12CBC5F98")
     @Override
     public void sendAccessibilityEvent(int eventType) {
@@ -1770,6 +1783,7 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.527 -0400", hash_original_method = "98EC96D2E9172670F87F406C69617E1C", hash_generated_method = "E6CAB49E9703B6E82AF288E97750F591")
     private int getWrappedSelectorIndex(int selectorIndex) {
         addTaint(selectorIndex);
@@ -2148,6 +2162,7 @@ for(int i = 0;i < mDisplayedValues.length;i++)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.535 -0400", hash_original_method = "5619839AC48FF521F5D3DA01ED2E4A22", hash_generated_method = "50CCD7BD12886D8D49BCFD64550E83B1")
         public int getInputType() {
             int var86C66DE81A691CAFE3C9CD60100D1BD9_1028374079 = (InputType.TYPE_CLASS_TEXT);
@@ -2328,6 +2343,7 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.540 -0400", hash_original_method = "ED1739B7A0ACAE655C07ED8C0ABABF1C", hash_generated_method = "3E122DEB3F2DDEA67EBDA1CC64C07EBB")
         private void setIncrement(boolean increment) {
             mIncrement = increment;

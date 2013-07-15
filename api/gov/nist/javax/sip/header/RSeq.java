@@ -18,6 +18,7 @@ public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.789 -0400", hash_original_method = "39133A5DFA90BF891F6ADEE458981A87", hash_generated_method = "FE8EE08CC115A00D40116D73DFC9C8B7")
     public int getSequenceNumber() {
         int var195C5E3592D5616B6E9F1073F1C4D062_654986576 = ((int)this.sequenceNumber);
@@ -38,6 +39,7 @@ String var972D3DD8F35FA0BF57E7827D8C0C5E85_2047426500 =         Long.toString(th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.790 -0400", hash_original_method = "5EE204E642716446A9A561BAE9DA4271", hash_generated_method = "D554003BE89F422B4ED1736F0EA5434A")
     public long getSeqNumber() {
         long var55681EAF3A729CFE03DE3E3B3BFAB18A_911205065 = (this.sequenceNumber);
@@ -48,6 +50,7 @@ String var972D3DD8F35FA0BF57E7827D8C0C5E85_2047426500 =         Long.toString(th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.791 -0400", hash_original_method = "479EDE29655FEADB0A6AC8DE2CF03B87", hash_generated_method = "5E51757E937C1819485C044AB807FD48")
     public void setSeqNumber(long sequenceNumber) throws InvalidArgumentException {
     if(sequenceNumber <= 0 ||sequenceNumber > ((long)1)<<32 - 1)        
@@ -66,6 +69,7 @@ String var972D3DD8F35FA0BF57E7827D8C0C5E85_2047426500 =         Long.toString(th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.791 -0400", hash_original_method = "34CCD2A626C0B5A84694D440C0C4B269", hash_generated_method = "260914DAB800A4E7B48D4E7538D30522")
     public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentException {
         addTaint(sequenceNumber);

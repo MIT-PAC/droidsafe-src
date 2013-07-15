@@ -136,6 +136,7 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.711 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "079678F34F08CF6B5C6BF4E4FB8D5233")
     public int compareTo(Object o) {
         addTaint(o.getTaint());

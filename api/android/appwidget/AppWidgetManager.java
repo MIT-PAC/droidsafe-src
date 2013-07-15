@@ -244,6 +244,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.598 -0400", hash_original_method = "1B2C655DAB3EC9AC1A1945226B92611F", hash_generated_method = "FA4740B259A3C863ABDF0AB843C0BB75")
     public void bindAppWidgetId(int appWidgetId, ComponentName provider) {
         addTaint(provider.getTaint());
@@ -268,6 +269,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.598 -0400", hash_original_method = "9635C6DE1FB30445E1097958A10AD035", hash_generated_method = "E9EF2767187386DC3B3F2F081F9E479E")
     public void bindRemoteViewsService(int appWidgetId, Intent intent, IBinder connection) {
         addTaint(connection.getTaint());
@@ -293,6 +295,7 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.599 -0400", hash_original_method = "2B1B0C7D3E264A2CA6F28D675EB000CD", hash_generated_method = "BACC0304AFAC3A12204CEB6A8FE0CA6F")
     public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
         addTaint(intent.getTaint());

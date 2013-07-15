@@ -277,6 +277,7 @@ V var540C13E9E156B687226421B24F2DF178_374121613 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.570 -0400", hash_original_method = "971860883D94FE365FE71BDE260829D3", hash_generated_method = "F3D49FE6A8A57F4684542F1BEFE0F01C")
     private int safeSizeOf(K key, V value) {
         addTaint(value.getTaint());

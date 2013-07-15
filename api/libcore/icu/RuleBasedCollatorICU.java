@@ -211,6 +211,7 @@ String varE65B3A02759122992CB82C0E651AD408_32720754 =         result.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:25.470 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "94D9E1CA7DF06279E2A4130BD989AA46")
     @Override
     public int hashCode() {

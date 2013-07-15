@@ -22,6 +22,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.500 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
@@ -411,6 +412,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.512 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "C1A386917C74DB020F818753C69C92FA")
     protected String getCommonIccEFPath(int efid) {
         addTaint(efid);

@@ -25,6 +25,7 @@ public class HandshakeCompletedListenerImpl implements HandshakeCompletedListene
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.425 -0400", hash_original_method = "059B216A56A7176FB623C11ADC7DE4FF", hash_generated_method = "05C4BFDC91F20AC9D0D05E91F4982E29")
     public void handshakeCompleted(HandshakeCompletedEvent handshakeCompletedEvent) {
         this.handshakeCompletedEvent = handshakeCompletedEvent;
@@ -33,6 +34,7 @@ public class HandshakeCompletedListenerImpl implements HandshakeCompletedListene
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.425 -0400", hash_original_method = "E86D2808B5F943F6445EA098BE441F96", hash_generated_method = "FAB9FEAB60AB17ECAA85C2A0B4C15632")
     public HandshakeCompletedEvent getHandshakeCompletedEvent() {
 HandshakeCompletedEvent varB07F475F4832CCC2B2FDD214B37C2256_457939862 =         handshakeCompletedEvent;

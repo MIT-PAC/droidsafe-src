@@ -773,6 +773,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.583 -0400", hash_original_method = "B720364465717C512AF715245037D814", hash_generated_method = "3E44B81121CEA2E54D5289CBA0A47D7C")
     public int getPasswordMaximumLength(int quality) {
         addTaint(quality);

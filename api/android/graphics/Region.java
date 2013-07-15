@@ -80,6 +80,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.292 -0400", hash_original_method = "200ADD9307CCB536C203EAC015A5A024", hash_generated_method = "A1D8D2D68CAD63FF400E3E9B34FAD970")
     public void setEmpty() {
         nativeSetRect(mNativeRegion, 0, 0, 0, 0);
@@ -88,6 +89,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.292 -0400", hash_original_method = "4FCDB3DC16FC27229A4383057FFC976C", hash_generated_method = "163A545CCC51FE5A28E37CB1708DD693")
     public boolean set(Region region) {
         addTaint(region.getTaint());
@@ -99,6 +101,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.293 -0400", hash_original_method = "C2513170875A2D5A2EB27E891206577A", hash_generated_method = "60E4E93B8F9910E94455AA2E3D7D325B")
     public boolean set(Rect r) {
         addTaint(r.getTaint());
@@ -110,6 +113,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.293 -0400", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "CD23584289B8B47B8FB1898A223543C4")
     public boolean set(int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -124,6 +128,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.294 -0400", hash_original_method = "E058C8FF714DCD6DC5C3B199CE291ABB", hash_generated_method = "B96EBA650784A58686F6D639BDAFE567")
     public boolean setPath(Path path, Region clip) {
         addTaint(clip.getTaint());
@@ -136,6 +141,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.294 -0400", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "3CDEB18F64CBA5D432AA74BB65342C52")
     public boolean isEmpty() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394009208 = getTaintBoolean();
@@ -143,6 +149,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.295 -0400", hash_original_method = "2BE881D6CE1CF3506EFB49B5287B67D4", hash_generated_method = "D1A90B70236BFF6E0DDABDA18301483C")
     public boolean isRect() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1669255879 = getTaintBoolean();
@@ -150,6 +157,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.295 -0400", hash_original_method = "96E541304104A48A190119203B0E80D4", hash_generated_method = "E93A7F820AD0DDC86AFAA160466E505A")
     public boolean isComplex() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1796267356 = getTaintBoolean();
@@ -157,6 +165,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.295 -0400", hash_original_method = "EBA477C7AF945181ADA3A9B8177742BE", hash_generated_method = "80E4757C862908705E40498EFE139CC8")
     public Rect getBounds() {
         Rect r = new Rect();
@@ -171,6 +180,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_993470561 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.296 -0400", hash_original_method = "A46555E1E49458678846473DF9E9883B", hash_generated_method = "A9B12273C4E0EBB3ABC09B5979BA8B98")
     public boolean getBounds(Rect r) {
         addTaint(r.getTaint());
@@ -191,6 +201,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_993470561 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.296 -0400", hash_original_method = "378316FE7952FD732F90591AB3699DE2", hash_generated_method = "F94332256A892FE2710C1DBDAFF06841")
     public Path getBoundaryPath() {
         Path path = new Path();
@@ -205,6 +216,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.296 -0400", hash_original_method = "4EAA9FC9D13D7E90DDD0EEB1CB6196B1", hash_generated_method = "950F1C3CE1EF924DE9430F5A8CED01D5")
     public boolean getBoundaryPath(Path path) {
         addTaint(path.getTaint());
@@ -216,6 +228,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.297 -0400", hash_original_method = "5B0A75408C2B4CF9238ADD529FC37D02", hash_generated_method = "834FA7F298C2462B532A950EA6D7FF18")
     public boolean contains(int x, int y) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253365900 = getTaintBoolean();
@@ -223,6 +236,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.297 -0400", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "3DF12CDF9EC9A5160306CD1251926242")
     public boolean quickContains(Rect r) {
         addTaint(r.getTaint());
@@ -234,6 +248,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.298 -0400", hash_original_method = "F4780612A05468EA5B4971365E65F2E9", hash_generated_method = "FC00FFD3A459ECB3A36D502E7E4D2387")
     public boolean quickContains(int left, int top, int right,
                                         int bottom) {
@@ -242,6 +257,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.298 -0400", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "F870C3A8BBB7E8B21FF5D87BE52F00DC")
     public boolean quickReject(Rect r) {
         addTaint(r.getTaint());
@@ -253,6 +269,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.298 -0400", hash_original_method = "C7FE089D5B9638DFC662C69BB1CCA253", hash_generated_method = "6EFF8182CF37F2C294D9F3B100D91F2F")
     public boolean quickReject(int left, int top, int right, int bottom) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_868474879 = getTaintBoolean();
@@ -260,6 +277,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.299 -0400", hash_original_method = "248FAC130B583135AFED72EC96EB473C", hash_generated_method = "DB3B9CA07DAE7676E5640D3F1556B733")
     public boolean quickReject(Region rgn) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815278621 = getTaintBoolean();
@@ -267,6 +285,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.299 -0400", hash_original_method = "1E0220698FB1311F0D8B9F18E7495908", hash_generated_method = "F41CB55792DFB6AF73AE3365E76E7164")
     public void translate(int dx, int dy) {
         addTaint(dy);
@@ -277,11 +296,13 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.300 -0400", hash_original_method = "F2F101D23D8556E25BBA4D0A405F0CD3", hash_generated_method = "2A31251C6E83A876D8030DE3CA7F91C4")
     public void translate(int dx, int dy, Region dst) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.300 -0400", hash_original_method = "39111F1C858A6D228BD34A5A0563D24D", hash_generated_method = "D91EAAD3D7EC8A230C5EB71204DB1B93")
     public void scale(float scale) {
         addTaint(scale);
@@ -291,6 +312,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.301 -0400", hash_original_method = "704645B9B50E78F1B3F526FB095B5A0C", hash_generated_method = "93622E1801E30E8106831D2D97D909FA")
     public void scale(float scale, Region dst) {
     }
@@ -307,6 +329,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.302 -0400", hash_original_method = "0254EC2D8CB0B709656A3942F767CF9E", hash_generated_method = "2F6EE79288F441EC5A7624CC883294BC")
     public boolean op(Rect r, Op op) {
         addTaint(op.getTaint());
@@ -321,6 +344,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.303 -0400", hash_original_method = "F7B19A9596841ACD8A98EA48656877B1", hash_generated_method = "907A811B7BD96A3720751D04C3F39E58")
     public boolean op(int left, int top, int right, int bottom, Op op) {
         addTaint(op.getTaint());
@@ -338,6 +362,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.303 -0400", hash_original_method = "7B6B61AB972DEFAAC29D5DA42EF8C210", hash_generated_method = "A20D5F2E58A1469415052F01F9BBB2C5")
     public boolean op(Region region, Op op) {
         addTaint(op.getTaint());
@@ -350,6 +375,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.304 -0400", hash_original_method = "029ED340525EAD4C240C408219CCC448", hash_generated_method = "F2ED5C6471AA7DC4DE0F5329065DADBD")
     public boolean op(Rect rect, Region region, Op op) {
         addTaint(op.getTaint());
@@ -365,6 +391,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.305 -0400", hash_original_method = "7FDA52C90EA81767BFA435745FBF29BC", hash_generated_method = "0F64815A039DF8BDB5F9D1C12EF29BBF")
     public boolean op(Region region1, Region region2, Op op) {
         addTaint(op.getTaint());
@@ -380,6 +407,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_1372078618 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.306 -0400", hash_original_method = "9B6C5B9AE4B0C715D06D485A7F8D4046", hash_generated_method = "05C51D767125E00CC47509D5974F0E43")
     public String toString() {
 String varDDC806D031E96ADAFEE4C9E5395D6E1C_1499967690 =         nativeToString(mNativeRegion);
@@ -390,6 +418,7 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_1499967690 =         nativeToString(m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.306 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0F9BC93AE3D5CCBAFFBB68AF3856FF67")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1467849276 = (0);
@@ -400,6 +429,7 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_1499967690 =         nativeToString(m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.307 -0400", hash_original_method = "D2434A1CAFA87CC30850BFCF09357749", hash_generated_method = "CACDCDDBDA0DDB8F3591182ABC23E3E5")
     public void writeToParcel(Parcel p, int flags) {
         addTaint(flags);
@@ -417,6 +447,7 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_1499967690 =         nativeToString(m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.309 -0400", hash_original_method = "1060AF13EAB0782D5AA6FD12A9EA9F72", hash_generated_method = "C3C73F30D94E68ED6D9BD81925029104")
     @Override
     public boolean equals(Object obj) {
@@ -440,6 +471,7 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_1499967690 =         nativeToString(m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.310 -0400", hash_original_method = "7B9D4EAB814BE6F839A0AFACF43162A1", hash_generated_method = "88533E051B74F60620695CD5B6D42F0C")
     protected void finalize() throws Throwable {
         try 

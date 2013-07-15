@@ -18,6 +18,7 @@ public enum RoundingMode {
     RoundingMode(int rm) {
         bigDecimalRM = rm;
     }
+    @DSModeled(DSC.SAFE)
     public static RoundingMode valueOf(int mode) {
         switch (mode) {
             case BigDecimal.ROUND_CEILING:

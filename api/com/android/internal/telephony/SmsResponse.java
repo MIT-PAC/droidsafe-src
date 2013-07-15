@@ -28,6 +28,7 @@ public class SmsResponse {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.498 -0400", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "BB92747581596AE270E2A2C685804861")
     public String toString() {
         String ret = "{ messageRef = " + messageRef

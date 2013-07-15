@@ -15,6 +15,7 @@ public class AcceptList extends SIPHeaderList<Accept> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.698 -0400", hash_original_method = "3C553A191FB2DA2F431571F69D6628C7", hash_generated_method = "FD52063B1A4A3B6BFC800B388AA92022")
     @Override
     public Object clone() {

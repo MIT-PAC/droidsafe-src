@@ -86,7 +86,8 @@ public class Level implements Serializable {
     }
 
     
-        public static Level parse(String name) throws IllegalArgumentException {
+        @DSModeled(DSC.SAFE)
+    public static Level parse(String name) throws IllegalArgumentException {
         if (name == null) {
             throw new NullPointerException("name == null");
         }
@@ -120,6 +121,7 @@ public class Level implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.131 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "3BEF42198E661EC93A8C50F88DB67979")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_134512706 =         this.name;
@@ -130,6 +132,7 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_134512706 =         this.name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.131 -0400", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "48E4B45AAD8B19A3C35C89753559DDC2")
     public String getResourceBundleName() {
 String var7214CEE3997909E522736F52DB465A8B_1979387927 =         this.resourceBundleName;
@@ -150,6 +153,7 @@ String var7214CEE3997909E522736F52DB465A8B_1979387927 =         this.resourceBun
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.132 -0400", hash_original_method = "68F6CB700CD961C98FAD85DDC5107742", hash_generated_method = "BEB4199B76B1E5F634051E7524A1A16D")
     private Object readResolve() {
         synchronized
@@ -195,6 +199,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_789188822 =             this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.132 -0400", hash_original_method = "267F1EA9E96531D86D40818D686262D8", hash_generated_method = "C1A531C66B9B2D21B1427DEC27AAFD80")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
@@ -223,6 +228,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_789188822 =             this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.132 -0400", hash_original_method = "DEC78AA3502D783DBE391483E644D523", hash_generated_method = "4F13428D3346A2AE6194F2356462E041")
     public String getLocalizedName() {
     if(rb == null)        
@@ -255,6 +261,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1037259034 =             name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.132 -0400", hash_original_method = "B7F9927C4C2FEE34F933446CD9D546A4", hash_generated_method = "81DF9F82D0439A9D65DE87DB3923F18B")
     @Override
     public boolean equals(Object o) {
@@ -285,6 +292,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1037259034 =             name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.133 -0400", hash_original_method = "B2C871D8CEAC47C4CD40779F84B10431", hash_generated_method = "7BCF5ED14CCE007101E7EC52DA988063")
     @Override
     public int hashCode() {

@@ -99,6 +99,7 @@ V varEA5659DA512DECF23E6D37EE8060D074_1806095924 =             x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.700 -0400", hash_original_method = "2EE45E1B1B1F9797465CA7143D35DB76", hash_generated_method = "871945714756646F748F3B57488F5EC7")
     public String toString() {
 String varCD8D3C26BD1C8483FC8C87F7BCDC2A28_1508908579 =         String.valueOf(get());

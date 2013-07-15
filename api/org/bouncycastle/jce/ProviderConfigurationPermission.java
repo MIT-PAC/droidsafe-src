@@ -102,6 +102,7 @@ public class ProviderConfigurationPermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.572 -0400", hash_original_method = "737F906A6DB979CE36581422EA476EF8", hash_generated_method = "30DA9F8383A33B1F052E41F6EE9AE2B2")
     public String getActions() {
 String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;

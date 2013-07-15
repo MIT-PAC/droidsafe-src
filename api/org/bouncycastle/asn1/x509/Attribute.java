@@ -88,6 +88,7 @@ ASN1Encodable[] var62CC3281B32ED3E929A0D40B228643F8_136495898 =         attrValu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.936 -0400", hash_original_method = "0C9FA4513BA0CB1318C076F6A4C1BAA0", hash_generated_method = "F8D9C3BB4D8BC874430DF9398FA80AC0")
     public ASN1Set getAttrValues() {
 ASN1Set varC1BD46225B9E104129100789C289BE4C_677975461 =         attrValues;

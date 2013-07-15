@@ -21,7 +21,8 @@ public abstract class MetaKeyKeyListener {
     }
 
 
-        public static void resetMetaState(Spannable text) {
+        @DSModeled(DSC.SAFE)
+    public static void resetMetaState(Spannable text) {
         text.removeSpan(CAP);
         text.removeSpan(ALT);
         text.removeSpan(SYM);
@@ -53,7 +54,8 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        private static int getActive(CharSequence text, Object meta,
+        @DSModeled(DSC.SAFE)
+    private static int getActive(CharSequence text, Object meta,
                                  int on, int lock) {
         if (!(text instanceof Spanned)) {
             return 0;
@@ -70,25 +72,29 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        public static void adjustMetaAfterKeypress(Spannable content) {
+        @DSModeled(DSC.SAFE)
+    public static void adjustMetaAfterKeypress(Spannable content) {
         adjust(content, CAP);
         adjust(content, ALT);
         adjust(content, SYM);
     }
 
     
-        public static boolean isMetaTracker(CharSequence text, Object what) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isMetaTracker(CharSequence text, Object what) {
         return what == CAP || what == ALT || what == SYM ||
                what == SELECTING;
     }
 
     
-        public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
         return what == SELECTING;
     }
 
     
-        private static void adjust(Spannable content, Object what) {
+        @DSModeled(DSC.SAFE)
+    private static void adjust(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == PRESSED)
             content.setSpan(what, 0, 0, USED);
@@ -97,7 +103,8 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        protected static void resetLockedMeta(Spannable content) {
+        @DSModeled(DSC.SAFE)
+    protected static void resetLockedMeta(Spannable content) {
         resetLock(content, CAP);
         resetLock(content, ALT);
         resetLock(content, SYM);
@@ -105,13 +112,15 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        private static void resetLock(Spannable content, Object what) {
+        @DSModeled(DSC.SAFE)
+    private static void resetLock(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == LOCKED)
             content.removeSpan(what);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.642 -0400", hash_original_method = "624DA77F613D89E75494C45A9B699A03", hash_generated_method = "4C7C0990E55343FAD7A6BE3A53419234")
     public boolean onKeyDown(View view, Editable content, int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -162,6 +171,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.643 -0400", hash_original_method = "04CA7F5473BAF6356CB45A56F068D921", hash_generated_method = "90F2F54E066A3BB680F858093C9AE39D")
     private void press(Editable content, Object what) {
         addTaint(what.getTaint());
@@ -195,16 +205,19 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        public static void startSelecting(View view, Spannable content) {
+        @DSModeled(DSC.SAFE)
+    public static void startSelecting(View view, Spannable content) {
         content.setSpan(SELECTING, 0, 0, PRESSED);
     }
 
     
-        public static void stopSelecting(View view, Spannable content) {
+        @DSModeled(DSC.SAFE)
+    public static void stopSelecting(View view, Spannable content) {
         content.removeSpan(SELECTING);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.643 -0400", hash_original_method = "B6764DC3BD8B6ED5267E5A941E3F8260", hash_generated_method = "1F30C11DF49D55B56E4E75F77DAD267A")
     public boolean onKeyUp(View view, Editable content, int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -255,6 +268,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.644 -0400", hash_original_method = "E71400F62D0FFB0C9763693B0DBF0337", hash_generated_method = "48292083C49046879120B0511977B05C")
     private void release(Editable content, Object what, KeyEvent event) {
         addTaint(event.getTaint());
@@ -289,6 +303,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.644 -0400", hash_original_method = "A6CA9AE4F5FD679B652E94F0868BFDE8", hash_generated_method = "3D3A7671C18F1779763FBEA2600DA0C9")
     public void clearMetaKeyState(View view, Editable content, int states) {
         addTaint(states);
@@ -300,7 +315,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        public static void clearMetaKeyState(Editable content, int states) {
+        @DSModeled(DSC.SAFE)
+    public static void clearMetaKeyState(Editable content, int states) {
         if ((states&META_SHIFT_ON) != 0) content.removeSpan(CAP);
         if ((states&META_ALT_ON) != 0) content.removeSpan(ALT);
         if ((states&META_SYM_ON) != 0) content.removeSpan(SYM);
@@ -308,7 +324,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        public static long resetLockedMeta(long state) {
+        @DSModeled(DSC.SAFE)
+    public static long resetLockedMeta(long state) {
         if ((state & META_CAP_LOCKED) != 0) {
             state &= ~META_SHIFT_MASK;
         }
@@ -363,7 +380,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        public static long adjustMetaAfterKeypress(long state) {
+        @DSModeled(DSC.SAFE)
+    public static long adjustMetaAfterKeypress(long state) {
         if ((state & META_CAP_PRESSED) != 0) {
             state = (state & ~META_SHIFT_MASK) | META_SHIFT_ON | META_CAP_USED;
         } else if ((state & META_CAP_RELEASED) != 0) {
@@ -383,7 +401,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
+        @DSModeled(DSC.SAFE)
+    public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
             return press(state, META_SHIFT_ON, META_SHIFT_MASK,
                     META_CAP_LOCKED, META_CAP_PRESSED, META_CAP_RELEASED, META_CAP_USED);
@@ -401,7 +420,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        private static long press(long state, int what, long mask,
+        @DSModeled(DSC.SAFE)
+    private static long press(long state, int what, long mask,
             long locked, long pressed, long released, long used) {
         if ((state & pressed) != 0) {
         } else if ((state & released) != 0) {
@@ -416,7 +436,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
+        @DSModeled(DSC.SAFE)
+    public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
             return release(state, META_SHIFT_ON, META_SHIFT_MASK,
                     META_CAP_PRESSED, META_CAP_RELEASED, META_CAP_USED, event);
@@ -434,7 +455,8 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        private static long release(long state, int what, long mask,
+        @DSModeled(DSC.SAFE)
+    private static long release(long state, int what, long mask,
             long pressed, long released, long used, KeyEvent event) {
         switch (event.getKeyCharacterMap().getModifierBehavior()) {
             case KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED:
@@ -452,6 +474,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.645 -0400", hash_original_method = "DB6E28AB316658FAB51CA26FDC440ADD", hash_generated_method = "C67C049D164160F6D202F335D42CBC75")
     public long clearMetaKeyState(long state, int which) {
         addTaint(which);

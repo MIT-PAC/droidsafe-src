@@ -102,6 +102,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.335 -0400", hash_original_method = "63DCB38A03804A8CF42B493B58B13DDC", hash_generated_method = "5913521EDE495108ED0A02D5A41DB03C")
     public void init(PrivateKey key) {
         addTaint(key.getTaint());
@@ -138,6 +139,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.335 -0400", hash_original_method = "E5B57B76E0D4C32AD6E030FA95B32ACD", hash_generated_method = "A4F822F93922D99C419D231711C80032")
     public void init(Certificate cert) {
         addTaint(cert.getTaint());
@@ -174,6 +176,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.336 -0400", hash_original_method = "D74E9B3F4153C40FBC49F204F5B3A569", hash_generated_method = "654188A9A61FDE9860096C42F70D14D0")
     public void update(byte[] data) {
         addTaint(data[0]);
@@ -195,6 +198,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.336 -0400", hash_original_method = "B9CA7162ECD9A3463C27E4B77DAB6CBA", hash_generated_method = "2581847F6C7AB0F9303F842275B2D775")
     public void setMD5(byte[] data) {
         md5_hash = data;
@@ -203,6 +207,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.337 -0400", hash_original_method = "3BA66B7FA2FDB006FB2AA15DCD71C98C", hash_generated_method = "6D5B34CD82B069FE4DDB4F1367E06DCE")
     public void setSHA(byte[] data) {
         sha_hash = data;
@@ -211,6 +216,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.337 -0400", hash_original_method = "15C049C524B86A812CBA705875D88ECC", hash_generated_method = "A82BAE4E9DA05AE305A2E791F5496482")
     public byte[] sign() {
         try 
@@ -295,6 +301,7 @@ public class DigitalSignature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.339 -0400", hash_original_method = "19503CD9A5095168C8826497974984EF", hash_generated_method = "745C26191A0330C7FF7CF796C8E48E42")
     public boolean verifySignature(byte[] data) {
         addTaint(data[0]);

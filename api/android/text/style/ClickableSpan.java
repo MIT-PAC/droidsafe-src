@@ -19,6 +19,7 @@ public abstract class ClickableSpan extends CharacterStyle implements UpdateAppe
     public abstract void onClick(View widget);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.153 -0400", hash_original_method = "6A446C4FD57B873C0000087B5918E9E8", hash_generated_method = "7EBD8470139AEE57F5289AAE828C1AB4")
     @Override
     public void updateDrawState(TextPaint ds) {

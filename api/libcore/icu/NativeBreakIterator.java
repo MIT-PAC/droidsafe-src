@@ -48,6 +48,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.688 -0400", hash_original_method = "C0D37969DD3FDF8DABA3E38E17F8673F", hash_generated_method = "9E5BC56A343973D7145B36D8FB265E2F")
     @Override
     public boolean equals(Object object) {
@@ -80,6 +81,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.688 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "5532DC669F1A2C4108622672F374E05D")
     @Override
     public int hashCode() {

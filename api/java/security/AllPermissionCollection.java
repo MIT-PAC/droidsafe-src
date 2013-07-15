@@ -15,6 +15,7 @@ final class AllPermissionCollection extends PermissionCollection {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.930 -0400", hash_original_method = "4200EBEC7A86784BE2F7368AF2D9C4EB", hash_generated_method = "2DA957CCF02054264CF9F3317D87298E")
     @Override
     public void add(Permission permission) {
@@ -34,6 +35,7 @@ Enumeration<Permission> var540C13E9E156B687226421B24F2DF178_1901498150 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.931 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "42B16832E612D65F9F4DBA3FCD6C3E06")
     @Override
     public boolean implies(Permission permission) {

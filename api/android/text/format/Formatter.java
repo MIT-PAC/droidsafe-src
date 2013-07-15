@@ -16,17 +16,20 @@ public final class Formatter {
     }
 
 
-        public static String formatFileSize(Context context, long number) {
+        @DSModeled(DSC.SAFE)
+    public static String formatFileSize(Context context, long number) {
         return formatFileSize(context, number, false);
     }
 
     
-        public static String formatShortFileSize(Context context, long number) {
+        @DSModeled(DSC.SAFE)
+    public static String formatShortFileSize(Context context, long number) {
         return formatFileSize(context, number, true);
     }
 
     
-        private static String formatFileSize(Context context, long number, boolean shorter) {
+        @DSModeled(DSC.SAFE)
+    private static String formatFileSize(Context context, long number, boolean shorter) {
         if (context == null) {
             return "";
         }
@@ -76,7 +79,8 @@ public final class Formatter {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static String formatIpAddress(int ipv4Address) {
         return NetworkUtils.intToInetAddress(ipv4Address).getHostAddress();
     }

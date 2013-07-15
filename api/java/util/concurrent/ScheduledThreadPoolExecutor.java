@@ -73,6 +73,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.248 -0400", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "B107C9BDFA967B157C4F83BE407C39E9")
      boolean canRunInCurrentRunState(boolean periodic) {
         addTaint(periodic);
@@ -140,6 +141,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.250 -0400", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "5C8AB3A2FC1CFD36495813FF3A05CD0D")
     @Override
      void onShutdown() {
@@ -202,6 +204,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.251 -0400", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "28563B9808E5014D83112C5DBC817C26")
     private long triggerTime(long delay, TimeUnit unit) {
         addTaint(unit.getTaint());
@@ -214,6 +217,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.251 -0400", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "923B4FB444FFD9364BF9772A284D8456")
      long triggerTime(long delay) {
         addTaint(delay);
@@ -227,6 +231,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.252 -0400", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "355E6CD425AACD8D6E9A8F7F68DF0022")
     private long overflowFree(long delay) {
         addTaint(delay);
@@ -409,6 +414,7 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_932206056 =         t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.255 -0400", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "298C226B5D3D89C38498C55CCC18C61C")
     public void execute(Runnable command) {
         addTaint(command.getTaint());
@@ -454,6 +460,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.257 -0400", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "103E279385ED13E49F15EF1C104DA70B")
     public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
         continueExistingPeriodicTasksAfterShutdown = value;
@@ -466,6 +473,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.258 -0400", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "987980CF22A5834977FEF55B5ABBA5E9")
     public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
         boolean var16F5A356C77125C2C156C9F6B6F49691_2022338395 = (continueExistingPeriodicTasksAfterShutdown);
@@ -476,6 +484,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.258 -0400", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "01E6D0A79A23EDC5CD9F0CB056E5E691")
     public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
         executeExistingDelayedTasksAfterShutdown = value;
@@ -488,6 +497,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.258 -0400", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "AD0C6AA3615309BD3BE793AA777C1D50")
     public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
         boolean var07A18653AA39EFFB12C28D64E4CEBF7A_2003791241 = (executeExistingDelayedTasksAfterShutdown);
@@ -498,6 +508,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.259 -0400", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "8187F71188C5442EF4B01CC9510CDCEB")
      void setRemoveOnCancelPolicy(boolean value) {
         removeOnCancel = value;
@@ -506,6 +517,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.259 -0400", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "8546565E979774CA5754E3FD9ACA4B0D")
      boolean getRemoveOnCancelPolicy() {
         boolean varFD8692A9067DBD029B4BB7001C088F36_1606333115 = (removeOnCancel);
@@ -516,6 +528,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.259 -0400", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "F4BC997EF9BFFD2417FE8194C56E3FA6")
     public void shutdown() {
         super.shutdown();
@@ -682,6 +695,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.265 -0400", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "D65C30216EECC1536D63DF64DB1DF7F2")
         public boolean isPeriodic() {
             boolean var0D8D214ED9AA8437630C1305DCDAC649_2040974294 = (period != 0);
@@ -780,6 +794,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.268 -0400", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "A2C53C2309413CED15321F200F5F1DAE")
         private void setIndex(RunnableScheduledFuture f, int idx) {
             addTaint(idx);
@@ -1037,6 +1052,7 @@ for(int i = 0;i < size;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.273 -0400", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "541887B94F260399BC38FDDB6C7A9E31")
         public int remainingCapacity() {
             int varE7A95D949116A2DA0F0FA83DC6E76C00_718937268 = (Integer.MAX_VALUE);
@@ -1629,6 +1645,7 @@ Iterator<Runnable> var204ADEB76305F0F46DB2D7013588DB62_802996502 =             n
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.297 -0400", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "3FEC0178F30D8A7E4790C311FB9C0748")
             public boolean hasNext() {
                 boolean varD3AC5C71D433D60E62F9BE66035EAE94_1256637129 = (cursor < array.length);

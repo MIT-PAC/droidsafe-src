@@ -49,6 +49,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.991 -0400", hash_original_method = "8DFDD7EF6072FC95D95C5176557C9475", hash_generated_method = "540AE450E8ED864228FB5C0DC1CF6495")
     public int getTransformationType() {
         int varE809ABB3554FAD67C52E87DB28F12771_1375712427 = (mTransformationType);
@@ -59,6 +60,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.991 -0400", hash_original_method = "B4636E05B9A8A9BE17FDDB51FD79878A", hash_generated_method = "39AC39ACD4F7908E138EDFE8ECD24ED9")
     public void setTransformationType(int transformationType) {
         mTransformationType = transformationType;
@@ -89,6 +91,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.993 -0400", hash_original_method = "2E54F4327BDE93D0CE557FC100DEED67", hash_generated_method = "2331EC2C00652F69357B22091433A957")
     public Matrix getMatrix() {
 Matrix var49A816397330451E1FD30BEA000F3851_1270977908 =         mMatrix;
@@ -99,6 +102,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1270977908 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.993 -0400", hash_original_method = "0C33009713633FC103F0B586FD422009", hash_generated_method = "C9CD91170EA13924C0FBD5C314E4E67F")
     public void setAlpha(float alpha) {
         mAlpha = alpha;
@@ -107,6 +111,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1270977908 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.993 -0400", hash_original_method = "84CA63CC358414A9CD87B6516C604402", hash_generated_method = "7187A556A5BF42863ED51A9ADAFBE484")
     public float getAlpha() {
         float var7574041472B9B2E76867A37482E74343_908194804 = (mAlpha);

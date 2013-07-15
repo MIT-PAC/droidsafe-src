@@ -275,6 +275,7 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.889 -0400", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "306F146FAF6AE1EF393A1FAD21945A0A")
     private boolean isOpen() {
         boolean var0756A9CF6E7FC23D4EDE35D48E0E460B_1357918079 = (in != null);

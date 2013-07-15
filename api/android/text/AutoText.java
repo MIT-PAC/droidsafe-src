@@ -40,7 +40,8 @@ public class AutoText {
     }
 
     
-        private static AutoText getInstance(View view) {
+        @DSModeled(DSC.SAFE)
+    private static AutoText getInstance(View view) {
         Resources res = view.getContext().getResources();
         Locale locale = res.getConfiguration().locale;
         AutoText instance;
@@ -61,11 +62,13 @@ public class AutoText {
     }
 
     
-        public static int getSize(View view) {
+        @DSModeled(DSC.SAFE)
+    public static int getSize(View view) {
         return getInstance(view).getSize();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.738 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "C0F27518FF1638119E035D4110C0A569")
     private int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_1705298627 = (mSize);
@@ -136,6 +139,7 @@ String var540C13E9E156B687226421B24F2DF178_447434378 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.741 -0400", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "D29B5C694201C7518617035F18F5C814")
     private void init(Resources r) {
         addTaint(r.getTaint());
@@ -200,6 +204,7 @@ String var540C13E9E156B687226421B24F2DF178_447434378 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.743 -0400", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "AB2F9F3CDA283B47A8F2E1BB5630ACF5")
     private void add(String src, char off) {
         addTaint(src.getTaint());
@@ -245,6 +250,7 @@ for(;mTrie[herep] != TRIE_NULL;herep = mTrie[herep] + TRIE_NEXT)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.744 -0400", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "2170E0117BDDACCC3B22BE4300308E11")
     private char newTrieNode() {
     if(mTrieUsed + TRIE_SIZEOF > mTrie.length)        

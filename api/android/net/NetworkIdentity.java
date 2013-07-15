@@ -110,6 +110,7 @@ String varC04A558420C11F186DEAB34E29860899_995045713 =         "[type=" + typeNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.660 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "DA8730D76A1A758BB4F57A9CD5C2BBB6")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_1450963976 = (mType);
@@ -120,6 +121,7 @@ String varC04A558420C11F186DEAB34E29860899_995045713 =         "[type=" + typeNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.661 -0400", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "6B67AD1A631A48137AEC2C6D96C3CA78")
     public int getSubType() {
         int var9626C0B267A1B4C2C31F3FFD0E237EB6_1771885959 = (mSubType);
@@ -130,6 +132,7 @@ String varC04A558420C11F186DEAB34E29860899_995045713 =         "[type=" + typeNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.661 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "0F1459C8F075726F20CB8688EBAC21C3")
     public String getSubscriberId() {
 String varD221C4376DC09E8E422076D12DB9853B_1612038187 =         mSubscriberId;
@@ -140,6 +143,7 @@ String varD221C4376DC09E8E422076D12DB9853B_1612038187 =         mSubscriberId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.662 -0400", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "AAB51D164379572B9A82734802CFF5B8")
     public boolean getRoaming() {
         boolean var53676CF9ACC69A311F8B40D8878A560F_1612845011 = (mRoaming);

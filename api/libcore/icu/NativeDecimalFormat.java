@@ -233,6 +233,7 @@ Object var4B7571CD2CD6DD663DE146F4A4111E5C_709712279 =         new NativeDecimal
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.255 -0400", hash_original_method = "E3DC36059DBEEA918EB4DAC2E3F69056", hash_generated_method = "411C76457333CD11616B92BEE666FF8A")
     public char[] formatBigDecimal(BigDecimal value, FieldPosition field) {
         addTaint(field.getTaint());
@@ -256,6 +257,7 @@ Object var4B7571CD2CD6DD663DE146F4A4111E5C_709712279 =         new NativeDecimal
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.255 -0400", hash_original_method = "AB58B0DEED1650663505F868BCDB9A76", hash_generated_method = "3FFE42B268BAB43898E05D7E9B4BEF42")
     public char[] formatBigInteger(BigInteger value, FieldPosition field) {
         addTaint(field.getTaint());
@@ -353,6 +355,7 @@ Object var4B7571CD2CD6DD663DE146F4A4111E5C_709712279 =         new NativeDecimal
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.266 -0400", hash_original_method = "9FEF3AE5E61C347D525A9585FBE19ECF", hash_generated_method = "110C2BE520A988093A89B594CCDA2BD5")
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         addTaint(object.getTaint());
@@ -601,6 +604,7 @@ String varAB13615B7DE428590B461B7CCD1A3EA5_1807236414 =         getTextAttribute
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.272 -0400", hash_original_method = "84561142CC409560F18895112EB228ED", hash_generated_method = "00202FA257DDF44669A05CB37B97D0F1")
     public boolean isParseBigDecimal() {
         boolean var287D1050A38F78BCF10BE8BDFB1C701E_1651545963 = (parseBigDecimal);
@@ -709,6 +713,7 @@ String varAB13615B7DE428590B461B7CCD1A3EA5_1807236414 =         getTextAttribute
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.275 -0400", hash_original_method = "B169BA3B31B9F8AB850C7AD451D65C7F", hash_generated_method = "09EBC652ED959626329C8BC07614B33D")
     public void setMultiplier(int value) {
         setAttribute(this.address, UNUM_MULTIPLIER, value);
@@ -779,6 +784,7 @@ String varAB13615B7DE428590B461B7CCD1A3EA5_1807236414 =         getTextAttribute
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.278 -0400", hash_original_method = "16B3A7386DF3851CB73D32D9A838D98B", hash_generated_method = "A04CC31A40B62965DB9042EEB28F4644")
     public void setParseBigDecimal(boolean value) {
         parseBigDecimal = value;
@@ -1000,7 +1006,8 @@ switch(roundingMode){
         }
 
         
-                private static int getNativeFieldPositionId(FieldPosition fp) {
+                @DSModeled(DSC.SPEC)
+        private static int getNativeFieldPositionId(FieldPosition fp) {
             int id = fp.getField();
             if (id < -1 || id > 1) {
                 id = -1;
@@ -1072,6 +1079,7 @@ switch(roundingMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.288 -0400", hash_original_method = "F481D50CCC1AB38B4CA6D00583ECCD74", hash_generated_method = "1567EFBAB7FAC5F6CE2B17601B435E65")
         public int fieldId() {
             int var0F3108A7CB478B40D82FDA409BCEEA89_175097226 = (data[pos]);
@@ -1118,6 +1126,7 @@ Format.Field var6997504BD7AD57E0F76526D97121C1E9_792431242 =             fields[
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.290 -0400", hash_original_method = "E1A3B20A4A62E5F6661DF7F73A635F7C", hash_generated_method = "2FA05A6182FB4AA13AC353371D99B73A")
         private void setData(int[] data) {
             this.data = data;

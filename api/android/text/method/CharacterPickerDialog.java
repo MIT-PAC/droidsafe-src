@@ -60,6 +60,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.446 -0400", hash_original_method = "E0AAB102B3ED3AF261F94C84219E8ECE", hash_generated_method = "1E82034CB2BEE30118EE08B066C35E97")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.446 -0400", hash_original_method = "EEFA1E961CDBB58662ABBCDF41F1AD2A", hash_generated_method = "170B01C4C4FF962B5E92C6E55F29F411")
     public void onItemClick(AdapterView parent, View view, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -106,6 +108,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.447 -0400", hash_original_method = "889637D7E351CCF8A657470FC2914F00", hash_generated_method = "2C0F226862C0876664AAF28FB22531CB")
     private void replaceCharacterAndClose(CharSequence replace) {
         addTaint(replace.getTaint());
@@ -130,6 +133,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.448 -0400", hash_original_method = "3104127334A31B48E0F0795A4514B3FB", hash_generated_method = "53A278E2106857ED38FA4656E65A914A")
     public void onClick(View v) {
         //DSFIXME:  CODE0009: Possible callback target function detected

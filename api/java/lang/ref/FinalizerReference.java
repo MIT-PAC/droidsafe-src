@@ -36,6 +36,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.830 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
     @Override
     public void clear() {
@@ -58,7 +59,8 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
     }
 
     
-        public static void remove(FinalizerReference reference) {
+        @DSModeled(DSC.SAFE)
+    public static void remove(FinalizerReference reference) {
         synchronized (FinalizerReference.class) {
             FinalizerReference next = reference.next;
             FinalizerReference prev = reference.prev;

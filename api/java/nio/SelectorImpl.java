@@ -199,6 +199,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.244 -0400", hash_original_method = "0F4ACBA61BED328D03506D362DC34EE4", hash_generated_method = "238561D63C5BE98F178302B166B51BB4")
     @Override
     public int select() throws IOException {
@@ -210,6 +211,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.245 -0400", hash_original_method = "38CB8C7854E3817F0A25B22A5C37D9C3", hash_generated_method = "0C942A91D8773EA6F343A0D30A1A3C5C")
     @Override
     public int select(long timeout) throws IOException {
@@ -314,6 +316,7 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.268 -0400", hash_original_method = "C2C79FE5727E3E67D8033155BDE5FA42", hash_generated_method = "0239ABC7D1648C3C8AD66B2BB6D18196")
     private void preparePollFds() {
         int i = 1;
@@ -352,6 +355,7 @@ for(SelectionKeyImpl key : mutableKeys)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.268 -0400", hash_original_method = "561794DF92118E00B9893BD515660DDC", hash_generated_method = "9C36A453C6F6647C691C85BECA480CFE")
     private void ensurePollFdsCapacity() {
         while
@@ -366,6 +370,7 @@ for(SelectionKeyImpl key : mutableKeys)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.270 -0400", hash_original_method = "5DC934A1F65A8C13AADF3FD37642D2BD", hash_generated_method = "8300F361DCB52FE2D0178AA2B45A5A3F")
     private int processPollFds() throws IOException {
     if(pollFds.get(0).revents == POLLIN)        

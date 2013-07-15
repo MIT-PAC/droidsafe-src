@@ -120,6 +120,7 @@ AttributeTypeAndValue[] var3F12A0424932F6B5155AA6C49B63FE6E_1121233081 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.696 -0400", hash_original_method = "C51EA85277B01B717571B534CACD612E", hash_generated_method = "E627CC5FAC9C4F06D0E3B49CB65212EA")
     public DERObject toASN1Object() {
 DERObject var674B10C763DBAAF9696AD9A3DDAE07B3_2144861341 =         values;

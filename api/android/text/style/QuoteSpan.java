@@ -42,6 +42,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.246 -0400", hash_original_method = "91516A2AC14E144F9D08D31960E0CDBA", hash_generated_method = "9284706459DB63B210768E87D70C8B45")
     public int getSpanTypeId() {
         int varD0BBA295D33C7CDCACBE0304F9EB4D0A_583758158 = (TextUtils.QUOTE_SPAN);
@@ -52,6 +53,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.246 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3EA7DF6F6ED72A739B8D316D543E1D2F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_549280221 = (0);
@@ -62,6 +64,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.246 -0400", hash_original_method = "F35F8912B3182FC877D8B21825C3ABAF", hash_generated_method = "2AA9C9BA7FF737DFF4D6096156FE1247")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -72,6 +75,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.246 -0400", hash_original_method = "43BEB8B89AD2425C976FAD6ED1828A38", hash_generated_method = "75E5C0A459ADCC0DD7F411A6BF318428")
     public int getColor() {
         int varD2A5DB085B68088532B9E8FB544C2EAD_908608403 = (mColor);
@@ -82,6 +86,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.247 -0400", hash_original_method = "0C0816FE65D1CAB7203AAB3FE043AC6B", hash_generated_method = "55376475431187F29EC47868996750AD")
     public int getLeadingMargin(boolean first) {
         addTaint(first);
@@ -93,6 +98,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.247 -0400", hash_original_method = "ED0B802F772E913D8F0EA056A6340C94", hash_generated_method = "CB41745BC6F9C428947752B840CC187E")
     public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,
                                   int top, int baseline, int bottom,

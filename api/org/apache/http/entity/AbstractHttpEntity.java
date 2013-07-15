@@ -28,6 +28,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.895 -0400", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "BB289FC44C370B8868065E8C9F59C6A3")
     public Header getContentType() {
 Header varB33E79BD7783A8D6E8279F5398A07ECD_1651965423 =         this.contentType;
@@ -38,6 +39,7 @@ Header varB33E79BD7783A8D6E8279F5398A07ECD_1651965423 =         this.contentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.896 -0400", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "BFCDE4DD976D5F64F69FB8E3DCD18F20")
     public Header getContentEncoding() {
 Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_785934099 =         this.contentEncoding;
@@ -48,6 +50,7 @@ Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_785934099 =         this.contentEncod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.896 -0400", hash_original_method = "A2E32B99DD6261F3B5CB31D5FA7FC0FC", hash_generated_method = "67660BE7AC7D2A5F5D142E095DD13E3D")
     public boolean isChunked() {
         boolean varA9D5532A62E9998C758B235E369023D7_777957248 = (this.chunked);
@@ -110,6 +113,7 @@ Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_785934099 =         this.contentEncod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.898 -0400", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "31F89D88E68A040DC2DABC5362BEB7BE")
     public void setChunked(boolean b) {
         this.chunked = b;

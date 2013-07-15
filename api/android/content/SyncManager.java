@@ -342,6 +342,7 @@ public class SyncManager implements OnAccountsUpdateListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.847 -0400", hash_original_method = "F68E26CE46C5E71DC7131B4E8982A697", hash_generated_method = "3BE28E22B10A123DA00E91024363E01C")
     public void onAccountsUpdated(Account[] accounts) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -434,6 +435,7 @@ ConnectivityManager var5EB585CB0BDAFBBDEDEDA30BC8CAC69E_1308011096 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.849 -0400", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "CF447C117E81C511134C813569093963")
     public SyncStorageEngine getSyncStorageEngine() {
 SyncStorageEngine var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408 =         mSyncStorageEngine;
@@ -748,6 +750,7 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.887 -0400", hash_original_method = "42DD92B3EE29EAC346CC626BA6B5C78C", hash_generated_method = "D9EC31DF165B1A90013220079985DC1A")
     private void increaseBackoffSetting(SyncOperation op) {
         addTaint(op.getTaint());
@@ -896,6 +899,7 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.905 -0400", hash_original_method = "7F8B5486825DA8802A08F87FCECDEB6D", hash_generated_method = "DC0BC898D261E9AFD16190912C1E9A5F")
      void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
         addTaint(operation.getTaint());
@@ -1003,6 +1007,7 @@ for(RegisteredServicesCache.ServiceInfo info : mSyncAdapters.getAllServices())
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.915 -0400", hash_original_method = "A56698FB2481C281E3929C7135D64B8A", hash_generated_method = "51BF87661BEBA6975F937ED2303CE451")
     protected void dumpSyncState(PrintWriter pw) {
         addTaint(pw.getTaint());
@@ -1161,6 +1166,7 @@ for(int periodicIndex = 0;periodicIndex < settings.periodicSyncs.size();periodic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.921 -0400", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "F1415B9004E512585925086328F5ED32")
     private String getLastFailureMessage(int code) {
         addTaint(code);
@@ -1274,6 +1280,7 @@ String varE4030F39D22FF867D1E81773D1A12B97_1226921855 =         "unknown";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.948 -0400", hash_original_method = "C137DBDBD7D2B9AF348453A35EDAB8EF", hash_generated_method = "286956AF157FBBD6AF3744BEE186311E")
     private void dumpRecentHistory(PrintWriter pw) {
         addTaint(pw.getTaint());
@@ -1626,6 +1633,7 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.967 -0400", hash_original_method = "9C4A98A4ADBC598450E25E4EB304536B", hash_generated_method = "C850AA3CF5BEF75EFC9FEA51E239ED7F")
         public void onServiceConnected(ComponentName name, IBinder service) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1722,6 +1730,7 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.973 -0400", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "4BA0CA1A22602AB78A2E00A105623DD4")
         public void onReceive(Context context, Intent intent) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1799,12 +1808,14 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.978 -0400", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "540CBBFBA53CA8CE698C636F326A356D")
         public void sendHeartbeat() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.979 -0400", hash_original_method = "2741CA480AE203CDFD1BCCBB420C487D", hash_generated_method = "C36588C586056EB1D783D6F8D715E929")
         public void onFinished(SyncResult result) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1848,6 +1859,7 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.983 -0400", hash_original_method = "E604348BDB0F3F95B7C0274B0D40964D", hash_generated_method = "7580A9A8179317B4FE0B5D46574C004C")
         public void onServiceDisconnected(ComponentName name) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2196,6 +2208,7 @@ PowerManager.WakeLock var8F15A8B728F6BF9E50EE9B41DDD67A81_412578093 =           
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.010 -0400", hash_original_method = "AC98BBE28F5005D2D34EEDF919BF395C", hash_generated_method = "8340B6E3036932FA9B81E296C283CF83")
         public void handleMessage(Message msg) {
             addTaint(msg.getTaint());
@@ -2313,6 +2326,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.012 -0400", hash_original_method = "5F18B995A8D5126079C876CBB8B37FF8", hash_generated_method = "75253C06ABF6D8783B1F66165EA740E8")
         private long scheduleReadyPeriodicSyncs() {
             final boolean backgroundDataUsageAllowed = getConnectivityManager().getBackgroundDataSetting();
@@ -2392,6 +2406,7 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.017 -0400", hash_original_method = "8B5418D48FBDFB608CDA80C6788E1356", hash_generated_method = "D73E9DD496093F392EDBA5E3A7D9FCFF")
         private long maybeStartNextSyncLocked() {
             final boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
@@ -2595,6 +2610,7 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.022 -0400", hash_original_method = "40340E62514BC19DB7E9216642814F86", hash_generated_method = "F90ABC9288889CBC15484703E97C91B2")
         private boolean dispatchSyncOperation(SyncOperation op) {
             addTaint(op.getTaint());
@@ -2666,6 +2682,7 @@ for(ActiveSyncContext syncContext : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.025 -0400", hash_original_method = "7B28CEC882EFEBA05BFBBAFD319121EA", hash_generated_method = "4E353D2AA2F9E6C87A93A71D1E1AB750")
         private void cancelActiveSyncLocked(Account account, String authority) {
             addTaint(authority.getTaint());
@@ -2698,6 +2715,7 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.035 -0400", hash_original_method = "8D8637124BC010FEF841826099E3536E", hash_generated_method = "88C9DEACC2D068C2CE79D61B21A48FC9")
         private void runSyncFinishedOrCanceledLocked(SyncResult syncResult,
                 ActiveSyncContext activeSyncContext) {
@@ -2784,6 +2802,7 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.036 -0400", hash_original_method = "1880B76D7799B7E884F5DD7B88555973", hash_generated_method = "F3F94E00990B014C60A0FF215FF64071")
         private void closeActiveSyncContext(ActiveSyncContext activeSyncContext) {
             addTaint(activeSyncContext.getTaint());
@@ -2856,6 +2875,7 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.042 -0400", hash_original_method = "D7164ED4506DE94304BF76B0FBC03583", hash_generated_method = "DA29C4122ADB310FE8E3B7950981D617")
         private void manageSyncNotificationLocked() {
             boolean shouldCancel;
@@ -2918,6 +2938,7 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.049 -0400", hash_original_method = "E1B88EC7C887370D571018E17194D40D", hash_generated_method = "5E60D19BCC30D3FEE02BC0E27A6F0E8D")
         private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
                 long nextPendingEventElapsedTime) {
@@ -3026,6 +3047,7 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.052 -0400", hash_original_method = "87A468A0891FD210AAD2B0099F053FF2", hash_generated_method = "7D60212F949EAA9F44E5CA0369FBE39B")
         private void installHandleTooManyDeletesNotification(Account account, String authority,
                 long numDeletes) {
@@ -3068,6 +3090,7 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.053 -0400", hash_original_method = "ABB616725C31652C20F8F96BBDEFC6AA", hash_generated_method = "EDD0F0BB3C2391EA44D248A3AE779E6B")
         private boolean isActivityAvailable(Intent intent) {
             addTaint(intent.getTaint());

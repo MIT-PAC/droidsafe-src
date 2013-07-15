@@ -129,6 +129,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.497 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "78D714119F77C0C06175D40410754245")
     public int getVersion() {
         int var2AF72F100C356273D46284F6FD1DFC08_2138575662 = (version);
@@ -139,6 +140,7 @@ public class RSAPrivateKeyStructure extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.497 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "AC90A5E3FFEAC0F165999030490349D3")
     public BigInteger getModulus() {
 BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_505729651 =         modulus;
@@ -149,6 +151,7 @@ BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_505729651 =         modulus;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.498 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "32A83A5877AF6E63B7D0456B6EB38AC6")
     public BigInteger getPublicExponent() {
 BigInteger varB360105573401CCC465D10C242BA5623_1341557043 =         publicExponent;
@@ -159,6 +162,7 @@ BigInteger varB360105573401CCC465D10C242BA5623_1341557043 =         publicExpone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.498 -0400", hash_original_method = "DA7C8A3DDA38443F1F2D4DBDF52134FD", hash_generated_method = "FFF601E41521FDC1C20E2674787D6B90")
     public BigInteger getPrivateExponent() {
 BigInteger varC820A65540BECD18FC145C33971A13B0_1597992254 =         privateExponent;
@@ -169,6 +173,7 @@ BigInteger varC820A65540BECD18FC145C33971A13B0_1597992254 =         privateExpon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.498 -0400", hash_original_method = "B99C0F53E18C4C91C319BE2CCC968C4F", hash_generated_method = "F335B11D539630B59EC5254908704467")
     public BigInteger getPrime1() {
 BigInteger var84C395E888C4BB29C62262539F817382_1502625084 =         prime1;
@@ -179,6 +184,7 @@ BigInteger var84C395E888C4BB29C62262539F817382_1502625084 =         prime1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.499 -0400", hash_original_method = "B93FCB0A892E4015213AB5057F688210", hash_generated_method = "5B4CF1579448A339BE77FBD487B40354")
     public BigInteger getPrime2() {
 BigInteger var3B6BDC64641E2A1BE5212CB9C728B8AB_425475490 =         prime2;
@@ -189,6 +195,7 @@ BigInteger var3B6BDC64641E2A1BE5212CB9C728B8AB_425475490 =         prime2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.499 -0400", hash_original_method = "762AADF12D80291EC0F289058DBDBCEC", hash_generated_method = "B9B68261975F64CBBC0AE0491538D7D1")
     public BigInteger getExponent1() {
 BigInteger varCD17C3383CCF5695DFB6FFE083900076_1102866050 =         exponent1;
@@ -199,6 +206,7 @@ BigInteger varCD17C3383CCF5695DFB6FFE083900076_1102866050 =         exponent1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.499 -0400", hash_original_method = "DDCFEFECC032A2CEE6C8950AE5D7E294", hash_generated_method = "DF977078F34E0ECBBFCCE62F5BC04452")
     public BigInteger getExponent2() {
 BigInteger var610E05A27285D617974849B79B242BE2_685034779 =         exponent2;
@@ -209,6 +217,7 @@ BigInteger var610E05A27285D617974849B79B242BE2_685034779 =         exponent2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.499 -0400", hash_original_method = "C7CB66A1169BB550EC38CAFFC80D3C48", hash_generated_method = "61377E14E83ECAAC64C11591BF6426D9")
     public BigInteger getCoefficient() {
 BigInteger varA44CB2A7DC1E45A055C8AC9C497560AF_942345284 =         coefficient;

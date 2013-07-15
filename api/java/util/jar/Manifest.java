@@ -78,7 +78,8 @@ public class Manifest implements Cloneable {
     }
 
     
-        private static Field getByteArrayInputStreamField(String name) {
+        @DSModeled(DSC.SAFE)
+    private static Field getByteArrayInputStreamField(String name) {
         try {
             Field f = ByteArrayInputStream.class.getDeclaredField(name);
             f.setAccessible(true);
@@ -89,6 +90,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.245 -0400", hash_original_method = "C6A465A281EC0C52F4CC8FABE5DA0F03", hash_generated_method = "EE197A83742325B0084D76BFCFD44EFE")
     public void clear() {
         entries.clear();
@@ -99,6 +101,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.245 -0400", hash_original_method = "78C1F2A094121E0A509E66806BC04C36", hash_generated_method = "F895EBB0D32CF6893E3C8432ADE8F914")
     public Attributes getAttributes(String name) {
         addTaint(name.getTaint());
@@ -120,6 +123,7 @@ Map<String, Attributes> var0AAD0D341A96E603A0F87B9A9B535A71_184544192 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.246 -0400", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "0D250C56D182F5FEFDEB2AA418FA544F")
     public Attributes getMainAttributes() {
 Attributes var297AF475E4F0A70B05EE71F0F8C21A0A_2113525924 =         mainAttributes;
@@ -130,6 +134,7 @@ Attributes var297AF475E4F0A70B05EE71F0F8C21A0A_2113525924 =         mainAttribut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.246 -0400", hash_original_method = "ED40FF59379F92DE3112CA6576AF5963", hash_generated_method = "FD672CB073F5395CA34DE9BCD70164D7")
     @Override
     public Object clone() {
@@ -141,6 +146,7 @@ Object var989B3762234D39A1325CCE2FE6669585_1754754422 =         new Manifest(thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.247 -0400", hash_original_method = "FE58047C3F32AF11D7E00269EA71B148", hash_generated_method = "461528CAC1EC7AE66032406B69381A3F")
     public void write(OutputStream os) throws IOException {
         addTaint(os.getTaint());
@@ -150,6 +156,7 @@ Object var989B3762234D39A1325CCE2FE6669585_1754754422 =         new Manifest(thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.247 -0400", hash_original_method = "0BB09A51480801FE7389A84744CD3AA5", hash_generated_method = "7644ACDD2F45938F4FA6032FFC29498C")
     public void read(InputStream is) throws IOException {
         addTaint(is.getTaint());
@@ -194,7 +201,8 @@ Object var989B3762234D39A1325CCE2FE6669585_1754754422 =         new Manifest(thi
     }
 
     
-        private static byte[] exposeByteArrayInputStreamBytes(ByteArrayInputStream bais) {
+        @DSModeled(DSC.SAFE)
+    private static byte[] exposeByteArrayInputStreamBytes(ByteArrayInputStream bais) {
         byte[] buffer;
         synchronized (bais) {
             byte[] buf;
@@ -218,6 +226,7 @@ Object var989B3762234D39A1325CCE2FE6669585_1754754422 =         new Manifest(thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.248 -0400", hash_original_method = "208E1F4DBC48E80FE528AF7E25427460", hash_generated_method = "FB30E84FF9FBB258E5A78B39F1B78588")
     @Override
     public int hashCode() {
@@ -229,6 +238,7 @@ Object var989B3762234D39A1325CCE2FE6669585_1754754422 =         new Manifest(thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.249 -0400", hash_original_method = "7BEE688CCC8D49794388E10DAC06F788", hash_generated_method = "B6E8385EA064F52B1D3A3D4CF4EB89B3")
     @Override
     public boolean equals(Object o) {
@@ -268,6 +278,7 @@ Object var989B3762234D39A1325CCE2FE6669585_1754754422 =         new Manifest(thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.249 -0400", hash_original_method = "5810BB520240B1A3498784B2D92EABA8", hash_generated_method = "C8E3D0F5A0AC38E5483EB6642E9967D2")
      Chunk getChunk(String name) {
         addTaint(name.getTaint());
@@ -279,6 +290,7 @@ Chunk var90FA681B410416D5DB711643976E02D4_324526152 =         chunks.get(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.250 -0400", hash_original_method = "CB43854902C5BB6A2160DF9CF6991C4E", hash_generated_method = "9BF48AA4EEED401D667F1EAB133BFDF9")
      void removeChunks() {
         chunks = null;
@@ -287,6 +299,7 @@ Chunk var90FA681B410416D5DB711643976E02D4_324526152 =         chunks.get(name);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.250 -0400", hash_original_method = "4F9436521007A1D33F6CF267D74BE295", hash_generated_method = "4F8845D833066B6A396991939EC47CDF")
      int getMainAttributesEnd() {
         int varD91B5AEA932CCF7F1674264625D0E318_1084592596 = (mainEnd);
@@ -297,7 +310,8 @@ Chunk var90FA681B410416D5DB711643976E02D4_324526152 =         chunks.get(name);
     }
 
     
-        static void write(Manifest manifest, OutputStream out) throws IOException {
+        @DSModeled(DSC.SAFE)
+    static void write(Manifest manifest, OutputStream out) throws IOException {
         CharsetEncoder encoder = Charsets.UTF_8.newEncoder();
         ByteBuffer buffer = ByteBuffer.allocate(LINE_LENGTH_LIMIT);
         String version = manifest.mainAttributes.getValue(Attributes.Name.MANIFEST_VERSION);
@@ -327,7 +341,8 @@ Chunk var90FA681B410416D5DB711643976E02D4_324526152 =         chunks.get(name);
     }
 
     
-        private static void writeEntry(OutputStream os, Attributes.Name name,
+        @DSModeled(DSC.SAFE)
+    private static void writeEntry(OutputStream os, Attributes.Name name,
             String value, CharsetEncoder encoder, ByteBuffer bBuf) throws IOException {
         String nameString = name.getName();
         os.write(nameString.getBytes(Charsets.US_ASCII));

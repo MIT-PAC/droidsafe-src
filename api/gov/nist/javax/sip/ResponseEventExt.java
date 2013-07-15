@@ -37,6 +37,7 @@ public class ResponseEventExt extends ResponseEvent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.549 -0400", hash_original_method = "86BB48DEB1DDB9180E72A821E2A3AF51", hash_generated_method = "86A3A3109A8873E13BC7122F5738A43E")
     public void setOriginalTransaction(ClientTransactionExt originalTransaction ) {
         m_originalTransaction = originalTransaction;
@@ -45,6 +46,7 @@ public class ResponseEventExt extends ResponseEvent {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.549 -0400", hash_original_method = "BC8FBC0426D6766D3BE2845167DC7794", hash_generated_method = "9191B5004976D497F4E24F2A14419604")
     public ClientTransactionExt getOriginalTransaction() {
 ClientTransactionExt var16BA59E0B4BC8848A154C09BC442AF86_1250628985 =         this.m_originalTransaction;

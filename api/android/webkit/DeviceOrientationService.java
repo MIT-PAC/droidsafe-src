@@ -107,6 +107,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.929 -0400", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "A7E67A6E76B1F10B2C3579EEC8072463")
     private void sendErrorEvent() {
     if(mHaveSentErrorEvent)        
@@ -292,6 +293,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "3C1A1EC0C343A6858CE51FA636390E27")
     private void maybeSendChange(double alpha, double beta, double gamma) {
     if(mAlpha == null || mBeta == null || mGamma == null
@@ -320,6 +322,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "4B78C89890BD75034BFA745D6F3B71B4")
     public void onSensorChanged(SensorEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -355,6 +358,7 @@ switch(event.sensor.getType()){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "3B735DACA44A7088C201CD04E68BCC26")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //DSFIXME:  CODE0009: Possible callback target function detected

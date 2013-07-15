@@ -17,6 +17,7 @@ public class EasyEditSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.177 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DF3C1CA5E79303D94F4C742D0AB74276")
     @Override
     public int describeContents() {
@@ -28,6 +29,7 @@ public class EasyEditSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.177 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "7434FF73057D7851F1B1D87D94FFF3D5")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -37,6 +39,7 @@ public class EasyEditSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.177 -0400", hash_original_method = "B70B692D38FEF311001170F890E9CCAE", hash_generated_method = "97F1B302AF8C9196994669B1E5816F38")
     @Override
     public int getSpanTypeId() {

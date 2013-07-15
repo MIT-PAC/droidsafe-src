@@ -165,7 +165,8 @@ public abstract class SMSDispatcher extends Handler {
     }
 
     
-        protected static int getNextConcatenatedRef() {
+        @DSModeled(DSC.SAFE)
+    protected static int getNextConcatenatedRef() {
         sConcatenatedRef += 1;
         return sConcatenatedRef;
     }
@@ -186,6 +187,7 @@ public abstract class SMSDispatcher extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.325 -0400", hash_original_method = "42D9652DD1B0FE51DCC6557D894D344B", hash_generated_method = "43F503B35F317D9FB3115D6E9B210A53")
     @Override
     public void handleMessage(Message msg) {
@@ -293,6 +295,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.327 -0400", hash_original_method = "6F7A6F4FA235882A4AAAEA7C85F33B76", hash_generated_method = "74C18E40C776EBEA7C1B979A5B65BDBD")
      void dispatch(Intent intent, String permission) {
         addTaint(permission.getTaint());
@@ -307,6 +310,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.327 -0400", hash_original_method = "B9407366468E5E2261EED2E1D1F371B3", hash_generated_method = "7E0EB94DA2DFFC75B143A6F8F2DE92C9")
     protected void handleSendComplete(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -405,7 +409,8 @@ switch(msg.what){
     }
 
     
-        protected static void handleNotInService(int ss, SmsTracker tracker) {
+        @DSModeled(DSC.SPEC)
+    protected static void handleNotInService(int ss, SmsTracker tracker) {
         if (tracker.mSentIntent != null) {
             try {
                 if (ss == ServiceState.STATE_POWER_OFF) {
@@ -421,6 +426,7 @@ switch(msg.what){
     public abstract int dispatchMessage(SmsMessageBase sms);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.329 -0400", hash_original_method = "FA883D78660186E8315D2F919EDE7FF4", hash_generated_method = "781B5DCCADF2D40191C8F7AEF1110628")
     protected int dispatchNormalMessage(SmsMessageBase sms) {
         addTaint(sms.getTaint());
@@ -613,6 +619,7 @@ for(int i = 0;i < messageCount;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.332 -0400", hash_original_method = "FFA598D36A59A89B4BA165B55017EEB5", hash_generated_method = "2F7487EEB0B9AB5999977F20D8B574A5")
     protected void dispatchPdus(byte[][] pdus) {
         addTaint(pdus[0][0]);
@@ -628,6 +635,7 @@ for(int i = 0;i < messageCount;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.333 -0400", hash_original_method = "3F1122361F00F60F28196C29B48EFEBB", hash_generated_method = "977EB63BFA65376303A8877BBDAC496C")
     protected void dispatchPortAddressedPdus(byte[][] pdus, int port) {
         addTaint(port);
@@ -783,6 +791,7 @@ for(int i = 0;i < msgCount;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.337 -0400", hash_original_method = "771250D922DD0FBC637697CE165ADE5B", hash_generated_method = "69471645ADFEB910AC4B853FE2A10579")
     protected void handleReachSentLimit(SmsTracker tracker) {
         addTaint(tracker.getTaint());
@@ -825,6 +834,7 @@ for(int i = 0;i < msgCount;i++)
     protected abstract void sendSms(SmsTracker tracker);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.337 -0400", hash_original_method = "3673C71AC378B483B72EBB14D4C20DB7", hash_generated_method = "D23C6C59E22A24804F3C2FDB63F981E3")
     private void sendMultipartSms(SmsTracker tracker) {
         addTaint(tracker.getTaint());
@@ -886,6 +896,7 @@ for(int i = 0, count = parts.size();i < count;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.339 -0400", hash_original_method = "978DCF88E3506C5AEC52023DC36FB472", hash_generated_method = "D08875E031D5490623B0046E5DE124C9")
     protected void dispatchBroadcastPdus(byte[][] pdus, boolean isEmergencyMessage) {
         addTaint(isEmergencyMessage);

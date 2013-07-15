@@ -51,6 +51,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.654 -0400", hash_original_method = "788D44D9ED0FFD916FA1001367F68A82", hash_generated_method = "81215A83F9A8580C423DE29DCDA26868")
     public boolean weakCompareAndSet(boolean expect, boolean update) {
         addTaint(update);
@@ -108,6 +109,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.656 -0400", hash_original_method = "A5A2E0E9AE6072C3F7FFFC3FCCD2C5BC", hash_generated_method = "37134153D4AD0410A98E6157CD5BB53C")
     public String toString() {
 String var04FF01733FCCCBE212341A4CEBFC4CB8_684806915 =         Boolean.toString(get());

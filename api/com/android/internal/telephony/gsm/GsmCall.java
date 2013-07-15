@@ -41,6 +41,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
@@ -57,6 +58,7 @@ List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_1679725699 =         connec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.766 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "71408A30DA1C2419F9C1B87389E76E72")
     public Phone getPhone() {
 Phone var184C3BF9D73535588B22D3939CD1F578_770883104 =         owner.phone;
@@ -119,6 +121,7 @@ String var03910CD76C0E5BA32DFF47134AABAD32_552502065 =         state.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.768 -0400", hash_original_method = "6CF66D622F9C9313C400A181CC9C1077", hash_generated_method = "F513AC6FDA6110EB6F7EF0C63E06F5A0")
      void connectionDisconnected(GsmConnection conn) {
         addTaint(conn.getTaint());
@@ -200,6 +203,7 @@ for(int i = 0, s = connections.size();i < s;i ++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.769 -0400", hash_original_method = "8D2922917355F4AB0DD299BF5AB22FDE", hash_generated_method = "F94FCCA6272649A47ECB6F9DB2C3F8CE")
      boolean isFull() {
         boolean var87A40A3B673CDD3F8EDC668F98471211_106908980 = (connections.size() == GsmCallTracker.MAX_CONNECTIONS_PER_CALL);

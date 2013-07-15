@@ -128,6 +128,7 @@ for(int i = 0;i < certificate_authorities.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.868 -0400", hash_original_method = "B8B86D3685160AFFAE5E6FB9770B1A60", hash_generated_method = "9AC5532845A5DE09855C4D05A9EFA643")
     @Override
     public int getType() {

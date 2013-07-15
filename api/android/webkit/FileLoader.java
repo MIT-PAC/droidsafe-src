@@ -82,6 +82,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.999 -0400", hash_original_method = "97D1B11BE7CB4BE78107ED00EAAEAEA4", hash_generated_method = "BE3C957A696E0FC2866B531A57748BB0")
     @Override
     protected boolean setupStreamAndSendStatus() {
@@ -211,6 +212,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.000 -0400", hash_original_method = "EECFC31B2787C18B03F2C6B112B9990D", hash_generated_method = "E46259D9AABAC67CD274455544731825")
     @Override
     protected void buildHeaders(Headers headers) {

@@ -243,6 +243,7 @@ Drawable var971308062B2F7B7C459D4E8FB7EC2C6A_1260651364 =         indicator;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.406 -0400", hash_original_method = "4C83D9B2FEDBCDF12BA1F2A0723CD37C", hash_generated_method = "D780E95EAAAAB38AA0BB5A1E722724BB")
     public void setChildDivider(Drawable childDivider) {
         mChildDivider = childDivider;
@@ -353,6 +354,7 @@ ListAdapter varAA65D8278002ADFD88451394EA4A61D4_1120892176 =         super.getAd
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.409 -0400", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "FA87E7F08AC450D2C9E9D76F4575AF09")
     public ExpandableListAdapter getExpandableListAdapter() {
 ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mAdapter;
@@ -561,6 +563,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.414 -0400", hash_original_method = "A0CC4D2398D57CD6BE21425007A2E39D", hash_generated_method = "5DEE1C397DA6B056AD55AB7266513406")
     public void setOnGroupCollapseListener(
             OnGroupCollapseListener onGroupCollapseListener) {
@@ -570,6 +573,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.414 -0400", hash_original_method = "10BB1A471420C27FBFE382BB84A3E76C", hash_generated_method = "41083F8181E5FCFCB921D2750728C23A")
     public void setOnGroupExpandListener(
             OnGroupExpandListener onGroupExpandListener) {
@@ -579,6 +583,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.415 -0400", hash_original_method = "C8C3684AA79EC58EA45C462FF87BD202", hash_generated_method = "60F0AD7A476021E95B7ED081EF3A3ED1")
     public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
         mOnGroupClickListener = onGroupClickListener;
@@ -587,6 +592,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.415 -0400", hash_original_method = "26EE7772CEF1895E61E52189D15F9720", hash_generated_method = "41F25A2ADE7B9E9231F61EB2282E9FF4")
     public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
         mOnChildClickListener = onChildClickListener;
@@ -757,7 +763,8 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
-        public static int getPackedPositionType(long packedPosition) {
+        @DSModeled(DSC.SAFE)
+    public static int getPackedPositionType(long packedPosition) {
         if (packedPosition == PACKED_POSITION_VALUE_NULL) {
             return PACKED_POSITION_TYPE_NULL;
         }
@@ -767,20 +774,23 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
-        public static int getPackedPositionGroup(long packedPosition) {
+        @DSModeled(DSC.SAFE)
+    public static int getPackedPositionGroup(long packedPosition) {
         if (packedPosition == PACKED_POSITION_VALUE_NULL) return -1;
         return (int) ((packedPosition & PACKED_POSITION_MASK_GROUP) >> PACKED_POSITION_SHIFT_GROUP);
     }
 
     
-        public static int getPackedPositionChild(long packedPosition) {
+        @DSModeled(DSC.SAFE)
+    public static int getPackedPositionChild(long packedPosition) {
         if (packedPosition == PACKED_POSITION_VALUE_NULL) return -1;
         if ((packedPosition & PACKED_POSITION_MASK_TYPE) != PACKED_POSITION_MASK_TYPE) return -1;
         return (int) (packedPosition & PACKED_POSITION_MASK_CHILD);
     }
 
     
-        public static long getPackedPositionForChild(int groupPosition, int childPosition) {
+        @DSModeled(DSC.SAFE)
+    public static long getPackedPositionForChild(int groupPosition, int childPosition) {
         return (((long)PACKED_POSITION_TYPE_CHILD) << PACKED_POSITION_SHIFT_TYPE)
                 | ((((long)groupPosition) & PACKED_POSITION_INT_MASK_GROUP)
                         << PACKED_POSITION_SHIFT_GROUP)
@@ -788,7 +798,8 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_352518564 =         mA
     }
 
     
-        public static long getPackedPositionForGroup(int groupPosition) {
+        @DSModeled(DSC.SAFE)
+    public static long getPackedPositionForGroup(int groupPosition) {
         return ((((long)groupPosition) & PACKED_POSITION_INT_MASK_GROUP)
                         << PACKED_POSITION_SHIFT_GROUP);
     }
@@ -855,6 +866,7 @@ ContextMenuInfo varAD01B31C4FD33D13A307745D9F704A68_517919091 =         new Expa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.420 -0400", hash_original_method = "ED7EE4CBDCF7577D87176969D6DCB802", hash_generated_method = "B85C53B974C3327A3C4829D04B8BCB3A")
     public void setChildIndicator(Drawable childIndicator) {
         mChildIndicator = childIndicator;
@@ -863,6 +875,7 @@ ContextMenuInfo varAD01B31C4FD33D13A307745D9F704A68_517919091 =         new Expa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.420 -0400", hash_original_method = "CC0F573BF0E3363C1E0D2AF3089F451E", hash_generated_method = "BF1DA63FE85099FCB939914C41345D98")
     public void setChildIndicatorBounds(int left, int right) {
         mChildIndicatorLeft = left;
@@ -888,6 +901,7 @@ ContextMenuInfo varAD01B31C4FD33D13A307745D9F704A68_517919091 =         new Expa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.421 -0400", hash_original_method = "442AEE74CE0C61614A47372E9A48F50C", hash_generated_method = "50DE4AE5539179C099ACC4C3916E6A2E")
     public void setIndicatorBounds(int left, int right) {
         mIndicatorLeft = left;

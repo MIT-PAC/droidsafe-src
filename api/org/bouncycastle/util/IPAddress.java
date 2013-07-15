@@ -14,13 +14,15 @@ public class IPAddress {
     }
 
 
-        public static boolean isValid(
+        @DSModeled(DSC.SPEC)
+    public static boolean isValid(
         String address) {
         return isValidIPv4(address) || isValidIPv6(address);
     }
 
     
-        public static boolean isValidWithNetMask(
+        @DSModeled(DSC.SPEC)
+    public static boolean isValidWithNetMask(
         String address) {
         return isValidIPv4WithNetmask(address) || isValidIPv6WithNetmask(address);
     }

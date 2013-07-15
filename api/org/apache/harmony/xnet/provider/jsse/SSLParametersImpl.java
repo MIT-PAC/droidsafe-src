@@ -114,6 +114,7 @@ public class SSLParametersImpl implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.448 -0400", hash_original_method = "F41241796D4BD57A765BA19A5F557DE2", hash_generated_method = "9C1850C76ABA5B9108E7EEE63E045CEE")
     protected CipherSuite[] getEnabledCipherSuitesMember() {
     if(enabledCipherSuites == null)        
@@ -144,6 +145,7 @@ CipherSuite[] var4FE9A25924581DEE872791EA4874412D_735839407 =         enabledCip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.448 -0400", hash_original_method = "658F9BFC8B9B3779298360EB3ED283E0", hash_generated_method = "8BB6337DE4072076CF7A5E8A61234307")
     protected ServerSessionContext getServerSessionContext() {
 ServerSessionContext var100440D65E59DFFC2F85188BB92C5DF8_1298691268 =         serverSessionContext;
@@ -154,6 +156,7 @@ ServerSessionContext var100440D65E59DFFC2F85188BB92C5DF8_1298691268 =         se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.449 -0400", hash_original_method = "F2ACF841A45F78E0C0C46B366B8BBEF0", hash_generated_method = "CC45356794EF01747168AA88063AE63D")
     protected ClientSessionContext getClientSessionContext() {
 ClientSessionContext varF881C293692092C9564353C09AD998B5_1310822193 =         clientSessionContext;
@@ -164,6 +167,7 @@ ClientSessionContext varF881C293692092C9564353C09AD998B5_1310822193 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.449 -0400", hash_original_method = "55EECB48B318CBDDE6A76E7D2964C45E", hash_generated_method = "76E978F4AAEFA968BB1F850B93C75A21")
     protected X509KeyManager getKeyManager() {
 X509KeyManager varB2F1F4ADA8F75A61CE21B0CA3AA12DC4_1860059375 =         keyManager;
@@ -174,6 +178,7 @@ X509KeyManager varB2F1F4ADA8F75A61CE21B0CA3AA12DC4_1860059375 =         keyManag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.449 -0400", hash_original_method = "6C6A481BDDE46D9B11307A3C2E7627FB", hash_generated_method = "F9CDED4DDE051F2BDCAF4A19F3619780")
     protected X509TrustManager getTrustManager() {
 X509TrustManager var56C611970C82E9A90BA55937E8F17214_1013280382 =         trustManager;
@@ -214,6 +219,7 @@ SecureRandom var61F46EA9C65D699D838C78C67875DF31_1453313361 =         secureRand
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.450 -0400", hash_original_method = "3F930A54995EF963563BF853943EBA6D", hash_generated_method = "DA50588A3021FBA80EDDE15AE9B87B6B")
     protected SecureRandom getSecureRandomMember() {
 SecureRandom var61F46EA9C65D699D838C78C67875DF31_630056372 =         secureRandom;
@@ -350,6 +356,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.453 -0400", hash_original_method = "D4C2A3C88DBFC7AAADB7163E376EACA1", hash_generated_method = "887DE4735EDEE4C8E4C83849AF3EB99A")
     protected void setUseClientMode(boolean mode) {
         client_mode = mode;
@@ -358,6 +365,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.454 -0400", hash_original_method = "90A3F3D7EBB1ED0C929CAB981D05518C", hash_generated_method = "A9AF8E43DA0FF0DB02C8744B47A89F68")
     protected boolean getUseClientMode() {
         boolean var81E447258804BADEDC394F9945D6641A_15178822 = (client_mode);
@@ -368,6 +376,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.454 -0400", hash_original_method = "2F62AC894AF3F12D83050C91D4850055", hash_generated_method = "52A5FCBC97E504C4D517CB08073F3187")
     protected void setNeedClientAuth(boolean need) {
         need_client_auth = need;
@@ -378,6 +387,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.455 -0400", hash_original_method = "2471CA6C7557FB2D62663705E2DBC565", hash_generated_method = "D6393CFFA7195B5571C5A74977E16C91")
     protected boolean getNeedClientAuth() {
         boolean var5F0E053B848765DC1E643EA106B30957_1895381007 = (need_client_auth);
@@ -388,6 +398,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.455 -0400", hash_original_method = "AF76AB0175AB43F1BF7C9A05C2972923", hash_generated_method = "720F660EEC765CE9DA60BECAD1888659")
     protected void setWantClientAuth(boolean want) {
         want_client_auth = want;
@@ -398,6 +409,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.455 -0400", hash_original_method = "180B768884625BF4E09AC4E909474C3B", hash_generated_method = "C4EF4F937BC12B95AF7321EBA329A5EB")
     protected boolean getWantClientAuth() {
         boolean var50809B1BF60864131797768ED7DF2BCB_247117342 = (want_client_auth);
@@ -408,6 +420,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.456 -0400", hash_original_method = "982E0D6CA0433DE88B1B4310D3610067", hash_generated_method = "28552D8F807A40A67118E4FFED07DB76")
     protected void setEnableSessionCreation(boolean flag) {
         enable_session_creation = flag;
@@ -416,6 +429,7 @@ for(int i=0;i<protocols.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.456 -0400", hash_original_method = "73058AE9A102A5DCB03ABA90C3F4D3DE", hash_generated_method = "AB69E64167858BAC3F9847E256D841A5")
     protected boolean getEnableSessionCreation() {
         boolean varDA1F4A09E5BAA4AF184991F774AB6DE4_378939758 = (enable_session_creation);
@@ -476,7 +490,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1482783171 =             super.clone(
     }
 
     
-        private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
+        @DSModeled(DSC.SAFE)
+    private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
         for (KeyManager km : kms) {
             if (km instanceof X509KeyManager) {
                 return (X509KeyManager)km;
@@ -511,7 +526,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1482783171 =             super.clone(
     }
 
     
-        private static X509TrustManager findX509TrustManager(TrustManager[] tms) {
+        @DSModeled(DSC.SAFE)
+    private static X509TrustManager findX509TrustManager(TrustManager[] tms) {
         for (TrustManager tm : tms) {
             if (tm instanceof X509TrustManager) {
                 return (X509TrustManager)tm;

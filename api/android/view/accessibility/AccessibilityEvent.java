@@ -105,6 +105,7 @@ AccessibilityRecord varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159 =         mRec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.070 -0400", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "365AE3A56876DFDA601F8B6FBF38887A")
     public int getEventType() {
         int varC7C43C278E8643FF27A9474560193A6F_2000829625 = (mEventType);
@@ -125,6 +126,7 @@ AccessibilityRecord varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159 =         mRec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.071 -0400", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "0B05B2139DA1F3D45724DFBB2D6614C3")
     public long getEventTime() {
         long var3EE1D0D0A7FA96B4DEE335E6458397C2_63800565 = (mEventTime);
@@ -145,6 +147,7 @@ AccessibilityRecord varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159 =         mRec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.071 -0400", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "08EF72062545E8504C9FDFC068DAF9B3")
     public CharSequence getPackageName() {
 CharSequence var5601F77C1E784C31FA233AB799182FA6_2101765723 =         mPackageName;
@@ -386,6 +389,7 @@ for(int i = 0;i < recordCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.079 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1934E7F7A194628A1164BB5FCEDEF902")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1804550498 = (0);
@@ -449,7 +453,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_267983362 =         builder.toString(
     }
 
     
-        public static String eventTypeToString(int eventType) {
+        @DSModeled(DSC.SAFE)
+    public static String eventTypeToString(int eventType) {
         switch (eventType) {
             case TYPE_VIEW_CLICKED:
                 return "TYPE_VIEW_CLICKED";

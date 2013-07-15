@@ -52,6 +52,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.206 -0400", hash_original_method = "BCFF8F5D8C51374E31DC49464CB803A5", hash_generated_method = "AA511CEF284171E9C10FFB191DEB239E")
     public int getFrontActivityScreenCompatMode() {
         try 
@@ -75,6 +76,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.207 -0400", hash_original_method = "1AD781893C5FA74DDB5BF5981AAFC282", hash_generated_method = "292FBFDB967E21EB4FA781B8ED2465D7")
     public void setFrontActivityScreenCompatMode(int mode) {
         addTaint(mode);
@@ -93,6 +95,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.208 -0400", hash_original_method = "08DE0842CE89FB88CEE40B6F1F1D5D8A", hash_generated_method = "F6000083F5FBD2EAA7F0847C9C4AF02E")
     public int getPackageScreenCompatMode(String packageName) {
         addTaint(packageName.getTaint());
@@ -117,6 +120,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.209 -0400", hash_original_method = "6272BC343B5B54EAA927E2C6A7A229FA", hash_generated_method = "6B35E24D2497A6B3C5FCDFCA33B241FB")
     public void setPackageScreenCompatMode(String packageName, int mode) {
         addTaint(mode);
@@ -136,6 +140,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.210 -0400", hash_original_method = "43CD4547C63AA5BA08A4BB7431262A61", hash_generated_method = "04C52000C4176B1D11373F7EAE7F44A9")
     public boolean getPackageAskScreenCompat(String packageName) {
         addTaint(packageName.getTaint());
@@ -160,6 +165,7 @@ public class ActivityManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.212 -0400", hash_original_method = "3BC1D3C0234B303E106B1ACB51D8D800", hash_generated_method = "BF4BDAD98F7D8D6BBA3D593620CA942F")
     public void setPackageAskScreenCompat(String packageName, boolean ask) {
         addTaint(ask);
@@ -189,7 +195,8 @@ public class ActivityManager {
     }
 
     
-        static public int staticGetMemoryClass() {
+        @DSModeled(DSC.SPEC)
+    static public int staticGetMemoryClass() {
         String vmHeapSize = SystemProperties.get("dalvik.vm.heapgrowthlimit", "");
         if (vmHeapSize != null && !"".equals(vmHeapSize)) {
             return Integer.parseInt(vmHeapSize.substring(0, vmHeapSize.length()-1));
@@ -208,7 +215,8 @@ public class ActivityManager {
     }
 
     
-        static public int staticGetLargeMemoryClass() {
+        @DSModeled(DSC.SPEC)
+    static public int staticGetLargeMemoryClass() {
         String vmHeapSize = SystemProperties.get("dalvik.vm.heapsize", "16m");
         return Integer.parseInt(vmHeapSize.substring(0, vmHeapSize.length()-1));
     }
@@ -354,6 +362,7 @@ List<RunningTaskInfo> varF494B0EB5A0A149E15717B260CBB12D0_534902339 =         ge
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.225 -0400", hash_original_method = "90A15739ABCD71E20C2601B2E690D2DC", hash_generated_method = "4C2797F0CB67B242F320F9F41366BB94")
     public TaskThumbnails getTaskThumbnails(int id) throws SecurityException {
         addTaint(id);
@@ -423,6 +432,7 @@ List<RunningServiceInfo> var540C13E9E156B687226421B24F2DF178_190884002 =        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.230 -0400", hash_original_method = "3F37B5EEA2E0ADFF7012B4DB8D3BC71C", hash_generated_method = "10AA30611EF1A2AFFDFF6BA67D081CD0")
     public PendingIntent getRunningServiceControlPanel(ComponentName service) throws SecurityException {
         addTaint(service.getTaint());
@@ -449,6 +459,7 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_426205698 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.231 -0400", hash_original_method = "B6E6E4E46821E411AC60EE30A7424576", hash_generated_method = "EDAA90C91D42C8F58DED2EFAE6FC74E1")
     public void getMemoryInfo(MemoryInfo outInfo) {
         addTaint(outInfo.getTaint());
@@ -467,6 +478,7 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_426205698 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.236 -0400", hash_original_method = "F72074CE1B364F8B93C8BBDF31501500", hash_generated_method = "F36465ED1AB159D281335AAC823BBB65")
     public boolean clearApplicationUserData(String packageName, IPackageDataObserver observer) {
         addTaint(observer.getTaint());
@@ -540,6 +552,7 @@ List<ApplicationInfo> var540C13E9E156B687226421B24F2DF178_813140419 =           
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.262 -0400", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "95B24944A650E4126F006C50060C7E3F")
     public List<RunningAppProcessInfo> getRunningAppProcesses() {
         try 
@@ -587,6 +600,7 @@ Debug.MemoryInfo[] var540C13E9E156B687226421B24F2DF178_1026233107 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.265 -0400", hash_original_method = "AB97F58AF8359C056EB136FA16E11328", hash_generated_method = "7475D0571E9FBA018F9BE0E931453FCB")
     @Deprecated
     public void restartPackage(String packageName) {
@@ -633,6 +647,7 @@ Debug.MemoryInfo[] var540C13E9E156B687226421B24F2DF178_1026233107 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.270 -0400", hash_original_method = "002CA49339A7476A8E8EF41ECCC37BDD", hash_generated_method = "69396D63FA55B69FF87A80ED2805DF28")
     public ConfigurationInfo getDeviceConfigurationInfo() {
         try 
@@ -750,7 +765,8 @@ switch(density){
     }
 
     
-        public static boolean isUserAMonkey() {
+        @DSModeled(DSC.SPEC)
+    public static boolean isUserAMonkey() {
         try {
             return ActivityManagerNative.getDefault().isUserAMonkey();
         } catch (RemoteException e) {
@@ -759,7 +775,8 @@ switch(density){
     }
 
     
-        public static boolean isRunningInTestHarness() {
+        @DSModeled(DSC.SPEC)
+    public static boolean isRunningInTestHarness() {
         return SystemProperties.getBoolean("ro.test_harness", false);
     }
 
@@ -803,6 +820,7 @@ Map<String, Integer> var7084C1AAB31A68AB6122451D4464DD6B_683334250 =            
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.288 -0400", hash_original_method = "97D195D4FE7E8BCA1AFB9969B53F0E5E", hash_generated_method = "C71A7A08A4CC6D227AA51AD2C32916B2")
     public PkgUsageStats[] getAllPackageUsageStats() {
         try 
@@ -892,6 +910,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.296 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2E400E1EAA5D5D443FCDFF35C1611995")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_247624941 = (0);
@@ -902,6 +921,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.297 -0400", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "321882FE2925192DA8F2604DA4ADFD84")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -935,6 +955,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.299 -0400", hash_original_method = "F67217ABAEC36040C8F444901EE65BC8", hash_generated_method = "737445A4B4398911F8EE4077C7D15577")
         public void readFromParcel(Parcel source) {
             id = source.readInt();
@@ -1025,6 +1046,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.313 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2D9C98A71D6D0287A8F3D6239C790B07")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_650137635 = (0);
@@ -1153,6 +1175,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.325 -0400", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "20057F8AC2021F627556FDF078025FC4")
         public Bitmap getSubThumbnail(int index) {
             addTaint(index);
@@ -1177,6 +1200,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.326 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC6F03A1818D82FB21DED0A509ECAC1B")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_2084835252 = (0);
@@ -1187,6 +1211,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.327 -0400", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "649E474CF53A49C585B6D248D5F44E31")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1214,6 +1239,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.328 -0400", hash_original_method = "19A7C144CCAE5CD51406B760DF512EA1", hash_generated_method = "1C64A9953DE77D495AC2AFE2E389DEB7")
         public void readFromParcel(Parcel source) {
     if(source.readInt() != 0)            
@@ -1320,6 +1346,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.337 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "183C421E6BA130834990AE25991BCFC2")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1471210936 = (0);
@@ -1330,6 +1357,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.338 -0400", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "DC89A843B04BF96AEC3880A7C3A6139E")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1366,6 +1394,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.342 -0400", hash_original_method = "264C3E4C1DAB76B38CA08CE45829A86C", hash_generated_method = "DD78297D77B49BEF3DC4CE1566C885A4")
         public void readFromParcel(Parcel source) {
             service = ComponentName.readFromParcel(source);
@@ -1474,6 +1503,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.351 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D95224592CF87E01C69CA3619EC7A1D4")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1313476518 = (0);
@@ -1484,6 +1514,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.354 -0400", hash_original_method = "F89D0A9B79191784D882D224AE236CD7", hash_generated_method = "5DFCC9E4FCFBF20D2556175A8DBE4ABC")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1506,6 +1537,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.360 -0400", hash_original_method = "63344B29322BA9906ACD5F2C274D4AFB", hash_generated_method = "BC66AADD41130FA5D032784C56DC61C2")
         public void readFromParcel(Parcel source) {
             availMem = source.readLong();
@@ -1595,6 +1627,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.368 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6C2D634FDEA540475EAD5E9644D2BACF")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_2014749877 = (0);
@@ -1605,6 +1638,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.369 -0400", hash_original_method = "38EC9879A184B274D068BE64A2E942B7", hash_generated_method = "43404B0934AC1C5079D02D0C1B406402")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1629,6 +1663,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.372 -0400", hash_original_method = "7EE07760084269563BF2AEE27C9085AD", hash_generated_method = "6FF9C96E0672E5AF8E3073FD70A01A17")
         public void readFromParcel(Parcel source) {
             condition = source.readInt();
@@ -1751,6 +1786,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.384 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3CF290FD96EA98A2973ED95D03283F6F")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1331529340 = (0);
@@ -1761,6 +1797,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.385 -0400", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "CEDF08416D24385EF3D9C0DBF02DA77B")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1791,6 +1828,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.387 -0400", hash_original_method = "41C420DA0EF6445C06E1F94D547B6411", hash_generated_method = "6CEE33DDD5B34CFCAE50871715C114F5")
         public void readFromParcel(Parcel source) {
             processName = source.readString();

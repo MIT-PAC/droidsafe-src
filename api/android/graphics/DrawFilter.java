@@ -17,6 +17,7 @@ public class DrawFilter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.249 -0400", hash_original_method = "AD4C46BBF7AD12904405D19E52AE287A", hash_generated_method = "DF886E907054C8F11AAD3730C8F79A4D")
     protected void finalize() throws Throwable {
         nativeDestructor(mNativeInt);

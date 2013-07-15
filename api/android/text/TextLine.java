@@ -1119,6 +1119,7 @@ for(int i = 0;i < length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.143 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "81BA2FF1F5DA38840243945B12F72089")
         public boolean hasSpansIntersecting(int start, int end) {
             addTaint(end);
@@ -1143,6 +1144,7 @@ for(int i = 0;i < numberOfSpans;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.144 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "40CFA94D2445185CC7C5A4BE071416E5")
          int getNextTransition(int start, int limit) {
             addTaint(limit);
@@ -1170,6 +1172,7 @@ for(int i = 0;i < numberOfSpans;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.144 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "45D6B23027A8EAF82BF142D1CA4A1B6A")
         public void recycle() {
 for(int i = 0;i < numberOfSpans;i++)

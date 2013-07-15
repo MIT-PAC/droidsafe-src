@@ -272,6 +272,7 @@ DEREncodable varD80E22438A65327AC831683B7CA408E3_2065308160 =         (DEREncoda
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.659 -0400", hash_original_method = "A69C6C665FC9D3DE250A324544079C85", hash_generated_method = "01BC97E0A9D390C7E7C73AC5401EDEE9")
     private DEREncodable getNext(Enumeration e) {
         addTaint(e.getTaint());

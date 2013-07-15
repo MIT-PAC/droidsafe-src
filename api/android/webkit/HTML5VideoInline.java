@@ -33,6 +33,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.269 -0400", hash_original_method = "D7EA882E28D2C4D67824D79C998B9B60", hash_generated_method = "736B7BB8266C918A346AAB0A0D75F86C")
     @Override
     public void start() {
@@ -47,6 +48,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.269 -0400", hash_original_method = "21B0AE17630D7867C6531BD31731CD32", hash_generated_method = "D797356A7EE2E977A002216664ECC960")
     @Override
     public void decideDisplayMode() {
@@ -62,6 +64,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.270 -0400", hash_original_method = "AC7A2076B2D6AB73AC076068AFFF2875", hash_generated_method = "88BFC685952B0E0A1CCADB31678C34A9")
     @Override
     public void prepareDataAndDisplayMode(HTML5VideoViewProxy proxy) {
@@ -83,6 +86,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.270 -0400", hash_original_method = "A225789E523D8A62A1731E2AAAAB0AC9", hash_generated_method = "59984A467758060589DCED1C97212C63")
     @Override
     public void pauseAndDispatch(HTML5VideoViewProxy proxy) {
@@ -93,6 +97,7 @@ public class HTML5VideoInline extends HTML5VideoView {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.272 -0400", hash_original_method = "DAEA7A8CB1E990B0D919DD9331E6C437", hash_generated_method = "DD180B54312E0BC9DF3E8C304C0A34EE")
     @Override
     public SurfaceTexture getSurfaceTexture(int videoLayerId) {
@@ -129,6 +134,7 @@ SurfaceTexture var74CF9B55B7E0EE39E0DCA6D5B6226059_402270780 =         mSurfaceT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.272 -0400", hash_original_method = "AA8729C4AB453FEA19B6A154CE4123AC", hash_generated_method = "D1553325183BAB312BD18EABC012495F")
     public boolean surfaceTextureDeleted() {
         boolean varF0304B2B44BAAD2EABB9072CBF7697C5_306170180 = ((mSurfaceTexture == null));
@@ -139,6 +145,7 @@ SurfaceTexture var74CF9B55B7E0EE39E0DCA6D5B6226059_402270780 =         mSurfaceT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.273 -0400", hash_original_method = "E38F4460BC96178C575F30AC43E88839", hash_generated_method = "0649F690C1335D86D8BEA9B37763F0CA")
     @Override
     public void deleteSurfaceTexture() {
@@ -152,6 +159,7 @@ SurfaceTexture var74CF9B55B7E0EE39E0DCA6D5B6226059_402270780 =         mSurfaceT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.273 -0400", hash_original_method = "B622F7D686DE5D5F2F53BAC4F4685738", hash_generated_method = "CF36F2F073C6A3679E765779B5C4FDDD")
     @Override
     public int getTextureName() {

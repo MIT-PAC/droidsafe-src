@@ -19,6 +19,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.504 -0400", hash_original_method = "3D8662E172DF94DE766C937C706B5067", hash_generated_method = "DF613A46E1E453AF4034C056A306AFB7")
     public int getMaxExpansion(int order) {
         addTaint(order);
@@ -30,6 +31,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.505 -0400", hash_original_method = "86FFE9FC429F590289C595CEB48BC74B", hash_generated_method = "AD302B8AC057E63647E538FBFF43603E")
     public int getOffset() {
         int var2C0856C7BD96514985EC50E55CBC1833_1827098661 = (this.icuIterator.getOffset());
@@ -40,6 +42,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.505 -0400", hash_original_method = "57F823A473B8AE20AA92B1969F9DE507", hash_generated_method = "EB7B604C46FA45CEA18D5DFC3A95F141")
     public int next() {
         int varE587C240C870E1FC3E3F8202C77E0E6F_2124508962 = (this.icuIterator.next());
@@ -50,6 +53,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.505 -0400", hash_original_method = "3E3F3B80F1885FD18E0677AD75F46948", hash_generated_method = "1DAD8B4A51FF83333F1733011FF1D543")
     public int previous() {
         int varF95DFE444B448C43503FCFC78023F105_1702430167 = (this.icuIterator.previous());
@@ -65,6 +69,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.506 -0400", hash_original_method = "CFBEE5200E8F292823205998EF4A1A4C", hash_generated_method = "317A1E790ADE9D574D1C254F3228769B")
     public void reset() {
         this.icuIterator.reset();
@@ -78,6 +83,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.506 -0400", hash_original_method = "B5159E04ADD34F8792FC76901FA3C75B", hash_generated_method = "D42505531F8E678D47D2F1164CEF7B12")
     public void setOffset(int newOffset) {
         addTaint(newOffset);
@@ -87,6 +93,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.506 -0400", hash_original_method = "4B7E5FB8D17EE6600C521F075CD85C4D", hash_generated_method = "A432A87B5B01B37C589FB0360C10E563")
     public void setText(CharacterIterator source) {
         addTaint(source.getTaint());
@@ -96,6 +103,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.507 -0400", hash_original_method = "5641B3FAAAA5E41E8D2876C4B877177C", hash_generated_method = "4A0000C9986C41D7D19356659DBCAF4C")
     public void setText(String source) {
         addTaint(source.getTaint());

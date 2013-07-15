@@ -18,6 +18,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.922 -0400", hash_original_method = "4575BF452832A0D7CE335FE2D333B9A8", hash_generated_method = "97AC481C13F2827C3EAD52206A73C776")
     @Override
     protected boolean left(TextView widget, Spannable buffer) {
@@ -31,6 +32,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.922 -0400", hash_original_method = "E8486D1C2D56FFC371988279D1AD8571", hash_generated_method = "ECC2E80A7C665EC9E968CDB1D1C71B01")
     @Override
     protected boolean right(TextView widget, Spannable buffer) {
@@ -44,6 +46,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.923 -0400", hash_original_method = "1155FFC79CCA2014F7E16D97983A80B8", hash_generated_method = "D6591C007683AB9F7A05AD956C7F3B40")
     @Override
     protected boolean up(TextView widget, Spannable buffer) {
@@ -57,6 +60,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.924 -0400", hash_original_method = "FCF9DD7A394B565166B77EC48277B9BE", hash_generated_method = "3B1714D19CC47DBF96FFE9FACDF445C5")
     @Override
     protected boolean down(TextView widget, Spannable buffer) {
@@ -70,6 +74,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.924 -0400", hash_original_method = "6AC637482165D29C2C4109F9D569279C", hash_generated_method = "E8E010B29E51E52DB6AAEECA7A7BB13C")
     @Override
     protected boolean pageUp(TextView widget, Spannable buffer) {
@@ -83,6 +88,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.925 -0400", hash_original_method = "290A98973A36AD8EEE0D3D32B5DA2AC3", hash_generated_method = "B448D891AC4EE6EA7BC0A03F9F2A6A19")
     @Override
     protected boolean pageDown(TextView widget, Spannable buffer) {
@@ -96,6 +102,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.925 -0400", hash_original_method = "96FE67A8B27885C4870A2D965DD698B2", hash_generated_method = "F5FDB09DFD7312D61E26A162379D68B5")
     @Override
     protected boolean top(TextView widget, Spannable buffer) {
@@ -109,6 +116,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.926 -0400", hash_original_method = "6D879379D7CBA6045850AECFB8A1C165", hash_generated_method = "E9C9615540E3C8B96A05C929F8DABE5A")
     @Override
     protected boolean bottom(TextView widget, Spannable buffer) {
@@ -122,6 +130,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.926 -0400", hash_original_method = "28541DE829E7071F01F9CFB8222A0CA3", hash_generated_method = "555C8F8BCCE0811B06594783358862FB")
     @Override
     protected boolean lineStart(TextView widget, Spannable buffer) {
@@ -135,6 +144,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.927 -0400", hash_original_method = "633692CF531080A659FB64ED1AA4A5F4", hash_generated_method = "0975B6E65E8E6E7134A2A9748AA3910C")
     @Override
     protected boolean lineEnd(TextView widget, Spannable buffer) {
@@ -148,6 +158,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.927 -0400", hash_original_method = "C15EA31EA0FD3AAF4D2911A25A30C355", hash_generated_method = "3EC341E63E63AB57C709AC31F1ED1A35")
     @Override
     protected boolean home(TextView widget, Spannable buffer) {
@@ -161,6 +172,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.928 -0400", hash_original_method = "8A16106DF26D61EEC58C1723A12C8B5F", hash_generated_method = "C777F4C5685BF44B6683F4FE75BA6BAC")
     @Override
     protected boolean end(TextView widget, Spannable buffer) {
@@ -174,6 +186,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.928 -0400", hash_original_method = "A7480C6BC5D883E26DF36990823FBEAF", hash_generated_method = "5CB4579958F2FD71C1F6B8D2AF5D8CC9")
     @Override
     public boolean onTouchEvent(TextView widget, Spannable buffer, MotionEvent event) {
@@ -189,6 +202,7 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.928 -0400", hash_original_method = "171EBC702B28CBB8F3E97F4458472A3A", hash_generated_method = "6231E95CF651359DEF093E01716F8985")
     @Override
     public void onTakeFocus(TextView widget, Spannable text, int dir) {
@@ -228,7 +242,8 @@ public class ScrollingMovementMethod extends BaseMovementMethod implements Movem
     }
 
     
-        public static MovementMethod getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static MovementMethod getInstance() {
         if (sInstance == null)
             sInstance = new ScrollingMovementMethod();
         return sInstance;

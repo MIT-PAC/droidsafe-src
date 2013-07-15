@@ -143,6 +143,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.404 -0400", hash_original_method = "BA5838B3AC67A7A883D23FDD23135D12", hash_generated_method = "70621487F43C248E57A43D38FEA487D4")
     private void initStyle(Context context) {
         addTaint(context.getTaint());
@@ -182,6 +183,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.405 -0400", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "8E1885F969FD98BE7C1E67CD5C6DFFC1")
     public String[] getSuggestions() {
 String[] var92323203D5120492B0A269EF8CC62459_1324687416 =         mSuggestions;
@@ -192,6 +194,7 @@ String[] var92323203D5120492B0A269EF8CC62459_1324687416 =         mSuggestions;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.405 -0400", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "5E6AA66C468C606496A4C2AD2722AC19")
     public String getLocale() {
 String varB2660BACB674CEB63470DD0D45A8D0D5_2138029193 =         mLocaleString;
@@ -202,6 +205,7 @@ String varB2660BACB674CEB63470DD0D45A8D0D5_2138029193 =         mLocaleString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.405 -0400", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "D738852D9108803C11082D3AE33315CD")
     public String getNotificationTargetClassName() {
 String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTargetClassName;
@@ -212,6 +216,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.405 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "C73ABDE9E6C656971F1ECD0F03977EEA")
     public int getFlags() {
         int var9C3CD7D37D3E1E66BE9B3B005FC98B3A_824993563 = (mFlags);
@@ -222,6 +227,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.406 -0400", hash_original_method = "CA4BF4BE3BC1B3094957FBC465D7A081", hash_generated_method = "85F0B9F34D43E8A3B2C0982106D45E4D")
     public void setFlags(int flags) {
         mFlags = flags;
@@ -230,6 +236,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.406 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2D87009292C54915DE6671F04B4328D9")
     @Override
     public int describeContents() {
@@ -241,6 +248,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.406 -0400", hash_original_method = "B88B3E1963FF277C84F7B31C7327EB57", hash_generated_method = "29DD4AD91B5F1E25C57ED2636AE4BC0F")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -272,6 +280,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.406 -0400", hash_original_method = "DBAA6553895459183AA1E1C35310F256", hash_generated_method = "D992D1B0BFEDCD5926EBB4032DF2DA3C")
     @Override
     public int getSpanTypeId() {
@@ -283,6 +292,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.407 -0400", hash_original_method = "DEEF8A91A4946D9B043EDA2DAC8F9CA5", hash_generated_method = "4F866B5BD991EC928687F152CBA20F2D")
     @Override
     public boolean equals(Object o) {
@@ -304,6 +314,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.407 -0400", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "46EC4864B9E9F6BF0B5C29358A35E416")
     @Override
     public int hashCode() {
@@ -315,13 +326,15 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
-        private static int hashCodeInternal(String[] suggestions, String locale,
+        @DSModeled(DSC.SAFE)
+    private static int hashCodeInternal(String[] suggestions, String locale,
             String notificationTargetClassName) {
         return Arrays.hashCode(new Object[] {Long.valueOf(SystemClock.uptimeMillis()), suggestions,
                 locale, notificationTargetClassName});
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.408 -0400", hash_original_method = "FC1F2F33C12EF11918B48BC18977D662", hash_generated_method = "8EBC39D59069EE04A1B95B4E754574FE")
     @Override
     public void updateDrawState(TextPaint tp) {
@@ -362,6 +375,7 @@ String varFA0CC82C3EC85485A38A003386BB68C9_659415215 =         mNotificationTarg
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.408 -0400", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "21D4C0BA821D19EE2AE688F23DA5C3AA")
     public int getUnderlineColor() {
         final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;

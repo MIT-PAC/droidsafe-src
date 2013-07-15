@@ -89,6 +89,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.831 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "8F026E2DF8494E0AA5BE7F09FD61AAAA")
     @ViewDebug.ExportedProperty
     public boolean isChecked() {

@@ -13,7 +13,8 @@ public final class HTTP {
     }
 
     
-        public static boolean isWhitespace(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isWhitespace(char ch) {
         return ch == SP || ch == HT || ch == CR || ch == LF;
     }
 

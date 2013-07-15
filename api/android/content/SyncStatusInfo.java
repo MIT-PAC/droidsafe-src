@@ -147,6 +147,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.324 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6B998461262691CC69A7214B5F7D1102")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1207204748 = (0);

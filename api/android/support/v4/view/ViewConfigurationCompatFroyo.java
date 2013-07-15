@@ -15,7 +15,8 @@ class ViewConfigurationCompatFroyo {
     }
 
 
-        public static int getScaledPagingTouchSlop(ViewConfiguration config) {
+        @DSModeled(DSC.SPEC)
+    public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         return config.getScaledPagingTouchSlop();
     }
 

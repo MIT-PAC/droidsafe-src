@@ -22,6 +22,7 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.377 -0400", hash_original_method = "B534170C99FB9AC20DD9E1D90510BBA7", hash_generated_method = "191B263B201A6573423B73D225FF7158")
     public synchronized void startTest(Test test) {
         addTaint(test.getTaint());
@@ -31,12 +32,14 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
-        protected static void setPreferences(Properties preferences) {
+        @DSModeled(DSC.SAFE)
+    protected static void setPreferences(Properties preferences) {
         fPreferences= preferences;
     }
 
     
-        protected static Properties getPreferences() {
+        @DSModeled(DSC.SAFE)
+    protected static Properties getPreferences() {
         if (fPreferences == null) {
             fPreferences= new Properties();
              fPreferences.put("loading", "true");
@@ -47,7 +50,8 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
-        public static void savePreferences() throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static void savePreferences() throws IOException {
         FileOutputStream fos= new FileOutputStream(getPreferencesFile());
         try {
             getPreferences().store(fos, "");
@@ -57,6 +61,7 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.378 -0400", hash_original_method = "B502D6F69F239856B740542829A9775D", hash_generated_method = "B5A2EF63FC90F647B0331C5BC78BDA2B")
     public void setPreference(String key, String value) {
         addTaint(value.getTaint());
@@ -67,6 +72,7 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.378 -0400", hash_original_method = "1D40CF214770214270118EC3034A73D5", hash_generated_method = "65C5A8A2E5F0471415C424B8576D1B14")
     public synchronized void endTest(Test test) {
         addTaint(test.getTaint());
@@ -105,6 +111,7 @@ public abstract class BaseTestRunner implements TestListener {
     public abstract void testFailed(int status, Test test, Throwable t);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.381 -0400", hash_original_method = "2E093CF05CBCDB737F05E1D7A4FAF338", hash_generated_method = "42E512C53C49C5DEBA9971149621FAF6")
     public Test getTest(String suiteClassName) {
         addTaint(suiteClassName.getTaint());
@@ -190,6 +197,7 @@ Test varB481C4977C3E3DE299395D5227B858D5_982245587 =         test;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.381 -0400", hash_original_method = "6D8039F6261C6F21742AFDC2B366F78B", hash_generated_method = "BB41E86499226B5DE9C478A55BE5C8FE")
     public String elapsedTimeAsString(long runTime) {
         addTaint(runTime);
@@ -201,6 +209,7 @@ String varED9666B6732423906D0DD3BF9CA61890_1939341735 =         NumberFormat.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.382 -0400", hash_original_method = "BE11435DC4AA3D9B45D704504FF19D7A", hash_generated_method = "A32B8D97442F473E54C6F8FE8DBA0FB8")
     protected String processArguments(String[] args) {
         addTaint(args[0].getTaint());
@@ -254,6 +263,7 @@ String varD8C9BC94A6E81F246F976FCCA661D48D_839908823 =         suiteName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.383 -0400", hash_original_method = "5089456E72AD517131D2C4755EB25FD8", hash_generated_method = "D9F7D286B22291E15850C20DB8EB5398")
     public void setLoading(boolean enable) {
         fLoading= enable;
@@ -262,6 +272,7 @@ String varD8C9BC94A6E81F246F976FCCA661D48D_839908823 =         suiteName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.383 -0400", hash_original_method = "0D3B9048C2AFB821E2A0D331105B4C0F", hash_generated_method = "CD2D185E7C16EDC7C083EC3DC81B34CF")
     public String extractClassName(String className) {
         addTaint(className.getTaint());
@@ -281,7 +292,8 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1210292826 =         className;
     }
 
     
-        public static String truncate(String s) {
+        @DSModeled(DSC.SAFE)
+    public static String truncate(String s) {
         if (fgMaxMessageLength != -1 && s.length() > fgMaxMessageLength)
             s= s.substring(0, fgMaxMessageLength)+"...";
         return s;
@@ -291,6 +303,7 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1210292826 =         className;
     protected abstract void runFailed(String message);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.384 -0400", hash_original_method = "53378ECE171D61BBF4EFB0D39916FCCF", hash_generated_method = "4CF7E2C6A3D895F9389087BEEB5AAE6F")
     protected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundException {
         addTaint(suiteClassName.getTaint());
@@ -302,12 +315,14 @@ Class varBEB4DDDE7C412D41DB6B8FD62D89A7A0_1494777754 =         getLoader().load(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.384 -0400", hash_original_method = "EEF193CE41029661D90E6D0075FFB68C", hash_generated_method = "374205678E7B67C969D372F4C08DE921")
     protected void clearStatus() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.384 -0400", hash_original_method = "E9EF8772E071281B9CB71EDD599F1B7C", hash_generated_method = "04876864A08AD2C00D6C3A9070707EF6")
     public TestSuiteLoader getLoader() {
     if(useReloadingTestSuiteLoader())        
@@ -326,6 +341,7 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.384 -0400", hash_original_method = "CAFC5B71DA3D583C51BF61B1F5919197", hash_generated_method = "757ECCEA28E21798E0F5216DE1873224")
     protected boolean useReloadingTestSuiteLoader() {
         boolean var45D8C0013A9AEEEB8D17EE7A4355FCE4_1686346886 = (getPreference("loading").equals("true") && !inVAJava() && fLoading);
@@ -336,13 +352,15 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
-        private static File getPreferencesFile() {
+        @DSModeled(DSC.SAFE)
+    private static File getPreferencesFile() {
         String home= System.getProperty("user.home");
         return new File(home, "junit.properties");
     }
 
     
-        private static void readPreferences() {
+        @DSModeled(DSC.SAFE)
+    private static void readPreferences() {
         InputStream is= null;
         try {
              is= new FileInputStream(getPreferencesFile());
@@ -358,12 +376,14 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
-        public static String getPreference(String key) {
+        @DSModeled(DSC.SAFE)
+    public static String getPreference(String key) {
         return getPreferences().getProperty(key);
     }
 
     
-        public static int getPreference(String key, int dflt) {
+        @DSModeled(DSC.SAFE)
+    public static int getPreference(String key, int dflt) {
         String value= getPreference(key);
         int intValue= dflt;
         if (value == null)
@@ -376,7 +396,8 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
-        public static boolean inVAJava() {
+        @DSModeled(DSC.SAFE)
+    public static boolean inVAJava() {
         try {
             Class.forName("com.ibm.uvm.tools.DebugSupport");
         }
@@ -387,7 +408,8 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
-        public static String getFilteredTrace(Throwable t) {
+        @DSModeled(DSC.SAFE)
+    public static String getFilteredTrace(Throwable t) {
         StringWriter stringWriter= new StringWriter();
         PrintWriter writer= new PrintWriter(stringWriter);
         t.printStackTrace(writer);
@@ -397,7 +419,8 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
-        public static String getFilteredTrace(String stack) {
+        @DSModeled(DSC.SAFE)
+    public static String getFilteredTrace(String stack) {
         if (showStackRaw())
             return stack;
         StringWriter sw= new StringWriter();
@@ -417,12 +440,14 @@ TestSuiteLoader varD4813F3AA8F61C27FF670963E25E8DDB_194090101 =         new Stan
     }
 
     
-        protected static boolean showStackRaw() {
+        @DSModeled(DSC.SAFE)
+    protected static boolean showStackRaw() {
         return !getPreference("filterstack").equals("true") || fgFilterStack == false;
     }
 
     
-        static boolean filterLine(String line) {
+        @DSModeled(DSC.SAFE)
+    static boolean filterLine(String line) {
         String[] patterns= new String[] {
             "junit.framework.TestCase",
             "junit.framework.TestResult",

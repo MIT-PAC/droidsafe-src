@@ -72,7 +72,8 @@ public final class Settings {
         }
 
 
-                protected static boolean putString(ContentResolver resolver, Uri uri,
+                @DSModeled(DSC.SPEC)
+        protected static boolean putString(ContentResolver resolver, Uri uri,
                 String name, String value) {
             try {
                 ContentValues values = new ContentValues();
@@ -87,7 +88,8 @@ public final class Settings {
         }
 
         
-                public static Uri getUriFor(Uri uri, String name) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getUriFor(Uri uri, String name) {
             return Uri.withAppendedPath(uri, name);
         }
 
@@ -134,6 +136,7 @@ public final class Settings {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.611 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "C6A0FF6DE079B50FA7207E5530F95F6D")
         public String getString(ContentResolver cr, String name) {
             addTaint(name.getTaint());
@@ -244,7 +247,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
 
-                public synchronized static String getString(ContentResolver resolver, String name) {
+                @DSModeled(DSC.SPEC)
+        public synchronized static String getString(ContentResolver resolver, String name) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
                         + " to android.provider.Settings.Secure, returning read-only value.");
@@ -268,7 +272,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                public static Uri getUriFor(String name) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getUriFor(String name) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
                     + " to android.provider.Settings.Secure, returning Secure URI.");
@@ -358,7 +363,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
+                @DSModeled(DSC.SPEC)
+        public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
             outConfig.fontScale = Settings.System.getFloat(
                 cr, FONT_SCALE, outConfig.fontScale);
             if (outConfig.fontScale < 0) {
@@ -367,27 +373,32 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                public static void clearConfiguration(Configuration inoutConfig) {
+                @DSModeled(DSC.SAFE)
+        public static void clearConfiguration(Configuration inoutConfig) {
             inoutConfig.fontScale = 0;
         }
 
         
-                public static boolean putConfiguration(ContentResolver cr, Configuration config) {
+                @DSModeled(DSC.SPEC)
+        public static boolean putConfiguration(ContentResolver cr, Configuration config) {
             return Settings.System.putFloat(cr, FONT_SCALE, config.fontScale);
         }
 
         
-                public static boolean hasInterestingConfigurationChanges(int changes) {
+                @DSModeled(DSC.SAFE)
+        public static boolean hasInterestingConfigurationChanges(int changes) {
             return (changes&ActivityInfo.CONFIG_FONT_SCALE) != 0;
         }
 
         
-                public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
+                @DSModeled(DSC.SPEC)
+        public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
             return getInt(cr, SHOW_GTALK_SERVICE_STATUS, 0) != 0;
         }
 
         
-                public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
+                @DSModeled(DSC.SPEC)
+        public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
             putInt(cr, SHOW_GTALK_SERVICE_STATUS, flag ? 1 : 0);
         }
 
@@ -1004,7 +1015,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
 
-                public synchronized static String getString(ContentResolver resolver, String name) {
+                @DSModeled(DSC.SPEC)
+        public synchronized static String getString(ContentResolver resolver, String name) {
             if (sNameValueCache == null) {
                 sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
                                                      CALL_METHOD_GET_SECURE);
@@ -1019,7 +1031,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                public static Uri getUriFor(String name) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getUriFor(String name) {
             return getUriFor(CONTENT_URI, name);
         }
 
@@ -1964,7 +1977,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
 
-                public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
+                @DSModeled(DSC.SPEC)
+        public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
             Intent intent = null;
             Cursor c = cr.query(CONTENT_URI,
                     sIntentProjection, sShortcutSelection,
@@ -1986,7 +2000,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                public static Uri add(ContentResolver cr,
+                @DSModeled(DSC.SPEC)
+        public static Uri add(ContentResolver cr,
                                            Intent intent,
                                            String title,
                                            String folder,
@@ -2006,7 +2021,8 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                public static CharSequence getLabelForFolder(Resources r, String folder) {
+                @DSModeled(DSC.SAFE)
+        public static CharSequence getLabelForFolder(Resources r, String folder) {
             return folder;
         }
 

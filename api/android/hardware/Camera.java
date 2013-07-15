@@ -110,12 +110,14 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getNumberOfCameras() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void getCameraInfo(int cameraId, CameraInfo cameraInfo) {
     }
 
@@ -733,6 +735,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.249 -0400", hash_original_method = "C0E6580734A50AA28FE29C092058ED66", hash_generated_method = "2C20E038FA77344D75A01434C1F869B5")
         @Override
         public boolean equals(Object obj) {
@@ -756,6 +759,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.250 -0400", hash_original_method = "B5BC5866A74569F21D19CEA2ED84BAAB", hash_generated_method = "3D7BF84CDA72096B7218C04B119F611B")
         @Override
         public int hashCode() {
@@ -1391,6 +1395,7 @@ List<Integer> varA6C147B71359DA5475968801A9984115_2068856042 =             forma
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.266 -0400", hash_original_method = "0D21EA7C9C6F68B56031C051598A724A", hash_generated_method = "B7F187A420227170303CE71F94A8D99A")
         private String cameraFormatForPixelFormat(int pixel_format) {
             addTaint(pixel_format);

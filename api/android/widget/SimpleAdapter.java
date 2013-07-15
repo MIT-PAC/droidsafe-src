@@ -80,6 +80,7 @@ Object var97565132EBA5A592B8E95DB1E8B35615_1549300669 =         mData.get(positi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.520 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "F66A80FBAA68BD860385E3405A160C7B")
     public long getItemId(int position) {
         addTaint(position);
@@ -136,6 +137,7 @@ View var6DC76BC51820DD65E8396280E884AA78_1380290836 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.523 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
@@ -241,6 +243,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.526 -0400", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "093A047A583632EF79C7DA846FBAACD5")
     public ViewBinder getViewBinder() {
 ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
@@ -251,6 +254,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.526 -0400", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "3E071F9EE6E9AEAADA16E4C43987A93F")
     public void setViewBinder(ViewBinder viewBinder) {
         mViewBinder = viewBinder;

@@ -24,6 +24,7 @@ T var5B50CF7DCD7B0E8E9DCFB7F13A8B2F1B_2063967633 =         parentValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.907 -0400", hash_original_method = "5F640D0B7D2E60FEE01A049AD8233DEB", hash_generated_method = "B47E9E2CDFA56C159831499E5F6DF572")
     @Override
      Values values(Thread current) {

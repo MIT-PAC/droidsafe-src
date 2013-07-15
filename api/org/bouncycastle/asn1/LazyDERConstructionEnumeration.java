@@ -25,6 +25,7 @@ class LazyDERConstructionEnumeration implements Enumeration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.311 -0400", hash_original_method = "DE6A082C3D4BE08EE722248DFA2ED752", hash_generated_method = "9A4F420A0DE1511A150A399B133ED1A5")
     public boolean hasMoreElements() {
         boolean varD33774CA35F5B6F9427B64BA73FFD039_16652869 = (nextObj != null);

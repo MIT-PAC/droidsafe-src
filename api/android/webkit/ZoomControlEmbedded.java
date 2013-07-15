@@ -32,6 +32,7 @@ class ZoomControlEmbedded implements ZoomControlBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.430 -0400", hash_original_method = "AC6DDF8CBB501A63B7872C74FE4374B8", hash_generated_method = "1A28E8477C555DB0AEDA75C30B6B794D")
     public void show() {
     if(!getControls().isVisible() && !mZoomManager.isZoomScaleFixed())        
@@ -90,6 +91,7 @@ class ZoomControlEmbedded implements ZoomControlBase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.431 -0400", hash_original_method = "3EEB1B7639B141DBF4A839E2ACE958E1", hash_generated_method = "94A1E6D0BA86E472CCB24703F0D38AC5")
     public void update() {
     if(mZoomButtonsController == null)        
@@ -161,6 +163,7 @@ ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_44395884 =         mZo
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.433 -0400", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "D1B2D1C2CFDE0020D266B7E083F173E5")
         public void onVisibilityChanged(boolean visible) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -180,6 +183,7 @@ ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_44395884 =         mZo
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.433 -0400", hash_original_method = "A16881C1E119771D4FCCD4DE4DCAF173", hash_generated_method = "2831C0F143F93F97D96A757365DD63F5")
         public void onZoom(boolean zoomIn) {
             //DSFIXME:  CODE0009: Possible callback target function detected

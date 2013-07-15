@@ -88,7 +88,8 @@ public final class Strings {
     }
 
     
-        public static byte[] toUTF8ByteArray(char[] string) {
+        @DSModeled(DSC.SPEC)
+    public static byte[] toUTF8ByteArray(char[] string) {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         char[] c = string;
         int i = 0;
@@ -175,7 +176,8 @@ public final class Strings {
     }
 
     
-        public static byte[] toByteArray(char[] chars) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(char[] chars) {
         byte[] bytes = new byte[chars.length];
         for (int i = 0; i != bytes.length; i++)
         {

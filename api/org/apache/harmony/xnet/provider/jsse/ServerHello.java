@@ -113,6 +113,7 @@ public class ServerHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.645 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "D5453A3095DF16BEF3C018CD70C0BDB9")
     public byte[] getRandom() {
         byte[] var7DDF32E17A6AC5CE04A8ECBF782CA509_1421458005 = (random);
@@ -123,6 +124,7 @@ public class ServerHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.646 -0400", hash_original_method = "51302607A7CDE0350AA8DCA604C2ADD7", hash_generated_method = "A7EA2C411869C418F2F9151D57940913")
     @Override
     public int getType() {

@@ -104,6 +104,7 @@ public class EdgeEffectCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.563 -0400", hash_original_method = "598F7EE7163BC02F940E7AE457E81E71", hash_generated_method = "0AC5AE2FF9947917C1F8DCB02E98E974")
         public Object newEdgeEffect(Context context) {
             addTaint(context.getTaint());
@@ -115,6 +116,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.563 -0400", hash_original_method = "7AB0823D4C5E0A56EB104E764A6EE643", hash_generated_method = "0B1661D5ED0F1FBFDC5E65673765E666")
         public void setSize(Object edgeEffect, int width, int height) {
             addTaint(height);
@@ -124,6 +126,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.564 -0400", hash_original_method = "18A3B4E50EAF82FBFB3F783FB1724270", hash_generated_method = "73EFA704E2F30C6CD243AF067545DEAC")
         public boolean isFinished(Object edgeEffect) {
             addTaint(edgeEffect.getTaint());
@@ -135,6 +138,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.564 -0400", hash_original_method = "4537DDA1058A07DD12C2683C46DAE0A0", hash_generated_method = "214222B178933FED02E3E3C1CFC2ED00")
         public void finish(Object edgeEffect) {
             addTaint(edgeEffect.getTaint());
@@ -142,6 +146,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.564 -0400", hash_original_method = "6D6767FA0A7FD096DC5FAE330C25B4EB", hash_generated_method = "1C50D7F26F8C0DD9516A41FC93B059A9")
         public boolean onPull(Object edgeEffect, float deltaDistance) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -155,6 +160,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.564 -0400", hash_original_method = "4CCDA82CBCC611597E463B09D91011D3", hash_generated_method = "48BA1CCB5F0086FDA5428B3DDDEDA4AF")
         public boolean onRelease(Object edgeEffect) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -167,6 +173,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.564 -0400", hash_original_method = "E4A19D3F19F8749DFC3F77D5467C90AC", hash_generated_method = "4A3A3803519D4EF087354E615D599538")
         public boolean onAbsorb(Object edgeEffect, int velocity) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -180,6 +187,7 @@ Object var540C13E9E156B687226421B24F2DF178_1027531456 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.564 -0400", hash_original_method = "014795F812E9F03FFB958DEDF8F6EEBD", hash_generated_method = "475022F21F1F0BBEE9CE75DAADC135A5")
         public boolean draw(Object edgeEffect, Canvas canvas) {
             addTaint(canvas.getTaint());

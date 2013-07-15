@@ -193,6 +193,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.186 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
@@ -204,6 +205,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.187 -0400", hash_original_method = "0553AC873EBF02DCE0ECDD52D690154B", hash_generated_method = "ED399915493F9BB348CCD1BA864ECD3C")
      boolean compareTo(DriverCall c) {
         addTaint(c.getTaint());
@@ -224,6 +226,7 @@ public class CdmaConnection extends Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.187 -0400", hash_original_method = "6F928BB99E2E6BC2006496B43FE5B2BF", hash_generated_method = "DF7EDF9522598FD069C98F7C67CA6D8E")
     public String getOrigDialString() {
 String varB410F776CE655F7FA9256BA7731599DA_2068348842 =         dialString;
@@ -234,6 +237,7 @@ String varB410F776CE655F7FA9256BA7731599DA_2068348842 =         dialString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.187 -0400", hash_original_method = "1A89DAB454CED0757504258169B34CDA", hash_generated_method = "6A7FFA4B9BA4A879687B51E2C20A18C2")
     public String getAddress() {
 String var814577DDD37BAFB17E08CBEFDB411BAE_1396302566 =         address;
@@ -244,6 +248,7 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_1396302566 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.187 -0400", hash_original_method = "4560204D66D34538CD3AB1593D4A1973", hash_generated_method = "A00FBEAB177511D376826A2E1B0DDCC8")
     public String getCnapName() {
 String var527119163DEA8F24BBC497A7DD6905DC_2126700945 =         cnapName;
@@ -254,6 +259,7 @@ String var527119163DEA8F24BBC497A7DD6905DC_2126700945 =         cnapName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.188 -0400", hash_original_method = "6FC157D9E3C072CC35BEF8FF58FADB81", hash_generated_method = "F9282C0DA29BFC31A2C2C28682280E2C")
     public int getCnapNamePresentation() {
         int varBA6B6A03D4382EA050EDB7907F5C12CB_845703323 = (cnapNamePresentation);
@@ -264,6 +270,7 @@ String var527119163DEA8F24BBC497A7DD6905DC_2126700945 =         cnapName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.188 -0400", hash_original_method = "937C2C323E4DD6DAF328A1D3C89DA773", hash_generated_method = "47F97E28242E7917BC5C35D695BDD60C")
     public CdmaCall getCall() {
 CdmaCall var0F49909EA73F8892C338E4DCA6EB9906_2076059031 =         parent;
@@ -274,6 +281,7 @@ CdmaCall var0F49909EA73F8892C338E4DCA6EB9906_2076059031 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.188 -0400", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "3486B281E66A578456663DF7A768ABA6")
     public long getCreateTime() {
         long var1ED2E1B19B6E55D52D2473BE17A4AFD9_1650908726 = (createTime);
@@ -284,6 +292,7 @@ CdmaCall var0F49909EA73F8892C338E4DCA6EB9906_2076059031 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.188 -0400", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "94211229BE7BABE1FCE56CEEF03A918A")
     public long getConnectTime() {
         long var2A390E9117109AD2E2B8D0011E8B167F_1673843584 = (connectTime);
@@ -294,6 +303,7 @@ CdmaCall var0F49909EA73F8892C338E4DCA6EB9906_2076059031 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.188 -0400", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "5BB3954745DEF6C0177DB798758BFBC7")
     public long getDisconnectTime() {
         long varAD92DC1F9C0B5401DB7C9C68DE643AD5_676749660 = (disconnectTime);
@@ -359,6 +369,7 @@ CdmaCall var0F49909EA73F8892C338E4DCA6EB9906_2076059031 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.189 -0400", hash_original_method = "217FE2B36472CD2DEDDE3A4CE2A1C951", hash_generated_method = "57DFEB8AED25DEE29FB9D54ECC4F1DF8")
     public DisconnectCause getDisconnectCause() {
 DisconnectCause var3C8F3313F49435961542E8707E527956_2048224727 =         cause;
@@ -369,6 +380,7 @@ DisconnectCause var3C8F3313F49435961542E8707E527956_2048224727 =         cause;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.190 -0400", hash_original_method = "7EA17727186891EE64F6BAA03D5CD808", hash_generated_method = "9E7AB0C69F8707B89FB9246EF5477C21")
     public boolean isIncoming() {
         boolean varBC23EBAFF55FFCC779696072ED387D2F_1024720952 = (isIncoming);
@@ -444,6 +456,7 @@ CdmaCall.State varB2F6DC77C80BF408EE3A0FF5E79E41E6_2006663009 =             supe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.191 -0400", hash_original_method = "4EE87D2E41D94C18F614BA2D1494AD36", hash_generated_method = "C40C0487A07D9D08F0087D9803F2874F")
     public PostDialState getPostDialState() {
 PostDialState varA5212BBA7CEDC5476DB20427B201984F_287508974 =         postDialState;
@@ -530,6 +543,7 @@ for(int i=0;i<len;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.193 -0400", hash_original_method = "1D26914F95E4E8CAB857832B14C412F2", hash_generated_method = "AF613E28B4B81657ADA567229F15BFC2")
      void onHangupLocal() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1027,6 +1041,7 @@ String var3CA17F3B01DECFEB1669A1F96CAE471F_1162716968 =         subStr;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.205 -0400", hash_original_method = "EB1ACECD3BB7B8254CD65689A960D6CE", hash_generated_method = "9C7620E97668A530A07EBEBB3C343FCF")
      void processNextPostDialChar() {
         char c = 0;
@@ -1072,6 +1087,7 @@ String var3CA17F3B01DECFEB1669A1F96CAE471F_1162716968 =         subStr;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.205 -0400", hash_original_method = "EBFF7E74C490A6457BB1227BB1C69161", hash_generated_method = "8F2AE0A6393DDDB8853A79DA312EF6B2")
     private boolean isConnectingInOrOut() {
         boolean var77EDDB5F0BE48A133FFD8B9FD3472D18_1954529762 = (parent == null || parent == owner.ringingCall
@@ -1213,12 +1229,14 @@ CdmaCall varC0AC0CA56D4A71D743E3F1BD12ED290B_1532902191 =         owner.ringingC
     }
 
     
-        private static boolean isPause(char c) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isPause(char c) {
         return c == PhoneNumberUtils.PAUSE;
     }
 
     
-        private static boolean isWait(char c) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isWait(char c) {
         return c == PhoneNumberUtils.WAIT;
     }
 
@@ -1245,7 +1263,8 @@ CdmaCall varC0AC0CA56D4A71D743E3F1BD12ED290B_1532902191 =         owner.ringingC
     }
 
     
-        private static char findPOrWCharToAppend(String phoneNumber, int currPwIndex, int nextNonPwCharIndex) {
+        @DSModeled(DSC.SPEC)
+    private static char findPOrWCharToAppend(String phoneNumber, int currPwIndex, int nextNonPwCharIndex) {
         char c = phoneNumber.charAt(currPwIndex);
         char ret;
         ret = (isPause(c)) ? PhoneNumberUtils.PAUSE : PhoneNumberUtils.WAIT;
@@ -1297,6 +1316,7 @@ CdmaCall varC0AC0CA56D4A71D743E3F1BD12ED290B_1532902191 =         owner.ringingC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.209 -0400", hash_original_method = "B2C780D7BF03A84FC8B3CC6F33ADADA1", hash_generated_method = "91735EF072C55CCFDC4D67778734DD97")
     @Override
     public int getNumberPresentation() {
@@ -1308,6 +1328,7 @@ CdmaCall varC0AC0CA56D4A71D743E3F1BD12ED290B_1532902191 =         owner.ringingC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.209 -0400", hash_original_method = "8B171385F62C7AA97B0882209EC3A206", hash_generated_method = "3106E04868B9E37E038B650E1E8CF112")
     @Override
     public UUSInfo getUUSInfo() {

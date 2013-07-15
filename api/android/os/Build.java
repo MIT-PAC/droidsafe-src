@@ -15,17 +15,20 @@ public class Build {
     }
 
 
-        public static String getRadioVersion() {
+        @DSModeled(DSC.SPEC)
+    public static String getRadioVersion() {
         return SystemProperties.get(TelephonyProperties.PROPERTY_BASEBAND_VERSION, null);
     }
 
     
-        private static String getString(String property) {
+        @DSModeled(DSC.SPEC)
+    private static String getString(String property) {
         return SystemProperties.get(property, UNKNOWN);
     }
 
     
-        private static long getLong(String property) {
+        @DSModeled(DSC.SPEC)
+    private static long getLong(String property) {
         try {
             return Long.parseLong(SystemProperties.get(property));
         } catch (NumberFormatException e) {

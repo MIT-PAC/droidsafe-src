@@ -15,7 +15,8 @@ public abstract class CatLog {
     }
 
 
-        public static void d(Object caller, String msg) {
+        @DSModeled(DSC.SPEC)
+    public static void d(Object caller, String msg) {
         if (!DEBUG) {
             return;
         }
@@ -25,7 +26,8 @@ public abstract class CatLog {
     }
 
     
-        public static void d(String caller, String msg) {
+        @DSModeled(DSC.SPEC)
+    public static void d(String caller, String msg) {
         if (!DEBUG) {
             return;
         }

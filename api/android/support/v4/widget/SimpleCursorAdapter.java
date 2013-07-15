@@ -117,6 +117,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.592 -0400", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "E43ADC42F066DF1FF3528C03355E3513")
     public ViewBinder getViewBinder() {
 ViewBinder var3599647BDC732C2D53724CC7D8743271_1955932855 =         mViewBinder;
@@ -127,6 +128,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_1955932855 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.592 -0400", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "3E071F9EE6E9AEAADA16E4C43987A93F")
     public void setViewBinder(ViewBinder viewBinder) {
         mViewBinder = viewBinder;
@@ -166,6 +168,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_1955932855 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.592 -0400", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "BC69DB126FACB6ED04F18DBA4B2214AE")
     public int getStringConversionColumn() {
         int var73FDABBD0F6BEA9973ECC8B05CD8B242_1513483006 = (mStringConversionColumn);
@@ -176,6 +179,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_1955932855 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.592 -0400", hash_original_method = "CAA7C791E82A28ED194AFE600FF6DEEE", hash_generated_method = "394118E429FB1DEC632B04FC7B5FB220")
     public void setStringConversionColumn(int stringConversionColumn) {
         mStringConversionColumn = stringConversionColumn;
@@ -184,6 +188,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_1955932855 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.592 -0400", hash_original_method = "80E6B5584C3F52CF90E7103CF53469C6", hash_generated_method = "463AEAB9019DD7E437FCC04B91A49949")
     public CursorToStringConverter getCursorToStringConverter() {
 CursorToStringConverter var860B777AC20C8FD62D683E658AB1E21B_1518709816 =         mCursorToStringConverter;
@@ -194,6 +199,7 @@ CursorToStringConverter var860B777AC20C8FD62D683E658AB1E21B_1518709816 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.592 -0400", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "A9ACEF1EC294D60B7393749911E2426C")
     public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
         mCursorToStringConverter = cursorToStringConverter;

@@ -43,6 +43,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.416 -0400", hash_original_method = "BF4923D33B65FF9EACCA5F4B8319A955", hash_generated_method = "5E59256E0BAB21BA166527797D986CDD")
     @Override
     public int available() {
@@ -54,6 +55,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.416 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "367DD82372222511E3959FED50D1A21D")
     @Override
     public boolean markSupported() {
@@ -65,6 +67,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.417 -0400", hash_original_method = "AA335ECE90F2C0243759B4C2341DEAEB", hash_generated_method = "6FC75D596CA3592ABDB6452257C64698")
     @Override
     public void mark(int limit) {
@@ -75,6 +78,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.417 -0400", hash_original_method = "B5D6E2F2B60CF54FA8B6A301921FACA9", hash_generated_method = "8E66598714AB5518D80D85962020F8D6")
     public void mark() {
         marked_pos = read_pos;
@@ -83,6 +87,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.417 -0400", hash_original_method = "A27E7E8C3D531E39801BBCF5B4CC5B78", hash_generated_method = "693420C1CA7DDBF7BF7CBA32F5E0D8E9")
     @Override
     public void reset() {
@@ -414,6 +419,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.431 -0400", hash_original_method = "8D64F0C3C5F38A8BA7A92E3DA10323F4", hash_generated_method = "42E4E696D2BFAC6A39092165B4B2A4D9")
     public boolean hasData() {
         boolean varFC0938447DDB3704EEEB90CDB9306E91_170991112 = ((write_pos > write_pos_beg));

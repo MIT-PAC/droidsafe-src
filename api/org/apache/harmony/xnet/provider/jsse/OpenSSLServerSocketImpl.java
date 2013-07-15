@@ -245,6 +245,7 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.585 -0400", hash_original_method = "99974EADFE56BC36D8DB1EC28EC422DC", hash_generated_method = "BC543B1B7FA4A2C234E2A769D3EF4B96")
     @Override
     public Socket accept() throws IOException {

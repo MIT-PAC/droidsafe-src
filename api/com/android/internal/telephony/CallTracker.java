@@ -101,6 +101,7 @@ Message var7D44CBDF570B5CB81D544F0887CE90C1_816685199 =         obtainMessage(wh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.026 -0400", hash_original_method = "D0619E60C8BD0CE46928E7D6B87D3BBB", hash_generated_method = "DD95D240827D3CDD69EEA7F710EDD78C")
     private boolean checkNoOperationsPending() {
     if(DBG_POLL)        

@@ -153,6 +153,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.106 -0400", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "129C52C55085BD99FF04ABE0EB89455A")
     public int getVersion() {
         int var2AF72F100C356273D46284F6FD1DFC08_1973007528 = (version);
@@ -163,6 +164,7 @@ switch(tObj.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.106 -0400", hash_original_method = "0056368CFDBAD05E126455DF61F0B2E7", hash_generated_method = "9DFFCA6FBB35FDF64A572FE4E7503FB6")
     public IssuerSerial getBaseCertificateID() {
 IssuerSerial var3F2CF66981EEEACD456AAF29D2BB1816_193055435 =         baseCertificateID;
@@ -173,6 +175,7 @@ IssuerSerial var3F2CF66981EEEACD456AAF29D2BB1816_193055435 =         baseCertifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.106 -0400", hash_original_method = "9B56B1F6A71C567F065DB4ADA2DE9246", hash_generated_method = "76BE4CBFAC946CDC66EFD1CF437E9C56")
     public GeneralNames getEntityName() {
 GeneralNames var505C8BE670B770FF827E6FFE2E69AF5E_1774392992 =         entityName;
@@ -183,6 +186,7 @@ GeneralNames var505C8BE670B770FF827E6FFE2E69AF5E_1774392992 =         entityName
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.107 -0400", hash_original_method = "BF432F04B889EC14E618C49342356E7A", hash_generated_method = "AE09E2253C8B2D7F7D9A49D8F0110233")
     public ObjectDigestInfo getObjectDigestInfo() {
 ObjectDigestInfo var8645E6823C16465BE8DE456BAC146566_1479348820 =         objectDigestInfo;

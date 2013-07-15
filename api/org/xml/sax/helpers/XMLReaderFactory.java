@@ -59,7 +59,8 @@ final public class XMLReaderFactory {
     }
 
     
-        private static XMLReader loadClass(ClassLoader loader, String className) throws SAXException {
+        @DSModeled(DSC.BAN)
+    private static XMLReader loadClass(ClassLoader loader, String className) throws SAXException {
         try {
         return (XMLReader) NewInstance.newInstance (loader, className);
     } catch (ClassNotFoundException e1) {

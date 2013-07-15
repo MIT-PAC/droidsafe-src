@@ -35,6 +35,7 @@ public class PropertyChangeEvent extends EventObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.659 -0400", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "97BCDA8FEA8AE171D683FB1CC883FC5B")
     public String getPropertyName() {
 String var3D632F0E4FFF94E691F92D3669CF1392_1561233135 =         propertyName;
@@ -45,6 +46,7 @@ String var3D632F0E4FFF94E691F92D3669CF1392_1561233135 =         propertyName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.660 -0400", hash_original_method = "570268AC213ADE0DD8E583FF2E0DF2D9", hash_generated_method = "99F56DD866E50C8B6DA45D24B96D6C66")
     public void setPropagationId(Object propagationId) {
         this.propagationId = propagationId;
@@ -53,6 +55,7 @@ String var3D632F0E4FFF94E691F92D3669CF1392_1561233135 =         propertyName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.660 -0400", hash_original_method = "B4EBBB8113E4594B079A51C3F9A7BBBF", hash_generated_method = "F405006F45D5DE583039FEA89AF75238")
     public Object getPropagationId() {
 Object varFF94D242D232A6C3EBF9D401FB06DA21_1230802318 =         propagationId;
@@ -63,6 +66,7 @@ Object varFF94D242D232A6C3EBF9D401FB06DA21_1230802318 =         propagationId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.661 -0400", hash_original_method = "F6F859A65246176318D5EFB34CCA1A19", hash_generated_method = "9B3FE108A3373AE318209303886F75DF")
     public Object getOldValue() {
 Object var8CDBD2181CBEF5C2129AFFA68C014D4A_17679504 =         oldValue;
@@ -73,6 +77,7 @@ Object var8CDBD2181CBEF5C2129AFFA68C014D4A_17679504 =         oldValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.661 -0400", hash_original_method = "623578C48E0252EB5211DBCA0AAE39FA", hash_generated_method = "B7D14D88CA7200046116EAA07EB48D91")
     public Object getNewValue() {
 Object varB6587BDEA47787223F4D0D9CD73A12B5_972867020 =         newValue;

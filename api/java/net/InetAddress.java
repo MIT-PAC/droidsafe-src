@@ -51,6 +51,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.759 -0400", hash_original_method = "3AAFCD043D3971ACCC1BC5F122FB0BE0", hash_generated_method = "DA8BF92A0D2896E83523E79D1B2DBFF5")
     @Override
     public boolean equals(Object obj) {
@@ -72,6 +73,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.759 -0400", hash_original_method = "0983A0B23668071C038C0A3F8002A354", hash_generated_method = "9A021208407259391B517769258CCEE9")
     public byte[] getAddress() {
         byte[] varDAA91FF7D217FFDF2AB7DA6C0DDE0182_17081493 = (ipaddress.clone());
@@ -112,7 +114,8 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws UnknownHostException {
+        @DSModeled(DSC.SAFE)
+    private static InetAddress makeInetAddress(byte[] bytes, String hostName) throws UnknownHostException {
         if (bytes.length == 4) {
             return new Inet4Address(bytes, hostName);
         } else if (bytes.length == 16) {
@@ -131,7 +134,8 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress parseNumericAddressNoThrow(String address) {
+        @DSModeled(DSC.SAFE)
+    private static InetAddress parseNumericAddressNoThrow(String address) {
         if (address.startsWith("[") && address.endsWith("]") && address.indexOf(':') != -1) {
             address = address.substring(1, address.length() - 1);
         }
@@ -151,6 +155,7 @@ public class InetAddress implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.762 -0400", hash_original_method = "A1139ABF91D0374599D7EB888F5DB646", hash_generated_method = "EC3C8BF4B3342495467EE4B4BE55BDE1")
     public String getHostAddress() {
 String var838FEAF92DF51A1B9F4858C49A1A49FB_1244989349 =         Libcore.os.getnameinfo(this, NI_NUMERICHOST);
@@ -189,6 +194,7 @@ String varC40F9E8A38603ED931114F963CC6797A_1837727150 =         hostName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.763 -0400", hash_original_method = "A5A62CAEFD7FCA56AB200DB74BB59546", hash_generated_method = "4A4A1A9671E33D3476FCDEE85E27038A")
     public String getCanonicalHostName() {
         try 
@@ -218,6 +224,7 @@ String varE0844D2E3199657F6D45A77AB24C4989_1222459354 =             getHostAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.764 -0400", hash_original_method = "70D58F36ADD2B32D6B4870D6C7A22922", hash_generated_method = "BD270F74641D0E1D563804D272717403")
     @Override
     public int hashCode() {
@@ -263,7 +270,8 @@ String varE0844D2E3199657F6D45A77AB24C4989_1222459354 =             getHostAddre
     }
 
     
-        private static InetAddress getHostByAddrImpl(InetAddress address) throws UnknownHostException {
+        @DSModeled(DSC.SAFE)
+    private static InetAddress getHostByAddrImpl(InetAddress address) throws UnknownHostException {
         BlockGuard.getThreadPolicy().onNetwork();
         try {
             String hostname = Libcore.os.getnameinfo(address, NI_NAMEREQD);
@@ -274,6 +282,7 @@ String varE0844D2E3199657F6D45A77AB24C4989_1222459354 =             getHostAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.765 -0400", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "4E82E3F534CB16D5211A51E9401DE44C")
     @Override
     public String toString() {
@@ -304,16 +313,19 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
-        private static InetAddress[] loopbackAddresses() {
+        @DSModeled(DSC.SAFE)
+    private static InetAddress[] loopbackAddresses() {
         return new InetAddress[] { Inet6Address.LOOPBACK, Inet4Address.LOOPBACK };
     }
 
     
-        public static InetAddress getLoopbackAddress() {
+        @DSModeled(DSC.SAFE)
+    public static InetAddress getLoopbackAddress() {
         return Inet6Address.LOOPBACK;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.767 -0400", hash_original_method = "0DFB661E6E123FAAEACDB840E13652D3", hash_generated_method = "B0996EA09346EFE9EDB15656A158F93A")
     public boolean isAnyLocalAddress() {
         boolean var68934A3E9455FA72420237EB05902327_1618394139 = (false);
@@ -324,6 +336,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.767 -0400", hash_original_method = "C2C85D69F5C8114C53B505B2C48FBA38", hash_generated_method = "10C82BB865E73FDA6416759671AE132D")
     public boolean isLinkLocalAddress() {
         boolean var68934A3E9455FA72420237EB05902327_264637037 = (false);
@@ -334,6 +347,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.768 -0400", hash_original_method = "F4A838CB0E6897A23081D395162E9DA1", hash_generated_method = "C7386E95C6E0A4BE2A2A80F4732F2D53")
     public boolean isLoopbackAddress() {
         boolean var68934A3E9455FA72420237EB05902327_1770659323 = (false);
@@ -344,6 +358,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.768 -0400", hash_original_method = "FDE6DFC941C3F6CDB3A8E59F11467602", hash_generated_method = "EE24349BFCCA6AA7F2C00208F89623F6")
     public boolean isMCGlobal() {
         boolean var68934A3E9455FA72420237EB05902327_420798005 = (false);
@@ -354,6 +369,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.769 -0400", hash_original_method = "633857E8ABB2714E861E7CC407521B8A", hash_generated_method = "F66A17A2949E6A157382BB697DAF57FC")
     public boolean isMCLinkLocal() {
         boolean var68934A3E9455FA72420237EB05902327_1902142239 = (false);
@@ -364,6 +380,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.769 -0400", hash_original_method = "B0B42DF39D7CC893DB97C3031173A44B", hash_generated_method = "D617CCCC520FA76DFB6ED98E3D9EE204")
     public boolean isMCNodeLocal() {
         boolean var68934A3E9455FA72420237EB05902327_344705922 = (false);
@@ -374,6 +391,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.769 -0400", hash_original_method = "8083E84E7FB8B51C8E4E9091B5CE2BBD", hash_generated_method = "96FD070BEE671AC0E81E7DCF12922715")
     public boolean isMCOrgLocal() {
         boolean var68934A3E9455FA72420237EB05902327_173954657 = (false);
@@ -384,6 +402,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.770 -0400", hash_original_method = "5286F1AFCB89409D5250A9F370D7AC47", hash_generated_method = "1234705F8475A92EFBA6446B79664AB4")
     public boolean isMCSiteLocal() {
         boolean var68934A3E9455FA72420237EB05902327_2076864295 = (false);
@@ -394,6 +413,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.770 -0400", hash_original_method = "93032F84680D1BDFF6DF524AE8984C63", hash_generated_method = "ABF6C4E943CF8A77F983A2DE459189D8")
     public boolean isMulticastAddress() {
         boolean var68934A3E9455FA72420237EB05902327_1554290304 = (false);
@@ -404,6 +424,7 @@ String varB06D9EDD0D0090AFCAB701EB4BB083B1_1380594351 =         (hostName == nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.771 -0400", hash_original_method = "34E7BECA5A41D39726D6E4A4A4838C8A", hash_generated_method = "AE3A211C586AA94CF8E8F28659BA4155")
     public boolean isSiteLocalAddress() {
         boolean var68934A3E9455FA72420237EB05902327_591445623 = (false);
@@ -550,7 +571,8 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-        public static InetAddress getByAddress(byte[] ipAddress) throws UnknownHostException {
+        @DSModeled(DSC.SAFE)
+    public static InetAddress getByAddress(byte[] ipAddress) throws UnknownHostException {
         return getByAddress(null, ipAddress, 0);
     }
 
@@ -578,12 +600,14 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-        private static UnknownHostException badAddressLength(byte[] bytes) throws UnknownHostException {
+        @DSModeled(DSC.SAFE)
+    private static UnknownHostException badAddressLength(byte[] bytes) throws UnknownHostException {
         throw new UnknownHostException("Address is neither 4 or 16 bytes: " + Arrays.toString(bytes));
     }
 
     
-        private static boolean isIPv4MappedAddress(byte[] ipAddress) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isIPv4MappedAddress(byte[] ipAddress) {
         if (ipAddress == null || ipAddress.length != 16) {
             return false;
         }
@@ -599,7 +623,8 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
-        private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
+        @DSModeled(DSC.SAFE)
+    private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
         byte[] ipv4Address = new byte[4];
         for (int i = 0; i < 4; i++) {
             ipv4Address[i] = mappedAddress[12 + i];
@@ -608,6 +633,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.779 -0400", hash_original_method = "EA85F511D24184DD59F5742DCBE8C620", hash_generated_method = "83A9B893A905C564398789A8BC9F3B76")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -636,6 +662,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.780 -0400", hash_original_method = "8E54F0F7AE1E424107F71EAAF0F6F90C", hash_generated_method = "272B148085B5A64AE6603FF5D112E1D3")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());
@@ -655,6 +682,7 @@ for(final InetAddress sourceAddress : sourceAddresses)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.780 -0400", hash_original_method = "08DCB3CBD406BD7814E8362202DC0D50", hash_generated_method = "9FFFF4B0D5036E449FF85CE05B035529")
     private Object readResolve() throws ObjectStreamException {
 Object var018746D7CDD66E0C0F2B4CEA8F394772_1000642284 =         new Inet4Address(ipaddress, hostName);

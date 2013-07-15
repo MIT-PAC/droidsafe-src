@@ -15,6 +15,7 @@ public class ProxyAuthorizationList extends SIPHeaderList<ProxyAuthorization> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.740 -0400", hash_original_method = "99D8471E873632F99CA4FA915EADF5BB", hash_generated_method = "533BC27A5D12B05D8F656EFAA4A10D06")
     public Object clone() {
         ProxyAuthorizationList retval = new ProxyAuthorizationList();
