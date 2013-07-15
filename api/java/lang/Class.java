@@ -255,6 +255,7 @@ String var540C13E9E156B687226421B24F2DF178_1044257279 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.498 -0400", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "5A7C18FA41607E8E152D37F4D0FD95FC")
     public ClassLoader getClassLoader() {
     if(this.isPrimitive())        
@@ -283,6 +284,7 @@ ClassLoader var556906CF8230EF926A9ABDA8D8CDBEFA_485323466 =         loader;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.499 -0400", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "15A55D188568D70CD802B495B9FDC2ED")
      ClassLoader getClassLoaderImpl() {
         ClassLoader loader = getClassLoader(this);
@@ -537,6 +539,7 @@ Constructor<?>[] var5F5BAEB34C8FF5D8C71B8F5213D8B45B_346324131 =         getDecl
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.508 -0400", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "FBF0F11E6F56F487AE4E682DE8F3C115")
     public Field getDeclaredField(String name) throws NoSuchFieldException {
         addTaint(name.getTaint());
@@ -568,6 +571,7 @@ Field varDC838461EE2FA0CA4C9BBB70A15456B0_832412406 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.508 -0400", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "F67DFE4C4C715C07CB04BD5398215659")
     public Field[] getDeclaredFields() {
 Field[] varB13318B8B62F8154F0AA694406899EAD_1673644481 =         getDeclaredFields(this, false);
@@ -619,6 +623,7 @@ Method var66E333884789DB1C291D2403B1EF3C16_819252196 =         (Method) member;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.510 -0400", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "9587F8447C177D8868E00E59D34AF440")
     public Method[] getDeclaredMethods() {
 Method[] var25212F30F28FFBC38919078B7CC0EB00_558030359 =         getDeclaredMethods(this, false);
@@ -700,6 +705,7 @@ T[] varC2E74EBDC7FFA30F9E3563FB5AB670BB_387812107 =         (T[]) Enum.getShared
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.513 -0400", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "A9502913541536B864A6C682D4528997")
     public Field getField(String name) throws NoSuchFieldException {
         addTaint(name.getTaint());
@@ -731,6 +737,7 @@ Field varDC838461EE2FA0CA4C9BBB70A15456B0_49363263 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.514 -0400", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "BC1CFD88E02812887833A13FED9AE668")
     private Field getPublicFieldRecursive(String name) {
         addTaint(name.getTaint());
@@ -779,6 +786,7 @@ Field var540C13E9E156B687226421B24F2DF178_466518098 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.515 -0400", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "3D10D455BC6FFA02E76D92C79BC43EAC")
     public Field[] getFields() {
         List<Field> fields = new ArrayList<Field>();
@@ -826,6 +834,7 @@ for(Class<?> ifc : c.getInterfaces())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.517 -0400", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "4F56E8D1B9D95EE8FE79BDC6CCFC9B32")
     public Type[] getGenericInterfaces() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
@@ -840,6 +849,7 @@ Type[] var00DF7A095BC8013DB06DB16809D8ED14_1846355776 =         Types.getClonedT
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.517 -0400", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "282895C14E4B816395ABB5DCBD7C6B50")
     public Type getGenericSuperclass() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
@@ -885,6 +895,7 @@ Method var66E333884789DB1C291D2403B1EF3C16_2031324635 =         (Method) member;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.519 -0400", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "7919127DBD233975B3958B59518DA119")
     public Method[] getMethods() {
         List<Method> methods = new ArrayList<Method>();
@@ -1027,6 +1038,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_814603010 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.523 -0400", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "CEFB538DDDE23F6529F18346CCBC19D4")
     public ProtectionDomain getProtectionDomain() {
 ProtectionDomain var540C13E9E156B687226421B24F2DF178_609721631 =         null;
@@ -1037,6 +1049,7 @@ ProtectionDomain var540C13E9E156B687226421B24F2DF178_609721631 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.524 -0400", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "F5C5E96AEF055C43F04C9A08E5DAEF02")
     public URL getResource(String resName) {
         addTaint(resName.getTaint());
@@ -1149,6 +1162,7 @@ InputStream var3F96CF621A1F3E1A4483E32D8C834982_1542989165 =             ClassLo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.527 -0400", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "96E6E94A03276F75BADACD4A18DA94AC")
     public Object[] getSigners() {
 Object[] var540C13E9E156B687226421B24F2DF178_1313201088 =         null;
@@ -1244,6 +1258,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.530 -0400", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "356F94E4D9F20F3A2496A308EBADD79C")
     public boolean isAnonymousClass() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_904262322 = getTaintBoolean();
@@ -1278,6 +1293,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.532 -0400", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "FE8B4542EB723FBE63C827693EB87DF3")
     public boolean isInstance(Object object) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1736038599 = getTaintBoolean();
@@ -1285,6 +1301,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.532 -0400", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "8C439B7498223A6A18E0A38B984CF910")
     public boolean isInterface() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1237699335 = getTaintBoolean();
@@ -1316,6 +1333,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.533 -0400", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "7FC3C856A3E1A1D7D8A17D6DFBC82417")
     public boolean isPrimitive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1812997109 = getTaintBoolean();
@@ -1404,6 +1422,7 @@ Package var540C13E9E156B687226421B24F2DF178_1480440375 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.536 -0400", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "EB362C6781B568078638D25184727BC9")
     public boolean desiredAssertionStatus() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1631706015 = getTaintBoolean();

@@ -88,6 +88,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.984 -0400", hash_original_method = "17876694EB227DDF47ED60F50DDB1AB8", hash_generated_method = "11FDBB8776367F84FB5CD85A1E1E97A9")
     protected void done() {
         // ---------- Original Method ----------
@@ -152,6 +153,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.987 -0400", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "21A1A0A6209306BA9DA65CADE7397404")
         private boolean ranOrCancelled(int state) {
             addTaint(state);
@@ -174,6 +176,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.987 -0400", hash_original_method = "BADEFBD4164CAA2A58BD789F486A58F8", hash_generated_method = "B6815821F3F6182C5AF9D376BF0F1DE3")
         protected boolean tryReleaseShared(int ignore) {
             addTaint(ignore);

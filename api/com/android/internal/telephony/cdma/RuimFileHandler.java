@@ -25,12 +25,14 @@ public final class RuimFileHandler extends IccFileHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.050 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.051 -0400", hash_original_method = "CF724477DA2C2A9786B4BE9A808F0A43", hash_generated_method = "306A6DED831E1F700C7DE363599E8A4A")
     protected void finalize() {
         Log.d(LOG_TAG, "RuimFileHandler finalized");
@@ -39,6 +41,7 @@ public final class RuimFileHandler extends IccFileHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.051 -0400", hash_original_method = "7CD46C2339603E91E870121ED1EC8F59", hash_generated_method = "05E4B928F14BEC77F8949371494400C8")
     @Override
     public void loadEFImgTransparent(int fileid, int highOffset, int lowOffset,
@@ -60,6 +63,7 @@ public final class RuimFileHandler extends IccFileHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.052 -0400", hash_original_method = "D06C959A971F705A496791A8170E55B9", hash_generated_method = "77C805872CA69F6467EFC5D284BEB40A")
     @Override
     public void handleMessage(Message msg) {
@@ -70,6 +74,7 @@ public final class RuimFileHandler extends IccFileHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.052 -0400", hash_original_method = "607B460DC742A6DBDB6C6AB4B03B96A2", hash_generated_method = "5C96137B428013A64AB2571B4635505B")
     protected String getEFPath(int efid) {
         addTaint(efid);

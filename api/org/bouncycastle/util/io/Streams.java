@@ -18,7 +18,8 @@ public final class Streams {
     }
 
 
-        public static void drain(InputStream inStr) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void drain(InputStream inStr) throws IOException {
         byte[] bs = new byte[BUFFER_SIZE];
         while (inStr.read(bs, 0, bs.length) >= 0)
         {
@@ -26,26 +27,30 @@ public final class Streams {
     }
 
     
-        public static byte[] readAll(InputStream inStr) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static byte[] readAll(InputStream inStr) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         pipeAll(inStr, buf);
         return buf.toByteArray();
     }
 
     
-        public static byte[] readAllLimited(InputStream inStr, int limit) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static byte[] readAllLimited(InputStream inStr, int limit) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         pipeAllLimited(inStr, limit, buf);
         return buf.toByteArray();
     }
 
     
-        public static int readFully(InputStream inStr, byte[] buf) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static int readFully(InputStream inStr, byte[] buf) throws IOException {
         return readFully(inStr, buf, 0, buf.length);
     }
 
     
-        public static int readFully(InputStream inStr, byte[] buf, int off, int len) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static int readFully(InputStream inStr, byte[] buf, int off, int len) throws IOException {
         int totalRead = 0;
         while (totalRead < len)
         {
@@ -60,7 +65,8 @@ public final class Streams {
     }
 
     
-        public static void pipeAll(InputStream inStr, OutputStream outStr) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void pipeAll(InputStream inStr, OutputStream outStr) throws IOException {
         byte[] bs = new byte[BUFFER_SIZE];
         int numRead;
         while ((numRead = inStr.read(bs, 0, bs.length)) >= 0)
@@ -70,7 +76,8 @@ public final class Streams {
     }
 
     
-        public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr) throws IOException {
         long total = 0;
         byte[] bs = new byte[BUFFER_SIZE];
         int numRead;

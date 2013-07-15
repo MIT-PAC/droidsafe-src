@@ -204,6 +204,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.044 -0400", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "6B2C4FCB1980CB329906ADFE1CEFC25C")
     public void setSessionTimeout(int seconds) throws IllegalArgumentException {
     if(seconds < 0)        
@@ -323,6 +324,7 @@ for(Certificate cert : certs)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.047 -0400", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "22D36EF54D25F609FB4DEF5FCCBDEDCE")
      SSLSession toSession(byte[] data, String host, int port) {
         addTaint(port);
@@ -368,6 +370,7 @@ SSLSession var540C13E9E156B687226421B24F2DF178_1877852270 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.048 -0400", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "037C39F8F1A0533A5728C40FC355E7C8")
     public SSLSession getSession(byte[] sessionId) {
         addTaint(sessionId[0]);
@@ -408,6 +411,7 @@ SSLSession var540C13E9E156B687226421B24F2DF178_454155010 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.048 -0400", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "56E46675B2DACAAFBD15DCD7A9590ED2")
      void putSession(SSLSession session) {
         addTaint(session.getTaint());
@@ -433,11 +437,13 @@ SSLSession var540C13E9E156B687226421B24F2DF178_454155010 =         null;
     }
 
     
-        static void log(Throwable t) {
+        @DSModeled(DSC.SPEC)
+    static void log(Throwable t) {
         System.logW("Error converting session.", t);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.049 -0400", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "415C95D5B1D7C63D7DD32000B7CCE6AC")
     @Override
     protected void finalize() throws Throwable {

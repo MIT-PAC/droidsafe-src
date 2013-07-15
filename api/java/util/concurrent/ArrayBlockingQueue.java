@@ -135,7 +135,8 @@ for(E e : c)
     }
 
     
-        @SuppressWarnings("unchecked")
+        @DSModeled(DSC.SAFE)
+    @SuppressWarnings("unchecked")
     static <E> E cast(Object item) {
         return (E) item;
     }
@@ -152,12 +153,14 @@ E var3C45A13E1663E5EB1E89D586B823C6D6_1640189890 =         this.<E>cast(items[i]
     }
 
     
-        private static void checkNotNull(Object v) {
+        @DSModeled(DSC.SAFE)
+    private static void checkNotNull(Object v) {
         if (v == null)
             throw new NullPointerException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.234 -0400", hash_original_method = "7F66A086F3C39CFEE464DF3F42EF745A", hash_generated_method = "64F96985DE28D2DA338226764931CAD7")
     private void insert(E x) {
         items[putIndex] = x;
@@ -172,6 +175,7 @@ E var3C45A13E1663E5EB1E89D586B823C6D6_1640189890 =         this.<E>cast(items[i]
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.234 -0400", hash_original_method = "FAA6B2CA6161B01EDCE06644087258E9", hash_generated_method = "65BA7204C09A6CD74E77F459C12CF537")
     private E extract() {
         final Object[] items = this.items;
@@ -299,6 +303,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.236 -0400", hash_original_method = "5E01CBD1D1D4C5DC328EF4CF7109CA33", hash_generated_method = "1DB528BA746450D6D0E01C2616B96BAF")
     public void put(E e) throws InterruptedException {
         addTaint(e.getTaint());
@@ -330,6 +335,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.237 -0400", hash_original_method = "B8C47E86765DFB497203F72EAEF6D248", hash_generated_method = "4ABFD7FAEFC7056796D7BDAAC947012A")
     public boolean offer(E e, long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -380,6 +386,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.237 -0400", hash_original_method = "0415B543E2D9F81F71C1F297B3EB3C5B", hash_generated_method = "453E025E1A7EDEDF11F63B9759E092AE")
     public E poll() {
         final ReentrantLock lock = this.lock;
@@ -405,6 +412,7 @@ E var49B3C758081A731D6E293307824D4F5A_676983267 =             (count == 0) ? nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.237 -0400", hash_original_method = "30071A1958BC767E727888E18C86B273", hash_generated_method = "D988AD89F21523221E617B04D45B63DF")
     public E take() throws InterruptedException {
         final ReentrantLock lock = this.lock;
@@ -435,6 +443,7 @@ E var87CCC06374952BB6688DD7356AF1A436_263230869 =             extract();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.238 -0400", hash_original_method = "9A4759FF3B4CF20FAA7F6E911397CD3E", hash_generated_method = "C5E0DF750B15E590EA151593823E1972")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -480,6 +489,7 @@ E var87CCC06374952BB6688DD7356AF1A436_1293724644 =             extract();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.238 -0400", hash_original_method = "36198DC803CD2F28AA6354324378D8A6", hash_generated_method = "783BE6407D45B903EC3014DDC8B9ABAA")
     public E peek() {
         final ReentrantLock lock = this.lock;
@@ -505,6 +515,7 @@ E var65CCE84B9EFC74DB0B7D03429679E67A_940147747 =             (count == 0) ? nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.239 -0400", hash_original_method = "455EA274614F97D61B2EABEB4507FE65", hash_generated_method = "5A73FCB522A6C5061E11B8B9C81C5452")
     public int size() {
         final ReentrantLock lock = this.lock;
@@ -606,6 +617,7 @@ for(int i = takeIndex, k = count;k > 0;i = inc(i),k--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.241 -0400", hash_original_method = "BABF8DBF8C2C3831FF0E73AA93059482", hash_generated_method = "A5C11AAEAEB7AB9CA8EF6C522603D933")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -732,6 +744,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1750825755 =             a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.243 -0400", hash_original_method = "21683449F727FF2B89133F444D211102", hash_generated_method = "C9173AC52D5BA3181677C4EC1F6FD264")
     public String toString() {
         final ReentrantLock lock = this.lock;
@@ -786,6 +799,7 @@ String var9C07C753C7E9BC277E7521552478C668_126208720 =                 sb.append
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.244 -0400", hash_original_method = "F51B80356A627C7A0236999C18E5CD11", hash_generated_method = "96AC7C404388A9DFF5C2AB73DCD0EE8A")
     public void clear() {
         final Object[] items = this.items;
@@ -821,6 +835,7 @@ for(int i = takeIndex, k = count;k > 0;i = inc(i),k--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.245 -0400", hash_original_method = "9E472A4F64A42299055CA91AF4F47C7E", hash_generated_method = "94AD618C97F94D8B6DACF8F52686EC9B")
     public int drainTo(Collection<? super E> c) {
         addTaint(c.getTaint());
@@ -892,6 +907,7 @@ for(int i = takeIndex, k = count;k > 0;i = inc(i),k--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.246 -0400", hash_original_method = "0815910D9B0DDA035601CF2006E12E28", hash_generated_method = "5022B7E79B2E1696936B4A991976484B")
     public int drainTo(Collection<? super E> c, int maxElements) {
         addTaint(maxElements);
@@ -1024,6 +1040,7 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_843037571 =         new Itr();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.247 -0400", hash_original_method = "BD6D3436A392753337E742307DB75B57", hash_generated_method = "FC39BC3F5EA4265A9F249153A22CD27D")
         public boolean hasNext() {
             boolean varD90E782091E9A9F4CD91CC9C5582F361_93851018 = (remaining > 0);

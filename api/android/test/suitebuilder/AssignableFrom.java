@@ -19,6 +19,7 @@ class AssignableFrom implements Predicate<TestMethod> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.463 -0400", hash_original_method = "B584575789FDF4D58989771E6FD9B1CC", hash_generated_method = "F1296D42D9956C875311DC0A7B1E9790")
     public boolean apply(TestMethod testMethod) {
         addTaint(testMethod.getTaint());

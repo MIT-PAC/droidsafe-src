@@ -18,7 +18,8 @@ public final class SneakyThrow {
     }
 
     
-        @SuppressWarnings("unchecked")
+        @DSModeled(DSC.SAFE)
+    @SuppressWarnings("unchecked")
     private static <T extends Throwable> void sneakyThrow2(Throwable t) throws T {
         throw (T) t;
     }

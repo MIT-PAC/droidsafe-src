@@ -18,6 +18,7 @@ public class ASN1OutputStream extends DEROutputStream {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.628 -0400", hash_original_method = "7E9399FEF1C678E926DDEA0139F7BC7D", hash_generated_method = "2BF498DE9ACF7F18E58567FA8E3302A5")
     public void writeObject(
         Object    obj) throws IOException {

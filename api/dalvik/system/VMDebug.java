@@ -43,13 +43,15 @@ public final class VMDebug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.BAN)
+    @Deprecated
     public static void startMethodTracing() {
         startMethodTracing(DEFAULT_METHOD_TRACE_FILE_NAME, 0, 0);
     }
 
     
-        public static void startMethodTracing(String traceFileName,
+        @DSModeled(DSC.BAN)
+    public static void startMethodTracing(String traceFileName,
         int bufferSize, int flags) {
         if (traceFileName == null) {
             throw new NullPointerException();
@@ -58,7 +60,8 @@ public final class VMDebug {
     }
 
     
-        public static void startMethodTracing(String traceFileName,
+        @DSModeled(DSC.BAN)
+    public static void startMethodTracing(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
         if (traceFileName == null || fd == null) {
             throw new NullPointerException();
@@ -67,7 +70,8 @@ public final class VMDebug {
     }
 
     
-        public static void startMethodTracingDdms(int bufferSize, int flags) {
+        @DSModeled(DSC.BAN)
+    public static void startMethodTracingDdms(int bufferSize, int flags) {
         startMethodTracingNative(null, null, bufferSize, flags);
     }
 
@@ -129,13 +133,15 @@ public final class VMDebug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.BAN)
+    @Deprecated
     public static int setAllocationLimit(int limit) {
         return -1;
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.BAN)
+    @Deprecated
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
     }
@@ -173,7 +179,8 @@ public final class VMDebug {
     }
 
     
-        public static void dumpHprofData(String fileName) throws IOException {
+        @DSModeled(DSC.BAN)
+    public static void dumpHprofData(String fileName) throws IOException {
         if (fileName == null)
             throw new NullPointerException();
         dumpHprofData(fileName, null);
@@ -212,11 +219,13 @@ public final class VMDebug {
     }
 
     
-        private static void startGC() {
+        @DSModeled(DSC.BAN)
+    private static void startGC() {
     }
 
     
-        private static void startClassPrep() {
+        @DSModeled(DSC.BAN)
+    private static void startClassPrep() {
     }
 
     

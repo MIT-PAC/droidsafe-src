@@ -46,6 +46,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.845 -0400", hash_original_method = "E640F7F01BC858A63ED48B7251E0457D", hash_generated_method = "750C3040CB3ECDFF1297F1DCEB485CAE")
     public boolean isConstructed() {
         boolean varB52D9E9D9646E0353AB30807D53B3F06_2081445400 = (_constructed);
@@ -56,6 +57,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.845 -0400", hash_original_method = "B35ABF3B77036668E0072FBBE52EC3E8", hash_generated_method = "1F203E2D8EF834EB05C4F9F8B8B2238F")
     public int getTagNo() {
         int varEAE2E4D0FF1C370A789CC8A0673A645C_2094824670 = (_tagNumber);
@@ -66,6 +68,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.846 -0400", hash_original_method = "4AD739EA93AB775B40026E215844A8E7", hash_generated_method = "8381807804691A5FAE8AC966CBF2AA9F")
     public DEREncodable getObjectParser(
         int     tag,
@@ -100,6 +103,7 @@ DEREncodable varC0A7EA330C97F08D8F4E627A246A5388_524088488 =         _parser.rea
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.846 -0400", hash_original_method = "966C66B264046D402E2F3ED8541B4BF3", hash_generated_method = "2FA773C8AE959DCED7B9052C050E73ED")
     public DERObject getLoadedObject() throws IOException {
 DERObject var8672A79C191ABECE380987F377B9DD0A_399305940 =         _parser.readTaggedObject(_constructed, _tagNumber);
@@ -110,6 +114,7 @@ DERObject var8672A79C191ABECE380987F377B9DD0A_399305940 =         _parser.readTa
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.847 -0400", hash_original_method = "8993E91076953DCCDD0896DB0B3E91BE", hash_generated_method = "BB38F1E3028C620D8FFB5E27BA8D7E62")
     public DERObject getDERObject() {
         try 

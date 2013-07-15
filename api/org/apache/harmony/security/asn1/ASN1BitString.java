@@ -16,11 +16,13 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
-        public static ASN1BitString getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1BitString getInstance() {
         return ASN1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.517 -0400", hash_original_method = "BF14955802A2C4E7FA1CD34E2A56A014", hash_generated_method = "75AF4817D1D95AB6005573490335B9E7")
     @Override
     public Object decode(BerInputStream in) throws IOException {
@@ -62,6 +64,7 @@ Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(by
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.518 -0400", hash_original_method = "F26C5493E5849E857C2B791290EA66B7", hash_generated_method = "4E63298DD2601D30B9698DB4C23CF061")
     @Override
     public void encodeContent(BerOutputStream out) {
@@ -72,6 +75,7 @@ Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(by
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.519 -0400", hash_original_method = "FF34851DE63579E10DEA6E02E8081017", hash_generated_method = "994CBA66B49762BED89C8A1F0B242D76")
     @Override
     public void setEncodingContent(BerOutputStream out) {

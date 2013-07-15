@@ -29,6 +29,7 @@ public class EncryptionException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.167 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "10730FB03EA03439BEFF31994A32E11D")
     public Throwable getCause() {
 Throwable var3C8F3313F49435961542E8707E527956_1444921741 =         cause;

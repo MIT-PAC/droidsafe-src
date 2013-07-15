@@ -19,6 +19,7 @@ public abstract class SIPObject extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.397 -0400", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07941E956AE5C75C7E5403F7A3FDE19E")
     public void dbgPrint() {
         super.dbgPrint();
@@ -30,6 +31,7 @@ public abstract class SIPObject extends GenericObject {
     public abstract String encode();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.398 -0400", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "208E8B8A72D73600AA1860159B874DF6")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -549,6 +551,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_91847864 =         stringRepresentati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.409 -0400", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "9E784F5A1E55B17FF2B7EC47E5633BD1")
     public String debugDump(int indent) {
         addTaint(indent);
@@ -568,6 +571,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_862223103 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.409 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "A8F0E6EA96099695703075A86C4A3000")
     public String toString() {
 String varB17575D7C845B2C662583710539AAEBB_2084241096 =         this.encode();

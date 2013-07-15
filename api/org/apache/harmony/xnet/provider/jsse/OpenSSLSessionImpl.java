@@ -176,6 +176,7 @@ public class OpenSSLSessionImpl implements SSLSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.253 -0400", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "0EDEBCF643E8E2AD62BDD81E84E75957")
     public int getApplicationBufferSize() {
         int var241C2B32F58EBF2C562C0D8BE125FE0C_1131598253 = (SSLRecordProtocol.MAX_DATA_LENGTH);
@@ -186,6 +187,7 @@ public class OpenSSLSessionImpl implements SSLSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.253 -0400", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "756B7F7D9E44A6E376DCE312AEF88F34")
     public int getPacketBufferSize() {
         int varC83B5DF623EDEFDB0686BE40106F81D9_875950615 = (SSLRecordProtocol.MAX_SSL_PACKET_SIZE);
@@ -196,6 +198,7 @@ public class OpenSSLSessionImpl implements SSLSession {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.253 -0400", hash_original_method = "FC218F5482EE1068025787BA631F1A11", hash_generated_method = "4EE889A51BB3CC7B907C237B03C67352")
     public Principal getLocalPrincipal() {
     if(localCertificates != null && localCertificates.length > 0)        
@@ -219,6 +222,7 @@ Principal var540C13E9E156B687226421B24F2DF178_437209678 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.254 -0400", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "76329BC2C12B78A354A27235F589CF2F")
     public Certificate[] getLocalCertificates() {
 Certificate[] var4C5AE20413882C8DD1DF3FE09B18641D_1320236458 =         localCertificates;
@@ -283,6 +287,7 @@ javax.security.cert.X509Certificate[] var96007A05DC9437D4696083FF3089928F_219434
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.255 -0400", hash_original_method = "6F2F2196C2B5F66BDE334D0180ADBF68", hash_generated_method = "02846BAE9C5B9169F9F394144AED9D35")
     public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
         checkPeerCertificatesPresent();
@@ -322,6 +327,7 @@ Principal var9A28761194D2D1E856FBE408F69063AC_1306783912 =         peerCertifica
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.256 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "D1E04AFEFFE111723EF58D5137E205C6")
     public String getPeerHost() {
 String varFEF815055C97D4B621404BF729E85DA2_297024508 =         peerHost;
@@ -332,6 +338,7 @@ String varFEF815055C97D4B621404BF729E85DA2_297024508 =         peerHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.256 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "742F91FDDB907887236DFC693ABDF6C3")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1825477253 = (peerPort);
@@ -342,6 +349,7 @@ String varFEF815055C97D4B621404BF729E85DA2_297024508 =         peerHost;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.257 -0400", hash_original_method = "232543257EF0615A8C98189B2944DDF8", hash_generated_method = "BDAD3065A1167DEB8F78C33D9C6C2436")
     public String getCipherSuite() {
     if(cipherSuite == null)        
@@ -368,6 +376,7 @@ String var40C8215E3932EC890F412FE48280D7DD_1544627024 =         cipherSuite;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.257 -0400", hash_original_method = "DC690D466354C337179157E9ED46DB27", hash_generated_method = "32D86A67EE1196209621057B2EDBA641")
     public String getProtocol() {
     if(protocol == null)        
@@ -385,6 +394,7 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_426157750 =         protocol;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.258 -0400", hash_original_method = "968671DF82E2AA12BC31F552097867FE", hash_generated_method = "3BE52BFADC0FD287E1BBD467181C45AD")
     public String getCompressionMethod() {
     if(compressionMethod == null)        
@@ -406,6 +416,7 @@ String varA8A635525C57E9F2D9CABEB3024E7192_1291776449 =         compressionMetho
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.258 -0400", hash_original_method = "6C1FB28F6F59303D04A80E546963567A", hash_generated_method = "ECAF77913DC169DFC2F936E626FF03F3")
     public SSLSessionContext getSessionContext() {
 SSLSessionContext var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568 =         sessionContext;
@@ -416,6 +427,7 @@ SSLSessionContext var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568 =         sessi
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.259 -0400", hash_original_method = "8D23F85B43098BFBC0CC2E7E59C1A10A", hash_generated_method = "D780E72AD5A1B76AE1F75628AD53820A")
     public boolean isValid() {
         SSLSessionContext context = sessionContext;
@@ -443,6 +455,7 @@ SSLSessionContext var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568 =         sessi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.259 -0400", hash_original_method = "9CCB74C876B98AB8C259B415A5496084", hash_generated_method = "D973F2208FD25A513B4A2BF5A3AECE34")
     public void invalidate() {
         isValid = false;
@@ -547,6 +560,7 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_784848668 =         values.keySet()
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.261 -0400", hash_original_method = "1A939A31B27FEC68DC8C26996575F0FB", hash_generated_method = "A8CE8D6C0FF6144187B973F048710022")
     @Override
     protected void finalize() throws Throwable {

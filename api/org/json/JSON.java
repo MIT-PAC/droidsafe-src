@@ -14,7 +14,8 @@ class JSON {
     }
 
 
-        static double checkDouble(double d) throws JSONException {
+        @DSModeled(DSC.SPEC)
+    static double checkDouble(double d) throws JSONException {
         if (Double.isInfinite(d) || Double.isNaN(d)) {
             throw new JSONException("Forbidden numeric value: " + d);
         }
@@ -22,7 +23,8 @@ class JSON {
     }
 
     
-        static Boolean toBoolean(Object value) {
+        @DSModeled(DSC.SPEC)
+    static Boolean toBoolean(Object value) {
         if (value instanceof Boolean) {
             return (Boolean) value;
         } else if (value instanceof String) {
@@ -37,7 +39,8 @@ class JSON {
     }
 
     
-        static Double toDouble(Object value) {
+        @DSModeled(DSC.SPEC)
+    static Double toDouble(Object value) {
         if (value instanceof Double) {
             return (Double) value;
         } else if (value instanceof Number) {
@@ -52,7 +55,8 @@ class JSON {
     }
 
     
-        static Integer toInteger(Object value) {
+        @DSModeled(DSC.SPEC)
+    static Integer toInteger(Object value) {
         if (value instanceof Integer) {
             return (Integer) value;
         } else if (value instanceof Number) {
@@ -67,7 +71,8 @@ class JSON {
     }
 
     
-        static Long toLong(Object value) {
+        @DSModeled(DSC.SPEC)
+    static Long toLong(Object value) {
         if (value instanceof Long) {
             return (Long) value;
         } else if (value instanceof Number) {
@@ -82,7 +87,8 @@ class JSON {
     }
 
     
-        static String toString(Object value) {
+        @DSModeled(DSC.SPEC)
+    static String toString(Object value) {
         if (value instanceof String) {
             return (String) value;
         } else if (value != null) {
@@ -92,7 +98,8 @@ class JSON {
     }
 
     
-        public static JSONException typeMismatch(Object indexOrName, Object actual,
+        @DSModeled(DSC.SPEC)
+    public static JSONException typeMismatch(Object indexOrName, Object actual,
             String requiredType) throws JSONException {
         if (actual == null) {
             throw new JSONException("Value at " + indexOrName + " is null.");
@@ -104,7 +111,8 @@ class JSON {
     }
 
     
-        public static JSONException typeMismatch(Object actual, String requiredType) throws JSONException {
+        @DSModeled(DSC.SPEC)
+    public static JSONException typeMismatch(Object actual, String requiredType) throws JSONException {
         if (actual == null) {
             throw new JSONException("Value is null.");
         } else {

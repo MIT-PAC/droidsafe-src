@@ -74,6 +74,7 @@ public class TextPaint extends Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.160 -0400", hash_original_method = "398799A16623F5BF0623CBD73B973047", hash_generated_method = "3690268F0ABD1784A1E205BC780E2E16")
     public void setUnderlineText(int color, float thickness) {
         underlineColor = color;

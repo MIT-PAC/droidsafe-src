@@ -63,6 +63,7 @@ public class PluginManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.943 -0400", hash_original_method = "7B4BF60DDCCCE0391FC04EA9A7E517B7", hash_generated_method = "062D2BDF861F105C0438002629C35B86")
      String[] getPluginDirectories() {
         ArrayList<String> directories = new ArrayList<String>();

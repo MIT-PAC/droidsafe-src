@@ -226,6 +226,7 @@ for(int i = 0;i < numValues;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.475 -0400", hash_original_method = "78A6AA7AD01513781B120BCE5DC9E156", hash_generated_method = "419E7F98BDE9E44C05A6D1D54EB7C874")
     public PropertyValuesHolder[] getValues() {
 PropertyValuesHolder[] varC2D5F196132EC24FFA86AC8D1AA44E77_982857520 =         mValues;
@@ -281,6 +282,7 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_535080888 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.484 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "B0008CA48251C0102D6104ADBDEC897F")
     public long getDuration() {
         long var25395741BFE51A7D136A5C7109AAD2D8_477302160 = (mDuration);
@@ -333,6 +335,7 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_535080888 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.492 -0400", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "380F1904300FC1C509654EAEC385AD90")
     public long getStartDelay() {
         long varD6348B0CF9AA194EA8CCE71E8A2B9F80_1626494213 = (mStartDelay);
@@ -343,6 +346,7 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_535080888 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.494 -0400", hash_original_method = "84D20D1DEBEAE9C7FDE98EA5D287F4D2", hash_generated_method = "FAC2ECF430C77C663A5F61FD6D4BD7CA")
     public void setStartDelay(long startDelay) {
         this.mStartDelay = startDelay;
@@ -351,12 +355,14 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_535080888 =         this;
     }
 
     
-        public static long getFrameDelay() {
+        @DSModeled(DSC.SAFE)
+    public static long getFrameDelay() {
         return sFrameDelay;
     }
 
     
-        public static void setFrameDelay(long frameDelay) {
+        @DSModeled(DSC.SAFE)
+    public static void setFrameDelay(long frameDelay) {
         sFrameDelay = frameDelay;
     }
 
@@ -406,6 +412,7 @@ Object var540C13E9E156B687226421B24F2DF178_731539930 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.500 -0400", hash_original_method = "4F2FB0A315DAA7A8B07A49F4FCE27399", hash_generated_method = "7098540AE96AF889E34ED53706CB0331")
     public void setRepeatCount(int value) {
         mRepeatCount = value;
@@ -414,6 +421,7 @@ Object var540C13E9E156B687226421B24F2DF178_731539930 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.501 -0400", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "45E624BCE1671BA7DF01316B2B964C53")
     public int getRepeatCount() {
         int varF545692334BC1E20E53D9FB0B2CFFF33_388752286 = (mRepeatCount);
@@ -424,6 +432,7 @@ Object var540C13E9E156B687226421B24F2DF178_731539930 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.504 -0400", hash_original_method = "C33D7F87842C98944308EC1438B3A8A7", hash_generated_method = "57CCF83DF3B3AF7C69315FCAF2E9D050")
     public void setRepeatMode(int value) {
         mRepeatMode = value;
@@ -432,6 +441,7 @@ Object var540C13E9E156B687226421B24F2DF178_731539930 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.505 -0400", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "9A04543EACF1F1F02B362228CA67E6A2")
     public int getRepeatMode() {
         int var0F7262183FEB856E4BA3C1C837CA6BEF_1989222356 = (mRepeatMode);
@@ -518,6 +528,7 @@ Object var540C13E9E156B687226421B24F2DF178_731539930 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.523 -0400", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "83D8B5D98D7E7743EDC319400C92B095")
     public TimeInterpolator getInterpolator() {
 TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_1324407040 =         mInterpolator;
@@ -661,6 +672,7 @@ for(AnimatorListener listener : tmpListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.547 -0400", hash_original_method = "80FBC5A625B4BAB80C578CF39CB5DA5B", hash_generated_method = "D90ED6A8203CD77FC4D67FB2F23E1CC0")
     @Override
     public boolean isRunning() {
@@ -672,6 +684,7 @@ for(AnimatorListener listener : tmpListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.550 -0400", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "FFDE914DD26B049860283DBE9F34BC3C")
     @Override
     public boolean isStarted() {
@@ -772,6 +785,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.571 -0400", hash_original_method = "33DF90BAA846BB88E01B9C85165D068C", hash_generated_method = "3D81F9FA4E321CD778B1B1D3EE9C1A7C")
     private boolean delayedAnimationFrame(long currentTime) {
     if(!mStartedDelay)        
@@ -870,6 +884,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.582 -0400", hash_original_method = "7C3735DD08F0E37DA76BAA97A1C3802E", hash_generated_method = "1B6418DFAD62C51F5C1C9E6F4C617EF8")
     public float getAnimatedFraction() {
         float var5F20A1465612BD819887B170448FB3F7_34008341 = (mCurrentFraction);

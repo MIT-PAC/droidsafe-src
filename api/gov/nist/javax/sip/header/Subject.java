@@ -19,6 +19,7 @@ public class Subject extends SIPHeader implements SubjectHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.467 -0400", hash_original_method = "3C6B7893125DF6EE8816C7C8DB5CA48D", hash_generated_method = "F0C0118E7BB05A0BDF6912EC6122A209")
     public String encodeBody() {
     if(subject != null)        
@@ -42,6 +43,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_474047050 =             "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.468 -0400", hash_original_method = "6F21748266641C905516C66889D7570C", hash_generated_method = "A262BF94F2C843E94C9F0EB76C76DB2F")
     public void setSubject(String subject) throws ParseException {
     if(subject == null)        
@@ -62,6 +64,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_474047050 =             "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.468 -0400", hash_original_method = "8EBD535E211A75BE78AF45361DF5913D", hash_generated_method = "505F8570AE778E05841762EC27CEC827")
     public String getSubject() {
 String varC07EC1407326EABEF2FB6D781FE48674_1507426581 =         subject;

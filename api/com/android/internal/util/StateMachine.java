@@ -141,6 +141,7 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.860 -0400", hash_original_method = "056AA616A824F08818D1B78343E1C249", hash_generated_method = "426AFD9B07DC3D2547D5ACCC0F320026")
     protected void haltedProcessMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -148,12 +149,14 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.860 -0400", hash_original_method = "4C387498336ED4C08F04A3A81289F626", hash_generated_method = "EA73277B96710E0F4513520F578025C0")
     protected void halting() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.860 -0400", hash_original_method = "B35375ECAB57B816953617EBE5B4DD2F", hash_generated_method = "5DFECD953D2CD9C7B3894A937D26E233")
     protected void quitting() {
         // ---------- Original Method ----------
@@ -513,6 +516,7 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.870 -0400", hash_original_method = "AE92957E52CD2ECF48167D0FF23A4162", hash_generated_method = "A47569B5D257EE43083BE43CD751A5F9")
         public void update(Message message, State state, State orgState) {
             this.what = message.what;
@@ -525,6 +529,7 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.871 -0400", hash_original_method = "4AA8DBE0617D26A2E34EC5BDBA364E43", hash_generated_method = "1047ECBE2C5527322512F8D9D6A013D2")
         public int getWhat() {
             int var4A2028ECEAC5E1F4D252EA13C71ECEC6_299442039 = (what);
@@ -535,6 +540,7 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.871 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "0E1A36266A07C90DE713152CD960F2EA")
         public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_1798438730 =             state;
@@ -545,6 +551,7 @@ State var37C56C9D63C623261861C16DCFB73F6D_1798438730 =             state;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.871 -0400", hash_original_method = "6453845FB279EEE2A3A97B4923853CA9", hash_generated_method = "6A22A00A31E058581FF0B7435FD28D4E")
         public State getOriginalState() {
 State var5D1739645EB8BD1974676CD7C05290CF_1840041913 =             orgState;
@@ -654,6 +661,7 @@ String varD7C421C03C1A323F8F634419CD6A2301_1069625565 =                 name.sub
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.875 -0400", hash_original_method = "173278F07A9E3F76B246C31AF2BEE799", hash_generated_method = "D011FE3E8063D7AC1A90A6C867584480")
          int count() {
             int var4A5FC91463CC1EF00D3AA26340B946C6_1817329110 = (mCount);
@@ -1406,6 +1414,7 @@ String varF3AE67A4E259FEAC858FD24410EF34B4_1848812144 =                 "state="
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.889 -0400", hash_original_method = "5D2BC087464A61E35A06899EEE03AD06", hash_generated_method = "F2FD022A8F390B987ADEDFFF2F418ACB")
             @Override
             public boolean processMessage(Message msg) {

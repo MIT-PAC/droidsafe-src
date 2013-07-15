@@ -51,6 +51,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.690 -0400", hash_original_method = "A5D3B5CD1C27B709A733246605C23357", hash_generated_method = "F2363FEAADD933C88BBB48CEED64628D")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
@@ -226,6 +227,7 @@ for(Object method : methods)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.694 -0400", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "0F24BCA6C9426B0673BF35264E746E85")
     public void onSpanAdded(Spannable s, Object what, int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -237,6 +239,7 @@ for(Object method : methods)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.695 -0400", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "A2BA261E44A26E34D865E62CBB58DEB1")
     public void onSpanRemoved(Spannable s, Object what, int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected

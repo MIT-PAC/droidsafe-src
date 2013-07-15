@@ -34,6 +34,7 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.252 -0400", hash_original_method = "1972D57F3C05C7BADF696B9ADC3E34F9", hash_generated_method = "4F0732F9E1C0CFA94C172B0FCA60F8D1")
     public char charValue() {
         char var2063C1608D6E0BAF80249C42E2BE5804_1607416108 = (value);
@@ -44,13 +45,15 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        private static void checkValidCodePoint(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    private static void checkValidCodePoint(int codePoint) {
         if (!isValidCodePoint(codePoint)) {
             throw new IllegalArgumentException("Invalid code point: " + codePoint);
         }
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.253 -0400", hash_original_method = "3BC38476D10A0BB1E7E9CABDBB184EDE", hash_generated_method = "372F75C389D73DBB965EF8F07A8F9FDE")
     public int compareTo(Character c) {
         addTaint(c.getTaint());
@@ -62,59 +65,70 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int compare(char lhs, char rhs) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(char lhs, char rhs) {
         return lhs - rhs;
     }
 
     
-        public static Character valueOf(char c) {
+        @DSModeled(DSC.SAFE)
+    public static Character valueOf(char c) {
         return c < 128 ? SMALL_VALUES[c] : new Character(c);
     }
 
     
-        public static boolean isValidCodePoint(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isValidCodePoint(int codePoint) {
         return (MIN_CODE_POINT <= codePoint && MAX_CODE_POINT >= codePoint);
     }
 
     
-        public static boolean isSupplementaryCodePoint(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isSupplementaryCodePoint(int codePoint) {
         return (MIN_SUPPLEMENTARY_CODE_POINT <= codePoint && MAX_CODE_POINT >= codePoint);
     }
 
     
-        public static boolean isHighSurrogate(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isHighSurrogate(char ch) {
         return (MIN_HIGH_SURROGATE <= ch && MAX_HIGH_SURROGATE >= ch);
     }
 
     
-        public static boolean isLowSurrogate(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLowSurrogate(char ch) {
         return (MIN_LOW_SURROGATE <= ch && MAX_LOW_SURROGATE >= ch);
     }
 
     
-        public static boolean isSurrogate(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isSurrogate(char ch) {
         return ch >= MIN_SURROGATE && ch <= MAX_SURROGATE;
     }
 
     
-        public static boolean isSurrogatePair(char high, char low) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isSurrogatePair(char high, char low) {
         return (isHighSurrogate(high) && isLowSurrogate(low));
     }
 
     
-        public static int charCount(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static int charCount(int codePoint) {
         return (codePoint >= 0x10000 ? 2 : 1);
     }
 
     
-        public static int toCodePoint(char high, char low) {
+        @DSModeled(DSC.SAFE)
+    public static int toCodePoint(char high, char low) {
         int h = (high & 0x3FF) << 10;
         int l = low & 0x3FF;
         return (h | l) + 0x10000;
     }
 
     
-        public static int codePointAt(CharSequence seq, int index) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointAt(CharSequence seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -134,7 +148,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointAt(char[] seq, int index) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointAt(char[] seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -154,7 +169,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointAt(char[] seq, int index, int limit) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointAt(char[] seq, int index, int limit) {
         if (index < 0 || index >= limit || limit < 0 || limit > seq.length) {
             throw new IndexOutOfBoundsException();
         }
@@ -170,7 +186,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointBefore(CharSequence seq, int index) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointBefore(CharSequence seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -190,7 +207,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointBefore(char[] seq, int index) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointBefore(char[] seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -210,7 +228,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointBefore(char[] seq, int index, int start) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointBefore(char[] seq, int index, int start) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -230,7 +249,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int toChars(int codePoint, char[] dst, int dstIndex) {
+        @DSModeled(DSC.SAFE)
+    public static int toChars(int codePoint, char[] dst, int dstIndex) {
         checkValidCodePoint(codePoint);
         if (dst == null) {
             throw new NullPointerException();
@@ -254,7 +274,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static char[] toChars(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static char[] toChars(int codePoint) {
         checkValidCodePoint(codePoint);
         if (isSupplementaryCodePoint(codePoint)) {
             int cpPrime = codePoint - 0x10000;
@@ -266,7 +287,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointCount(CharSequence seq, int beginIndex,
+        @DSModeled(DSC.SAFE)
+    public static int codePointCount(CharSequence seq, int beginIndex,
             int endIndex) {
         if (seq == null) {
             throw new NullPointerException();
@@ -292,7 +314,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int codePointCount(char[] seq, int offset, int count) {
+        @DSModeled(DSC.SAFE)
+    public static int codePointCount(char[] seq, int offset, int count) {
         Arrays.checkOffsetAndCount(seq.length, offset, count);
         int endIndex = offset + count;
         int result = 0;
@@ -312,7 +335,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) {
+        @DSModeled(DSC.SAFE)
+    public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -360,7 +384,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int offsetByCodePoints(char[] seq, int start, int count,
+        @DSModeled(DSC.SAFE)
+    public static int offsetByCodePoints(char[] seq, int start, int count,
             int index, int codePointOffset) {
         Arrays.checkOffsetAndCount(seq.length, start, count);
         int end = start + count;
@@ -407,12 +432,14 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static int digit(char c, int radix) {
+        @DSModeled(DSC.SAFE)
+    public static int digit(char c, int radix) {
         return digit((int) c, radix);
     }
 
     
-        public static int digit(int codePoint, int radix) {
+        @DSModeled(DSC.SAFE)
+    public static int digit(int codePoint, int radix) {
         if (radix < MIN_RADIX || radix > MAX_RADIX) {
             return -1;
         }
@@ -438,6 +465,7 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.257 -0400", hash_original_method = "88215BA2DAA464AB2808512F13A48003", hash_generated_method = "6A4F39FB115BEEE91408456480E8FED3")
     @Override
     public boolean equals(Object object) {
@@ -450,7 +478,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static char forDigit(int digit, int radix) {
+        @DSModeled(DSC.SAFE)
+    public static char forDigit(int digit, int radix) {
         if (MIN_RADIX <= radix && radix <= MAX_RADIX) {
             if (digit >= 0 && digit < radix) {
                 return (char) (digit < 10 ? digit + '0' : digit + 'a' - 10);
@@ -460,7 +489,8 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static String getName(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static String getName(int codePoint) {
         checkValidCodePoint(codePoint);
         if (getType(codePoint) == Character.UNASSIGNED) {
             return null;
@@ -480,7 +510,8 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static int getNumericValue(char c) {
+        @DSModeled(DSC.SAFE)
+    public static int getNumericValue(char c) {
         return getNumericValue((int) c);
     }
 
@@ -515,12 +546,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static int getType(char c) {
+        @DSModeled(DSC.SAFE)
+    public static int getType(char c) {
         return getType((int) c);
     }
 
     
-        public static int getType(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static int getType(int codePoint) {
         int type = getTypeImpl(codePoint);
         if (type <= Character.FORMAT) {
             return type;
@@ -536,12 +569,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static byte getDirectionality(char c) {
+        @DSModeled(DSC.SAFE)
+    public static byte getDirectionality(char c) {
         return getDirectionality((int)c);
     }
 
     
-        public static byte getDirectionality(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static byte getDirectionality(int codePoint) {
         if (getType(codePoint) == Character.UNASSIGNED) {
             return Character.DIRECTIONALITY_UNDEFINED;
         }
@@ -560,12 +595,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isMirrored(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isMirrored(char c) {
         return isMirrored((int) c);
     }
 
     
-        public static boolean isMirrored(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isMirrored(int codePoint) {
         return isMirroredImpl(codePoint);
     }
 
@@ -577,6 +614,7 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.260 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "96C9F64DDF8C03C36EDA35922CDF2A50")
     @Override
     public int hashCode() {
@@ -588,27 +626,32 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static char highSurrogate(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static char highSurrogate(int codePoint) {
         return (char) ((codePoint >> 10) + 0xd7c0);
     }
 
     
-        public static char lowSurrogate(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static char lowSurrogate(int codePoint) {
         return (char) ((codePoint & 0x3ff) | 0xdc00);
     }
 
     
-        public static boolean isBmpCodePoint(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isBmpCodePoint(int codePoint) {
         return codePoint >= 0 && codePoint <= 0xffff;
     }
 
     
-        public static boolean isDefined(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDefined(char c) {
         return isDefinedImpl(c);
     }
 
     
-        public static boolean isDefined(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDefined(int codePoint) {
         return isDefinedImpl(codePoint);
     }
 
@@ -620,12 +663,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isDigit(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDigit(char c) {
         return isDigit((int) c);
     }
 
     
-        public static boolean isDigit(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDigit(int codePoint) {
         if ('0' <= codePoint && codePoint <= '9') {
             return true;
         }
@@ -643,12 +688,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isIdentifierIgnorable(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isIdentifierIgnorable(char c) {
         return isIdentifierIgnorable((int) c);
     }
 
     
-        public static boolean isIdentifierIgnorable(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isIdentifierIgnorable(int codePoint) {
         if (codePoint < 0x600) {
             return (codePoint >= 0 && codePoint <= 8) || (codePoint >= 0xe && codePoint <= 0x1b) ||
                     (codePoint >= 0x7f && codePoint <= 0x9f) || (codePoint == 0xad);
@@ -664,22 +711,26 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isISOControl(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isISOControl(char c) {
         return isISOControl((int) c);
     }
 
     
-        public static boolean isISOControl(int c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isISOControl(int c) {
         return (c >= 0 && c <= 0x1f) || (c >= 0x7f && c <= 0x9f);
     }
 
     
-        public static boolean isJavaIdentifierPart(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierPart(char c) {
         return isJavaIdentifierPart((int) c);
     }
 
     
-        public static boolean isJavaIdentifierPart(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierPart(int codePoint) {
         if (codePoint < 64) {
             return (0x3ff00100fffc1ffL & (1L << codePoint)) != 0;
         } else if (codePoint < 128) {
@@ -695,12 +746,14 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        public static boolean isJavaIdentifierStart(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierStart(char c) {
         return isJavaIdentifierStart((int) c);
     }
 
     
-        public static boolean isJavaIdentifierStart(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isJavaIdentifierStart(int codePoint) {
         if (codePoint < 64) {
             return (codePoint == '$'); 
         } else if (codePoint < 128) {
@@ -712,24 +765,28 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static boolean isJavaLetter(char c) {
         return isJavaIdentifierStart(c);
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static boolean isJavaLetterOrDigit(char c) {
         return isJavaIdentifierPart(c);
     }
 
     
-        public static boolean isLetter(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLetter(char c) {
         return isLetter((int) c);
     }
 
     
-        public static boolean isLetter(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLetter(int codePoint) {
         if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
             return true;
         }
@@ -747,12 +804,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isLetterOrDigit(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLetterOrDigit(char c) {
         return isLetterOrDigit((int) c);
     }
 
     
-        public static boolean isLetterOrDigit(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLetterOrDigit(int codePoint) {
         if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
             return true;
         }
@@ -773,12 +832,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isLowerCase(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLowerCase(char c) {
         return isLowerCase((int) c);
     }
 
     
-        public static boolean isLowerCase(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isLowerCase(int codePoint) {
         if ('a' <= codePoint && codePoint <= 'z') {
             return true;
         }
@@ -796,18 +857,21 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static boolean isSpace(char c) {
         return c == '\n' || c == '\t' || c == '\f' || c == '\r' || c == ' ';
     }
 
     
-        public static boolean isSpaceChar(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isSpaceChar(char c) {
         return isSpaceChar((int) c);
     }
 
     
-        public static boolean isSpaceChar(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isSpaceChar(int codePoint) {
         if (codePoint == 0x20 || codePoint == 0xa0 || codePoint == 0x1680) {
             return true;
         }
@@ -829,12 +893,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isTitleCase(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isTitleCase(char c) {
         return isTitleCaseImpl(c);
     }
 
     
-        public static boolean isTitleCase(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isTitleCase(int codePoint) {
         return isTitleCaseImpl(codePoint);
     }
 
@@ -846,12 +912,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isUnicodeIdentifierPart(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierPart(char c) {
         return isUnicodeIdentifierPartImpl(c);
     }
 
     
-        public static boolean isUnicodeIdentifierPart(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierPart(int codePoint) {
         return isUnicodeIdentifierPartImpl(codePoint);
     }
 
@@ -863,12 +931,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isUnicodeIdentifierStart(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierStart(char c) {
         return isUnicodeIdentifierStartImpl(c);
     }
 
     
-        public static boolean isUnicodeIdentifierStart(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isUnicodeIdentifierStart(int codePoint) {
         return isUnicodeIdentifierStartImpl(codePoint);
     }
 
@@ -880,12 +950,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isUpperCase(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isUpperCase(char c) {
         return isUpperCase((int) c);
     }
 
     
-        public static boolean isUpperCase(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isUpperCase(int codePoint) {
         if ('A' <= codePoint && codePoint <= 'Z') {
             return true;
         }
@@ -903,12 +975,14 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static boolean isWhitespace(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isWhitespace(char c) {
         return isWhitespace((int) c);
     }
 
     
-        public static boolean isWhitespace(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isWhitespace(int codePoint) {
         if ((codePoint >= 0x1c && codePoint <= 0x20) || (codePoint >= 0x9 && codePoint <= 0xd)) {
             return true;
         }
@@ -933,17 +1007,20 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
-        public static char reverseBytes(char c) {
+        @DSModeled(DSC.SAFE)
+    public static char reverseBytes(char c) {
         return (char)((c<<8) | (c>>8));
     }
 
     
-        public static char toLowerCase(char c) {
+        @DSModeled(DSC.SAFE)
+    public static char toLowerCase(char c) {
         return (char) toLowerCase((int) c);
     }
 
     
-        public static int toLowerCase(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static int toLowerCase(int codePoint) {
         if ('A' <= codePoint && codePoint <= 'Z') {
             return (char) (codePoint + ('a' - 'A'));
         }
@@ -961,6 +1038,7 @@ public final class Character implements Serializable, Comparable<Character> {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.267 -0400", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "CDD2B477426558C46949AC4E71EAE9A0")
     @Override
     public String toString() {
@@ -972,17 +1050,20 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_1657025431 =         String.valueOf(v
     }
 
     
-        public static String toString(char value) {
+        @DSModeled(DSC.SAFE)
+    public static String toString(char value) {
         return String.valueOf(value);
     }
 
     
-        public static char toTitleCase(char c) {
+        @DSModeled(DSC.SAFE)
+    public static char toTitleCase(char c) {
         return (char) toTitleCaseImpl(c);
     }
 
     
-        public static int toTitleCase(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static int toTitleCase(int codePoint) {
         return toTitleCaseImpl(codePoint);
     }
 
@@ -994,12 +1075,14 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_1657025431 =         String.valueOf(v
 	}
 
     
-        public static char toUpperCase(char c) {
+        @DSModeled(DSC.SAFE)
+    public static char toUpperCase(char c) {
         return (char) toUpperCase((int) c);
     }
 
     
-        public static int toUpperCase(int codePoint) {
+        @DSModeled(DSC.SAFE)
+    public static int toUpperCase(int codePoint) {
         if ('a' <= codePoint && codePoint <= 'z') {
             return (char) (codePoint - ('a' - 'A'));
         }
@@ -1089,7 +1172,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_1392171040 =             name;
         }
 
         
-                public static UnicodeBlock forName(String blockName) {
+                @DSModeled(DSC.SAFE)
+        public static UnicodeBlock forName(String blockName) {
             if (blockName == null) {
                 throw new NullPointerException();
             }
@@ -1110,12 +1194,14 @@ String varB017984728AC60AD1F0BF8734F33F15C_1392171040 =             name;
         }
 
         
-                public static UnicodeBlock of(char c) {
+                @DSModeled(DSC.SAFE)
+        public static UnicodeBlock of(char c) {
             return of((int) c);
         }
 
         
-                public static UnicodeBlock of(int codePoint) {
+                @DSModeled(DSC.SAFE)
+        public static UnicodeBlock of(int codePoint) {
             checkValidCodePoint(codePoint);
             int block = ofImpl(codePoint);
             if (block == -1 || block >= BLOCKS.length) {

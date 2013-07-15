@@ -52,6 +52,7 @@ public class Finished extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.391 -0400", hash_original_method = "52E15100C019416DBC0E10E00C79BB89", hash_generated_method = "FC07633EDF89C4A1719BE1976A79FD4C")
     @Override
     public int getType() {
@@ -63,6 +64,7 @@ public class Finished extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.391 -0400", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "D139A159EE16E8BE17BA82DDECDCE423")
     public byte[] getData() {
         byte[] var8D777F385D3DFEC8815D20F7496026DC_1443464434 = (data);

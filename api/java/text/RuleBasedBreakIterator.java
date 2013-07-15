@@ -16,6 +16,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.646 -0400", hash_original_method = "297748753389E9E3E039DEEA5BA99884", hash_generated_method = "32D8C5D6B552F167247B2AB53CB007E7")
     @Override
     public int current() {
@@ -27,6 +28,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.646 -0400", hash_original_method = "28B1915E0F3A1A21D89118527E0B2336", hash_generated_method = "D19A1C7862076C12254A1140EBD3C163")
     @Override
     public int first() {
@@ -38,6 +40,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.646 -0400", hash_original_method = "F8C933789C0B1B391D1242A497D0FB61", hash_generated_method = "3852B8CCD63D40EADF174B66C5474BD5")
     @Override
     public int following(int offset) {
@@ -52,6 +55,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.647 -0400", hash_original_method = "49EE36B5C8835D510AEEA1B2E4051F58", hash_generated_method = "32C5D4579C4DC622303B81DCBA409555")
     private void validateOffset(int offset) {
         addTaint(offset);
@@ -72,6 +76,7 @@ class RuleBasedBreakIterator extends BreakIterator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.647 -0400", hash_original_method = "0709975D2E361F60AA4A842C629D2B9B", hash_generated_method = "9F7468A449F9058C6AE49BE7653A7982")
     @Override
     public CharacterIterator getText() {
@@ -83,6 +88,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.647 -0400", hash_original_method = "A974AD33040EAFAD57444C0F88520784", hash_generated_method = "BF25EE0B4AF42FF4DA32DFA603B2FB76")
     @Override
     public int last() {
@@ -94,6 +100,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.647 -0400", hash_original_method = "FB9F2F9B43CCA9FD1C53DF1222484F9A", hash_generated_method = "CCAEFDEDC49D1763B04BB7DF7A925A19")
     @Override
     public int next() {
@@ -105,6 +112,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.648 -0400", hash_original_method = "60DA8E0BA6782B5D414226D40CCAEA03", hash_generated_method = "D037FC1DE25AAC748B4B4979D75D9768")
     @Override
     public int next(int n) {
@@ -117,6 +125,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.648 -0400", hash_original_method = "5367A90D16F732A542804E8845F40BEA", hash_generated_method = "B02BB93869F27845EEDD46ED50C8CB65")
     @Override
     public int previous() {
@@ -140,6 +149,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.648 -0400", hash_original_method = "EB484024A2CABB19E3D3208A3B638094", hash_generated_method = "F8F7E5D35BBB764D7C9104450620B04C")
     @Override
     public boolean isBoundary(int offset) {
@@ -154,6 +164,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.649 -0400", hash_original_method = "2B3191872A351BFE28946C264BFDE54F", hash_generated_method = "FC63C316B99900C8B99EDC38B2619C0E")
     @Override
     public int preceding(int offset) {
@@ -168,6 +179,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.649 -0400", hash_original_method = "1C0A7071B8D0A3C31C41CE6D2D9C1AD9", hash_generated_method = "94EB20364336C80986E94FAE2F03D995")
     @Override
     public boolean equals(Object o) {
@@ -189,6 +201,7 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.649 -0400", hash_original_method = "06F92F6D5094F2398873E74C963FD03D", hash_generated_method = "CC6B3285943DAD07C7175AC4A043C0AE")
     @Override
     public String toString() {
@@ -200,6 +213,7 @@ String var84C865F6B41C94911694573E55C4F857_1211264416 =         wrapped.toString
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.650 -0400", hash_original_method = "E6CC31FF7D266DCE2DDA4A7B187D9033", hash_generated_method = "BDDA051923CA0449D230247D3AFBA6D6")
     @Override
     public int hashCode() {
@@ -211,6 +225,7 @@ String var84C865F6B41C94911694573E55C4F857_1211264416 =         wrapped.toString
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.650 -0400", hash_original_method = "CB8345057924EAB3D86F5E280E0AFDC7", hash_generated_method = "BCA68EBE1B1B688918C3DA17F91F9347")
     @Override
     public Object clone() {

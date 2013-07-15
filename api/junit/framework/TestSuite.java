@@ -302,6 +302,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_1465764302 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.344 -0400", hash_original_method = "6B586B3A073E23F7D2AE9C8A9582E34C", hash_generated_method = "61CBF5B9E74EA314A73D0181F1AF068A")
     public void setName(String name) {
         fName= name;
@@ -310,6 +311,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_1465764302 =         super.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.345 -0400", hash_original_method = "2EA0F9602490A1D20696A18728516755", hash_generated_method = "0DA86F48B49F2D4A3AF5D3F9103DED65")
     public String getName() {
 String var7008830BBF5901458C7F9C81D44DB32A_32055543 =         fName;

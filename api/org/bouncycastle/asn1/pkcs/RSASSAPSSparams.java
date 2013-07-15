@@ -97,7 +97,8 @@ switch(o.getTagNo()){
     }
 
     
-        public static RSASSAPSSparams getInstance(
+        @DSModeled(DSC.SPEC)
+    public static RSASSAPSSparams getInstance(
         Object  obj) {
         if (obj == null || obj instanceof RSASSAPSSparams)
         {
@@ -111,6 +112,7 @@ switch(o.getTagNo()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.522 -0400", hash_original_method = "987E7AACB66963F632D7C499003CC870", hash_generated_method = "60C6BBA1AC81DF1950BBDE51887FDCDD")
     public AlgorithmIdentifier getHashAlgorithm() {
 AlgorithmIdentifier varF85DDCD03B4CF10D8B09A6ADFA8421BD_1268927469 =         hashAlgorithm;
@@ -121,6 +123,7 @@ AlgorithmIdentifier varF85DDCD03B4CF10D8B09A6ADFA8421BD_1268927469 =         has
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.523 -0400", hash_original_method = "299D9F86E5DBB3444D94BB106A959A17", hash_generated_method = "86153D83F60D599FA02AD273C6B49873")
     public AlgorithmIdentifier getMaskGenAlgorithm() {
 AlgorithmIdentifier var50B0CBAD1CBE25CFB7A74F2139ECC5EC_1109680471 =         maskGenAlgorithm;
@@ -131,6 +134,7 @@ AlgorithmIdentifier var50B0CBAD1CBE25CFB7A74F2139ECC5EC_1109680471 =         mas
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.523 -0400", hash_original_method = "DDACDA0D7B5CB6E5558758D456678E3E", hash_generated_method = "7739D20F6D77717BD4A96726C2A9ACB3")
     public DERInteger getSaltLength() {
 DERInteger varA393991B281E94FBC9FB108ABD1E1E46_1988918755 =         saltLength;
@@ -141,6 +145,7 @@ DERInteger varA393991B281E94FBC9FB108ABD1E1E46_1988918755 =         saltLength;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.523 -0400", hash_original_method = "EA52051AAE4EFBA3513689CA3A308153", hash_generated_method = "B835FADB1A6B8604AA7841AA6F5DD7D7")
     public DERInteger getTrailerField() {
 DERInteger var3B01E18491BDB360626EFB4A43588DCD_1786944893 =         trailerField;

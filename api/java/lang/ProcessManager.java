@@ -71,6 +71,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.151 -0400", hash_original_method = "534F9793819E6D7D8427F97C64CDA54E", hash_generated_method = "2123021B1F5D618555B37AA362473E87")
     private void watchChildren() {
         MutableInt status = new MutableInt(-1);
@@ -200,6 +201,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.154 -0400", hash_original_method = "3D8923075A9F95B30754D64C899AFA66", hash_generated_method = "0A556E8E584BEA2A27AA6BB6FBCDB843")
     public Process exec(String[] taintedCommand, String[] taintedEnvironment, File workingDirectory,
             boolean redirectErrorStream) throws IOException {
@@ -278,7 +280,8 @@ Process var95FD552219433D6B22709796B000B842_497972066 =             process;
     }
 
     
-        public static ProcessManager getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ProcessManager getInstance() {
         return instance;
     }
 
@@ -342,6 +345,7 @@ Process var95FD552219433D6B22709796B000B842_497972066 =             process;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.158 -0400", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "914CDF754E3AA7F1D2B7707BBB9CB7F6")
         public int exitValue() {
             synchronized
@@ -368,6 +372,7 @@ Process var95FD552219433D6B22709796B000B842_497972066 =             process;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.158 -0400", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "DC4229DAF1BA1AC4AE41498832914C11")
         public InputStream getErrorStream() {
 InputStream varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084 =             this.errorStream;
@@ -378,6 +383,7 @@ InputStream varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084 =             this.err
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.159 -0400", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "32F475F8FAC2B689A0BCE672AC8254F2")
         public InputStream getInputStream() {
 InputStream varE57B54F82EC7D518A03C88F3C045BF46_1627563577 =             this.inputStream;
@@ -388,6 +394,7 @@ InputStream varE57B54F82EC7D518A03C88F3C045BF46_1627563577 =             this.in
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.159 -0400", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "64E8D0428FEC803958B2551331636C59")
         public OutputStream getOutputStream() {
 OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.outputStream;
@@ -398,6 +405,7 @@ OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.ou
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.160 -0400", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "35F54CB500AC3A3A81322851EC3FF204")
         public int waitFor() throws InterruptedException {
             synchronized
@@ -421,6 +429,7 @@ OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.ou
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.161 -0400", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "48BDFD8466D48ABFC4C9C7823F423F61")
          void setExitValue(int exitValue) {
             synchronized
@@ -436,6 +445,7 @@ OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.ou
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.161 -0400", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "BD576A764BD2198D1F3F177F2DF1B894")
         @Override
         public String toString() {
@@ -479,6 +489,7 @@ String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651 =             "Process[pid
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.163 -0400", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "38D5F61652F8EA8BCD2618CD1704AB8A")
         @Override
         public ProcessReference poll() {

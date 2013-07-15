@@ -60,6 +60,7 @@ DrmConstraintInfo var807FB10045EE51C06BDB74744A6714DF_834153785 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.568 -0400", hash_original_method = "38AB17DDC792736F5CB32D23FA6E92BF", hash_generated_method = "B9AD340E4FF305C666F3C04A624D445B")
     private int nativeGetConstraintInfo(int permission, DrmConstraintInfo constraint) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_699849174 = getTaintInt();
@@ -67,6 +68,7 @@ DrmConstraintInfo var807FB10045EE51C06BDB74744A6714DF_834153785 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.569 -0400", hash_original_method = "B7050C2592D973CE5B8DCBBE60AC7282", hash_generated_method = "140B950E025F77C8C82EE1B1CE506B25")
     private int nativeConsumeRights(int permission) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747202387 = getTaintInt();

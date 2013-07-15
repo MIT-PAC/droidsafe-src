@@ -193,7 +193,8 @@ for(Logger logger : children)
     }
 
     
-        public static Logger getGlobal() {
+        @DSModeled(DSC.SAFE)
+    public static Logger getGlobal() {
         return global;
     }
 
@@ -316,6 +317,7 @@ Handler[] var7DFEE2B406F94D1161333B5592CCF858_674286114 =         handlers.toArr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.296 -0400", hash_original_method = "D58C134707557B2D24085330800528E0", hash_generated_method = "DDE8C33D47C82F944ADA4B021E92CEEC")
     public Filter getFilter() {
 Filter varF4BCC990D13B6FB90061D986D6021A1C_396740250 =         this.filter;
@@ -341,6 +343,7 @@ Filter varF4BCC990D13B6FB90061D986D6021A1C_396740250 =         this.filter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.296 -0400", hash_original_method = "3F355CE89E0EE57A0DB84D006A07C845", hash_generated_method = "4A8F36CD26EFF2EDB22AE613A17B27C8")
     public Level getLevel() {
 Level var19366AD307578EF1EF7369985F45E237_2047053456 =         levelObjVal;
@@ -369,6 +372,7 @@ Level var19366AD307578EF1EF7369985F45E237_2047053456 =         levelObjVal;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.297 -0400", hash_original_method = "CCA5825C72A21AC8149EE8CEDF71F9CA", hash_generated_method = "55CE662247DE22A38D822401F7DACA49")
     public boolean getUseParentHandlers() {
         boolean var359200521EA4AF90F2157461EA3B1156_1775903342 = (this.notifyParentHandlers);
@@ -396,6 +400,7 @@ Level var19366AD307578EF1EF7369985F45E237_2047053456 =         levelObjVal;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.297 -0400", hash_original_method = "D6DD5625D7FB63425531FBDC14C2C588", hash_generated_method = "2BF6FB880FD233A4CEE577E863760CD9")
     public Logger getParent() {
 Logger var0F49909EA73F8892C338E4DCA6EB9906_1803805965 =         parent;
@@ -428,6 +433,7 @@ Logger var0F49909EA73F8892C338E4DCA6EB9906_1803805965 =         parent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.298 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "72BB82075BA907AC8F1404A72B43C5E3")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_72791942 =         this.name;
@@ -438,6 +444,7 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_72791942 =         this.name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.298 -0400", hash_original_method = "F4E0ADD33B644C89C9AC3464A381F4B1", hash_generated_method = "2CFC7F18208A47566476C878512EA40F")
     public ResourceBundle getResourceBundle() {
 ResourceBundle varC4BB4F177E4A53F8D883432CFBA5CE1B_2101647147 =         this.resourceBundle;
@@ -448,6 +455,7 @@ ResourceBundle varC4BB4F177E4A53F8D883432CFBA5CE1B_2101647147 =         this.res
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.298 -0400", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "47272425B3924D973C2384666499B557")
     public String getResourceBundleName() {
 String var7214CEE3997909E522736F52DB465A8B_101628735 =         this.resourceBundleName;

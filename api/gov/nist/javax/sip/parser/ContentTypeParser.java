@@ -26,6 +26,7 @@ public class ContentTypeParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.356 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "B957E99D42FD3C29A0C7ABF27B960EB1")
     public SIPHeader parse() throws ParseException {
         ContentType contentType = new ContentType();

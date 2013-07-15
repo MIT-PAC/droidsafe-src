@@ -72,6 +72,7 @@ public class PipedInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:48.654 -0400", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "606915EA53D8FD28327ECD18B404736E")
     @Override
     public synchronized int available() throws IOException {

@@ -21,6 +21,7 @@ public abstract class SQLiteClosable {
     protected abstract void onAllReferencesReleased();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.533 -0400", hash_original_method = "E024C98C9CCE430E2F2A96AB4D1C1206", hash_generated_method = "3847CCA86EF22D8030ACE2211D68342D")
     protected void onAllReferencesReleasedFromContainer() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -28,6 +29,7 @@ public abstract class SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.534 -0400", hash_original_method = "1061625992B0C8C116E9B0FDA746DD53", hash_generated_method = "BA99D3E820A11052D91D1B8D8BA58DA6")
     public void acquireReference() {
         synchronized
@@ -52,6 +54,7 @@ public abstract class SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.535 -0400", hash_original_method = "9A856B4F8EE35DA89AAA5714CDA66263", hash_generated_method = "60FD0B0C5835682C4BC2BE3A3BC65896")
     public void releaseReference() {
         boolean refCountIsZero = false;
@@ -74,6 +77,7 @@ public abstract class SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.536 -0400", hash_original_method = "09E098F074A456ED367ED67E041E3D74", hash_generated_method = "D5ED093E91D9051E8879E840395CDAD2")
     public void releaseReferenceFromContainer() {
         boolean refCountIsZero = false;
@@ -96,6 +100,7 @@ public abstract class SQLiteClosable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.537 -0400", hash_original_method = "DF04C7F4D466F671C367EF5E9F18369F", hash_generated_method = "1460133C04008E8EFA9ABB46DE06988E")
     private String getObjInfo() {
         StringBuilder buff = new StringBuilder();

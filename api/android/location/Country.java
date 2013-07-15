@@ -70,6 +70,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.634 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BEDADB0F2AEBFB57D44D10426198402F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2090165108 = (0);

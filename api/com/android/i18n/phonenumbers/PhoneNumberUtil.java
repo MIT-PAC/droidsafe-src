@@ -347,7 +347,8 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
-        static synchronized void resetInstance() {
+        @DSModeled(DSC.SAFE)
+    static synchronized void resetInstance() {
         instance = null;
     }
 
@@ -2650,13 +2651,15 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_158386954 =         MatchType.NOT_
     
     public enum Leniency {
     POSSIBLE {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         return util.isPossibleNumber(number);
       }
     },
     VALID {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number)) {
           return false;
@@ -2665,7 +2668,8 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_158386954 =         MatchType.NOT_
       }
     },
     STRICT_GROUPING {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number) ||
             !containsOnlyValidXChars(number, candidate, util) ||
@@ -2694,7 +2698,8 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_158386954 =         MatchType.NOT_
       }
     },
     EXACT_GROUPING {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number) ||
             !containsOnlyValidXChars(number, candidate, util) ||

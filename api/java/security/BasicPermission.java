@@ -25,6 +25,7 @@ public abstract class BasicPermission extends Permission implements Serializable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.934 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "B277919700FFF042EF65E07743085319")
     @Override
     public String getActions() {
@@ -36,6 +37,7 @@ String var540C13E9E156B687226421B24F2DF178_1515564568 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.935 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "75A23020F196B0524910C6BDB341D040")
     @Override
     public boolean implies(Permission permission) {

@@ -111,6 +111,7 @@ public final class StackTraceElement implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.465 -0400", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "AEF5361D7F6472DF8585C5188F9987E8")
     public String getClassName() {
 String var1810B92D6E9A135AC1D82D9EC8FB1528_564825024 =         (declaringClass == null) ? "<unknown class>" : declaringClass;
@@ -121,6 +122,7 @@ String var1810B92D6E9A135AC1D82D9EC8FB1528_564825024 =         (declaringClass =
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.466 -0400", hash_original_method = "0038085273B4122A69DA20E0B00D2EF2", hash_generated_method = "A385670177B76B91D671309FD70C6248")
     public String getFileName() {
 String varBD5EACC393579FDF5D0E813DB68A2F73_402240457 =         fileName;
@@ -131,6 +133,7 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_402240457 =         fileName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.466 -0400", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "1575C4C3F297119941ECC6BADB600A6C")
     public int getLineNumber() {
         int varBB8A5A0BF5B38F7D371E940DAED92DA6_1373649676 = (lineNumber);
@@ -141,6 +144,7 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_402240457 =         fileName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.467 -0400", hash_original_method = "B15DF5174FD0E5C814CD72B1EE2ECDA2", hash_generated_method = "C07813C047867EBCB8846825D3D0C83B")
     public String getMethodName() {
 String varBA91F8E11CBBE6FF21CD058EFF02A40B_1659777187 =         (methodName == null) ? "<unknown method>" : methodName;
@@ -171,6 +175,7 @@ String varBA91F8E11CBBE6FF21CD058EFF02A40B_1659777187 =         (methodName == n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.469 -0400", hash_original_method = "9234CE459C30A5F4896C026CB51E3A9C", hash_generated_method = "790077AC86D0B925F03BAA63162474B8")
     public boolean isNativeMethod() {
         boolean var1A1A01A6DD717EE94BA470392F83F738_1857534076 = (lineNumber == NATIVE_LINE_NUMBER);

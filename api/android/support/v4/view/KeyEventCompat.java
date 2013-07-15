@@ -67,6 +67,7 @@ public class KeyEventCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.714 -0400", hash_original_method = "30C53A116B74264C0199431DE5B4E778", hash_generated_method = "ED222066BE33E4DC155BA09F99B1A46C")
         @Override
         public int normalizeMetaState(int metaState) {

@@ -146,6 +146,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.892 -0400", hash_original_method = "BF4DA518E23220545D4D17CD06D2812B", hash_generated_method = "D56B37D33A4BD574498F7D8C381FC944")
     public void setCallbackDuringFling(boolean shouldCallback) {
         mShouldCallbackDuringFling = shouldCallback;
@@ -154,6 +155,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.892 -0400", hash_original_method = "35BE7A0536455C2A0F09BBAE9D2D6389", hash_generated_method = "552C154AE8B581BE7D6F22B71B4C35B7")
     public void setCallbackOnUnselectedItemClick(boolean shouldCallback) {
         mShouldCallbackOnUnselectedItemClick = shouldCallback;
@@ -162,6 +164,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.892 -0400", hash_original_method = "C4B72670DAE1EC61056CA78802FA094C", hash_generated_method = "5F42FA869055CEC6FB96D8D2AF86E4BA")
     public void setAnimationDuration(int animationDurationMillis) {
         mAnimationDuration = animationDurationMillis;
@@ -170,6 +173,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.892 -0400", hash_original_method = "5E8A11776A8EA8D02696ABF29BE14ED6", hash_generated_method = "98230DB68B4E7101A953393C53021668")
     public void setSpacing(int spacing) {
         mSpacing = spacing;
@@ -178,6 +182,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.893 -0400", hash_original_method = "4DB3B67BF1B9A3FA2A4736C5F1CFBEA1", hash_generated_method = "763050E91CF0B8A093C85CDB8EAB65F9")
     public void setUnselectedAlpha(float unselectedAlpha) {
         mUnselectedAlpha = unselectedAlpha;
@@ -203,6 +208,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.893 -0400", hash_original_method = "79AE40AE7044F70B8A2DE0C11DA2A6EC", hash_generated_method = "8790F7F5CE667620E8F583136C7A6C00")
     @Override
     protected int computeHorizontalScrollExtent() {
@@ -214,6 +220,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.893 -0400", hash_original_method = "2692EBC36C6BF52C61AC22E6B166DF8E", hash_generated_method = "77B9F524FE13B32536201C1CFED8289C")
     @Override
     protected int computeHorizontalScrollOffset() {
@@ -225,6 +232,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.893 -0400", hash_original_method = "80D0AAD3D44B58246BF39F244D8B4F36", hash_generated_method = "0F19CD507C1B94602D22982D450C75BC")
     @Override
     protected int computeHorizontalScrollRange() {
@@ -236,6 +244,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.893 -0400", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "6319276A45E329FC3BA83498541FCC1E")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -1154,6 +1163,7 @@ switch(mGravity){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.200 -0400", hash_original_method = "54A2BF3809B435C5302401FC76B54B22", hash_generated_method = "D6238B30A6D80D1CDAF043F75E6DDF2F")
     @Override
     public void onShowPress(MotionEvent e) {
@@ -1194,6 +1204,7 @@ for(int i = getChildCount() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.201 -0400", hash_original_method = "64CD219059FB9E526665FE8867E1D4B8", hash_generated_method = "69A1E092A9FD19851CCBC34FC11C3A7F")
     @Override
     public void dispatchSetSelected(boolean selected) {
@@ -1217,6 +1228,7 @@ for(int i = getChildCount() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.201 -0400", hash_original_method = "9F181134B78CDA48AEB577EDC6EC32D7", hash_generated_method = "EE57C03BB9D7F33CEBBEE29997988970")
     @Override
     protected ContextMenuInfo getContextMenuInfo() {
@@ -1557,6 +1569,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.213 -0400", hash_original_method = "34F7E6D982F42148FE21035817D6C89A", hash_generated_method = "124549FE7C3BA5BBF6A9F5F143E5B52F")
     @Override
     protected int getChildDrawingOrder(int childCount, int i) {

@@ -289,6 +289,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.816 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "632FCEC4D3CC012521B771C3F84724A5")
     public Intent getRemoteViewsServiceIntent() {
 Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_434137577 =         mIntent;
@@ -316,6 +317,7 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_434137577 =         mIntent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.817 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "CEC4C93E90A6537493188A76073A4F4C")
     public Object getItem(int position) {
         addTaint(position);
@@ -739,6 +741,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.827 -0400", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "8B3BBB5F44E6978ADC93DD4F467AD41B")
         public synchronized void bind(Context context, int appWidgetId, Intent intent) {
             addTaint(intent.getTaint());
@@ -773,6 +776,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.828 -0400", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "A29871953EEC9D3275E7EF1E571F5459")
         public synchronized void unbind(Context context, int appWidgetId, Intent intent) {
             addTaint(intent.getTaint());
@@ -918,6 +922,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.831 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "D3BC84D5A13E1FF819F4F7E9B7F92139")
         public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
 IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             mRemoteViewsFactory;
@@ -928,6 +933,7 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.831 -0400", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "0C16019A17EC0C7B2D3B4AF8B5F7005A")
         public synchronized boolean isConnected() {
             boolean varCC8BFB84898B22492B7F55096CBDF6CC_648476046 = (mIsConnected);
@@ -1134,6 +1140,7 @@ for(RemoteViewsFrameLayout ref : refs)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.836 -0400", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "996C18A8F0BEBB2D319EAD8B9E9DDAB6")
         public void setLoadingViewTemplates(RemoteViews loadingView, RemoteViews firstView) {
             mUserLoadingView = loadingView;
@@ -1383,6 +1390,7 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_267645710 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.841 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "5AB91FDF4489229438094A0DF8A71C39")
         public RemoteViewsMetaData getMetaData() {
 RemoteViewsMetaData var9D2A3B5F7701188602630E4A3AA72144_2033889586 =             mMetaData;
@@ -1393,6 +1401,7 @@ RemoteViewsMetaData var9D2A3B5F7701188602630E4A3AA72144_2033889586 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.842 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "9334AAA63976210AB4248B3BDE734113")
         public RemoteViewsMetaData getTemporaryMetaData() {
 RemoteViewsMetaData var72BECA95754275A213FC731900C43798_798158070 =             mTemporaryMetaData;

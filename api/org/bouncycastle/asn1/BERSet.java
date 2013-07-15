@@ -44,6 +44,7 @@ public class BERSet extends DERSet {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.821 -0400", hash_original_method = "F901566FF0371DE323597B13C49C1024", hash_generated_method = "0F2E3B51C543862F930056C324A7A418")
      void encode(
         DEROutputStream out) throws IOException {

@@ -25,20 +25,23 @@ public class SECNamedCurves {
     }
 
 
-        private static BigInteger fromHex(
+        @DSModeled(DSC.SPEC)
+    private static BigInteger fromHex(
         String hex) {
         return new BigInteger(1, Hex.decode(hex));
     }
 
     
-        static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
+        @DSModeled(DSC.SPEC)
+    static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
         objIds.put(name, oid);
         names.put(oid, name);
         curves.put(oid, holder);
     }
 
     
-        public static X9ECParameters getByName(
+        @DSModeled(DSC.SPEC)
+    public static X9ECParameters getByName(
         String name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
         if (oid != null)
@@ -60,7 +63,8 @@ public class SECNamedCurves {
     }
 
     
-        public static DERObjectIdentifier getOID(
+        @DSModeled(DSC.SPEC)
+    public static DERObjectIdentifier getOID(
         String name) {
         return (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
     }

@@ -124,6 +124,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.069 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "AE5DFFFFEFC5AD8B8FB6B4A2ADCEC913")
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -201,6 +202,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.070 -0400", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "C86EF0F7188982C4DEBA1E4570A9AD0F")
     public int getMaxScrollAmount() {
         int var4EE17CA5D467EC005F38F5E52038081E_2038247252 = ((int) (MAX_SCROLL_FACTOR * (mBottom - mTop)));
@@ -340,6 +342,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.073 -0400", hash_original_method = "801E6F065AC6A60CFB0DADB1E074F98E", hash_generated_method = "82A15F27425537FBE4AAEB27826C974A")
     public boolean isFillViewport() {
         boolean varB3E3E62AA85A925921DCB2869A4E7017_117529245 = (mFillViewport);
@@ -365,6 +368,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.073 -0400", hash_original_method = "D26C58327C0CB18AC1F62B7629FD16B1", hash_generated_method = "70C7B911A2B0D71970D4B9A4DADE84E2")
     public boolean isSmoothScrollingEnabled() {
         boolean var15B603515FEC15F2893A41D962B8656B_1021540526 = (mSmoothScrollingEnabled);
@@ -375,6 +379,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.074 -0400", hash_original_method = "63C96CE84D9CD60CA1FF4EF87D7FF4F5", hash_generated_method = "5C7F23BB3E765786BEE5D256B048D32A")
     public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
@@ -2013,6 +2018,7 @@ View var9E337B9582937B68BAD70C44709A03C7_1559429880 =         focusCandidate;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.117 -0400", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "98D10F4F19A585E87F519370E202BFAC")
     private int clamp(int n, int my, int child) {
         addTaint(child);

@@ -40,7 +40,8 @@ public class AutoText {
     }
 
     
-        private static AutoText getInstance(View view) {
+        @DSModeled(DSC.SPEC)
+    private static AutoText getInstance(View view) {
         Resources res = view.getContext().getResources();
         Locale locale = res.getConfiguration().locale;
         AutoText instance;
@@ -66,6 +67,7 @@ public class AutoText {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.738 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "C0F27518FF1638119E035D4110C0A569")
     private int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_1705298627 = (mSize);

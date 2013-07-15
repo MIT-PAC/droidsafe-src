@@ -86,6 +86,7 @@ public class ECParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.738 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "D8215E8DEA4B423F219022BB7D699A68")
     public ECCurve getCurve() {
 ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_1104337875 =         curve;
@@ -96,6 +97,7 @@ ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_1104337875 =         curve;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.738 -0400", hash_original_method = "ED03A647C1E8B017F749575ECBD102C0", hash_generated_method = "7DEB162533869351FFEE090324D97BA7")
     public ECPoint getG() {
 ECPoint varA23D61E1F6C38CCBEE3DB49AA5BE7BF2_2103783237 =         G;
@@ -106,6 +108,7 @@ ECPoint varA23D61E1F6C38CCBEE3DB49AA5BE7BF2_2103783237 =         G;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.738 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "0BDCFC908D7FE86DBBB198CCE1CFA35B")
     public BigInteger getN() {
 BigInteger var041154653C812B0D1663EC287BE4C757_2113974630 =         n;
@@ -116,6 +119,7 @@ BigInteger var041154653C812B0D1663EC287BE4C757_2113974630 =         n;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.739 -0400", hash_original_method = "A75824F76318CCD34CB8B7E35601A9FC", hash_generated_method = "17E9D6F805660D1108D527F255DFEE17")
     public BigInteger getH() {
 BigInteger var81CECAAA363C2B26C476DE4A79F58961_2070135074 =         h;
@@ -126,6 +130,7 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_2070135074 =         h;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.739 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "C3695667EF26C095EE6D0972934D489C")
     public byte[] getSeed() {
         byte[] varFE4C0F30AA359C41D9F9A5F69C8C4192_896802986 = (seed);
@@ -136,6 +141,7 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_2070135074 =         h;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.739 -0400", hash_original_method = "4D0C476A07E0F700EE67C6B7126A56CA", hash_generated_method = "20FB74201805DB031F8885008C640278")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -159,6 +165,7 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_2070135074 =         h;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.739 -0400", hash_original_method = "222EBFC3DE5F327343BF00A614895E1C", hash_generated_method = "43BB8CC28B95C79E5CC7AE26BD6BDA93")
     public int hashCode() {
         int varD6D19EF04FF7562D9882478C7AD7E40B_352140523 = (this.getCurve().hashCode() ^ this.getG().hashCode());

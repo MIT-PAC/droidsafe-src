@@ -43,6 +43,7 @@ public class LocalServerSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.518 -0400", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "90742025E434A3573D4978F65CA5AE8D")
     public LocalSocketAddress getLocalSocketAddress() {
 LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1251121402 =         localAddress;

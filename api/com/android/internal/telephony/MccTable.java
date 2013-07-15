@@ -27,7 +27,8 @@ public final class MccTable {
     }
 
 
-        private static MccEntry entryForMcc(int mcc) {
+        @DSModeled(DSC.BAN)
+    private static MccEntry entryForMcc(int mcc) {
         int index;
         MccEntry m;
         m = new MccEntry(mcc, null, 0);
@@ -196,6 +197,7 @@ public final class MccTable {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.963 -0400", hash_original_method = "A9AC63D31BDD3C9311D3D9491FFA185B", hash_generated_method = "4710AD228BDBB906352845FF57EE73C9")
         public int compareTo(MccEntry o) {
             addTaint(o.getTaint());

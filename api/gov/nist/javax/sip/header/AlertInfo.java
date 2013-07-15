@@ -23,6 +23,7 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.723 -0400", hash_original_method = "9B65437FA923D12CE9D4363AF11C8369", hash_generated_method = "3E6B7E4CAAE58F12E3B7EA8C8B68069B")
     protected String encodeBody() {
         StringBuffer encoding = new StringBuffer();
@@ -56,6 +57,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_860748660 =         encoding.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.724 -0400", hash_original_method = "9100B3E97C317A9574634DF51E7BF148", hash_generated_method = "2A7E426316EE15F7DFB236079F127014")
     public void setAlertInfo(URI uri) {
         this.uri = (GenericURI) uri;
@@ -64,6 +66,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_860748660 =         encoding.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.724 -0400", hash_original_method = "70582DF127DE5708E4C226DA4F1719D4", hash_generated_method = "5CC62B65558F5189ED3430FEE8A6DEC0")
     public void setAlertInfo(String string) {
         this.string = string;
@@ -72,6 +75,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_860748660 =         encoding.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.725 -0400", hash_original_method = "93EE3BCFF83F692256BB0B6CBD3B0531", hash_generated_method = "3F8F6C66F2AA8D72E4FC1321B60FEC32")
     public URI getAlertInfo() {
         URI alertInfoUri = null;
@@ -108,6 +112,7 @@ URI var33576398091C0FA65107B0049538C483_277266667 =         alertInfoUri;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.726 -0400", hash_original_method = "1467211F1910FD2BE16563F269CB9AF0", hash_generated_method = "7C1D92E55087ADB7B03BF656DBB0097D")
     public Object clone() {
         AlertInfo retval = (AlertInfo) super.clone();

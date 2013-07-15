@@ -28,6 +28,7 @@ public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.746 -0400", hash_original_method = "9C711BE19A8C0E0A7CB116A3F753C6F0", hash_generated_method = "13D199B500AE8AD90EE291792B358D97")
     public String encodeBody() {
 String var05FAD6E650FDF64778D62F7CDA67F749_989902278 =         optionTag;
@@ -38,6 +39,7 @@ String var05FAD6E650FDF64778D62F7CDA67F749_989902278 =         optionTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.746 -0400", hash_original_method = "DE0D7BEB729218B451469620CB6256C4", hash_generated_method = "6EE4FBC4D3D96EC0E776A3841E0CCE48")
     public void setOptionTag(String optionTag) throws ParseException {
     if(optionTag == null)        
@@ -54,6 +56,7 @@ String var05FAD6E650FDF64778D62F7CDA67F749_989902278 =         optionTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.746 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "8FEA6E5A33BC25E87ACB41669F55C761")
     public String getOptionTag() {
 String var05FAD6E650FDF64778D62F7CDA67F749_1051343040 =         optionTag;

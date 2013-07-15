@@ -188,7 +188,8 @@ switch(msg.what){
     }
 
     
-        private static void checkIsCalledFromMainThread() {
+        @DSModeled(DSC.SPEC)
+    private static void checkIsCalledFromMainThread() {
         if (Looper.myLooper() != Looper.getMainLooper()) {
             throw new RuntimeException(
                     "SpeechRecognizer should be used only from the application's main thread");
@@ -196,6 +197,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.233 -0400", hash_original_method = "BD5701E8DF0BF25E7CB3736533848F1A", hash_generated_method = "A5A5569C94AE4A1C397AFB5586BE1123")
     private void putMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -216,6 +218,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.234 -0400", hash_original_method = "02FE733144FE02DDB0F8182E4A142CB0", hash_generated_method = "FF63DA8C334E4FB067088B55607641B1")
     private void handleStartListening(Intent recognizerIntent) {
         addTaint(recognizerIntent.getTaint());
@@ -247,6 +250,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.234 -0400", hash_original_method = "B90CA3721E1A91D945B72975FC03EB82", hash_generated_method = "868DDBE8C65BCA2AD55F5E98FB3717E1")
     private void handleStopMessage() {
     if(!checkOpenConnection())        
@@ -277,6 +281,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.235 -0400", hash_original_method = "5E81A38D35A2865AC1654F506B5D7265", hash_generated_method = "BB5BF4B051B1FF448EF63E92CA1AB6C1")
     private void handleCancelMessage() {
     if(!checkOpenConnection())        
@@ -307,6 +312,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.236 -0400", hash_original_method = "325935BA5701514064BC283979E7156C", hash_generated_method = "0122175C2027EE2FA85E78A2A8084061")
     private boolean checkOpenConnection() {
     if(mService != null)        
@@ -340,6 +346,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.238 -0400", hash_original_method = "B539A3FDAD7DAFC2710B42A201C294A5", hash_generated_method = "DC94C10E74AC8EABFF4D6BA6CA2867D1")
     public void destroy() {
     if(mConnection != null)        

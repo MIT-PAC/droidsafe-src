@@ -28,6 +28,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.909 -0400", hash_original_method = "78D1E6D4CA2C23604540BE821B70C9C5", hash_generated_method = "7E9483A42855E89B1380C3003274EEF8")
     public int getPid() {
         int var0DB3209E1ADC6D67BE435A81BAF9A66E_1333773916 = (pid);
@@ -38,6 +39,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.909 -0400", hash_original_method = "0C7AA9282DA1BA7425530FB39ADDE6D7", hash_generated_method = "69F8C565B182F3FFE2E614E4CD9C6462")
     public int getUid() {
         int var9871D3A2C554B27151CACF1422EEC048_506138482 = (uid);
@@ -48,6 +50,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.909 -0400", hash_original_method = "62E574E9D4A38B83D3EBF8EDA61883B3", hash_generated_method = "6CD69D530F07C404F7750222280B0E78")
     public int getGid() {
         int var2D53A8FB7ABF5BE7F4A3CF4B565CC75C_1022083321 = (gid);

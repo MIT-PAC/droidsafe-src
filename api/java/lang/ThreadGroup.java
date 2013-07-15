@@ -177,6 +177,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.602 -0400", hash_original_method = "17B34AC990B7E085858AFAD80E625CEB", hash_generated_method = "8A7D499A5DEE2D74D6BFF11A21DEDCFC")
     @Deprecated
     public boolean allowThreadSuspension(boolean b) {
@@ -446,6 +447,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.611 -0400", hash_original_method = "B936E1D4B92F105E0DF31A4819E36563", hash_generated_method = "4DA86BF6B1CA6D2CBD791936E13FABF1")
     public synchronized boolean isDestroyed() {
         boolean var090F38A7DDDF192B3BA702F9AFFD747C_1398701969 = (isDestroyed);

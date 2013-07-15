@@ -23,6 +23,7 @@ public final class StructLinger {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.946 -0400", hash_original_method = "9E5D902293FF11591147857F4F3E0D72", hash_generated_method = "23E480106333C75D6F639960054801BF")
     public boolean isOn() {
         boolean var9FCDD5FD809A980019197A7D33BCB739_1013316432 = (l_onoff != 0);

@@ -15,6 +15,7 @@ public abstract class MessageDigestSpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.125 -0400", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "575BF4156FBCB64EC8AE6101C37A7754")
     protected int engineGetDigestLength() {
         int varCFCD208495D565EF66E7DFF9F98764DA_162752270 = (0);

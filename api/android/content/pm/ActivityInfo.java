@@ -100,7 +100,8 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-        public static int activityInfoConfigToNative(int input) {
+        @DSModeled(DSC.SAFE)
+    public static int activityInfoConfigToNative(int input) {
         int output = 0;
         for (int i=0; i<CONFIG_NATIVE_BITS.length; i++) {
             if ((input&(1<<i)) != 0) {
@@ -111,6 +112,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.014 -0400", hash_original_method = "2220B48CFCD1F70E454B4F27BFE80BE1", hash_generated_method = "37496D009D26A1D212E8C322D2F4CCA0")
     public int getRealConfigChanged() {
         int varBB88A7B4F12301A88F7DA1E536A3C1B3_47804564 = (applicationInfo.targetSdkVersion < android.os.Build.VERSION_CODES.HONEYCOMB_MR2
@@ -137,6 +139,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.015 -0400", hash_original_method = "0EA21654C0B5D84D36E2F9B8C286493E", hash_generated_method = "C72DE5184653E75D83E62C750A26DBB7")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -171,6 +174,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.016 -0400", hash_original_method = "B913D35C681ED2748C3576E23600DB3E", hash_generated_method = "79A8234631B40DCAE0C0F9BB45C1F755")
     public String toString() {
 String varCCE9BFE5A01A056C4D652F56BFA1EA26_2064171215 =         "ActivityInfo{"
@@ -185,6 +189,7 @@ String varCCE9BFE5A01A056C4D652F56BFA1EA26_2064171215 =         "ActivityInfo{"
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.016 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1484B2A1585F153FC1D77B5F200011FF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1826618658 = (0);
@@ -195,6 +200,7 @@ String varCCE9BFE5A01A056C4D652F56BFA1EA26_2064171215 =         "ActivityInfo{"
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.017 -0400", hash_original_method = "0DBABFC7118E214F01D60FEE309F0914", hash_generated_method = "CE76F1E9A48F2FBAD8BC5CDCA4DCE494")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

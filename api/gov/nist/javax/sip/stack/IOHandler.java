@@ -41,6 +41,7 @@ class IOHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.501 -0400", hash_original_method = "C27932DA9A29AAAE15A518DF16F6A526", hash_generated_method = "E68C363F6D49FA8E4C6F973D09518EB5")
     protected void putSocket(String key, Socket sock) {
         addTaint(sock.getTaint());
@@ -51,6 +52,7 @@ class IOHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.501 -0400", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "F0AB9D8B6CDFD6571B0D2E20B2EE540F")
     protected Socket getSocket(String key) {
         addTaint(key.getTaint());
@@ -128,6 +130,7 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.507 -0400", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "5D76C975E9B6EB434B12A44535463D8C")
     public Socket sendBytes(InetAddress senderAddress, InetAddress receiverAddress,
             int contactPort, String transport, byte[] bytes, boolean retry,

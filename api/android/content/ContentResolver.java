@@ -57,6 +57,7 @@ public abstract class ContentResolver {
     protected abstract IContentProvider acquireProvider(Context c, String name);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.847 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "9006F49CC9F8C34999AD7F3FB04E7E22")
     protected IContentProvider acquireExistingProvider(Context c, String name) {
         addTaint(name.getTaint());
@@ -131,6 +132,7 @@ String var540C13E9E156B687226421B24F2DF178_1904687567 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.849 -0400", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "5DC0510205DB50DDE0DC03F6D5F1916D")
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
         addTaint(mimeTypeFilter.getTaint());
@@ -504,6 +506,7 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_1132828530 =            
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.858 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "7BE96DEBF0253B94A83A99ED1B50F977")
     public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException {
         addTaint(uri.getTaint());
@@ -578,7 +581,8 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_743616632 =         res
     }
 
     
-        static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
+        @DSModeled(DSC.SPEC)
+    static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
         int modeBits;
         if ("r".equals(mode)) {
             modeBits = ParcelFileDescriptor.MODE_READ_ONLY;
@@ -1083,6 +1087,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.876 -0400", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "841332F3B587E937B98F5F76F4A75E19")
     public void notifyChange(Uri uri, ContentObserver observer) {
         addTaint(observer.getTaint());
@@ -1093,6 +1098,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.877 -0400", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "4834D3929F315BCA26B25893BA189E3F")
     public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {
         addTaint(syncToNetwork);
@@ -1117,6 +1123,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.877 -0400", hash_original_method = "2D6405030D787F1D91AFA94E2D425989", hash_generated_method = "8FD49EB480C67F13739811857A7B4F54")
     @Deprecated
     public void startSync(Uri uri, Bundle extras) {
@@ -1155,7 +1162,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static void validateSyncExtrasBundle(Bundle extras) {
+        @DSModeled(DSC.SPEC)
+    public static void validateSyncExtrasBundle(Bundle extras) {
         try {
             for (String key : extras.keySet()) {
                 Object value = extras.get(key);
@@ -1178,6 +1186,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.877 -0400", hash_original_method = "B4949CE6FC68B3756629FF654EA4F622", hash_generated_method = "98293DACBF37DC3FB629FF105B0B9357")
     @Deprecated
     public void cancelSync(Uri uri) {
@@ -1188,7 +1197,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static void cancelSync(Account account, String authority) {
+        @DSModeled(DSC.SPEC)
+    public static void cancelSync(Account account, String authority) {
         try {
             getContentService().cancelSync(account, authority);
         } catch (RemoteException e) {
@@ -1196,7 +1206,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static SyncAdapterType[] getSyncAdapterTypes() {
+        @DSModeled(DSC.SPEC)
+    public static SyncAdapterType[] getSyncAdapterTypes() {
         try {
             return getContentService().getSyncAdapterTypes();
         } catch (RemoteException e) {
@@ -1278,7 +1289,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static int getIsSyncable(Account account, String authority) {
+        @DSModeled(DSC.SPEC)
+    public static int getIsSyncable(Account account, String authority) {
         try {
             return getContentService().getIsSyncable(account, authority);
         } catch (RemoteException e) {
@@ -1335,7 +1347,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static List<SyncInfo> getCurrentSyncs() {
+        @DSModeled(DSC.SPEC)
+    public static List<SyncInfo> getCurrentSyncs() {
         try {
             return getContentService().getCurrentSyncs();
         } catch (RemoteException e) {
@@ -1391,6 +1404,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.884 -0400", hash_original_method = "5964C3B3CD446EC6DF12ED3CA7F7D861", hash_generated_method = "C659274096F9AC7272B2DBC099B49078")
     private int samplePercentForDuration(long durationMillis) {
         addTaint(durationMillis);
@@ -1411,6 +1425,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.885 -0400", hash_original_method = "339BAFB8AA6EDB4FDC193A187E8B0067", hash_generated_method = "9BD6BF415ED84B3DEA2AD9DAD6E0E3D7")
     private void maybeLogQueryToEventLog(long durationMillis,
                                          Uri uri, String[] projection,
@@ -1456,6 +1471,7 @@ for(int i = 0;i < projection.length;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.885 -0400", hash_original_method = "8C4CA0C0E96B47F9D6365343066B43C9", hash_generated_method = "3C5109E1FC653AE1DDDF530D6B2D1689")
     private void maybeLogUpdateToEventLog(
         long durationMillis, Uri uri, String operation, String selection) {
@@ -1504,7 +1520,8 @@ for(int i = 0;i < projection.length;++i)
     }
 
     
-        public static IContentService getContentService() {
+        @DSModeled(DSC.SPEC)
+    public static IContentService getContentService() {
         if (sContentService != null) {
             return sContentService;
         }
@@ -1558,6 +1575,7 @@ for(int i = 0;i < projection.length;++i)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.886 -0400", hash_original_method = "CB76115716387DD39854EA1927F29C52", hash_generated_method = "461D5BB19C18033D953C4676F5B1721B")
         @Override
         public void close() {
@@ -1636,6 +1654,7 @@ for(int i = 0;i < projection.length;++i)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.887 -0400", hash_original_method = "88C4FC226DB7C9E08A0225C4D4C037C0", hash_generated_method = "2931B14EB0C4E940924437ADC26E5475")
         @Override
         public void close() throws IOException {
@@ -1654,6 +1673,7 @@ for(int i = 0;i < projection.length;++i)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.888 -0400", hash_original_method = "E5C83F24E1B33F16225B47651FBE1E16", hash_generated_method = "BB9D5FCD4BE1CF73267E1BB6EFE05F92")
         @Override
         protected void finalize() throws Throwable {

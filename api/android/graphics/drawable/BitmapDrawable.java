@@ -280,6 +280,7 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160 =         mBitmap;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.623 -0400", hash_original_method = "35E95FC787F9F24A49C5DE1ED0297F4C", hash_generated_method = "5464C78F867D49DCF0DA1280FCA28B17")
     public int getGravity() {
         int varAC1B497EA644683625E1592BCC420E70_1088563413 = (mBitmapState.mGravity);
@@ -342,6 +343,7 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160 =         mBitmap;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.625 -0400", hash_original_method = "8C03C626370DF89EB681D1D91A4CB25A", hash_generated_method = "AC1AA89EA54FF900E2894FED925FF019")
     public Shader.TileMode getTileModeX() {
 Shader.TileMode var8A0DDC40CE3A669DB6E8ED93A5D53143_1009486631 =         mBitmapState.mTileModeX;
@@ -352,6 +354,7 @@ Shader.TileMode var8A0DDC40CE3A669DB6E8ED93A5D53143_1009486631 =         mBitmap
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.626 -0400", hash_original_method = "C4F6E36EB6EDDD2C280548D4CD537229", hash_generated_method = "7E0979A198C24E4E0639033239D56D7A")
     public Shader.TileMode getTileModeY() {
 Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmapState.mTileModeY;
@@ -586,6 +589,7 @@ switch(tileMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.637 -0400", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "E940B0EAACB158EFC7BB2A5418BB75D9")
     @Override
     public int getIntrinsicWidth() {
@@ -597,6 +601,7 @@ switch(tileMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.638 -0400", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "28BF95AAFAE58C32D16E9C2AE5D33A21")
     @Override
     public int getIntrinsicHeight() {
@@ -723,6 +728,7 @@ Drawable var63524157975F655BCEF229267EA3374D_2117085723 =             new Bitmap
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.643 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "D59AFF166059FA61ADD1F00A77E309CA")
         @Override
         public int getChangingConfigurations() {

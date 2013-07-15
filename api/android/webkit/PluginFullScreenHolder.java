@@ -64,6 +64,7 @@ class PluginFullScreenHolder {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.905 -0400", hash_original_method = "66123030FC4915555385B1DD2D68510F", hash_generated_method = "6502952572BE9906FB5F54E12D5F4DDD")
     public void setContentView(View contentView) {
         mLayout = new CustomFrameLayout(mWebView.getContext());
@@ -100,6 +101,7 @@ class PluginFullScreenHolder {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.905 -0400", hash_original_method = "DD5335755EAD0F04B1B63E259CD22224", hash_generated_method = "F1CC204936B18406E5F95BDAFF3A0E26")
     public void show() {
     if(mWebView.getViewManager() != null)        
@@ -114,6 +116,7 @@ class PluginFullScreenHolder {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.906 -0400", hash_original_method = "AB5ED812B0D51EA9DC95D08A130CF1D1", hash_generated_method = "A618316A6F188F354FA11FDA59D5DF4D")
     public void hide() {
         WebChromeClient client = mWebView.getWebChromeClient();
@@ -134,6 +137,7 @@ class PluginFullScreenHolder {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.907 -0400", hash_original_method = "2FA80045A66041D881611423B2D72BE2", hash_generated_method = "3D3D8EC0388C161EE68F77BB61AF804A")
         @Override
         public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -159,6 +163,7 @@ class PluginFullScreenHolder {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.907 -0400", hash_original_method = "5F021E74A22E2DE8FA3FAB6B663A24D2", hash_generated_method = "3DA0B1EE52E88C98E6A1227B00A6492D")
         @Override
         public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -184,6 +189,7 @@ class PluginFullScreenHolder {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.907 -0400", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "B92E182E534CB7249C5C10C8B103710E")
         @Override
         public boolean onTouchEvent(MotionEvent event) {
@@ -197,6 +203,7 @@ class PluginFullScreenHolder {
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.908 -0400", hash_original_method = "B00867DA6E98462A97CBDDC40208DF51", hash_generated_method = "1B26B9907B0A86F26BB878105C2C26BC")
         @Override
         public boolean onTrackballEvent(MotionEvent event) {

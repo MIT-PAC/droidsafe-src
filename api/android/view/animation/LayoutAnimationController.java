@@ -91,6 +91,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.878 -0400", hash_original_method = "BE8C43C510B8AF8546FEBBAA3EF0F0B1", hash_generated_method = "60E59B06B163141A53B4BB73EE00D08E")
     public int getOrder() {
         int var6D112D2229BB97D14E6F55D683775A63_369650835 = (mOrder);
@@ -101,6 +102,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.879 -0400", hash_original_method = "648C96BEF511A58A69E168C40D059B54", hash_generated_method = "23B5E85A7019C72C38679E0BA3B78B0E")
     public void setOrder(int order) {
         mOrder = order;
@@ -129,6 +131,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.880 -0400", hash_original_method = "DAC4606AD5070B4B7D220BEE34A17978", hash_generated_method = "0FB888DAA280209450A5A10A27E0E0D7")
     public Animation getAnimation() {
 Animation var267087685D2F38DE7EECB639921105B0_400424183 =         mAnimation;
@@ -149,6 +152,7 @@ Animation var267087685D2F38DE7EECB639921105B0_400424183 =         mAnimation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.881 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
@@ -157,6 +161,7 @@ Animation var267087685D2F38DE7EECB639921105B0_400424183 =         mAnimation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.881 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "1FC139C56071CFB6B0409DAB5F28ADE2")
     public Interpolator getInterpolator() {
 Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpolator;
@@ -167,6 +172,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpola
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.881 -0400", hash_original_method = "55CD68136127075BB4939DEA602DB451", hash_generated_method = "24937C0691A5AA7DA191F9CD3C50F113")
     public float getDelay() {
         float var4A07FB752767B90A168D4F2A331D5C36_113157544 = (mDelay);
@@ -177,6 +183,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpola
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.887 -0400", hash_original_method = "66A46BCEB9C76B70A4A3D1129198A613", hash_generated_method = "68B321DC0C555672B92725ED9120FBBD")
     public void setDelay(float delay) {
         mDelay = delay;
@@ -185,6 +192,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpola
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.887 -0400", hash_original_method = "C391ED719773BAF357B5BB149771DE74", hash_generated_method = "360C0D0F22B14C3E6BB0796ADCED730F")
     public boolean willOverlap() {
         boolean var02C5090F3AD9B37500835DCA56FD4C36_163660839 = (mDelay < 1.0f);

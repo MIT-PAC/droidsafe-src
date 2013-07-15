@@ -53,6 +53,7 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.400 -0400", hash_original_method = "A92FDD2E910AFCA63CE828A3161FD7A9", hash_generated_method = "1812D8ED37F0FED1C1C08BF5F179A186")
     public byte[] getIV() {
         byte[] res = new byte[iv.length];

@@ -692,6 +692,7 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_1998109228 =         entity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.912 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "D0087111A16A2BBB53ED3D5FB7D0338E")
     public HttpConnectionMetrics getMetrics() {
 HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1641017354 =         this.metrics;

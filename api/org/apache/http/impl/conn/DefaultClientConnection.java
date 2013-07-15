@@ -82,6 +82,7 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.778 -0400", hash_original_method = "DA5079B0FADB5957D7F2D5BE061C8D7D", hash_generated_method = "1B52CF874175932E319734A3F5BF879D")
     public void opening(Socket sock, HttpHost target) throws IOException {
         assertNotOpen();
@@ -242,6 +243,7 @@ HttpMessageParser var77984927842A040FCF920A71EAA2A2B9_2021865070 =         new D
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.781 -0400", hash_original_method = "9118767905DEE596C55572AB6CA12E81", hash_generated_method = "AEAE634CAAE0B50CFA044743B6022C4B")
     public void update(Socket sock, HttpHost target,
                        boolean secure, HttpParams params) throws IOException {

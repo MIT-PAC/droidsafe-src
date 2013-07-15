@@ -50,6 +50,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.193 -0400", hash_original_method = "325914DF32EF22A63CA2688A9A750F18", hash_generated_method = "D63105C2C8701C1D85ED39AB6E6A320D")
     @Override
     public void handleMessage(Message msg) {
@@ -127,6 +128,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.195 -0400", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "5E67DCC1BF128A2422A3A2FE824DEC86")
     synchronized void clear() {
         mSslPrefTable.clear();

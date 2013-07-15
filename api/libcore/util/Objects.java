@@ -18,7 +18,8 @@ public final class Objects {
     }
 
     
-        public static int hashCode(Object o) {
+        @DSModeled(DSC.SPEC)
+    public static int hashCode(Object o) {
         return (o == null) ? 0 : o.hashCode();
     }
 

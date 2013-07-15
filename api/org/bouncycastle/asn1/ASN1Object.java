@@ -15,7 +15,8 @@ public abstract class ASN1Object extends DERObject {
     }
 
 
-        public static ASN1Object fromByteArray(byte[] data) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static ASN1Object fromByteArray(byte[] data) throws IOException {
         ASN1InputStream aIn = new ASN1InputStream(data);
         try
         {

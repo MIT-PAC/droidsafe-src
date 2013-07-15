@@ -19,6 +19,7 @@ public class FileHandler extends URLStreamHandler {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.876 -0400", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "F207C317A17D2D332F2E275C8F70CEDA")
     @Override
     public URLConnection openConnection(URL url) throws IOException {
@@ -31,6 +32,7 @@ URLConnection varC7B56D70891864570C2950F90421920A_1270073662 =         openConne
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.876 -0400", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "5A88C10A7092050F255CD521F0127A7D")
     @Override
     public URLConnection openConnection(URL url, Proxy proxy) throws IOException {
@@ -66,6 +68,7 @@ URLConnection varB1DC9B102F866A79AD790258FC9A0468_847516527 =         (proxy == 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.877 -0400", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "567ACC7846469F94C9CDB182E0EC3830")
     @Override
     protected void parseURL(URL url, String spec, int start, int end) {

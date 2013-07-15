@@ -96,6 +96,7 @@ class RILRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.916 -0400", hash_original_method = "E7EE736E24A2BE53AC107C249FFB0880", hash_generated_method = "0691A91AC44CFDEADBCBC5569F7616DE")
      void release() {
         synchronized
@@ -120,7 +121,8 @@ class RILRequest {
     }
 
     
-        static void resetSerial() {
+        @DSModeled(DSC.SAFE)
+    static void resetSerial() {
         synchronized(sSerialMonitor) {
             sNextSerial = 0;
         }
@@ -156,6 +158,7 @@ String var2460B846747F8B22185AD8BE722266A5_1974223292 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.916 -0400", hash_original_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6", hash_generated_method = "DA50EEA5657715DE753BDECA72EE0201")
      void onError(int error, Object ret) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -371,6 +374,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.919 -0400", hash_original_method = "9505EC70575F3F081B82639224A26C6E", hash_generated_method = "443450A329CA9792DED812D3E399C489")
     @Override
     public void setOnNITZTime(Handler h, int what, Object obj) {
@@ -723,6 +727,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.924 -0400", hash_original_method = "2937351315DD22A0DBB0EBEECB6FBD52", hash_generated_method = "FDDA31EE81B53F3785EB34532F2A2208")
     public void dial(String address, int clirMode, UUSInfo uusInfo, Message result) {
         addTaint(result.getTaint());
@@ -1418,6 +1423,7 @@ for(int i=0;i < bearerDataLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.930 -0400", hash_original_method = "0D77FBD1C1F349CB6A533B80F899FC6F", hash_generated_method = "4E17B94F15925F1F87577239BBF6E1F7")
     private int translateStatus(int status) {
         addTaint(status);
@@ -1502,6 +1508,7 @@ switch(status & 0x7){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.931 -0400", hash_original_method = "7ACA8E6FBBE8E5A758B0F14E8B7A1BD0", hash_generated_method = "BC6CE9AA15F61739629ED679B2ECB065")
     public void deactivateDataCall(int cid, int reason, Message result) {
         addTaint(result.getTaint());
@@ -1622,6 +1629,7 @@ switch(status & 0x7){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.932 -0400", hash_original_method = "64AA0D67C6CE837D613809948FDF7791", hash_generated_method = "8A3D341C636BFC1FF9CE69113293A5C1")
     public void acknowledgeIncomingGsmSmsWithPdu(boolean success, String ackPdu, Message result) {
         addTaint(result.getTaint());
@@ -1647,6 +1655,7 @@ switch(status & 0x7){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.933 -0400", hash_original_method = "59EE7F242CC2ECDC31CC3317E2625FB0", hash_generated_method = "D5AC675DDE2089CF469920874AB4A9F4")
     public void iccIO(int command, int fileid, String path, int p1, int p2, int p3,
             String data, String pin2, Message result) {
@@ -1852,6 +1861,7 @@ switch(status & 0x7){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.934 -0400", hash_original_method = "BAE7513A4D74D7F41628BC2CA56E49A7", hash_generated_method = "87FEC78F21DD3C3CD5480C1475422EA1")
     public void setCallForward(int action, int cfReason, int serviceClass,
                 String number, int timeSeconds, Message response) {
@@ -1889,6 +1899,7 @@ switch(status & 0x7){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.935 -0400", hash_original_method = "23037026F2CF508E3AB593A615459BEF", hash_generated_method = "FA72C811632A9379E882111FA8729B70")
     public void queryCallForwardStatus(int cfReason, int serviceClass,
                 String number, Message response) {
@@ -2436,6 +2447,7 @@ switch(status & 0x7){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.941 -0400", hash_original_method = "052EA3DC72AD24FB98DF1CE5007E33C5", hash_generated_method = "A8BCC14A1EA0C81A9E9A5CF3E332F63B")
     public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
         addTaint(response.getTaint());
@@ -2505,6 +2517,7 @@ for(int i = 0;i < numOfConfig;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.942 -0400", hash_original_method = "BB835229E5EA50CDBB0B126232F0F168", hash_generated_method = "D18433B9DE179811653284B06AFFE308")
     protected void onRadioAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2759,6 +2772,7 @@ RILRequest var540C13E9E156B687226421B24F2DF178_973112086 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.947 -0400", hash_original_method = "E53F353584D1FC1676A6EAA90642D430", hash_generated_method = "4D6ACCB3B2D9446CF66B13259755213A")
     private void processSolicited(Parcel p) {
         addTaint(p.getTaint());
@@ -3232,6 +3246,7 @@ String var0478718F0636FB61899C13801CE9FE09_74007223 =         s;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.954 -0400", hash_original_method = "0DD0C2CAC9DFFC256536DE8141109DEC", hash_generated_method = "7FFAC9683547E8B3B9E90B54C17A82A1")
     private void processUnsolicited(Parcel p) {
         addTaint(p.getTaint());
@@ -3734,6 +3749,7 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1567729940 =         response;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.956 -0400", hash_original_method = "F83E9E0330A999E5D5277EA606DEC7ED", hash_generated_method = "631332E3B17842C2CFA5070215488798")
     private Object responseVoid(Parcel p) {
         addTaint(p.getTaint());
@@ -3943,6 +3959,7 @@ Object varA4DE666E15471FC46793A14E11D99E42_1065753617 =         new IccIoResult(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.960 -0400", hash_original_method = "D5683AC0AFFFFAC7278B155F54988C15", hash_generated_method = "2463EFC9B48BAB2E90777BF5EBB2D5DE")
     private Object responseIccCardStatus(Parcel p) {
         addTaint(p.getTaint());
@@ -4132,6 +4149,7 @@ Object var2A1114F4272D753FE23A36E3D68CD293_710663683 =         response;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.965 -0400", hash_original_method = "6E11D362E553C380CF6ADBFD5304CD05", hash_generated_method = "1F0D8428383A370C281F290B390B0BD1")
     private Object responseSetupDataCall(Parcel p) {
         addTaint(p.getTaint());
@@ -4601,7 +4619,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     }
 
     
-        static String requestToString(int request) {
+        @DSModeled(DSC.SAFE)
+    static String requestToString(int request) {
         switch(request) {
             case RIL_REQUEST_GET_SIM_STATUS: return "GET_SIM_STATUS";
             case RIL_REQUEST_ENTER_SIM_PIN: return "ENTER_SIM_PIN";
@@ -4715,7 +4734,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     }
 
     
-        static String responseToString(int request) {
+        @DSModeled(DSC.SAFE)
+    static String responseToString(int request) {
         switch(request) {
             case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: return "UNSOL_RESPONSE_RADIO_STATE_CHANGED";
             case RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED: return "UNSOL_RESPONSE_CALL_STATE_CHANGED";
@@ -5087,6 +5107,7 @@ for(int i = 0;i < configValuesArray.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.984 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
             // ---------- Original Method ----------
@@ -5226,6 +5247,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.990 -0400", hash_original_method = "3E25FFC0D00CEB4B0CF0C518A51DB777", hash_generated_method = "80F9CF4511441DA19A43E646B384E2A3")
         public void run() {
             int retryCount = 0;

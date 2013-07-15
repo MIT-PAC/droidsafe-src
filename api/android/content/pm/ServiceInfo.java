@@ -44,6 +44,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.434 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "0AC23AB2DDBF37D9D456E8A515940FC8")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -58,6 +59,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.435 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "A7B8DB52B053E82E7268D3DEBAD1E58C")
     public String toString() {
 String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
@@ -72,6 +74,7 @@ String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.435 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A439ECC93884B3455C21408F7BF75907")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1152261483 = (0);
@@ -82,6 +85,7 @@ String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.436 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "CA4BA01953D84C6D9651F2189A6E24D6")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

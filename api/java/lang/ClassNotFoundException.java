@@ -35,6 +35,7 @@ public class ClassNotFoundException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.630 -0400", hash_original_method = "4088520C94C7E98A0F8384BC5CAC9A7D", hash_generated_method = "CEEC3CB5C31EF2729CEBC77C011328F2")
     public Throwable getException() {
 Throwable varD25D46DC39114B3B025BF73A68F87E69_335856802 =         ex;
@@ -45,6 +46,7 @@ Throwable varD25D46DC39114B3B025BF73A68F87E69_335856802 =         ex;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.630 -0400", hash_original_method = "8471E555B70ADD40A898DC66BF7F4D1C", hash_generated_method = "39BC8B27BF909A366F1F6BF9DC6AE8B0")
     @Override
     public Throwable getCause() {

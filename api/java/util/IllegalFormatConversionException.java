@@ -43,6 +43,7 @@ Class<?> varFFCBE2769CA7417D59916888195AB140_1323871207 =         arg;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.628 -0400", hash_original_method = "FF899ECAAB1B8C040FEF5324FAB8D93B", hash_generated_method = "FB1060CAC2D489500BEBE7145005A8F3")
     public char getConversion() {
         char var4A8A08F09D37B73795649038408B5F33_19992435 = (c);

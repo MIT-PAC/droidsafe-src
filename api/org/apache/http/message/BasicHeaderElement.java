@@ -65,6 +65,7 @@ public class BasicHeaderElement implements HeaderElement, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.346 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "1EF2283997EA84B7E4D04A1643F1F99D")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_1362286811 =         this.name;
@@ -75,6 +76,7 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_1362286811 =         this.name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.346 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "B79A96FD2A77BBBFC00017225ADA574E")
     public String getValue() {
 String varD64EF4B55BF21CB8765EC6BE5560B5B8_943017635 =         this.value;
@@ -95,6 +97,7 @@ NameValuePair[] varCBFB6E66E9BA858BA07B15CDA982B151_1494122935 =         (NameVa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.347 -0400", hash_original_method = "D96148994A6BB50642F5897F1E874B9E", hash_generated_method = "DF4A64F3E14A2C03CA18425F168C0CFC")
     public int getParameterCount() {
         int var1E5254465D1C41EA837730F8F4D25786_699651151 = (this.parameters.length);
@@ -105,6 +108,7 @@ NameValuePair[] varCBFB6E66E9BA858BA07B15CDA982B151_1494122935 =         (NameVa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.347 -0400", hash_original_method = "7A51C396EF547B19A00C38AEE513A356", hash_generated_method = "4117C3F891814EFFB5B48374B9FF6746")
     public NameValuePair getParameter(int index) {
         addTaint(index);
@@ -221,6 +225,7 @@ for(int i = 0;i < this.parameters.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.352 -0400", hash_original_method = "D1269B43C4D02DE243B0BC051FD8549B", hash_generated_method = "225B475DF0A83A8E62A2CF80B752B85B")
     public String toString() {
         CharArrayBuffer buffer = new CharArrayBuffer(64);

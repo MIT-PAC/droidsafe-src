@@ -45,6 +45,7 @@ public class X9FieldElement extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.523 -0400", hash_original_method = "8A2CB601358E90D44574A6BC9E09C2FF", hash_generated_method = "C36D55C074F17EED2DB904D4810C1BAC")
     public ECFieldElement getValue() {
 ECFieldElement varABE3CFB53FE4A79F34CB25BC80BFD6E2_908103644 =         f;

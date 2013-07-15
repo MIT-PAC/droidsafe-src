@@ -135,6 +135,7 @@ Object varF4E472F530EEA6342931FA947EA4E3DB_1630149624 =         mChildData.get(g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.595 -0400", hash_original_method = "D97177086C567E768212D7EB3B556195", hash_generated_method = "102C3190E8E01E2AA9CA385F1EF69B86")
     public long getChildId(int groupPosition, int childPosition) {
         addTaint(childPosition);
@@ -250,6 +251,7 @@ Object varFB97261B2587C339E611EC0290582245_574721243 =         mGroupData.get(gr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.598 -0400", hash_original_method = "F50F0A33E6E1377DC0B6921910BA68AA", hash_generated_method = "C2318CDAB44E709A757BA1457F10BB63")
     public long getGroupId(int groupPosition) {
         addTaint(groupPosition);
@@ -307,6 +309,7 @@ View varF23ED6A15665B35A3ACCEE938622D385_361442666 =         mInflater.inflate((
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.599 -0400", hash_original_method = "03906FE5F79D1C16D6358EAB518B811D", hash_generated_method = "BDFE47E85630762BC2CAB18732A7A308")
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         addTaint(childPosition);
@@ -319,6 +322,7 @@ View varF23ED6A15665B35A3ACCEE938622D385_361442666 =         mInflater.inflate((
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.600 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "9AFDC67B1D633070C0BCD76AD18936A7")
     public boolean hasStableIds() {
         boolean varB326B5062B2F0E69046810717534CB09_1441366311 = (true);

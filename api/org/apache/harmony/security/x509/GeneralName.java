@@ -181,6 +181,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "749703D76C1808D33D4CAAFA8A986840", hash_generated_method = "8892C63C5B1B65343D6DC553876C5562")
     public int getTag() {
         int varE4D23E841D8E8804190027BCE3180FA5_1323410910 = (tag);
@@ -191,6 +192,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "20B60556BB46EC823C9319E49D0425A2", hash_generated_method = "D55A0377CC2295B559ED7C8861B6EB9A")
     public Object getName() {
 Object varB017984728AC60AD1F0BF8734F33F15C_907179227 =         name;
@@ -249,6 +251,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "A1EE40CF64275F91ADFBB9AA6974DBAD", hash_generated_method = "5D7FF459D226E6E4E391DB451BD0FD79")
     public int hashCode() {
 switch(tag){
@@ -436,6 +439,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.076 -0400", hash_original_method = "4137EA74AADFAF54538362634CBBCA7A", hash_generated_method = "97DA93F1E95E132A0DD1C5A6EB48BC5A")
     public String toString() {
         String result = "";
@@ -480,6 +484,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.076 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "697EC910F9D4CAF8B2D56152E9B29EB8")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -497,6 +502,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.077 -0400", hash_original_method = "37C9CC72170749FE2E2B5C9DA460C3BB", hash_generated_method = "B96E010B503377F8DEA049AA1FE4B64A")
     public byte[] getEncodedName() {
     if(name_encoding == null)        
@@ -545,7 +551,8 @@ switch(tag){
     }
 
     
-        public static void checkURI(String uri) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static void checkURI(String uri) throws IOException {
         try {
             URI ur = new URI(uri);
             if (ur.getScheme() == null || ur.getRawSchemeSpecificPart().isEmpty()) {
@@ -596,7 +603,8 @@ switch(tag){
     }
 
     
-        public static byte[] ipStrToBytes(String ip) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static byte[] ipStrToBytes(String ip) throws IOException {
         if (!InetAddress.isNumeric(ip)) {
             throw new IOException("Not an IP address: " + ip);
         }
@@ -604,7 +612,8 @@ switch(tag){
     }
 
     
-        public static String ipBytesToStr(byte[] ip) {
+        @DSModeled(DSC.SAFE)
+    public static String ipBytesToStr(byte[] ip) {
         try {
             return InetAddress.getByAddress(null, ip).getHostAddress();
         } catch (UnknownHostException e) {

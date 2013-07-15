@@ -21,6 +21,7 @@ public class PemReader extends BufferedReader {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.626 -0400", hash_original_method = "D58B040BED022541C97B3ACE6DF7F511", hash_generated_method = "2F398D3571699455D9CF3514E7CC4211")
     public PemObject readPemObject() throws IOException {
         String line = readLine();
@@ -55,6 +56,7 @@ PemObject var540C13E9E156B687226421B24F2DF178_706426976 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.626 -0400", hash_original_method = "B4339AB43686CE97B8B754B51FC0C571", hash_generated_method = "EAC0E78CDA4847D4518D539417123D3A")
     private PemObject loadObject(String type) throws IOException {
         addTaint(type.getTaint());

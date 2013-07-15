@@ -108,6 +108,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.552 -0400", hash_original_method = "C94BFF970D5BE6329B9B5E73EF9CE16C", hash_generated_method = "7D32BBC899657F96CB528A1D4FA46DA2")
     public void onBeginPackageChanges() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -115,6 +116,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.553 -0400", hash_original_method = "39FE58D26F24B4456BFC90B3786DCD61", hash_generated_method = "7ECD4A972FE75068926C4180C3CCDCC4")
     public void onPackageAdded(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -124,6 +126,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.553 -0400", hash_original_method = "0F3AB92CAC2DECB3AF2CEF56E76BE513", hash_generated_method = "F7380700A9CFEA8F839D59BFFDE6F60A")
     public void onPackageRemoved(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -133,6 +136,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.553 -0400", hash_original_method = "70B1555D02BCE21F5F249AB3232813C5", hash_generated_method = "57DB3EAD7B6EB42F6618322145309AC4")
     public void onPackageUpdateStarted(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -142,6 +146,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.554 -0400", hash_original_method = "C1124FA7C0A54DF3B3E313F6E0508E79", hash_generated_method = "D17E4730CF6954AA817A1635CEAD1923")
     public void onPackageUpdateFinished(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -151,6 +156,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.554 -0400", hash_original_method = "030682B94A5C17B98C68812D78EDA104", hash_generated_method = "036871A49A46FCFF9A0BED458FDB1D83")
     public void onPackageChanged(String packageName, int uid, String[] components) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -161,6 +167,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.554 -0400", hash_original_method = "EBFD761C242ABE2AA3537B2F7610A65A", hash_generated_method = "CF4E89F501A862AF8C694FF98BE7C0A9")
     public boolean onHandleForceStop(Intent intent, String[] packages, int uid, boolean doit) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -176,6 +183,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.555 -0400", hash_original_method = "D388436436DCC67D6B4275E67E6BEBD2", hash_generated_method = "84A0A7F7B06BF4C473C3A66F3411B8F7")
     public void onUidRemoved(int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -184,6 +192,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.555 -0400", hash_original_method = "D0F5545F1CBA52AD5FDF8554424C6F7F", hash_generated_method = "89A934AA220D3884C367BD1A28FA7388")
     public void onPackagesAvailable(String[] packages) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -192,6 +201,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.555 -0400", hash_original_method = "95C573D28E0FE5F1DA6F2C482B3FAE76", hash_generated_method = "F9811E999DE5495E50FB1FFF6D83955E")
     public void onPackagesUnavailable(String[] packages) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -200,6 +210,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.555 -0400", hash_original_method = "981D6CDBB84DA6444001057EF6BAA725", hash_generated_method = "A6F4FB46A89C98B2783EC7D24DBBA9CA")
     public void onPackageDisappeared(String packageName, int reason) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -209,6 +220,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.555 -0400", hash_original_method = "12BAED38AA9047ADF8438C1D2386A99B", hash_generated_method = "28B3074F784624F96CCC06436D72D10D")
     public void onPackageAppeared(String packageName, int reason) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -218,6 +230,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.556 -0400", hash_original_method = "6245D80E856A5A5ACA0034EE7540D8FF", hash_generated_method = "3D568DB3448DF91ECDF0CACCD1B88248")
     public void onPackageModified(String packageName) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -226,6 +239,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.556 -0400", hash_original_method = "17B0E80ECA0F203595AB08C03E582A6E", hash_generated_method = "C1ACCCECC2127E1B9A699872CEA2B327")
     public boolean didSomePackagesChange() {
         boolean varE80D2081992A1973A838D39262ECFFF4_772230599 = (mSomePackagesChanged);
@@ -266,6 +280,7 @@ for(int i=mAppearingPackages.length-1;i>=0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.557 -0400", hash_original_method = "C232E85354F8FADEB8DAF25E13A8A2B6", hash_generated_method = "B4469FA4EDDBAB9C4117CF293F89E62E")
     public boolean anyPackagesAppearing() {
         boolean var41354D86D539CBF1D2EE3A366A04301D_1180317190 = (mAppearingPackages != null);
@@ -306,6 +321,7 @@ for(int i=mDisappearingPackages.length-1;i>=0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.557 -0400", hash_original_method = "732AD1F656A41076D7320338ABFAAB0C", hash_generated_method = "1078835866EEE87AB5012DF632930BDC")
     public boolean anyPackagesDisappearing() {
         boolean var298048D7FF0BE80321649CBD3F3FCDAA_1111236996 = (mDisappearingPackages != null);
@@ -346,6 +362,7 @@ for(int i=mModifiedPackages.length-1;i>=0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.558 -0400", hash_original_method = "D5490034D4EF09CAB3BC7334BE26E552", hash_generated_method = "81CC0669B4A9021B8C9A7811BCBA1FD5")
     public void onSomePackagesChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -353,6 +370,7 @@ for(int i=mModifiedPackages.length-1;i>=0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.558 -0400", hash_original_method = "D8E0B204F7DD735407D0D5971428B1D2", hash_generated_method = "A04E6D7AE177AD771BA1E65021AB70B5")
     public void onFinishPackageChanges() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -360,6 +378,7 @@ for(int i=mModifiedPackages.length-1;i>=0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.558 -0400", hash_original_method = "19E02459BAFEB1E910E6AB68B93B5860", hash_generated_method = "D0ED95611D82DA1946DE561EEA946FA1")
      String getPackageName(Intent intent) {
         addTaint(intent.getTaint());
@@ -375,6 +394,7 @@ String varED674789E18B51C56C5496E452A560E9_1673431944 =         pkg;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.562 -0400", hash_original_method = "B895BCFF247B459848C20BC8F667143B", hash_generated_method = "BE59E34A05D1E7EE17A0959277EF8A6B")
     @Override
     public void onReceive(Context context, Intent intent) {

@@ -89,6 +89,7 @@ public final class IsimUiccRecords implements IsimRecords {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.052 -0400", hash_original_method = "0C48887FF3A7960AF9ADE0B3DADCC487", hash_generated_method = "7BAE19A7B5C9282DD30F2254911B05C2")
     public String getIsimImpi() {
 String var1D9CDF2A60EDFA3FC6494E4EA3FF7172_282363113 =         mIsimImpi;
@@ -99,6 +100,7 @@ String var1D9CDF2A60EDFA3FC6494E4EA3FF7172_282363113 =         mIsimImpi;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.053 -0400", hash_original_method = "4243CC1C17FF1186628D392C9E7E1EB1", hash_generated_method = "B873DDB483099297198FBA4164C392C5")
     public String getIsimDomain() {
 String varEDA38A6132AFDA573E134F78457A391B_1509429578 =         mIsimDomain;
@@ -128,6 +130,7 @@ String[] var460EEB9014B84B45A549101AD23A732D_1716388841 =         (mIsimImpu != 
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.053 -0400", hash_original_method = "81740E578FCC01A298E59A120ACB7A20", hash_generated_method = "5506792D7C2A099DF443E9320AC18E23")
         public String getEfName() {
 String var8674027D88476581C69AA5BD2AB58569_54095941 =             "EF_ISIM_IMPI";
@@ -138,6 +141,7 @@ String var8674027D88476581C69AA5BD2AB58569_54095941 =             "EF_ISIM_IMPI"
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.054 -0400", hash_original_method = "90A14C4AAFF433EE7EAC0700F3BB549F", hash_generated_method = "979C0396888DDB124C46C1A00D64E975")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -166,6 +170,7 @@ String var8674027D88476581C69AA5BD2AB58569_54095941 =             "EF_ISIM_IMPI"
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.054 -0400", hash_original_method = "6ACADD4D30DF15849A74BDE374634092", hash_generated_method = "87C222A3AD237C502B656FA02036B5CC")
         public String getEfName() {
 String var3AF90F29E4FFA7FDFF74D17A8F27F21D_576138235 =             "EF_ISIM_IMPU";
@@ -176,6 +181,7 @@ String var3AF90F29E4FFA7FDFF74D17A8F27F21D_576138235 =             "EF_ISIM_IMPU
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.055 -0400", hash_original_method = "6EEA897801EC1809D035B3B23B9DD12A", hash_generated_method = "1590CE539B03CC5C1780677116074ADE")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -218,6 +224,7 @@ for(byte[] identity : impuList)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.055 -0400", hash_original_method = "42CE7E28C1D31526FC06B2AB64B01116", hash_generated_method = "2D433EF26BF30FDE5554EC64240E1677")
         public String getEfName() {
 String var1A700BEF13E1FED8405541952A0C927E_1689499531 =             "EF_ISIM_DOMAIN";
@@ -228,6 +235,7 @@ String var1A700BEF13E1FED8405541952A0C927E_1689499531 =             "EF_ISIM_DOM
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.056 -0400", hash_original_method = "7C79F77549AD4915107C48F1E050653A", hash_generated_method = "E8DB62EC60B6809AABAADDBE723151BE")
         public void onRecordLoaded(AsyncResult ar) {
             //DSFIXME:  CODE0009: Possible callback target function detected

@@ -213,6 +213,7 @@ switch(mTransitionState){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.860 -0400", hash_original_method = "2CD6D3E73358D8CBD280E6EE92F2D07C", hash_generated_method = "2A0623106A5089E5FAC47F6638E31C5E")
     public void setCrossFadeEnabled(boolean enabled) {
         mCrossFade = enabled;
@@ -221,6 +222,7 @@ switch(mTransitionState){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.860 -0400", hash_original_method = "CD2EAE34D95290C8C0E6CBB8BD3A8C00", hash_generated_method = "562DD29BA0DFB8CD3B2245AF831050F6")
     public boolean isCrossFadeEnabled() {
         boolean varFE86BE5975CEB5DDCB3330F16B6C060D_457303077 = (mCrossFade);
@@ -267,6 +269,7 @@ Drawable var48E8606C81CF3892E5F36CD4FED5C949_1521783010 =             new Transi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.863 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "D5DE744BA1697487978A4A0072003B5F")
         @Override
         public int getChangingConfigurations() {

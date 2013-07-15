@@ -122,6 +122,7 @@ for(WifiP2pDevice d : source.getClientList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.214 -0400", hash_original_method = "1F3206015C0D7A4CBD5E705EF1C23A0F", hash_generated_method = "C3736BDA5E3513723EA1A7ADFF8A9E4A")
     public void setNetworkName(String networkName) {
         mNetworkName = networkName;
@@ -130,6 +131,7 @@ for(WifiP2pDevice d : source.getClientList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.214 -0400", hash_original_method = "32FF89F2A0087E1C62BF10B34EF6D932", hash_generated_method = "D8B43A74F64EA78DB4AEAAC8FFCF8BD5")
     public String getNetworkName() {
 String var2F764F1A91F74BAB946C9D90AE9ACD40_727600789 =         mNetworkName;
@@ -140,6 +142,7 @@ String var2F764F1A91F74BAB946C9D90AE9ACD40_727600789 =         mNetworkName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.215 -0400", hash_original_method = "389E55BA9756949E35517D77609F8AC0", hash_generated_method = "1F4E78E48BC1D398DE58B81C55D3C45B")
     public void setIsGroupOwner(boolean isGo) {
         mIsGroupOwner = isGo;
@@ -148,6 +151,7 @@ String var2F764F1A91F74BAB946C9D90AE9ACD40_727600789 =         mNetworkName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.215 -0400", hash_original_method = "9599D1040188F59722C5FA5110991675", hash_generated_method = "0A100F92C113B2A4BBC13DC92142B46D")
     public boolean isGroupOwner() {
         boolean var8424A546848958BC2DFBB7635B0F0F1B_1419640123 = (mIsGroupOwner);
@@ -158,6 +162,7 @@ String var2F764F1A91F74BAB946C9D90AE9ACD40_727600789 =         mNetworkName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.215 -0400", hash_original_method = "3B8BEB5DE992C10464B29BB370E6A4AC", hash_generated_method = "D589400B616270F7EEBE396EDAAC71B7")
     public void setOwner(WifiP2pDevice device) {
         mOwner = device;
@@ -166,6 +171,7 @@ String var2F764F1A91F74BAB946C9D90AE9ACD40_727600789 =         mNetworkName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.216 -0400", hash_original_method = "64A8053D0F0646F5E4AC8BED59B588ED", hash_generated_method = "7C874F5E7C47F09624489EDD463D603C")
     public WifiP2pDevice getOwner() {
 WifiP2pDevice var5F2C684ADE383867ABA7E337213B9967_1903258619 =         mOwner;
@@ -244,6 +250,7 @@ Collection<WifiP2pDevice> var56B5579FD7C84BFA68420B5AB0D4DCB4_107851619 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.218 -0400", hash_original_method = "073EE8049BAF41A715DB20DDA5E00101", hash_generated_method = "319504402F46E1BA7BFF5B169057CFCB")
     public void setPassphrase(String passphrase) {
         mPassphrase = passphrase;
@@ -252,6 +259,7 @@ Collection<WifiP2pDevice> var56B5579FD7C84BFA68420B5AB0D4DCB4_107851619 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.218 -0400", hash_original_method = "5EB5F9BABC374AD0DE2453D35DFCC36C", hash_generated_method = "1D788204BEECC3B1305937598DA4F9C3")
     public String getPassphrase() {
 String var3390FE1B04D641DF96A7A3765B8B4D50_55747085 =         mPassphrase;
@@ -262,6 +270,7 @@ String var3390FE1B04D641DF96A7A3765B8B4D50_55747085 =         mPassphrase;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.218 -0400", hash_original_method = "1BDFB331CB7F44520C6251E3C44B9A62", hash_generated_method = "29AC9DD1457A812822B9744217D2FCE6")
     public void setInterface(String intf) {
         mInterface = intf;
@@ -270,6 +279,7 @@ String var3390FE1B04D641DF96A7A3765B8B4D50_55747085 =         mPassphrase;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.219 -0400", hash_original_method = "3F43528BD183AE40A353AE75903024B0", hash_generated_method = "19D6E8ABABAE1B70B242ED18EAFB6CE0")
     public String getInterface() {
 String var690AAF4620A1A50EE3302D08CABA94B2_194907995 =         mInterface;
@@ -307,6 +317,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_136615428 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.219 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC6920D707AD1CC8B363AB05086CE07C")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_28371149 = (0);

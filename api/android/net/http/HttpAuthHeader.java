@@ -51,6 +51,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.165 -0400", hash_original_method = "E3B47ECF178F55BDD1E428FED9536544", hash_generated_method = "DB99FACA868FFB4060267BB2DE375A93")
     public boolean isProxy() {
         boolean varDE5F3ADAFBA0C6CBA55780675ACC563E_2120894217 = (mIsProxy);
@@ -61,6 +62,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.166 -0400", hash_original_method = "F484596B8E11A4861D504E7FDD37DA10", hash_generated_method = "DD3E3DD04D17DDB30604953E8A9252B1")
     public void setProxy() {
         mIsProxy = true;
@@ -69,6 +71,7 @@ public class HttpAuthHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.166 -0400", hash_original_method = "DC420B5834A563247800515BC4094ADD", hash_generated_method = "AB090890B94C5CCE9ABEC833E46753D7")
     public String getUsername() {
 String var283B9DD020EB2821600E129BC9B96F6C_621538079 =         mUsername;
@@ -79,6 +82,7 @@ String var283B9DD020EB2821600E129BC9B96F6C_621538079 =         mUsername;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.167 -0400", hash_original_method = "0E33D9E279BEDC5DAB4D3AD6DE953552", hash_generated_method = "3955AB7BA77A651158545815C33BA20C")
     public void setUsername(String username) {
         mUsername = username;
@@ -87,6 +91,7 @@ String var283B9DD020EB2821600E129BC9B96F6C_621538079 =         mUsername;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.168 -0400", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "B94FB24C3DA0DB6389F95B6A882A3762")
     public String getPassword() {
 String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
@@ -97,6 +102,7 @@ String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.168 -0400", hash_original_method = "5BECAD2A732AB83E1664BF3A6C903529", hash_generated_method = "0844A0EC752FFDF12DBAC561F066925A")
     public void setPassword(String password) {
         mPassword = password;
@@ -105,6 +111,7 @@ String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.169 -0400", hash_original_method = "C2242C4025DD65A560A889E41F117AB7", hash_generated_method = "74A2C624574FAEA9F536CA7CE9D112D5")
     public boolean isBasic() {
         boolean var344CDD0B32278D6F0479629B38EE4FB6_1024827901 = (mScheme == BASIC);
@@ -115,6 +122,7 @@ String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.169 -0400", hash_original_method = "C6AFC1E0D0B142E9C4DE27602A4BC054", hash_generated_method = "021C7CA17FD38F17FF8D62CA05BCEFEA")
     public boolean isDigest() {
         boolean var7E1D6E88AE66122283033958CA4447A5_468777110 = (mScheme == DIGEST);
@@ -125,6 +133,7 @@ String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.170 -0400", hash_original_method = "29E6CF58C110B66305B7C71C00259314", hash_generated_method = "2F05D4C807503DD336C39B4ECEAFD5DD")
     public int getScheme() {
         int var51CA147512905722A26C3D219A583C78_1057820441 = (mScheme);
@@ -135,6 +144,7 @@ String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.171 -0400", hash_original_method = "3E3CDB0E616B9E56522984F92CB979FB", hash_generated_method = "410C46F192EEA9673930174EC9182B2D")
     public boolean getStale() {
         boolean var152C8B4B0CCFD745368735E28EBFFA00_2096543329 = (mStale);
@@ -145,6 +155,7 @@ String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.172 -0400", hash_original_method = "E61C0128BAAE9B474452BFCEF0497CDD", hash_generated_method = "C3508266D1E76CE37B47009FBFB55689")
     public String getRealm() {
 String var67C0344E1DC3B1D95F644291EF949DFF_1406688278 =         mRealm;
@@ -155,6 +166,7 @@ String var67C0344E1DC3B1D95F644291EF949DFF_1406688278 =         mRealm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.173 -0400", hash_original_method = "B08110B485A4DA24A232A0CC9BEA47F4", hash_generated_method = "EE4DDD3F1AE367488BEED9A5A22915BA")
     public String getNonce() {
 String varEABCD339805209D3F9FB66B444AEC327_659288602 =         mNonce;
@@ -165,6 +177,7 @@ String varEABCD339805209D3F9FB66B444AEC327_659288602 =         mNonce;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.173 -0400", hash_original_method = "40DED5E91C6F5AFDC12D505952D89AC1", hash_generated_method = "C9B24509A4CB2AD720D25EE6345C3D09")
     public String getOpaque() {
 String varD348638229B29F337841BA6DC87C999F_1429140659 =         mOpaque;
@@ -175,6 +188,7 @@ String varD348638229B29F337841BA6DC87C999F_1429140659 =         mOpaque;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.174 -0400", hash_original_method = "7F9926D57780B6A835584FF0B4884044", hash_generated_method = "219F311D72E34FF32B9A8FAF414DE608")
     public String getQop() {
 String var5DFA3C48EEFA60EFF5B348166AD9F9F0_1669471049 =         mQop;
@@ -185,6 +199,7 @@ String var5DFA3C48EEFA60EFF5B348166AD9F9F0_1669471049 =         mQop;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.174 -0400", hash_original_method = "0FF39221585FBFD96D2157CC36F75665", hash_generated_method = "E5CEE22145EC5ADB2B08BB94AE137B06")
     public String getAlgorithm() {
 String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;

@@ -375,6 +375,7 @@ for(int i = 0, count = actions.length;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.813 -0400", hash_original_method = "6AB19E93948D2A1BBE98A475D0E38626", hash_generated_method = "199F113469D37A2C9E47987BBC5834EB")
     private boolean isEnterActionKey(int keyCode) {
         addTaint(keyCode);
@@ -408,6 +409,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.815 -0400", hash_original_method = "8E50A2B3D320E1E0EE376617185D134A", hash_generated_method = "B1FC79E7E2991C554A9309C6561165F1")
         public int getKeyCode() {
             int varA75A3D80301F215059C189AB3A651AD9_706463768 = ((int) ((mKeyCodeAndModifiers & KEY_CODE_MASK) >> KEY_CODE_OFFSET));
@@ -418,6 +420,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.815 -0400", hash_original_method = "C813CFA88B40923E17E3BC75AACF9837", hash_generated_method = "66F108A5BD985D0F0AD3A7F5F092DDAD")
         public int getModifiers() {
             int var604E7C877BF7C2FFEE4E8B7678BA2487_290606108 = ((int) ((mKeyCodeAndModifiers & MODIFIERS_MASK) >> MODIFIERS_OFFSET));
@@ -428,6 +431,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.815 -0400", hash_original_method = "7BDD12B6399A0F96D6927AAB9227781B", hash_generated_method = "0028A9CFB16C4420E59C544401866CF6")
         public int getActionCount() {
             int var55EBD6CE5F216B713C69296A75FC4C26_299127183 = (mActionSequence.length);
@@ -438,6 +442,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.815 -0400", hash_original_method = "7D2F0A4FD4E90A95C2DF2F50740199D4", hash_generated_method = "3CA766D5A3A18A09C2147C73B1C18885")
         public int getAction(int index) {
             addTaint(index);
@@ -449,6 +454,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.816 -0400", hash_original_method = "CA4B639111BCEE7DB87E06F000E025C0", hash_generated_method = "C75A6F2D44A453D95E8D5381C6FB8A90")
         public int getActionCode(int index) {
             addTaint(index);
@@ -460,6 +466,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.816 -0400", hash_original_method = "D4FD6DE193B436AB1DC7E71BD25D2E14", hash_generated_method = "61DBA3A41B4060B0B74B58CA81220084")
         public int getFirstArgument(int index) {
             addTaint(index);
@@ -471,6 +478,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.816 -0400", hash_original_method = "632B802F886C3F34DA2DAC0FE9DCCFBA", hash_generated_method = "9276C6FD00791B73F15B41CE3CFBD329")
         public int getSecondArgument(int index) {
             addTaint(index);
@@ -482,6 +490,7 @@ for(int i = 0, count = actions.length;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.816 -0400", hash_original_method = "F37454AACD85ADFC551E32B3CAA53EB4", hash_generated_method = "2ED7A15CD4FA2F9C5A5F6A81496912D8")
         public int getThirdArgument(int index) {
             addTaint(index);

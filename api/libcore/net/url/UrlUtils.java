@@ -60,7 +60,8 @@ public final class UrlUtils {
     }
 
     
-        public static String getSchemePrefix(String spec) {
+        @DSModeled(DSC.SPEC)
+    public static String getSchemePrefix(String spec) {
         int colon = spec.indexOf(':');
         if (colon < 1) {
             return null;
@@ -75,7 +76,8 @@ public final class UrlUtils {
     }
 
     
-        public static boolean isValidSchemeChar(int index, char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isValidSchemeChar(int index, char c) {
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             return true;
         }

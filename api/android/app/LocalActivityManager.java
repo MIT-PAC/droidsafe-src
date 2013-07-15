@@ -161,6 +161,7 @@ switch(r.curState){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.218 -0400", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "42B412C6433CC941932DE9CEB151F175")
     public Window startActivity(String id, Intent intent) {
         addTaint(intent.getTaint());
@@ -333,6 +334,7 @@ Window varEDD7B2DCFC39518AEE1744DBB03DF9FF_237466515 =         win;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.222 -0400", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "2B01F12B5A6BF0CBF12595399C44AB32")
     public Activity getCurrentActivity() {
 Activity varE19544236484E5B0DC9FAEA2B920206B_2076894378 =         mResumed != null ? mResumed.activity : null;
@@ -343,6 +345,7 @@ Activity varE19544236484E5B0DC9FAEA2B920206B_2076894378 =         mResumed != nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.222 -0400", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "C8454EDDBD5979A539C92C9DB76E48E5")
     public String getCurrentId() {
 String var2FDA46E65C37C9EE8C9E00B555D28E22_656001903 =         mResumed != null ? mResumed.id : null;

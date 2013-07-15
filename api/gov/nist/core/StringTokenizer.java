@@ -68,6 +68,7 @@ String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.774 -0400", hash_original_method = "CE3ED718DBD97A207FB6B56A3D84C961", hash_generated_method = "33FF441061FB087B2A8C97301CD3A35E")
     public boolean hasMoreChars() {
         boolean var39BF37FF4313B82D5AEAB5612B20E2EB_919733325 = (ptr < bufferLen);
@@ -223,6 +224,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.777 -0400", hash_original_method = "5C7E03ECFF7AB12146D632F9E4D67AA3", hash_generated_method = "2A55CB0583276391A21A96648042B85C")
     public void consume() {
         ptr = savedPtr;
@@ -231,6 +233,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.778 -0400", hash_original_method = "4CE3B95DEACD36E71CE4EC6691FB056B", hash_generated_method = "3D8CF103538B45433DCFDACE276082D3")
     public void consume(int k) {
         ptr += k;
@@ -239,6 +242,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.778 -0400", hash_original_method = "790B12C2E8304128473A5E51B3B58D54", hash_generated_method = "3D32C4319B0B29C496BB5A8D87FFA33C")
     public Vector<String> getLines() {
         Vector<String> result = new Vector<String>();

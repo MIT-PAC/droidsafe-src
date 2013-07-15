@@ -75,6 +75,7 @@ public class TransformerException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.040 -0400", hash_original_method = "78CCEDF93B9D36FA2F4D6EE8483F521D", hash_generated_method = "88D2467F613ABC99E986FC90C5AF31B5")
     public SourceLocator getLocator() {
 SourceLocator var33D67455F55B75787251435F488B9C18_1182678572 =         locator;
@@ -85,6 +86,7 @@ SourceLocator var33D67455F55B75787251435F488B9C18_1182678572 =         locator;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.040 -0400", hash_original_method = "2730D26302DDFE02DFC9B94C57BA2229", hash_generated_method = "3A60D6D9C48F9C8CC784DDE0EBAB1BA2")
     public void setLocator(SourceLocator location) {
         locator = location;
@@ -93,6 +95,7 @@ SourceLocator var33D67455F55B75787251435F488B9C18_1182678572 =         locator;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.041 -0400", hash_original_method = "4E3501B9804FC98D0826FF297E292112", hash_generated_method = "829A07627C1CC71FE605BDFCFF0C6983")
     public Throwable getException() {
 Throwable varF2A110AF41FD2A1760878EFAF72F9E9A_1808704599 =         containedException;
@@ -103,6 +106,7 @@ Throwable varF2A110AF41FD2A1760878EFAF72F9E9A_1808704599 =         containedExce
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.041 -0400", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "B00D6E3ECBDA4BFE9B80E137805AC085")
     public Throwable getCause() {
 Throwable var7AD5C7EA160E04D21F46409BCB89DECC_245867874 =         ((containedException == this)

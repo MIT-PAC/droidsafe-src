@@ -16,6 +16,7 @@ public final class ContentLanguageList extends SIPHeaderList<ContentLanguage> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.274 -0400", hash_original_method = "7F1D883A3CFE2424D76B8075C1055DCD", hash_generated_method = "191FDB9F79AAE38FF0A80A3EC2E0AF4D")
     public Object clone() {
         ContentLanguageList retval = new ContentLanguageList();

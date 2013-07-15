@@ -78,7 +78,8 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
-        static protected int getPadBits(
+        @DSModeled(DSC.SAFE)
+    static protected int getPadBits(
         int bitString) {
         int val = 0;
         for (int i = 3; i >= 0; i--) 
@@ -113,7 +114,8 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
-        static protected byte[] getBytes(int bitString) {
+        @DSModeled(DSC.SAFE)
+    static protected byte[] getBytes(int bitString) {
         int bytes = 4;
         for (int i = 3; i >= 1; i--)
         {
@@ -142,7 +144,8 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
-        public static DERBitString getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DERBitString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         DERObject o = obj.getObject();
@@ -157,6 +160,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.921 -0400", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "A2D1D9976977F179A78F0A63456FF5E0")
     public byte[] getBytes() {
         byte[] var8D777F385D3DFEC8815D20F7496026DC_1454466847 = (data);
@@ -167,6 +171,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.921 -0400", hash_original_method = "417B58F84A036F27149A8DCAE574FCD8", hash_generated_method = "9FE340212252FF4C478FB507B4120A9D")
     public int getPadBits() {
         int var2B6E1E69F76FB71BC1BD5E9D6660FE41_531051989 = (padBits);
@@ -177,6 +182,7 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.922 -0400", hash_original_method = "4C040E65E95E154142FD7B39A853E86F", hash_generated_method = "CF07CC0D33ECB0AC7C5B77CDD97DAE31")
     public int intValue() {
         int value = 0;
@@ -197,6 +203,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.922 -0400", hash_original_method = "CB83D166557B7D270FFD9D836925EA70", hash_generated_method = "1632A7601780DEFAB2394AB3BFE8EBE7")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -213,6 +220,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.923 -0400", hash_original_method = "0FA775A3BA483D59A323D752B0FD6DA8", hash_generated_method = "8922B6D5B734E81526EE4E2A94D80375")
     public int hashCode() {
         int var7471FC882F94143252B8475D94AA8371_1134565743 = (padBits ^ Arrays.hashCode(data));
@@ -223,6 +231,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.923 -0400", hash_original_method = "6A45C831F2BEA87730EF6E467856CBF1", hash_generated_method = "0A18C0CC0951B34F803FBD90D0F63C8A")
     protected boolean asn1Equals(
         DERObject  o) {
@@ -249,6 +258,7 @@ for(int i = 0;i != data.length && i != 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.924 -0400", hash_original_method = "C8AC92EF6B951363C15B3CD0868FB9EA", hash_generated_method = "32F765E54D151C2F17C165AE6E5F6BE8")
     public String getString() {
         StringBuffer buf = new StringBuffer("#");
@@ -295,6 +305,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1694570178 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.924 -0400", hash_original_method = "79F534E26CC8382FAA66B4080878D117", hash_generated_method = "9DA3757C71F23AA3663BE7119E0DC1C0")
     public String toString() {
 String var8DB59AA9A0821BE4812A8E2F6919F1D5_197778494 =         getString();
@@ -305,7 +316,8 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_197778494 =         getString();
     }
 
     
-        static DERBitString fromOctetString(byte[] bytes) {
+        @DSModeled(DSC.SPEC)
+    static DERBitString fromOctetString(byte[] bytes) {
         if (bytes.length < 1)
         {
             throw new IllegalArgumentException("truncated BIT STRING detected");

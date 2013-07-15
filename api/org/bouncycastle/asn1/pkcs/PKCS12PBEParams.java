@@ -45,7 +45,8 @@ public class PKCS12PBEParams extends ASN1Encodable {
     }
 
     
-        public static PKCS12PBEParams getInstance(
+        @DSModeled(DSC.SPEC)
+    public static PKCS12PBEParams getInstance(
         Object  obj) {
         if (obj instanceof PKCS12PBEParams)
         {
@@ -59,6 +60,7 @@ public class PKCS12PBEParams extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.420 -0400", hash_original_method = "DD1CD350639FBEA94B58D8C0FBFF69DE", hash_generated_method = "4634A87CFB66CB388AB55EBD69AB856D")
     public BigInteger getIterations() {
 BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658 =         iterations.getValue();
@@ -69,6 +71,7 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658 =         iterations.g
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.421 -0400", hash_original_method = "ABC6C1F7D45D0FDDF94BEAE70F71F0ED", hash_generated_method = "249BCFE79A3C1AC97C86295472ABF08D")
     public byte[] getIV() {
         byte[] var88FF68BFEDD92B2F4319637028DD4A35_89481037 = (iv.getOctets());
@@ -79,6 +82,7 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658 =         iterations.g
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.421 -0400", hash_original_method = "08D9069F477C4E4688BE524F0F9F7EEF", hash_generated_method = "B39C69C530AF9A0695A73BB29BFAD552")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

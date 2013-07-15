@@ -61,6 +61,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.927 -0400", hash_original_method = "4CC8267164C7FA2FF7A54409829F5B3F", hash_generated_method = "1271AEFE8C3FFFE0936AD75B93E923E4")
     public void start() {
         mIsRunning = true;
@@ -71,6 +72,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.928 -0400", hash_original_method = "E95AF6342D982D1129097C11892774DC", hash_generated_method = "574593EF3A6A5CC6922E3DFC8DCA805B")
     public void stop() {
         mIsRunning = false;
@@ -81,6 +83,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.928 -0400", hash_original_method = "D444E72BAE4BC67A93A8D811E5903DC0", hash_generated_method = "C883279CD5E1305CF1724780C166A59B")
     public void suspend() {
     if(mIsRunning)        
@@ -94,6 +97,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.928 -0400", hash_original_method = "13F627D50D1CD4F6B5F8D936ACD57861", hash_generated_method = "3117D756CAF8B65FBD016E23A95BDACB")
     public void resume() {
     if(mIsRunning)        
@@ -107,6 +111,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.929 -0400", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "A7E67A6E76B1F10B2C3579EEC8072463")
     private void sendErrorEvent() {
     if(mHaveSentErrorEvent)        
@@ -144,6 +149,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.930 -0400", hash_original_method = "A01419D47FD253423887BAF542AEFD8C", hash_generated_method = "B7C539EED17301F99C7F75A7F4191932")
     private void registerForSensors() {
     if(mHandler == null)        
@@ -220,6 +226,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.931 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "4AB05E152A44E625063023CC1A818436")
     private SensorManager getSensorManager() {
     if(mSensorManager == null)        
@@ -284,6 +291,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "3017DC11BC04FDEC5E6982352A18F2D7", hash_generated_method = "D951C525941C25B5CE19BA545AA9B4D8")
     private void unregisterFromSensors() {
         getSensorManager().unregisterListener(this);
@@ -292,6 +300,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "3C1A1EC0C343A6858CE51FA636390E27")
     private void maybeSendChange(double alpha, double beta, double gamma) {
     if(mAlpha == null || mBeta == null || mGamma == null
@@ -320,6 +329,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "4B78C89890BD75034BFA745D6F3B71B4")
     public void onSensorChanged(SensorEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -355,6 +365,7 @@ switch(event.sensor.getType()){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "3B735DACA44A7088C201CD04E68BCC26")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //DSFIXME:  CODE0009: Possible callback target function detected

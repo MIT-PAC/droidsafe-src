@@ -19,22 +19,26 @@ public final class PolicyManager {
     }
 
     
-        public static Window makeNewWindow(Context context) {
+        @DSModeled(DSC.BAN)
+    public static Window makeNewWindow(Context context) {
         return sPolicy.makeNewWindow(context);
     }
 
     
-        public static LayoutInflater makeNewLayoutInflater(Context context) {
+        @DSModeled(DSC.BAN)
+    public static LayoutInflater makeNewLayoutInflater(Context context) {
         return sPolicy.makeNewLayoutInflater(context);
     }
 
     
-        public static WindowManagerPolicy makeNewWindowManager() {
+        @DSModeled(DSC.BAN)
+    public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
     
-        public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
+        @DSModeled(DSC.BAN)
+    public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
         return sPolicy.makeNewFallbackEventHandler(context);
     }
 

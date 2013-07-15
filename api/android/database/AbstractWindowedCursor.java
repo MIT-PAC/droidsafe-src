@@ -224,6 +224,7 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.925 -0400", hash_original_method = "1266B4A96CD75271FEBF68638404515E", hash_generated_method = "9AEA790E6562D4B25672835461187558")
     @Override
     public CursorWindow getWindow() {
@@ -250,6 +251,7 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043 =         mWindow;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.926 -0400", hash_original_method = "CE7634279B030B3367B24B82DE682EB0", hash_generated_method = "7767F3905CAD770048AA1A89484A3FDC")
     public boolean hasWindow() {
         boolean var0855AC450DF2010BCC62E60CEF96871E_1095282332 = (mWindow != null);

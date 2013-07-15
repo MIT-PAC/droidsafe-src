@@ -431,6 +431,7 @@ Drawable varD81A884AF21461479E81269050DAF7A2_1922971291 =             new ClipDr
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.698 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "68E1FC4B55448DCAE6F8874429A612B2")
         @Override
         public int getChangingConfigurations() {

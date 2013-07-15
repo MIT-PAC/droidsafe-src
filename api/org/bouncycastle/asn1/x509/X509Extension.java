@@ -43,6 +43,7 @@ public class X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "99E720A5A58C8C8AC266D5DB5489BE5B", hash_generated_method = "5B06E9B4EF98B87018DB3AC69BFA1081")
     public boolean isCritical() {
         boolean var7E85BCB66FB9A809D5AB4F62A8B8BEA8_758275978 = (critical);
@@ -53,6 +54,7 @@ public class X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "EB9162E88B2ECD208428A8DA5B61CEE8", hash_generated_method = "589D0471BF35B93215E1A2B69B282694")
     public ASN1OctetString getValue() {
 ASN1OctetString varAF280DA2BC37D8BE783D8499160168DE_621815942 =         value;
@@ -63,6 +65,7 @@ ASN1OctetString varAF280DA2BC37D8BE783D8499160168DE_621815942 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "1593618AA769EDEFE49746B8725FB3A3", hash_generated_method = "EE95CDEDF16AD9F5FC9633379F77F694")
     public ASN1Encodable getParsedValue() {
 ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertValueToObject(this);
@@ -73,6 +76,7 @@ ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertVal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "F51FC5FDE8514BA4D7895E2CA6F69CED", hash_generated_method = "0DC0D06401C545F146863806B81F7471")
     public int hashCode() {
     if(this.isCritical())        
@@ -93,6 +97,7 @@ ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertVal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "63E75CEC65A75841B4924B9C6901B009", hash_generated_method = "36E84808FF85D52A3905D4E649DA04C7")
     public boolean equals(
         Object  o) {

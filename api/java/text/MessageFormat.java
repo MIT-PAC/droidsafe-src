@@ -455,6 +455,7 @@ Format[] var3B05A551DC66BAA4CECF637E01483D61_463021046 =         formats.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.463 -0400", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "7E4D1F59720DD75C882F3D25836E83BD")
     public Format[] getFormatsByArgumentIndex() {
         Format[] answer = new Format[maxArgumentIndex + 1];
@@ -474,6 +475,7 @@ Format[] var5F54B2A44CB8DC27B659B464640CF0FE_731990188 =         answer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.464 -0400", hash_original_method = "A090F158D8C76258E8307612B54D8E7F", hash_generated_method = "42FA83817605FB7F4F4BC33CB9445F7D")
     public void setFormatByArgumentIndex(int argIndex, Format format) {
         addTaint(argIndex);
@@ -493,6 +495,7 @@ for(int i = 0;i < maxOffset + 1;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.464 -0400", hash_original_method = "A9324DA1CAF88845D05BF77827620ABB", hash_generated_method = "31644C92854D98FE8E5E120AACD78F64")
     public void setFormatsByArgumentIndex(Format[] formats) {
 for(int j = 0;j < formats.length;j++)
@@ -516,6 +519,7 @@ for(int i = 0;i < maxOffset + 1;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.464 -0400", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "22FFC8BA6161FBBCFFB7E459FA71CEB0")
     public Locale getLocale() {
 Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_1393109580 =         locale;
@@ -854,6 +858,7 @@ Format varF3AAE7A0C8A2D02E92D0F8827A6B82D9_1456056595 =         new ChoiceFormat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.474 -0400", hash_original_method = "40ED9258145F8A9FA53AE23CC8BC5498", hash_generated_method = "F1F0700A79FE15C5103D16FF48D78E94")
     public void setFormat(int offset, Format format) {
         formats[offset] = format;
@@ -862,6 +867,7 @@ Format varF3AAE7A0C8A2D02E92D0F8827A6B82D9_1456056595 =         new ChoiceFormat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.475 -0400", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "01BCEC32624587A39DE068B6ECE04A91")
     public void setFormats(Format[] formats) {
         int min = this.formats.length;

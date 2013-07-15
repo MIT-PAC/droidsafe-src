@@ -64,7 +64,8 @@ class CaseMapper {
     }
 
     
-        private static int upperIndex(int ch) {
+        @DSModeled(DSC.SAFE)
+    private static int upperIndex(int ch) {
         int index = -1;
         if (ch >= 0xdf) {
             if (ch <= 0x587) {

@@ -23,6 +23,7 @@ public class RetryAfter extends ParametersHeader implements RetryAfterHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.922 -0400", hash_original_method = "1D294A58F2AF56C9FF5AA47948D4FB5C", hash_generated_method = "D4695F9078C0FA682D7922C041CED6D0")
     public String encodeBody() {
         StringBuffer s = new StringBuffer();
@@ -50,6 +51,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1419670281 =         s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.923 -0400", hash_original_method = "B8E38931A483485D5D42DADC8F66AFA1", hash_generated_method = "FD92DF0BC26BBC24EBFDD2F8685ED094")
     public boolean hasComment() {
         boolean varE97A402AF2F516ADC47A295F69DB4C37_524853614 = (comment != null);
@@ -60,6 +62,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1419670281 =         s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.923 -0400", hash_original_method = "2FDA3671927B417EA64F28FFDD680773", hash_generated_method = "61BD4B46829E380C1561798A83B14603")
     public void removeComment() {
         comment = null;
@@ -68,6 +71,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1419670281 =         s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.923 -0400", hash_original_method = "D3E525F6B574030796E656911FFC55CD", hash_generated_method = "D3DC81067D307533C1753B1018243A5F")
     public void removeDuration() {
         super.removeParameter(DURATION);
@@ -76,6 +80,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1419670281 =         s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.924 -0400", hash_original_method = "F25BCD66BB29500F6C458D690EB883C8", hash_generated_method = "A7717FCB42610B942171912FF7A56050")
     public void setRetryAfter(int retryAfter) throws InvalidArgumentException {
     if(retryAfter < 0)        
@@ -94,6 +99,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1419670281 =         s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.924 -0400", hash_original_method = "2986C3BA8F6864799163ED0F6663DF18", hash_generated_method = "87696599F9BF84C283CB2DDD77869D44")
     public int getRetryAfter() {
         int var062984ACC73151E8CBC6F209C8CA1653_1967295265 = (retryAfter.intValue());
@@ -104,6 +110,7 @@ String varDE99EC39359AC6BE0E416433FFBB9F13_1419670281 =         s.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.924 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "9ED8906A4A90FCFADF8A949F8C8D234A")
     public String getComment() {
 String var20FC6A677850B0D1A8135B6A0BB12A1F_1030624576 =         comment;
@@ -114,6 +121,7 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_1030624576 =         comment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.925 -0400", hash_original_method = "3E03F4EDAEEF7A953B18FA1E34879AC1", hash_generated_method = "253E9E9B748F7718BE75BE35CB2C1673")
     public void setComment(String comment) throws ParseException {
     if(comment == null)        
@@ -130,6 +138,7 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_1030624576 =         comment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.925 -0400", hash_original_method = "7BA99CB446FF1B0F64CCC86D40E4D1B9", hash_generated_method = "EBED674C797CD6F2CC81DCA26F874113")
     public void setDuration(int duration) throws InvalidArgumentException {
         addTaint(duration);
@@ -147,6 +156,7 @@ String var20FC6A677850B0D1A8135B6A0BB12A1F_1030624576 =         comment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.926 -0400", hash_original_method = "B3E153B821BFB44B99CC6101FC6E67A6", hash_generated_method = "81B41D747D583D812D5A8D05324F075E")
     public int getDuration() {
     if(this.getParameter(DURATION) == null)        

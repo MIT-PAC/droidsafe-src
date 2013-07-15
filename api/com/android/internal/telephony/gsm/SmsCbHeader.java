@@ -111,31 +111,37 @@ public class SmsCbHeader implements SmsCbConstants {
     }
 
     
-        public static boolean isEmergencyMessage(int id) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isEmergencyMessage(int id) {
         return id >= MESSAGE_ID_PWS_FIRST_IDENTIFIER && id <= MESSAGE_ID_PWS_LAST_IDENTIFIER;
     }
 
     
-        public static boolean isEtwsMessage(int id) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isEtwsMessage(int id) {
         return (id & MESSAGE_ID_ETWS_TYPE_MASK) == MESSAGE_ID_ETWS_TYPE;
     }
 
     
-        public static boolean isCmasMessage(int id) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isCmasMessage(int id) {
         return id >= MESSAGE_ID_CMAS_FIRST_IDENTIFIER && id <= MESSAGE_ID_CMAS_LAST_IDENTIFIER;
     }
 
     
-        public static boolean isEtwsPopupAlert(int messageCode) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isEtwsPopupAlert(int messageCode) {
         return (messageCode & MESSAGE_CODE_ETWS_ACTIVATE_POPUP) != 0;
     }
 
     
-        public static boolean isEtwsEmergencyUserAlert(int messageCode) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isEtwsEmergencyUserAlert(int messageCode) {
         return (messageCode & MESSAGE_CODE_ETWS_EMERGENCY_USER_ALERT) != 0;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.721 -0400", hash_original_method = "F77CFF978B7542934CFB3B1620EE83C7", hash_generated_method = "0E110421AAE96705DEC509725C74ACD1")
     @Override
     public String toString() {

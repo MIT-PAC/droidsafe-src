@@ -97,6 +97,7 @@ switch(mType){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.197 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FAFA85DD7C5C25F95950A047173AFDEB")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1772990905 = (0);
@@ -119,7 +120,8 @@ switch(mType){
     }
 
     
-        static boolean matchPattern(String pattern, String match, int type) {
+        @DSModeled(DSC.SPEC)
+    static boolean matchPattern(String pattern, String match, int type) {
         if (match == null) return false;
         if (type == PATTERN_LITERAL) {
             return pattern.equals(match);

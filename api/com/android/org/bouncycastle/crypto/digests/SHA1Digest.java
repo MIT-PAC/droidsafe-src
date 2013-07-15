@@ -58,6 +58,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.279 -0400", hash_original_method = "A93F195BA36C5C6DC02ECFC655EFA07D", hash_generated_method = "8223B8F3775A6ABF10B0D85B172F6762")
     public String getAlgorithmName() {
 String var1E1AC6D31B058D162EAB78A22C4FBDE6_387404807 =         "SHA-1";
@@ -68,6 +69,7 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_387404807 =         "SHA-1";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.280 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "5A3B66177D32191B521278421C98E7F5")
     public int getDigestSize() {
         int var4582481E693E9037762BFFA6D99AC172_1669826417 = (DIGEST_LENGTH);
@@ -181,6 +183,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.285 -0400", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "3C4613E44F5908851555A078ED905E77")
     private int f(
         int    u,
@@ -197,6 +200,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.286 -0400", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "7A37321750AE6A1558CC48CF0EFB6356")
     private int h(
         int    u,
@@ -213,6 +217,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.287 -0400", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "7B142868B187DB50D65DA3DBC81F92C3")
     private int g(
         int    u,

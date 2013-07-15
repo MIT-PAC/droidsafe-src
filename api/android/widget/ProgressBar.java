@@ -314,6 +314,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_828585929 =         drawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.040 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "8DA820DB7B007C068BE9D230A5110A34")
     private void initProgressBar() {
         mMax = 100;
@@ -342,6 +343,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_828585929 =         drawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.041 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "2B24F2D7A3F15D5E114A09648799C77D")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized boolean isIndeterminate() {
@@ -384,6 +386,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_828585929 =         drawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.042 -0400", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "7E34091691A60CA8084526FDD2819192")
     public Drawable getIndeterminateDrawable() {
 Drawable varF00153B56D2CB49C3A37B1DEFFA7532F_254098331 =         mIndeterminateDrawable;
@@ -418,6 +421,7 @@ Drawable varF00153B56D2CB49C3A37B1DEFFA7532F_254098331 =         mIndeterminateD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.042 -0400", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "DCD7D537AD8302D3000E2D383DD54FD1")
     public Drawable getProgressDrawable() {
 Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753 =         mProgressDrawable;
@@ -468,6 +472,7 @@ Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753 =         mProgressDrawab
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.044 -0400", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "F91E69DC27C701854BDCBB9DB0A4FDE8")
      Drawable getCurrentDrawable() {
 Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawable;
@@ -709,6 +714,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.051 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "8617B40D738880618A8088F5E8FD3649")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getProgress() {
@@ -720,6 +726,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.052 -0400", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "54E5AC5A931A5C1774A2EFC77FE60C5B")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getSecondaryProgress() {
@@ -731,6 +738,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.052 -0400", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "32319C2F0FA3728467D6583A8124692B")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getMax() {
@@ -872,6 +880,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.054 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
@@ -880,6 +889,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.054 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "26E256E628190747BE3B88396F7E5FF2")
     public Interpolator getInterpolator() {
 Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolator;
@@ -1325,6 +1335,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.058 -0400", hash_original_method = "992C4D927E51E72BEA0F4017381D8EC2", hash_generated_method = "A238CC5542317B5EC7A431478DA6D0E3")
         public void setup(int id, int progress, boolean fromUser) {
             mId = id;

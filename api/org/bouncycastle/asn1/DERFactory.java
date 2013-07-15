@@ -14,17 +14,20 @@ class DERFactory {
     }
 
 
-        static DERSequence createSequence(ASN1EncodableVector v) {
+        @DSModeled(DSC.SPEC)
+    static DERSequence createSequence(ASN1EncodableVector v) {
         return v.size() < 1 ? EMPTY_SEQUENCE : new DERSequence(v);
     }
 
     
-        static DERSet createSet(ASN1EncodableVector v) {
+        @DSModeled(DSC.SPEC)
+    static DERSet createSet(ASN1EncodableVector v) {
         return v.size() < 1 ? EMPTY_SET : new DERSet(v);
     }
 
     
-        static DERSet createSet(ASN1EncodableVector v, boolean needsSorting) {
+        @DSModeled(DSC.SPEC)
+    static DERSet createSet(ASN1EncodableVector v, boolean needsSorting) {
         return v.size() < 1 ? EMPTY_SET : new DERSet(v, needsSorting);
     }
 

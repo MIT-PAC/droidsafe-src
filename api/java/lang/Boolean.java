@@ -27,6 +27,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.545 -0400", hash_original_method = "F26012F420AB2CB381204FD30DBE0B24", hash_generated_method = "D0BB54EF439CE941B84A532140EEB8C5")
     public boolean booleanValue() {
         boolean var2063C1608D6E0BAF80249C42E2BE5804_1561199585 = (value);
@@ -37,6 +38,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.546 -0400", hash_original_method = "28AC409B4210D4AB015BA8660C651D82", hash_generated_method = "9C2C9CE89D5109A940787636040E0C33")
     @Override
     public boolean equals(Object o) {
@@ -60,11 +62,13 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
-        public static int compare(boolean lhs, boolean rhs) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(boolean lhs, boolean rhs) {
         return lhs == rhs ? 0 : lhs ? 1 : -1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.548 -0400", hash_original_method = "EE015B9251F7CEAD272805E74A0AD6CD", hash_generated_method = "4A8599842AAB09EE7CB9EF824A1F2CE5")
     @Override
     public int hashCode() {
@@ -110,7 +114,8 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_326537700 =         String.valueOf(va
     }
 
     
-        public static Boolean valueOf(boolean b) {
+        @DSModeled(DSC.SAFE)
+    public static Boolean valueOf(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }
 

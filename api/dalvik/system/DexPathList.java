@@ -74,7 +74,8 @@ final class DexPathList {
     }
 
     
-        private static File[] splitLibraryPath(String path) {
+        @DSModeled(DSC.BAN)
+    private static File[] splitLibraryPath(String path) {
         ArrayList<File> result = splitPaths(
                 path, System.getProperty("java.library.path", "."), true);
         return result.toArray(new File[result.size()]);
@@ -150,7 +151,8 @@ final class DexPathList {
     }
 
     
-        private static DexFile loadDexFile(File file, File optimizedDirectory) throws IOException {
+        @DSModeled(DSC.BAN)
+    private static DexFile loadDexFile(File file, File optimizedDirectory) throws IOException {
         if (optimizedDirectory == null) {
             return new DexFile(file);
         } else {
@@ -160,7 +162,8 @@ final class DexPathList {
     }
 
     
-        private static String optimizedPathFor(File path,
+        @DSModeled(DSC.BAN)
+    private static String optimizedPathFor(File path,
             File optimizedDirectory) {
         String fileName = path.getName();
         if (!fileName.endsWith(DEX_SUFFIX)) {
@@ -179,6 +182,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.793 -0400", hash_original_method = "D0077BF0C677FC7F0C28C59D93206805", hash_generated_method = "7536EF13133183E9C6FA0A986FA54355")
     public Class findClass(String name) {
         addTaint(name.getTaint());
@@ -213,6 +217,7 @@ Class var540C13E9E156B687226421B24F2DF178_1065809304 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.799 -0400", hash_original_method = "5F5378C3BB7399B364C8BA4B56CD7FC5", hash_generated_method = "1335CF2635CAF888AA9C4A5035CE7523")
     public URL findResource(String name) {
         addTaint(name.getTaint());
@@ -267,6 +272,7 @@ Enumeration<URL> var286CA219AF9141A8529875BDEFF253E1_956129260 =         Collect
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.811 -0400", hash_original_method = "240DC3968F2BE784AD66FA40662DC8EC", hash_generated_method = "B03C93446C87318497DC226325AA118E")
     public String findLibrary(String libraryName) {
         addTaint(libraryName.getTaint());
@@ -319,6 +325,7 @@ String var540C13E9E156B687226421B24F2DF178_1773595931 =         null;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.831 -0400", hash_original_method = "853A43CB46D2A1F46888921026F3A6BF", hash_generated_method = "3236B6C844ABCCF27CACBAFF677AE900")
         public URL findResource(String name) {
             addTaint(name.getTaint());

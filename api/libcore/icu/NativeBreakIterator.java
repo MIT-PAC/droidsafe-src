@@ -31,6 +31,7 @@ public final class NativeBreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.687 -0400", hash_original_method = "E8D9FE5FD19A07CF96575F06CB3EDCC6", hash_generated_method = "9333ABF593E5E2F2B77E1E9CD5513CD8")
     @Override
     public Object clone() {
@@ -48,6 +49,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.688 -0400", hash_original_method = "C0D37969DD3FDF8DABA3E38E17F8673F", hash_generated_method = "9E5BC56A343973D7145B36D8FB265E2F")
     @Override
     public boolean equals(Object object) {
@@ -80,6 +82,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.688 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "5532DC669F1A2C4108622672F374E05D")
     @Override
     public int hashCode() {
@@ -91,6 +94,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.689 -0400", hash_original_method = "208EB0EBF488A5AB652AF86235D70FBD", hash_generated_method = "4840C7CD141C8487FE191FCFD53D4997")
     @Override
     protected void finalize() throws Throwable {
@@ -111,6 +115,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.689 -0400", hash_original_method = "2391C371CA23DB69D751D73221932202", hash_generated_method = "105FFEA1EB57F799F3099E8AA79643C6")
     public int current() {
         int var918887072051471D15DCE9865E176C01_593997244 = (currentImpl(this.address));
@@ -121,6 +126,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.689 -0400", hash_original_method = "1A13813B2C0D0FA0A609E46FE8D7DFD7", hash_generated_method = "A93A0A3C6E0CE1FB1F352667F62904BE")
     public int first() {
         int var2B7B35FE78989FE062EE33A3B222E26C_1698411972 = (firstImpl(this.address));
@@ -131,6 +137,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.690 -0400", hash_original_method = "C67E0BB38B934A66B534DF84C290EF97", hash_generated_method = "33816284DFD3D89F86BACE0D73ACE462")
     public int following(int offset) {
         addTaint(offset);
@@ -142,6 +149,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.690 -0400", hash_original_method = "9A8EEEA70A76B239B3603BC6AAF004E0", hash_generated_method = "437A9C34EBCF0D2D1FE133BD5728E37A")
     public CharacterIterator getText() {
         int newLoc = currentImpl(this.address);
@@ -156,6 +164,7 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.691 -0400", hash_original_method = "4EDF3F20F64FE6397882DD52BEA1A135", hash_generated_method = "EC355A8B814807D1421947CB6286B0FE")
     public int last() {
         int varF61548759BDDE99A63FE59E0BE1519B9_374113000 = (lastImpl(this.address));
@@ -166,6 +175,7 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.691 -0400", hash_original_method = "E523A5922365CD35E7F7E6CDEBFA4659", hash_generated_method = "38B607612CC28069D17A6652416915C8")
     public int next(int n) {
         addTaint(n);
@@ -177,6 +187,7 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.692 -0400", hash_original_method = "7AAEC5B08F789B8C43B6E5E5CF95D955", hash_generated_method = "43CC8D705671F2574E10E0B9DC1A82F9")
     public int next() {
         int varC6EC4558C17C1F79E2A9D21289D5AE12_1591418425 = (nextImpl(this.address, 1));
@@ -187,6 +198,7 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.692 -0400", hash_original_method = "22FF5B0E4F3FECAD90665D7BA35C8F29", hash_generated_method = "8E8C5673435B012E8AD1590D502F10A8")
     public int previous() {
         int var875938D14B97DC4FE8028C1873FCE670_2114293977 = (previousImpl(this.address));
@@ -197,6 +209,7 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.693 -0400", hash_original_method = "45B89ED28696EBB5A7E263628F907361", hash_generated_method = "351F0363933D30AD934472E4095390C6")
     public void setText(CharacterIterator newText) {
         addTaint(newText.getTaint());
@@ -215,6 +228,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.693 -0400", hash_original_method = "67F081416AECF904EEC9E927DC093231", hash_generated_method = "632CAEA82ADC164E706623FA284F0A6A")
     public void setText(String newText) {
         addTaint(newText.getTaint());
@@ -224,6 +238,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.694 -0400", hash_original_method = "5F9AC84894F083D607B365AEC97D7D28", hash_generated_method = "703E9C5AD734077DBB9A7B9A6C292C13")
     private void setText(String s, CharacterIterator it) {
         addTaint(s.getTaint());
@@ -235,6 +250,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.694 -0400", hash_original_method = "CA983FC19E9238FC0FEBBD9EADAED98D", hash_generated_method = "0B1B0F92E449D017C5159C3A2A709245")
     public boolean isBoundary(int offset) {
         addTaint(offset);
@@ -246,6 +262,7 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.694 -0400", hash_original_method = "C0EEB96929CAD1AA71A6080EC44F9C10", hash_generated_method = "0D52093DBF0009EB5FE014B0A89DE120")
     public int preceding(int offset) {
         addTaint(offset);
@@ -257,22 +274,26 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     }
 
     
-        public static NativeBreakIterator getCharacterInstance(Locale where) {
+        @DSModeled(DSC.SPEC)
+    public static NativeBreakIterator getCharacterInstance(Locale where) {
         return new NativeBreakIterator(getCharacterInstanceImpl(where.toString()), BI_CHAR_INSTANCE);
     }
 
     
-        public static NativeBreakIterator getLineInstance(Locale where) {
+        @DSModeled(DSC.SPEC)
+    public static NativeBreakIterator getLineInstance(Locale where) {
         return new NativeBreakIterator(getLineInstanceImpl(where.toString()), BI_LINE_INSTANCE);
     }
 
     
-        public static NativeBreakIterator getSentenceInstance(Locale where) {
+        @DSModeled(DSC.SPEC)
+    public static NativeBreakIterator getSentenceInstance(Locale where) {
         return new NativeBreakIterator(getSentenceInstanceImpl(where.toString()), BI_SENT_INSTANCE);
     }
 
     
-        public static NativeBreakIterator getWordInstance(Locale where) {
+        @DSModeled(DSC.SPEC)
+    public static NativeBreakIterator getWordInstance(Locale where) {
         return new NativeBreakIterator(getWordInstanceImpl(where.toString()), BI_WORD_INSTANCE);
     }
 

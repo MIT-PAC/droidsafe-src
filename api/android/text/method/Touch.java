@@ -130,13 +130,15 @@ public class Touch {
     }
 
     
-        public static int getInitialScrollX(TextView widget, Spannable buffer) {
+        @DSModeled(DSC.SPEC)
+    public static int getInitialScrollX(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollX : -1;
     }
 
     
-        public static int getInitialScrollY(TextView widget, Spannable buffer) {
+        @DSModeled(DSC.SPEC)
+    public static int getInitialScrollY(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollY : -1;
     }

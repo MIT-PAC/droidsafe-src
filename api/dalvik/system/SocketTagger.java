@@ -51,7 +51,8 @@ public abstract class SocketTagger {
     }
 
     
-        public static synchronized void set(SocketTagger tagger) {
+        @DSModeled(DSC.BAN)
+    public static synchronized void set(SocketTagger tagger) {
         if (tagger == null) {
             throw new NullPointerException("tagger == null");
         }
@@ -59,7 +60,8 @@ public abstract class SocketTagger {
     }
 
     
-        public static synchronized SocketTagger get() {
+        @DSModeled(DSC.BAN)
+    public static synchronized SocketTagger get() {
         return tagger;
     }
 

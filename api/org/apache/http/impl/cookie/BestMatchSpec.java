@@ -47,6 +47,7 @@ public class BestMatchSpec implements CookieSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.373 -0400", hash_original_method = "F5D458E4620E2EBF824493C3536FD1C3", hash_generated_method = "FAB374113B489EC1567BDC980832194C")
     private RFC2965Spec getStrict() {
     if(this.strict == null)        
@@ -64,6 +65,7 @@ RFC2965Spec varDB6279AFE8E7F0A60897A3819FA9FC75_428205011 =         strict;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.373 -0400", hash_original_method = "FE28D7A5554F455D8D7B5F3F6FCB0BC9", hash_generated_method = "2E84AE6884A030F3A56DBBFD9FC9F9CB")
     private BrowserCompatSpec getCompat() {
     if(this.compat == null)        
@@ -81,6 +83,7 @@ BrowserCompatSpec varAFEEE60A042EE3ADCC984CE27FD0517C_53924549 =         compat;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.374 -0400", hash_original_method = "31CE28BB07784CC0AF4C8F0ADF6151C2", hash_generated_method = "3D4E3365FE378143DC136718CFEA8474")
     private NetscapeDraftSpec getNetscape() {
     if(this.netscape == null)        
@@ -297,6 +300,7 @@ List<Header> varEB37B0D1D69A9232E98DB934D003B70F_398721278 =             getComp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.378 -0400", hash_original_method = "812B69FBF27003910CA721BA7B572F16", hash_generated_method = "296057ED8C021EE1054733A1E97CF9A2")
     public int getVersion() {
         int varA4D724EE0BD7DBB859A9CE0F27E2410E_868454031 = (getStrict().getVersion());
@@ -307,6 +311,7 @@ List<Header> varEB37B0D1D69A9232E98DB934D003B70F_398721278 =             getComp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.378 -0400", hash_original_method = "B06045A369F60BC64D5D46F6D34F8F3E", hash_generated_method = "238B96FE5003F20714D79801FBF88278")
     public Header getVersionHeader() {
 Header var10B0C59FF75F86BE086DF23FCDEEF9A2_13588829 =         getStrict().getVersionHeader();

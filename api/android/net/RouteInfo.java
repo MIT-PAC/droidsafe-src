@@ -132,6 +132,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "E3C57887FB3CE120FB596600BC455F44")
     public LinkAddress getDestination() {
 LinkAddress var1651AAAB4F528E3F559D89910825A761_176686523 =         mDestination;
@@ -142,6 +143,7 @@ LinkAddress var1651AAAB4F528E3F559D89910825A761_176686523 =         mDestination
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "7420C8EDAFEC503542F881B0D4B3EBE2")
     public InetAddress getGateway() {
 InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1280139257 =         mGateway;
@@ -152,6 +154,7 @@ InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1280139257 =         mGateway;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "E1C93CD9EE24D2AA8F06A9C7E7B28049", hash_generated_method = "29CC5695051D73657BFAD5A85A7E9595")
     public boolean isDefaultRoute() {
         boolean var75283F9EF09855A8ADC5A1F98FCF1F5C_91411230 = (mIsDefault);
@@ -162,6 +165,7 @@ InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1280139257 =         mGateway;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "2A05D2869C11595F53C52D7E29A06E41", hash_generated_method = "F9299CEF47FE0D8C7E5D94C9824E6556")
     public boolean isHostRoute() {
         boolean varE09EAA67E50D034EFD051379F631DEF3_1223124370 = (mIsHost);
@@ -190,6 +194,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.429 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A85A1E546B1FCB4232BF6841999EDAA5")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_494170455 = (0);

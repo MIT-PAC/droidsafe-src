@@ -393,6 +393,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.563 -0400", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "260BA9FD7EDB5B2CA0030730348F0ADE")
     @Override
     public int getIntrinsicWidth() {
@@ -404,6 +405,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.563 -0400", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "223DB29D550EC208F07F53FCFF212F91")
     @Override
     public int getIntrinsicHeight() {
@@ -415,6 +417,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.564 -0400", hash_original_method = "F677AE1ECA1CBA7AB5A76B8BE368A72F", hash_generated_method = "05A6EE8C28470E9AE7A809CF92730282")
     @Override
     public int getMinimumWidth() {
@@ -426,6 +429,7 @@ Paint var942A2EBC27CD21C7FBC19AB14FC6E1BE_384233857 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.564 -0400", hash_original_method = "0C368C2268B0130C3ACD75434C6C4889", hash_generated_method = "CA97E18E0F6318B3113CCA583443559F")
     @Override
     public int getMinimumHeight() {
@@ -573,6 +577,7 @@ Drawable var19C30D5C28617817A3DDE2E024CBC4EE_10788500 =             new NinePatc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.570 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "1A925A097CA84964C60499D5123A49E9")
         @Override
         public int getChangingConfigurations() {

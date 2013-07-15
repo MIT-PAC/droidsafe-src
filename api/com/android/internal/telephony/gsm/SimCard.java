@@ -54,6 +54,7 @@ public final class SimCard extends IccCard {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.539 -0400", hash_original_method = "C4D53CA88AF6F553E502BD318EED734B", hash_generated_method = "5448EE44A49A8ECE6650A927624E0BCE")
     @Override
     public void dispose() {
@@ -76,6 +77,7 @@ public final class SimCard extends IccCard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.539 -0400", hash_original_method = "9DB5C3DD2D46DFBEACD42980054AFF5F", hash_generated_method = "B139DE21BFB4AED0C35CEAA7E625DE0B")
     @Override
     public String getServiceProviderName() {

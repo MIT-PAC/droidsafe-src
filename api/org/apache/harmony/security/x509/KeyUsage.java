@@ -22,6 +22,7 @@ public final class KeyUsage extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.151 -0400", hash_original_method = "14A58386ABBA8977CF43289C95A15404", hash_generated_method = "BA78D7F300F0B8B2AD2A67BA4509CF34")
     public boolean[] getKeyUsage() {
         boolean[] varD5EDBDDB1AE6E3CE3EE0E039107E39E4_22999851 = (keyUsage);
@@ -32,6 +33,7 @@ public final class KeyUsage extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.152 -0400", hash_original_method = "F00F1E8212387BCE78D166E85787DB94", hash_generated_method = "E937094768920BD10A632C702DE0E6F8")
     @Override
     public byte[] getEncoded() {
@@ -50,6 +52,7 @@ public final class KeyUsage extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.152 -0400", hash_original_method = "C3D25371DA677875302E0FC1058C6A6C", hash_generated_method = "79CB06BD6AFE962EE7B5801D047545FB")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

@@ -175,6 +175,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_82330705 =             super.clone();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.222 -0400", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "70D34F9068FFC846A3222A48BF509EB4")
     public String getCountry() {
 String var306B1C24BC0EE091C63E09C6178972F6_318282570 =         countryCode;
@@ -185,7 +186,8 @@ String var306B1C24BC0EE091C63E09C6178972F6_318282570 =         countryCode;
     }
 
     
-        public static Locale getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static Locale getDefault() {
         return defaultLocale;
     }
 
@@ -413,6 +415,7 @@ String var1E83AAAD5E709395BB9CA6BB58BCA009_893236265 =         ICU.getISO3Langua
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.228 -0400", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "FE9AB723EBF10CC93F5FA2224C265AC0")
     public String getLanguage() {
 String var3B648CECCAFE6CC0C14E6B5112DF42CA_200599859 =         languageCode;
@@ -423,6 +426,7 @@ String var3B648CECCAFE6CC0C14E6B5112DF42CA_200599859 =         languageCode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.228 -0400", hash_original_method = "A8C86ADBDB8FE1FD75DA90D3A9B92BDE", hash_generated_method = "3C3159F4C243E7CFA6529BF75659F21D")
     public String getVariant() {
 String varFF6608C6BB8A10EA44ED34D897B0E991_1509048259 =         variantCode;

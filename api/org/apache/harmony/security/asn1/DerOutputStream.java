@@ -37,6 +37,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.018 -0400", hash_original_method = "D1F3147530CD958A60FC9468EBA6E51B", hash_generated_method = "057BAFA8F7674F33D82362BD074FB9B5")
     @Override
     public void encodeChoice(ASN1Choice choice) {
@@ -53,6 +54,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.018 -0400", hash_original_method = "659D44CC0DC855D6C68F3262E359E7DB", hash_generated_method = "316F7A823F3543AAEDA49A53DBE3685F")
     @Override
     public void encodeExplicit(ASN1Explicit explicit) {
@@ -69,6 +71,7 @@ public final class DerOutputStream extends BerOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.019 -0400", hash_original_method = "DFC8E4A859D25CD29437C3A3C9B5952F", hash_generated_method = "49813B4A8F80CD85A5AC3B0984F82F24")
     @Override
     public void encodeSequence(ASN1Sequence sequence) {
@@ -103,6 +106,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.019 -0400", hash_original_method = "BF7126E0FE9EAA56B88F61BC0650EC8C", hash_generated_method = "979E147F629ADF383FDE475846DC758A")
     @Override
     public void encodeSequenceOf(ASN1SequenceOf sequenceOf) {
@@ -113,6 +117,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.020 -0400", hash_original_method = "71BF5F5BDE90DADFEA034715FD60B59D", hash_generated_method = "2885DF32A551EC4E1446E5D56C5818AF")
     @Override
     public void encodeSetOf(ASN1SetOf setOf) {
@@ -123,6 +128,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.020 -0400", hash_original_method = "633BE494EAD83DB36EAB8BCAACE55EAA", hash_generated_method = "95EA7F631AADF71E3FABCAEF5941F4B0")
     private void encodeValueCollection(ASN1ValueCollection collection) {
         addTaint(collection.getTaint());
@@ -147,6 +153,7 @@ for(int i = 0;i < values.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.021 -0400", hash_original_method = "4D1A9BCC2A43E189556FAAB3E35CA849", hash_generated_method = "F1071627A0104779CCFA0A0C19C0D01C")
     private void push(int[] lengths, Object[] values) {
         index++;
@@ -262,6 +269,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.024 -0400", hash_original_method = "61F1CA8B8AAFA23BA003E1AA8F8AE7F2", hash_generated_method = "6D3E3BBC23E25F11897075F7BB9361EC")
     @Override
     public void getSequenceOfLength(ASN1SequenceOf sequence) {
@@ -272,6 +280,7 @@ for(int i = 0;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.024 -0400", hash_original_method = "59131DE1B6C7BF8D5BB2AE6524AB4AAF", hash_generated_method = "6D98F2A1A66A3AAFFCB5501C4A781E25")
     @Override
     public void getSetOfLength(ASN1SetOf setOf) {

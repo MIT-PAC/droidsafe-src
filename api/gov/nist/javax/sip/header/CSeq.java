@@ -35,6 +35,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.077 -0400", hash_original_method = "4EDEC57C2297C20220D48BA90CD455C6", hash_generated_method = "9EE330B119AAF76BDCE9E647B750123A")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -59,6 +60,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.077 -0400", hash_original_method = "DA29AB595B7A4A125EF99100FA337502", hash_generated_method = "1D1083C43C4D32F6EFF97DA6931FF1A9")
     public String encode() {
 String var4D54AC96FDD6E716CB6C2C0211520077_820677834 =         headerName + COLON + SP + encodeBody() + NEWLINE;
@@ -69,6 +71,7 @@ String var4D54AC96FDD6E716CB6C2C0211520077_820677834 =         headerName + COLO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.078 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "EC783A68E7F0199D2D581C0E39EDC5E9")
     public String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_2103785911 =         encodeBody(new StringBuffer()).toString();
@@ -79,6 +82,7 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_2103785911 =         encodeBody(new S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.078 -0400", hash_original_method = "406CBE421082AA424BCBC4FB260BE3F4", hash_generated_method = "86E559E33ECE0A60D7DFE7020EE8E824")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -90,6 +94,7 @@ StringBuffer varA1E43DCB3174BD2194B740F873FB644F_1696407171 =         buffer.app
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.078 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "7CB1A539847B68DF6A6AF784C9E89485")
     public String getMethod() {
 String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
@@ -100,6 +105,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.079 -0400", hash_original_method = "0BFD480B5A908D011772234303C89701", hash_generated_method = "34E0DCCC464669B4E53F5177B255CCE4")
     public void setSeqNumber(long sequenceNumber) throws InvalidArgumentException {
     if(sequenceNumber < 0)        
@@ -133,6 +139,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.079 -0400", hash_original_method = "AC14810648D4561552145A0674E118CB", hash_generated_method = "CFB014E73D2787B90A121FAE2CBF9569")
     public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentException {
         addTaint(sequenceNumber);
@@ -142,6 +149,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.080 -0400", hash_original_method = "5BC8CE15D24F53FCB65EDFE00EEC2F3C", hash_generated_method = "97F46A731B7C3747C0FC1F35FF6FCB5E")
     public void setMethod(String meth) throws ParseException {
     if(meth == null)        
@@ -162,6 +170,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.080 -0400", hash_original_method = "C444FE335840CD646F9A52EE546690DB", hash_generated_method = "97FF518A397E0595D262B3055DF1FDA2")
     public int getSequenceNumber() {
     if(this.seqno == null)        
@@ -184,6 +193,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.080 -0400", hash_original_method = "6A4C94B16343774E5C3F1252C6DA6DFA", hash_generated_method = "06E41C49C3865FF07263046E4482E498")
     public long getSeqNumber() {
         long varE69C616A1F2EAB093AFAF63BC63AB707_1384200157 = (this.seqno.longValue());

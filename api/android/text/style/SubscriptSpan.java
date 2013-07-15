@@ -24,6 +24,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.329 -0400", hash_original_method = "CB8400634E0A005DFA226D39FFA147D9", hash_generated_method = "1098F2FF08F2EBAB42FBFD46E847E227")
     public int getSpanTypeId() {
         int var1651419F4E7D40404DADB1DF2FD15B0B_634313198 = (TextUtils.SUBSCRIPT_SPAN);
@@ -34,6 +35,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.329 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4A8006F651FCFFA5B24B085F56DCECD4")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1457063738 = (0);
@@ -44,6 +46,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.330 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "D6F5FAEE7A649F263C37D62D8A41EDFC")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -52,6 +55,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.330 -0400", hash_original_method = "9DCCA482100D1E9EC8F2615F051D6490", hash_generated_method = "17B54659B5DD5B84BBA88EC58D83E857")
     @Override
     public void updateDrawState(TextPaint tp) {
@@ -62,6 +66,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.331 -0400", hash_original_method = "7DFDD8213FBD02BEC2253684A70AD5F4", hash_generated_method = "4AA39604495A204D5F0B12FC74DD8DD0")
     @Override
     public void updateMeasureState(TextPaint tp) {

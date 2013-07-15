@@ -40,7 +40,8 @@ public class InterfaceAddress {
     }
 
     
-        private static short countPrefixLength(Inet4Address mask) {
+        @DSModeled(DSC.SAFE)
+    private static short countPrefixLength(Inet4Address mask) {
         short count = 0;
         for (byte b : mask.ipaddress) {
             for (int i = 0; i < 8; ++i) {
@@ -117,6 +118,7 @@ String varB4AC98B78928509CD00779ABDF2F15A5_1197127626 =         address + "/" + 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.825 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "1ECDD261D4E7A50447579309A9A2CDEC")
     public InetAddress getAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_53335643 =         address;
@@ -127,6 +129,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_53335643 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.825 -0400", hash_original_method = "CFDC66E7DE04051E5606E381D802784E", hash_generated_method = "32749A12D73A6D6B1F89FA3DE0F72746")
     public InetAddress getBroadcast() {
 InetAddress var2E663694B670997E584545D6213E4BAD_2033270403 =         broadcastAddress;
@@ -137,6 +140,7 @@ InetAddress var2E663694B670997E584545D6213E4BAD_2033270403 =         broadcastAd
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.826 -0400", hash_original_method = "D89613E4F9F0153F2E4A2BF9077CFCE5", hash_generated_method = "2B7AB9F56CC786295F76AEC92B0F0AE4")
     public short getNetworkPrefixLength() {
         short var66E8BBB112C8BE88E6A5CE871B315D9D_694071977 = (prefixLength);

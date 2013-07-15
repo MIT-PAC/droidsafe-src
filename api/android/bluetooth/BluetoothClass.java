@@ -20,6 +20,7 @@ public final class BluetoothClass implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.872 -0400", hash_original_method = "217E4DCE2F47DBEE08566901FB7CC9C3", hash_generated_method = "49E79B18D849EF0D5404606CA45B0A86")
     @Override
     public boolean equals(Object o) {
@@ -41,6 +42,7 @@ public final class BluetoothClass implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.873 -0400", hash_original_method = "874CCBA476992320BB2BF01B58BECDFE", hash_generated_method = "7B8B983834DF7DDB7EC206C5B7CF4CE9")
     @Override
     public int hashCode() {
@@ -63,6 +65,7 @@ String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.876 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E93E787938377242112998AF520DA5B2")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1672206062 = (0);
@@ -83,6 +86,7 @@ String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.878 -0400", hash_original_method = "A40FEF9DD742C9180312A83CC46BA74D", hash_generated_method = "BCBD937F5E1A86F06DE1A2C9C3FF4E34")
     public boolean hasService(int service) {
         addTaint(service);
@@ -94,6 +98,7 @@ String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.878 -0400", hash_original_method = "3B15E8C4111EC35F10AF5C168F9A121C", hash_generated_method = "64B260BE586A07EFFFE7C8E254D7B8F5")
     public int getMajorDeviceClass() {
         int var3AEA43EC55D211279D605E0296A1D8FE_404336493 = ((mClass & Device.Major.BITMASK));
@@ -104,6 +109,7 @@ String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexStr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.879 -0400", hash_original_method = "BA237D1BE1EA8EE11A66DDAAF0ED747D", hash_generated_method = "441DD16F6EDADBABA5260190CBF0B747")
     public int getDeviceClass() {
         int var3218FC416E2249A00358985692C83844_523504211 = ((mClass & Device.BITMASK));

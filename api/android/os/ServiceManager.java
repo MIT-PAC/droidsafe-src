@@ -18,7 +18,8 @@ public final class ServiceManager {
     }
 
 
-        private static IServiceManager getIServiceManager() {
+        @DSModeled(DSC.SPEC)
+    private static IServiceManager getIServiceManager() {
         if (sServiceManager != null) {
             return sServiceManager;
         }
@@ -27,7 +28,8 @@ public final class ServiceManager {
     }
 
     
-        public static IBinder getService(String name) {
+        @DSModeled(DSC.SPEC)
+    public static IBinder getService(String name) {
         try {
             IBinder service = sCache.get(name);
             if (service != null) {
@@ -42,7 +44,8 @@ public final class ServiceManager {
     }
 
     
-        public static void addService(String name, IBinder service) {
+        @DSModeled(DSC.SPEC)
+    public static void addService(String name, IBinder service) {
         try {
             getIServiceManager().addService(name, service);
         } catch (RemoteException e) {
@@ -51,7 +54,8 @@ public final class ServiceManager {
     }
 
     
-        public static IBinder checkService(String name) {
+        @DSModeled(DSC.SPEC)
+    public static IBinder checkService(String name) {
         try {
             IBinder service = sCache.get(name);
             if (service != null) {

@@ -59,6 +59,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.434 -0400", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "CA45C723251216BB7EC56717465D4DC2")
     public int[] getOid() {
         int[] var130F43112BB8A7A7790EBFC08EE9D6AF_39922093 = (oid);
@@ -69,6 +70,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.435 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3FA308681331D06972913A0C3DE9BEB6")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1151702311 =         name;
@@ -79,6 +81,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1151702311 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.435 -0400", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "E8BC571C0FE48BAA844F5DCAE8D4B488")
     public Object getGroup() {
 Object varD15A27BD67EB0D670CD5C298FF20B74F_1360345573 =         group;
@@ -118,6 +121,7 @@ Object varD15A27BD67EB0D670CD5C298FF20B74F_1360345573 =         group;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.437 -0400", hash_original_method = "81F5AC8E69E1A1CBA984F8550D6AF5BD", hash_generated_method = "5A223EA65B2ABFE8EDC8B73F23F4AD23")
     public String toOIDString() {
     if(sOID == null)        
@@ -197,7 +201,8 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614 =         soid;
     }
 
     
-        public static int hashIntArray(int[] array) {
+        @DSModeled(DSC.SAFE)
+    public static int hashIntArray(int[] array) {
         int intHash = 0;
         for (int i = 0; i < array.length && i < 4; i++) {
             intHash += array[i] << (8 * i); 

@@ -55,7 +55,8 @@ class CharArrayBuffers {
     }
 
     
-        private static char toLower(char c) {
+        @DSModeled(DSC.SAFE)
+    private static char toLower(char c) {
         if (c >= 'A' && c <= 'Z'){
             c += uppercaseAddon;
         }

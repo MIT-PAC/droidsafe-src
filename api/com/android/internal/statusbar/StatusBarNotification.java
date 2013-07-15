@@ -82,6 +82,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.559 -0400", hash_original_method = "1B61FE4141C93529185B88C88AAE7510", hash_generated_method = "93175BE4B7B10FDDCC527574FF75BF8A")
     public void readFromParcel(Parcel in) {
         this.pkg = in.readString();
@@ -113,6 +114,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.560 -0400", hash_original_method = "E1CEBE0CBC31424403A596077856AB81", hash_generated_method = "6E4983ECD864CC400A04DD1F18D0BC2A")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -148,6 +150,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.560 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B73F18987C0C898F600AF8BFFCC090DF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1125078238 = (0);
@@ -158,6 +161,7 @@ public class StatusBarNotification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.560 -0400", hash_original_method = "D4457BF5780841D42A453C9EF4E52627", hash_generated_method = "4CBA82884E7D24169203F259F2FA640E")
     public StatusBarNotification clone() {
 StatusBarNotification varB772A3535461487A1581A4E8A6C22135_733683488 =         new StatusBarNotification(this.pkg, this.id, this.tag,
@@ -170,6 +174,7 @@ StatusBarNotification varB772A3535461487A1581A4E8A6C22135_733683488 =         ne
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.560 -0400", hash_original_method = "8CD358CFA5A2F08AEF9168AA24337844", hash_generated_method = "7770692C72813CD0153C9F05B4DB7D49")
     public String toString() {
 String var2D40DE0DA00F138A6FA942140A54F410_1139249184 =         "StatusBarNotification(package=" + pkg + " id=" + id + " tag=" + tag
@@ -182,6 +187,7 @@ String var2D40DE0DA00F138A6FA942140A54F410_1139249184 =         "StatusBarNotifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.560 -0400", hash_original_method = "7CE63774DFBFD9AF881A293653A5D73C", hash_generated_method = "FDC8B8C8B5A255C9CFE769B1871EDA8D")
     public boolean isOngoing() {
         boolean varA7DB388CF2655EEFDF0FA3B708F854F4_594829435 = ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0);
@@ -192,6 +198,7 @@ String var2D40DE0DA00F138A6FA942140A54F410_1139249184 =         "StatusBarNotifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.560 -0400", hash_original_method = "BD2B0089B2847866F80D96044B172188", hash_generated_method = "40013961EBB45E318CE1BFA3DC6C2DB3")
     public boolean isClearable() {
         boolean var270673DEF703226A6485427B1963D306_1060518317 = (((notification.flags & Notification.FLAG_ONGOING_EVENT) == 0)

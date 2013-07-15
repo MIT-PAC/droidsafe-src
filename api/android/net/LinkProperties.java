@@ -65,6 +65,7 @@ for(RouteInfo r : source.getRoutes())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.493 -0400", hash_original_method = "658C71C3CDAAE8BF2A6E808615EC0533", hash_generated_method = "D58C219F5C5992BE6A4B05BFFDE78502")
     public void setInterfaceName(String iface) {
         mIfaceName = iface;
@@ -73,6 +74,7 @@ for(RouteInfo r : source.getRoutes())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.493 -0400", hash_original_method = "DE3FEB2907F1F43DDDDBA76FC2B5A592", hash_generated_method = "00DBDC025AE1C4F2B2711052096EE4DC")
     public String getInterfaceName() {
 String varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303 =         mIfaceName;
@@ -162,6 +164,7 @@ Collection<RouteInfo> var5AD2DA20604AB9506F6623852FC9A803_533550709 =         Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "A3A7E4451F64D99820B4BAAEF1AFE8A2", hash_generated_method = "8C961CFF90F31516B337EDFD675E66E4")
     public void setHttpProxy(ProxyProperties proxy) {
         mHttpProxy = proxy;
@@ -170,6 +173,7 @@ Collection<RouteInfo> var5AD2DA20604AB9506F6623852FC9A803_533550709 =         Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "6E571D9EDF02B85B7F325367F981AC91", hash_generated_method = "352AD3DD3C4D13D8016303D99EFCA098")
     public ProxyProperties getHttpProxy() {
 ProxyProperties var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512 =         mHttpProxy;
@@ -196,6 +200,7 @@ ProxyProperties var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512 =         mHttpPr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.497 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8827EB6ED5EE35586619A7AC08AEC4ED")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1484843669 = (0);

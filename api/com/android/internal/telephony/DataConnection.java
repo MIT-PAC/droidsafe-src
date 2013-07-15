@@ -289,6 +289,7 @@ public abstract String toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.356 -0400", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "915AA18DB5CD48B696A0E28BC14609A0")
     public int getDataConnectionId() {
         int var6AC7F06B6413A1BE9C136DC7DF0D2B60_1076472681 = (mId);
@@ -473,6 +474,7 @@ DataCallState.SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_1368385229 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.362 -0400", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "E19B510AD5B3B5E0E4621C6871053C41")
     private int getSuggestedRetryTime(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -668,9 +670,11 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         FailCause(int errorCode) {
             mErrorCode = errorCode;
         }
+        @DSModeled(DSC.SAFE)
         int getErrorCode() {
             return mErrorCode;
         }
+        @DSModeled(DSC.SAFE)
         public boolean isPermanentFail() {
             return (this == OPERATOR_BARRED) || (this == MISSING_UNKNOWN_APN) ||
                    (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -678,6 +682,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
                    (this == SERVICE_OPTION_NOT_SUBSCRIBED) || (this == NSAPI_IN_USE) ||
                    (this == PROTOCOL_ERRORS);
         }
+        @DSModeled(DSC.SAFE)
         public boolean isEventLoggable() {
             return (this == OPERATOR_BARRED) || (this == INSUFFICIENT_RESOURCES) ||
                     (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -711,6 +716,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.366 -0400", hash_original_method = "474AEB2E917376DACCA3A8D3E49DB29C", hash_generated_method = "3FE1205E55C512372065A85350C4558A")
         public int getRetryOverride() {
             int var847246398D99EC2E1B8C5A876FE0F1E9_23502929 = (mRetryOverride);
@@ -1004,6 +1010,7 @@ switch(msg.what){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "CBB71B6A4AE30457112F09AD25305330", hash_generated_method = "CDF958F2AA876817F9330E37B1E1D834")
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause,
                                                int retryOverride) {
@@ -1021,6 +1028,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "58F7FEE7FE1847BE132197954CFB7983", hash_generated_method = "22EAB28409D32344C2A22692C17E5698")
         public void setEnterNotificationParams(DisconnectParams dp) {
     if(VDBG)            
@@ -1063,6 +1071,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "0122D4B6A897CA907F15060B70B58C0B", hash_generated_method = "2FF782B07AED250A63958B87AD09AB7B")
         @Override
         public void exit() {
@@ -1252,6 +1261,7 @@ switch(result){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.390 -0400", hash_original_method = "65AC06854CC9D1F4537757F901F06476", hash_generated_method = "01BFD2E6F6C2A381AB36D1A73A10E96B")
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
     if(VDBG)            
@@ -1282,6 +1292,7 @@ switch(result){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.390 -0400", hash_original_method = "6361033575190DC86852AD59967B3D8E", hash_generated_method = "41F12992C45BA1B13C3E1498872DF26C")
         @Override
         public void exit() {

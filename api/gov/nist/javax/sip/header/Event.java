@@ -19,6 +19,7 @@ public class Event extends ParametersHeader implements EventHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.362 -0400", hash_original_method = "BF3A0863A1B04A86A1E3BEB9A70A1FC1", hash_generated_method = "9DF290A81FBCF2984840D442A94CE807")
     public void setEventType(String eventType) throws ParseException {
     if(eventType == null)        
@@ -35,6 +36,7 @@ public class Event extends ParametersHeader implements EventHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.362 -0400", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "52E825DAB02F054F579F394E77AC4895")
     public String getEventType() {
 String var9BA45280620AE5369B32F31629C1D3A0_1654515527 =         eventType;
@@ -45,6 +47,7 @@ String var9BA45280620AE5369B32F31629C1D3A0_1654515527 =         eventType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.362 -0400", hash_original_method = "4973DD9F7CE5F7FF3C7544616AFD9DF0", hash_generated_method = "3BA65B6249F3CD04E4E95EF888B6FB0C")
     public void setEventId(String eventId) throws ParseException {
         addTaint(eventId.getTaint());
@@ -62,6 +65,7 @@ String var9BA45280620AE5369B32F31629C1D3A0_1654515527 =         eventType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.363 -0400", hash_original_method = "19BA40738893C0C7644CB14978576CB8", hash_generated_method = "C7812EEDE746B51B782A5943DF4D6BCB")
     public String getEventId() {
 String varB7F1BC93A3AA1A1C6B16961CD90C179C_1347258213 =         getParameter(ParameterNames.ID);
@@ -72,6 +76,7 @@ String varB7F1BC93A3AA1A1C6B16961CD90C179C_1347258213 =         getParameter(Par
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.363 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "6C8DBFA1D938B1D2F16A7812504823FB")
     public String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_421913878 =         encodeBody(new StringBuffer()).toString();
@@ -82,6 +87,7 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_421913878 =         encodeBody(new St
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.363 -0400", hash_original_method = "0038FEB21AC4FB99162300562E578118", hash_generated_method = "087B6EC54F8A0339F6603E17E8115DBF")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -106,6 +112,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1590821149 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.364 -0400", hash_original_method = "597DA81ECE5B3A826C9242118BC9B66A", hash_generated_method = "93E9EC0D59B759954FD18A17355E857B")
     public boolean match(Event matchTarget) {
         addTaint(matchTarget.getTaint());

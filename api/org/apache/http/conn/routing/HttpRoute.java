@@ -149,7 +149,8 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     }
 
     
-        private static HttpHost[] toChain(HttpHost proxy) {
+        @DSModeled(DSC.SAFE)
+    private static HttpHost[] toChain(HttpHost proxy) {
         if (proxy == null)
             return null;
         return new HttpHost[]{ proxy };

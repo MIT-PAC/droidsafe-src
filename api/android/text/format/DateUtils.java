@@ -342,7 +342,8 @@ public class DateUtils {
     }
 
     
-        private static char toDigitChar(long digit) {
+        @DSModeled(DSC.SAFE)
+    private static char toDigitChar(long digit) {
         return (char) (digit + '0');
     }
 

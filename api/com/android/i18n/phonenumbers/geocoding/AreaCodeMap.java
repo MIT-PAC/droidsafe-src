@@ -30,6 +30,7 @@ public class AreaCodeMap implements Externalizable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.300 -0400", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "67CF871815EF3E47FD72386505496553")
      AreaCodeMapStorageStrategy getAreaCodeMapStorage() {
 AreaCodeMapStorageStrategy var31ED7B04A16DD339604BD6A4FB648540_1920404784 =         areaCodeMapStorage;

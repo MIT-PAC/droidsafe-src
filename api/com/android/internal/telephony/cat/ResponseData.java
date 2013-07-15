@@ -214,6 +214,7 @@ class LanguageResponseData extends ResponseData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.420 -0400", hash_original_method = "0658244A9E7567A9FE447A4F6CD905F4", hash_generated_method = "4DD6D439ACF035ECB43B356A4BE97C82")
     @Override
     public void format(ByteArrayOutputStream buf) {
@@ -316,6 +317,7 @@ for(byte b : data)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.422 -0400", hash_original_method = "8DC11942C3F1A663AB0155C3D476E532", hash_generated_method = "C66EC30D305CD1E1BAB0EAC9A78AC3D3")
     private byte byteToBCD(int value) {
         addTaint(value);

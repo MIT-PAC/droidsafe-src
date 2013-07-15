@@ -65,6 +65,7 @@ public class ResultInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.526 -0400", hash_original_method = "45459039AB19A0482EB7D8EB8705A318", hash_generated_method = "DEC83A810D56005845AC4BBC0E53AE18")
     public String toString() {
 String var503AE12A5260321A6845A1C1B1307BB1_1384913567 =         "ResultInfo{who=" + mResultWho + ", request=" + mRequestCode
@@ -77,6 +78,7 @@ String var503AE12A5260321A6845A1C1B1307BB1_1384913567 =         "ResultInfo{who=
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.526 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2709E2E19357417E64DCB96B51C3C824")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2025508357 = (0);
@@ -87,6 +89,7 @@ String var503AE12A5260321A6845A1C1B1307BB1_1384913567 =         "ResultInfo{who=
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.527 -0400", hash_original_method = "C00CE2610591477E96DECA81C0021A12", hash_generated_method = "1A24F76E58C25CC707F7FB0D840D498A")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

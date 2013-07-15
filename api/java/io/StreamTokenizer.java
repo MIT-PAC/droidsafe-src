@@ -109,6 +109,7 @@ public class StreamTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.106 -0400", hash_original_method = "E38E4469494A7A375F4DC16613BFC71B", hash_generated_method = "ED124AB306A25409029CC9A90A681766")
     public void commentChar(int ch) {
     if(ch >= 0 && ch < tokenTypes.length)        
@@ -122,6 +123,7 @@ public class StreamTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.107 -0400", hash_original_method = "4574927758DBFC248F61FB44F6B60AD5", hash_generated_method = "E7ACAC53B63CEEEDB7720AC0F5F43491")
     public void eolIsSignificant(boolean flag) {
         isEOLSignificant = flag;
@@ -130,6 +132,7 @@ public class StreamTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.107 -0400", hash_original_method = "CFD9FB1CAAFA0B398D0DDE009E39DD95", hash_generated_method = "7692A54D353186E3D309495908BF7167")
     public int lineno() {
         int varBB8A5A0BF5B38F7D371E940DAED92DA6_1739225165 = (lineNumber);
@@ -140,6 +143,7 @@ public class StreamTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.107 -0400", hash_original_method = "C3C8ED01DF0631C29C770DF7973EAB61", hash_generated_method = "BED58A09E44AEB960ACFACB2D18D13A6")
     public void lowerCaseMode(boolean flag) {
         forceLowercase = flag;
@@ -456,6 +460,7 @@ switch(c1){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.136 -0400", hash_original_method = "F56215932CA46446CC1F49421E19E4D4", hash_generated_method = "6C1B78B929C369C2F919B80E00706968")
     public void ordinaryChar(int ch) {
     if(ch >= 0 && ch < tokenTypes.length)        
@@ -469,6 +474,7 @@ switch(c1){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.136 -0400", hash_original_method = "022AE8E9D3C39CFDE89A16E6E6C68B23", hash_generated_method = "A8CD68C8B88D027BF8A246225A237EE5")
     public void ordinaryChars(int low, int hi) {
         addTaint(hi);
@@ -498,6 +504,7 @@ for(int i = low;i <= hi;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.136 -0400", hash_original_method = "F9A1AE339D1E856A34C84852283E0CEC", hash_generated_method = "FA88DE51AA39EE60F6FD01320465E0DB")
     public void parseNumbers() {
 for(int i = '0';i <= '9';i++)
@@ -515,6 +522,7 @@ for(int i = '0';i <= '9';i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "60DC1125C539441B12106C43E5B596F1", hash_generated_method = "A3EF001CA6E665A21C1D9FF188DBBDB5")
     public void pushBack() {
         pushBackToken = true;
@@ -523,6 +531,7 @@ for(int i = '0';i <= '9';i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "9CC8FE0D7A922378FBAE42482AA646D9", hash_generated_method = "CE49B7669173FB20506B3DDECDA93C7F")
     public void quoteChar(int ch) {
     if(ch >= 0 && ch < tokenTypes.length)        
@@ -555,6 +564,7 @@ for(int i = '0';i <= '9';i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "2D6865C117A48D63E7E9EC7F43B1136B", hash_generated_method = "D7551DC93546FF8CDC2C89A563FCBE0F")
     public void resetSyntax() {
 for(int i = 0;i < 256;i++)
@@ -568,6 +578,7 @@ for(int i = 0;i < 256;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "0BBEE324D353623AAF036FC109969157", hash_generated_method = "54079048C39252366A87C0EA330A3491")
     public void slashSlashComments(boolean flag) {
         slashSlashComments = flag;
@@ -576,6 +587,7 @@ for(int i = 0;i < 256;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "73AA04832C7FF855283D30769102DB3E", hash_generated_method = "FEA5FDEAC577D365D3552916E6F5E766")
     public void slashStarComments(boolean flag) {
         slashStarComments = flag;
@@ -624,6 +636,7 @@ String varE65B3A02759122992CB82C0E651AD408_449939454 =         result.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.138 -0400", hash_original_method = "70A99B8CFA2D4FEC72EA62C54EC3FE21", hash_generated_method = "7E9F6E09F46B343D5F6C7CB3F7D3EC77")
     public void whitespaceChars(int low, int hi) {
         addTaint(hi);
@@ -653,6 +666,7 @@ for(int i = low;i <= hi;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.138 -0400", hash_original_method = "CCF6D4E2D65BDFCC5D3A11ED629A7633", hash_generated_method = "D771BE83CC2CECAC2C457D2D8EA1A207")
     public void wordChars(int low, int hi) {
         addTaint(hi);

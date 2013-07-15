@@ -160,6 +160,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.513 -0400", hash_original_method = "8AEABE91EB74288702D500EE9C97116A", hash_generated_method = "2075939FE18B626416DA0CBE1EF30D5F")
     public boolean isStorageAvailable() {
         boolean var3CACC54997DC9ED5FC3D015BD6B4854B_1809073970 = (mStorageAvailable);

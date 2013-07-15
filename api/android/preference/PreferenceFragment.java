@@ -253,6 +253,7 @@ View varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047 =         inflater.inflate(c
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.556 -0400", hash_original_method = "ED65E8315019E6E9FED78D8EFC0AFB01", hash_generated_method = "1069C8639F7071B756CD13F5B7EC18FB")
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -268,6 +269,7 @@ View varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047 =         inflater.inflate(c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.557 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "9831F36C04165A418CC1CC9886477461")
     public PreferenceManager getPreferenceManager() {
 PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_394564967 =         mPreferenceManager;
@@ -309,6 +311,7 @@ PreferenceScreen varDAFD38741BC1123E8F4608DDE091E020_697703308 =         mPrefer
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.558 -0400", hash_original_method = "5674CE8C214451535BFAB18211614C8C", hash_generated_method = "F85F789656537B3736817DCDDFC2985D")
     public void addPreferencesFromIntent(Intent intent) {
         addTaint(intent.getTaint());

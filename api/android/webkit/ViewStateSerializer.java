@@ -35,7 +35,8 @@ class ViewStateSerializer {
     }
 
     
-        static DrawData deserializeViewState(InputStream stream, WebView web) throws IOException {
+        @DSModeled(DSC.SPEC)
+    static DrawData deserializeViewState(InputStream stream, WebView web) throws IOException {
         DataInputStream dis = new DataInputStream(stream);
         int version = dis.readInt();
         if (version != VERSION) {

@@ -48,6 +48,7 @@ public final class NfcF extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.055 -0400", hash_original_method = "5593A08645ACC7B6D3C7AFEF98D893C4", hash_generated_method = "36B9025AA62154D3D3D8BAF83D6D6FD6")
     public byte[] getSystemCode() {
         byte[] var385E9CF9AAB562794ED9FA72359F5432_839015938 = (mSystemCode);
@@ -58,6 +59,7 @@ public final class NfcF extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.055 -0400", hash_original_method = "674E72909806E7E1411B5B9E47606852", hash_generated_method = "58D7827875DF65CB4A38821D3B204409")
     public byte[] getManufacturer() {
         byte[] var6D6C47A5EB4751EE95A0B83ED231F29F_90984035 = (mManufacturer);

@@ -42,7 +42,8 @@ for(int i = 0;i != seq.size();i++)
     }
 
     
-        public static GeneralNames getInstance(
+        @DSModeled(DSC.SPEC)
+    public static GeneralNames getInstance(
         Object  obj) {
         if (obj == null || obj instanceof GeneralNames)
         {
@@ -56,13 +57,15 @@ for(int i = 0;i != seq.size();i++)
     }
 
     
-        public static GeneralNames getInstance(
+        @DSModeled(DSC.SPEC)
+    public static GeneralNames getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.078 -0400", hash_original_method = "9AED96B400BA543408C9F5E967093153", hash_generated_method = "3E755C267439B2508A935EBBDF420712")
     public GeneralName[] getNames() {
         GeneralName[] tmp = new GeneralName[names.length];
@@ -87,6 +90,7 @@ DERObject varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780 =         new DERSequence
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.079 -0400", hash_original_method = "7DDFA5C3E7762D6D39ED7DFFF0863845", hash_generated_method = "A2D56375D86539388F5BB8156EF6206A")
     public String toString() {
         StringBuffer buf = new StringBuffer();

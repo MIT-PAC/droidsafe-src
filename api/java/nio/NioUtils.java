@@ -15,12 +15,14 @@ public final class NioUtils {
     }
 
     
-        public static int getDirectBufferAddress(Buffer buffer) {
+        @DSModeled(DSC.SAFE)
+    public static int getDirectBufferAddress(Buffer buffer) {
         return buffer.effectiveDirectAddress;
     }
 
     
-        public static void freeDirectBuffer(ByteBuffer buffer) {
+        @DSModeled(DSC.SPEC)
+    public static void freeDirectBuffer(ByteBuffer buffer) {
         if (buffer == null) {
             return;
         }
@@ -34,22 +36,26 @@ public final class NioUtils {
     }
 
     
-        public static FileDescriptor getFD(FileChannel fc) {
+        @DSModeled(DSC.SPEC)
+    public static FileDescriptor getFD(FileChannel fc) {
         return ((FileChannelImpl) fc).getFD();
     }
 
     
-        public static FileChannel newFileChannel(Object stream, FileDescriptor fd, int mode) {
+        @DSModeled(DSC.SPEC)
+    public static FileChannel newFileChannel(Object stream, FileDescriptor fd, int mode) {
         return new FileChannelImpl(stream, fd, mode);
     }
 
     
-        public static byte[] unsafeArray(ByteBuffer b) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] unsafeArray(ByteBuffer b) {
         return ((HeapByteBuffer) b).backingArray;
     }
 
     
-        public static int unsafeArrayOffset(ByteBuffer b) {
+        @DSModeled(DSC.SAFE)
+    public static int unsafeArrayOffset(ByteBuffer b) {
         return ((HeapByteBuffer) b).offset;
     }
 

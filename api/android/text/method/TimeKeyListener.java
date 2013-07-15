@@ -16,6 +16,7 @@ public class TimeKeyListener extends NumberKeyListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.976 -0400", hash_original_method = "F4BD69BECB4A0F93AC68BF98F9909696", hash_generated_method = "7DFDFA387C6D2074EEED5985DBE39B02")
     public int getInputType() {
         int varD246EFE5F276BE1F0BEC3AD30E675F9C_496056513 = (InputType.TYPE_CLASS_DATETIME
@@ -28,6 +29,7 @@ public class TimeKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.976 -0400", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "2E27BBDBCDC3FA8254028214206C9CCC")
     @Override
     protected char[] getAcceptedChars() {
@@ -39,7 +41,8 @@ public class TimeKeyListener extends NumberKeyListener {
     }
 
     
-        public static TimeKeyListener getInstance() {
+        @DSModeled(DSC.SPEC)
+    public static TimeKeyListener getInstance() {
         if (sInstance != null)
             return sInstance;
         sInstance = new TimeKeyListener();

@@ -71,7 +71,8 @@ public final class SamplingProfiler {
     }
 
     
-        private static ThreadSampler findDefaultThreadSampler() {
+        @DSModeled(DSC.BAN)
+    private static ThreadSampler findDefaultThreadSampler() {
         if ("Dalvik Core Library".equals(System.getProperty("java.specification.name"))) {
             String className = "dalvik.system.profiler.DalvikThreadSampler";
             try {
@@ -89,11 +90,13 @@ public final class SamplingProfiler {
     }
 
     
-        public static ThreadSet newThreadGroupTheadSet(ThreadGroup threadGroup) {
+        @DSModeled(DSC.BAN)
+    public static ThreadSet newThreadGroupTheadSet(ThreadGroup threadGroup) {
         return new ThreadGroupThreadSet(threadGroup);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.031 -0400", hash_original_method = "27D03994E61C1E4974C7BBD91A5CED76", hash_generated_method = "89C08EEE429592B6AEB20F7B85DCB500")
     public void start(int interval) {
         addTaint(interval);
@@ -125,6 +128,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.032 -0400", hash_original_method = "67E3C9BA9A63DEAC75D61937C8B159A6", hash_generated_method = "F9E263991FB21D850EAF5C968D85AAAA")
     public void stop() {
     if(sampler == null)        
@@ -164,6 +168,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.032 -0400", hash_original_method = "E9FD5B0933A1848F685AEBC164A37AF6", hash_generated_method = "62A5E416FD9EC25C2C2402805D8B0333")
     public void shutdown() {
         stop();
@@ -174,6 +179,7 @@ public final class SamplingProfiler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.033 -0400", hash_original_method = "ED23570BD9F6C6F13BA5A80428CD13EC", hash_generated_method = "2A6A537E5F2AFD9D8B7664DCCB2B18C2")
     public HprofData getHprofData() {
     if(sampler != null)        
@@ -215,6 +221,7 @@ HprofData varED34D148516840494CB2AFCDA086D3AF_1096977522 =         hprofData;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.034 -0400", hash_original_method = "5BD7766F6E0173FC433E1E7F289EB1BE", hash_generated_method = "935E2B3BB6CD57CE4AAD031D80B9FCEB")
         public Thread[] threads() {
 Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
@@ -259,6 +266,7 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.035 -0400", hash_original_method = "634F6B8483D3410BA8D4C537A5664EC3", hash_generated_method = "0ABB5E8BF62D0F7A316F1DDBBCEFC259")
         private void resize() {
             int count = threadGroup.activeCount();
@@ -271,6 +279,7 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.036 -0400", hash_original_method = "32A384241C8D4460079A29E3C7BA2EEB", hash_generated_method = "85A7BF57753AC88D810AE58DE84CD2AF")
         public Thread[] threads() {
             int threadCount;
@@ -335,6 +344,7 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1370469589 =             threads;
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.037 -0400", hash_original_method = "3FC3FC48F91B564D9AD79AA9DB2F74C2", hash_generated_method = "C93F15E37D57A7DDDAB6892502AEC0BA")
         public void run() {
             synchronized
@@ -379,6 +389,7 @@ for(Thread thread : currentThreads)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.038 -0400", hash_original_method = "F11BBDF4101A6D713104B5DB9760A085", hash_generated_method = "8F6DBA28B8FE39359C1C3D9DD5258F1A")
         private void recordStackTrace(Thread thread, StackTraceElement[] stackFrames) {
             addTaint(stackFrames[0].getTaint());
@@ -420,6 +431,7 @@ for(Thread thread : currentThreads)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.039 -0400", hash_original_method = "B49A7EC3437DE14BA292DE44FA40B97A", hash_generated_method = "4D3C0F75BDB35EB440EF1B5D6B51AE7B")
         private void updateThreadHistory(Thread[] oldThreads, Thread[] newThreads) {
             addTaint(newThreads[0].getTaint());
@@ -459,6 +471,7 @@ for(Thread thread : removed)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.040 -0400", hash_original_method = "D7E70BFB99D4B0D69C428CA3433E6D0D", hash_generated_method = "18D3EC400DDDCACC4A696B9FA5EFA1BA")
         private void addStartThread(Thread thread) {
             addTaint(thread.getTaint());
@@ -489,6 +502,7 @@ for(Thread thread : removed)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.041 -0400", hash_original_method = "631F90CADC4DC4D78F0863A31213AEA2", hash_generated_method = "5177424C0A265153A3AC2FF4C4886B6A")
         private void addEndThread(Thread thread) {
             addTaint(thread.getTaint());

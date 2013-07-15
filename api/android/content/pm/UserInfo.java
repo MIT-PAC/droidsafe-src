@@ -60,6 +60,7 @@ public class UserInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.486 -0400", hash_original_method = "C03AE380E4F338F1E70E5C1BDC1E37B9", hash_generated_method = "C419248AA6DCEABE9182B6633E3C4B10")
     public boolean isPrimary() {
         boolean var5AB371C2655E4B58255C7DFA22ECEB89_287958521 = ((flags & FLAG_PRIMARY) == FLAG_PRIMARY);
@@ -70,6 +71,7 @@ public class UserInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.487 -0400", hash_original_method = "AB675EF64043DB6994A1BFFAAF9F7F55", hash_generated_method = "03046B01E21EC9D994A006EE473A7F64")
     public boolean isAdmin() {
         boolean var50678694C8DE9B168422FE7304BEDBA0_1849751460 = ((flags & FLAG_ADMIN) == FLAG_ADMIN);
@@ -80,6 +82,7 @@ public class UserInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.488 -0400", hash_original_method = "C17F5F8C940B592632E4868007F4D830", hash_generated_method = "0C16B97986D89120D9B68407860FE39D")
     public boolean isGuest() {
         boolean varD2FA5948C2551B1CA03A0F9629252059_1661220035 = ((flags & FLAG_GUEST) == FLAG_GUEST);
@@ -101,6 +104,7 @@ String varAE9EAD1C92DCAF55B077936E6231CB03_298825588 =         "UserInfo{" + id 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.489 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "73A59E1FF69AB7AA19EC71C6B9948867")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1942156818 = (0);

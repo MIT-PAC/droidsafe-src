@@ -186,6 +186,7 @@ String var5E03B79E55F41967AD2659800720A8BE_1003736052 =         formatDate(mVali
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.784 -0400", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "A4CC84E28A4911E3BE1AD85FADFB16EF")
     public DName getIssuedTo() {
 DName var78BC96B113155E7EF78A0F7019405602_987725191 =         mIssuedTo;
@@ -196,6 +197,7 @@ DName var78BC96B113155E7EF78A0F7019405602_987725191 =         mIssuedTo;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.784 -0400", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "482B59BDBA79F551342F4EC380D64F96")
     public DName getIssuedBy() {
 DName var9A957C3D1EADCF1F564E726204D0B108_603163724 =         mIssuedBy;
@@ -288,6 +290,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277 =         ("Issued to: " + 
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.787 -0400", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "4AD848247F2296CEC381A27AB8613FE7")
     public View inflateCertificateView(Context context) {
         addTaint(context.getTaint());
@@ -407,6 +410,7 @@ for(int i = 0;i < oid.size();i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.789 -0400", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "DD028F0111C59D49187E3A0779EADEDE")
         public String getDName() {
 String var0E412BB8426FC857F1D98F5ADB1C1FE8_1059973149 =             mDName != null ? mDName : "";
@@ -417,6 +421,7 @@ String var0E412BB8426FC857F1D98F5ADB1C1FE8_1059973149 =             mDName != nu
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.789 -0400", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "1942BA29E6A2EE97A07B6275BE2EE3CE")
         public String getCName() {
 String var41CD0A3353DF8C88F8F9C93A3283E0F6_175207629 =             mCName != null ? mCName : "";
@@ -427,6 +432,7 @@ String var41CD0A3353DF8C88F8F9C93A3283E0F6_175207629 =             mCName != nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.790 -0400", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "69D1DCFC01D5B5105EE260E58B552CC3")
         public String getOName() {
 String var967E7ADD7E55EBF6EE5F55E7DF597DB1_707789021 =             mOName != null ? mOName : "";
@@ -437,6 +443,7 @@ String var967E7ADD7E55EBF6EE5F55E7DF597DB1_707789021 =             mOName != nul
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.790 -0400", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "BA6EA4EE9D23B324ADF56E00DB814E28")
         public String getUName() {
 String var3435F5434D6FC903E03BAEAFBF2E316F_403315749 =             mUName != null ? mUName : "";

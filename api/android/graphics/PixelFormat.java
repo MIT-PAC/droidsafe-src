@@ -30,7 +30,8 @@ public class PixelFormat {
     }
 
     
-        public static boolean formatHasAlpha(int format) {
+        @DSModeled(DSC.SAFE)
+    public static boolean formatHasAlpha(int format) {
         switch (format) {
             case PixelFormat.A_8:
             case PixelFormat.LA_88:

@@ -131,6 +131,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_493017457 =         node;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.806 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "E532E4CBBEBFF44C610D0F95E73E8319")
     private void setHead(Node node) {
         head = node;
@@ -863,6 +864,7 @@ Thread var870C75E9F1DE61C9DB12235564677748_1030701080 =         (head == tail) ?
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.830 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "FC4878F382CE34BEDF715327065866F3")
     private Thread fullGetFirstQueuedThread() {
         Node h;
@@ -1119,6 +1121,7 @@ String var4EB727B8FD98B5F7ED6D14E18A4FCCA4_448468103 =         super.toString() 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.836 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "BFF81108CB8C6D408924E6ABC96AE8F9")
     private boolean findNodeFromTail(Node node) {
         addTaint(node.getTaint());
@@ -1552,6 +1555,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.870 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "80733A3444837168288E85B20119B428")
         private void unlinkCancelledWaiters() {
             Node t = firstWaiter;

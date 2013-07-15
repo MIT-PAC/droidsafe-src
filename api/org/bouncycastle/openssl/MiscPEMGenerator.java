@@ -126,6 +126,7 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.211 -0400", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "46785912F2365383770D7E64C0D03B4F")
     private PemObject createPemObject(Object o) throws IOException {
         addTaint(o.getTaint());

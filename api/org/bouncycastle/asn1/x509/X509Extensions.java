@@ -175,7 +175,8 @@ public class X509Extensions extends ASN1Encodable {
     }
 
     
-        public static X509Extensions getInstance(
+        @DSModeled(DSC.SPEC)
+    public static X509Extensions getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
@@ -222,6 +223,7 @@ X509Extension var7E62EE1C49D22F5FBC312C60676B04AD_1691040926 =         (X509Exte
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.432 -0400", hash_original_method = "A84942282634A7C86CBBB6C3F2ED59CC", hash_generated_method = "BD123B0B36C88CCC98A83CB97F1AA6FD")
     public X509Extension getExtension(
         DERObjectIdentifier oid) {
@@ -275,6 +277,7 @@ DERObject varC471AA334127665DD25E5ED09AC85DD3_366411275 =         new DERSequenc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.433 -0400", hash_original_method = "5431038A2FDD7EE9A832630B10E5FEE7", hash_generated_method = "86BDA60C3B521BD784C9B2E56901119D")
     public boolean equivalent(
         X509Extensions other) {
@@ -318,6 +321,7 @@ DERObject varC471AA334127665DD25E5ED09AC85DD3_366411275 =         new DERSequenc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.433 -0400", hash_original_method = "0A51D0A287CCFA511D40B874C91E938D", hash_generated_method = "C0376D73D953B92B203399000FA59A95")
     public ASN1ObjectIdentifier[] getExtensionOIDs() {
 ASN1ObjectIdentifier[] var33AB0E52918649FE635739A424A441CC_1801766653 =         toOidArray(ordering);
@@ -328,6 +332,7 @@ ASN1ObjectIdentifier[] var33AB0E52918649FE635739A424A441CC_1801766653 =         
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.434 -0400", hash_original_method = "38FDC56695894D5E3900BA7AB78B1602", hash_generated_method = "D0CF396A2ED8BB60B843012826641006")
     public ASN1ObjectIdentifier[] getNonCriticalExtensionOIDs() {
 ASN1ObjectIdentifier[] varDAA631B96E7028A88F1555BCE067AB3B_276048206 =         getExtensionOIDs(false);
@@ -338,6 +343,7 @@ ASN1ObjectIdentifier[] varDAA631B96E7028A88F1555BCE067AB3B_276048206 =         g
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.434 -0400", hash_original_method = "87563EF50C27322C30E8D92768AE9E02", hash_generated_method = "93350A2005FB6B2DFDD91AE204CD71A7")
     public ASN1ObjectIdentifier[] getCriticalExtensionOIDs() {
 ASN1ObjectIdentifier[] var61C7CCCBDE12C3C494EB17A5AF30EFF5_1718716374 =         getExtensionOIDs(true);
@@ -348,6 +354,7 @@ ASN1ObjectIdentifier[] var61C7CCCBDE12C3C494EB17A5AF30EFF5_1718716374 =         
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.434 -0400", hash_original_method = "7A0D9F93C88DE50806BB985DD6BFA19B", hash_generated_method = "D7B2306B0471EA0F4FC3019ECB4A14A7")
     private ASN1ObjectIdentifier[] getExtensionOIDs(boolean isCritical) {
         addTaint(isCritical);
@@ -377,6 +384,7 @@ ASN1ObjectIdentifier[] var2A13B4A81B851F70BD8837484363B8BF_910821702 =         t
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.435 -0400", hash_original_method = "4F14C515A25E2063508F233D1F460CFE", hash_generated_method = "A12706286D642C116178B11521569901")
     private ASN1ObjectIdentifier[] toOidArray(Vector oidVec) {
         addTaint(oidVec.getTaint());

@@ -209,6 +209,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.793 -0400", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "4F8869D4207959C051FFDFBFDE7C40F2")
     public boolean isScalingRequired() {
         boolean var6A6CD585B1B2D73D861457664A9CD0F9_946998082 = ((mCompatibilityFlags&SCALING_REQUIRED) != 0);
@@ -219,6 +220,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.794 -0400", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "699A428208A92D76531E5769199446E4")
     public boolean supportsScreen() {
         boolean var84D503005FB9552E72FBBDCB72F1ED29_894140101 = ((mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0);
@@ -229,6 +231,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.794 -0400", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "253CC92DC1B019CF66AE64CEFB98F290")
     public boolean neverSupportsScreen() {
         boolean var379E94ED74A64A75DEBC993E9380509C_256796047 = ((mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0);
@@ -239,6 +242,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.794 -0400", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "2F61B535B187EADAF6B58980E8DEC423")
     public boolean alwaysSupportsScreen() {
         boolean var7620E96D5792B82515FAB327536E265B_1428729780 = ((mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0);
@@ -311,7 +315,8 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
     }
 
     
-        public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
+        @DSModeled(DSC.SAFE)
+    public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
         final int width = dm.noncompatWidthPixels;
         final int height = dm.noncompatHeightPixels;
         int shortSize, longSize;
@@ -350,6 +355,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.799 -0400", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "0B2C60EFA0393443CDF9AEDB07C3B3D8")
     @Override
     public boolean equals(Object o) {
@@ -479,6 +485,7 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.801 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3A1A01F946281ECFBB8F2C16B1986985")
     @Override
     public int describeContents() {
@@ -614,6 +621,7 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.807 -0400", hash_original_method = "9DE177160064B2A1F8C9D8228C599CDD", hash_generated_method = "E9ECA9325CF050EB116910023DF44307")
         public void translatePointInScreenToAppWindow(PointF point) {
             addTaint(point.getTaint());

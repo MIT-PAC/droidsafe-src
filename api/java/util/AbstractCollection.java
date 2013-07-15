@@ -14,6 +14,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.047 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "A114617378D32729BFE7D1C819C15DF3")
     public boolean add(E object) {
         addTaint(object.getTaint());
@@ -308,6 +309,7 @@ Object[] var1270D5B74B756F17D644A15D775499D9_1751470086 =         array;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.053 -0400", hash_original_method = "A29AB27B8881BCEC42B6770CA33A7C59", hash_generated_method = "40078E6FA41D90A0787717335A7627BD")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {

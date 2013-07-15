@@ -34,6 +34,7 @@ public enum ComprehensionTlvTag {
     ComprehensionTlvTag(int value) {
         mValue = value;
     }
+    @DSModeled(DSC.SAFE)
     public int value() {
         return mValue;
     }

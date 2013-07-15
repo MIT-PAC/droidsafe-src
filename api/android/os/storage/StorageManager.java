@@ -724,6 +724,7 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.120 -0400", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "70938DD73F91D8E27DB834DFD9BB1350")
         public Message getMessage() {
 Message varF433E876D1576C042493660DEE33CDC1_446685186 =             mMessage;
@@ -842,6 +843,7 @@ Message varF433E876D1576C042493660DEE33CDC1_446685186 =             mMessage;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.124 -0400", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "5BE7D11FD372CD7AA1CE8B138F43F5DD")
          StorageEventListener getListener() {
 StorageEventListener varE7702B5CA1C4D4B989CA9AA0E2DA9878_1664200 =             mStorageEventListener;

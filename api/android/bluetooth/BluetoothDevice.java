@@ -87,6 +87,7 @@ public final class BluetoothDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.935 -0400", hash_original_method = "4F994B6046AF4A420304240B51CB4CC6", hash_generated_method = "467F4A6FDA2142F46CBC885C55853276")
     @Override
     public String toString() {
@@ -98,6 +99,7 @@ String var86CD3BA5FA0F42F72E695A9A747D1E23_1328521609 =         mAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.936 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "EB137144806BAE344BF906269D5A5F13")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1188079088 = (0);
@@ -118,6 +120,7 @@ String var86CD3BA5FA0F42F72E695A9A747D1E23_1328521609 =         mAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.937 -0400", hash_original_method = "BD85A48E5B7DC741C80D75F9CC9D3A4A", hash_generated_method = "DF539C16499B1FDDA64AF5930C29F33C")
     public String getAddress() {
 String var86CD3BA5FA0F42F72E695A9A747D1E23_1851937889 =         mAddress;
@@ -632,6 +635,7 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_356979172 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.960 -0400", hash_original_method = "98EAE836400D818BB4CCAFDB9F3FE0E9", hash_generated_method = "7BA3C0F8FE27818D6C922F34B1E0E367")
     public BluetoothSocket createRfcommSocket(int channel) throws IOException {
         addTaint(channel);
@@ -645,6 +649,7 @@ BluetoothSocket var51C775BCD1F1E517CEC48364C2A98EB3_1354960144 =         new Blu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.961 -0400", hash_original_method = "673893485928B830B2C44FE0F9C84083", hash_generated_method = "55CC81C99429B60F3F47BD9A41981B14")
     public BluetoothSocket createRfcommSocketToServiceRecord(UUID uuid) throws IOException {
         addTaint(uuid.getTaint());
@@ -658,6 +663,7 @@ BluetoothSocket var4416FFD61C38CA98B2101475556EB072_1197502932 =         new Blu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.961 -0400", hash_original_method = "8A29B36723BF3024D765B326A6835F52", hash_generated_method = "3B018AE33E5B2C450058EF088E1A94B1")
     public BluetoothSocket createInsecureRfcommSocketToServiceRecord(UUID uuid) throws IOException {
         addTaint(uuid.getTaint());
@@ -671,6 +677,7 @@ BluetoothSocket var73C70BFE9204F8F5C0EF762AD73861F3_189281424 =         new Blue
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.961 -0400", hash_original_method = "65B6B4065AE19FE91B1B928AB482A400", hash_generated_method = "F9F3E3B368A3AFF57648EBA7C30CCBFE")
     public BluetoothSocket createInsecureRfcommSocket(int port) throws IOException {
         addTaint(port);
@@ -684,6 +691,7 @@ BluetoothSocket varECB7EF97AD866D9F177972C6A2DD32DD_1886695609 =         new Blu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.962 -0400", hash_original_method = "A2683B7D001B6D4367715042EC6C96CC", hash_generated_method = "E47A2E5F17511D9AA639963D0E4F01FE")
     public BluetoothSocket createScoSocket() throws IOException {
 BluetoothSocket varCBE45E1CC339E38D120332CED93F6CAC_945091167 =         new BluetoothSocket(BluetoothSocket.TYPE_SCO, -1, true, true, this, -1, null);

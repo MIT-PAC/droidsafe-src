@@ -19,6 +19,7 @@ public final class CallInfo extends ParametersHeader implements javax.sip.header
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.136 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "457BBFAB4224A90B4BAF9088F0C10002")
     public String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_1277583923 =         encodeBody(new StringBuffer()).toString();
@@ -29,6 +30,7 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_1277583923 =         encodeBody(new S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.136 -0400", hash_original_method = "A4CCBF948684EE8C510DCE8D73383A9B", hash_generated_method = "BBD2408BDE846F69288933F8A70CD74A")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -55,6 +57,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_536616393 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.137 -0400", hash_original_method = "5AE253F427E5A28ACB58F8121152C53D", hash_generated_method = "3D619FCC019912B6869E7117858ECE36")
     public String getPurpose() {
 String var3F988F8FBD14A53C10BD182A8966AA04_37923370 =         this.getParameter("purpose");
@@ -65,6 +68,7 @@ String var3F988F8FBD14A53C10BD182A8966AA04_37923370 =         this.getParameter(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.137 -0400", hash_original_method = "EF1B9495763809E09B57BAE8A2B95EE3", hash_generated_method = "69FC716E2FC47EF98A8FD4D09822255E")
     public javax.sip.address.URI getInfo() {
 javax.sip.address.URI var43CF3338FDBA93597A9562D3166E9DC4_651947945 =         info;
@@ -75,6 +79,7 @@ javax.sip.address.URI var43CF3338FDBA93597A9562D3166E9DC4_651947945 =         in
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.137 -0400", hash_original_method = "02434F47BE675094B3D64F5516EB6DB6", hash_generated_method = "F77AEC79E49F644F17990A6D33E3F41B")
     public void setPurpose(String purpose) {
         addTaint(purpose.getTaint());
@@ -101,6 +106,7 @@ javax.sip.address.URI var43CF3338FDBA93597A9562D3166E9DC4_651947945 =         in
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.138 -0400", hash_original_method = "5AA5786EA20C5BC42796F42D6FB1BBD6", hash_generated_method = "529B104F54989C0661DF25CACCDA676F")
     public void setInfo(javax.sip.address.URI info) {
         this.info = (GenericURI) info;
@@ -109,6 +115,7 @@ javax.sip.address.URI var43CF3338FDBA93597A9562D3166E9DC4_651947945 =         in
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.138 -0400", hash_original_method = "13BFA074DC19025B66849B6C15AC7B30", hash_generated_method = "AA6C0F593881D8E803EC52CC85F9C0A3")
     public Object clone() {
         CallInfo retval = (CallInfo) super.clone();

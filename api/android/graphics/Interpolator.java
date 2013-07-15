@@ -93,6 +93,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.271 -0400", hash_original_method = "0A4BD1EDAE26740EE7CE301C3AD23A04", hash_generated_method = "8888C9B657F0860F0B4477E84D0E9952")
     public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
         addTaint(blend[0]);
@@ -147,6 +148,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.272 -0400", hash_original_method = "BDADB3549C258921F869033B8AFE985D", hash_generated_method = "A5B660D99BE3E5CE67E695CCFF81358B")
     public Result timeToValues(float[] values) {
         addTaint(values[0]);
@@ -194,6 +196,7 @@ Result var607877E62AB94E691FECF4B996EA77B1_1578859783 =         Result.FREEZE_EN
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.273 -0400", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "731B1C9A23DC747F95D123894CD0AB39")
     @Override
     protected void finalize() throws Throwable {

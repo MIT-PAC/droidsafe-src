@@ -51,7 +51,8 @@ public class BERConstructedOctetString extends DEROctetString {
     }
 
     
-        static private byte[] toBytes(
+        @DSModeled(DSC.SPEC)
+    static private byte[] toBytes(
         Vector  octs) {
         ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
         for (int i = 0; i != octs.size(); i++)
@@ -74,6 +75,7 @@ public class BERConstructedOctetString extends DEROctetString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.794 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "B8E98218F33A31E8FF93F5AB4F63D52C")
     public byte[] getOctets() {
         byte[] varB45CFFE084DD3D20D928BEE85E7B0F21_1218440339 = (string);
@@ -84,6 +86,7 @@ public class BERConstructedOctetString extends DEROctetString {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.795 -0400", hash_original_method = "38D9AF5AE7D2EC02C67E2F99E80896DD", hash_generated_method = "BE64342A04FE2395C61674D6DFA55A29")
     public Enumeration getObjects() {
     if(octs == null)        
@@ -104,6 +107,7 @@ Enumeration var1B9859BDE61F66EA282C2AFE1BCE9641_1901768494 =         octs.elemen
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.796 -0400", hash_original_method = "03E7802E2319FF252715B6886182CABF", hash_generated_method = "E24ABBE559FC533D285C13BFC917CAD9")
     private Vector generateOcts() {
         Vector vec = new Vector();
@@ -146,6 +150,7 @@ Vector var9D8DE77A4073B06987457FB88C5516C3_1367949729 =         vec;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.796 -0400", hash_original_method = "D3D7CE50527B3D09D53342883B1EBD33", hash_generated_method = "C4AF688A4ED18762DC4FEA158EF07667")
     public void encode(
         DEROutputStream out) throws IOException {
@@ -187,7 +192,8 @@ Vector var9D8DE77A4073B06987457FB88C5516C3_1367949729 =         vec;
     }
 
     
-        public static BERConstructedOctetString fromSequence(ASN1Sequence seq) {
+        @DSModeled(DSC.SPEC)
+    public static BERConstructedOctetString fromSequence(ASN1Sequence seq) {
         Vector      v = new Vector();
         Enumeration e = seq.getObjects();
         while (e.hasMoreElements())

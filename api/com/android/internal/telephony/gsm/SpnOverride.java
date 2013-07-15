@@ -31,6 +31,7 @@ public class SpnOverride {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.867 -0400", hash_original_method = "F9DB25D793978B2E288A45309BFBD20E", hash_generated_method = "B2A3DEBEC72143BC6BB7EFE1C0DF7CC8")
      boolean containsCarrier(String carrier) {
         addTaint(carrier.getTaint());
@@ -42,6 +43,7 @@ public class SpnOverride {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.868 -0400", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "AE1C02C69F772303829F58D69DA2AB03")
      String getSpn(String carrier) {
         addTaint(carrier.getTaint());
@@ -53,6 +55,7 @@ String varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375 =         CarrierSpnMap.get
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.869 -0400", hash_original_method = "E85B5B045E56A81356A43AE2CD2F25CE", hash_generated_method = "930E5D7DFDBB1312A74B7E4998026AA9")
     private void loadSpnOverrides() {
         FileReader spnReader;

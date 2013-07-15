@@ -23,6 +23,7 @@ class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.914 -0400", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "AD13F6AD6C77A489575DA0F90CDBE4E0")
      EmulatedFields emulatedFields() {
 EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedFields;

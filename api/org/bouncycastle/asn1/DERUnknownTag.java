@@ -44,6 +44,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.276 -0400", hash_original_method = "4AFA588B499059410429802033BA5ED0", hash_generated_method = "164FB617E9F5009E84EBE0B567CC7C71")
     public boolean isConstructed() {
         boolean var81C86C56F2FC47B77A343996A0249448_1930745287 = (isConstructed);
@@ -54,6 +55,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.276 -0400", hash_original_method = "749703D76C1808D33D4CAAFA8A986840", hash_generated_method = "F5742D15FA96DB734C1589CCE10C1E50")
     public int getTag() {
         int varE4D23E841D8E8804190027BCE3180FA5_797626311 = (tag);
@@ -64,6 +66,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.277 -0400", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "B8B4143BB2DA8C9468D7F378B4D4DE0E")
     public byte[] getData() {
         byte[] var8D777F385D3DFEC8815D20F7496026DC_1152885695 = (data);
@@ -74,6 +77,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.277 -0400", hash_original_method = "444E91CF9E2407B92E5AF0788B821FF3", hash_generated_method = "47AA9DB5EE593712CE49E5BC5815C98A")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -84,6 +88,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.277 -0400", hash_original_method = "FE1F3CE48FE1BAD33C90012410856208", hash_generated_method = "88B4E048E7B7D50026B52DF7A5551A79")
     public boolean equals(
         Object o) {
@@ -112,6 +117,7 @@ public class DERUnknownTag extends DERObject {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.278 -0400", hash_original_method = "6125EE5FC147EEAC675704125571B4F0", hash_generated_method = "4E0C075FA1161985F23AF96AD9BDFBBC")
     public int hashCode() {
         int var96ECA5C01A7445DAFC3C524853E3675A_1289620298 = ((isConstructed ? ~0 : 0) ^ tag ^ Arrays.hashCode(data));

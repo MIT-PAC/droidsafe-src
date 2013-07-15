@@ -45,7 +45,8 @@ class X509Util {
     }
 
 
-        private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
+        @DSModeled(DSC.SPEC)
+    private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
         return new RSASSAPSSparams(
             hashAlgId,
             new AlgorithmIdentifier(PKCSObjectIdentifiers.id_mgf1, hashAlgId),
@@ -54,7 +55,8 @@ class X509Util {
     }
 
     
-        static DERObjectIdentifier getAlgorithmOID(
+        @DSModeled(DSC.SPEC)
+    static DERObjectIdentifier getAlgorithmOID(
         String algorithmName) {
         algorithmName = Strings.toUpperCase(algorithmName);
         if (algorithms.containsKey(algorithmName))
@@ -84,7 +86,8 @@ class X509Util {
     }
 
     
-        static Iterator getAlgNames() {
+        @DSModeled(DSC.SPEC)
+    static Iterator getAlgNames() {
         Enumeration e = algorithms.keys();
         List        l = new ArrayList();
         while (e.hasMoreElements())
@@ -95,13 +98,15 @@ class X509Util {
     }
 
     
-        static Signature getSignatureInstance(
+        @DSModeled(DSC.SPEC)
+    static Signature getSignatureInstance(
         String algorithm) throws NoSuchAlgorithmException {
         return Signature.getInstance(algorithm);
     }
 
     
-        static Signature getSignatureInstance(
+        @DSModeled(DSC.SPEC)
+    static Signature getSignatureInstance(
         String algorithm,
         String provider) throws NoSuchProviderException, NoSuchAlgorithmException {
         if (provider != null)
@@ -115,7 +120,8 @@ class X509Util {
     }
 
     
-        static byte[] calculateSignature(
+        @DSModeled(DSC.SPEC)
+    static byte[] calculateSignature(
         DERObjectIdentifier sigOid,
         String              sigName,
         PrivateKey          key,
@@ -140,7 +146,8 @@ class X509Util {
     }
 
     
-        static byte[] calculateSignature(
+        @DSModeled(DSC.SPEC)
+    static byte[] calculateSignature(
         DERObjectIdentifier sigOid,
         String              sigName,
         String              provider,
@@ -166,7 +173,8 @@ class X509Util {
     }
 
     
-        static X509Principal convertPrincipal(
+        @DSModeled(DSC.SPEC)
+    static X509Principal convertPrincipal(
         X500Principal principal) {
         try
         {
@@ -179,7 +187,8 @@ class X509Util {
     }
 
     
-        static Implementation getImplementation(
+        @DSModeled(DSC.SPEC)
+    static Implementation getImplementation(
         String      baseName,
         String      algorithm,
         Provider    prov) throws NoSuchAlgorithmException {
@@ -244,7 +253,8 @@ class X509Util {
     }
 
     
-        static Provider getProvider(String provider) throws NoSuchProviderException {
+        @DSModeled(DSC.SPEC)
+    static Provider getProvider(String provider) throws NoSuchProviderException {
         Provider prov = Security.getProvider(provider);
         if (prov == null)
         {
@@ -274,6 +284,7 @@ class X509Util {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.778 -0400", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "0D71BC0870413A82486413D584D93D88")
          Object getEngine() {
 Object var7972BCEBDA271965A23F8B80E328E98F_752461097 =             engine;
@@ -284,6 +295,7 @@ Object var7972BCEBDA271965A23F8B80E328E98F_752461097 =             engine;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.778 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "D2ED0247410632852D18709B33F21F92")
          Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_952715614 =             provider;

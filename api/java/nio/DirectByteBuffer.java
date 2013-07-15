@@ -438,6 +438,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1668423608 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.212 -0400", hash_original_method = "6C3FEAC6B139FD6B0B9CDBF24FD25811", hash_generated_method = "D293FFFAB4AE0E16B24D77143075BB0A")
     @Override
     protected byte[] protectedArray() {
@@ -460,6 +461,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1668423608 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.212 -0400", hash_original_method = "BE42CB64719A7E35581BD2552BC2391A", hash_generated_method = "ACF10DE12CA463C1B6584374D140AF0A")
     @Override
     protected int protectedArrayOffset() {
@@ -473,6 +475,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1668423608 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.212 -0400", hash_original_method = "F879D2589AC497F37E3C882F528D27BC", hash_generated_method = "74FAB615B7427912BFA6F7F27EED481E")
     @Override
     protected boolean protectedHasArray() {

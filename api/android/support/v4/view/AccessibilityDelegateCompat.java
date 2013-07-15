@@ -23,6 +23,7 @@ public class AccessibilityDelegateCompat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.667 -0400", hash_original_method = "29194344028099349300BA7E9C8229CD", hash_generated_method = "D72F389A0E76722ABA00A6316B7F4A51")
      Object getBridge() {
 Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
@@ -122,6 +123,7 @@ Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.670 -0400", hash_original_method = "5A07CEDF6000B635EBB3282D6BCEC4C0", hash_generated_method = "5AC968A873711E9C7239BD904EACEBCA")
         public Object newAccessiblityDelegateDefaultImpl() {
 Object var540C13E9E156B687226421B24F2DF178_914655101 =             null;
@@ -132,6 +134,7 @@ Object var540C13E9E156B687226421B24F2DF178_914655101 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.670 -0400", hash_original_method = "CA4708336A662876B1C4E973563DF8C7", hash_generated_method = "D039B6AD21810E51E56FC9AE885FEE1B")
         public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener) {
             addTaint(listener.getTaint());
@@ -143,6 +146,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.671 -0400", hash_original_method = "9EE5CAEDF307AFCEB241BA171EF39C83", hash_generated_method = "78ED03075C916433E20BCAEA1E456379")
         public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -157,6 +161,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.671 -0400", hash_original_method = "1447397CED667B971B04D5F82ACD0B6D", hash_generated_method = "225086B214F75BDCA170C89E0ADB2C57")
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -168,6 +173,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.671 -0400", hash_original_method = "99C4DEE76C5B6F4A70F08ECD66D4CBFF", hash_generated_method = "3D77FE40A1AADA4203C92B860EDAFFFF")
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
@@ -179,6 +185,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.672 -0400", hash_original_method = "01D49E3547E9C548CD307570029DA5C4", hash_generated_method = "868C8882B6E6BD958654FB038CB0DAC1")
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -190,6 +197,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.672 -0400", hash_original_method = "389DE28FC8C0CFCD072BB38D30CE111B", hash_generated_method = "B828B8E6792981D545FB824AE2C260E7")
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
@@ -206,6 +214,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.673 -0400", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "593BBEE4952D85452CC23527030EF887")
         public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
             addTaint(eventType);
@@ -215,6 +224,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.673 -0400", hash_original_method = "B229E2592A12C5FBAB6E11834FD34BE2", hash_generated_method = "955305F28D84EC1BFDC9E23FE39048F8")
         public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {

@@ -58,6 +58,7 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     public abstract GenericInflater cloneInContext(Context newContext);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.273 -0400", hash_original_method = "601AA595429A3B000CED526A81A8472C", hash_generated_method = "7BC7A6A5CCACB62BC0C669BFFD05EDF1")
     public void setDefaultPackage(String defaultPackage) {
         mDefaultPackage = defaultPackage;
@@ -66,6 +67,7 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.273 -0400", hash_original_method = "46E608B0485504B383BE067A0BD6622F", hash_generated_method = "F9829EABE8AA95FDD3EB35D484795E22")
     public String getDefaultPackage() {
 String varF2E95DF9778A091AD1F79240098DBF1E_1944942323 =         mDefaultPackage;
@@ -76,6 +78,7 @@ String varF2E95DF9778A091AD1F79240098DBF1E_1944942323 =         mDefaultPackage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.274 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "FE3A39CAE3A535B81281C96D62EFD33E")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_141396511 =         mContext;

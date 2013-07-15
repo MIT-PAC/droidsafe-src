@@ -47,6 +47,7 @@ public class EncryptionScheme extends AlgorithmIdentifier {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.346 -0400", hash_original_method = "20A4F3D13CF17139753D47801A517EAE", hash_generated_method = "D129296BC61DA23E955FDE0BB3CCA3D9")
     public DERObject getObject() {
 DERObject var8EAAA76A40D56861CC2E6AC09D91BF62_524478215 =         (DERObject)getParameters();
@@ -57,6 +58,7 @@ DERObject var8EAAA76A40D56861CC2E6AC09D91BF62_524478215 =         (DERObject)get
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.346 -0400", hash_original_method = "0A2A11415EF4AC8722D540FA9324533D", hash_generated_method = "1E6452FEC058B16937A39F608691604F")
     public DERObject getDERObject() {
         ASN1EncodableVector v = new ASN1EncodableVector();

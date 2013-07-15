@@ -68,6 +68,7 @@ abstract class Connection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.006 -0400", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "6D4FF7F457AB97BE08642F0B973F531C")
      HttpHost getHost() {
 HttpHost varE57614B151242FB69B92E61EEA287D33_155385716 =         mHost;
@@ -88,6 +89,7 @@ HttpHost varE57614B151242FB69B92E61EEA287D33_155385716 =         mHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.006 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "F03ACD64B63616DAFE4A39AA0F264CEE")
      SslCertificate getCertificate() {
 SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_367732284 =         mCertificate;
@@ -336,6 +338,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.020 -0400", hash_original_method = "65B4C91B53E686F7A0B5A125142FC3C0", hash_generated_method = "5A918C08C8011B398AAEFDE3AF75676D")
     private boolean openHttpConnection(Request req) {
         long now = SystemClock.uptimeMillis();
@@ -481,6 +484,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.024 -0400", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "3FD76C3C4CC43F1D6F623679FD397F3C")
      HttpContext getHttpContext() {
 HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContext;
@@ -555,6 +559,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.025 -0400", hash_original_method = "30E271C8B4BA77F90D768E6DAD0368A8", hash_generated_method = "4D4E5718D6623C41E8E53EA293E55F7E")
      void setCanPersist(HttpEntity entity, ProtocolVersion ver, int connType) {
         mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
@@ -563,6 +568,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.026 -0400", hash_original_method = "948404D3184D15107ABD2526F5DFBFE0", hash_generated_method = "C987B1689B3761BB7765A463FADF77BA")
      void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
@@ -571,6 +577,7 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.026 -0400", hash_original_method = "5B21A605E2B59BE630988FE4FC055560", hash_generated_method = "18A252F22535F913BDC1D84AE13CA7A5")
      boolean getCanPersist() {
         boolean var97A1B0DF7A8AAEB03A6EC2B31E06308F_189691752 = (mCanPersist);
@@ -600,6 +607,7 @@ String varCB14F0A7BD5D5FF81E804E15C1A5E873_425450917 =         mHost.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.027 -0400", hash_original_method = "ED2ED37A31E0A6859AF61C011936FDA1", hash_generated_method = "FA1681ECA3E166380AB92F3A16022CD6")
      byte[] getBuf() {
     if(mBuf == null)        

@@ -65,7 +65,8 @@ public class MediaFile {
     }
 
     
-        public static boolean isAudioFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isAudioFileType(int fileType) {
         return ((fileType >= FIRST_AUDIO_FILE_TYPE &&
                 fileType <= LAST_AUDIO_FILE_TYPE) ||
                 (fileType >= FIRST_MIDI_FILE_TYPE &&
@@ -73,7 +74,8 @@ public class MediaFile {
     }
 
     
-        public static boolean isVideoFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isVideoFileType(int fileType) {
         return (fileType >= FIRST_VIDEO_FILE_TYPE &&
                 fileType <= LAST_VIDEO_FILE_TYPE)
             || (fileType >= FIRST_VIDEO_FILE_TYPE2 &&
@@ -81,19 +83,22 @@ public class MediaFile {
     }
 
     
-        public static boolean isImageFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isImageFileType(int fileType) {
         return (fileType >= FIRST_IMAGE_FILE_TYPE &&
                 fileType <= LAST_IMAGE_FILE_TYPE);
     }
 
     
-        public static boolean isPlayListFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isPlayListFileType(int fileType) {
         return (fileType >= FIRST_PLAYLIST_FILE_TYPE &&
                 fileType <= LAST_PLAYLIST_FILE_TYPE);
     }
 
     
-        public static boolean isDrmFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDrmFileType(int fileType) {
         return (fileType >= FIRST_DRM_FILE_TYPE &&
                 fileType <= LAST_DRM_FILE_TYPE);
     }

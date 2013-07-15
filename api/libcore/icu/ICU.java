@@ -45,7 +45,8 @@ public final class ICU {
     }
 
     
-        public static Locale[] localesFromStrings(String[] localeNames) {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] localesFromStrings(String[] localeNames) {
         LinkedHashSet<Locale> set = new LinkedHashSet<Locale>();
         for (String localeName : localeNames) {
             set.add(localeFromString(localeName));
@@ -54,7 +55,8 @@ public final class ICU {
     }
 
     
-        public static Locale[] getAvailableLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableLocales() {
         if (availableLocalesCache == null) {
             availableLocalesCache = localesFromStrings(getAvailableLocalesNative());
         }
@@ -62,37 +64,44 @@ public final class ICU {
     }
 
     
-        public static Locale[] getAvailableBreakIteratorLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableBreakIteratorLocales() {
         return localesFromStrings(getAvailableBreakIteratorLocalesNative());
     }
 
     
-        public static Locale[] getAvailableCalendarLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableCalendarLocales() {
         return localesFromStrings(getAvailableCalendarLocalesNative());
     }
 
     
-        public static Locale[] getAvailableCollatorLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableCollatorLocales() {
         return localesFromStrings(getAvailableCollatorLocalesNative());
     }
 
     
-        public static Locale[] getAvailableDateFormatLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableDateFormatLocales() {
         return localesFromStrings(getAvailableDateFormatLocalesNative());
     }
 
     
-        public static Locale[] getAvailableDateFormatSymbolsLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableDateFormatSymbolsLocales() {
         return getAvailableDateFormatLocales();
     }
 
     
-        public static Locale[] getAvailableDecimalFormatSymbolsLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableDecimalFormatSymbolsLocales() {
         return getAvailableNumberFormatLocales();
     }
 
     
-        public static Locale[] getAvailableNumberFormatLocales() {
+        @DSModeled(DSC.SPEC)
+    public static Locale[] getAvailableNumberFormatLocales() {
         return localesFromStrings(getAvailableNumberFormatLocalesNative());
     }
 

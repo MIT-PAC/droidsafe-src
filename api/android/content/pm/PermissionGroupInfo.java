@@ -94,6 +94,7 @@ String var72C53EB254ECB0D5467E66B7861D8A47_173319434 =         "PermissionGroupI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.117 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1B194DAD236131E9B8C4D51E300FB2D8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_738008111 = (0);

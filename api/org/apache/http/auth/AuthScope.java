@@ -79,6 +79,7 @@ public class AuthScope {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.062 -0400", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "6CBEFC799544FE4D570504D086B48C28")
     public String getHost() {
 String var66CBD60FD8EB006652E02A446703F8AC_1198072236 =         this.host;
@@ -89,6 +90,7 @@ String var66CBD60FD8EB006652E02A446703F8AC_1198072236 =         this.host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.063 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "24BB0170CA37E9A9D21B31698649770C")
     public int getPort() {
         int var02075052AFB1BA5EC4413B52BC401B14_19432304 = (this.port);
@@ -99,6 +101,7 @@ String var66CBD60FD8EB006652E02A446703F8AC_1198072236 =         this.host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.063 -0400", hash_original_method = "5D06D5B53E6C13036F29936602C7EB58", hash_generated_method = "3EF8E3BEA2B3AC1274BBB249F9B13D6E")
     public String getRealm() {
 String varE5D7E56F4E58F69800590B650DF8A269_39970700 =         this.realm;
@@ -109,6 +112,7 @@ String varE5D7E56F4E58F69800590B650DF8A269_39970700 =         this.realm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.063 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "7B93E81DE68DDDC2D59B1C2F36BA75D1")
     public String getScheme() {
 String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;

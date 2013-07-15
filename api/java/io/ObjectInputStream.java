@@ -194,6 +194,7 @@ switch(pushbackTC){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.199 -0400", hash_original_method = "970A975ADDA1CD42A4A6880D40629922", hash_generated_method = "92C9F579BCFAD2F150DB382D4482E6E9")
     protected boolean enableResolveObject(boolean enable) {
         boolean originalValue = enableResolve;
@@ -208,6 +209,7 @@ switch(pushbackTC){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.204 -0400", hash_original_method = "BEEE4D4B01DB5401D5A386ECF8653C53", hash_generated_method = "E0CB1BA0F4F485CD378C13FC5973E6A7")
     private int nextHandle() {
         int varFF113B7ACD957FCEBD61C4FF9210CB16_1925809842 = (nextHandle++);
@@ -241,6 +243,7 @@ switch(pushbackTC){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.211 -0400", hash_original_method = "056AB6ECFECE1087CD6299233C3046CF", hash_generated_method = "1AA917BD8C0785A0A281D56B178CD348")
     private void pushbackTC() {
         hasPushbackTC = true;
@@ -1915,7 +1918,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_993904 =         result;
     }
 
     
-        private static ClassLoader getClosestUserClassLoader() {
+        @DSModeled(DSC.BAN)
+    private static ClassLoader getClosestUserClassLoader() {
         Class<?>[] stackClasses = VMStack.getClasses(-1);
         for (Class<?> stackClass : stackClasses) {
             ClassLoader loader = stackClass.getClassLoader();
@@ -2177,6 +2181,7 @@ Class<?> var51801364268DFB5B1361AB761C7278F7_1266242235 =         cls;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.693 -0400", hash_original_method = "8BE1D9D2C1A8227AC3DEAA12C63F6442", hash_generated_method = "E2DCBACF2FF8DD3F8B28365E4304CBE5")
     protected Object resolveObject(Object object) throws IOException {
         addTaint(object.getTaint());

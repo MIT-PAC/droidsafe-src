@@ -265,6 +265,7 @@ String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857 =         dn.getName(forma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.222 -0400", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "DB40AE397DC49785DD7225433D99112A")
     public String getName(String format, Map<String, String> oidMap) {
         addTaint(oidMap.getTaint());
@@ -390,6 +391,7 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC177
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "A7896ABFF1F143AF29043ED4F53678B0")
     private String substituteNameFromMap(String name, Map<String, String> keywordMap) {
         addTaint(keywordMap.getTaint());

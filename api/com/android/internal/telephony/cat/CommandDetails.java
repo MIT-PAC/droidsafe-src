@@ -55,6 +55,7 @@ class CommandDetails extends ValueObject implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.911 -0400", hash_original_method = "C0C704DA5801253794AC36F584EC8459", hash_generated_method = "14712917A585B3C2982AF941F9965472")
     public ComprehensionTlvTag getTag() {
 ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_99405001 =         ComprehensionTlvTag.COMMAND_DETAILS;
@@ -65,6 +66,7 @@ ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_99405001 =         Compr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.911 -0400", hash_original_method = "0B93253C460C2EDDDD5784E156E19F28", hash_generated_method = "D54D8CB4FE60D23E04B733A09595D900")
     public boolean compareTo(CommandDetails other) {
         addTaint(other.getTaint());
@@ -96,6 +98,7 @@ ComprehensionTlvTag var9DA7656155941EB638A21C9886D66E9F_99405001 =         Compr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.912 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "956DF7B09FD4F77838672A10FA9B7C62")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1624100655 = (0);
@@ -145,6 +148,7 @@ class DeviceIdentities extends ValueObject {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.912 -0400", hash_original_method = "08D7E03586C546439C1E191A295F1932", hash_generated_method = "31F4D0CDE4B8DB35BDC74793C72A16DF")
      ComprehensionTlvTag getTag() {
 ComprehensionTlvTag var40E2ED400A74AD7725B9C37C0CB8965B_603067912 =         ComprehensionTlvTag.DEVICE_IDENTITIES;
@@ -172,6 +176,7 @@ class IconId extends ValueObject {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.913 -0400", hash_original_method = "FDA08E7237336A8674293BF7C0007438", hash_generated_method = "54FAC0664D4D36BF9010D9879F2E7C69")
      ComprehensionTlvTag getTag() {
 ComprehensionTlvTag var9A40A0A29371917EAA2F45DA4051B8A9_2012032598 =         ComprehensionTlvTag.ICON_ID;
@@ -199,6 +204,7 @@ class ItemsIconId extends ValueObject {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.914 -0400", hash_original_method = "7B0D04191966D298CC63DF323042C1B7", hash_generated_method = "A1172FA64300355B5F94B1CD914929FF")
      ComprehensionTlvTag getTag() {
 ComprehensionTlvTag var92C3009FE0AF09FE85422EE9A9D13021_1527461518 =         ComprehensionTlvTag.ITEM_ICON_ID_LIST;

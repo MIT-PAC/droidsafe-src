@@ -66,6 +66,7 @@ public class RotateDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.636 -0400", hash_original_method = "CE08CCF44A5C011BE03C2CE7D256555D", hash_generated_method = "439FCA0638C5C733408011B39B445824")
     public Drawable getDrawable() {
 Drawable varF9B456849C7B5DD9BFF89D3152C1C062_1817452349 =         mState.mDrawable;
@@ -506,6 +507,7 @@ Drawable var08E68496273584B2BA9853DFD7C4906A_707129120 =             new RotateD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.654 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "222F6A9DE6236510D22E31966C6DBE95")
         @Override
         public int getChangingConfigurations() {

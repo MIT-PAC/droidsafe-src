@@ -123,6 +123,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.394 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "80352028D49259814E860C919674B768")
     @Override
     public int size() {
@@ -200,6 +201,7 @@ for(int i = 0, length = bits.length;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.395 -0400", hash_original_method = "826B98DAC190E2D4BDC8BAF1B8E9FA22", hash_generated_method = "EA58DEBE845BAB1D35BA81267FE41BC4")
     @Override
     public HugeEnumSet<E> clone() {
@@ -215,6 +217,7 @@ HugeEnumSet<E> varD2D4612E029977363A9BBEBD4F0339C0_942506277 =         set;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.395 -0400", hash_original_method = "339CE6C6AEA3B599DB9A44E737F0BFCB", hash_generated_method = "A316C9CE166710E5B657F1165EBEBE2E")
     @Override
     public boolean containsAll(Collection<?> collection) {
@@ -298,6 +301,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.395 -0400", hash_original_method = "B316E1958D9D53581FC97DA7E1235F34", hash_generated_method = "CE662EE43CB419D9FBAE6022F9235ADB")
     @Override
     public Iterator<E> iterator() {
@@ -354,6 +358,7 @@ Iterator<E> var23ABE8665BBA8FC4E64A26ACD82C00C6_1532959484 =         new HugeEnu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.396 -0400", hash_original_method = "3A1F4E4B375F17905B34B03F15B39BEF", hash_generated_method = "E5EE0AE1BC1D62D1712F6FCACC94ECB3")
     @Override
     public boolean removeAll(Collection<?> collection) {
@@ -398,6 +403,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.397 -0400", hash_original_method = "60F21531B5154FAF39DCC5FD8D5C4219", hash_generated_method = "D4489D067D2D36C397AEB4F59A9D0E83")
     @Override
     public boolean retainAll(Collection<?> collection) {
@@ -544,6 +550,7 @@ for(int i = (startIndex + 1);i <= (endIndex - 1);i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.401 -0400", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "03AF71B192BE922FC4A1233FA60EEBA6")
         public boolean hasNext() {
             boolean varD4C71BBF3A783D0D50DB7E2A5ECD4FBD_1296180478 = (mask != 0);
@@ -554,6 +561,7 @@ for(int i = (startIndex + 1);i <= (endIndex - 1);i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.401 -0400", hash_original_method = "B99B4F6D513EFDAF8AFCA1BFB6A725C7", hash_generated_method = "D0C2DC2BCE00A54B32D1D1A17EA6EEC6")
         public E next() {
     if(mask == 0)            

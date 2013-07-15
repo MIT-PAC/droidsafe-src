@@ -122,6 +122,7 @@ Certificate[] varD7F6AB131BE738B5E6706A18E82B3D10_217188085 =         jarVerifie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.071 -0400", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "FDB2887914FAA4104F2D0ED03D0034E5")
      void setAttributes(Attributes attrib) {
         attributes = attrib;

@@ -37,7 +37,8 @@ public class URLParser extends Parser {
     }
 
     
-        protected static boolean isMark(char next) {
+        @DSModeled(DSC.SAFE)
+    protected static boolean isMark(char next) {
         switch (next) {
             case '-':
             case '_':
@@ -60,7 +61,8 @@ public class URLParser extends Parser {
     }
 
     
-        protected static boolean isReservedNoSlash(char next) {
+        @DSModeled(DSC.SAFE)
+    protected static boolean isReservedNoSlash(char next) {
         switch (next) {
             case ';':
             case '?':
@@ -77,7 +79,8 @@ public class URLParser extends Parser {
     }
 
     
-        protected static boolean isUserUnreserved(char la) {
+        @DSModeled(DSC.SAFE)
+    protected static boolean isUserUnreserved(char la) {
         switch (la) {
             case '&':
             case '?':
@@ -240,7 +243,8 @@ NameValue var706F044EA9006DAC45C94A328BE7F814_2095495415 =             new NameV
     }
 
     
-        protected static boolean isReserved(char next) {
+        @DSModeled(DSC.SAFE)
+    protected static boolean isReserved(char next) {
         switch (next) {
             case ';':
             case '/':

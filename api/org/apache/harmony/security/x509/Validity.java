@@ -30,6 +30,7 @@ public final class Validity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.486 -0400", hash_original_method = "CB2A2B3C356F1AD47950BB2253ACA4BD", hash_generated_method = "7514E8AFE084508CB731B99177F409D1")
     public Date getNotBefore() {
 Date varA538B0CD17616FA44CA9B918B38CAEAC_1132879262 =         notBefore;
@@ -40,6 +41,7 @@ Date varA538B0CD17616FA44CA9B918B38CAEAC_1132879262 =         notBefore;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.486 -0400", hash_original_method = "9EADF7E1E76408811693CE379F621727", hash_generated_method = "008D4BC2BE63AE3039379B5C6E749D76")
     public Date getNotAfter() {
 Date varE84253AB2AD08AA2E1E3A8582D622350_557948567 =         notAfter;
@@ -50,6 +52,7 @@ Date varE84253AB2AD08AA2E1E3A8582D622350_557948567 =         notAfter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.487 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "9E40B244AF9DC6E85969B56A334C8E9B")
     public byte[] getEncoded() {
     if(encoding == null)        

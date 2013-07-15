@@ -57,7 +57,8 @@ public class Credentials {
     }
 
     
-        public static Credentials getInstance() {
+        @DSModeled(DSC.BAN)
+    public static Credentials getInstance() {
         if (singleton == null) {
             singleton = new Credentials();
         }
@@ -133,6 +134,7 @@ public class Credentials {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.955 -0400", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "95818ACAC06CC229F691306D0D70550A")
     public void install(Context context, String type, byte[] value) {
         addTaint(value[0]);

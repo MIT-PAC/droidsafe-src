@@ -22,6 +22,7 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.932 -0400", hash_original_method = "64C6D73F3773427C2A2F245DBEBF22E0", hash_generated_method = "8116AFB2A008AEFD715C112BE33C4C3F")
     protected char[] getOriginal() {
         char[] varA87D5006E1DE1BFC07D5C56086AD20F1_1723900480 = (ORIGINAL);
@@ -32,6 +33,7 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.932 -0400", hash_original_method = "44611EB51BD7B665366AA2036C731932", hash_generated_method = "779C3CC35D21E82470182DDB89DFE704")
     protected char[] getReplacement() {
         char[] varF4CC968AA79ED281D13413445DE24D82_227048702 = (REPLACEMENT);

@@ -105,6 +105,7 @@ String var2460B846747F8B22185AD8BE722266A5_1899049508 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.240 -0400", hash_original_method = "D215C550B13153D48FB1E7191C982EAA", hash_generated_method = "3E546E6D95562AC743C363C1CC44E897")
     public SetupResult setLinkProperties(LinkProperties linkProperties,
             boolean okToUseSystemPropertyDns) {

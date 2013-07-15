@@ -17,6 +17,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.612 -0400", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "C286A2A8722EE9FF877C2D4BC18CE87A")
     public void onReceive(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -60,6 +61,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.613 -0400", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "3998F9E365E6902957A08F14D1CE8DF6")
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -70,6 +72,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.614 -0400", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "3FF9074FBCBC54386E250B91C39D9F63")
     public void onDeleted(Context context, int[] appWidgetIds) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -79,6 +82,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.615 -0400", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "0B915167097F155742FBB7F56749B7EC")
     public void onEnabled(Context context) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -87,6 +91,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.616 -0400", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "BBBA003B1A0C8AA6F2BE99EB08B19D4C")
     public void onDisabled(Context context) {
         //DSFIXME:  CODE0009: Possible callback target function detected

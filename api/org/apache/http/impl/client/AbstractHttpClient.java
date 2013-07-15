@@ -173,6 +173,7 @@ HttpParams var44B488213C6710CAA88E56A7B52636A1_1024256393 =         defaultParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.286 -0400", hash_original_method = "E8FEA16F6836AB209AB35B29A74CFADA", hash_generated_method = "BC5D0F150AB716DC339EA236FCA8A24D")
     public synchronized void setParams(HttpParams params) {
         defaultParams = params;
@@ -582,6 +583,7 @@ HttpResponseInterceptor var14C69ADE76D50A2EFFEE1CF66D37806B_921028034 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.295 -0400", hash_original_method = "6A5F71CEA46F78E6D39221F9549EADAD", hash_generated_method = "5073B791D706F88105887F05CCA3B9F9")
     public void removeResponseInterceptorByClass(Class<? extends HttpResponseInterceptor> clazz) {
         addTaint(clazz.getTaint());
@@ -639,6 +641,7 @@ HttpRequestInterceptor varBB4763CB0F25016809DFE65E2B809ED2_1034420265 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.296 -0400", hash_original_method = "388288F90509812A8D957678B2075EF7", hash_generated_method = "F7FC19E02EA65058F6B3214BA3172E92")
     public void removeRequestInterceptorByClass(Class<? extends HttpRequestInterceptor> clazz) {
         addTaint(clazz.getTaint());

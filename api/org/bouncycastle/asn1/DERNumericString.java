@@ -85,6 +85,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.103 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "4A016C27E69932EF044161E05FFB14CA")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_838483051 =         string;
@@ -95,6 +96,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_838483051 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.103 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "467B7F8397DF0C9B1A9FF3E30D71B2B7")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_1436506563 =         string;
@@ -105,6 +107,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1436506563 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.104 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "6363B4C9762865C7FF63D0F45D6BF080")
     public byte[] getOctets() {
         char[] cs = string.toCharArray();
@@ -127,6 +130,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.104 -0400", hash_original_method = "9CAFE2F99C4AA1A810005CA2021DBA5F", hash_generated_method = "13227F84E3B3A01A86E62EE784B936D7")
      void encode(
         DEROutputStream  out) throws IOException {
@@ -137,6 +141,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.104 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "2C092CC7F70EB712CAFE5A345B42B602")
     public int hashCode() {
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_1077864307 = (this.getString().hashCode());
@@ -147,6 +152,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.105 -0400", hash_original_method = "8BA017E030540263DAC8EBF952EA3B45", hash_generated_method = "CB4E482AADAA1B5AE14E88AD5A890553")
      boolean asn1Equals(
         DERObject  o) {

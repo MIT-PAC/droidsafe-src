@@ -31,11 +31,13 @@ class CertificateChainValidator {
     }
 
     
-        public static CertificateChainValidator getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static CertificateChainValidator getInstance() {
         return sInstance;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.930 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "678C6184B8F1F4881AD2DEEDE7373600")
     public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
@@ -110,6 +112,7 @@ SslError var5995AA76FBBB5331C788BBF94383B022_2086607111 =         verifyServerDo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.931 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "05E0FE804B6759B78541079DC94C2EE6")
     private void closeSocketThrowException(
             SSLSocket socket, String errorMessage, String defaultErrorMessage) throws IOException {
@@ -124,6 +127,7 @@ SslError var5995AA76FBBB5331C788BBF94383B022_2086607111 =         verifyServerDo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.931 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "EEF79FB8E32C667459C0C833C5AEACAF")
     private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {

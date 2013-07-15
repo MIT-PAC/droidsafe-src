@@ -32,6 +32,7 @@ public final class BluetoothServerSocket implements Closeable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.334 -0400", hash_original_method = "AD3A35A4BC06FDD4538EB43EE5EE87FA", hash_generated_method = "EF917F87E71DA1AC877C8F15796D09F1")
     public BluetoothSocket accept() throws IOException {
 BluetoothSocket var56B5E835905C724ABB44F3A2DE80B2CA_894002955 =         accept(-1);
@@ -42,6 +43,7 @@ BluetoothSocket var56B5E835905C724ABB44F3A2DE80B2CA_894002955 =         accept(-
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.335 -0400", hash_original_method = "A8FFD99A49FD9FF66AB961B93E165703", hash_generated_method = "9CDC5E462F0D0DDCD0EBD5E30FFC6CDD")
     public BluetoothSocket accept(int timeout) throws IOException {
         addTaint(timeout);
@@ -73,6 +75,7 @@ BluetoothSocket var0E890385DCEFB41350BE22388B55AC0F_1945940108 =         mSocket
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.336 -0400", hash_original_method = "4ADEDE7D6DD2772B3D707BC6D3A1D1F8", hash_generated_method = "00355F8C990DA5278853A6B70D6772D6")
     synchronized void setCloseHandler(Handler handler, int message) {
         mHandler = handler;
@@ -83,6 +86,7 @@ BluetoothSocket var0E890385DCEFB41350BE22388B55AC0F_1945940108 =         mSocket
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.336 -0400", hash_original_method = "87CE95BB5407CF3970CFD04437A2E7B9", hash_generated_method = "AC1A8D340CCC10387ACB0A43B16B3226")
     public int getChannel() {
         int var8E934369C1BCE6316A2C1FFFF8C383AB_510543900 = (mChannel);

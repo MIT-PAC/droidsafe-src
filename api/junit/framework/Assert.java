@@ -34,7 +34,8 @@ public class Assert {
     }
 
     
-        static public void fail(String message) {
+        @DSModeled(DSC.SPEC)
+    static public void fail(String message) {
         throw new AssertionFailedError(message);
     }
 
@@ -44,7 +45,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, Object expected, Object actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, Object expected, Object actual) {
         if (expected == null && actual == null)
             return;
         if (expected != null && expected.equals(actual))
@@ -53,7 +55,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(Object expected, Object actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(Object expected, Object actual) {
         assertEquals(null, expected, actual);
     }
 
@@ -100,7 +103,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, long expected, long actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, long expected, long actual) {
         assertEquals(message, new Long(expected), new Long(actual));
     }
 
@@ -110,7 +114,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, boolean expected, boolean actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, boolean expected, boolean actual) {
         assertEquals(message, new Boolean(expected), new Boolean(actual));
     }
 
@@ -120,7 +125,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, byte expected, byte actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, byte expected, byte actual) {
         assertEquals(message, new Byte(expected), new Byte(actual));
     }
 
@@ -130,7 +136,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, char expected, char actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, char expected, char actual) {
         assertEquals(message, new Character(expected), new Character(actual));
     }
 
@@ -140,7 +147,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, short expected, short actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, short expected, short actual) {
         assertEquals(message, new Short(expected), new Short(actual));
     }
 
@@ -150,7 +158,8 @@ public class Assert {
     }
 
     
-        static public void assertEquals(String message, int expected, int actual) {
+        @DSModeled(DSC.SPEC)
+    static public void assertEquals(String message, int expected, int actual) {
         assertEquals(message, new Integer(expected), new Integer(actual));
     }
 
@@ -160,22 +169,26 @@ public class Assert {
     }
 
     
-        static public void assertNotNull(Object object) {
+        @DSModeled(DSC.SPEC)
+    static public void assertNotNull(Object object) {
         assertNotNull(null, object);
     }
 
     
-        static public void assertNotNull(String message, Object object) {
+        @DSModeled(DSC.SPEC)
+    static public void assertNotNull(String message, Object object) {
         assertTrue(message, object != null);
     }
 
     
-        static public void assertNull(Object object) {
+        @DSModeled(DSC.SPEC)
+    static public void assertNull(Object object) {
         assertNull(null, object);
     }
 
     
-        static public void assertNull(String message, Object object) {
+        @DSModeled(DSC.SPEC)
+    static public void assertNull(String message, Object object) {
         assertTrue(message, object == null);
     }
 
@@ -203,7 +216,8 @@ public class Assert {
     }
 
     
-        static private void failSame(String message) {
+        @DSModeled(DSC.SPEC)
+    static private void failSame(String message) {
         String formatted= "";
         if (message != null)
              formatted= message+" ";
@@ -211,7 +225,8 @@ public class Assert {
     }
 
     
-        static private void failNotSame(String message, Object expected, Object actual) {
+        @DSModeled(DSC.SPEC)
+    static private void failNotSame(String message, Object expected, Object actual) {
         String formatted= "";
         if (message != null)
             formatted= message+" ";
@@ -219,12 +234,14 @@ public class Assert {
     }
 
     
-        static private void failNotEquals(String message, Object expected, Object actual) {
+        @DSModeled(DSC.SPEC)
+    static private void failNotEquals(String message, Object expected, Object actual) {
         fail(format(message, expected, actual));
     }
 
     
-        static String format(String message, Object expected, Object actual) {
+        @DSModeled(DSC.SPEC)
+    static String format(String message, Object expected, Object actual) {
         String formatted= "";
         if (message != null)
             formatted= message+" ";

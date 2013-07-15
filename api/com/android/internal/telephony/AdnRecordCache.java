@@ -40,6 +40,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.700 -0400", hash_original_method = "C51C4513003EDC9EA86A76A3037140C3", hash_generated_method = "39E1DB1685B71CBB7026B24F81570F04")
     public void reset() {
         adnLikeFiles.clear();
@@ -103,6 +104,7 @@ ArrayList<AdnRecord> var3D961DBCF8C551D2B336F2C2F608BD6B_1962589484 =         ad
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.702 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "4750BB12034F98EDF4770777EB0989CC")
      int extensionEfForEf(int efid) {
         addTaint(efid);
@@ -149,6 +151,7 @@ switch(efid){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.703 -0400", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "D11595183DEC425F7EA8A3F2C9D7DC8C")
     private void sendErrorResponse(Message response, String errString) {
         addTaint(errString.getTaint());
@@ -330,6 +333,7 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.707 -0400", hash_original_method = "06D7CFA235737447F2D0DAD9C5CA936C", hash_generated_method = "7F0B9F088C8B8A2F2C50B0AFC0D77CE5")
     private void notifyWaiters(ArrayList<Message> waiters, AsyncResult ar) {
         addTaint(ar.getTaint());

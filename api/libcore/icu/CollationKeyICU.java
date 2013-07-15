@@ -126,6 +126,7 @@ for(int i = 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.543 -0400", hash_original_method = "14EA39361109DCC90111D16D29CE0C8D", hash_generated_method = "52C33AB7FCE5DEBCB92EBCC52792E7CB")
     @Override
     public int hashCode() {

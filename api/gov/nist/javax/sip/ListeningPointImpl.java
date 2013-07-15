@@ -64,6 +64,7 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.506 -0400", hash_original_method = "7B5051E336F9DA4D6C5FA2A2C5289297", hash_generated_method = "96C2E0264AFC0AB8F48CC965CBB04B50")
     protected String getKey() {
 String var60CEE2B145F0330389F8BAFBF53C9928_744637497 =         makeKey(this.getIPAddress(), port, transport);
@@ -74,6 +75,7 @@ String var60CEE2B145F0330389F8BAFBF53C9928_744637497 =         makeKey(this.getI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "B5BA0F86714AE38D5B0FD7A4FCC59EE7", hash_generated_method = "67E4BC8870DD5E1F917EF85EF4D572B5")
     protected void setSipProvider(SipProviderImpl sipProviderImpl) {
         this.sipProvider = sipProviderImpl;
@@ -82,6 +84,7 @@ String var60CEE2B145F0330389F8BAFBF53C9928_744637497 =         makeKey(this.getI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "D12539CEE35D9C982852375BE20257EF", hash_generated_method = "74906DC351FFB2C8C9754469FB66B2C0")
     protected void removeSipProvider() {
         this.sipProvider = null;
@@ -125,6 +128,7 @@ String varBC4C3AAE5A28DB5958C39988EF1A9898_2114052833 =         messageProcessor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "AAD8E25C27C8721BC0F29D01F90B95A6", hash_generated_method = "D4C41EB22AC376DAC5E384100E0A6BDA")
     public SipProviderImpl getProvider() {
 SipProviderImpl varDA6985F98D2B970198C4C0F63DBC3E3D_1944325015 =         this.sipProvider;
@@ -184,6 +188,7 @@ Via var6D1FAA9A9C9AD7C385C321F6DCC97D70_1194308123 =         this.messageProcess
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.508 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "DB9C11963C1C24786EA43BE3FEF689F1")
     public MessageProcessor getMessageProcessor() {
 MessageProcessor varEE93DAA9E4FDACE3D0129BF58212AA5C_199697410 =         this.messageProcessor;
@@ -239,6 +244,7 @@ ContactHeader var540C13E9E156B687226421B24F2DF178_2046273960 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.508 -0400", hash_original_method = "5402C8EE79A7BEF74C3B072587BA8FD1", hash_generated_method = "4CB46C05EDB5E2F87683D92EA732F850")
     public void sendHeartbeat(String ipAddress, int port) throws IOException {
         addTaint(port);

@@ -78,6 +78,7 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.074 -0400", hash_original_method = "5A8FDC802D15BADB218E7B9A38048A4B", hash_generated_method = "FAC55342044592C7C52017B204482EB5")
     public String toString() {
 String varCA61EE736776B3A103C8DC641DCDABF4_1649350082 =         "PkgUsageStats{"
@@ -92,6 +93,7 @@ String varCA61EE736776B3A103C8DC641DCDABF4_1649350082 =         "PkgUsageStats{"
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.074 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2D8E7513D179164CBC9A05BFA2CBDC13")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1924039331 = (0);
@@ -102,6 +104,7 @@ String varCA61EE736776B3A103C8DC641DCDABF4_1649350082 =         "PkgUsageStats{"
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.074 -0400", hash_original_method = "65B01222074C1BC4168423427126F9FB", hash_generated_method = "CC7E9C1A95A742DF3FEB26C9544B80AF")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

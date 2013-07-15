@@ -47,6 +47,7 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.973 -0400", hash_original_method = "E5C596CBDCD8BE3EF1855673907A59B8", hash_generated_method = "B88138000F754DA7A1D16F5FD3D9B171")
     @Override
      HardwareCanvas start() {
@@ -91,6 +92,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.974 -0400", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "C3A5BD67E95404BFBF8AA35F264E0438")
     @Override
      boolean isValid() {
@@ -102,6 +104,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.975 -0400", hash_original_method = "96CA5C3852449FF9B74309A832926627", hash_generated_method = "233B6BDCB06001155F9BF184EA762713")
     @Override
      void end() {

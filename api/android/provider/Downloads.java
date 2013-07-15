@@ -24,38 +24,45 @@ public final class Downloads {
         }
 
         
-                public static boolean isStatusInformational(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusInformational(int status) {
             return (status >= 100 && status < 200);
         }
 
         
-                public static boolean isStatusSuccess(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusSuccess(int status) {
             return (status >= 200 && status < 300);
         }
 
         
-                public static boolean isStatusError(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusError(int status) {
             return (status >= 400 && status < 600);
         }
 
         
-                public static boolean isStatusClientError(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusClientError(int status) {
             return (status >= 400 && status < 500);
         }
 
         
-                public static boolean isStatusServerError(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusServerError(int status) {
             return (status >= 500 && status < 600);
         }
 
         
-                public static boolean isNotificationToBeDisplayed(int visibility) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isNotificationToBeDisplayed(int visibility) {
             return visibility == DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED ||
                     visibility == DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION;
         }
 
         
-                public static boolean isStatusCompleted(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusCompleted(int status) {
             return (status >= 200 && status < 300) || (status >= 400 && status < 600);
         }
 

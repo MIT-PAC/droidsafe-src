@@ -37,6 +37,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.661 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "B214CB0C6AD400603642BC580AF0366C")
     @Override
     public byte byteValue() {
@@ -60,6 +61,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.663 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "B3C2FCE477EC148ACDFDC252AB25DE5E")
     @Override
     public double doubleValue() {
@@ -85,6 +87,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.664 -0400", hash_original_method = "118855AC112B739ED1B5D8D57CEDA105", hash_generated_method = "57EFD7A51469722BF15E4FBEA88ABC08")
     @Override
     public float floatValue() {
@@ -109,6 +112,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.665 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "6FB4EA5BB1C1D17B3B1BB9DAEE1C4D41")
     @Override
     public int intValue() {
@@ -130,7 +134,8 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
-        public static boolean isInfinite(double d) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isInfinite(double d) {
         return (d == POSITIVE_INFINITY) || (d == NEGATIVE_INFINITY);
     }
 
@@ -145,7 +150,8 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
-        public static boolean isNaN(double d) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isNaN(double d) {
         return d != d;
     }
 
@@ -156,6 +162,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.670 -0400", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "187EE94CC93F593427439E35225D278E")
     @Override
     public long longValue() {
@@ -172,6 +179,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.671 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "F117331A8E93BF6A93CCF5AA1922C614")
     @Override
     public short shortValue() {

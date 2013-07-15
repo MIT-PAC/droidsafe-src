@@ -42,6 +42,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.844 -0400", hash_original_method = "9A1B44DAAD2420BC074FF7BE5F6986CE", hash_generated_method = "0E58FC03D0B11F69441EDFE3BAEF7AA4")
     public long getEstimatedBytes() {
         long varE081766EDB5BBAB91596FB5A1B03B4B8_1651390528 = (mEstimatedBytes);
@@ -52,6 +53,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.845 -0400", hash_original_method = "C8858C0BE5B1D5B7AD428D2F09A67941", hash_generated_method = "269FF80F9BBFB0C12C9B72633FCA5CE6")
     public long getSoftLimitBytes() {
         long var407B6D18E17605524108F73C59330777_674313597 = (mSoftLimitBytes);
@@ -62,6 +64,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.845 -0400", hash_original_method = "32F0E566D231A4A60EB6312295EBA3AB", hash_generated_method = "9BD10ADEC179D93386BA353AC81D0881")
     public long getHardLimitBytes() {
         long varA2D5EBBE48D8BF149BE44E9240D2555E_755424342 = (mHardLimitBytes);
@@ -72,6 +75,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.846 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "094D6481CA416F43CF23ABFB0639B69A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2040122420 = (0);
@@ -82,6 +86,7 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.846 -0400", hash_original_method = "62923C632AA7262774DF27E525AA9FBB", hash_generated_method = "068BB645A106698A95318ECF8F142BC4")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);

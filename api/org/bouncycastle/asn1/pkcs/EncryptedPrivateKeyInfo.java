@@ -62,6 +62,7 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.326 -0400", hash_original_method = "742117C3F9E40BA83B51D9D3C5056A2D", hash_generated_method = "53A49D2424A40C72AD17AB54273199F8")
     public AlgorithmIdentifier getEncryptionAlgorithm() {
 AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749 =         algId;
@@ -72,6 +73,7 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749 =         alg
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.326 -0400", hash_original_method = "BBC4FA06F2A86F1789EA116FAB590C10", hash_generated_method = "E9416BBC782F173289C7929F8939AF6D")
     public byte[] getEncryptedData() {
         byte[] var5EE6B65A36B3C65F89881A2A71E8AF96_2058922999 = (data.getOctets());

@@ -40,7 +40,8 @@ public class DEREnumerated extends ASN1Object {
     }
 
     
-        public static DEREnumerated getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DEREnumerated getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DEREnumerated)
         {
@@ -65,6 +66,7 @@ public class DEREnumerated extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.959 -0400", hash_original_method = "9CD9452AB0CD35F4B73E8FBD8DC6F0C8", hash_generated_method = "F0C677D60FEB845D7C8C29F55B618C4E")
     public BigInteger getValue() {
 BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteger(bytes);
@@ -75,6 +77,7 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteg
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.959 -0400", hash_original_method = "F1F5D8639E81BFE0F662E5D9DEEDCE8E", hash_generated_method = "8A30D4DA141341743CEA9BBC57C8BE1B")
      void encode(
         DEROutputStream out) throws IOException {
@@ -85,6 +88,7 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteg
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.960 -0400", hash_original_method = "87F9EE40A630F0723068642FAAE69D4D", hash_generated_method = "8319191ADC310C18DA5B8088BB75DCEA")
      boolean asn1Equals(
         DERObject  o) {
@@ -109,6 +113,7 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteg
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.960 -0400", hash_original_method = "ECC4B202736A567045152AD0D498E31B", hash_generated_method = "13C96B9D3F5000348B1DB0C2C425327F")
     public int hashCode() {
         int var2CDE289E7BF5766320CC430660AA476C_1900769476 = (Arrays.hashCode(bytes));

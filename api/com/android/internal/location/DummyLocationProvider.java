@@ -48,6 +48,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.652 -0400", hash_original_method = "1F8DE8B3742DB968D48AC8E46FA2231B", hash_generated_method = "B491D2865225D184CA94E5FDA8C8C83A")
     public void setRequiresNetwork(boolean requiresNetwork) {
         mRequiresNetwork = requiresNetwork;
@@ -56,6 +57,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.652 -0400", hash_original_method = "29EAF7BAC1D59C67F0068E19069EC95C", hash_generated_method = "6417F8E937DEF182FD4384B8EC43DEFA")
     public void setRequiresSatellite(boolean requiresSatellite) {
         mRequiresSatellite = requiresSatellite;
@@ -64,6 +66,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.653 -0400", hash_original_method = "800DBE9AB92460271BA9850123B2E01B", hash_generated_method = "59AA1D4331D17CE5FE6E163324E4AAF8")
     public void setRequiresCell(boolean requiresCell) {
         mRequiresCell = requiresCell;
@@ -72,6 +75,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.653 -0400", hash_original_method = "3E58BDCD583420258AF42AE15C5A1B66", hash_generated_method = "7A8F281C030D2AB2F4123F69F3ED81E7")
     public void setHasMonetaryCost(boolean hasMonetaryCost) {
         mHasMonetaryCost = hasMonetaryCost;
@@ -80,6 +84,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.653 -0400", hash_original_method = "CCF8D193AEBD5AA7F01F4990E2AE806C", hash_generated_method = "038ABF6E048EB620C4682786FEA54672")
     public void setSupportsAltitude(boolean supportsAltitude) {
         mSupportsAltitude = supportsAltitude;
@@ -88,6 +93,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.654 -0400", hash_original_method = "92E2AFB41DD112983B18606F5344DACF", hash_generated_method = "ADEA9A24C7E4EA76ACFC2A2BDA342523")
     public void setSupportsSpeed(boolean supportsSpeed) {
         mSupportsSpeed = supportsSpeed;
@@ -96,6 +102,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.654 -0400", hash_original_method = "F9CE2AAA32ACB1BAFD2F9DDDA0BB7D16", hash_generated_method = "8412DD7B3724FC89A37067DC4C863938")
     public void setSupportsBearing(boolean supportsBearing) {
         mSupportsBearing = supportsBearing;
@@ -104,6 +111,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.654 -0400", hash_original_method = "2C88F96CAFDD5DC38199E97F56E6E512", hash_generated_method = "AB54773A7A0BA7F8B4062B2F76D15C71")
     public void setPowerRequirement(int powerRequirement) {
         mPowerRequirement = powerRequirement;
@@ -112,6 +120,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.655 -0400", hash_original_method = "50C70CC35BE1C99F5177BBD5E6545CA6", hash_generated_method = "D288525613995EDA7816DABBB501D13A")
     public void setAccuracy(int accuracy) {
         mAccuracy = accuracy;
@@ -120,6 +129,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.655 -0400", hash_original_method = "12AE735753CC1F454105371651D9BBA1", hash_generated_method = "709463306C7C392168CEB50A8B319757")
     public boolean requiresNetwork() {
         boolean var182459C6AF0846CF429E94DF2B5959BF_817119978 = (mRequiresNetwork);
@@ -130,6 +140,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.655 -0400", hash_original_method = "A3DAE9100E63CBDE8137FDA5BE5C7B6B", hash_generated_method = "E2311AFFFDFDD01DA97E2775516CAE1A")
     public boolean requiresSatellite() {
         boolean varEFC1F8EB20F439228277C82383DD8A28_1849182754 = (mRequiresSatellite);
@@ -140,6 +151,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.655 -0400", hash_original_method = "BE22582F45632E0BED7FA33E3D9F0EE8", hash_generated_method = "039BF83C980BD781B6F87B93C2407193")
     public boolean requiresCell() {
         boolean varE39A10840F71D93205DC1F88A34956EC_64925837 = (mRequiresCell);
@@ -150,6 +162,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.655 -0400", hash_original_method = "464B91F9461F0393A5548F6081396811", hash_generated_method = "8659F6FE0D969FFBFCD09C572A02510E")
     public boolean hasMonetaryCost() {
         boolean varB83959B604F2556CE5CD8C482DC210E6_563481384 = (mHasMonetaryCost);
@@ -160,6 +173,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.656 -0400", hash_original_method = "80EB2267564425834001A2243EC06FBE", hash_generated_method = "BC5D37781B3AE944AEABF1E1414103C7")
     public boolean supportsAltitude() {
         boolean varFCDDD58BCD6E2BF64ED3B1463A2C99BB_416555692 = (mSupportsAltitude);
@@ -170,6 +184,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.656 -0400", hash_original_method = "F5A7ECCEC7D24AC04E83E34652847C55", hash_generated_method = "555A723097D3106ACF4CB624DE829CB2")
     public boolean supportsSpeed() {
         boolean varB441555425878714F69CE88456EA4B51_101342057 = (mSupportsSpeed);
@@ -180,6 +195,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.656 -0400", hash_original_method = "ADDCD70E458E7B4958723B2C0A9B7ABB", hash_generated_method = "72F2A129B2E84DAD84C61EB889D93A0F")
     public boolean supportsBearing() {
         boolean var421850CAFF8369DEEAE79E4BFA800D3E_1281135715 = (mSupportsBearing);
@@ -190,6 +206,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.656 -0400", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "D6F25AF4F4B94BF06E06C9A8DD604718")
     public int getPowerRequirement() {
         int var8CE6AA00EE3C11F8598CD0D337F6CAE9_2033030112 = (mPowerRequirement);
@@ -200,6 +217,7 @@ public class DummyLocationProvider extends LocationProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.657 -0400", hash_original_method = "8D132D636D1C633E7B8C919AFBA33B78", hash_generated_method = "A41DE94FD849743C6CFF5AD981A58FD3")
     public int getAccuracy() {
         int var662D142255956BF41BF8EF5110A28B67_497194646 = (mAccuracy);

@@ -50,6 +50,7 @@ public class TestMethod {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.560 -0400", hash_original_method = "2386A4DFFFB383A6C0CF09ED3BEE1A87", hash_generated_method = "36172C4E05DD7F791ED5C1285609AD21")
     public String getName() {
 String varA4C9EC0FD5B3028FE8B5A6286DFAFED0_853116402 =         testMethodName;
@@ -60,6 +61,7 @@ String varA4C9EC0FD5B3028FE8B5A6286DFAFED0_853116402 =         testMethodName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.560 -0400", hash_original_method = "39FD7F6F7AA49837DBE77C9F52124BDE", hash_generated_method = "EFCD60260178995494B1890E13B19CB6")
     public String getEnclosingClassname() {
 String var70BA58E354093CAAF65F7577E0A19767_796500065 =         enclosingClassname;
@@ -115,6 +117,7 @@ TestCase var4E67A1ABAA82E50DD551FC54F00F6BA9_673014778 =         instantiateTest
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.562 -0400", hash_original_method = "61AE5164C815A2E387BB0A5F097B4DE9", hash_generated_method = "199979792466A8971BCA377291B5754B")
     @SuppressWarnings("unchecked")
     private TestCase instantiateTest(Class testCaseClass, String testName) throws InvocationTargetException, IllegalAccessException, InstantiationException {

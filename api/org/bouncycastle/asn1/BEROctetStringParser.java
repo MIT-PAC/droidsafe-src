@@ -22,6 +22,7 @@ public class BEROctetStringParser implements ASN1OctetStringParser {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.803 -0400", hash_original_method = "B14EADD9BAF46A36395A6C914A60709A", hash_generated_method = "F6F6E4147240DCD5C571C8D535AA2110")
     public InputStream getOctetStream() {
 InputStream var9094BCFA8FD71609D2E0842140A5418B_1024995830 =         new ConstructedOctetStream(_parser);
@@ -32,6 +33,7 @@ InputStream var9094BCFA8FD71609D2E0842140A5418B_1024995830 =         new Constru
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.804 -0400", hash_original_method = "0C4B1CCBA41C89EAEA4B5E86000D0763", hash_generated_method = "56BFD5F21D78764AD6D28B9E7CF7CA03")
     public DERObject getLoadedObject() throws IOException {
 DERObject var94959E75F831C89F6F810CE88A32FE89_741010007 =         new BERConstructedOctetString(Streams.readAll(getOctetStream()));
@@ -42,6 +44,7 @@ DERObject var94959E75F831C89F6F810CE88A32FE89_741010007 =         new BERConstru
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.804 -0400", hash_original_method = "9966B03EEC95948C208DE961DDFE6334", hash_generated_method = "A139A41A0059777A48771F2F885EA783")
     public DERObject getDERObject() {
         try 

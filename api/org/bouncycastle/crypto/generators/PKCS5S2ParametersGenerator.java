@@ -91,6 +91,7 @@ for(int j = 0;j != state.length;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.297 -0400", hash_original_method = "D84C49C513A1760CAD87960E0D89CE0E", hash_generated_method = "E2A65E3E9FB0C770A72FEFD274A338E4")
     private void intToOctet(
         byte[]  buf,

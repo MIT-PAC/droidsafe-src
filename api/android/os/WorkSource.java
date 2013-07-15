@@ -72,6 +72,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.899 -0400", hash_original_method = "FA15A7D9EE41DC68B6DF2C6C4250D26C", hash_generated_method = "7A2990DB0011E43AD1827962DC987F41")
     public int size() {
         int var1B2924E0CDC894FEA7E3856870275E70_1442227490 = (mNum);
@@ -82,6 +83,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.899 -0400", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "7B26DA2FEB2DBF8FFC1600268CE3DCB1")
     public int get(int index) {
         addTaint(index);
@@ -93,6 +95,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.899 -0400", hash_original_method = "FEFE1B40777B5F58606593D185335D3A", hash_generated_method = "1EAEB237ED25FBCAA4FB93E520500649")
     public void clear() {
         mNum = 0;
@@ -101,6 +104,7 @@ public class WorkSource implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.900 -0400", hash_original_method = "2F8EB035FA41CD52820ED0B16262B2FB", hash_generated_method = "14FC433526316B8D71A0A632A835C05D")
     public boolean diff(WorkSource other) {
         addTaint(other.getTaint());
@@ -141,6 +145,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.900 -0400", hash_original_method = "0302228CCB49F7DB617DC3822F50D404", hash_generated_method = "0F36242A985A561E721DB568C000ADC7")
     public void set(WorkSource other) {
     if(other == null)        
@@ -182,6 +187,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.901 -0400", hash_original_method = "7924E91892F2F47DFBA42DC07794F83E", hash_generated_method = "78EFCF29562F90693664726E525F5973")
     public void set(int uid) {
         mNum = 1;
@@ -195,6 +201,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.902 -0400", hash_original_method = "7CA4549360AB4144F4EE2A696452CCBF", hash_generated_method = "2E4BC9E6DA25081D90920A79AF38422D")
     public WorkSource[] setReturningDiffs(WorkSource other) {
         addTaint(other.getTaint());
@@ -232,6 +239,7 @@ WorkSource[] var540C13E9E156B687226421B24F2DF178_1705049198 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.902 -0400", hash_original_method = "8F95FC70B656D084C5E20FAE69C56CE9", hash_generated_method = "A4B09E539231A07FB5605D76BE18F16A")
     public boolean add(WorkSource other) {
         addTaint(other.getTaint());
@@ -248,6 +256,7 @@ WorkSource[] var540C13E9E156B687226421B24F2DF178_1705049198 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.903 -0400", hash_original_method = "3C62D026004765F6E3FE84798605B705", hash_generated_method = "1D255FBC5A8012FC57C4B9F35F2D24D3")
     public WorkSource addReturningNewbs(WorkSource other) {
         addTaint(other.getTaint());
@@ -268,6 +277,7 @@ WorkSource var58A621AD92B821B849DEFCA427B300B1_1841001280 =             sNewbWor
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.904 -0400", hash_original_method = "4279F5B1CF7891D9D61E24583D3B3149", hash_generated_method = "1AE4D6F1545F52E3FB424C85E55C73FB")
     public boolean add(int uid) {
         synchronized
@@ -285,6 +295,7 @@ WorkSource var58A621AD92B821B849DEFCA427B300B1_1841001280 =             sNewbWor
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.905 -0400", hash_original_method = "6E5D478DFA5CD5B5102A5F18DB42CF54", hash_generated_method = "B5B6CB13E5C8DF479153056A7AE4B36F")
     public WorkSource addReturningNewbs(int uid) {
         synchronized
@@ -306,6 +317,7 @@ WorkSource var58A621AD92B821B849DEFCA427B300B1_699677174 =             sNewbWork
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.907 -0400", hash_original_method = "9E40782544207F8788FDA35D02E6FE4F", hash_generated_method = "B749C6FE64F6CD35EAD0592DFB7C8D80")
     public boolean remove(WorkSource other) {
         addTaint(other.getTaint());
@@ -354,6 +366,7 @@ for(int i2=0;i2<N2 && i1<N1;i2++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.909 -0400", hash_original_method = "34E034689DDCE68A5D27EE33789EB9C2", hash_generated_method = "49C2D83B3877A958CF4B95050F675D06")
     private boolean updateLocked(WorkSource other, boolean set, boolean returnNewbs) {
         addTaint(returnNewbs);
@@ -455,6 +468,7 @@ for(int i2=0;i2<N2;i2++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.910 -0400", hash_original_method = "E8ED9AF8451B0D2EC41EDBDBB476EE69", hash_generated_method = "CE7EDB869AF3E643B1197828FBC4EAE8")
     private void addLocked(int uid) {
     if(mUids == null)        
@@ -489,6 +503,7 @@ for(int i2=0;i2<N2;i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.911 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7F348BD175DD20F7650FD44F99E6586A")
     @Override
     public int describeContents() {
@@ -500,6 +515,7 @@ for(int i2=0;i2<N2;i2++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.911 -0400", hash_original_method = "69D1EA184FE758709BC28AF0EDE2AA21", hash_generated_method = "5F09EAF7E01851276CB975FD08DA122B")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

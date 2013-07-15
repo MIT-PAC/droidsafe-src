@@ -27,6 +27,7 @@ public abstract class CharacterStyle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.148 -0400", hash_original_method = "2ADDE7DAB4ECDACBF15B0CE8CBCF2C82", hash_generated_method = "6882906D4A442EBD06DAA7C81918E299")
     public CharacterStyle getUnderlying() {
 CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_857289039 =         this;

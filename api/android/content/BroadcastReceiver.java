@@ -45,6 +45,7 @@ PendingResult varB5053E025797B3BF768F5C37934C244D_614416928 =         res;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.171 -0400", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "AA2A5E2A0F2DE833ACB97A78D9DBEE0A")
     public IBinder peekService(Context myContext, Intent service) {
         addTaint(service.getTaint());
@@ -497,6 +498,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.215 -0400", hash_original_method = "09CFE321AB9E3444E3559F2B522AB2BE", hash_generated_method = "F089507397C23DBABECD9B2914B0838D")
         public void setExtrasClassLoader(ClassLoader cl) {
             addTaint(cl.getTaint());

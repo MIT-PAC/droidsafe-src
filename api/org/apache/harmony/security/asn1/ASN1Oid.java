@@ -15,11 +15,13 @@ public class ASN1Oid extends ASN1Primitive {
     }
 
     
-        public static ASN1Oid getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1Oid getInstance() {
         return ASN1;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.657 -0400", hash_original_method = "3D94E48E0DC6BD33E3C9167EF5944677", hash_generated_method = "DD5431F7897BED749A8C27C8950374E7")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -42,6 +44,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_631293542 =         getDecodedObject(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.659 -0400", hash_original_method = "F2E30F5A7FF0BD89B1DBA25737A1DD6D", hash_generated_method = "E0009DB2D444CD7456920816811CA3C6")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -98,6 +101,7 @@ Object var6EE0E520E830DF58CC7591C0A7BECFB6_54025979 =         oid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.659 -0400", hash_original_method = "2B9753A86B000221B8C7FE7F76F39078", hash_generated_method = "CCA01931BD8DFF43CF235A94311C1003")
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -107,6 +111,7 @@ Object var6EE0E520E830DF58CC7591C0A7BECFB6_54025979 =         oid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.660 -0400", hash_original_method = "EFEF2EC121CF26DF89AF9E72AC4EE02E", hash_generated_method = "AA8F06F23BB1045643198CC6D3E70EA0")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -161,7 +166,8 @@ for(elem = oid[i];elem > 0;elem = elem >> 7)
     }
 
     
-        public static ASN1Oid getInstanceForString() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1Oid getInstanceForString() {
         return STRING_OID;
     }
 

@@ -117,6 +117,7 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1809856062 =         th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.624 -0400", hash_original_method = "137A1F44FEDEF7DBAEA1EE8251F82E1F", hash_generated_method = "75A392599894A1D86E29D1F95101AA8C")
     public long getStartDelay() {
     if(mStartDelaySet)        
@@ -165,6 +166,7 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_630557976 =         thi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.626 -0400", hash_original_method = "995017692E981832E150BE79F0CB8507", hash_generated_method = "A8453D832A912FF9E2D89C9AB5C589AA")
     public ViewPropertyAnimator setInterpolator(TimeInterpolator interpolator) {
         mInterpolatorSet = true;
@@ -179,6 +181,7 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1269282868 =         th
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.626 -0400", hash_original_method = "D3B983C6B8AF317CF4B7893570C39145", hash_generated_method = "049B26913B300E81924379BFC3180F46")
     public ViewPropertyAnimator setListener(Animator.AnimatorListener listener) {
         mListener = listener;
@@ -580,6 +583,7 @@ for(Animator runningAnim : animatorSet)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.635 -0400", hash_original_method = "543199367D6B4536DD4796BA994C91F7", hash_generated_method = "691352C82D26CDF5047A47150F705E2D")
     private void setValue(int propertyConstant, float value) {
         addTaint(value);
@@ -622,6 +626,7 @@ switch(propertyConstant){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.636 -0400", hash_original_method = "7CFF5C0EAB5A873E8FB7B3F0396E6B5F", hash_generated_method = "4D1EE82F437469F20FF6F4C75A95CB72")
     private float getValue(int propertyConstant) {
         addTaint(propertyConstant);

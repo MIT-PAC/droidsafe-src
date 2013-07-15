@@ -216,6 +216,7 @@ for(int j = 0;j < layoutParams.span;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.346 -0400", hash_original_method = "6310895A2EAB860DC48C590959484D6D", hash_generated_method = "A640D73C4AADBBA3610F14312096D66C")
     @Override
      int measureNullChild(int childIndex) {
@@ -426,6 +427,7 @@ LinearLayout.LayoutParams varD2F9AF19F351B83E6231407281521B68_1667425930 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.349 -0400", hash_original_method = "22EE87D9951BB7D40E63D16DD0B3F806", hash_generated_method = "F12155BA7864116F15BE5FBD44BB1FAA")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -609,6 +611,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1471002983 =      
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.350 -0400", hash_original_method = "366CDDD217CE23168243D85764F583BC", hash_generated_method = "DDC70C8E2E013ACEDF81D1F8C000792F")
         private void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
             this.listener = listener;

@@ -41,6 +41,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.252 -0400", hash_original_method = "A950936C46135A90B64D99C98FBE0DD0", hash_generated_method = "D9AEB55440201C6AE7C7FC3DE19B5EB0")
     @Override
     @SuppressWarnings("unchecked")
@@ -141,6 +142,7 @@ E var9A906597833C8E11199C8E4BAC361563_1310756004 =             (E) mValues[i];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.257 -0400", hash_original_method = "1992218C2CA2A9A793E8A4995C16BACA", hash_generated_method = "CA640CDFEEE9EE6687BB0AE18A3535CE")
     public void removeAt(int index) {
     if(mValues[index] != DELETED)        
@@ -156,6 +158,7 @@ E var9A906597833C8E11199C8E4BAC361563_1310756004 =             (E) mValues[i];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.258 -0400", hash_original_method = "92E5B832E30042BFCDC9211BA5952F8C", hash_generated_method = "248E34A5E02C6CAEA9549F87CABCB657")
     private void gc() {
         int n = mSize;
@@ -359,6 +362,7 @@ for(int i = 0;i < mSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.266 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "61ED33368900ED20EB0D15BBCF4A009A")
     public void clear() {
         int n = mSize;
@@ -429,7 +433,8 @@ for(int i = 0;i < n;i++)
     }
 
     
-        private static int binarySearch(int[] a, int start, int len, int key) {
+        @DSModeled(DSC.SAFE)
+    private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
             guess = (high + low) / 2;

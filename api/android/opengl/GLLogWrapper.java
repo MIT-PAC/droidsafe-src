@@ -792,6 +792,7 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_59766863 =         getHex(pname);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.219 -0400", hash_original_method = "814F9443E35DD12509B9BA466EE8DCB2", hash_generated_method = "85A3931DAB6417AA33872EEAF8FDD372")
     private int getTextureEnvParamCount(int pname) {
         addTaint(pname);
@@ -1256,6 +1257,7 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1560918792 =         getHex(pname);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.223 -0400", hash_original_method = "9A07F659DA306C4A6520A0B0A227379C", hash_generated_method = "71C6041CEC0B63627C429FC2277CA5BA")
     private int getFogParamCount(int pname) {
         addTaint(pname);
@@ -1617,6 +1619,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.228 -0400", hash_original_method = "6506A323D3627F82CBA6E7723B0EB9F3", hash_generated_method = "09A67FAB628C203C244DD1C4888DD5C4")
     private int getIntegerStateFormat(int pname) {
         addTaint(pname);
@@ -1808,6 +1811,7 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_167681089 =         getHex(pname);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.230 -0400", hash_original_method = "B0395F459DFDFEE2447C01CFFCEE6702", hash_generated_method = "88F75986EF0CB8687CE2B183DC739500")
     private int getMaterialParamCount(int pname) {
         addTaint(pname);
@@ -1958,6 +1962,7 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1794535072 =         getHex(pname);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.232 -0400", hash_original_method = "53908AF1FF50B43C5A4BA064020594CA", hash_generated_method = "4D32D5E0FC7904F20B285F9995643BE8")
     private int getLightParamCount(int pname) {
         addTaint(pname);
@@ -2064,6 +2069,7 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_575439550 =         getHex(pname);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.233 -0400", hash_original_method = "2FC4AD179486887F278ED181B7A670E7", hash_generated_method = "F17CFCF4A7D48BB6A62426163E473FFB")
     private int getLightModelParamCount(int pname) {
         addTaint(pname);
@@ -8347,6 +8353,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.355 -0400", hash_original_method = "F900B23CD310C985564C675BA1B721DF", hash_generated_method = "A774F9888E3FDDBF949FDA34F4C0D59F")
         public int sizeof(int type) {
             addTaint(type);
@@ -8412,6 +8419,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.356 -0400", hash_original_method = "D17614F7FAC564729C1CBF8DA38BB52A", hash_generated_method = "6221050C1BE13543EB30A39BF2099676")
         public void unbindByteBuffer() {
             mTempByteBuffer = null;

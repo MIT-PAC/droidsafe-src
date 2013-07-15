@@ -12,6 +12,7 @@ public enum DialogState {
     public static final int _EARLY = EARLY.ordinal();
     public static final int _CONFIRMED = CONFIRMED.ordinal();
     public static final int _TERMINATED = TERMINATED.ordinal();
+    @DSModeled(DSC.SPEC)
     public static DialogState getObject(int state) {
         try {
             return values()[state];
@@ -20,6 +21,7 @@ public enum DialogState {
                     "Invalid dialog state: " + state);
         }
     }
+    @DSModeled(DSC.SPEC)
     public int getValue() {
         return ordinal();
     }

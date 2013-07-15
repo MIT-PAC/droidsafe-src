@@ -19,6 +19,7 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.316 -0400", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "89A9E3AE1B29C0BA88EC2E4504615043")
     protected ParseException createParseException(String exceptionString) {
         addTaint(exceptionString.getTaint());
@@ -34,6 +35,7 @@ ParseException varC6F38182B58E7A72C677723DBDCE326D_389550042 =         new Parse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.316 -0400", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "826DDFF0DDF37F3F18B12E90F115A8B1")
     protected Lexer getLexer() {
 Lexer varFB96DE3FAEBD0984226EA4F3794EDE62_170017856 =         (Lexer) this.lexer;
@@ -44,6 +46,7 @@ Lexer varFB96DE3FAEBD0984226EA4F3794EDE62_170017856 =         (Lexer) this.lexer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.316 -0400", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "6F763AE80380F291978BC9FD8D9E0E26")
     protected String sipVersion() throws ParseException {
     if(debug)        

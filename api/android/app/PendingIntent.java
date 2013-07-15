@@ -38,7 +38,8 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-        public static PendingIntent getActivity(Context context, int requestCode,
+        @DSModeled(DSC.SPEC)
+    public static PendingIntent getActivity(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -77,7 +78,8 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-        public static PendingIntent getBroadcast(Context context, int requestCode,
+        @DSModeled(DSC.SPEC)
+    public static PendingIntent getBroadcast(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -96,7 +98,8 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-        public static PendingIntent getService(Context context, int requestCode,
+        @DSModeled(DSC.SPEC)
+    public static PendingIntent getService(Context context, int requestCode,
             Intent intent, int flags) {
         String packageName = context.getPackageName();
         String resolvedType = intent != null ? intent.resolveTypeIfNeeded(
@@ -159,6 +162,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_1978059086 =         new Intent
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.426 -0400", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "1AF36FB5B0DEE56CF4026DF6133644B3")
     public void send(Context context, int code, Intent intent) throws CanceledException {
         addTaint(intent.getTaint());
@@ -181,6 +185,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_1978059086 =         new Intent
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.427 -0400", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "AF3436A528196FD07F0CC3F44480AAEF")
     public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws CanceledException {
@@ -195,6 +200,7 @@ IntentSender varA16DB4ABA05FBBC681DB88D59107EC54_1978059086 =         new Intent
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.428 -0400", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "1DEB6BBED344F48E0920BA1542CC73D2")
     public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission) throws CanceledException {
@@ -353,6 +359,7 @@ String var2460B846747F8B22185AD8BE722266A5_955238042 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.431 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3BD251EA9C01A9B999A7265804CB443F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_815050662 = (0);
@@ -386,6 +393,7 @@ String var2460B846747F8B22185AD8BE722266A5_955238042 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.433 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "80B9C31EA35C77109B4BE532CF6D05B3")
     public IIntentSender getTarget() {
 IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1788706846 =         mTarget;
@@ -459,6 +467,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_1788706846 =         mTarget;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.439 -0400", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "E6DB147736FD6A8CF56D8AA16E4190C8")
         public void performReceive(Intent intent, int resultCode,
                 String data, Bundle extras, boolean serialized, boolean sticky) {

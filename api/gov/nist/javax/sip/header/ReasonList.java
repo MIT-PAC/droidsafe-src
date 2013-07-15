@@ -16,6 +16,7 @@ public final class ReasonList extends SIPHeaderList<Reason> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.812 -0400", hash_original_method = "10E04C2C3285E2CE8B0D90EBF75B8FBF", hash_generated_method = "01C98DA5061D6CDBCBE8038B138DBAF1")
     public Object clone() {
         ReasonList retval = new ReasonList();

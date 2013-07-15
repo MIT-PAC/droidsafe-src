@@ -130,6 +130,7 @@ for(Iterator it = listeningPoints.values().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.698 -0400", hash_original_method = "1158BA9F135FC60D78E0B26F09E9CC9C", hash_generated_method = "966DA5B5EC285146EADB82910A9671D4")
     public ListeningPoint getListeningPoint(String transport) {
         addTaint(transport.getTaint());
@@ -191,6 +192,7 @@ ListeningPoint var159466560DE4F68332621D1854E33B2E_1069878008 =         (Listeni
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.700 -0400", hash_original_method = "E6B31C0538AF64C15CAF5AB43FC9524E", hash_generated_method = "74FD8BB5BC06A8D20883FF8D9587AE9A")
     protected Object clone() throws java.lang.CloneNotSupportedException {
         java.lang.CloneNotSupportedException varAFB4B30DEC4E72FFAAFB13B14942ECC4_1024837557 = new java.lang.CloneNotSupportedException();
@@ -201,6 +203,7 @@ ListeningPoint var159466560DE4F68332621D1854E33B2E_1069878008 =         (Listeni
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.700 -0400", hash_original_method = "C6DB78E4BFC94524622F655361F90AF4", hash_generated_method = "230EA225E628FE9F267E6806C396EAB5")
     public void addSipListener(SipListener sipListener) throws TooManyListenersException {
     if(sipStack.sipListener == null)        
@@ -231,6 +234,7 @@ ListeningPoint var159466560DE4F68332621D1854E33B2E_1069878008 =         (Listeni
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.701 -0400", hash_original_method = "8DF1BB234AEAFA11A00A3BD7891CCE00", hash_generated_method = "0D054630F36202034E5960D699DE7588")
     public ListeningPoint getListeningPoint() {
     if(this.listeningPoints.size() > 0)        
@@ -255,6 +259,7 @@ ListeningPoint var540C13E9E156B687226421B24F2DF178_1210939683 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.701 -0400", hash_original_method = "19C35F549E02B2BEFD4FB9F187DBEB25", hash_generated_method = "3F89FDAE61D893D8186830E5DF9CDFDE")
     public CallIdHeader getNewCallId() {
         String callId = Utils.getInstance().generateCallIdentifier(this.getListeningPoint()
@@ -695,6 +700,7 @@ ServerTransaction var192CEA4506B8E6E6978C4B3CF08B433F_1691120709 =             t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.708 -0400", hash_original_method = "4583BF79BF08EE358F0E8CEF923996E7", hash_generated_method = "2482BE7DBAC003A721E841F43703F629")
     public SipStack getSipStack() {
 SipStack var393C7523E246E572F880C7194691B5B6_788846314 =         (SipStack) this.sipStack;
@@ -705,6 +711,7 @@ SipStack var393C7523E246E572F880C7194691B5B6_788846314 =         (SipStack) this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.709 -0400", hash_original_method = "8E603E1E5B83B3D4BA739C213D2D52AF", hash_generated_method = "91F7D5C7D92072631D7D325D71D62E0F")
     public void removeSipListener(SipListener sipListener) {
     if(sipListener == this.getSipListener())        
@@ -904,6 +911,7 @@ for(Iterator<SipProviderImpl> it = sipStack.getSipProviders();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.714 -0400", hash_original_method = "0E16D45CFEA7D246360E28B311FFB756", hash_generated_method = "F50A75AFD5EAC558A8AAD28E319C31FB")
     public synchronized void setListeningPoint(ListeningPoint listeningPoint) {
     if(listeningPoint == null)        
@@ -1118,6 +1126,7 @@ Dialog varE19892282EF70932DF3A147A213BE89D_1450144983 =         dialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.719 -0400", hash_original_method = "3AE2B963E4C8A3C0E767E575A9114D58", hash_generated_method = "924F73FA97F08018484005AB029EDD6F")
     public synchronized void dialogErrorEvent(SIPDialogErrorEvent dialogErrorEvent) {
         addTaint(dialogErrorEvent.getTaint());
@@ -1156,6 +1165,7 @@ Dialog varE19892282EF70932DF3A147A213BE89D_1450144983 =         dialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.720 -0400", hash_original_method = "B3C6AC6D2F49AD76B9521CC6B14816A0", hash_generated_method = "F019DA1FBA2A2437B535EA41987549BB")
     public synchronized ListeningPoint[] getListeningPoints() {
         ListeningPoint[] retval = new ListeningPointImpl[this.listeningPoints
@@ -1172,6 +1182,7 @@ ListeningPoint[] varF9E19AD6135C970F387F77C6F3DE4477_418162781 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.722 -0400", hash_original_method = "EAE5E9A9D2E983810EEEE28894E73A1D", hash_generated_method = "4EE35003A8231242A001A3CB721DD097")
     public synchronized void addListeningPoint(ListeningPoint listeningPoint) throws ObjectInUseException {
         ListeningPointImpl lp = (ListeningPointImpl) listeningPoint;
@@ -1214,6 +1225,7 @@ ListeningPoint[] varF9E19AD6135C970F387F77C6F3DE4477_418162781 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.723 -0400", hash_original_method = "A95AFDBCCDB5259A8B494C5125AAB0DF", hash_generated_method = "202ED735F120870EA1F0CC19789B3EA2")
     public synchronized void removeListeningPoint(ListeningPoint listeningPoint) throws ObjectInUseException {
         addTaint(listeningPoint.getTaint());
@@ -1233,6 +1245,7 @@ ListeningPoint[] varF9E19AD6135C970F387F77C6F3DE4477_418162781 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.724 -0400", hash_original_method = "6DABC4D6488D8CA07EA47E3AEA2A5D8B", hash_generated_method = "75002181214E8756F87A4097FF65FA47")
     public synchronized void removeListeningPoints() {
 for(Iterator it = this.listeningPoints.values().iterator();it
@@ -1252,6 +1265,7 @@ for(Iterator it = this.listeningPoints.values().iterator();it
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.725 -0400", hash_original_method = "08917B93BCD125C29B1D418CFBD693FD", hash_generated_method = "E83707CC863E470E103C8E9703EE3ADB")
     public void setAutomaticDialogSupportEnabled(
             boolean automaticDialogSupportEnabled) {
@@ -1268,6 +1282,7 @@ for(Iterator it = this.listeningPoints.values().iterator();it
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.725 -0400", hash_original_method = "18DDE4A1FF25A19616718FBEC8927BCF", hash_generated_method = "D1FB7FDF961A372B54FA1B2507D8A67A")
     public boolean isAutomaticDialogSupportEnabled() {
         boolean var03F94425985D4F12F061598392CB27B5_893183781 = (automaticDialogSupportEnabled);
@@ -1278,6 +1293,7 @@ for(Iterator it = this.listeningPoints.values().iterator();it
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.726 -0400", hash_original_method = "8E72F0F9A971C2A6E1313B02079A711A", hash_generated_method = "21A90BA4CDE53CBAB0B11EDE68F90954")
     public void setDialogErrorsAutomaticallyHandled() {
         this.dialogErrorsAutomaticallyHandled = true;
@@ -1286,6 +1302,7 @@ for(Iterator it = this.listeningPoints.values().iterator();it
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.726 -0400", hash_original_method = "D32D7DD8A91D988429F699F6AD4CC892", hash_generated_method = "FA776F844FA469CE76E9DF73B75807A9")
     public boolean isDialogErrorsAutomaticallyHandled() {
         boolean var9FAF01DB0C6EBC63EE0B9CD25587DE10_227359238 = (this.dialogErrorsAutomaticallyHandled);
@@ -1296,6 +1313,7 @@ for(Iterator it = this.listeningPoints.values().iterator();it
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.726 -0400", hash_original_method = "C4DC38CCAB12B1686E686A836D3DE2C4", hash_generated_method = "A9F03D086FB71A20A20D12BE21176E73")
     public SipListener getSipListener() {
 SipListener var2F04D1225330169A0BE7000A79FE261F_730428452 =         sipListener;

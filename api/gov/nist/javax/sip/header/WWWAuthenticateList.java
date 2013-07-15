@@ -15,6 +15,7 @@ public class WWWAuthenticateList extends SIPHeaderList<WWWAuthenticate> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.657 -0400", hash_original_method = "CD4D2DBD74BB3BE1B1C2856EF354DA52", hash_generated_method = "4BF7D571E1AD5C4638A2BD5C9DF5F24E")
     public Object clone() {
         WWWAuthenticateList retval = new WWWAuthenticateList();

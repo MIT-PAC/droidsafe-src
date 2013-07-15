@@ -60,6 +60,7 @@ public final class PolicyConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.234 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "631E73875DFF074D4DB78A57C2F028D6")
     @Override
     public byte[] getEncoded() {
@@ -78,6 +79,7 @@ public final class PolicyConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.235 -0400", hash_original_method = "6254749C2BCE6B73C098F3685BA802AD", hash_generated_method = "28205F1C178707D3CCEA23B392EB0C3A")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {

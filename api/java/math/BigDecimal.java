@@ -1412,6 +1412,7 @@ BigDecimal varDC838461EE2FA0CA4C9BBB70A15456B0_2056697731 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.605 -0400", hash_original_method = "E5A0BEEECFDAB0EB24F23ED92FDA1EE0", hash_generated_method = "D054CF740427237351894D09BF2AACF5")
     public BigDecimal plus() {
 BigDecimal var72A74007B2BE62B849F475C7BDA4658B_566467994 =         this;
@@ -1452,6 +1453,7 @@ BigDecimal var099658E03F9BF7D1563531EEEABC8E1F_1403421476 =         round(mc);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.606 -0400", hash_original_method = "F3E74BAAEB162D78F28E445308393563", hash_generated_method = "7DE40A1BF1B2222C0C9FB7D66A84BE03")
     private boolean isZero() {
         boolean var82D0A726C120D5744FDF0390F9FF98A3_1406528649 = (bitLength == 0 && this.smallValue != -1);
@@ -1462,6 +1464,7 @@ BigDecimal var099658E03F9BF7D1563531EEEABC8E1F_1403421476 =         round(mc);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.606 -0400", hash_original_method = "5F6F67A9AE4AEECC5BD64D7ACC145B6A", hash_generated_method = "78CB80391EA8736C1EB6D0A6762F3DDA")
     public int scale() {
         int var0CB47AEB6E5F9323F0969E628C4E59F5_679016012 = (scale);
@@ -2496,7 +2499,8 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_481328574 =         valueOf(1, sc
     }
 
     
-        private static int longCompareTo(long value1, long value2) {
+        @DSModeled(DSC.SAFE)
+    private static int longCompareTo(long value1, long value2) {
         return value1 > value2 ? 1 : (value1 < value2 ? -1 : 0);
     }
 
@@ -2593,6 +2597,7 @@ BigDecimal var7724CABD8C77ECA94722C10ABD307202_481328574 =         valueOf(1, sc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.641 -0400", hash_original_method = "610DE3E95388579A8DD4E22BDEDE3C6E", hash_generated_method = "46C8A690D09C52784F648273963863D4")
     private int approxPrecision() {
         int var7CDA58196C86390834B6F2307552DAD7_1195708814 = (precision > 0

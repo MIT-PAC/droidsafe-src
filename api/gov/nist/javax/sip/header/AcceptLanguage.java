@@ -21,6 +21,7 @@ public final class AcceptLanguage extends ParametersHeader implements AcceptLang
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.679 -0400", hash_original_method = "5C96E87F662C45E10B5AFAE4378612EB", hash_generated_method = "0ED0E1393DE476333F616AA9242E7C43")
     protected String encodeBody() {
         StringBuffer encoding = new StringBuffer();
@@ -47,6 +48,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1949796331 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.680 -0400", hash_original_method = "BF687A0020C7B3DE806879972780BD44", hash_generated_method = "D6F61AA75E7512C6ACC69A7FFA784B86")
     public String getLanguageRange() {
 String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
@@ -57,6 +59,7 @@ String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.680 -0400", hash_original_method = "D0BC591A7E62F9425A070C3D9F39D285", hash_generated_method = "935EAFA824F9E6DB87E89D2F6AE81993")
     public float getQValue() {
     if(!hasParameter("q"))        
@@ -75,6 +78,7 @@ String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.681 -0400", hash_original_method = "889B57ADA5D9BFE59490AB224C7E16F7", hash_generated_method = "2A8ED22DAE8E3C39B050EF12AF6CBB96")
     public boolean hasQValue() {
         boolean var303355EC85ECD757D595EAFF79E661E0_2131612956 = (hasParameter("q"));
@@ -85,6 +89,7 @@ String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.681 -0400", hash_original_method = "1F181158365375850544D6C69D49DA70", hash_generated_method = "B9DF7AB862F99D0A322AF91814F06427")
     public void removeQValue() {
         removeParameter("q");
@@ -93,6 +98,7 @@ String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.682 -0400", hash_original_method = "666F2ACD9F04A9B6B16D40C4651940A3", hash_generated_method = "B5BE0B634C8BDC5639F2A88C87E5B85C")
     public void setLanguageRange(String languageRange) {
         this.languageRange = languageRange.trim();
@@ -101,6 +107,7 @@ String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.682 -0400", hash_original_method = "F0104C17C209B83128CEAC547B311B2B", hash_generated_method = "A5C5EE14CFB52341983E8F34D11E6154")
     public void setQValue(float q) throws InvalidArgumentException {
         addTaint(q);
@@ -124,6 +131,7 @@ String varEDB5666D43B62B5FC936F611A2EEF981_1146629187 =         languageRange;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.683 -0400", hash_original_method = "41F30A9CB15562B6E2AC4BEA100C59D1", hash_generated_method = "36CE8091FF963B7703158F26156C5304")
     public Locale getAcceptLanguage() {
     if(this.languageRange == null)        
@@ -160,6 +168,7 @@ Locale var8CDF80AA28E3FBEFF1789486242BBD33_1537675196 =             new Locale( 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.684 -0400", hash_original_method = "8278D8A1AED5A953C4AF44E8C829B9C4", hash_generated_method = "B0E6575791DB94BF9F696E456C973E01")
     public void setAcceptLanguage(Locale language) {
     if("".equals(language.getCountry()))        

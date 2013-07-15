@@ -35,6 +35,7 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.073 -0400", hash_original_method = "4E0221343957C12C5A2A1CAE66CCC091", hash_generated_method = "7A21661DCB921487C31D22C35B7161E5")
     private int dataLength(int dataPlusHeaderLength) {
         addTaint(dataPlusHeaderLength);

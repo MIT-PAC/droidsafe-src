@@ -21,6 +21,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.798 -0400", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "79D1D67B66135DE63EF49A7D963044B2")
     public int getExpires() {
         int var09BCB72D61C0D6D1EFF5336DA6881557_1477654213 = (expires);
@@ -31,6 +32,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.799 -0400", hash_original_method = "A313D6724829247498596D0326F894CE", hash_generated_method = "5B3665C0883866754B3779DC8C4713AF")
     public void setExpires(int expires) throws InvalidArgumentException {
     if(expires < 0)        
@@ -47,6 +49,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.799 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "E3ECAE5F191ECAB305BB07E152C0A3B4")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
@@ -58,6 +61,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.800 -0400", hash_original_method = "B1D6BF5FEA5681AEA45EA9D4CACD9FB8", hash_generated_method = "CAE79F7BD924456D10D3E36B6B313B11")
     protected String encodeBody() {
         String retval = Integer.toString(expires);
@@ -77,6 +81,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_968110981 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.800 -0400", hash_original_method = "5E6D9C5D9628C8E8194658511D516C38", hash_generated_method = "191086A4D0C713D8ACE4E563E2FE2D5C")
     public String getRefresher() {
 String varEF9621B7FF8DF6825B9E53C230E10CCF_1490907980 =         parameters.getParameter(REFRESHER);
@@ -87,6 +92,7 @@ String varEF9621B7FF8DF6825B9E53C230E10CCF_1490907980 =         parameters.getPa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.801 -0400", hash_original_method = "B765158B109DFF1FFF87124C5A68F884", hash_generated_method = "57D499A4BBAA0B11EDD404AE43BEDEE3")
     public void setRefresher(String refresher) {
         addTaint(refresher.getTaint());

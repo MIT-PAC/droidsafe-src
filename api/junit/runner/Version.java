@@ -13,7 +13,8 @@ public class Version {
     }
 
     
-        public static String id() {
+        @DSModeled(DSC.SAFE)
+    public static String id() {
         return "3.8.1";
     }
 

@@ -120,6 +120,7 @@ public class Level implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.131 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "3BEF42198E661EC93A8C50F88DB67979")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_134512706 =         this.name;
@@ -130,6 +131,7 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_134512706 =         this.name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.131 -0400", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "48E4B45AAD8B19A3C35C89753559DDC2")
     public String getResourceBundleName() {
 String var7214CEE3997909E522736F52DB465A8B_1979387927 =         this.resourceBundleName;
@@ -285,6 +287,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1037259034 =             name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.133 -0400", hash_original_method = "B2C871D8CEAC47C4CD40779F84B10431", hash_generated_method = "7BCF5ED14CCE007101E7EC52DA988063")
     @Override
     public int hashCode() {

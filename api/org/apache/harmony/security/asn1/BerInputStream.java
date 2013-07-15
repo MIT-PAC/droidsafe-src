@@ -185,7 +185,8 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
-        public static int getLength(byte[] encoding) {
+        @DSModeled(DSC.SAFE)
+    public static int getLength(byte[] encoding) {
         int length = encoding[1] & 0xFF;
         int numOctets = 0;
         if ((length & 0x80) != 0) { 
@@ -296,6 +297,7 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.850 -0400", hash_original_method = "13F2651D91961A81EAE79BEA9D5230AF", hash_generated_method = "22DD234259086F819B1478BAD390D8FE")
     public void readBoolean() throws IOException {
     if(tag != ASN1Constants.TAG_BOOLEAN)        
@@ -458,6 +460,7 @@ switch(length){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.880 -0400", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "28CE92BBB0D69CE0EE35830E235C1AAA")
     private int strToInt(int off, int count) throws ASN1Exception {
         addTaint(count);
@@ -536,6 +539,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.890 -0400", hash_original_method = "FF10597CCF521EBE62B89D95947AA842", hash_generated_method = "2B14660A19AC379C2A797EFF6BD91371")
     public void readOctetString() throws IOException {
     if(tag == ASN1Constants.TAG_OCTETSTRING)        
@@ -566,6 +570,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.891 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "95F8349A55ACF7071C5FC92AFAC815A9")
     private ASN1Exception expected(String what) throws ASN1Exception {
         addTaint(what.getTaint());
@@ -719,6 +724,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.920 -0400", hash_original_method = "48BA5600C2E0D1ED619B576E3555D97D", hash_generated_method = "A1E5763EE86D23678C78BCD725925CDC")
     public void readSequenceOf(ASN1SequenceOf sequenceOf) throws IOException {
         addTaint(sequenceOf.getTaint());
@@ -737,6 +743,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.924 -0400", hash_original_method = "51B09D41A46E89A1CD0754E5C1F0D1B8", hash_generated_method = "0BB94E81636AA63158B4D8CC4BF2ADF6")
     public void readSet(ASN1Set set) throws IOException {
         addTaint(set.getTaint());
@@ -757,6 +764,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.927 -0400", hash_original_method = "8593963787440F0A1F5CC05E2CC3EB6D", hash_generated_method = "917A2B570FEA7D871DF92B722C105CC5")
     public void readSetOf(ASN1SetOf setOf) throws IOException {
         addTaint(setOf.getTaint());
@@ -939,6 +947,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.936 -0400", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "F982AFECE3173308946B4FA9325526D9")
     protected int read() throws IOException {
     if(offset == buffer.length)        
@@ -1057,6 +1066,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.939 -0400", hash_original_method = "AFFB1C62116A7F4F1AC3586F8D79C157", hash_generated_method = "2769815BC7DD3B7E2CFA10CEBAE35832")
     public void put(Object key, Object entry) {
     if(pool == null)        
@@ -1107,6 +1117,7 @@ for(;i < pool[0].length && pool[0][i] != null;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.939 -0400", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "D9CF83BABE567FFCE009A8242FBFABB6")
     public Object get(Object key) {
         addTaint(key.getTaint());

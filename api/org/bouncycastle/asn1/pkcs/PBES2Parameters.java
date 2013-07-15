@@ -50,7 +50,8 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     }
 
     
-        public static PBES2Parameters getInstance(
+        @DSModeled(DSC.SPEC)
+    public static PBES2Parameters getInstance(
         Object  obj) {
         if (obj== null || obj instanceof PBES2Parameters)
         {
@@ -64,6 +65,7 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.392 -0400", hash_original_method = "EA8CB9021471F89DCA3D4DA5F755F4FC", hash_generated_method = "6DBF150153F2CD4CBD54BF16FBA87EA4")
     public KeyDerivationFunc getKeyDerivationFunc() {
 KeyDerivationFunc varC9940A7354FB2A62A9E534A0DDC131A7_821260431 =         func;
@@ -74,6 +76,7 @@ KeyDerivationFunc varC9940A7354FB2A62A9E534A0DDC131A7_821260431 =         func;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.392 -0400", hash_original_method = "9053FDAC6FE0628F4B096189E8DDF584", hash_generated_method = "C5BBC4A99F5ABF4C8DC4FBD9651AAE31")
     public EncryptionScheme getEncryptionScheme() {
 EncryptionScheme varFD3305CF8340E40F0AC0AB554909AEBC_1442337729 =         scheme;
@@ -84,6 +87,7 @@ EncryptionScheme varFD3305CF8340E40F0AC0AB554909AEBC_1442337729 =         scheme
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.393 -0400", hash_original_method = "489B41034DC44CEDA69ABA933292B2BB", hash_generated_method = "A50F5D740A9CA0ABB7F8D0531CE3849C")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

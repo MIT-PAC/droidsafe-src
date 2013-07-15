@@ -31,6 +31,7 @@ public class ECDSASigner implements ECConstants, DSA {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.406 -0400", hash_original_method = "7C8BB5DB49DEBEADD4F3AE9B9DC1372A", hash_generated_method = "5B9F3CECBEC5DD7F6FF9FEA0E90278F7")
     public void init(
         boolean                 forSigning,
@@ -169,6 +170,7 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.409 -0400", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "A5BC2AEF217DF04E15FFFD02C5C5A995")
     private BigInteger calculateE(BigInteger n, byte[] message) {
         addTaint(message[0]);

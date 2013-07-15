@@ -382,6 +382,7 @@ ListView var2506D587169C0D50E4901C6C53BC48B5_1906744487 =         mAlert.getList
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.008 -0400", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "B76CECD6D3648212C3377C2539EC3558")
         public Context getContext() {
 Context var102D10C674A12CAF94F2F690E7FA7CC0_1395037506 =             P.mContext;
@@ -404,6 +405,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_2104403543 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.010 -0400", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "8088F89125450676068D42E1FCAF4AA5")
         public Builder setTitle(CharSequence title) {
             P.mTitle = title;
@@ -416,6 +418,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_101941070 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.011 -0400", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "BF65A8F591B0066133CAE3339F58625C")
         public Builder setCustomTitle(View customTitleView) {
             P.mCustomTitleView = customTitleView;
@@ -440,6 +443,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_91003528 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.015 -0400", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "D39B48CC52670DB83D2FE0CB978719C6")
         public Builder setMessage(CharSequence message) {
             P.mMessage = message;
@@ -452,6 +456,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1306867256 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.017 -0400", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "292D7724E2DE25A33CC698BCE06A3896")
         public Builder setIcon(int iconId) {
             P.mIconId = iconId;
@@ -464,6 +469,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_133034797 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.018 -0400", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "06D94DF444DF07555CC46C764351B481")
         public Builder setIcon(Drawable icon) {
             P.mIcon = icon;
@@ -577,6 +583,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1941971405 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.030 -0400", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "86582F57A1BF43BD7685C1C6DBB6F336")
         public Builder setCancelable(boolean cancelable) {
             P.mCancelable = cancelable;
@@ -589,6 +596,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1728505268 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.031 -0400", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "154486FF32CF1B46C33F469FD709AAB5")
         public Builder setOnCancelListener(OnCancelListener onCancelListener) {
             P.mOnCancelListener = onCancelListener;
@@ -601,6 +609,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1148223235 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.032 -0400", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "9D40FA1D9B59B69D57E4D578DD369886")
         public Builder setOnKeyListener(OnKeyListener onKeyListener) {
             P.mOnKeyListener = onKeyListener;
@@ -807,6 +816,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1558384472 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.053 -0400", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "DCABE40B8F760DD35AF7E74F8C0CC4F0")
         public Builder setOnItemSelectedListener(final AdapterView.OnItemSelectedListener listener) {
             P.mOnItemSelectedListener = listener;
@@ -819,6 +829,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1883921534 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.053 -0400", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "E27904C33E9F75794413ED7000591E4F")
         public Builder setView(View view) {
             P.mView = view;
@@ -833,6 +844,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_931866219 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.055 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "5A4221317C0D9FF981F3EDF195B5F6F5")
         public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
                 int viewSpacingRight, int viewSpacingBottom) {
@@ -856,6 +868,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1705100184 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.056 -0400", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "D21CCCA8ADD4468F323C2567FAE7E3CE")
         public Builder setInverseBackgroundForced(boolean useInverseBackground) {
             P.mForceInverseBackground = useInverseBackground;
@@ -868,6 +881,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1610898504 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.056 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "2A17EFA4FF2F970CE55053F1CAE73E70")
         public Builder setRecycleOnMeasureEnabled(boolean enabled) {
             P.mRecycleOnMeasure = enabled;

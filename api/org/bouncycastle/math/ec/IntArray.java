@@ -105,6 +105,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.179 -0400", hash_original_method = "E4246E87B7407E5D0D895B01F5CA5262", hash_generated_method = "B38FFD754B7EDEFE92E8C1B6E3D7B73A")
     public boolean isZero() {
         boolean var253C72334C0EB694AA96247E57A28F2F_2105004065 = (m_ints.length == 0
@@ -117,6 +118,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.179 -0400", hash_original_method = "B507EE9C677C6BEF8443BBEED19F5F42", hash_generated_method = "B10139042087416449F77039E04156FB")
     public int getUsedLength() {
         int highestIntPos = m_ints.length;
@@ -174,6 +176,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.180 -0400", hash_original_method = "8733B39F158A323B90B7B7708BEF842A", hash_generated_method = "19C891D585FC5A3F086D01EA392613F6")
     public int bitLength() {
         int intLen = getUsedLength();
@@ -250,6 +253,7 @@ for(int i = 0;i < 4;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.180 -0400", hash_original_method = "F4D18BEF0C27A90F867F9F4EB4C5771F", hash_generated_method = "5144FF3BED0CD4A977ECF99E2188CD5A")
     private int[] resizedInts(int newLen) {
         addTaint(newLen);
@@ -312,6 +316,7 @@ BigInteger varCBBE36781BB4993B8A3D24E59AFD4F6E_975115777 =         new BigIntege
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.181 -0400", hash_original_method = "EBDDD2C6998D211B0908F9BCC5704DCD", hash_generated_method = "600127F06DC3EAF9F9AC6F5353F76021")
     public void shiftLeft() {
         int usedLen = getUsedLength();
@@ -366,6 +371,7 @@ for(int i = 0;i < usedLen;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.181 -0400", hash_original_method = "59BECB0203E4A32DCA173F83ED20FA13", hash_generated_method = "7CD2033B8CCF923A70E30AE19BC71DF5")
     public IntArray shiftLeft(int n) {
         addTaint(n);
@@ -427,6 +433,7 @@ IntArray varC42A0063A519C6F77098E2B47C3EB303_1820232652 =         new IntArray(n
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.181 -0400", hash_original_method = "183D6916993CED67CC764EA8E5C66CEC", hash_generated_method = "FD551B95FC73DE7D4DCC8C0219176718")
     public void addShifted(IntArray other, int shift) {
         int usedLenOther = other.getUsedLength();
@@ -453,6 +460,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "690E47F400DCE7124DE7B026A4F32194", hash_generated_method = "D17095B085328871845F56011606C34A")
     public int getLength() {
         int var48385E2AA796608B29CB75E0EFDFAB5F_40365776 = (m_ints.length);
@@ -463,6 +471,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "FE79684DF1E438A3896471D5404784E8", hash_generated_method = "356A3DC1C666354330EF92F7659DBF26")
     public boolean testBit(int n) {
         addTaint(n);
@@ -480,6 +489,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "FC348D5A638DB94C0F8ADD1343AE7EDF", hash_generated_method = "B8F2C85887D16BFCD65B085C7733CE67")
     public void flipBit(int n) {
         addTaint(n);
@@ -495,6 +505,7 @@ for(int i = 0;i < usedLenOther;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.182 -0400", hash_original_method = "F9C9D5AAA5BDCC63A2223BBDEFA54345", hash_generated_method = "15A83915FCF3C53CF78B58BFEDD01110")
     public void setBit(int n) {
         addTaint(n);
@@ -562,6 +573,7 @@ IntArray var807FB10045EE51C06BDB74744A6714DF_306128396 =         c;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.183 -0400", hash_original_method = "801A97F7B079DF395A1C84876012A4A0", hash_generated_method = "943962A55BF6DD8D87215532B3C2BB70")
     public void reduce(int m, int[] redPol) {
         addTaint(redPol[0]);
@@ -600,6 +612,7 @@ for(int i = m + m - 2;i >= m;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.183 -0400", hash_original_method = "D2D9CEFDA97A342DED6902D248733471", hash_generated_method = "436FC0DDD88DB1A87CD9D4B7B2DEB65E")
     public IntArray square(int m) {
         addTaint(m);
@@ -641,6 +654,7 @@ IntArray var807FB10045EE51C06BDB74744A6714DF_570430488 =         c;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.183 -0400", hash_original_method = "B863CB3B654462D1A297BFCA9B6601CD", hash_generated_method = "66676FAD9CA712001B6D5AB038CAEE7A")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -692,6 +706,7 @@ for(int i = 0;i < usedLen;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.184 -0400", hash_original_method = "651D45029664378C68EF3BB76B2C76E2", hash_generated_method = "CB3A653F082A8D553424776D0BCDBDB5")
     public int hashCode() {
         int usedLen = getUsedLength();
@@ -714,6 +729,7 @@ for(int i = 0;i < usedLen;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.184 -0400", hash_original_method = "550C6BAEBE6332C41740A28950586A2C", hash_generated_method = "F972D18462018D17D239BBAD9222B755")
     public Object clone() {
 Object varBA17DD7025F99CDDFD91CAFCA1CF7C41_1692298085 =         new IntArray(Arrays.clone(m_ints));

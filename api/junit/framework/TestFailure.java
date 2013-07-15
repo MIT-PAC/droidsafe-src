@@ -25,6 +25,7 @@ public class TestFailure extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.240 -0400", hash_original_method = "DB6BEFCD0A819B7E57F227596762579B", hash_generated_method = "2C7F15F859EFE35F8E761BB126FA16F3")
     public Test failedTest() {
 Test varD872FF249646CCD079B3369CB77C861B_282778163 =         fFailedTest;
@@ -35,6 +36,7 @@ Test varD872FF249646CCD079B3369CB77C861B_282778163 =         fFailedTest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.240 -0400", hash_original_method = "A0692C4EAE17C62872816DE26503E51B", hash_generated_method = "41B572E519EC05D12A61EE35E6CAB3F4")
     public Throwable thrownException() {
 Throwable var85FD5481228C8E47520848B8A075755F_1180548779 =         fThrownException;

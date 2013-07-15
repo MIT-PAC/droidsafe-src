@@ -30,6 +30,7 @@ public class HeaderParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.585 -0400", hash_original_method = "3252974D26894AAD7C4FB2AFA441C9B3", hash_generated_method = "BFB57450E82F940C83DAB3CF45DD608C")
     protected int wkday() throws ParseException {
         dbg_enter("wkday");
@@ -101,6 +102,7 @@ public class HeaderParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.639 -0400", hash_original_method = "C8449F66AC8DB5DC1EE33D138B3717DE", hash_generated_method = "033E2E448A76A27CD67C6C8EA1A458DE")
     protected Calendar date() throws ParseException {
         try 
@@ -195,6 +197,7 @@ Calendar varF9E19AD6135C970F387F77C6F3DE4477_1008686575 =             retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.664 -0400", hash_original_method = "A339A3BD9B311A61AF23D5CD23AA066A", hash_generated_method = "75B09702DAB483FDEDA041C19469FEE2")
     protected void time(Calendar calendar) throws ParseException {
         addTaint(calendar.getTaint());
@@ -257,6 +260,7 @@ SIPHeader varF9E19AD6135C970F387F77C6F3DE4477_519838563 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.665 -0400", hash_original_method = "E611EE61C75972DE5AB5B484EC7DE89C", hash_generated_method = "729814072190F6B773BDA8F6ADC3A39F")
     protected void headerName(int tok) throws ParseException {
         addTaint(tok);

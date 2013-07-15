@@ -138,6 +138,7 @@ public abstract class GeneralDigest implements ExtendedDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.835 -0400", hash_original_method = "60263393C79297CFA49BF4ADA6FCDD6D", hash_generated_method = "C4C9DCEEF7EE6B581D2AB882DB95C200")
     public void reset() {
         byteCount = 0;
@@ -156,6 +157,7 @@ for(int i = 0;i < xBuf.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.836 -0400", hash_original_method = "BDE19E4C77B0F308FC4C95638A0B9303", hash_generated_method = "913D353FE7AB0D4F0006CE203CF3D28F")
     public int getByteLength() {
         int var081D3CAB5AB5E355C7B18381A90F6AE8_1980958379 = (BYTE_LENGTH);

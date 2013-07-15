@@ -29,19 +29,22 @@ public final class Streams {
     }
 
     
-        public static void writeSingleByte(OutputStream out, int b) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void writeSingleByte(OutputStream out, int b) throws IOException {
         byte[] buffer = new byte[1];
         buffer[0] = (byte) (b & 0xff);
         out.write(buffer);
     }
 
     
-        public static void readFully(InputStream in, byte[] dst) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void readFully(InputStream in, byte[] dst) throws IOException {
         readFully(in, dst, 0, dst.length);
     }
 
     
-        public static void readFully(InputStream in, byte[] dst, int offset, int byteCount) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void readFully(InputStream in, byte[] dst, int offset, int byteCount) throws IOException {
         if (byteCount == 0) {
             return;
         }
@@ -83,7 +86,8 @@ public final class Streams {
     }
 
     
-        public static String readFully(Reader reader) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static String readFully(Reader reader) throws IOException {
         try {
             StringWriter writer = new StringWriter();
             char[] buffer = new char[1024];
@@ -98,7 +102,8 @@ public final class Streams {
     }
 
     
-        public static void skipAll(InputStream in) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void skipAll(InputStream in) throws IOException {
         do {
             in.skip(Long.MAX_VALUE);
         } while (in.read() != -1);

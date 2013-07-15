@@ -106,6 +106,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.695 -0400", hash_original_method = "69AA3000988676CA7D95377F664F088F", hash_generated_method = "074905C66545B468B1E135C9330FD8FE")
     private void ensureSearchDialog() {
     if(mSearchDialog == null)        
@@ -123,6 +124,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.696 -0400", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "CC23D6BF5B25438BEBF5792F4443E835")
      void startGlobalSearch(String initialQuery, boolean selectInitialQuery,
             Bundle appSearchData, Rect sourceBounds) {
@@ -311,6 +313,7 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1528855239 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.700 -0400", hash_original_method = "E54B891234FF1D09C5FE1330F548AE5B", hash_generated_method = "66950EACE6D061F936B065FB53D5C0FB")
     public void setOnCancelListener(OnCancelListener listener) {
         mCancelListener = listener;

@@ -35,6 +35,7 @@ public class MenuItemCompat {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.730 -0400", hash_original_method = "7F014EF22317C05910A706092D499BCA", hash_generated_method = "BD5D599AC8A459C21B9E9416BB025E33")
         @Override
         public boolean setShowAsAction(MenuItem item, int actionEnum) {
@@ -48,6 +49,7 @@ public class MenuItemCompat {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.731 -0400", hash_original_method = "971C4B8F174AEBF876692B29A12DA5CF", hash_generated_method = "0AFEE15F299405BF670A4455126E8CA8")
         @Override
         public MenuItem setActionView(MenuItem item, View view) {

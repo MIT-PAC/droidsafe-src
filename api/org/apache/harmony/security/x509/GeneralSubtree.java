@@ -36,6 +36,7 @@ public final class GeneralSubtree {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.095 -0400", hash_original_method = "FBC8A3DE80F48DE1891C2D6208F82433", hash_generated_method = "D9530CCC58ACE6097A47709178381022")
     public GeneralName getBase() {
 GeneralName var530A7BC087253E083043013B3EB0C6E6_1566743714 =         base;
@@ -46,6 +47,7 @@ GeneralName var530A7BC087253E083043013B3EB0C6E6_1566743714 =         base;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.095 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "7E69C300F2F853E82A7A42E35210A0F2")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -63,6 +65,7 @@ GeneralName var530A7BC087253E083043013B3EB0C6E6_1566743714 =         base;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.095 -0400", hash_original_method = "EBC343B993E4A537A05E52D600D1ECC2", hash_generated_method = "A2E3B8EE54F98950D43AE6AAB65594AC")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

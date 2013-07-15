@@ -43,6 +43,7 @@ public class ImageButton extends ImageView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.884 -0400", hash_original_method = "DC47911C20E58BC47F643D76AAAF3E73", hash_generated_method = "A9D3B9CB03C03F500FEEE19E8F5132D8")
     @Override
     protected boolean onSetAlpha(int alpha) {

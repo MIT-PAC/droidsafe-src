@@ -22,23 +22,27 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
 
-        private static boolean isSelecting(Spannable buffer) {
+        @DSModeled(DSC.SPEC)
+    private static boolean isSelecting(Spannable buffer) {
         return ((MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SHIFT_ON) == 1) ||
                 (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0));
     }
 
     
-        private static int getCurrentLineTop(Spannable buffer, Layout layout) {
+        @DSModeled(DSC.SPEC)
+    private static int getCurrentLineTop(Spannable buffer, Layout layout) {
         return layout.getLineTop(layout.getLineForOffset(Selection.getSelectionEnd(buffer)));
     }
 
     
-        private static int getPageHeight(TextView widget) {
+        @DSModeled(DSC.SPEC)
+    private static int getPageHeight(TextView widget) {
         final Rect rect = new Rect();
         return widget.getGlobalVisibleRect(rect) ? rect.height() : 0;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.292 -0400", hash_original_method = "71AB0E1C222F7165F2E5407A96AE4AA1", hash_generated_method = "F26C2D402BD613CB4130C64BE827CD48")
     @Override
     protected boolean handleMovementKey(TextView widget, Spannable buffer, int keyCode,
@@ -83,6 +87,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.293 -0400", hash_original_method = "EF44D7EB21450A63AD253DA49BF056E0", hash_generated_method = "C22896E02E91BD05510512141951C1D2")
     @Override
     protected boolean left(TextView widget, Spannable buffer) {
@@ -111,6 +116,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.294 -0400", hash_original_method = "B7F7970A1171CA8F77BB045891103F0E", hash_generated_method = "219E182C4F7B5D964160FAAB29671B2D")
     @Override
     protected boolean right(TextView widget, Spannable buffer) {
@@ -139,6 +145,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.295 -0400", hash_original_method = "66883526BDCDE7C41943B5DCF27F9554", hash_generated_method = "47FCB4427761B179BCF476BD78D2CADE")
     @Override
     protected boolean up(TextView widget, Spannable buffer) {
@@ -167,6 +174,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.296 -0400", hash_original_method = "6DF71BB34A28EC828AC8FDD5308B170F", hash_generated_method = "25632EB7638F89C4BA7BF9413A4DB324")
     @Override
     protected boolean down(TextView widget, Spannable buffer) {
@@ -195,6 +203,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.297 -0400", hash_original_method = "0758556D4F657617BD5DD9C53A72AD4E", hash_generated_method = "52CD78A043A829DF26B9439920EB781D")
     @Override
     protected boolean pageUp(TextView widget, Spannable buffer) {
@@ -252,6 +261,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.298 -0400", hash_original_method = "A67CFCD6529729C61F17F48248354AB4", hash_generated_method = "8ADDB1ED1ACAAA305BE12B108875D522")
     @Override
     protected boolean pageDown(TextView widget, Spannable buffer) {
@@ -309,6 +319,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.299 -0400", hash_original_method = "06E1F50FC60AD51807CA9DABCD3FCC05", hash_generated_method = "D835696548C898DFE0CE285CC746CF5B")
     @Override
     protected boolean top(TextView widget, Spannable buffer) {
@@ -335,6 +346,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.299 -0400", hash_original_method = "BBC6BB5270095971A5BCCB29BC5686E5", hash_generated_method = "E788E3C03E9249E627B8399D1090B1AA")
     @Override
     protected boolean bottom(TextView widget, Spannable buffer) {
@@ -361,6 +373,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.300 -0400", hash_original_method = "7B8F77C5EC46A68660F722ECA60D096A", hash_generated_method = "CB5311AF7AFDAACE5B58C2A2E5BBEEFE")
     @Override
     protected boolean lineStart(TextView widget, Spannable buffer) {
@@ -389,6 +402,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.301 -0400", hash_original_method = "35F3ADFF6FA8FAD8E2E9FED3F3766C71", hash_generated_method = "755B69EBBEE8F82705FCB92B9AB5E8EE")
     @Override
     protected boolean lineEnd(TextView widget, Spannable buffer) {
@@ -417,6 +431,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.302 -0400", hash_original_method = "67D023CBFAD79BEA97EFF9BE9D5119F7", hash_generated_method = "E19E507F758165F23D8E8335673CB032")
     @Override
     protected boolean leftWord(TextView widget, Spannable buffer) {
@@ -436,6 +451,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.302 -0400", hash_original_method = "117E80B3C82F659E45802A24AF653E84", hash_generated_method = "DADAFBC6A716D2856F161366FB3DFFB7")
     @Override
     protected boolean rightWord(TextView widget, Spannable buffer) {
@@ -455,6 +471,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.303 -0400", hash_original_method = "DA5AF1C545D6EFE1C03B36F52D97E891", hash_generated_method = "33DEF298FD7F776D2DB5EFDABF4BF8EF")
     @Override
     protected boolean home(TextView widget, Spannable buffer) {
@@ -468,6 +485,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.303 -0400", hash_original_method = "ED4119443F83D3A11CB1CCD10457DD79", hash_generated_method = "EAB054DA555B9FF07A809A363E165D50")
     @Override
     protected boolean end(TextView widget, Spannable buffer) {
@@ -481,6 +499,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.305 -0400", hash_original_method = "775DDAA4B9285FEC985F9D7EBE9B59EB", hash_generated_method = "A2ACD71210AB07CEE9882A2DF5FF3A5F")
     @Override
     public boolean onTouchEvent(TextView widget, Spannable buffer, MotionEvent event) {
@@ -558,6 +577,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.306 -0400", hash_original_method = "1CF42BC1A6BA86440BF6AECA28532C33", hash_generated_method = "A00214459CFF8AA779246681D0C89E75")
     @Override
     public boolean canSelectArbitrarily() {
@@ -569,6 +589,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.306 -0400", hash_original_method = "B727A4A512DEA5751C53503018F86261", hash_generated_method = "91D011071EC7F2928471332F8F91EBE7")
     @Override
     public void initialize(TextView widget, Spannable text) {
@@ -580,6 +601,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.307 -0400", hash_original_method = "0BB03034B6278DCF1B976D7F50A71CD4", hash_generated_method = "BC175C19A41AF77E2B82986D7A8471AA")
     @Override
     public void onTakeFocus(TextView view, Spannable text, int dir) {
@@ -609,7 +631,8 @@ for(;;)
     }
 
     
-        public static MovementMethod getInstance() {
+        @DSModeled(DSC.SPEC)
+    public static MovementMethod getInstance() {
         if (sInstance == null) {
             sInstance = new ArrowKeyMovementMethod();
         }

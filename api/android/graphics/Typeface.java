@@ -73,7 +73,8 @@ public class Typeface {
     }
 
     
-        public static Typeface defaultFromStyle(int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface defaultFromStyle(int style) {
         return sDefaults[style];
     }
 

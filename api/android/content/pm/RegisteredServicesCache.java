@@ -334,6 +334,7 @@ for(String name : packages)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.309 -0400", hash_original_method = "7FD7D9F6A29EBA7075A2BE7C2AD27E68", hash_generated_method = "44DB6FEB9E3A22E5F8DCB6563D037A9D")
      void generateServicesMap() {
         PackageManager pm = mContext.getPackageManager();

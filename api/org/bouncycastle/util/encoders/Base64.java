@@ -17,7 +17,8 @@ public class Base64 {
     }
 
 
-        public static byte[] encode(
+        @DSModeled(DSC.SPEC)
+    public static byte[] encode(
         byte[]    data) {
         int len = (data.length + 2) / 3 * 4;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);
@@ -33,14 +34,16 @@ public class Base64 {
     }
 
     
-        public static int encode(
+        @DSModeled(DSC.SPEC)
+    public static int encode(
         byte[]                data,
         OutputStream    out) throws IOException {
         return encoder.encode(data, 0, data.length, out);
     }
 
     
-        public static int encode(
+        @DSModeled(DSC.SPEC)
+    public static int encode(
         byte[]                data,
         int                    off,
         int                    length,
@@ -49,7 +52,8 @@ public class Base64 {
     }
 
     
-        public static byte[] decode(
+        @DSModeled(DSC.SPEC)
+    public static byte[] decode(
         byte[]    data) {
         int len = data.length / 4 * 3;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);

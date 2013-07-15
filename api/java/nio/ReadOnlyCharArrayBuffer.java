@@ -60,6 +60,7 @@ CharBuffer var6ED4708F04CD11720ECFFDBFD927116F_2082343904 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.930 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "E2C566EAE858ADB8DE3FFEB7F599E30D")
     @Override
     public boolean isReadOnly() {
@@ -93,6 +94,7 @@ CharBuffer var6ED4708F04CD11720ECFFDBFD927116F_2082343904 =         copy(this, m
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.931 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "83AC8B91353B55E1852CF5F9B229F465")
     @Override
     protected boolean protectedHasArray() {

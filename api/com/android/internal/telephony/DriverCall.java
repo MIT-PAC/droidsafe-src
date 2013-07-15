@@ -82,6 +82,7 @@ public class DriverCall implements Comparable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.710 -0400", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "26862FAF5417F2D35217E63421E200F6")
     public String toString() {
 String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + ","
@@ -110,7 +111,8 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-        public static State stateFromCLCC(int state) throws ATParseEx {
+        @DSModeled(DSC.BAN)
+    public static State stateFromCLCC(int state) throws ATParseEx {
         switch(state) {
             case 0: return State.ACTIVE;
             case 1: return State.HOLDING;
@@ -124,7 +126,8 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-        public static int presentationFromCLIP(int cli) throws ATParseEx {
+        @DSModeled(DSC.BAN)
+    public static int presentationFromCLIP(int cli) throws ATParseEx {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;
             case 1: return Connection.PRESENTATION_RESTRICTED;
@@ -136,6 +139,7 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.711 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "079678F34F08CF6B5C6BF4E4FB8D5233")
     public int compareTo(Object o) {
         addTaint(o.getTaint());

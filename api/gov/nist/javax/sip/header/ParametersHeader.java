@@ -77,6 +77,7 @@ Object varBC9779CAE1B0B3F377A7233BBF31E6E3_1623991453 =         this.parameters.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.665 -0400", hash_original_method = "73DEE1BD3D15BA621CE057B5FCA7616C", hash_generated_method = "8FA157B2CB30040B9291643C0169A1AD")
     public Iterator<String> getParameterNames() {
 Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1348663904 =         parameters.getNames();
@@ -87,6 +88,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1348663904 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.665 -0400", hash_original_method = "FADD6078F02861D57363D501F4F9C95B", hash_generated_method = "0B9B6C1442404F79CE824C29F1585F28")
     public boolean hasParameters() {
         boolean varE78CA04AAABFA12049DF42B6393D6408_1216978074 = (parameters != null && !parameters.isEmpty());
@@ -221,6 +223,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1348663904 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.679 -0400", hash_original_method = "0E176A220CDCDA920F0996E000E16A8D", hash_generated_method = "D2B905DDF5678BF57359DC94D856B8D9")
     public boolean hasParameter(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -232,6 +235,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1348663904 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.679 -0400", hash_original_method = "65E5BFE21C1CDA8F26E2E41D0A6B9EA1", hash_generated_method = "3176E2C5AADE4344A52763E0CD3017CC")
     public void removeParameters() {
         this.parameters = new NameValueList();
@@ -240,6 +244,7 @@ Iterator<String> var77947D245EC7574A1CEE7335325FA03A_1348663904 =         parame
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.679 -0400", hash_original_method = "49747860C8C48A5B3F7CFA7B7258A693", hash_generated_method = "B6675E566A687590EB57F7FDD127A537")
     public NameValueList getParameters() {
 NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_718652248 =         parameters;
@@ -250,6 +255,7 @@ NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_718652248 =         parameters
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.680 -0400", hash_original_method = "D7D233790E2C90411F60E8102439D486", hash_generated_method = "DE8A606608AC93825A7D19B444AEB299")
     public void setParameter(NameValue nameValue) {
         addTaint(nameValue.getTaint());
@@ -259,6 +265,7 @@ NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_718652248 =         parameters
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.680 -0400", hash_original_method = "4B4FC4972A60A318528A3B65D835B0D7", hash_generated_method = "4804A4F492C9506D4B5EB3825EC6EDA1")
     public void setParameters(NameValueList parameters) {
         this.parameters = parameters;
@@ -267,6 +274,7 @@ NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_718652248 =         parameters
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.680 -0400", hash_original_method = "65FA1152003E641D893D3A6B303652A1", hash_generated_method = "41431B9E9A9EBD5388EEBB7D4EEC1745")
     protected int getParameterAsInt(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -373,6 +381,7 @@ NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_718652248 =         parameters
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.683 -0400", hash_original_method = "B4454BBF4B067318BED7FA4306F23669", hash_generated_method = "3A87846521A77C44712346B938AFB765")
     protected float getParameterAsFloat(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -424,6 +433,7 @@ NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_718652248 =         parameters
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.683 -0400", hash_original_method = "82A00B489AC355D0514D4F867ADC7246", hash_generated_method = "843E2785C77D7E05006F8B8066B78B79")
     protected long getParameterAsLong(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -514,6 +524,7 @@ GenericURI var540C13E9E156B687226421B24F2DF178_895842782 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.684 -0400", hash_original_method = "1DB3A708311EDCC43D7A461B84D39940", hash_generated_method = "455F58F4161175C82F4090584D51EFE8")
     protected boolean getParameterAsBoolean(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -557,6 +568,7 @@ GenericURI var540C13E9E156B687226421B24F2DF178_895842782 =                 null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.684 -0400", hash_original_method = "E1D4D51519E24D2E630FAA93B019FD38", hash_generated_method = "94064DF78EAC5BFF3FF12ADC1DA6B11F")
     public NameValue getNameValue(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -568,6 +580,7 @@ NameValue varEF5E994C04E75B8B4EA6C33DDA055061_1112483521 =         parameters.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.684 -0400", hash_original_method = "F88B366B00368248D268BF74B5E64B34", hash_generated_method = "96EDB0086471D7D30D0143B5A6DB9C6F")
     public Object clone() {
         ParametersHeader retval = (ParametersHeader) super.clone();
@@ -600,6 +613,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_44192794 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.685 -0400", hash_original_method = "7EC6FF3874184BDFD4677A471AD4F84B", hash_generated_method = "622379517747DFF65293F274774F086E")
     public void setMultiParameter(NameValue nameValue) {
         addTaint(nameValue.getTaint());
@@ -609,6 +623,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_44192794 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.685 -0400", hash_original_method = "AA35E6B35A009A15DE022941ACB0B490", hash_generated_method = "DC007F430DC8DCE124D871C79B4EA710")
     public String getMultiParameter(String name) {
         addTaint(name.getTaint());
@@ -620,6 +635,7 @@ String var0FA821C9ECD09BA15988E2EC17BD3FE5_1637079407 =         this.duplicates.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.685 -0400", hash_original_method = "5A021F5792300443FECC73E0DD310EC6", hash_generated_method = "54D80CB3F1D83AB9A263BBD50CE4154D")
     public DuplicateNameValueList getMultiParameters() {
 DuplicateNameValueList var5BDA0BC0D1D0A85895335C7E572C371A_793585705 =         duplicates;
@@ -641,6 +657,7 @@ Object varB6921D10A49072688DDAA4B0ED17F658_536688930 =         this.duplicates.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.685 -0400", hash_original_method = "66D882806A955FACE11E379F1822F80D", hash_generated_method = "8C82610FC674D0C7FA82A3836033BB1F")
     public Iterator<String> getMultiParameterNames() {
 Iterator<String> var5015060E52232B6144F92024DB04D587_1544243182 =         duplicates.getNames();
@@ -651,6 +668,7 @@ Iterator<String> var5015060E52232B6144F92024DB04D587_1544243182 =         duplic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.685 -0400", hash_original_method = "99BB2C1C0575811C3E3EF00DA4E34F61", hash_generated_method = "6AD47E008D655449ED1C316EB5ABF671")
     public boolean hasMultiParameters() {
         boolean var053FC6EDDA59099FA8EBDFAF39D93468_1385154411 = (duplicates != null && !duplicates.isEmpty());
@@ -670,6 +688,7 @@ Iterator<String> var5015060E52232B6144F92024DB04D587_1544243182 =         duplic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.685 -0400", hash_original_method = "4900377F50A662E0A9B40AE1199FCE72", hash_generated_method = "D795F403E32B5F11666D94B23F47F9B9")
     public boolean hasMultiParameter(String parameterName) {
         addTaint(parameterName.getTaint());
@@ -681,6 +700,7 @@ Iterator<String> var5015060E52232B6144F92024DB04D587_1544243182 =         duplic
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.686 -0400", hash_original_method = "2530F738F22D5C4CA96462C28290A063", hash_generated_method = "3241AA6292FA8FCBD80F737F272440C2")
     public void removeMultiParameters() {
         this.duplicates = new DuplicateNameValueList();

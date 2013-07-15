@@ -50,12 +50,14 @@ public class TrafficStats {
     }
 
     
-        public static void tagSocket(Socket socket) throws SocketException {
+        @DSModeled(DSC.SPEC)
+    public static void tagSocket(Socket socket) throws SocketException {
         SocketTagger.get().tag(socket);
     }
 
     
-        public static void untagSocket(Socket socket) throws SocketException {
+        @DSModeled(DSC.SPEC)
+    public static void untagSocket(Socket socket) throws SocketException {
         SocketTagger.get().untag(socket);
     }
 

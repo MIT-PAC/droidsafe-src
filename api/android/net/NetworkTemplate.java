@@ -84,6 +84,7 @@ public class NetworkTemplate implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.250 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4AB8BC44CD569361098FD13833960DFA")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_102665453 = (0);
@@ -145,6 +146,7 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337 =         "NetworkTemplate:
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.251 -0400", hash_original_method = "F3B6429C6B29080B6AB6244CD6E2C6C6", hash_generated_method = "BACAFD3023DCF4534C3C4D2F37936AB1")
     public int getMatchRule() {
         int var2532E26E563B8CCB0666E9168F784D0B_1192018864 = (mMatchRule);
@@ -155,6 +157,7 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337 =         "NetworkTemplate:
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.251 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "BD698BFF5F93314AA90551AB4C8DFCAD")
     public String getSubscriberId() {
 String varD221C4376DC09E8E422076D12DB9853B_113189750 =         mSubscriberId;
@@ -312,6 +315,7 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.254 -0400", hash_original_method = "FC1062696978183943559E1C2F0FCB30", hash_generated_method = "3CFE1D5318A65187F0238823E9E94F52")
     private boolean matchesWifi(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -332,6 +336,7 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.254 -0400", hash_original_method = "A66E0F5FCADB4F7B6C8822100B46777D", hash_generated_method = "8817743E74CE44FBF10A833532324784")
     private boolean matchesEthernet(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -352,7 +357,8 @@ switch(getNetworkClass(ident.mSubType)){
     }
 
     
-        private static String getMatchRuleName(int matchRule) {
+        @DSModeled(DSC.SAFE)
+    private static String getMatchRuleName(int matchRule) {
         switch (matchRule) {
             case MATCH_MOBILE_3G_LOWER:
                 return "MOBILE_3G_LOWER";

@@ -26,6 +26,7 @@ public final class RuntimePermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.322 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "FA7527EA861289A532080D87D5AA6A5E")
     @Override
     public String getActions() {
@@ -37,6 +38,7 @@ String var540C13E9E156B687226421B24F2DF178_2015637563 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.322 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "A965153DE5A7FE8AC267ED372FDA9915")
     @Override
     public boolean implies(Permission permission) {

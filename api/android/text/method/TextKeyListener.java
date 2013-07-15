@@ -157,6 +157,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.961 -0400", hash_original_method = "A7E02D03E9AB7CF614DD169102D03FAF", hash_generated_method = "0F24BCA6C9426B0673BF35264E746E85")
     public void onSpanAdded(Spannable s, Object what, int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -168,6 +169,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.961 -0400", hash_original_method = "2C716670C272F54C9EB4064D90DB3C4E", hash_generated_method = "A2BA261E44A26E34D865E62CBB58DEB1")
     public void onSpanRemoved(Spannable s, Object what, int start, int end) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -200,6 +202,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.962 -0400", hash_original_method = "AD20E29A89E7D41F4894A2F9AC99B4E0", hash_generated_method = "E9CD5FBA00FE5D63BA83197421FEB87F")
     private KeyListener getKeyListener(KeyEvent event) {
         addTaint(event.getTaint());
@@ -356,6 +359,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1343130200 =         NullKeyList
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.966 -0400", hash_original_method = "579E66F4F4B0748C979BD80ED5F12401", hash_generated_method = "5DAED8FD11A0C4BF8A2229F8F8CA603C")
         public int getInputType() {
             int var24CC70A2FB503E33350D5132CA8C5E73_569354006 = (InputType.TYPE_NULL);
@@ -366,6 +370,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1343130200 =         NullKeyList
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.967 -0400", hash_original_method = "3A5E70FDE36A1D45C2BCBEA410D24514", hash_generated_method = "975FE01344D1A42A99CF1EE30D672546")
         public boolean onKeyDown(View view, Editable content,
                                  int keyCode, KeyEvent event) {
@@ -382,6 +387,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1343130200 =         NullKeyList
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.968 -0400", hash_original_method = "1D7ECDFDE217EC70CAE84F2DF1B7B165", hash_generated_method = "4F968AE54C7EFBFA0835A3FBC3D5EA3C")
         public boolean onKeyUp(View view, Editable content, int keyCode,
                                         KeyEvent event) {
@@ -398,6 +404,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1343130200 =         NullKeyList
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.968 -0400", hash_original_method = "2352E2665ECFCE8217C303C63497A70F", hash_generated_method = "772359A15A8905F39B19A8A697FA04BC")
         public boolean onKeyOther(View view, Editable content, KeyEvent event) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -412,6 +419,7 @@ KeyListener var65A324ADC921227A148ADF9FB0E0762B_1343130200 =         NullKeyList
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.969 -0400", hash_original_method = "7A4583B5F6FBB25B3AFA5ED32AFA7AE1", hash_generated_method = "2A9E6826A21A98831EDA8D144A2B75C8")
         public void clearMetaKeyState(View view, Editable content, int states) {
             addTaint(states);

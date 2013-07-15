@@ -41,6 +41,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.426 -0400", hash_original_method = "92EA526117BA58D828A346DC2F14E6C7", hash_generated_method = "EEDDE2A84B78114E4954787EAB574E6D")
     @Override
     public void handleMessage(Message msg) {
@@ -112,6 +113,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.427 -0400", hash_original_method = "D0913A95E2E0984BDC30D85F1A6DD6EF", hash_generated_method = "E45C4BF2EF286DDD894B985A2244BF2F")
     private void signalRequestComplete() {
         synchronized
@@ -155,6 +157,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.429 -0400", hash_original_method = "1C78A3648C04874A6B02C5BA2CA8304A", hash_generated_method = "AA3B7C319F1C5E900CE0E0A8E8340AE3")
     public void cancel() {
     if(handleResponseForSynchronousRequest(null, null))        
@@ -202,6 +205,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.430 -0400", hash_original_method = "69FA3518C12F8613622C8FCCAB6F2AF7", hash_generated_method = "43A72805B00AF86B41128D7DB7626C67")
      void handleAuthRequest(LoadListener loader) {
         addTaint(loader.getTaint());
@@ -237,6 +241,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.431 -0400", hash_original_method = "886E13332A9209796D68B57BD4AA101D", hash_generated_method = "80F37B4D2EEE68ACA221FB51A2F201B9")
     private void waitForRequestToComplete() {
         synchronized
@@ -304,7 +309,8 @@ switch(msg.what){
     }
 
     
-        public static void onReceivedCredentials(LoadListener loader,
+        @DSModeled(DSC.SPEC)
+    public static void onReceivedCredentials(LoadListener loader,
             String host, String realm, String username, String password) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         CallbackProxy proxy = loader.getFrame().getCallbackProxy();

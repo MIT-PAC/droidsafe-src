@@ -27,6 +27,7 @@ public final class GeneralSubtrees {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.100 -0400", hash_original_method = "B39087273D015207EFED9684375F7A9C", hash_generated_method = "9DD4144B92B63854EDC55D2603262FD2")
     public List<GeneralSubtree> getSubtrees() {
 List<GeneralSubtree> var3E5BAD48CE158B3B7A2AD7B7425D5701_745449470 =         generalSubtrees;
@@ -37,6 +38,7 @@ List<GeneralSubtree> var3E5BAD48CE158B3B7A2AD7B7425D5701_745449470 =         gen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.101 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "673448FA17B4D4E8A610109CE34A3628")
     public byte[] getEncoded() {
     if(encoding == null)        

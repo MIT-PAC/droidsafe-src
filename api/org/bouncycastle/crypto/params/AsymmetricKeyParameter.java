@@ -20,6 +20,7 @@ public class AsymmetricKeyParameter implements CipherParameters {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.548 -0400", hash_original_method = "47130025E2A64A0FEA07D9052329E298", hash_generated_method = "7FD3293EF92A02327B536857934A93BD")
     public boolean isPrivate() {
         boolean varBD0C8E3BD998A500B0984584A7245CA0_964930082 = (privateKey);

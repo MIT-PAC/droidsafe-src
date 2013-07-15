@@ -237,6 +237,7 @@ final class StringToReal {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.341 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "34C5601E7A11CF36CDA98BCC633F1A32")
         public float specialValue() {
     if(infinity)            

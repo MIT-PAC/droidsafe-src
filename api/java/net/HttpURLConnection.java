@@ -40,6 +40,7 @@ public abstract class HttpURLConnection extends URLConnection {
     public abstract void disconnect();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.633 -0400", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "D2341046568443B0BEF7940FF8554A9B")
     public InputStream getErrorStream() {
 InputStream var540C13E9E156B687226421B24F2DF178_884940104 =         null;
@@ -50,7 +51,8 @@ InputStream var540C13E9E156B687226421B24F2DF178_884940104 =         null;
     }
 
     
-        public static boolean getFollowRedirects() {
+        @DSModeled(DSC.SAFE)
+    public static boolean getFollowRedirects() {
         return followRedirects;
     }
 
@@ -77,6 +79,7 @@ java.security.Permission varB773738882167D3068FEA8E0693C1D1A_1450251912 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.634 -0400", hash_original_method = "0D9C6E3C645DAD49E763E30DD315D3EF", hash_generated_method = "0BAD1A268720A17222B7799538EF8150")
     public String getRequestMethod() {
 String var27E3C5B2D4A798771E5F53D6527EECD0_913008365 =         method;
@@ -162,7 +165,8 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1248841742 =         responseMessage;
     }
 
     
-        public static void setFollowRedirects(boolean auto) {
+        @DSModeled(DSC.SAFE)
+    public static void setFollowRedirects(boolean auto) {
         followRedirects = auto;
     }
 
@@ -216,6 +220,7 @@ String var636F640217A2586C23C7303E786B88FE_795364853 =         super.getContentE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.638 -0400", hash_original_method = "881D26516B84F6D6EEADB518A168ADE5", hash_generated_method = "6F35DD17A72A4B76F88BBD1C0329B8C4")
     public boolean getInstanceFollowRedirects() {
         boolean var2023E717DDE450AF2AE0C63A1BCD60DA_925016842 = (instanceFollowRedirects);
@@ -226,6 +231,7 @@ String var636F640217A2586C23C7303E786B88FE_795364853 =         super.getContentE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.638 -0400", hash_original_method = "BB71B8E9C2D3F0EF20C7720F9E44016D", hash_generated_method = "A4E72D6C11951C7D0B323DF1D1093EEE")
     public void setInstanceFollowRedirects(boolean followRedirects) {
         instanceFollowRedirects = followRedirects;

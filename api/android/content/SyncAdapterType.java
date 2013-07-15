@@ -368,6 +368,7 @@ String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.405 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BB2802F7D8EFD80FDB4A277F621056D4")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2063300135 = (0);

@@ -16,12 +16,14 @@ public abstract class ProxySelector {
     }
 
 
-        public static ProxySelector getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static ProxySelector getDefault() {
         return defaultSelector;
     }
 
     
-        public static void setDefault(ProxySelector selector) {
+        @DSModeled(DSC.SAFE)
+    public static void setDefault(ProxySelector selector) {
         defaultSelector = selector;
     }
 

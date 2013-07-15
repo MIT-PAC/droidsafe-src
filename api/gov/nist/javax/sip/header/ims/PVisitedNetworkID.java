@@ -110,6 +110,7 @@ String var1B324365A764C077A55854483509F4AB_320957795 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.099 -0400", hash_original_method = "C32CBAC6FBA17FDD7866AA432385EFB6", hash_generated_method = "0E7206A61F7DE30DB9D44B0F937A47AB")
     public String getVisitedNetworkID() {
 String var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984 =         networkID;

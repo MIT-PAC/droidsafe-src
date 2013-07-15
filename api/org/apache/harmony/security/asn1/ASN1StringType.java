@@ -28,6 +28,7 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.696 -0400", hash_original_method = "3BFD309C154715F9457C75DB61750061", hash_generated_method = "FFB0B882C1FE60C9C3810F1EA049467C")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -61,6 +62,7 @@ Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.bu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.697 -0400", hash_original_method = "56680739FC748952853149E66560E94E", hash_generated_method = "48F131D00A1E1D9FE33198C4F5017853")
     public void encodeASN(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -72,6 +74,7 @@ Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.bu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.697 -0400", hash_original_method = "10029CCA141FCEE9BD14EC9FEEE7A0BB", hash_generated_method = "5091649F00D157E3102BCEC361AA8E5E")
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -81,6 +84,7 @@ Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.bu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.697 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "BFBE76DFFA47FA40E7E1BFB51B23707F")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());

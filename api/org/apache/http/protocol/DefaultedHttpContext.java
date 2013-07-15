@@ -80,6 +80,7 @@ Object var74888A1C7728062EE6A275D5DB131063_2011891457 =         this.local.remov
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.912 -0400", hash_original_method = "FA59965C12DF7B81C110308001A0693E", hash_generated_method = "964E882EF93C2D0F051CE05BF84833BB")
     public HttpContext getDefaults() {
 HttpContext var83675A281C45A942828F3DC842CC251B_549032922 =         this.defaults;

@@ -38,6 +38,7 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.138 -0400", hash_original_method = "FE0809D61F310D1DE2584DA263F14DCD", hash_generated_method = "8A2392B4A195A6813023E5960A6360AB")
     public InputMethodSession getInternalInputMethodSession() {
 InputMethodSession var7A6B58D0E9F0FD97AD7D91B209188589_657458247 =         mInputMethodSession;
@@ -48,6 +49,7 @@ InputMethodSession var7A6B58D0E9F0FD97AD7D91B209188589_657458247 =         mInpu
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.139 -0400", hash_original_method = "00877500C4B72645AB17DC7FDAE0E34A", hash_generated_method = "42E20A522AC4BA7214B33DC822549D1C")
     public void executeMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -126,6 +128,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.140 -0400", hash_original_method = "79448A7650CDA21C9A89B7B8FD63C46C", hash_generated_method = "7E0A06F0572B1B49A610780F58FEC54C")
     public void finishInput() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_INPUT));
@@ -134,6 +137,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.140 -0400", hash_original_method = "4AB85D57EDDB5A36CCFD4077A8D3DB50", hash_generated_method = "B96EF9A25172C8A5C6F6CD260DD5C1AB")
     public void displayCompletions(CompletionInfo[] completions) {
         addTaint(completions[0].getTaint());
@@ -145,6 +149,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.141 -0400", hash_original_method = "0BD6C1A889B6632AAA453DB7F3263BBD", hash_generated_method = "5E7401B37CD787AD860B36387D75C4E5")
     public void updateExtractedText(int token, ExtractedText text) {
         addTaint(text.getTaint());
@@ -157,6 +162,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.141 -0400", hash_original_method = "EAAE160B6C5BB7ADDBB833B764EC1908", hash_generated_method = "6DC661243F6ABB3E9B0185FD809E49B0")
     public void dispatchKeyEvent(int seq, KeyEvent event, IInputMethodCallback callback) {
         addTaint(callback.getTaint());
@@ -170,6 +176,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.142 -0400", hash_original_method = "B66D209112CB2D18AB081107433F0849", hash_generated_method = "92EF3595EC32C5C07656906A1D4B1D28")
     public void dispatchTrackballEvent(int seq, MotionEvent event, IInputMethodCallback callback) {
         addTaint(callback.getTaint());
@@ -183,6 +190,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.142 -0400", hash_original_method = "8CEFA969398A4D94CA9A297166BCD287", hash_generated_method = "183B2A7E33424BE46B2C1DC160CEE6CC")
     public void updateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd, int candidatesStart, int candidatesEnd) {
@@ -202,6 +210,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.142 -0400", hash_original_method = "573066B3B680169C0F49551C28C5AAB3", hash_generated_method = "FD17C34126728E20B211D549D4E70F5E")
     public void viewClicked(boolean focusChanged) {
         addTaint(focusChanged);
@@ -211,6 +220,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.143 -0400", hash_original_method = "AA4329CCB1121E7E7A4883B7E8B28B3A", hash_generated_method = "B99AA194B0D795DD61F1A94B7735FFD2")
     public void updateCursor(Rect newCursor) {
         addTaint(newCursor.getTaint());
@@ -222,6 +232,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.143 -0400", hash_original_method = "198A18639F375147EA5FEBDF12A15204", hash_generated_method = "455B93CF1BBB3D2268A799889E266C2C")
     public void appPrivateCommand(String action, Bundle data) {
         addTaint(data.getTaint());
@@ -232,6 +243,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.144 -0400", hash_original_method = "E1D5DFD3D112FBD55D45C010A5FB9D8C", hash_generated_method = "DF5DC38526B081CEB3E4F03232696515")
     public void toggleSoftInput(int showFlags, int hideFlags) {
         addTaint(hideFlags);
@@ -242,6 +254,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.144 -0400", hash_original_method = "DD8E8E4C57A8296FF535720B90D4809B", hash_generated_method = "DA2B56A0945E112EFB6C9022E5AD067E")
     public void finishSession() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_SESSION));
@@ -263,6 +276,7 @@ switch(msg.what){
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.145 -0400", hash_original_method = "7EDF22DE040F47B5D42C1B7CDA3CFBC9", hash_generated_method = "A4BEC0AF39E8861257831EB6FAA068F1")
         public void finishedEvent(int seq, boolean handled) {
             addTaint(handled);

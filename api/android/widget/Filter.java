@@ -32,6 +32,7 @@ public abstract class Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.624 -0400", hash_original_method = "945149F2F16183884CBDA739B056A27B", hash_generated_method = "AD9BA4186451CF4377A8B2EB59E35A7A")
     public void setDelayer(Delayer delayer) {
         synchronized

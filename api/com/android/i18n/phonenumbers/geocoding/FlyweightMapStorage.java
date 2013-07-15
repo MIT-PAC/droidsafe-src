@@ -38,6 +38,7 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_method = "8579179DB51630AA1D46F39490760068", hash_generated_method = "9187FAC644D890FEE51323D5788E32F2")
     @Override
     public boolean isFlyweight() {
@@ -49,7 +50,8 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
-        private static int getOptimalNumberOfBytesForValue(int value) {
+        @DSModeled(DSC.SAFE)
+    private static int getOptimalNumberOfBytesForValue(int value) {
         return value <= Short.MAX_VALUE ? SHORT_SIZE : INT_SIZE;
     }
 

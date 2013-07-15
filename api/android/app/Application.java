@@ -30,6 +30,7 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.103 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -37,6 +38,7 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.104 -0400", hash_original_method = "9A007B9204A4409A01090B4582DB84FC", hash_generated_method = "85299B4BE1512429EABA91F15A3B99D5")
     public void onTerminate() {
         //DSFIXME:  CODE0009: Possible callback target function detected

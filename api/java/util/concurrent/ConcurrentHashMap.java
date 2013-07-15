@@ -107,7 +107,8 @@ for(int i = 0;i < this.segments.length;++i)
     }
 
     
-        private static int hash(int h) {
+        @DSModeled(DSC.SAFE)
+    private static int hash(int h) {
         h += (h <<  15) ^ 0xffffcd7d;
         h ^= (h >>> 10);
         h += (h <<   3);
@@ -128,6 +129,7 @@ Segment<K,V> var81E1DC7BB6CFBB976BA039133E98DCDC_1238736263 =         segments[(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.387 -0400", hash_original_method = "1D5F6259D73E7678D3D06BFBE271A26B", hash_generated_method = "0E44A01C20909952218528F823246416")
     public boolean isEmpty() {
         final Segment<K,V>[] segments = this.segments;
@@ -1231,6 +1233,7 @@ for(int j = currentTable.length - 1;j >= 0;--j)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.413 -0400", hash_original_method = "F0F1A7352709A4A442C7E6635A47CE9D", hash_generated_method = "C337D326C3C38C8C7C560D06492DD767")
         public boolean hasNext() {
             boolean var89CBB2F442CE6BC294273342C489EBAF_1005262609 = (nextEntry != null);
@@ -1241,6 +1244,7 @@ for(int j = currentTable.length - 1;j >= 0;--j)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.414 -0400", hash_original_method = "DB7CF742BB593212DEE9E7DE200FEED8", hash_generated_method = "62FA421B731478FF874E95BFB2197101")
          HashEntry<K,V> nextEntry() {
     if(nextEntry == null)            
@@ -1294,6 +1298,7 @@ HashEntry<K,V> varBB386FC8A1600B8B2770D46D0DDD0432_328695345 =             lastR
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.415 -0400", hash_original_method = "AC02B860B54618170BE24E50FF82F167", hash_generated_method = "B5A76BB9DD296EAEAF45C26DEB2BD829")
         public K next() {
 K var14F628CF3ADA3267E4D35928D18FC85F_869976939 =             super.nextEntry().key;
@@ -1304,6 +1309,7 @@ K var14F628CF3ADA3267E4D35928D18FC85F_869976939 =             super.nextEntry().
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.415 -0400", hash_original_method = "1473F8B0EF10582FE9B24F9D164CBEAD", hash_generated_method = "49E6C8BF36E6F324645E6057C6DE1AAA")
         public K nextElement() {
 K var14F628CF3ADA3267E4D35928D18FC85F_1430194764 =             super.nextEntry().key;
@@ -1327,6 +1333,7 @@ K var14F628CF3ADA3267E4D35928D18FC85F_1430194764 =             super.nextEntry()
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.415 -0400", hash_original_method = "282B954004CE321F97FD15862590F160", hash_generated_method = "76EB03FABB9786893BF8DB61922A6AAD")
         public V next() {
 V varDDD34ECB520407FF2B35D37A084182FA_395627404 =             super.nextEntry().value;
@@ -1337,6 +1344,7 @@ V varDDD34ECB520407FF2B35D37A084182FA_395627404 =             super.nextEntry().
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.415 -0400", hash_original_method = "95D48303D225ADC424CB718F2FA08908", hash_generated_method = "FF75382E2D754FB54176F95239F75696")
         public V nextElement() {
 V varDDD34ECB520407FF2B35D37A084182FA_1214542283 =             super.nextEntry().value;
@@ -1422,6 +1430,7 @@ Map.Entry<K,V> var519386A83C4C9C32B145A2A117BFFCE0_1998619783 =             new 
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.417 -0400", hash_original_method = "29CBC31BB957230FC921EA16C45EAF59", hash_generated_method = "4F4CE015CB9C61D92DD52378A3BC3374")
         public Iterator<K> iterator() {
 Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1149005358 =             new KeyIterator();
@@ -1495,6 +1504,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1149005358 =             new Key
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.419 -0400", hash_original_method = "3C7262C80A3C469695720BFA46AA113C", hash_generated_method = "559EFF83AA5651CBF970435CB640A1FF")
         public Iterator<V> iterator() {
 Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_1886140985 =             new ValueIterator();

@@ -39,7 +39,8 @@ public class Lexer extends LexerCore {
     }
 
     
-        public static String getHeaderValue(String line) {
+        @DSModeled(DSC.SAFE)
+    public static String getHeaderValue(String line) {
         if (line == null)
             return null;
         String headerValue = null;

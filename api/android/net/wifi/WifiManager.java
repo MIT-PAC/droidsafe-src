@@ -600,7 +600,8 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
     }
 
     
-        public static int calculateSignalLevel(int rssi, int numLevels) {
+        @DSModeled(DSC.SAFE)
+    public static int calculateSignalLevel(int rssi, int numLevels) {
         if (rssi <= MIN_RSSI) {
             return 0;
         } else if (rssi >= MAX_RSSI) {
@@ -613,7 +614,8 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
     }
 
     
-        public static int compareSignalLevel(int rssiA, int rssiB) {
+        @DSModeled(DSC.SAFE)
+    public static int compareSignalLevel(int rssiA, int rssiB) {
         return rssiA - rssiB;
     }
 
@@ -1165,6 +1167,7 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.067 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
@@ -1173,6 +1176,7 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.067 -0400", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "CED683671336ADD60ADF0070EFA84B8B")
         public boolean isHeld() {
             synchronized
@@ -1437,6 +1441,7 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.072 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
@@ -1445,6 +1450,7 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.072 -0400", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "590C0545E5AAADF6EC395A742191F190")
         public boolean isHeld() {
             synchronized

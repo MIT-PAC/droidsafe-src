@@ -147,6 +147,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_305030696 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.408 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "D0470E6A2A7D25626FAA079B6CFA1A40")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;

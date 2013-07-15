@@ -45,6 +45,7 @@ public abstract class GenericObject implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.176 -0400", hash_original_method = "5F1EBA3A7EC51605C965562331E40E61", hash_generated_method = "B2181455E3C2CDB6B2B1382E94BDD7EB")
     public Match getMatcher() {
 Match var07D3D711528CBAE19CEE0BCA651B1D5B_2113299828 =         matchExpression;
@@ -55,7 +56,8 @@ Match var07D3D711528CBAE19CEE0BCA651B1D5B_2113299828 =         matchExpression;
     }
 
     
-        public static Class<?> getClassFromName(String className) {
+        @DSModeled(DSC.SAFE)
+    public static Class<?> getClassFromName(String className) {
         try {
             return Class.forName(className);
         } catch (Exception ex) {
@@ -65,7 +67,8 @@ Match var07D3D711528CBAE19CEE0BCA651B1D5B_2113299828 =         matchExpression;
     }
 
     
-        public static boolean isMySubclass(Class<?> other) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isMySubclass(Class<?> other) {
         return GenericObject.class.isAssignableFrom(other);
     }
 

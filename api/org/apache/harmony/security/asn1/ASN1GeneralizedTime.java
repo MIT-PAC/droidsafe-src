@@ -18,7 +18,8 @@ public final class ASN1GeneralizedTime extends ASN1Time {
     }
 
     
-        public static ASN1GeneralizedTime getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1GeneralizedTime getInstance() {
         return ASN1;
     }
 

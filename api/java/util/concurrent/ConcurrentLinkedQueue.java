@@ -775,6 +775,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_78716230 =                     x;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.636 -0400", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "9E3DC0B4E42301D3FBDBD2FA61BC1C5D")
         public boolean hasNext() {
             boolean var055287C88A3BCA17E817C22C28D72D59_1527372399 = (nextNode != null);

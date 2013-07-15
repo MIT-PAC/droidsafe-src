@@ -154,7 +154,8 @@ public class DatabaseUtils {
     }
 
     
-        public static int getTypeOfObject(Object obj) {
+        @DSModeled(DSC.SAFE)
+    public static int getTypeOfObject(Object obj) {
         if (obj == null) {
             return Cursor.FIELD_TYPE_NULL;
         } else if (obj instanceof byte[]) {
@@ -298,7 +299,8 @@ public class DatabaseUtils {
     }
 
     
-        private static int getKeyLen(byte[] arr) {
+        @DSModeled(DSC.SAFE)
+    private static int getKeyLen(byte[] arr) {
         if (arr[arr.length - 1] != 0) {
             return arr.length;
         } else {
@@ -489,12 +491,14 @@ public class DatabaseUtils {
     }
 
     
-        public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
+        @DSModeled(DSC.SPEC)
+    public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
         return queryNumEntries(db, table, selection, null);
     }
 
     
-        public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
+        @DSModeled(DSC.SPEC)
+    public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
             String[] selectionArgs) {
         String s = (!TextUtils.isEmpty(selection)) ? " where " + selection : "";
         return longForQuery(db, "select count(*) from " + table + s,

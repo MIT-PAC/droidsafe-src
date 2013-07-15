@@ -290,6 +290,7 @@ for(int size = mMessages.size();size > 0;size--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.489 -0400", hash_original_method = "9D0DE68A4BFD007DC242C5FC5FA57FA9", hash_generated_method = "CBA6CFC8B1951D9F982D99886F2E66A6")
         private synchronized boolean hasHandler() {
             boolean varA0688A549C082DCF7CAF0C6FBCF98DF0_1628843660 = (mHandler != null);

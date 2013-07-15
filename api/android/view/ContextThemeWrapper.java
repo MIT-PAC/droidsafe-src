@@ -41,6 +41,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.558 -0400", hash_original_method = "78AA434171DBBE0A89D0F8DC1618D34C", hash_generated_method = "3DABDDC1F65B0CDB24F633535C22EB4F")
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -52,6 +53,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.558 -0400", hash_original_method = "E97E7D3D0BCD16FFD8F18C9341C10283", hash_generated_method = "13B2E8C961E9362FDA33D1F57040A307")
     @Override
     public void setTheme(int resid) {
@@ -63,6 +65,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.558 -0400", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "A26F7FA8693DDA203B9D80375A0F9997")
     @Override
     public int getThemeResId() {
@@ -100,6 +103,7 @@ Resources.Theme var021DB673F568E8BD9EB3155CBE6DF295_1193327070 =         mTheme;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.559 -0400", hash_original_method = "3DDCB0207132CDAFA0BFC718C36A2A86", hash_generated_method = "88DF4D9757F474699D7B5A8F899D3CE5")
     @Override
     public Object getSystemService(String name) {
@@ -140,6 +144,7 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1165603900 =         mBase.getSystemS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.560 -0400", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "6F51DC32008736AA454500B75DDF7DAC")
     private void initializeTheme() {
         final boolean first = mTheme == null;

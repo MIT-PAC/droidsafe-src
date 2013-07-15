@@ -42,6 +42,7 @@ public class DOMSource implements Source {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.090 -0400", hash_original_method = "4F37876713B3FCA5FC091F96D4BE4E11", hash_generated_method = "D39A5CE56B7B3F94F5AFBE14C42F2B9B")
     public void setNode(Node node) {
         this.node = node;
@@ -50,6 +51,7 @@ public class DOMSource implements Source {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.091 -0400", hash_original_method = "10E144C61713FDC7DCDB7ABF8ED1C0C7", hash_generated_method = "3966E3E402CEB3ABC9E54FBC189337D6")
     public Node getNode() {
 Node var1924C94B76524D1C3D7310EA17B0EF94_248307449 =         node;
@@ -60,6 +62,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_248307449 =         node;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.091 -0400", hash_original_method = "E981DAB2BFA2B95115ED74FBC4FCBCC2", hash_generated_method = "8DE75C9EC5B78E696D327E1572E2C1F7")
     public void setSystemId(String systemID) {
         this.systemID = systemID;
@@ -68,6 +71,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_248307449 =         node;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.092 -0400", hash_original_method = "2FF877EC5EDDB8E93544988C2CFEB0F3", hash_generated_method = "6BC79216D1009A5C7408C9E75F71C268")
     public String getSystemId() {
 String var64F7B4425A5091DCABF710CFF5E36BC2_705983379 =         this.systemID;

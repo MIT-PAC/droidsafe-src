@@ -21,7 +21,8 @@ public class Services {
     }
 
 
-        private static void loadProviders() {
+        @DSModeled(DSC.SPEC)
+    private static void loadProviders() {
         String providerClassName = null;
         int i = 1;
         ClassLoader cl = ClassLoader.getSystemClassLoader();
@@ -44,7 +45,8 @@ public class Services {
     }
 
     
-        public static Provider[] getProviders() {
+        @DSModeled(DSC.SPEC)
+    public static Provider[] getProviders() {
         return providers.toArray(new Provider[providers.size()]);
     }
 
@@ -54,7 +56,8 @@ public class Services {
     }
 
     
-        public static Provider getProvider(String name) {
+        @DSModeled(DSC.SPEC)
+    public static Provider getProvider(String name) {
         if (name == null) {
             return null;
         }
@@ -62,7 +65,8 @@ public class Services {
     }
 
     
-        public static int insertProviderAt(Provider provider, int position) {
+        @DSModeled(DSC.SPEC)
+    public static int insertProviderAt(Provider provider, int position) {
         int size = providers.size();
         if ((position < 1) || (position > size)) {
             position = size + 1;
@@ -74,14 +78,16 @@ public class Services {
     }
 
     
-        public static void removeProvider(int providerNumber) {
+        @DSModeled(DSC.SPEC)
+    public static void removeProvider(int providerNumber) {
         Provider p = providers.remove(providerNumber - 1);
         providersNames.remove(p.getName());
         setNeedRefresh();
     }
 
     
-        public static void initServiceInfo(Provider p) {
+        @DSModeled(DSC.SPEC)
+    public static void initServiceInfo(Provider p) {
         for (Provider.Service serv : p.getServices()) {
             String type = serv.getType();
             if (secureRandom == null && type.equals("SecureRandom")) {
@@ -101,7 +107,8 @@ public class Services {
     }
 
     
-        public static void updateServiceInfo() {
+        @DSModeled(DSC.SPEC)
+    public static void updateServiceInfo() {
         services.clear();
         secureRandom = null;
         for (Provider p : providers) {
@@ -111,7 +118,8 @@ public class Services {
     }
 
     
-        public static boolean isEmpty() {
+        @DSModeled(DSC.SPEC)
+    public static boolean isEmpty() {
         return services.isEmpty();
     }
 
@@ -121,17 +129,20 @@ public class Services {
     }
 
     
-        public static Provider.Service getSecureRandomService() {
+        @DSModeled(DSC.SAFE)
+    public static Provider.Service getSecureRandomService() {
         return secureRandom;
     }
 
     
-        public static void setNeedRefresh() {
+        @DSModeled(DSC.SAFE)
+    public static void setNeedRefresh() {
         needRefresh = true;
     }
 
     
-        public static void refresh() {
+        @DSModeled(DSC.SPEC)
+    public static void refresh() {
         if (needRefresh) {
             refreshNumber++;
             updateServiceInfo();

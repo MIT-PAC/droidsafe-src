@@ -28,6 +28,7 @@ public class InstrumentationTestCase extends TestCase {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.964 -0400", hash_original_method = "30957576898B0AE27F5837919E36AECD", hash_generated_method = "52FC0986A496E063EF447F094F5B0687")
     public void injectInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
@@ -46,6 +47,7 @@ public class InstrumentationTestCase extends TestCase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.965 -0400", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "E0FF34DE2FBCFD195E1CFE02D70E32BA")
     public Instrumentation getInstrumentation() {
 Instrumentation var0FB7EFFFC0B8CD54E817BBC71710DE88_958141454 =         mInstrumentation;
@@ -152,6 +154,7 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.969 -0400", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "5AECC44B194BF7066DB96161C10A1946")
     @Override
     protected void runTest() throws Throwable {

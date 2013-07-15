@@ -30,6 +30,7 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.485 -0400", hash_original_method = "9BEACA878DCF694953AD8141227DB60F", hash_generated_method = "3F1A3DE5498669AA00ABE685D6431FC2")
     public void setPrettyEncoding(boolean flag) {
         addTaint(flag);
@@ -39,6 +40,7 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.485 -0400", hash_original_method = "58113BBBA3D76308CFB19C46D0FF7A27", hash_generated_method = "24B77DBFFC0C907475E5D48D0009252C")
     public AcceptEncodingHeader createAcceptEncodingHeader(String encoding) throws ParseException {
         addTaint(encoding.getTaint());
@@ -62,6 +64,7 @@ AcceptEncodingHeader varE01F2A72A06A1B398025C7E45032A16D_31487278 =         acce
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.486 -0400", hash_original_method = "3FEA70547EDCF31E1AA086D3362AC6CE", hash_generated_method = "D82A0629D406C121BF62A4C9ED39C7CB")
     public AcceptHeader createAcceptHeader(
         String contentType,
@@ -90,6 +93,7 @@ AcceptHeader var4810606E904E6475813B05DAB05FAA99_1726379420 =         accept;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.486 -0400", hash_original_method = "5AF5E9D92982780781CC81035C3C1529", hash_generated_method = "9B014924F8252696A1EAC90B7371055C")
     public AcceptLanguageHeader createAcceptLanguageHeader(Locale language) {
         addTaint(language.getTaint());
@@ -113,6 +117,7 @@ AcceptLanguageHeader varA29C4E14CD304C607CC754001D3111CC_1954970747 =         ac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.486 -0400", hash_original_method = "3E0D5311E2AF98CBAC12E04C1647AAA5", hash_generated_method = "519B162A81B0A80CC2B5C1AD8D22C7AD")
     public AlertInfoHeader createAlertInfoHeader(URI alertInfo) {
         addTaint(alertInfo.getTaint());
@@ -136,6 +141,7 @@ AlertInfoHeader var3F5343BF1D849954A73F0BB303805FFD_2030211000 =         a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.487 -0400", hash_original_method = "7A8DE3D3022A3669E75EC61B4D0B5F19", hash_generated_method = "E587E58B3E39113A3AD5BB86143AB645")
     public AllowEventsHeader createAllowEventsHeader(String eventType) throws ParseException {
         addTaint(eventType.getTaint());
@@ -159,6 +165,7 @@ AllowEventsHeader var7AAF24C270C1FFA4026ACFC304EDA15A_1083849687 =         allow
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.487 -0400", hash_original_method = "C562ECE8E2158A54C27A4525D88FEA63", hash_generated_method = "B08F3EE7D39F1D77A4AA23676DEA93D6")
     public AllowHeader createAllowHeader(String method) throws ParseException {
         addTaint(method.getTaint());
@@ -182,6 +189,7 @@ AllowHeader var9E6A6E901ADF174DAF31F3629A9D8C1B_1433929516 =         allow;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.488 -0400", hash_original_method = "E72D81A306A857A102E9D4437AB18CA6", hash_generated_method = "0A13B24C39FC09A3780FEAEC18E27BB4")
     public AuthenticationInfoHeader createAuthenticationInfoHeader(String response) throws ParseException {
         addTaint(response.getTaint());
@@ -205,6 +213,7 @@ AuthenticationInfoHeader varFE2A4E660D0434D283705BEC4309B2E4_677101019 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.488 -0400", hash_original_method = "F250EC80C8CD1CBE5FF237A98CBD8CD0", hash_generated_method = "13A6A4015E5601DDF99DE44679CD9F5A")
     public AuthorizationHeader createAuthorizationHeader(String scheme) throws ParseException {
         addTaint(scheme.getTaint());
@@ -228,6 +237,7 @@ AuthorizationHeader varFE2A4E660D0434D283705BEC4309B2E4_1078765885 =         aut
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.488 -0400", hash_original_method = "9707416B5040BCEA07917ADCBF33DA70", hash_generated_method = "126274FBD90239230F1294BC18EEBEA4")
     public CSeqHeader createCSeqHeader( long sequenceNumber, String method) throws ParseException, InvalidArgumentException {
         addTaint(method.getTaint());
@@ -262,6 +272,7 @@ CSeqHeader varFC7826BD3106DF80805DB927415679C2_1353907146 =         cseq;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.489 -0400", hash_original_method = "332D5DD16F528ACCDED76BFE26F4F243", hash_generated_method = "2B7B2AAEBA71EBB8D3ED229388E8221C")
     public CSeqHeader createCSeqHeader( int sequenceNumber, String method) throws ParseException, InvalidArgumentException {
         addTaint(method.getTaint());
@@ -274,6 +285,7 @@ CSeqHeader varEB341C41EAF652A028D677FFCBAF073B_2079331073 =         this.createC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.489 -0400", hash_original_method = "0CB560808F252622C176039BC6E86FF7", hash_generated_method = "3EC63214570975A2031314D2C2A1977E")
     public CallIdHeader createCallIdHeader(String callId) throws ParseException {
         addTaint(callId.getTaint());
@@ -297,6 +309,7 @@ CallIdHeader var807FB10045EE51C06BDB74744A6714DF_1506976709 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.489 -0400", hash_original_method = "8867B6CA9EB8DB8DAA3F991D7B0AD5D9", hash_generated_method = "244D93E8950BFDA2D8D8B79FCB2222C9")
     public CallInfoHeader createCallInfoHeader(URI callInfo) {
         addTaint(callInfo.getTaint());
@@ -320,6 +333,7 @@ CallInfoHeader var807FB10045EE51C06BDB74744A6714DF_189993553 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.490 -0400", hash_original_method = "45EF0D9994A51A34EA10DF4A185E8F21", hash_generated_method = "165AD5C7F0FE45A2840D36727560AB2A")
     public ContactHeader createContactHeader(Address address) {
         addTaint(address.getTaint());
@@ -359,6 +373,7 @@ ContactHeader var695F7F01550A7C9445656119C31590B1_867892263 =         contact;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.490 -0400", hash_original_method = "CC352C2425871DC27A0C55CF39D4ABAB", hash_generated_method = "D737A83EDFC9735E46A07CE5CA3CFCD5")
     public ContentDispositionHeader createContentDispositionHeader(String contentDisposition) throws ParseException {
         addTaint(contentDisposition.getTaint());
@@ -382,6 +397,7 @@ ContentDispositionHeader var807FB10045EE51C06BDB74744A6714DF_1436558768 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.491 -0400", hash_original_method = "090104ADCCDA5F259494E038435257D1", hash_generated_method = "A9A03E00B7D30566D9A45EEA47604BF4")
     public ContentEncodingHeader createContentEncodingHeader(String encoding) throws ParseException {
         addTaint(encoding.getTaint());
@@ -405,6 +421,7 @@ ContentEncodingHeader var807FB10045EE51C06BDB74744A6714DF_1607109730 =         c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.491 -0400", hash_original_method = "CD027E2457CF527330FF9F4C0A972B91", hash_generated_method = "0D06106A6F7C0D75CC212AF8CAE7C151")
     public ContentLanguageHeader createContentLanguageHeader(Locale contentLanguage) {
         addTaint(contentLanguage.getTaint());
@@ -428,6 +445,7 @@ ContentLanguageHeader var807FB10045EE51C06BDB74744A6714DF_2136567259 =         c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.492 -0400", hash_original_method = "DA3B5EC62F3E30804B07AD592D303E3E", hash_generated_method = "826B017E24438955D2732BCF32CC4B8B")
     public ContentLengthHeader createContentLengthHeader(int contentLength) throws InvalidArgumentException {
         addTaint(contentLength);
@@ -451,6 +469,7 @@ ContentLengthHeader var807FB10045EE51C06BDB74744A6714DF_811975897 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.492 -0400", hash_original_method = "BF42B4FF2E7F96D2FA4773C6E514B79D", hash_generated_method = "D6C5AEA48FEBE05677723BFC8618F004")
     public ContentTypeHeader createContentTypeHeader(
         String contentType,
@@ -479,6 +498,7 @@ ContentTypeHeader var807FB10045EE51C06BDB74744A6714DF_831979803 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.493 -0400", hash_original_method = "F3D0948AB2AB5DCB4D46B0F9C4754A1D", hash_generated_method = "F6BB102F5188D7F6C31AFD25688F0277")
     public DateHeader createDateHeader(Calendar date) {
         addTaint(date.getTaint());
@@ -502,6 +522,7 @@ DateHeader varBE245B24E7ED509FDFAAA6CD39E35D89_1940631792 =         d;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.493 -0400", hash_original_method = "7FD58797EECF83FE34BEE1F3B093BC46", hash_generated_method = "B00A74993249B5C4704300F83893664E")
     public EventHeader createEventHeader(String eventType) throws ParseException {
         addTaint(eventType.getTaint());
@@ -525,6 +546,7 @@ EventHeader var3162E7A4A1E5D72F1058A9B39A6A8738_1280722239 =         event;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.494 -0400", hash_original_method = "1A307AD1BD02E7BD6299AF40D811E5D5", hash_generated_method = "CE0B24DFF98508A7AA08C63D4F2C939E")
     public ExpiresHeader createExpiresHeader(int expires) throws InvalidArgumentException {
         addTaint(expires);
@@ -577,6 +599,7 @@ javax.sip.header.ExtensionHeader varFDE9E71E25F62874B52BEEA10AF11C0A_664096576 =
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.495 -0400", hash_original_method = "E3876C81F77C4C65824998CB51869857", hash_generated_method = "5A77EC325510B45956911A838A410C84")
     public FromHeader createFromHeader(Address address, String tag) throws ParseException {
         addTaint(tag.getTaint());
@@ -605,6 +628,7 @@ FromHeader var48A496C0AD319E4CFD66279C8D5D42FE_1248602989 =         from;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.495 -0400", hash_original_method = "4DE074146D6A81FB201A39A399764E9F", hash_generated_method = "8106F6A4775F2FFE793877ED02FE64FD")
     public InReplyToHeader createInReplyToHeader(String callId) throws ParseException {
         addTaint(callId.getTaint());
@@ -628,6 +652,7 @@ InReplyToHeader varD68AE97D1428FF1C23FFFC857A57F924_1544408149 =         inReply
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.495 -0400", hash_original_method = "2B62AE770A28023C5424C7B7718E4BD4", hash_generated_method = "7E13A9960AE426AB70EA3984474DD785")
     public MaxForwardsHeader createMaxForwardsHeader(int maxForwards) throws InvalidArgumentException {
         addTaint(maxForwards);
@@ -653,6 +678,7 @@ MaxForwardsHeader varBD22C5ECD1F8BC3EE2416AF7A8014FD2_329060127 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.496 -0400", hash_original_method = "623C745ED7578EC4227F3B15A38B5D4A", hash_generated_method = "6CADD6B9BE300D4C3FCEE2D86E8496CC")
     public MimeVersionHeader createMimeVersionHeader(
         int majorVersion,
@@ -683,6 +709,7 @@ MimeVersionHeader varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1729004553 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.496 -0400", hash_original_method = "F897D0FECB8A8CC74BFA504858C91B42", hash_generated_method = "47F1BD287A263F0222D50E964A7269AB")
     public MinExpiresHeader createMinExpiresHeader(int minExpires) throws InvalidArgumentException {
         addTaint(minExpires);
@@ -706,6 +733,7 @@ MinExpiresHeader varD85D633807129E579A78008D2DCE7AA0_1757915269 =         min;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.497 -0400", hash_original_method = "8EE941BB2D8E39A517F98D1ED3613B4D", hash_generated_method = "9F6D09355E632842106916BFB08705E8")
     public ExtensionHeader createMinSEHeader(int expires) throws InvalidArgumentException {
         addTaint(expires);
@@ -729,6 +757,7 @@ ExtensionHeader var6BFFBFA2F1D556BA80433C2335198CE9_700853173 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.497 -0400", hash_original_method = "2F5DB311D13CB6144CC7B49271775C33", hash_generated_method = "DAC612C4872300669714FD524DB79052")
     public OrganizationHeader createOrganizationHeader(String organization) throws ParseException {
         addTaint(organization.getTaint());
@@ -752,6 +781,7 @@ OrganizationHeader varBB0FDDC5CC83552BCB5FF7675B18007A_1096332044 =         o;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.497 -0400", hash_original_method = "085951AB405380C6C60E1EC174C5C855", hash_generated_method = "878E06FC478E5268E540800A4BC5C550")
     public PriorityHeader createPriorityHeader(String priority) throws ParseException {
         addTaint(priority.getTaint());
@@ -775,6 +805,7 @@ PriorityHeader var74E4690D9F2A026504928C017944E149_837490687 =         p;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.498 -0400", hash_original_method = "E2D1E713D6EFBD9B5EF73CE359255B39", hash_generated_method = "5357A4F7A10E58E2DAF77A7313471EB1")
     public ProxyAuthenticateHeader createProxyAuthenticateHeader(String scheme) throws ParseException {
         addTaint(scheme.getTaint());
@@ -798,6 +829,7 @@ ProxyAuthenticateHeader var74E4690D9F2A026504928C017944E149_1362762815 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.498 -0400", hash_original_method = "E046B5DACDD94AD026F81045FF391CD1", hash_generated_method = "82405F5F286E2A538312B7ABB1925F38")
     public ProxyAuthorizationHeader createProxyAuthorizationHeader(String scheme) throws ParseException {
         addTaint(scheme.getTaint());
@@ -821,6 +853,7 @@ ProxyAuthorizationHeader var74E4690D9F2A026504928C017944E149_1853552893 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.498 -0400", hash_original_method = "A059B8FD47D8FC83321E2DEF4CB18490", hash_generated_method = "FCF996CF1FDE86F92E8CEEF92530B7A0")
     public ProxyRequireHeader createProxyRequireHeader(String optionTag) throws ParseException {
         addTaint(optionTag.getTaint());
@@ -844,6 +877,7 @@ ProxyRequireHeader var74E4690D9F2A026504928C017944E149_1492123097 =         p;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.499 -0400", hash_original_method = "42539302BE9490416DF1DC01B8BC3D99", hash_generated_method = "8560E9494BB828A83E09B99E3CDAE5E6")
     public RAckHeader createRAckHeader(
         long rSeqNumber,
@@ -884,6 +918,7 @@ RAckHeader var55285630369F90A1D1B24F624C06D15F_1682883707 =         rack;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.499 -0400", hash_original_method = "B44C2BD23DFFCB51A992C42D93BADE4E", hash_generated_method = "77D81DF05A08442C2B9AE8E812F9F648")
     public RAckHeader createRAckHeader(int rSeqNumber, int cSeqNumber, String method) throws InvalidArgumentException, ParseException {
         addTaint(method.getTaint());
@@ -897,6 +932,7 @@ RAckHeader var0DFEE96A820BC9D494DCB5F0837AAF6A_806597186 =         createRAckHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.500 -0400", hash_original_method = "38086BF4D4EB3CE5AB4BF7772F8EACF2", hash_generated_method = "3540F631E62F4D6FB03B3AF2366FF87A")
     public RSeqHeader createRSeqHeader(int sequenceNumber) throws InvalidArgumentException {
         addTaint(sequenceNumber);
@@ -908,6 +944,7 @@ RSeqHeader var1B9DD1E25CC91263F0C8D46DE9A85E59_740280725 =         createRSeqHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.500 -0400", hash_original_method = "CA4CA07B31DF6CB609C05636F40DB22F", hash_generated_method = "E33ADEEC5A461AFB5940B489E63C180C")
     public RSeqHeader createRSeqHeader(long sequenceNumber) throws InvalidArgumentException {
         addTaint(sequenceNumber);
@@ -933,6 +970,7 @@ RSeqHeader varB6E01D29654A1562BB86607DADA039F5_1160213020 =         rseq;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.501 -0400", hash_original_method = "57AD0B4E4FE03197F2B52972D6060CBA", hash_generated_method = "D972F7A645ACAD95BCFE8C4DA89D001C")
     public ReasonHeader createReasonHeader(
         String protocol,
@@ -973,6 +1011,7 @@ ReasonHeader varD602C4C1684F7464133CA1A6851CC44A_343902434 =         reason;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.501 -0400", hash_original_method = "6DA29D8692407706B9B05391AF333993", hash_generated_method = "DC8DB6629914A0DDC1A07556B11EE7BA")
     public RecordRouteHeader createRecordRouteHeader(Address address) {
         addTaint(address.getTaint());
@@ -995,6 +1034,7 @@ RecordRouteHeader varA6E6B75E47735133E1A83569179469B8_142791152 =         record
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.502 -0400", hash_original_method = "4393C033D6B63EF338EB93DE3E753573", hash_generated_method = "1468E468BBACF93684FF1FE2A6E30CD7")
     public ReplyToHeader createReplyToHeader(Address address) {
         addTaint(address.getTaint());
@@ -1018,6 +1058,7 @@ ReplyToHeader var43C4044FC3C522AE3C13CF309B9542DA_821439541 =         replyTo;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.502 -0400", hash_original_method = "F65B5EA444DA08358E800CD7B469501A", hash_generated_method = "1C8D4D4A789ABBE18445FBE15884C1F3")
     public RequireHeader createRequireHeader(String optionTag) throws ParseException {
         addTaint(optionTag.getTaint());
@@ -1041,6 +1082,7 @@ RequireHeader varED3A0ADDA3171B6DFFBE81FB8135FA28_1335154057 =         require;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.502 -0400", hash_original_method = "43D5E8C96E4C1ED3ED5B8AD5C39C801C", hash_generated_method = "2D144FFCE487FB5CDD4CE74C3A09AE80")
     public RetryAfterHeader createRetryAfterHeader(int retryAfter) throws InvalidArgumentException {
         addTaint(retryAfter);
@@ -1064,6 +1106,7 @@ RetryAfterHeader var4C1F3C86A0E56B6E375080F5F710547E_1946321890 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.503 -0400", hash_original_method = "03611E3BB30258B8EC4FDC9F783CBCCF", hash_generated_method = "3525C43165113F0F71308307CBFAC38E")
     public RouteHeader createRouteHeader(Address address) {
         addTaint(address.getTaint());
@@ -1087,6 +1130,7 @@ RouteHeader var6679678B82FF79D06F753D1737D68FA6_700810052 =         route;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.503 -0400", hash_original_method = "65AF02D93E753F97E0AF00F542D03529", hash_generated_method = "3794D0CF31476D626A72B14E21FEB83E")
     public ServerHeader createServerHeader(List product) throws ParseException {
         addTaint(product.getTaint());
@@ -1110,6 +1154,7 @@ ServerHeader varCF007A6E73A4D4959380322938EA0E3D_2005593309 =         server;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.504 -0400", hash_original_method = "288EA55C0FFC9E81469649B581E59F71", hash_generated_method = "7FD1BEC8801A0F3F66E91E0A847BDC1A")
     public SubjectHeader createSubjectHeader(String subject) throws ParseException {
         addTaint(subject.getTaint());
@@ -1133,6 +1178,7 @@ SubjectHeader var0478718F0636FB61899C13801CE9FE09_462735442 =         s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.505 -0400", hash_original_method = "9B68B72DA8144991BC14639C6BE11723", hash_generated_method = "42291ACF33D3E174EC8C92E5F775139F")
     public SubscriptionStateHeader createSubscriptionStateHeader(String subscriptionState) throws ParseException {
         addTaint(subscriptionState.getTaint());
@@ -1156,6 +1202,7 @@ SubscriptionStateHeader var0478718F0636FB61899C13801CE9FE09_808176758 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.506 -0400", hash_original_method = "589849ECCDAFDA20BE0DBE1D9A436669", hash_generated_method = "D6414CF72313354633AF42ED2EB6F338")
     public SupportedHeader createSupportedHeader(String optionTag) throws ParseException {
         addTaint(optionTag.getTaint());
@@ -1179,6 +1226,7 @@ SupportedHeader varA336F51205FB983FAB754C908A4BC849_1780772954 =         support
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.506 -0400", hash_original_method = "380079DA7F92D6CF2CEA9086AA5F92D7", hash_generated_method = "46978CBB7CC986458B3080AD127652AE")
     public TimeStampHeader createTimeStampHeader(float timeStamp) throws InvalidArgumentException {
         addTaint(timeStamp);
@@ -1202,6 +1250,7 @@ TimeStampHeader varE0D714D758F1540A8DF364A965AF9150_1233615006 =         t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.507 -0400", hash_original_method = "7928C6AF630E4BCE57D31FA4979B7453", hash_generated_method = "8F0B4C0BEB1FB67B825D8E96952C553B")
     public ToHeader createToHeader(Address address, String tag) throws ParseException {
         addTaint(tag.getTaint());
@@ -1230,6 +1279,7 @@ ToHeader var26633470D0AEBDC975B85A12020B47EA_1790666234 =         to;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.508 -0400", hash_original_method = "9A62FFB59334167B71BC2FE402276C31", hash_generated_method = "EA74A541D95CDD47BAB5633346EF0C41")
     public UnsupportedHeader createUnsupportedHeader(String optionTag) throws ParseException {
         addTaint(optionTag.getTaint());
@@ -1253,6 +1303,7 @@ UnsupportedHeader var2C8D6A66521E13DFB3C6622EE99EBB01_1273018454 =         unsup
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.508 -0400", hash_original_method = "0FDDC4550D32FE0A8E48193D044787BB", hash_generated_method = "04E48530975A6FBB41A889D35FFE89E0")
     public UserAgentHeader createUserAgentHeader(List product) throws ParseException {
         addTaint(product.getTaint());
@@ -1336,6 +1387,7 @@ ViaHeader var744F9AD2C48AA2D9C877F464ADEF2D12_1258758580 =         via;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.510 -0400", hash_original_method = "EDE3AD5442B3DE671B6476C917BB6D0F", hash_generated_method = "29D38E8DFBD81CFC0C5EDAF5A6BBAE73")
     public WWWAuthenticateHeader createWWWAuthenticateHeader(String scheme) throws ParseException {
         addTaint(scheme.getTaint());
@@ -1359,6 +1411,7 @@ WWWAuthenticateHeader var373D84FA8665DACE10DFF8065F46F380_1465237623 =         w
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.510 -0400", hash_original_method = "F34478A6D1616AB2836BA2A212AE0D49", hash_generated_method = "3318C601BBBFF6570F5F862B3BC1EB43")
     public WarningHeader createWarningHeader(
         String agent,
@@ -1391,6 +1444,7 @@ WarningHeader var8A39DBFB7207495DDB5D7A9A922E3CEC_1023405171 =         warning;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.510 -0400", hash_original_method = "CB42C1424760C62123C05E2F8CB60B35", hash_generated_method = "0444EF64AF19D833802F44B9C59C4412")
     public ErrorInfoHeader createErrorInfoHeader(URI errorInfo) {
         addTaint(errorInfo.getTaint());
@@ -1541,6 +1595,7 @@ java.util.List varC9B92F5DCD806E11915358BFB63728E4_1012119137 =         (SIPHead
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.513 -0400", hash_original_method = "5541F8A2ED86060178CAD1F0D5BA2507", hash_generated_method = "D5A03E1D685456420D4CD9E3CC273801")
     public ReferToHeader createReferToHeader(Address address) {
         addTaint(address.getTaint());
@@ -1564,6 +1619,7 @@ ReferToHeader varF03467BD7719B93D23F3A1857BAA9912_1976555155 =         referTo;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.513 -0400", hash_original_method = "A51D0E58D36C2041DD351AE4FDD73BCF", hash_generated_method = "080D71B133D068E2AFC41714C1D30A90")
     public ReferredByHeader createReferredByHeader(Address address) {
         addTaint(address.getTaint());
@@ -1587,6 +1643,7 @@ ReferredByHeader var141045FB21A8AF64D1C5F6F1584D6BEE_701605718 =         referre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.514 -0400", hash_original_method = "E3BB57144A133C8AFDA0829EAE12FAAB", hash_generated_method = "D59D44F57288F0D2B48F96A3CC46A95E")
     public ReplacesHeader createReplacesHeader(String callId, String toTag,
                 String fromTag) throws ParseException {
@@ -1609,6 +1666,7 @@ ReplacesHeader varC6183C02DA53C65BFA5F0C5E1854FB03_800955011 =         replaces;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.514 -0400", hash_original_method = "C42E665E40D735B4BFD234363CD8C238", hash_generated_method = "B41DA838F99E54DD61867B12447A70F2")
     public JoinHeader createJoinHeader(String callId, String toTag,
                 String fromTag) throws ParseException {
@@ -1631,6 +1689,7 @@ JoinHeader var59C21E822A750D48D69BB7F7F2BC3BAC_551476813 =         join;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.515 -0400", hash_original_method = "95F88F9209912EE6FCAFCB830227A87B", hash_generated_method = "9D29937CDAAD761E7329C0C015348A46")
     public SIPETagHeader createSIPETagHeader(String etag) throws ParseException {
         addTaint(etag.getTaint());
@@ -1642,6 +1701,7 @@ SIPETagHeader var291CF9A2FF2260285D5CB46C2A704F48_754010820 =         new SIPETa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.515 -0400", hash_original_method = "9EE2B60A802A938BDC15DDB307A8B1D7", hash_generated_method = "D0BF3A9951B60C4134AFAB96FE29B2A4")
     public SIPIfMatchHeader createSIPIfMatchHeader(String etag) throws ParseException {
         addTaint(etag.getTaint());
@@ -1653,6 +1713,7 @@ SIPIfMatchHeader varB410D690332AF08D0FC018DF0D69B7CE_878373607 =         new SIP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.515 -0400", hash_original_method = "5900AA55EC6D83D47F45CED3D37DDEC7", hash_generated_method = "ECC4506567B3712338EAFF3B851E0B80")
     public PAccessNetworkInfoHeader createPAccessNetworkInfoHeader() {
         PAccessNetworkInfo accessNetworkInfo = new PAccessNetworkInfo();
@@ -1665,6 +1726,7 @@ PAccessNetworkInfoHeader varD15244C320EF41E0D4A4D9B428353746_1801248386 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.515 -0400", hash_original_method = "7A9453157C5A8C4FD99B8F34DC853877", hash_generated_method = "707923BA92AFD8F4E1F21DA2AE0BBAA3")
     public PAssertedIdentityHeader createPAssertedIdentityHeader(Address address) throws NullPointerException, ParseException {
         addTaint(address.getTaint());
@@ -1688,6 +1750,7 @@ PAssertedIdentityHeader var586CB37773D43E7CD1E709F401C21BB3_423613760 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.516 -0400", hash_original_method = "4BD897B5832A55E4A60E9B49C4611708", hash_generated_method = "44C29D6C97F044AA311C326E03EE61AE")
     public PAssociatedURIHeader createPAssociatedURIHeader(Address assocURI) {
         addTaint(assocURI.getTaint());
@@ -1711,6 +1774,7 @@ PAssociatedURIHeader var8DE9C24312E4E28CA8FEED92DFD9E8E3_1656388512 =         as
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.516 -0400", hash_original_method = "FD713420BE4BC11FE9D9AB43BBBEAD30", hash_generated_method = "82B96D577DA1EC97EBBB4BCC44787C50")
     public PCalledPartyIDHeader createPCalledPartyIDHeader(Address address) {
         addTaint(address.getTaint());
@@ -1734,6 +1798,7 @@ PCalledPartyIDHeader var7CED634B91969C8974B3C449C1A23580_1751587548 =         ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.516 -0400", hash_original_method = "F3DC851C781199B1B5D5ECAC93663797", hash_generated_method = "ACF8D1803DB718553C0B077E6F39E501")
     public PChargingFunctionAddressesHeader createPChargingFunctionAddressesHeader() {
         PChargingFunctionAddresses cfa = new PChargingFunctionAddresses();
@@ -1746,6 +1811,7 @@ PChargingFunctionAddressesHeader varE046E386FC389472A248E17E60EB6DEF_1497493811 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.517 -0400", hash_original_method = "E82D256C40CCFC0E4431BA44734EBBF3", hash_generated_method = "EF767636864870236E370A71F3690B3E")
     public PChargingVectorHeader createChargingVectorHeader(String icid) throws ParseException {
         addTaint(icid.getTaint());
@@ -1769,6 +1835,7 @@ PChargingVectorHeader var14792F8596B417D3663D3E76C47F07C6_1147958720 =         c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.517 -0400", hash_original_method = "FB93C1554D708A44568E0208A3D181E0", hash_generated_method = "531DFB9DEC1ADEAF949DB6332E849454")
     public PMediaAuthorizationHeader createPMediaAuthorizationHeader(String token) throws InvalidArgumentException, ParseException {
         addTaint(token.getTaint());
@@ -1792,6 +1859,7 @@ PMediaAuthorizationHeader varB5E3A59672490506AE529DA0C24E953C_484848113 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.517 -0400", hash_original_method = "3BA03116BEA38D71B8C38B4BA62E5B71", hash_generated_method = "97FC7ACEE5540580D994BC31B426EBAD")
     public PPreferredIdentityHeader createPPreferredIdentityHeader(Address address) {
         addTaint(address.getTaint());
@@ -1815,6 +1883,7 @@ PPreferredIdentityHeader varA31ABC368F16950DF3CB99008CCE7249_266323002 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.518 -0400", hash_original_method = "B32CA202259A9B847AD818F044EE39DA", hash_generated_method = "178D34264F343AE2B3189A8A447C8E24")
     public PVisitedNetworkIDHeader createPVisitedNetworkIDHeader() {
         PVisitedNetworkID visitedNetworkID = new PVisitedNetworkID();
@@ -1827,6 +1896,7 @@ PVisitedNetworkIDHeader var6957EE20ACDD1D79BD41A02CAED798C2_963655421 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.518 -0400", hash_original_method = "537B18CC29F2C70486994281CB29500B", hash_generated_method = "F7D981101034DC0D465A3383242DF046")
     public PathHeader createPathHeader(Address address) {
         addTaint(address.getTaint());
@@ -1850,6 +1920,7 @@ PathHeader var535F4D9720F3B0C96D8143873CE0638C_1954531308 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.518 -0400", hash_original_method = "85C1BF55B1F968333EFFBCF4DBC75BE6", hash_generated_method = "299E2FD9E18E78865106B18997CCD832")
     public PrivacyHeader createPrivacyHeader(String privacyType) {
         addTaint(privacyType.getTaint());
@@ -1871,6 +1942,7 @@ PrivacyHeader var28A65DCE41136C6290258CACACAD7232_410132373 =         privacy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.519 -0400", hash_original_method = "A7CA2EB6DD40139D85B6778D2C783F9F", hash_generated_method = "52A50A02A622B96A32DE5282E7940217")
     public ServiceRouteHeader createServiceRouteHeader(Address address) {
         addTaint(address.getTaint());
@@ -1894,6 +1966,7 @@ ServiceRouteHeader var053B5E67A3C405C92299DADD82C58C15_1161772902 =         serv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.519 -0400", hash_original_method = "7A3E4AE36777C6F2CF79A6B3882A3053", hash_generated_method = "68F1F97D16188D03AE0764B4F018E82C")
     public SecurityServerHeader createSecurityServerHeader() {
         SecurityServer secServer = new SecurityServer();
@@ -1906,6 +1979,7 @@ SecurityServerHeader varB3B00B359D9C7A7FF5ACB7ADF2B29DE0_355281247 =         sec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.519 -0400", hash_original_method = "2361364E4BB205FAC2A8F8549D9431F6", hash_generated_method = "29D74477CD011EA6FBD2F1E0CCC7121E")
     public SecurityClientHeader createSecurityClientHeader() {
         SecurityClient secClient = new SecurityClient();
@@ -1918,6 +1992,7 @@ SecurityClientHeader var765B30730561AF88047895923F1DCCDD_1732272326 =         se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.519 -0400", hash_original_method = "1063C2554F38236C917DADCB6A55ADB8", hash_generated_method = "161792A0AD314A22FB0716890D02ED62")
     public SecurityVerifyHeader createSecurityVerifyHeader() {
         SecurityVerify secVerify = new SecurityVerify();
@@ -1930,6 +2005,7 @@ SecurityVerifyHeader var1B1489A71D080EE8E6383DDAAD133BA7_1634179347 =         se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.520 -0400", hash_original_method = "2DDC01C5DAA0917C6B8BE6B8A00F5568", hash_generated_method = "E660161F091E768D35E1D8458D8E175D")
     public PUserDatabaseHeader createPUserDatabaseHeader(String databaseName) {
         addTaint(databaseName.getTaint());
@@ -1953,6 +2029,7 @@ PUserDatabaseHeader var4329ACBB572204F8114532C71BA12EEC_976652197 =         pUse
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.520 -0400", hash_original_method = "6A0691F102D20D70FD0A6921A61CA118", hash_generated_method = "2CCF483B6E731C333BCEA030D663723B")
     public PProfileKeyHeader createPProfileKeyHeader(Address address) {
         addTaint(address.getTaint());
@@ -1976,6 +2053,7 @@ PProfileKeyHeader varEC0FDC302A29833D6488CF0AD4961908_797903469 =         pProfi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.521 -0400", hash_original_method = "38B7C1667A9FD579C07BB14E255FF56A", hash_generated_method = "F1DAD0006DEF2B6490E8D0A585CFCE39")
     public PServedUserHeader createPServedUserHeader(Address address) {
         addTaint(address.getTaint());
@@ -1999,6 +2077,7 @@ PServedUserHeader var692F8B60AB5F287F67B57796A596B4F9_62488513 =         psu;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.521 -0400", hash_original_method = "C0CFD4DCC2CCE8A2BE967D3A2132C68A", hash_generated_method = "7AC7195FE1F1D280AC2010F4D1C44287")
     public PPreferredServiceHeader createPPreferredServiceHeader() {
         PPreferredService pps = new PPreferredService();
@@ -2011,6 +2090,7 @@ PPreferredServiceHeader varC898577DF9A25F8DAE1AF7FE9C1F2518_1155894921 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.521 -0400", hash_original_method = "48E529894AF92157CD42EE8DFB6E18AB", hash_generated_method = "F96BAE47B098A1D5C2054C9CE17F1B0A")
     public PAssertedServiceHeader createPAssertedServiceHeader() {
         PAssertedService pas = new PAssertedService();
@@ -2023,6 +2103,7 @@ PAssertedServiceHeader var7B54B6FCDA842A4EF6E5AEAFAFBF1E41_1361463025 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.521 -0400", hash_original_method = "6D472F26B8815D9A75157924D7DB3DB8", hash_generated_method = "4F0DC62E56316FAC67C55D33FCC3E2D5")
     public SessionExpiresHeader createSessionExpiresHeader(int expires) throws InvalidArgumentException {
         addTaint(expires);
@@ -2046,6 +2127,7 @@ SessionExpiresHeader var0478718F0636FB61899C13801CE9FE09_1383497327 =         s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.522 -0400", hash_original_method = "F07701895F7EA99F66D330A17A2FD28D", hash_generated_method = "EA0EF5EB9C7FC392EF0D83A503AAA9E2")
     public SipRequestLine createRequestLine(String requestLine) throws ParseException {
         addTaint(requestLine.getTaint());
@@ -2059,6 +2141,7 @@ SipRequestLine var4373A505D5EBC4D14D70210E0EBFEE5F_1593410304 =         (SipRequ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.522 -0400", hash_original_method = "94ED81BC52F6E3EE358EE57713F40357", hash_generated_method = "1C844CE6B4C96566DDE0CF29E1B296F0")
     public SipStatusLine createStatusLine(String statusLine) throws ParseException {
         addTaint(statusLine.getTaint());
@@ -2072,6 +2155,7 @@ SipStatusLine var12D9C3CA3BC7C79C668BDC85C705FE7E_1308543572 =         (SipStatu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.523 -0400", hash_original_method = "B06A6A8CC80D9698711113EFD1E58499", hash_generated_method = "4D1DDB535E4E01D77A1A9BF03CB287A3")
     public ReferencesHeader createReferencesHeader(String callId, String rel) throws ParseException {
         addTaint(rel.getTaint());

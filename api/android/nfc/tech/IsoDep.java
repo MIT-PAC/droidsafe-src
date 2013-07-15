@@ -100,6 +100,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.840 -0400", hash_original_method = "4E22C8A1A17AEE88575C62DC6B93AE32", hash_generated_method = "133D3927E7BEFBB017E9075603D3BB11")
     public byte[] getHistoricalBytes() {
         byte[] varBF634AE655B38CA4FE182A84D6FB31B4_634990130 = (mHistBytes);
@@ -110,6 +111,7 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.840 -0400", hash_original_method = "7FAA32860355D81337B89B991C6D0641", hash_generated_method = "A1E586598E74B1BA8060374ABBA199B9")
     public byte[] getHiLayerResponse() {
         byte[] var3FCC1F1F25547D9C92055C962923F437_1034501245 = (mHiLayerResponse);

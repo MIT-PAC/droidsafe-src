@@ -89,6 +89,7 @@ public final class AccessibilityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.154 -0400", hash_original_method = "20CDD5F21F40208C5206265F82FC5959", hash_generated_method = "256636AA5D4BCBB851B5FF1A745305CF")
     public boolean isEnabled() {
         synchronized
@@ -104,6 +105,7 @@ public final class AccessibilityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.155 -0400", hash_original_method = "7B07E9E942D9981C7AD5D7B1A6A19F18", hash_generated_method = "E94172307C2CEF33AF2B1CAB05AB5B3A")
     public boolean isTouchExplorationEnabled() {
         synchronized

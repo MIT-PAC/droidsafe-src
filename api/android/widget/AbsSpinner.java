@@ -305,6 +305,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.710 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "DB2DD21D96AA192577D4BFB0A2BACF6C")
     public void setSelection(int position, boolean animate) {
         addTaint(animate);
@@ -397,6 +398,7 @@ View var540C13E9E156B687226421B24F2DF178_654490972 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.713 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "B02C95B4E62625ACF7EE0AB16138E2FA")
     @Override
     public SpinnerAdapter getAdapter() {
@@ -408,6 +410,7 @@ SpinnerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1178636636 =         mAdapter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.714 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "6F8ECD1F175F22C2DEF8B062C82D4FE4")
     @Override
     public int getCount() {

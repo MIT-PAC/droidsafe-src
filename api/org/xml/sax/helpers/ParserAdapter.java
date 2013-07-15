@@ -276,6 +276,7 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.528 -0400", hash_original_method = "EF3844DB5418C4CB611313F3BE9E31B8", hash_generated_method = "82A21E5D6439DF297D3DDA5C9F15C57B")
     public void setEntityResolver(EntityResolver resolver) {
         entityResolver = resolver;
@@ -284,6 +285,7 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.528 -0400", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "D660054D0287C555906F11165553E82D")
     public EntityResolver getEntityResolver() {
 EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_696202695 =         entityResolver;
@@ -294,6 +296,7 @@ EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_696202695 =         entityRes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.528 -0400", hash_original_method = "119A8AEB4875146983459E145CF644BE", hash_generated_method = "FAA2A53872CCD36AFCB158CD655074B2")
     public void setDTDHandler(DTDHandler handler) {
         dtdHandler = handler;
@@ -302,6 +305,7 @@ EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_696202695 =         entityRes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.528 -0400", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "171CFBF93E440A16D17C59110F91FF68")
     public DTDHandler getDTDHandler() {
 DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_1897428410 =         dtdHandler;
@@ -312,6 +316,7 @@ DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_1897428410 =         dtdHandler;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.529 -0400", hash_original_method = "D8A0D6D3310208C2BEAFD8789BB430C2", hash_generated_method = "3B6BB5CD628919FBC0C763FB80D35E5E")
     public void setContentHandler(ContentHandler handler) {
         contentHandler = handler;
@@ -320,6 +325,7 @@ DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_1897428410 =         dtdHandler;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.529 -0400", hash_original_method = "0648A0EF88EB44B7C03930DFF59893AE", hash_generated_method = "1D5BD7A87AA698F6AE6D516E8F82620D")
     public ContentHandler getContentHandler() {
 ContentHandler var9811A50DDAAFB5183DEF735850A275E7_1528737389 =         contentHandler;
@@ -330,6 +336,7 @@ ContentHandler var9811A50DDAAFB5183DEF735850A275E7_1528737389 =         contentH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.529 -0400", hash_original_method = "2F1C93DC349F4C532F80AB43A58B1D4F", hash_generated_method = "E6625B96D2BEDE434929849AF18BADF6")
     public void setErrorHandler(ErrorHandler handler) {
         errorHandler = handler;
@@ -338,6 +345,7 @@ ContentHandler var9811A50DDAAFB5183DEF735850A275E7_1528737389 =         contentH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.529 -0400", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "6EE199BEB83730D6873D915D455DFDEE")
     public ErrorHandler getErrorHandler() {
 ErrorHandler var814E1CB3DFFE2674E65471BBF7C52ECD_626979424 =         errorHandler;
@@ -789,6 +797,7 @@ SAXParseException var20635D848D8DF8DDB7580E516CF29899_684458615 =             ne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.546 -0400", hash_original_method = "5931F172E3791972ECDA205EAC9CCB14", hash_generated_method = "21260D7331F1562A9DF84A94008BBDC7")
          void setAttributeList(AttributeList qAtts) {
             this.qAtts = qAtts;
@@ -807,6 +816,7 @@ SAXParseException var20635D848D8DF8DDB7580E516CF29899_684458615 =             ne
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.546 -0400", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "2AADC537EFCD995289FE4C76DE8BBB4F")
         public String getURI(int i) {
             addTaint(i);
@@ -818,6 +828,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_559636946 =             "";
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.547 -0400", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "3AA38FFBAAD8800696A99FB6274D9541")
         public String getLocalName(int i) {
             addTaint(i);
@@ -862,6 +873,7 @@ String varC52A2AA5D53B1B5DC3D9E351EA9DC5AF_1194706710 =             qAtts.getVal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.548 -0400", hash_original_method = "696F42D8785320084719A8378B03A3E8", hash_generated_method = "DE876E263161905D0AF2CA6296F4DC7C")
         public int getIndex(String uri, String localName) {
             addTaint(localName.getTaint());
@@ -901,6 +913,7 @@ for(int i = 0;i < max;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.548 -0400", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "1C7EB2383659EA7CD1B980177A6BE734")
         public String getType(String uri, String localName) {
             addTaint(localName.getTaint());
@@ -924,6 +937,7 @@ String var6312CAB38553BB28C21F18ED3F47128A_386497452 =             qAtts.getType
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.549 -0400", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "65A327C5989364591B9C115F800FC721")
         public String getValue(String uri, String localName) {
             addTaint(localName.getTaint());

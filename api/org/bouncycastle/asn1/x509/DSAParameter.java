@@ -66,14 +66,16 @@ public class DSAParameter extends ASN1Encodable {
     }
 
     
-        public static DSAParameter getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DSAParameter getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-        public static DSAParameter getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DSAParameter getInstance(
         Object obj) {
         if(obj == null || obj instanceof DSAParameter) 
         {
@@ -87,6 +89,7 @@ public class DSAParameter extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.008 -0400", hash_original_method = "AD374264AA86AF8C15D476F74BF4E38F", hash_generated_method = "A0B064D98FDFF0A821891D5642A63F10")
     public BigInteger getP() {
 BigInteger var3EF426B4E1F2501E96AD21D32A3B62C4_1035507372 =         p.getPositiveValue();
@@ -97,6 +100,7 @@ BigInteger var3EF426B4E1F2501E96AD21D32A3B62C4_1035507372 =         p.getPositiv
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.008 -0400", hash_original_method = "37C66EC3EBD32781416A0E32DB299F24", hash_generated_method = "55135656B1696F14202E3D0535B54BB8")
     public BigInteger getQ() {
 BigInteger varCC858F5C6E76A5B6A466839CC6EE2CF8_194992855 =         q.getPositiveValue();
@@ -107,6 +111,7 @@ BigInteger varCC858F5C6E76A5B6A466839CC6EE2CF8_194992855 =         q.getPositive
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.008 -0400", hash_original_method = "76F261BBDCDDE10636E0B2FE4E543575", hash_generated_method = "7E754BC25A6553AF05D39DA9615CDDCC")
     public BigInteger getG() {
 BigInteger varAF2148D9A6BFAF217D996B041348DFDA_1685854585 =         g.getPositiveValue();
@@ -117,6 +122,7 @@ BigInteger varAF2148D9A6BFAF217D996B041348DFDA_1685854585 =         g.getPositiv
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.009 -0400", hash_original_method = "07D924177C8A847E61F30C74ABF9090B", hash_generated_method = "7D7343CCA58A34E26B6CDFEBB4BD0A40")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

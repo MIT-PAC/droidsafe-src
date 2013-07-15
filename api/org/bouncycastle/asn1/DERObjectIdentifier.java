@@ -117,6 +117,7 @@ switch((int)value / 40){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.130 -0400", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "5787045685227C34151F2F7D8AC190AE")
     public String getId() {
 String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
@@ -127,6 +128,7 @@ String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.131 -0400", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "07B2A7E93505A9D6A192915DF69B80DA")
     private void writeField(
         OutputStream    out,
@@ -156,6 +158,7 @@ String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.132 -0400", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "0F0BBCB1C8C819266FD04B8CED2320B6")
     private void writeField(
         OutputStream    out,
@@ -200,6 +203,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.132 -0400", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "C4A793797058EDA1528B5704E5A956A4")
      void encode(
         DEROutputStream out) throws IOException {
@@ -251,6 +255,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.133 -0400", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "ED57553CC61898C34233888758F44573")
     public int hashCode() {
         int var42FEDBF4FD5BE06E4875C69EBDEDAA3A_1249649829 = (identifier.hashCode());
@@ -261,6 +266,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.134 -0400", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "3B0D8C805E4D930B3CE781056787E637")
      boolean asn1Equals(
         DERObject  o) {
@@ -283,6 +289,7 @@ for(int i = byteCount-1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.135 -0400", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "DB7B076C66F7C12EB00AB8803C4D78F6")
     public String toString() {
 String var5B63C5E61AFD535DA7B77B7EF14D4A91_339248524 =         getId();
@@ -293,7 +300,8 @@ String var5B63C5E61AFD535DA7B77B7EF14D4A91_339248524 =         getId();
     }
 
     
-        private static boolean isValidIdentifier(
+        @DSModeled(DSC.SPEC)
+    private static boolean isValidIdentifier(
         String identifier) {
         if (identifier.length() < 3
             || identifier.charAt(1) != '.')

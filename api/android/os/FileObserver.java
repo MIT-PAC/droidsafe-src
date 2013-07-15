@@ -194,6 +194,7 @@ public abstract class FileObserver {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "778044715AD29D56156139197CF7ACD4", hash_generated_method = "C4D44BF8B162500A5B4780D8EFD643A3")
         private int init() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723056411 = getTaintInt();
@@ -201,11 +202,13 @@ public abstract class FileObserver {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "30BDAF8579403E1F75F26C57B59EB8F1", hash_generated_method = "67FB347A4347839EF365C019547DE29A")
         private void observe(int fd) {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "CA1E769B93F82C6A5E8C249942B2D7CE", hash_generated_method = "3F2FD3876C468B061E94CD95BCE057D9")
         private int startWatching(int fd, String path, int mask) {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_148441960 = getTaintInt();
@@ -213,6 +216,7 @@ public abstract class FileObserver {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "78CD10B29FCA91AF1BF9DCB391BC5AA9", hash_generated_method = "AA52DA03EE07FAC57937E1E11154B48F")
         private void stopWatching(int fd, int wfd) {
         }

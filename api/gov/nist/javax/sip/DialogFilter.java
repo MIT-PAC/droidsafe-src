@@ -1181,6 +1181,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.378 -0400", hash_original_method = "45F8896428832201E8BC8983A22C5151", hash_generated_method = "616A1929BEDCE0AD6BE8B6839619A0C2")
     public String getProcessingInfo() {
 String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;

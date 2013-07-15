@@ -14,12 +14,14 @@ public class HexDump {
     }
 
 
-        public static String dumpHexString(byte[] array) {
+        @DSModeled(DSC.SPEC)
+    public static String dumpHexString(byte[] array) {
         return dumpHexString(array, 0, array.length);
     }
 
     
-        public static String dumpHexString(byte[] array, int offset, int length) {
+        @DSModeled(DSC.SPEC)
+    public static String dumpHexString(byte[] array, int offset, int length) {
         StringBuilder result = new StringBuilder();
         byte[] line = new byte[16];
         int lineIndex = 0;
@@ -75,17 +77,20 @@ public class HexDump {
     }
 
     
-        public static String toHexString(byte b) {
+        @DSModeled(DSC.SPEC)
+    public static String toHexString(byte b) {
         return toHexString(toByteArray(b));
     }
 
     
-        public static String toHexString(byte[] array) {
+        @DSModeled(DSC.SPEC)
+    public static String toHexString(byte[] array) {
         return toHexString(array, 0, array.length);
     }
 
     
-        public static String toHexString(byte[] array, int offset, int length) {
+        @DSModeled(DSC.SPEC)
+    public static String toHexString(byte[] array, int offset, int length) {
         char[] buf = new char[length * 2];
         int bufIndex = 0;
         for (int i = offset ; i < offset + length; i++) 
@@ -98,19 +103,22 @@ public class HexDump {
     }
 
     
-        public static String toHexString(int i) {
+        @DSModeled(DSC.SPEC)
+    public static String toHexString(int i) {
         return toHexString(toByteArray(i));
     }
 
     
-        public static byte[] toByteArray(byte b) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(byte b) {
         byte[] array = new byte[1];
         array[0] = b;
         return array;
     }
 
     
-        public static byte[] toByteArray(int i) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(int i) {
         byte[] array = new byte[4];
         array[3] = (byte)(i & 0xFF);
         array[2] = (byte)((i >> 8) & 0xFF);
@@ -120,7 +128,8 @@ public class HexDump {
     }
 
     
-        private static int toByte(char c) {
+        @DSModeled(DSC.SPEC)
+    private static int toByte(char c) {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
         if (c >= 'a' && c <= 'f') return (c - 'a' + 10);
@@ -128,7 +137,8 @@ public class HexDump {
     }
 
     
-        public static byte[] hexStringToByteArray(String hexString) {
+        @DSModeled(DSC.SPEC)
+    public static byte[] hexStringToByteArray(String hexString) {
         int length = hexString.length();
         byte[] buffer = new byte[length / 2];
         for (int i = 0 ; i < length ; i += 2)

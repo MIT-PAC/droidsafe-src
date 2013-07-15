@@ -38,6 +38,7 @@ public class ExtractedText implements Parcelable {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.247 -0400", hash_original_method = "A6AF00275518DDDF6E9928CFE924AB5A", hash_generated_method = "715647F01C73B113049CD52DBE4C68B1")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -60,6 +61,7 @@ public class ExtractedText implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.248 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B4B4FA2B7AB728B8C78A42571AC28620")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_975787145 = (0);

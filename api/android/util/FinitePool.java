@@ -53,6 +53,7 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.901 -0400", hash_original_method = "7D07537AD43CB2EA058390D31632CED6", hash_generated_method = "79654DCD751E672B932EE6D58940256E")
     public T acquire() {
         T element;
@@ -93,6 +94,7 @@ T var24D05606CDD4BC4C89F2F5A15C16F343_662853403 =         element;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.902 -0400", hash_original_method = "682D089BAC6076782B5E99EF5FBF0695", hash_generated_method = "BEA6140BA4758CFDFFA6841132D8FE9E")
     public void release(T element) {
     if(!element.isPooled())        

@@ -26,6 +26,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.929 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "F107B90FE2D4B92BBDF54374B6CE67B9")
     @Override
     public byte byteValue() {
@@ -48,12 +49,14 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-        public static int compare(long lhs, long rhs) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(long lhs, long rhs) {
         return lhs < rhs ? -1 : (lhs == rhs ? 0 : 1);
     }
 
     
-        private static NumberFormatException invalidLong(String s) {
+        @DSModeled(DSC.SAFE)
+    private static NumberFormatException invalidLong(String s) {
         throw new NumberFormatException("Invalid long: \"" + s + "\"");
     }
 
@@ -97,6 +100,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.930 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "941B08FB55868BFE58A80B45066FFF5C")
     @Override
     public double doubleValue() {
@@ -108,6 +112,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.931 -0400", hash_original_method = "9DAD4C26B4F70BDE1AF6A261529DF01A", hash_generated_method = "90D65D4AEA3BDA6F5892422A4FB216C8")
     @Override
     public boolean equals(Object o) {
@@ -120,6 +125,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.931 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "26A22E73115014C911AB264AAC8B8309")
     @Override
     public float floatValue() {
@@ -179,6 +185,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.932 -0400", hash_original_method = "7CEEFB1EC71C1E868FBC10557351E2DA", hash_generated_method = "69559EB323F912321C61383F2CD9ECFC")
     @Override
     public int hashCode() {
@@ -190,6 +197,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.932 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "E703A9E0CFBCBE22D0C2BF7F2A256D74")
     @Override
     public int intValue() {
@@ -201,6 +209,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.932 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "8214497F6280C1447B061C4B59860342")
     @Override
     public long longValue() {
@@ -236,7 +245,8 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-        private static long parse(String string, int offset, int radix, boolean negative) {
+        @DSModeled(DSC.SAFE)
+    private static long parse(String string, int offset, int radix, boolean negative) {
         long max = Long.MIN_VALUE / radix;
         long result = 0, length = string.length();
         while (offset < length) {
@@ -263,6 +273,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.933 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "60B6C126B062C198B137BD3117F9B6EC")
     @Override
     public short shortValue() {
@@ -320,7 +331,8 @@ String var46A362998BC5F52DDCACB0DA29973F60_1606149325 =         Long.toString(va
     }
 
     
-        public static long highestOneBit(long v) {
+        @DSModeled(DSC.SAFE)
+    public static long highestOneBit(long v) {
         v |= (v >> 1);
         v |= (v >> 2);
         v |= (v >> 4);
@@ -331,12 +343,14 @@ String var46A362998BC5F52DDCACB0DA29973F60_1606149325 =         Long.toString(va
     }
 
     
-        public static long lowestOneBit(long v) {
+        @DSModeled(DSC.SAFE)
+    public static long lowestOneBit(long v) {
         return v & -v;
     }
 
     
-        public static int numberOfLeadingZeros(long v) {
+        @DSModeled(DSC.SAFE)
+    public static int numberOfLeadingZeros(long v) {
         if (v < 0) {
             return 0;
         }
@@ -376,7 +390,8 @@ String var46A362998BC5F52DDCACB0DA29973F60_1606149325 =         Long.toString(va
     }
 
     
-        public static int bitCount(long v) {
+        @DSModeled(DSC.SAFE)
+    public static int bitCount(long v) {
         v -=  (v >>> 1) & 0x5555555555555555L;
         v = (v & 0x3333333333333333L) + ((v >>> 2) & 0x3333333333333333L);
         int i =  ((int)(v >>> 32)) + (int) v;
@@ -387,24 +402,28 @@ String var46A362998BC5F52DDCACB0DA29973F60_1606149325 =         Long.toString(va
     }
 
     
-        public static long rotateLeft(long v, int distance) {
+        @DSModeled(DSC.SAFE)
+    public static long rotateLeft(long v, int distance) {
         return (v << distance) | (v >>> -distance);
     }
 
     
-        public static long rotateRight(long v, int distance) {
+        @DSModeled(DSC.SAFE)
+    public static long rotateRight(long v, int distance) {
         return (v >>> distance) | (v << -distance);
     }
 
     
-        public static long reverseBytes(long v) {
+        @DSModeled(DSC.SAFE)
+    public static long reverseBytes(long v) {
         v = ((v >>> 8) & 0x00FF00FF00FF00FFL) | ((v & 0x00FF00FF00FF00FFL) << 8);
         v = ((v >>>16) & 0x0000FFFF0000FFFFL) | ((v & 0x0000FFFF0000FFFFL) <<16);
         return ((v >>>32)                   ) | ((v                      ) <<32);
     }
 
     
-        public static long reverse(long v) {
+        @DSModeled(DSC.SAFE)
+    public static long reverse(long v) {
         v = ((v >>> 1) & 0x5555555555555555L) | ((v & 0x5555555555555555L) << 1);
         v = ((v >>> 2) & 0x3333333333333333L) | ((v & 0x3333333333333333L) << 2);
         v = ((v >>> 4) & 0x0F0F0F0F0F0F0F0FL) | ((v & 0x0F0F0F0F0F0F0F0FL) << 4);
@@ -414,7 +433,8 @@ String var46A362998BC5F52DDCACB0DA29973F60_1606149325 =         Long.toString(va
     }
 
     
-        public static int signum(long v) {
+        @DSModeled(DSC.SAFE)
+    public static int signum(long v) {
         return v < 0 ? -1 : (v == 0 ? 0 : 1);
     }
 

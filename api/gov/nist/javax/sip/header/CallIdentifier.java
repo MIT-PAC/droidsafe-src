@@ -38,6 +38,7 @@ public final class CallIdentifier extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.114 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "6817CDB1F0E689476DAC9FEF28CA88EF")
     public String encode() {
 String var678B6FE61D54E5BD4E109D01C318C133_381539049 =         encode(new StringBuffer()).toString();
@@ -48,6 +49,7 @@ String var678B6FE61D54E5BD4E109D01C318C133_381539049 =         encode(new String
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.115 -0400", hash_original_method = "BA99BEB4A81573E88FDC5269E1629A0E", hash_generated_method = "4FCFAE572C262696C460550F60E15AE1")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
@@ -68,6 +70,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1373406188 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.115 -0400", hash_original_method = "89691ECA244C4E1A9E04F5B4F61288E7", hash_generated_method = "F8D826FF7FFDD27E430E72F6185BE81C")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -133,6 +136,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1373406188 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.116 -0400", hash_original_method = "CE30DABED6DD49816A955450A93F0F59", hash_generated_method = "336577F3798F348926A339D5A06137F1")
     @Override
     public int hashCode() {
@@ -153,6 +157,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1373406188 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.116 -0400", hash_original_method = "842945DA69DE126BDF81117018A1E298", hash_generated_method = "2E1F419DB20A32B2EF98E0C4A97BE081")
     public String getLocalId() {
 String var90D04EB3A2BC9A2B47743CBF5887EE35_2048861058 =         localId;
@@ -163,6 +168,7 @@ String var90D04EB3A2BC9A2B47743CBF5887EE35_2048861058 =         localId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.116 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "C356CB4C665405DD683BF4B7C8D10195")
     public String getHost() {
 String var872E07117C05F1A34EC24B57B694B8E3_1507218619 =         host;
@@ -173,6 +179,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_1507218619 =         host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.117 -0400", hash_original_method = "0AB9BF9EEACCCDCF81C792E2B80A49BD", hash_generated_method = "B25AB12FE689784887B4988DF74D0163")
     public void setLocalId(String localId) {
         this.localId = localId;
@@ -181,6 +188,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_1507218619 =         host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.118 -0400", hash_original_method = "634BBA0AF80BB0AB1D1819140BE7D2A5", hash_generated_method = "C3310103FC0263AE264F2E692592C9F1")
     public void setCallID(String cid) throws IllegalArgumentException {
     if(cid == null)        
@@ -223,6 +231,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_1507218619 =         host;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.119 -0400", hash_original_method = "50061DDE3121AF364F9B69CF73D75DB1", hash_generated_method = "8B7526142A00FCD16001137F323106D3")
     public void setHost(String host) {
         this.host = host;

@@ -209,6 +209,7 @@ Cursor varADA3C208DF1628BA935498FB38A6BBD3_419348845 =         cursor;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.291 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "8EE402C532CA1BAD83A94E43830F8ABA")
     public Uri getUri() {
 Uri var7D41D50876117CE5D7DFAD684A455037_1234663718 =         mUri;
@@ -219,6 +220,7 @@ Uri var7D41D50876117CE5D7DFAD684A455037_1234663718 =         mUri;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "9C60EE9BABBE4846A09E69FDD9525C9D", hash_generated_method = "1565E698950E459B40FC6B1A30301330")
     public void setUri(Uri uri) {
         mUri = uri;
@@ -227,6 +229,7 @@ Uri var7D41D50876117CE5D7DFAD684A455037_1234663718 =         mUri;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "F735C138868E0AFA154B3EDF3AAC6C8C", hash_generated_method = "5A72E7800EFAF4FCFFC7F451DE1A0DAF")
     public String[] getProjection() {
 String[] var0986C59C60122C06A59D656D519E9977_1282021629 =         mProjection;
@@ -237,6 +240,7 @@ String[] var0986C59C60122C06A59D656D519E9977_1282021629 =         mProjection;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "1FD0FB2AA6253DF2D0DE4351259B7D6A", hash_generated_method = "2307E179C952E8EDFB6BBB5646F927A1")
     public void setProjection(String[] projection) {
         mProjection = projection;
@@ -245,6 +249,7 @@ String[] var0986C59C60122C06A59D656D519E9977_1282021629 =         mProjection;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "E01933AA37B8BF932A93A806A1D37FFC", hash_generated_method = "571CA353989BACE3BF4876AA71B1686A")
     public String getSelection() {
 String var3671EDECB8744C1A02C621F61390B726_2008835873 =         mSelection;
@@ -255,6 +260,7 @@ String var3671EDECB8744C1A02C621F61390B726_2008835873 =         mSelection;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "0D04EAE992D5BEBB5A3775930987740E", hash_generated_method = "8D0C01BC2FD4DA64EC5DFEE4B4BFFFB5")
     public void setSelection(String selection) {
         mSelection = selection;
@@ -263,6 +269,7 @@ String var3671EDECB8744C1A02C621F61390B726_2008835873 =         mSelection;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "9B3363CD5FA3C0407FC101CCC97AC74F", hash_generated_method = "C28C625C6249E7EC32F15B88A28F0627")
     public String[] getSelectionArgs() {
 String[] varDBA0D6591B6C7829463FE09B1460B708_1578262572 =         mSelectionArgs;
@@ -273,6 +280,7 @@ String[] varDBA0D6591B6C7829463FE09B1460B708_1578262572 =         mSelectionArgs
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "5DE6373B4434A7D0B0150E5FA1A41F4D", hash_generated_method = "2749EDEF8949EF1FF35A2BA90D360659")
     public void setSelectionArgs(String[] selectionArgs) {
         mSelectionArgs = selectionArgs;
@@ -281,6 +289,7 @@ String[] varDBA0D6591B6C7829463FE09B1460B708_1578262572 =         mSelectionArgs
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.292 -0400", hash_original_method = "E54D82A1039D474135177094E296D0BE", hash_generated_method = "1C6D5B1B8CF751CCFA47E7E477DA6400")
     public String getSortOrder() {
 String var7F16D2B7DBEF42F7E6C1432220526EB5_1677632559 =         mSortOrder;
@@ -291,6 +300,7 @@ String var7F16D2B7DBEF42F7E6C1432220526EB5_1677632559 =         mSortOrder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.293 -0400", hash_original_method = "5BFD82EE872F667FB5FE226A7761A7D3", hash_generated_method = "C543040F89A1BDC3496BD90EA95223A3")
     public void setSortOrder(String sortOrder) {
         mSortOrder = sortOrder;

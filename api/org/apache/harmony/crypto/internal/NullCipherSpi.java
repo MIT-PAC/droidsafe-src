@@ -27,6 +27,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.218 -0400", hash_original_method = "706F671562845F3E8688B6825B7BB7B5", hash_generated_method = "FD68E1F39F1A9AABEDDC863ED78C32FC")
     @Override
     public void engineSetMode(String arg0) throws NoSuchAlgorithmException {
@@ -35,6 +36,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.218 -0400", hash_original_method = "F467B7E30ACE18A6916FD5129C6E9D6D", hash_generated_method = "052707AC6A6E1EE316864DCEE29A17AA")
     @Override
     public void engineSetPadding(String arg0) throws NoSuchPaddingException {
@@ -43,6 +45,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.218 -0400", hash_original_method = "AA3F68511E1542DF3672139FD15FAFBD", hash_generated_method = "628A4A51F106BF969CFD4BC47629BAAC")
     @Override
     public int engineGetBlockSize() {
@@ -54,6 +57,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.219 -0400", hash_original_method = "F5B40F368FE57EF79892E9499088FA98", hash_generated_method = "94F497F1DEC1F4B1BFF4D09AE8F4D10A")
     @Override
     public int engineGetOutputSize(int inputLen) {
@@ -66,6 +70,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.219 -0400", hash_original_method = "D58BACA19EEF36A04C3196887019A068", hash_generated_method = "1B465DDDD4545ED6405189D43717982F")
     @Override
     public byte[] engineGetIV() {
@@ -77,6 +82,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.219 -0400", hash_original_method = "5ACBCE845ECFAD3699BFF222B46DB669", hash_generated_method = "40C640FDC6610C7EE02ABF80C84AE418")
     @Override
     public AlgorithmParameters engineGetParameters() {
@@ -88,6 +94,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.220 -0400", hash_original_method = "B46A0FD4E768F51B64954CE33560D103", hash_generated_method = "A0BE11F4AAA3182B4CE6F9044915DFC1")
     @Override
     public void engineInit(int opmode, Key key, SecureRandom random) throws InvalidKeyException {
@@ -98,6 +105,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.220 -0400", hash_original_method = "17F5EBD605D037DD2AE1BC60DE6A1892", hash_generated_method = "0AB640691F86C8C7BAE222E3C0633E01")
     @Override
     public void engineInit(int opmode, Key key, AlgorithmParameterSpec params,
@@ -111,6 +119,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.221 -0400", hash_original_method = "34E3729604DBD7C3DE21E55F909979C4", hash_generated_method = "AD93FF58E782E81E049552E6FB01E20B")
     @Override
     public void engineInit(int opmode, Key key, AlgorithmParameters params,

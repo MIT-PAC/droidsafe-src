@@ -55,7 +55,8 @@ switch(id){
     }
 
     
-        public static String idToString(int id) {
+        @DSModeled(DSC.SAFE)
+    public static String idToString(int id) {
         switch(id) {
         case RIL_CDMA_DISPLAY_INFO_REC: return "RIL_CDMA_DISPLAY_INFO_REC";
         case RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC: return "RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC";
@@ -150,6 +151,7 @@ String varF6116CCA8A1591B4E776780FC5B28B16_987798664 =             "CdmaSignalIn
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.402 -0400", hash_original_method = "CF7F6486CAA3B052EADF0380EBB958B2", hash_generated_method = "FB1EFF6D76953E189E75769DEA0974A7")
         @Override
         public String toString() {
@@ -209,6 +211,7 @@ String var66540B1AE234D793CAEEAF96CB8FC5D5_751695577 =             "CdmaDisplayI
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.404 -0400", hash_original_method = "AA45E08965936A74DE899E6F859B6FCB", hash_generated_method = "2C0654C0CD8D50BF598201D6ACA603B2")
         @Override
         public String toString() {
@@ -259,6 +262,7 @@ String var17B573EFFC9D62D8F334884A496125D8_1263643245 =             "CdmaNumberI
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.406 -0400", hash_original_method = "D87DB983AB005EF9C7C06219E3B89A0C", hash_generated_method = "54F587147E17D7E843BF0E1CEDF89302")
         @Override
         public String toString() {
@@ -327,6 +331,7 @@ String varDB93CB209FBF5516784CF592BF288EC8_1086812883 =             "CdmaNumberI
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.408 -0400", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "F51BDBE1C76E83A0182DC4421B73CC64")
         @Override
         public String toString() {
@@ -365,6 +370,7 @@ String var77B1AD702290CF500DD6732098282B5C_1101780071 =             "CdmaLineCon
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.409 -0400", hash_original_method = "74C570B6C9610C7A851D818E47741A96", hash_generated_method = "E5BBBFBC01E9195BAB31EC947B6CD6E1")
         @Override
         public String toString() {
@@ -402,6 +408,7 @@ String var97773021324657564F331D4E382DBD0B_1598772424 =             "CdmaT53Clir
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.410 -0400", hash_original_method = "2D0051C7D271A045193565807D73F90A", hash_generated_method = "3FED0FCF6F27FB97E13B6275CC5A035A")
         @Override
         public String toString() {

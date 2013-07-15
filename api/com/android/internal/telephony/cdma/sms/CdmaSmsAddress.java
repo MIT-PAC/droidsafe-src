@@ -29,6 +29,7 @@ public class CdmaSmsAddress extends SmsAddress {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.520 -0400", hash_original_method = "63A53E613DBD8AE7867F216680739B01", hash_generated_method = "72D26AB2EF9C4C91C705268A08EDC902")
     @Override
     public String toString() {
@@ -60,7 +61,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_404243725 =         builder.toString(
     }
 
     
-        private static byte[] parseToDtmf(String address) {
+        @DSModeled(DSC.SPEC)
+    private static byte[] parseToDtmf(String address) {
         int digits = address.length();
         byte[] result = new byte[digits];
         for (int i = 0; i < digits; i++) {
@@ -91,7 +93,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_404243725 =         builder.toString(
     }
 
     
-        private static String filterWhitespace(String address) {
+        @DSModeled(DSC.SPEC)
+    private static String filterWhitespace(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
         for (int i = 0; i < len; i++) {

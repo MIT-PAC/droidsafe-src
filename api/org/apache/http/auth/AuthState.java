@@ -23,6 +23,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.074 -0400", hash_original_method = "2D3305654C6E379145E705984DE22DF2", hash_generated_method = "A55C2F4BEB1F546A14687031FC4380AC")
     public void invalidate() {
         this.authScheme = null;
@@ -35,6 +36,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.075 -0400", hash_original_method = "62DF5636D6479423C69AE868EF58D0CB", hash_generated_method = "C68950DBC9078029492D23009FD0A761")
     public boolean isValid() {
         boolean var39BA64E82F9B5713830B802AFB9B26E6_476310465 = (this.authScheme != null);
@@ -62,6 +64,7 @@ public class AuthState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.075 -0400", hash_original_method = "C7CF977B6EF3E7F983B2AE16A4014379", hash_generated_method = "39A6DFB494047ACE567A8979751E9710")
     public AuthScheme getAuthScheme() {
 AuthScheme varFB30DC0C87E790EC49F215A7155CDA43_751226765 =         this.authScheme;
@@ -72,6 +75,7 @@ AuthScheme varFB30DC0C87E790EC49F215A7155CDA43_751226765 =         this.authSche
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.076 -0400", hash_original_method = "57CD79A3968806BAC032754AA40A41DA", hash_generated_method = "19DF125216FD75D5D587F5BF8139D923")
     public Credentials getCredentials() {
 Credentials var64342BF7968F6111C1E5BB4D3DAC5D79_1675954847 =         this.credentials;
@@ -90,6 +94,7 @@ Credentials var64342BF7968F6111C1E5BB4D3DAC5D79_1675954847 =         this.creden
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.076 -0400", hash_original_method = "BF313F23BCC888676D9F0166A2639A73", hash_generated_method = "A9B2966F17B38C6F4BCCBCB718197860")
     public AuthScope getAuthScope() {
 AuthScope varB0B030A52916F692F297266F102C8281_375739345 =         this.authScope;

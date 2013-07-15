@@ -132,6 +132,7 @@ Set<Entry<Integer, String>> varB74657035CAC30102BE4F1FDE7200E78_1308847032 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.373 -0400", hash_original_method = "9EFA80A4731E36F41CEC9CDBD3C0FD66", hash_generated_method = "1672756F8D702BB1BA1035F284ED55AF")
     public Set<Integer> keySet() {
 Set<Integer> varEA618452F40CB38732BAA6482DBBF012_1302251042 =         mCapabilities.keySet();
@@ -152,6 +153,7 @@ Collection<String> varA9D5CC32CED998FAD23DBA7A946F0A52_795047133 =         mCapa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.373 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DF75504A69C43EACE3F9B6883CDF726A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2075414398 = (0);

@@ -197,6 +197,7 @@ switch(mode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.538 -0400", hash_original_method = "221AF1495063A31B1C807B8FB0041DE6", hash_generated_method = "B7BC6C62E79A824E42C9B7AC34A1F87C")
     private int decompositionMode_ICU_Java(int mode) {
         addTaint(mode);
@@ -263,6 +264,7 @@ switch(value){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.539 -0400", hash_original_method = "28CE8F975C7774291F421ACF5AFE6047", hash_generated_method = "835BEE8D73425C8FEA08671329742B88")
     private int strength_ICU_Java(int value) {
         addTaint(value);

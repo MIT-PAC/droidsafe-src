@@ -786,6 +786,7 @@ ProtectionParameter var2316ED0B587143554FCBF2DD4DB7A565_538662120 =             
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.042 -0400", hash_original_method = "DB6A0984AE74C268B3C1D4EEBB473782", hash_generated_method = "7AB1BC188385468AF0FFBF6D23924B3B")
             public ProtectionParameter getProtectionParameter() {
 ProtectionParameter varB96525DB79F204E71157168F35C67FD8_1341104806 =                 protPar;
@@ -826,6 +827,7 @@ ProtectionParameter varB96525DB79F204E71157168F35C67FD8_1341104806 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.043 -0400", hash_original_method = "0C642C7CCF2E4FDE3C3DD3C1F1B0C85D", hash_generated_method = "97D5A6EDA25A0A93D0FA1ED50D5C2A20")
         public CallbackHandler getCallbackHandler() {
 CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             callbackHandler;
@@ -897,6 +899,7 @@ CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             call
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.045 -0400", hash_original_method = "B936E1D4B92F105E0DF31A4819E36563", hash_generated_method = "283631751C87277D3CBA722793E448B9")
         public synchronized boolean isDestroyed() {
             boolean var090F38A7DDDF192B3BA702F9AFFD747C_1711108534 = (isDestroyed);
@@ -982,6 +985,7 @@ for(Certificate cert : chain)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.047 -0400", hash_original_method = "20D5E1BC38F4066008A03A45816FEC0F", hash_generated_method = "F0C72314A6002E01E0780BE3C82C87BD")
         public PrivateKey getPrivateKey() {
 PrivateKey varEAD85D869E43E7A2ADE031F4AAD29487_525262098 =             privateKey;
@@ -1002,6 +1006,7 @@ Certificate[] var1320DF02155D736EF045D6D8E640BC3B_1206121697 =             chain
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.047 -0400", hash_original_method = "547F6E4E355F50070DC97734154D15F8", hash_generated_method = "987C6C2241E0DD1C6F59C7119CB76878")
         public Certificate getCertificate() {
 Certificate var90F30F0A578C11244DA8D7946F97A693_1612175694 =             chain[0];
@@ -1066,6 +1071,7 @@ String var2460B846747F8B22185AD8BE722266A5_316001126 =             sb.toString()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.049 -0400", hash_original_method = "086B5E46810BA78C7777CDD972BB99BA", hash_generated_method = "F7624BE51C24E438564AFCE30CBA1DA3")
         public SecretKey getSecretKey() {
 SecretKey var120920E5150C15DE0AB193510B014067_741090821 =             secretKey;
@@ -1117,6 +1123,7 @@ String var2460B846747F8B22185AD8BE722266A5_1202354463 =             sb.toString(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.050 -0400", hash_original_method = "4E60EB3F26EAC182CAA181F2D2BA1C01", hash_generated_method = "CA6CD3989FCFF52722DFD57CFF779F85")
         public Certificate getTrustedCertificate() {
 Certificate var77F8F6B7E3870AD03BA1DE0AC584EB03_438408977 =             trustCertificate;

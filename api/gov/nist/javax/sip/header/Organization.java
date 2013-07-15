@@ -19,6 +19,7 @@ public class Organization extends SIPHeader implements OrganizationHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.628 -0400", hash_original_method = "64094CFB244C647C5657F3E488B1D7D6", hash_generated_method = "5BEC6C1469B40E1B8FB2A1A977BD26CF")
     public String encodeBody() {
 String var86B932A706B81240694A9B2D316B40FE_955607160 =         organization;
@@ -29,6 +30,7 @@ String var86B932A706B81240694A9B2D316B40FE_955607160 =         organization;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.628 -0400", hash_original_method = "9435FCCFD7C054307D934681F7070D26", hash_generated_method = "A39E0A82721F030A14D0F45DC82DD351")
     public String getOrganization() {
 String var86B932A706B81240694A9B2D316B40FE_216386101 =         organization;
@@ -39,6 +41,7 @@ String var86B932A706B81240694A9B2D316B40FE_216386101 =         organization;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.629 -0400", hash_original_method = "525AB078049049253D355424AD5A3E65", hash_generated_method = "3C7656E0E91BE7D8C5938B623B0DDA48")
     public void setOrganization(String o) throws ParseException {
     if(o == null)        

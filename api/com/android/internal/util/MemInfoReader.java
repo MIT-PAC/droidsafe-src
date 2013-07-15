@@ -28,6 +28,7 @@ public class MemInfoReader {
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.753 -0400", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "CF462499B68C97F04E129A88E186143C")
     private boolean matchText(byte[] buffer, int index, String text) {
         addTaint(text.getTaint());
@@ -66,6 +67,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.754 -0400", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "987BB2D317D2B70B6A8C3AE8E6E913BF")
     private long extractMemValue(byte[] buffer, int index) {
         addTaint(index);
@@ -168,6 +170,7 @@ for(int i=0;i<len && count < 3;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.756 -0400", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "90885A48EA5E7B01097968173B9C24D5")
     public long getTotalSize() {
         long varF186B07246F1198E09E61F10F37B5A17_1458136315 = (mTotalSize);
@@ -178,6 +181,7 @@ for(int i=0;i<len && count < 3;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.757 -0400", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "85B895ED113E7E1806EF743DAE690BCA")
     public long getFreeSize() {
         long var869BB521FA1BF2D70B737238BCDB46CA_932176374 = (mFreeSize);
@@ -188,6 +192,7 @@ for(int i=0;i<len && count < 3;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.757 -0400", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "25ABAABE5746BFB9989452DA93AE1E6F")
     public long getCachedSize() {
         long var309F6866C44A3EB7FB1C2356E4701E1A_420177332 = (mCachedSize);

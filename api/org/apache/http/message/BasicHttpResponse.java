@@ -79,6 +79,7 @@ ProtocolVersion varD90C043793F7774DAF136F85478656A2_985352847 =         this.sta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.516 -0400", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "4D04E6944D786F5CBA3D9E887827F280")
     public StatusLine getStatusLine() {
 StatusLine var3F6855B8C489EBE58B05E134AAAD021B_1429796868 =         this.statusline;
@@ -89,6 +90,7 @@ StatusLine var3F6855B8C489EBE58B05E134AAAD021B_1429796868 =         this.statusl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.516 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "6578CA6DA869DE4160ADFA7CD217DE86")
     public HttpEntity getEntity() {
 HttpEntity varB0390008473457B24431D383C02B7BE2_737418682 =         this.entity;
@@ -99,6 +101,7 @@ HttpEntity varB0390008473457B24431D383C02B7BE2_737418682 =         this.entity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.516 -0400", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "E261EBA653635DD0617243C084742701")
     public Locale getLocale() {
 Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;

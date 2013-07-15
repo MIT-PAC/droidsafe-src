@@ -47,11 +47,13 @@ public final class BinaryHprofWriter {
     }
 
     
-        public static void write(HprofData data, OutputStream outputStream) throws IOException {
+        @DSModeled(DSC.BAN)
+    public static void write(HprofData data, OutputStream outputStream) throws IOException {
         new BinaryHprofWriter(data, outputStream).write();
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.884 -0400", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "5F0EEB5D56F9B378DDB40BD99AF9FB7F")
     private void write() throws IOException {
         try 
@@ -95,6 +97,7 @@ for(HprofData.Sample sample : samples)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.884 -0400", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "9D589FAAC75783B5134C89C56F854923")
     private void writeHeader(long dumpTimeInMilliseconds) throws IOException {
         addTaint(dumpTimeInMilliseconds);
@@ -110,6 +113,7 @@ for(HprofData.Sample sample : samples)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.884 -0400", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "C2140640FC5FA7E2BF00B8B924063F9A")
     private void writeControlSettings(int flags, int depth) throws IOException {
         addTaint(depth);
@@ -139,6 +143,7 @@ for(HprofData.Sample sample : samples)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.884 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "660C8F8FD72441143349D7875E12201C")
     private void writeThreadEvent(HprofData.ThreadEvent e) throws IOException {
         addTaint(e.getTaint());
@@ -165,6 +170,7 @@ switch(e.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.885 -0400", hash_original_method = "8E01CAF6795D5E83C54B68F6912FFEBF", hash_generated_method = "9509D57A2F132603DBDAD99682737CFC")
     private void writeStartThread(HprofData.ThreadEvent e) throws IOException {
         addTaint(e.getTaint());
@@ -196,6 +202,7 @@ switch(e.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.885 -0400", hash_original_method = "22EC0A4C26BDEF90544F91DCC7CD0649", hash_generated_method = "D27E018D2CF00E3F2C1E8375B18BEB57")
     private void writeStopThread(HprofData.ThreadEvent e) throws IOException {
         addTaint(e.getTaint());
@@ -211,6 +218,7 @@ switch(e.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.885 -0400", hash_original_method = "676873B3FD0126014DC640E27218ACDD", hash_generated_method = "4E714A85895D9D68AD63D70CE0501E5A")
     private void writeRecordHeader(BinaryHprof.Tag hprofTag,
                                    int timeDeltaInMicroseconds,
@@ -239,6 +247,7 @@ switch(e.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.885 -0400", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "324EB3191182BD20A9340EA39911B917")
     private void writeId(int id) throws IOException {
         addTaint(id);
@@ -248,6 +257,7 @@ switch(e.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.886 -0400", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "4B0ABACFF4AFB31C8768C1B905BF8D6B")
     private int writeString(String string) throws IOException {
         addTaint(string.getTaint());
@@ -327,6 +337,7 @@ for(HprofData.Sample sample : samples)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.887 -0400", hash_original_method = "AA7BB7F509E670C633C84E0D44DE5DDB", hash_generated_method = "CE4863C141CDADF80142D1FEB5BC9A4B")
     private void writeStackTrace(HprofData.StackTrace stackTrace) throws IOException {
         addTaint(stackTrace.getTaint());
@@ -364,6 +375,7 @@ for(int stackFrameId : stackFrameIds)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.888 -0400", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "A85941E17108E082BC445D9AD6071811")
     private int writeLoadClass(String className) throws IOException {
         addTaint(className.getTaint());
@@ -406,6 +418,7 @@ for(int stackFrameId : stackFrameIds)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.889 -0400", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "EF6EFEBE43D874D76BEDF900A941E009")
     private int writeStackFrame(StackTraceElement stackFrame) throws IOException {
         addTaint(stackFrame.getTaint());

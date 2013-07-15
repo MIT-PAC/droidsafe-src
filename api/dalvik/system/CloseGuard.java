@@ -16,7 +16,8 @@ public final class CloseGuard {
     }
 
     
-        public static CloseGuard get() {
+        @DSModeled(DSC.BAN)
+    public static CloseGuard get() {
         if (!ENABLED) {
             return NOOP;
         }
@@ -24,12 +25,14 @@ public final class CloseGuard {
     }
 
     
-        public static void setEnabled(boolean enabled) {
+        @DSModeled(DSC.BAN)
+    public static void setEnabled(boolean enabled) {
         ENABLED = enabled;
     }
 
     
-        public static void setReporter(Reporter reporter) {
+        @DSModeled(DSC.BAN)
+    public static void setReporter(Reporter reporter) {
         if (reporter == null) {
             throw new NullPointerException("reporter == null");
         }
@@ -37,11 +40,13 @@ public final class CloseGuard {
     }
 
     
-        public static Reporter getReporter() {
+        @DSModeled(DSC.BAN)
+    public static Reporter getReporter() {
         return REPORTER;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.927 -0400", hash_original_method = "CFE7FE2A946B79A92C3DD646F9FF1E18", hash_generated_method = "7FEE265874FAD721A57DD368711367E6")
     public void open(String closer) {
         addTaint(closer.getTaint());
@@ -69,6 +74,7 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.933 -0400", hash_original_method = "E7BB2570D728B9A5CD21AC75D54C0108", hash_generated_method = "81B1FE4E6BB63DD2B6DF9A82CBBAEB20")
     public void close() {
         allocationSite = null;
@@ -77,6 +83,7 @@ public final class CloseGuard {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.936 -0400", hash_original_method = "DF59B79C33BF4141D53B378215072C22", hash_generated_method = "DF945FDB3C65F8170638FDCAE1EA2D2E")
     public void warnIfOpen() {
     if(allocationSite == null || !ENABLED)        
@@ -106,6 +113,7 @@ public final class CloseGuard {
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.947 -0400", hash_original_method = "F3799B66B3E6BA78B84AD9198872DB1A", hash_generated_method = "03E00BBDC903B68C437106FB6D15882E")
         public void report(String message, Throwable allocationSite) {
             addTaint(allocationSite.getTaint());

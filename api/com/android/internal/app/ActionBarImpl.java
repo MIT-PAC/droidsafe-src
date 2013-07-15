@@ -232,6 +232,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.277 -0400", hash_original_method = "988D25E4BF24BB800BD6556DCD183591", hash_generated_method = "83FD7E7BDD52CD71A3F3A90195212CE1")
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -280,6 +281,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.277 -0400", hash_original_method = "04F31515B176FCA9797E5A3B1AE2D925", hash_generated_method = "735A6D25E11E3FD56C47D92F64BCEB17")
     private void ensureTabsExist() {
     if(mTabScrollView != null)        
@@ -316,6 +318,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.277 -0400", hash_original_method = "FB60553060C0CBA07AA4AE6F5834D888", hash_generated_method = "4E12F126D62355C6A72337333F15C042")
      void completeDeferredDestroyActionMode() {
     if(mDeferredModeDestroyCallback != null)        
@@ -348,6 +351,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "432643F5D3E1C75318DA649F07995AE5", hash_generated_method = "B220ABC74954603998F554514B725847")
     public void addOnMenuVisibilityListener(OnMenuVisibilityListener listener) {
         addTaint(listener.getTaint());
@@ -357,6 +361,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "602CC871D8636269B09601DAE53B0892", hash_generated_method = "A56F20ADC0A2C0ECBFCAFA2622B9B406")
     public void removeOnMenuVisibilityListener(OnMenuVisibilityListener listener) {
         addTaint(listener.getTaint());
@@ -366,6 +371,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "459C6E3BA33A1A612E205065B1C3E1DC", hash_generated_method = "FE100F6314B3DFC7979CA47AE323B422")
     public void dispatchMenuVisibilityChanged(boolean isVisible) {
     if(isVisible == mLastMenuVisibility)        
@@ -390,6 +396,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "B07E8854D08E9349BCA465572774AD05", hash_generated_method = "678996C71ED6714E3D41D00FD1F413CF")
     @Override
     public void setCustomView(int resId) {
@@ -400,6 +407,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "7B32C43910C34545BE6AF1945BAD78C2", hash_generated_method = "77CE2CE08EE695D2AB8BC51AB4FD0813")
     @Override
     public void setDisplayUseLogoEnabled(boolean useLogo) {
@@ -410,6 +418,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "7F0843FA34DCBF9EB20E04642D9BA553", hash_generated_method = "03CA352696FF19982CED15E7F0D65ED0")
     @Override
     public void setDisplayShowHomeEnabled(boolean showHome) {
@@ -420,6 +429,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "F859D1EA93554E58B56470BC246367BB", hash_generated_method = "0A7DA6E1BE4ADEA7B38AB4C25AE4EBEA")
     @Override
     public void setDisplayHomeAsUpEnabled(boolean showHomeAsUp) {
@@ -430,6 +440,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "6C96766F23C0B7039876B0F0E23B9AFF", hash_generated_method = "7D46AD92F520435BA75A36300C15EE73")
     @Override
     public void setDisplayShowTitleEnabled(boolean showTitle) {
@@ -440,6 +451,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.278 -0400", hash_original_method = "C60EF70FF87399C557FC41651D29083C", hash_generated_method = "29571D07909F6796D1D19E869B045647")
     @Override
     public void setDisplayShowCustomEnabled(boolean showCustom) {
@@ -450,6 +462,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "4D222159BA92CC275B5D5CB9ADE89E45", hash_generated_method = "43C9CE5A9E2E44AB155948A0E1AED300")
     @Override
     public void setHomeButtonEnabled(boolean enable) {
@@ -460,6 +473,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "93A6ED10F8DC44A47D2A5E40CE348C6E", hash_generated_method = "6B348D97A0206C25661E48BFE19FBB3D")
     @Override
     public void setTitle(int resId) {
@@ -470,6 +484,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "28BA950963DD65E7A01A305F037657F9", hash_generated_method = "A64506F16C521D12174AFA66B8C2E3CA")
     @Override
     public void setSubtitle(int resId) {
@@ -480,6 +495,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "11EA30EC8C9A94D19D07ED1EA15B77B1", hash_generated_method = "7F95C4B0F9B3EBE8DDBAAA40E39FF162")
     public void setSelectedNavigationItem(int position) {
         addTaint(position);
@@ -511,6 +527,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "B97B28074DE5FCD367C21E021091BD45", hash_generated_method = "18F3DD1B438293814EC931E00EFDC066")
     public void removeAllTabs() {
         cleanupTabs();
@@ -519,6 +536,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "62AE76DE88CDD8F4A1D9D70F05364203", hash_generated_method = "B9834C343C2B2072BCE58DD14DC7465B")
     private void cleanupTabs() {
     if(mSelectedTab != null)        
@@ -543,6 +561,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "2496AA6E0C686AA709C048B4D9A978B1", hash_generated_method = "80231901242D0704C2BFDD2C7B2BB6C1")
     public void setTitle(CharSequence title) {
         addTaint(title.getTaint());
@@ -552,6 +571,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "51EFE4022329006F8B97012193639D8C", hash_generated_method = "4C8CDD6A0D944F8C37B5A8FFA5D30F7C")
     public void setSubtitle(CharSequence subtitle) {
         addTaint(subtitle.getTaint());
@@ -561,6 +581,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.279 -0400", hash_original_method = "3F11889B61BC98E428CD1B2A494BFC53", hash_generated_method = "35BDF7CD039A0AAD4C968677D1F7DAF0")
     public void setDisplayOptions(int options) {
         addTaint(options);
@@ -570,6 +591,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "728BC8FE52686E77081ACD4BE860295D", hash_generated_method = "CCE23E42931E9B04708EDC15C9F3FB97")
     public void setDisplayOptions(int options, int mask) {
         addTaint(mask);
@@ -582,6 +604,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "61B3599899498272F50206755C75E2FF", hash_generated_method = "3B23A19E5E677BAB19A0341135356599")
     public void setBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
@@ -591,6 +614,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "71E64D08C4AF72E9E040B3394527D26B", hash_generated_method = "BC1A01EFF03762844B48926E3EFBBBC7")
     public void setStackedBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
@@ -600,6 +624,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "228BA16930C30CB95A53923FA275FB3B", hash_generated_method = "F6DB67722FCB849E378E3B706CB96EFD")
     public void setSplitBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
@@ -614,6 +639,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "1D010261269A6D78FBB7E8684C141376", hash_generated_method = "F442E39823ADD81219727DC5B0A021E1")
     public View getCustomView() {
 View var64944311D4D6880069B86CC1F2B1C0E4_343429248 =         mActionView.getCustomNavigationView();
@@ -624,6 +650,7 @@ View var64944311D4D6880069B86CC1F2B1C0E4_343429248 =         mActionView.getCust
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "2440C8680C5986DA6B98061A5444C3DF", hash_generated_method = "23A0B63F3DFA58DC4C45DA75A5A9FFF2")
     public CharSequence getTitle() {
 CharSequence var9F697EA9306D924AB79FA98C2CB4BD65_1432547571 =         mActionView.getTitle();
@@ -634,6 +661,7 @@ CharSequence var9F697EA9306D924AB79FA98C2CB4BD65_1432547571 =         mActionVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "7C309AA3715DBCB025C148B6DD4FF98A", hash_generated_method = "A59D4DBD268E7902BAACCAF415495E7E")
     public CharSequence getSubtitle() {
 CharSequence var49061D54F2B8280289A21FE9090C3B9B_89788125 =         mActionView.getSubtitle();
@@ -644,6 +672,7 @@ CharSequence var49061D54F2B8280289A21FE9090C3B9B_89788125 =         mActionView.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "3CF23CB733C1A66BA695174D1D5C90F5", hash_generated_method = "3DACD212061B4B17612793B3B95AC42B")
     public int getNavigationMode() {
         int varA30E9441B8B9E1D55A44D3C3EF322213_1064730046 = (mActionView.getNavigationMode());
@@ -654,6 +683,7 @@ CharSequence var49061D54F2B8280289A21FE9090C3B9B_89788125 =         mActionView.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "FB6F75E61CAD1294F319FE9A20EDC0AA", hash_generated_method = "5B754D352F07372B3C7BD34456D64B27")
     public int getDisplayOptions() {
         int var0C7296553C0E224D4BA4DAA88E5B7190_957990097 = (mActionView.getDisplayOptions());
@@ -718,6 +748,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1987210901 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "4981E6F1136ACFE06B622EFDD1F32611", hash_generated_method = "0A5C7BA422AB47842C93E475CC4B12E2")
     private void configureTab(Tab tab, int position) {
         addTaint(position);
@@ -752,6 +783,7 @@ for(int i = position + 1;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "1EECF05398B0BE8AB00F4615B5278612", hash_generated_method = "66518086452A2412486B7BD9AC59E907")
     @Override
     public void addTab(Tab tab) {
@@ -762,6 +794,7 @@ for(int i = position + 1;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "654B3E709639F944F902BA5D9B821C89", hash_generated_method = "EAD6371773866052EE615718C212D85D")
     @Override
     public void addTab(Tab tab, int position) {
@@ -773,6 +806,7 @@ for(int i = position + 1;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "89408631A5DFBB8696DA15288AA15329", hash_generated_method = "BD7147D6808DEEDBE37D5C996CD8AE73")
     @Override
     public void addTab(Tab tab, boolean setSelected) {
@@ -795,6 +829,7 @@ for(int i = position + 1;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "041C4C5A1F00C6CFE52123DF1D5CFA62", hash_generated_method = "60F4F3AAFBAFBE5A448D7F360D59B686")
     @Override
     public void addTab(Tab tab, int position, boolean setSelected) {
@@ -818,6 +853,7 @@ for(int i = position + 1;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "086373AB3E22E85AEE50C2F735BD106D", hash_generated_method = "C3C52194C3CE23D8B7B7046C50B3E0CF")
     @Override
     public Tab newTab() {
@@ -829,6 +865,7 @@ Tab varC3DEA72E72707DFD07E1CD1BC00A2C51_168450949 =         new TabImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.281 -0400", hash_original_method = "D97BFE7F24375737332EF4EB210BF330", hash_generated_method = "C5B7CB179830E6D14033CF6A4E922E69")
     @Override
     public void removeTab(Tab tab) {
@@ -925,6 +962,7 @@ for(int i = position;i < newTabCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.282 -0400", hash_original_method = "2AD2D5B38A8D730799170A69D020CCD7", hash_generated_method = "6A49EE48866ADAFAAC30A9B47984A1DE")
     @Override
     public Tab getSelectedTab() {
@@ -936,6 +974,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.282 -0400", hash_original_method = "7329EA59D7EBE41DA23E0A3E55EEA1A2", hash_generated_method = "02C4EFC4754786A64A97D949F033DFD6")
     @Override
     public int getHeight() {
@@ -947,6 +986,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.282 -0400", hash_original_method = "546A4715540EEE6F49A6EAAEA56C241C", hash_generated_method = "9B6F5E1BBF9ED1EA79DF35779E1A9F3A")
     @Override
     public void show() {
@@ -1045,6 +1085,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.285 -0400", hash_original_method = "02F75CA35AA01FBE52A717B38FA758F7", hash_generated_method = "96E23F78975AB1E40B03996B13D1D2CA")
     public boolean isShowing() {
         boolean varC722B40E5C7D28A0B5AB9F4E802FA7D1_2050322875 = (mContainerView.getVisibility() == View.VISIBLE);
@@ -1055,6 +1096,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.286 -0400", hash_original_method = "6F997D5B2915B28943A5CB4BD830D4B2", hash_generated_method = "6C0CCE7DB6FA54D966C039CF2372B5C7")
      void animateToMode(boolean toActionMode) {
         addTaint(toActionMode);
@@ -1087,6 +1129,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.286 -0400", hash_original_method = "3EA212821B302B1822414F8223429D93", hash_generated_method = "9130AA53457CED3D463938838E0EB4D0")
     public Context getThemedContext() {
     if(mThemedContext == null)        
@@ -1125,6 +1168,7 @@ Context var43C70B6AAEE916E45207DC7D98ECA445_1726240828 =         mThemedContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.292 -0400", hash_original_method = "82CB01F3A317C5518DAD7B810C7481F9", hash_generated_method = "06AF237D12B80E2D8F2743C49E6B95B2")
     @Override
     public void setCustomView(View view) {
@@ -1135,6 +1179,7 @@ Context var43C70B6AAEE916E45207DC7D98ECA445_1726240828 =         mThemedContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.292 -0400", hash_original_method = "D405B9340EEDF523A821CB828A77247A", hash_generated_method = "34814D23B6C0D1F0BE80F751380DEDBD")
     @Override
     public void setCustomView(View view, LayoutParams layoutParams) {
@@ -1148,6 +1193,7 @@ Context var43C70B6AAEE916E45207DC7D98ECA445_1726240828 =         mThemedContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "DE3A042A48DE08AEC88EC1C0AD695D6F", hash_generated_method = "95C7ABF4D21905A70B738C0335BFBE78")
     @Override
     public void setListNavigationCallbacks(SpinnerAdapter adapter, OnNavigationListener callback) {
@@ -1161,6 +1207,7 @@ Context var43C70B6AAEE916E45207DC7D98ECA445_1726240828 =         mThemedContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "DA5FE7663B58F3C2464F93A06566CD8E", hash_generated_method = "E4EEED8A07F121A5B046392E66B28BCD")
     @Override
     public int getSelectedNavigationIndex() {
@@ -1190,6 +1237,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "29C3EDF1B0696DD606C19CEF5DFCB27A", hash_generated_method = "D5D36A09AEFF7B03568A8975E05EDBCD")
     @Override
     public int getNavigationItemCount() {
@@ -1221,6 +1269,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "44E873137D601CC44196E7945B5F3744", hash_generated_method = "51FF63327CC2070AA8C1E24C93A6EC4B")
     @Override
     public int getTabCount() {
@@ -1232,6 +1281,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "2CF769A940AAC419EB99620655E4C93A", hash_generated_method = "8E5EC1A027DF91D96737FB85785ABE87")
     @Override
     public void setNavigationMode(int mode) {
@@ -1260,6 +1310,7 @@ switch(mode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "389BF0B1EF97627FAF399E95ED0D1079", hash_generated_method = "A151CE6040579377795A8E88B14403A2")
     @Override
     public Tab getTabAt(int index) {
@@ -1272,6 +1323,7 @@ Tab var1B354487B7E90F4FE7AAB17F5B158656_283712403 =         mTabs.get(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.293 -0400", hash_original_method = "246181C3E410F19AA68D711311C45E89", hash_generated_method = "423746E99ECDCB95F533C8BE8D6BFCFD")
     @Override
     public void setIcon(int resId) {
@@ -1282,6 +1334,7 @@ Tab var1B354487B7E90F4FE7AAB17F5B158656_283712403 =         mTabs.get(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.294 -0400", hash_original_method = "976AFC7A654132AA465D788A8B684BD0", hash_generated_method = "9F42A64E5B95D8368A7DB2AB708FDB3C")
     @Override
     public void setIcon(Drawable icon) {
@@ -1292,6 +1345,7 @@ Tab var1B354487B7E90F4FE7AAB17F5B158656_283712403 =         mTabs.get(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.294 -0400", hash_original_method = "629A6907FC2030BF835EC3846EE4C4B9", hash_generated_method = "B04E3D821029E1699010EBD48960E678")
     @Override
     public void setLogo(int resId) {
@@ -1302,6 +1356,7 @@ Tab var1B354487B7E90F4FE7AAB17F5B158656_283712403 =         mTabs.get(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.294 -0400", hash_original_method = "563E995ECF1A81A300841064D1D1EC89", hash_generated_method = "DE0C7A671F0AD2473F3D09275CB14BA8")
     @Override
     public void setLogo(Drawable logo) {
@@ -1337,6 +1392,7 @@ Tab var1B354487B7E90F4FE7AAB17F5B158656_283712403 =         mTabs.get(index);
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.294 -0400", hash_original_method = "51A0980A38EB9FD2F0CEA8B2697D7721", hash_generated_method = "B56844FA0E9F68F94C1D1457BD56BB18")
         @Override
         public MenuInflater getMenuInflater() {
@@ -1348,6 +1404,7 @@ MenuInflater varA43DA81708214873250337FF278D398C_1182042595 =             new Me
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.294 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "0221B8894DBB096B430C4B08295BFD83")
         @Override
         public Menu getMenu() {
@@ -1405,6 +1462,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "AE3782F4A9FD5538AF0C8FC979CD15B1", hash_generated_method = "09CD291F58A645AF3A8E9CF913126DF5")
         @Override
         public void invalidate() {
@@ -1427,6 +1485,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "73ABB077D09B369F1D81F6F51241E9AF", hash_generated_method = "54F819D115E768FC25505C184A6BA005")
         public boolean dispatchOnCreate() {
             mMenu.stopDispatchingItemsChanged();
@@ -1450,6 +1509,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "D05FE6927B0D6D37D4F8F8E54FD54AC2", hash_generated_method = "5D17C2BEE0021A167441AF485D9BBF01")
         @Override
         public void setCustomView(View view) {
@@ -1461,6 +1521,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "EDCF93193B842CC10D4874A3847ED8B0", hash_generated_method = "0B481E4D7D00D46DF3473BC4C3600612")
         @Override
         public void setSubtitle(CharSequence subtitle) {
@@ -1471,6 +1532,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "A400678911C36F7EF5F4C53636B8794A", hash_generated_method = "F236E381C71BD7CFB8F46FF718DAD380")
         @Override
         public void setTitle(CharSequence title) {
@@ -1481,6 +1543,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "47F5B9C8307FB4AF11C6A2812A14A860", hash_generated_method = "DDB782A097A230A52C943D779E143F37")
         @Override
         public void setTitle(int resId) {
@@ -1491,6 +1554,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "0B3678050067173199BE985BD486C4DF", hash_generated_method = "75C7A0750EFABC066454E1981F2746B1")
         @Override
         public void setSubtitle(int resId) {
@@ -1501,6 +1565,7 @@ Menu var10D851031FD6BA7C53B0186C7F1D9213_1843814493 =             mMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "B7C7D06E8A777BBCD952F14E250A3EF1", hash_generated_method = "27FB89A79BCBAEA041CF7505EFF1883F")
         @Override
         public CharSequence getTitle() {
@@ -1512,6 +1577,7 @@ CharSequence var34D31794780ACEFCF0616B8B24AD4528_1425237505 =             mConte
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "117FD7BAEF9CDB7B98041D8B7F2D9548", hash_generated_method = "F3194DCF40D95852E6086209FEB1721A")
         @Override
         public CharSequence getSubtitle() {
@@ -1523,6 +1589,7 @@ CharSequence varC52A494AB21A52CC12DF26E45A90E06F_1954176747 =             mConte
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.295 -0400", hash_original_method = "6445ACEDBE83E3C2D5AD83B96CDE83BC", hash_generated_method = "343C4F0F7AC381F20FA9C10A0EE0A604")
         @Override
         public View getCustomView() {
@@ -1534,6 +1601,7 @@ View varECA05EFB052EFC69FA07832FA3F4A1D6_600722779 =             mCustomView != 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.296 -0400", hash_original_method = "811C79E6E9EF223E39B6355E1D511C3E", hash_generated_method = "C6D5722DE288D75F165A34A243688894")
         public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1560,6 +1628,7 @@ View varECA05EFB052EFC69FA07832FA3F4A1D6_600722779 =             mCustomView != 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.296 -0400", hash_original_method = "FBD72BA67A5E56379A29D442239E7ED0", hash_generated_method = "8E80426A33290BFB819B8A6933C74555")
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1569,6 +1638,7 @@ View varECA05EFB052EFC69FA07832FA3F4A1D6_600722779 =             mCustomView != 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.296 -0400", hash_original_method = "7D886846B59E57EE3CE79C98862AC926", hash_generated_method = "6D6BD4B6F0B616D52C8C61DD5144E4EA")
         public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1601,6 +1671,7 @@ View varECA05EFB052EFC69FA07832FA3F4A1D6_600722779 =             mCustomView != 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.296 -0400", hash_original_method = "6B692B27380EC4C10CDFFF60DC2D0482", hash_generated_method = "2074465CD9A30183B1E5202C403E062E")
         public void onCloseSubMenu(SubMenuBuilder menu) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1609,6 +1680,7 @@ View varECA05EFB052EFC69FA07832FA3F4A1D6_600722779 =             mCustomView != 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.296 -0400", hash_original_method = "5641671D684852B976991F51D9F0AB3E", hash_generated_method = "82FA2BB4E2E298131994BE34001DFFC2")
         public void onMenuModeChange(MenuBuilder menu) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1662,6 +1734,7 @@ View varECA05EFB052EFC69FA07832FA3F4A1D6_600722779 =             mCustomView != 
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.296 -0400", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "300F59BFB33C15822069B12127E7553A")
         @Override
         public Object getTag() {
@@ -1673,6 +1746,7 @@ Object varD6A25044F8E609F6CD67330C1523D33D_1511786448 =             mTag;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.297 -0400", hash_original_method = "BB14A4918D906598A88E3D6A8128EA77", hash_generated_method = "B9B1CB5A3DE7387F9AC3030BD80E7F12")
         @Override
         public Tab setTag(Object tag) {
@@ -1686,6 +1760,7 @@ Tab var72A74007B2BE62B849F475C7BDA4658B_1677995235 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.300 -0400", hash_original_method = "E24F48568604237F2413A93282202AA0", hash_generated_method = "1335B617AED142A7CD4CFC0CA560E8F1")
         public ActionBar.TabListener getCallback() {
 ActionBar.TabListener var31075088B2A2E9D45AA9874A2DA07598_1476263492 =             mCallback;
@@ -1696,6 +1771,7 @@ ActionBar.TabListener var31075088B2A2E9D45AA9874A2DA07598_1476263492 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.301 -0400", hash_original_method = "464280ABF8AEC5C77A1E9FBBDE9C172D", hash_generated_method = "4775DC21D58F3CD95515E318DA4D0593")
         @Override
         public Tab setTabListener(ActionBar.TabListener callback) {
@@ -1709,6 +1785,7 @@ Tab var72A74007B2BE62B849F475C7BDA4658B_2126810774 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.301 -0400", hash_original_method = "564891C70D3FD9FDA6B8DDF54A8A1C12", hash_generated_method = "35D318B3EF00CF7A878987C0BC20AC6B")
         @Override
         public View getCustomView() {
@@ -1720,6 +1797,7 @@ View varC7562A89B84B6992F4B59CC6EA104F7F_519144343 =             mCustomView;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.301 -0400", hash_original_method = "0927DBCB7C9D04ABD72A572D4EBE85DC", hash_generated_method = "8A6D34DD6E26738071878EF3F039451F")
         @Override
         public Tab setCustomView(View view) {
@@ -1740,6 +1818,7 @@ Tab var72A74007B2BE62B849F475C7BDA4658B_832305994 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.302 -0400", hash_original_method = "AB0A301D41389C31F697384DEDEE9E45", hash_generated_method = "995DFC2A6403CF96BC18756AF5399428")
         @Override
         public Tab setCustomView(int layoutResId) {
@@ -1754,6 +1833,7 @@ Tab var3AD958EEC155E2053A99346086309ED4_1237219664 =             setCustomView(L
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.302 -0400", hash_original_method = "ED78DC4ED6B2C6A65EDA3016CC1C1C4D", hash_generated_method = "691845CE62F5C5068A758AFFA5C61F0D")
         @Override
         public Drawable getIcon() {
@@ -1765,6 +1845,7 @@ Drawable var664A3A1F0DCFF82F0A8D0B798A32C3B0_515652673 =             mIcon;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.302 -0400", hash_original_method = "88750DD9C7394A9CF6B657A7AF77F3EB", hash_generated_method = "D5821AAC0CB7F3652D52F936928166D1")
         @Override
         public int getPosition() {
@@ -1776,6 +1857,7 @@ Drawable var664A3A1F0DCFF82F0A8D0B798A32C3B0_515652673 =             mIcon;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.302 -0400", hash_original_method = "3F4169F86E913801B39145F8B5F1CF4A", hash_generated_method = "9BE30D60DD8D509C2095B8721378C660")
         public void setPosition(int position) {
             mPosition = position;
@@ -1784,6 +1866,7 @@ Drawable var664A3A1F0DCFF82F0A8D0B798A32C3B0_515652673 =             mIcon;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.317 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "201513C441D3764B38E34436C3A34B8B")
         @Override
         public CharSequence getText() {
@@ -1795,6 +1878,7 @@ CharSequence var7F7ECB4B14362FFBA020956966B29A66_72344265 =             mText;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.317 -0400", hash_original_method = "E054EF134439DF27250AEE851BCF79C2", hash_generated_method = "8A7DE845E30F550DE4384E13684CBFA7")
         @Override
         public Tab setIcon(Drawable icon) {
@@ -1815,6 +1899,7 @@ Tab var72A74007B2BE62B849F475C7BDA4658B_1905337450 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.318 -0400", hash_original_method = "95CB6D2B1B424F33C131278F8466F7F6", hash_generated_method = "CB6560D7291F4D33F68F1FA7D34DDC62")
         @Override
         public Tab setIcon(int resId) {
@@ -1827,6 +1912,7 @@ Tab var2FBE166F87C3A0C6B3E33B0D28947E7C_1229561201 =             setIcon(mContex
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.318 -0400", hash_original_method = "7912BF664F58A4FFF0C4F40EE3B2F065", hash_generated_method = "DE1B66EA1921A92FE6E69B0C4D26F6B8")
         @Override
         public Tab setText(CharSequence text) {
@@ -1847,6 +1933,7 @@ Tab var72A74007B2BE62B849F475C7BDA4658B_1834685919 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.318 -0400", hash_original_method = "593BCE41C6DE3623B8717D7BF5F8858F", hash_generated_method = "FD30180F6838A1EFBE3BE0092410FE6E")
         @Override
         public Tab setText(int resId) {
@@ -1859,6 +1946,7 @@ Tab varCCD965A46DE8A4609278F7D97BFC8760_822004983 =             setText(mContext
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.318 -0400", hash_original_method = "10821E84B4BC38351A9F8E96F9552B43", hash_generated_method = "5116FF2EF6D66BA582D4CB8F63A2B26D")
         @Override
         public void select() {
@@ -1868,6 +1956,7 @@ Tab varCCD965A46DE8A4609278F7D97BFC8760_822004983 =             setText(mContext
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.318 -0400", hash_original_method = "64BDEA3E085EE551443B27403AA215D4", hash_generated_method = "34A43E0743FFB0410163DC29BDE070CE")
         @Override
         public Tab setContentDescription(int resId) {
@@ -1880,6 +1969,7 @@ Tab var73646C06EB30D5640536C9B09C86769F_901501526 =             setContentDescri
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.329 -0400", hash_original_method = "DB5D720F6039044C737BC09541B22E5C", hash_generated_method = "64133EBFCC3A3B211801A94F69B2AF0B")
         @Override
         public Tab setContentDescription(CharSequence contentDesc) {
@@ -1900,6 +1990,7 @@ Tab var72A74007B2BE62B849F475C7BDA4658B_1870048958 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.329 -0400", hash_original_method = "637498C982C6D53C6EA2D802031901B7", hash_generated_method = "CD388E1D0513BCD912051DE4B5547D1D")
         @Override
         public CharSequence getContentDescription() {

@@ -34,6 +34,7 @@ public abstract class SSLEngine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.676 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "884EE51D0491A08921E7C06365218CB8")
     public String getPeerHost() {
 String varFEF815055C97D4B621404BF729E85DA2_1000186825 =         peerHost;
@@ -44,6 +45,7 @@ String varFEF815055C97D4B621404BF729E85DA2_1000186825 =         peerHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.677 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "DE0D05E64654CEEC33718C25AC6BE8A1")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1813309264 = (peerPort);

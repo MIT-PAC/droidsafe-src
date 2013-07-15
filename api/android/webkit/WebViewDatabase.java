@@ -61,7 +61,8 @@ public class WebViewDatabase {
     }
 
     
-        public static synchronized WebViewDatabase getInstance(Context context) {
+        @DSModeled(DSC.SPEC)
+    public static synchronized WebViewDatabase getInstance(Context context) {
         if (mInstance == null) {
             mInstance = new WebViewDatabase(context);
         }
@@ -102,6 +103,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.314 -0400", hash_original_method = "CE06D258DB88B89F42DED68141C198E0", hash_generated_method = "8ED787C8A111B97FFF6227F82334906C")
     private void initDatabase(Context context) {
         addTaint(context.getTaint());
@@ -143,6 +145,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.316 -0400", hash_original_method = "C7A89DE182CA76C10CB3961C893695C2", hash_generated_method = "B7B953F9F84E18EEB6FF32F047B97209")
     private void initCacheDatabase(Context context) {
         addTaint(context.getTaint());
@@ -217,14 +220,16 @@ public class WebViewDatabase {
     }
 
     
-        private static void upgradeDatabase() {
+        @DSModeled(DSC.SPEC)
+    private static void upgradeDatabase() {
         upgradeDatabaseToV10();
         upgradeDatabaseFromV10ToV11();
         mDatabase.setVersion(DATABASE_VERSION);
     }
 
     
-        private static void upgradeDatabaseFromV10ToV11() {
+        @DSModeled(DSC.SPEC)
+    private static void upgradeDatabaseFromV10ToV11() {
         int oldVersion = mDatabase.getVersion();
         if (oldVersion >= 11) {
             return;
@@ -313,7 +318,8 @@ public class WebViewDatabase {
     }
 
     
-        private static void upgradeCacheDatabase() {
+        @DSModeled(DSC.SPEC)
+    private static void upgradeCacheDatabase() {
         int oldVersion = mCacheDatabase.getVersion();
         if (oldVersion != 0) {
             Log.i(LOGTAG, "Upgrading cache database from version "
@@ -325,7 +331,8 @@ public class WebViewDatabase {
     }
 
     
-        private static void bootstrapCacheDatabase() {
+        @DSModeled(DSC.SPEC)
+    private static void bootstrapCacheDatabase() {
         if (mCacheDatabase != null) {
             mCacheDatabase.execSQL("CREATE TABLE cache"
                     + " (" + ID_COL + " INTEGER PRIMARY KEY, " + CACHE_URL_COL
@@ -345,6 +352,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.318 -0400", hash_original_method = "B19C14CCA683C2C1072DDA1B7A6274D5", hash_generated_method = "676A98DEBFCEC5126FBBCA7FE44683A5")
     private boolean checkInitialized() {
         synchronized
@@ -380,6 +388,7 @@ public class WebViewDatabase {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.319 -0400", hash_original_method = "CBFCA06012BEB8B609A8EBC6EEC6D1A4", hash_generated_method = "B5328ACE58B2415FEA980B8D9DE7162C")
     private boolean hasEntries(int tableId) {
         addTaint(tableId);
@@ -499,6 +508,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.321 -0400", hash_original_method = "BC23D2938EE88E31CA87024518493BE2", hash_generated_method = "C43938F5DE948F0ABDFD2070CF2A98D2")
      void deleteCookies(String domain, String path, String name) {
         addTaint(name.getTaint());
@@ -530,6 +540,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.321 -0400", hash_original_method = "33710CB1E65A2C52E9ABEE23433BB87F", hash_generated_method = "1208C4C0CE57D44963C19C22AD3D6115")
      void addCookie(Cookie cookie) {
         addTaint(cookie.getTaint());
@@ -572,6 +583,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.322 -0400", hash_original_method = "83E6237273AAD0C9F4D2DED923ACAFB7", hash_generated_method = "F38AFCF23E3771027F2AA3FCE3E344F4")
      boolean hasCookies() {
         synchronized
@@ -587,6 +599,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.322 -0400", hash_original_method = "3E1D9455881C3029C0C51566A563B8F4", hash_generated_method = "99BB8A0AFB075E7668D74A6B4049265C")
      void clearCookies() {
     if(!checkInitialized())        
@@ -607,6 +620,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.322 -0400", hash_original_method = "CAA5F0320575B2151920B0F146B122B7", hash_generated_method = "BB64A8073A1DE6E8A19C514111CEDB1F")
      void clearSessionCookies() {
     if(!checkInitialized())        
@@ -631,6 +645,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.323 -0400", hash_original_method = "AD90F95A26E2D9ECD94EF58E091F4A84", hash_generated_method = "9E54FC9041F15868428F4CCF226A7F25")
      void clearExpiredCookies(long now) {
         addTaint(now);
@@ -656,6 +671,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.323 -0400", hash_original_method = "26A436743D42208E44F8DC7C1FFF5A77", hash_generated_method = "29D6689EEC7780685806EE342738CD79")
      boolean startCacheTransaction() {
     if(++mCacheTransactionRefcount == 1)        
@@ -687,6 +703,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.324 -0400", hash_original_method = "14B92CCE9ED71BB98EE6E80EBC3B995B", hash_generated_method = "F5AF7D718DE3E068E7104D6AA215C1BA")
      boolean endCacheTransaction() {
     if(--mCacheTransactionRefcount == 0)        
@@ -729,6 +746,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.325 -0400", hash_original_method = "BF73224910862A6343E046C49771A81E", hash_generated_method = "10E2DD9D962147ABE142CBDA38C2FB28")
      CacheResult getCache(String url) {
         addTaint(url.getTaint());
@@ -798,6 +816,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.327 -0400", hash_original_method = "C4FACCF94A8569C78058717A9665F703", hash_generated_method = "7CAC807D4E10D806454E462F731BE6DD")
      void addCache(String url, CacheResult c) {
         addTaint(c.getTaint());
@@ -842,6 +861,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.328 -0400", hash_original_method = "0A5B6EFF79BC3227EAB74E5615633418", hash_generated_method = "D7B5D5830A54C74B6D09694006086B64")
      boolean hasCache() {
     if(!checkInitialized())        
@@ -888,6 +908,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.328 -0400", hash_original_method = "08C6E9C5D3BD785D378572A4A550228E", hash_generated_method = "F99DC9892A131E6A2D4363D7C354FF8C")
      long getCacheTotalSize() {
     if(mCacheDatabase == null)        
@@ -939,6 +960,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.330 -0400", hash_original_method = "E1CB3EA921D4F41F15D60CB73EFC3B4C", hash_generated_method = "411F7AEE214E8C00435A4D0000CC225B")
      List<String> trimCache(long amount) {
         addTaint(amount);
@@ -1064,6 +1086,7 @@ List<String> var024CEB90B19D0AC297D288C50E00741D_514588909 =         pathList;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.331 -0400", hash_original_method = "06E61C8A80289A57F170E4E5B574929B", hash_generated_method = "8AB9F28DA1219E94220832982B1CC9DA")
      void setUsernamePassword(String schemePlusHost, String username,
                 String password) {
@@ -1161,6 +1184,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.332 -0400", hash_original_method = "1884CD7855F3B6349631839451D5E408", hash_generated_method = "848F2BB39154CC500D95AF3DB97FEC12")
     public void clearUsernamePassword() {
     if(!checkInitialized())        
@@ -1181,6 +1205,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.333 -0400", hash_original_method = "AAEAEDF714B99771C21BA669DE54047C", hash_generated_method = "1F36241B323756F4E98AEF11E18858F2")
      void setHttpAuthUsernamePassword(String host, String realm, String username,
             String password) {
@@ -1268,6 +1293,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.334 -0400", hash_original_method = "50C83C4F45D13310D76D1C1AF4DB3EDF", hash_generated_method = "9D78887F61BC4E16B9D17628971CD462")
     public boolean hasHttpAuthUsernamePassword() {
         synchronized
@@ -1283,6 +1309,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.335 -0400", hash_original_method = "447C774EFBF83BDF0A062EB0F2F80455", hash_generated_method = "83F28CF967DDDDC0A6E9120656A5332E")
     public void clearHttpAuthUsernamePassword() {
     if(!checkInitialized())        
@@ -1362,6 +1389,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.336 -0400", hash_original_method = "699FE9DC5ACA57A32D74F51785DE679D", hash_generated_method = "24A559D52ADD4E062D61BFAA1250CA88")
      ArrayList<String> getFormData(String url, String name) {
         addTaint(name.getTaint());

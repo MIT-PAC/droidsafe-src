@@ -36,6 +36,7 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.600 -0400", hash_original_method = "D73EC83F9CAB72AF50214ABBB6029AE3", hash_generated_method = "7410F9F304037814B37AE40C5E08E3F2")
     public void setmIccPhoneBookInterfaceManager(
             IccPhoneBookInterfaceManager iccPhoneBookInterfaceManager) {

@@ -103,6 +103,7 @@ public class OpenSSLSignature extends Signature {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.289 -0400", hash_original_method = "CB8A1B4C2EB685EAF12C2B9210E25AE9", hash_generated_method = "AEAC9944268717085CF2013D775F3E2B")
     @Override
     protected Object engineGetParameter(String param) throws InvalidParameterException {
@@ -127,6 +128,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.291 -0400", hash_original_method = "B5DEEBDD8940EADE5B18431959F129E2", hash_generated_method = "C3CD48B93F6632A40DE95CCE19C2C0DC")
     @Override
     protected void engineInitVerify(PublicKey publicKey) throws InvalidKeyException {
@@ -185,6 +187,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.292 -0400", hash_original_method = "BB69CFAE2D7DAB40561C965B4584F359", hash_generated_method = "63674D7E8498AF443B36E38A5838B78A")
     @Override
     protected void engineSetParameter(String param, Object value) throws InvalidParameterException {

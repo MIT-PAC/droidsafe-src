@@ -33,6 +33,7 @@ abstract public class AsyncService extends Service {
     abstract public AsyncServiceInfo createHandler();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "D7B4D3DB9E698B589A836995581399A1")
     public Handler getHandler() {
 Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907 =         mHandler;
@@ -59,6 +60,7 @@ Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907 =         mHandler;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "1BF64941FDCF96E405385BCB202DC026", hash_generated_method = "0D48CE5BCBFDD9F8FB7FE55FBE09F4B1")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -106,6 +108,7 @@ Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907 =         mHandler;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.625 -0400", hash_original_method = "A7446927BF81E8D364D2A886C10F0DCF", hash_generated_method = "02CE0687FBED22D51AA5D811D10285D1")
     @Override
     public IBinder onBind(Intent intent) {

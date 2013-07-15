@@ -168,6 +168,7 @@ public class RequestQueue implements RequestFeeder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.678 -0400", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "084372DFE7CA0B56BF0EB5EF203AD846")
     public HttpHost getProxyHost() {
 HttpHost var15255B0340E21149253E1579997EBD34_359031802 =         mProxyHost;
@@ -290,6 +291,7 @@ RequestHandle var918025ACFB3D287C100E8BF8D8B74BBF_1357878958 =         new Reque
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.681 -0400", hash_original_method = "19FC52B8DC895C49DAE0ECA4EB6CA639", hash_generated_method = "C81A703B5C7A46C130B6E410F29DDEA5")
     private HttpHost determineHost(HttpHost host) {
         addTaint(host.getTaint());
@@ -594,6 +596,7 @@ for(int i = 0;i < mConnectionCount;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.688 -0400", hash_original_method = "D2A094DDB6185336258EAA22554B8B48", hash_generated_method = "21E13D9D80F5B8BB04A4D522CD6332C3")
         public void startTiming() {
 for(int i = 0;i < mConnectionCount;i++)
@@ -777,6 +780,7 @@ Connection var8C72E06494C6F3A2714DD6C271334307_874088963 =             con;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.692 -0400", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "676C8F60B0B045163F3733919BDC1C5F")
         public Request getRequest() {
             Request r = mRequest;
@@ -802,6 +806,7 @@ Request var01ADE12A033EFEF3CBB95891FA1C0137_1970911134 =             getRequest(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.693 -0400", hash_original_method = "30BE3F23DCE5F30BFE4C540BF8AE4D20", hash_generated_method = "581B1602D239DBAC3822C08DA8D66ECC")
         public boolean haveRequest(HttpHost host) {
             addTaint(host.getTaint());
@@ -813,6 +818,7 @@ Request var01ADE12A033EFEF3CBB95891FA1C0137_1970911134 =             getRequest(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.693 -0400", hash_original_method = "D0AA652C1F1A28EE12BADC892C348224", hash_generated_method = "0490D711BBE9F89E677FF31CE7FA801F")
         public void requeueRequest(Request r) {
             mRequest = r;

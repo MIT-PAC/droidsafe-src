@@ -37,7 +37,8 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-        public static DERGeneralString getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DERGeneralString getInstance(
         Object obj) {
         if (obj == null || obj instanceof DERGeneralString) 
         {
@@ -48,7 +49,8 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-        public static DERGeneralString getInstance(
+        @DSModeled(DSC.SPEC)
+    public static DERGeneralString getInstance(
         ASN1TaggedObject obj, 
         boolean explicit) {
         DERObject o = obj.getObject();
@@ -63,6 +65,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.003 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "10FEA651623B9A80BFEE5F39A8563C51")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_196912068 =         string;
@@ -73,6 +76,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_196912068 =         string;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.003 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "64CF1647452E27B5B062CEDEA5E0E3CC")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_1782255316 =         string;
@@ -83,6 +87,7 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1782255316 =         string;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.004 -0400", hash_original_method = "22CE003B24CA00E42241233D24EF8326", hash_generated_method = "429B9EAAF4898E9E604FAC417D2B8E21")
     public byte[] getOctets() {
         char[] cs = string.toCharArray();
@@ -105,6 +110,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.005 -0400", hash_original_method = "329E6E60BDC6BE9FAC4D8B36E2859F0E", hash_generated_method = "ECF02FD182BD0BEAB28F83CFB8A76630")
      void encode(DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -114,6 +120,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.005 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "54490068F39D2EB271EA53868AAF138A")
     public int hashCode() {
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_534268543 = (this.getString().hashCode());
@@ -124,6 +131,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.006 -0400", hash_original_method = "790E2075BB1CC35320196C74CBC9C39A", hash_generated_method = "4ECE92259FFDD0A21453258FD14A4C77")
      boolean asn1Equals(DERObject o) {
         addTaint(o.getTaint());

@@ -19,6 +19,7 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.524 -0400", hash_original_method = "B50B51C72253EA7CE2666FA23DED632D", hash_generated_method = "B0695D359CFB29871933330C4ED2D70C")
     protected String getEFPath(int efid) {
         addTaint(efid);

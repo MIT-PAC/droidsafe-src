@@ -187,6 +187,7 @@ TestSuiteBuilder var4236819713B8F2A439526881855F7860_654644741 =         include
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.617 -0400", hash_original_method = "DE0BA46F9EE52752A0C868D33280E318", hash_generated_method = "F8868896E7239F189FED6A15A968B3D1")
     public TestSuiteBuilder named(String newSuiteName) {
         suiteName = newSuiteName;
@@ -239,6 +240,7 @@ TestSuite var68923D4623222795EBF2699ACF0F4B83_835489868 =         rootSuite;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.619 -0400", hash_original_method = "FA6CF1B18274415B042FA89686DFBBA8", hash_generated_method = "579A43976301BAE753A42D9AA54AC37B")
     protected String getSuiteName() {
 String varD8C9BC94A6E81F246F976FCCA661D48D_1472188937 =         suiteName;
@@ -264,6 +266,7 @@ TestSuiteBuilder var69B049DE1E09C679D066531AD48DC89D_704332552 =         addRequ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.619 -0400", hash_original_method = "95C63968A7356AFE59EE1560EDC6AFD0", hash_generated_method = "E79017C4570DE9B4FD34967CDD434195")
     protected TestGrouping getTestGrouping() {
 TestGrouping var668D3050613E8B26B179F6C37A7EABCF_478968285 =         testGrouping;
@@ -274,6 +277,7 @@ TestGrouping var668D3050613E8B26B179F6C37A7EABCF_478968285 =         testGroupin
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.620 -0400", hash_original_method = "3B7E4DAFF4F4255560B2EF8BCF0CA264", hash_generated_method = "B361A6E8C34D3F18D89C3ECC7FB20BDB")
     private boolean satisfiesAllPredicates(TestMethod test) {
         addTaint(test.getTaint());
@@ -299,6 +303,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.620 -0400", hash_original_method = "9609FD64CC859CF40862383CC61076E6", hash_generated_method = "5C3EB6598C6FD9DF34FFEEBC3127D30B")
     private void addTest(TestMethod testMethod) throws Exception {
         addTaint(testMethod.getTaint());
@@ -310,6 +315,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.620 -0400", hash_original_method = "7027D4F6836EC90288680E369B5B8F5A", hash_generated_method = "E51E6875FA1D02406B31AFFEFAE290F0")
     private void addTest(Test test) {
         addTaint(test.getTaint());
@@ -321,6 +327,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.621 -0400", hash_original_method = "92951B52D867188410A62009711C9261", hash_generated_method = "DE879BE7D1B7AC9DDB7CC38D0D915EBD")
     private void addSuiteIfNecessary(String parentClassname) {
     if(!parentClassname.equals(currentClassname))        
@@ -338,7 +345,8 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
-        private static String parsePackageNameFromClassName(String className) {
+        @DSModeled(DSC.SPEC)
+    private static String parsePackageNameFromClassName(String className) {
         return className.substring(0, className.lastIndexOf('.'));
     }
 
@@ -357,6 +365,7 @@ for(Predicate<TestMethod> predicate : predicates)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.622 -0400", hash_original_method = "1942A289EA540D79C743EE0933FD0258", hash_generated_method = "137F9FC0FB29815C55473429C68C5D27")
         public void testSuiteConstructionFailed() {
             RuntimeException varEA3606177B94E6C5368D72CDFEE8ED30_1272056941 = new RuntimeException("Exception during suite construction", exception);

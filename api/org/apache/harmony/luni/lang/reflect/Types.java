@@ -15,12 +15,14 @@ public class Types {
     }
 
 
-        public static Type[] getClonedTypeArray(ListOfTypes types) {
+        @DSModeled(DSC.SPEC)
+    public static Type[] getClonedTypeArray(ListOfTypes types) {
         return types.getResolvedTypes().clone();
     }
 
     
-        public static Type getType(Type type) {
+        @DSModeled(DSC.SPEC)
+    public static Type getType(Type type) {
         if (type instanceof ImplForType) {
             return ((ImplForType)type).getResolvedType();
         } else {

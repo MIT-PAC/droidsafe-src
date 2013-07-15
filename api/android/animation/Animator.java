@@ -18,18 +18,21 @@ public abstract class Animator implements Cloneable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.467 -0400", hash_original_method = "077E81C30B4BFFEF2F9502DB378CA204", hash_generated_method = "A801E423F89557B74070F06DC0AB8DFA")
     public void start() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.468 -0400", hash_original_method = "E5C5DBED2FC0D18DB80484DB83D94F8A", hash_generated_method = "43CBBEFF14DFE69DF0FC06DADAEF94C2")
     public void cancel() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.469 -0400", hash_original_method = "4F105473DD7236D24F8992C8503B57B1", hash_generated_method = "9DFCE4A1701D66E2F860131DA801747C")
     public void end() {
         // ---------- Original Method ----------
@@ -54,6 +57,7 @@ public abstract class Animator implements Cloneable {
     public abstract boolean isRunning();
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.476 -0400", hash_original_method = "5FAE51F608329798E727CB5CCA21128D", hash_generated_method = "C905F647E73DD4113EED78AF69A0FC7C")
     public boolean isStarted() {
         boolean varF7BD74CE9A58FA4CCEA8BB81790EAC23_1591580303 = (isRunning());
@@ -128,6 +132,7 @@ ArrayList<AnimatorListener> var6F226E74DAC534764C2244A2BF49F27C_1815042848 =    
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.495 -0400", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "012A5A2E20E3D4F5789BECFAD2A23904")
     @Override
     public Animator clone() {
@@ -172,18 +177,21 @@ Animator var6E2178F33F884BED37C5DEBCD18F9A96_1953532838 =             anim;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.497 -0400", hash_original_method = "32F08DC85010676418427AA8D9A17152", hash_generated_method = "BF5AF1AD862E3A79F4B93BAB44171538")
     public void setupStartValues() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.498 -0400", hash_original_method = "4E652EB88F78E42C7E65C332BEA7074B", hash_generated_method = "F85A6F7F464E8F9389DDB8CE57A7E36C")
     public void setupEndValues() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.500 -0400", hash_original_method = "0B5C67CA62B433384E1BDDE3EB79AFB5", hash_generated_method = "085860A0B63A5244CC48441EE96D69F4")
     public void setTarget(Object target) {
         addTaint(target.getTaint());

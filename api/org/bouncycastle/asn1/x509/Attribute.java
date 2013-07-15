@@ -68,6 +68,7 @@ public class Attribute extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.935 -0400", hash_original_method = "C61254DD25EA79572F2B43B889534711", hash_generated_method = "EFDB2EE525BF22AB109220C6CB34D9FF")
     public ASN1ObjectIdentifier getAttrType() {
 ASN1ObjectIdentifier var4DC76BA213854B470841C5B398272A26_173132939 =         new ASN1ObjectIdentifier(attrType.getId());
@@ -78,6 +79,7 @@ ASN1ObjectIdentifier var4DC76BA213854B470841C5B398272A26_173132939 =         new
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.935 -0400", hash_original_method = "3714D5AC97801D67C3C70862DB57F642", hash_generated_method = "5631F397CFA2DCAB641D651412460E34")
     public ASN1Encodable[] getAttributeValues() {
 ASN1Encodable[] var62CC3281B32ED3E929A0D40B228643F8_136495898 =         attrValues.toArray();
@@ -88,6 +90,7 @@ ASN1Encodable[] var62CC3281B32ED3E929A0D40B228643F8_136495898 =         attrValu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.936 -0400", hash_original_method = "0C9FA4513BA0CB1318C076F6A4C1BAA0", hash_generated_method = "F8D9C3BB4D8BC874430DF9398FA80AC0")
     public ASN1Set getAttrValues() {
 ASN1Set varC1BD46225B9E104129100789C289BE4C_677975461 =         attrValues;
@@ -98,6 +101,7 @@ ASN1Set varC1BD46225B9E104129100789C289BE4C_677975461 =         attrValues;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.936 -0400", hash_original_method = "7FF9F3775D261945F5C8461E1521856A", hash_generated_method = "FBFA44711766938A0E6DAB3E13CB24D1")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

@@ -60,6 +60,7 @@ IntBuffer var6ED4708F04CD11720ECFFDBFD927116F_683933633 =         copy(this, mar
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.002 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "481BFA1F6D2893F1EF3FC72057047793")
     @Override
     public boolean isReadOnly() {
@@ -93,6 +94,7 @@ IntBuffer var6ED4708F04CD11720ECFFDBFD927116F_683933633 =         copy(this, mar
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.003 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "4AE63B3486F70343E32C49EFAF92D8ED")
     @Override
     protected boolean protectedHasArray() {

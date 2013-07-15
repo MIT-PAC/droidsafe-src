@@ -75,14 +75,16 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        public static Time getInstance(
+        @DSModeled(DSC.SPEC)
+    public static Time getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(obj.getObject());
     }
 
     
-        public static Time getInstance(
+        @DSModeled(DSC.SPEC)
+    public static Time getInstance(
         Object  obj) {
         if (obj == null || obj instanceof Time)
         {
@@ -100,6 +102,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "BF57E645E9DF37568C2EEE61DCF61153", hash_generated_method = "D9E99674D1497710ACF29F10CEE0E7E1")
     public String getTime() {
     if(time instanceof DERUTCTime)        
@@ -126,6 +129,7 @@ String varF54206F6C86C22C29E8157882DDD686C_493728726 =             ((DERGenerali
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "FDC0BE61EAA40B266A36758B51B3F270", hash_generated_method = "022E1243C417282B9A2555B5B0E460A7")
     public Date getDate() {
         try 
@@ -168,6 +172,7 @@ Date var8D783C4AB38B34C5480A243364749A59_75162190 =                 ((DERGeneral
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BF17D9376BC07B0AE09AF0FEFAB1CF8E")
     public DERObject toASN1Object() {
 DERObject varA66D020F4BCAB26A12562312D8A04DED_978425339 =         time;
@@ -178,6 +183,7 @@ DERObject varA66D020F4BCAB26A12562312D8A04DED_978425339 =         time;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.327 -0400", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "805BFA01B9A68AE9208BFFFBDCAE2EB5")
     public String toString() {
 String varA2437939C7847B22878509056EAFE1EF_547260502 =         getTime();

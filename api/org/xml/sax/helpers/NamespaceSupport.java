@@ -277,6 +277,7 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.455 -0400", hash_original_method = "704394E46FC1A63E6F1F5F09E7A57B00", hash_generated_method = "746739353838227EF4E1E7CCE13C91B5")
     public boolean isNamespaceDeclUris() {
         boolean var1B0E32CE3D1C65D78D4D87360D96EF74_2138014273 = (namespaceDeclUris);
@@ -324,6 +325,7 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.458 -0400", hash_original_method = "E1D3B844E1B48DBC46153D5E5632428F", hash_generated_method = "F6B9FE4E8E2EA47CF3F793A45547CC1D")
          void setParent(Context parent) {
             this.parent = parent;
@@ -348,6 +350,7 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.461 -0400", hash_original_method = "9488BC4AFF7634EA1262BEB181C9541E", hash_generated_method = "B008A6AC94D4B276D1CE38273E644999")
          void clear() {
             parent = null;

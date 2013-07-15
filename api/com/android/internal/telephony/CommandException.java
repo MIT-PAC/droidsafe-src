@@ -61,6 +61,7 @@ public class CommandException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.134 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "D1C82FED92EA70610BE0E4490692100A")
     public Error getCommandError() {
 Error var6BFFBFA2F1D556BA80433C2335198CE9_56053177 =         e;

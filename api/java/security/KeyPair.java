@@ -24,6 +24,7 @@ public final class KeyPair implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.064 -0400", hash_original_method = "3FFC913C725561B27B9684931E08C69F", hash_generated_method = "D2D631F5B707A220937F4F99617F7CF6")
     public PrivateKey getPrivate() {
 PrivateKey varEAD85D869E43E7A2ADE031F4AAD29487_966982082 =         privateKey;
@@ -34,6 +35,7 @@ PrivateKey varEAD85D869E43E7A2ADE031F4AAD29487_966982082 =         privateKey;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.065 -0400", hash_original_method = "6C6DB8409915627C7F2AEC2B5C46974F", hash_generated_method = "4169F24E8988F5A2FDDE1F7DE6B9B931")
     public PublicKey getPublic() {
 PublicKey var36BC502DA0D0F28A150F4A1969DBE960_1467046427 =         publicKey;

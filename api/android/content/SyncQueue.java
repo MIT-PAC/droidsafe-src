@@ -54,6 +54,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.194 -0400", hash_original_method = "D3ED8DB5FFE6F89C719EB4A464B29556", hash_generated_method = "8BCEF1C13E3FA08C4B39C688E713F110")
     public boolean add(SyncOperation operation) {
         addTaint(operation.getTaint());
@@ -145,6 +146,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.196 -0400", hash_original_method = "B31E7F9449B862015CEE60B6F703FDEF", hash_generated_method = "5D21943CC08F55C3F4F9C2EEE2A953CF")
     public void onBackoffChanged(Account account, String providerName, long backoff) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -169,6 +171,7 @@ for(SyncOperation op : mOperationsMap.values())
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.197 -0400", hash_original_method = "B5F16B587E82C75B14DBD47F35BFF547", hash_generated_method = "44E99ECA27160FAF896105BD87F9BFBA")
     public void onDelayUntilTimeChanged(Account account, String providerName, long delayUntil) {
         //DSFIXME:  CODE0009: Possible callback target function detected

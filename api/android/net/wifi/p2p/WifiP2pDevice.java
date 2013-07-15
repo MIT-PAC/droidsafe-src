@@ -132,6 +132,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.138 -0400", hash_original_method = "76992CA06444764D9CF7DB1AFF10640E", hash_generated_method = "93CCDE1B42606723D42B46110E6B7578")
     public boolean wpsPbcSupported() {
         boolean var3C08D742A43F3CA6BCBC29B07201315B_678003651 = ((wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0);
@@ -142,6 +143,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.138 -0400", hash_original_method = "B2A0BAE23B24F963FF842B8EAAF5D840", hash_generated_method = "B53642ECF4DD2E20CD2FEFDD48FBBE24")
     public boolean wpsKeypadSupported() {
         boolean var1C14923349E39578A26384C6AAF203C8_1198042623 = ((wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0);
@@ -152,6 +154,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.138 -0400", hash_original_method = "89517E0D3099BE3BB50FEAB8A124BB8F", hash_generated_method = "E99299A35DDD614C3F8F7263EFCAAC18")
     public boolean wpsDisplaySupported() {
         boolean var26C0ADF20D06F65D2845F4DBA6CB06E9_1375015733 = ((wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0);
@@ -162,6 +165,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.139 -0400", hash_original_method = "3FBC138270F4ADEAF27B9A0357206073", hash_generated_method = "9CA007C0F6CDF3BCB2C213965D7F5EA2")
     public boolean isServiceDiscoveryCapable() {
         boolean var5EA4B87FB1FADC800F9BA0C2976C9B9B_654679432 = ((deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0);
@@ -172,6 +176,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.139 -0400", hash_original_method = "A041F8E96FF7F1638DE5EDEE0D23FE8B", hash_generated_method = "6366353FF088994A66DD2FAA79CA66FB")
     public boolean isGroupOwner() {
         boolean var5AA29A5D99A1CCDE4C4E4C88D30C9F46_1168515314 = ((groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0);
@@ -249,6 +254,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_846022831 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.140 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B2E924A4FD70525AF9B885A5A543F833")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1086140651 = (0);

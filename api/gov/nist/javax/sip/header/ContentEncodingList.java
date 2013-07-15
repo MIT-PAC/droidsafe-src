@@ -16,6 +16,7 @@ public final class ContentEncodingList extends SIPHeaderList<ContentEncoding> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.251 -0400", hash_original_method = "1AD27EAA5BBA618A109A28F19AA4BF35", hash_generated_method = "254325D89819D3E63E2B1C52AE4E1C36")
     public Object clone() {
         ContentEncodingList retval = new ContentEncodingList();

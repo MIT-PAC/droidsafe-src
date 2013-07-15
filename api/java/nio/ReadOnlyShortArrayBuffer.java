@@ -60,6 +60,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_1643959366 =         copy(this, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.029 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "958330C10937881D97CEEA844B230D7C")
     @Override
     public boolean isReadOnly() {
@@ -93,6 +94,7 @@ ShortBuffer var6ED4708F04CD11720ECFFDBFD927116F_1643959366 =         copy(this, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.030 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "A31A02FB67CA603AD3A7F648C8B2976A")
     @Override
     protected boolean protectedHasArray() {

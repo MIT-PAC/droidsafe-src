@@ -15,6 +15,7 @@ public final class RequireList extends SIPHeaderList<Require> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.911 -0400", hash_original_method = "4C9D6FE7DF8BFD06BB544C2582BF8758", hash_generated_method = "53BA26451ACF8FE8012835702A61074A")
     public Object clone() {
         RequireList retval = new RequireList();

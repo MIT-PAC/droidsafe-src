@@ -250,6 +250,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.976 -0400", hash_original_method = "0B66924116C94ED3C0FF1D3069EB61F1", hash_generated_method = "CE275C095154BFA6266049D62FD6535E")
     @Override
     protected int peek(InetAddress sender) throws IOException {
@@ -353,6 +354,7 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.980 -0400", hash_original_method = "C42A5992F0CED0134F017245292E33CB", hash_generated_method = "52D116244E3B5548C2B7D725627BC55A")
     @Override
     public void connect(InetAddress inetAddr, int port) throws SocketException {

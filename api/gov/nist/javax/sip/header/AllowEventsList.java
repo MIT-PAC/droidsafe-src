@@ -17,6 +17,7 @@ public class AllowEventsList extends SIPHeaderList<AllowEvents> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.763 -0400", hash_original_method = "73FBB2E32770F78B7C4AE500CDD51F25", hash_generated_method = "5B262789B2B290382B872CFB5BF5BAC3")
     public Object clone() {
         AllowEventsList retval = new AllowEventsList();
@@ -31,6 +32,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1835489206 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.763 -0400", hash_original_method = "8BAEE8E3A5391DDA801BF0B845B6BCD7", hash_generated_method = "CBDC39FA51DCCD52575AE6A6ABCB9248")
     public ListIterator<String> getMethods() {
         ListIterator<AllowEvents> li = super.hlist.listIterator();
@@ -55,6 +57,7 @@ ListIterator<String> var7235968E19DD3F2C4738A491078B8CA6_1289305044 =         ll
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.764 -0400", hash_original_method = "222F0135AD0C9432632E9A9F7AD003FD", hash_generated_method = "03030E28EC1CE2FA8AE1745188C84303")
     public void setMethods(List<String> methods) throws ParseException {
         addTaint(methods.getTaint());

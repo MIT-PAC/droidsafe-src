@@ -174,6 +174,7 @@ class BrowserFrame extends Handler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.993 -0400", hash_original_method = "55F163F814F53ECA11AC218202D49EB2", hash_generated_method = "53E79CDE5C3440BB15AD246809979B5D")
     public void postUrl(String url, byte[] data) {
         addTaint(data[0]);
@@ -279,6 +280,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.996 -0400", hash_original_method = "7B4A87199DD3BC0CC52E5F0CAA9F0064", hash_generated_method = "FA4CC3EB22F179EC946E9ABCED374DF7")
     private void resetLoadingStates() {
         mCommitted = true;
@@ -289,6 +291,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.996 -0400", hash_original_method = "82C14ED51175F3BAD05958BE30AA9B50", hash_generated_method = "CC578CE378A7C412A276A8201CD596DB")
      boolean committed() {
         boolean varECB201FF1883B37FDCC5CA9037698543_523684543 = (mCommitted);
@@ -299,6 +302,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.996 -0400", hash_original_method = "6055F5425C1866007AB953B33770A39A", hash_generated_method = "491122779A3C2D569B349A836E220361")
      boolean firstLayoutDone() {
         boolean varE9932ED3B0EE242D96A89686AEE3CF8E_915758170 = (mFirstLayoutDone);
@@ -309,6 +313,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.996 -0400", hash_original_method = "9068063B02257F9D08EFF05D6BD051A9", hash_generated_method = "4031E8190B520811E59B38A883AD9261")
      int loadType() {
         int var01D334B431DA26637B5EF7A829298F7D_302918236 = (mLoadType);
@@ -319,6 +324,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.997 -0400", hash_original_method = "027FDD69E025CF7A20175D3E84246197", hash_generated_method = "70B68A83AABC8A7B41F6165E8EEA5CF7")
      void didFirstLayout() {
     if(!mFirstLayoutDone)        
@@ -334,6 +340,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.998 -0400", hash_original_method = "588CB65AC18071EB5B02ABC642CC0A1A", hash_generated_method = "2E65B8E91162D25D2C9C4812078B4317")
     private void loadStarted(String url, Bitmap favicon, int loadType,
             boolean isMainFrame) {
@@ -396,6 +403,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.998 -0400", hash_original_method = "F4B9AF2B8B6C0B9D0EBAE01BEE4BF775", hash_generated_method = "35238D9783DF162B35E5C8FB9791C0B9")
     @SuppressWarnings("unused")
     private boolean shouldSaveFormData() {
@@ -462,6 +470,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.000 -0400", hash_original_method = "D2CB1A360A21716BE59AD0C99E7F7543", hash_generated_method = "D94FE0EF656F50E06418D9F058B70999")
      void certificate(SslCertificate certificate) {
         addTaint(certificate.getTaint());
@@ -488,6 +497,7 @@ String var577A52C8E78ECD1A00142262F8742918_1631066114 =         nativeSaveWebArc
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.034 -0400", hash_original_method = "08B10BC0FD4D849356EF434C4A57C456", hash_generated_method = "0937123E172E47DD7D9D9837FB417A57")
     @Override
     public void handleMessage(Message msg) {
@@ -542,6 +552,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.034 -0400", hash_original_method = "71CD366348BF98805D3BCFC6E13F61B1", hash_generated_method = "BA6008276E1A3344EFF5EF4BB6FDBDDD")
     private void setTitle(String title) {
         addTaint(title.getTaint());
@@ -618,6 +629,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.035 -0400", hash_original_method = "7D1B04AB7A647E05019AB7BC865C3803", hash_generated_method = "B315907147C1C1EAE867284FDBD289DA")
     private void windowObjectCleared(int nativeFramePointer) {
         addTaint(nativeFramePointer);
@@ -650,6 +662,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.035 -0400", hash_original_method = "2FB67C52CD526BE2C970DC0DB75D361F", hash_generated_method = "30C429943D615A2426E4663E63BCDBDB")
     public boolean handleUrl(String url) {
         addTaint(url.getTaint());
@@ -685,6 +698,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.036 -0400", hash_original_method = "8112D6E9F2629FDD519CF9C502DF963B", hash_generated_method = "7ECCA4A769B27BD58BA453C5E85BEED3")
     public void addJavascriptInterface(Object obj, String interfaceName) {
         addTaint(interfaceName.getTaint());
@@ -698,6 +712,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.036 -0400", hash_original_method = "D4D979316C36EF31BC47A23AC0C9BE50", hash_generated_method = "42318119BF8387797E10506DFF2DE37D")
     public void removeJavascriptInterface(String interfaceName) {
         addTaint(interfaceName.getTaint());
@@ -800,6 +815,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.037 -0400", hash_original_method = "60CA323AEDF7C276FF8B65BEFBD4FA69", hash_generated_method = "B443BB021D72AF5AA2B73863B73DD573")
     private InputStream inputStreamForAndroidResource(String url) {
         addTaint(url.getTaint());
@@ -1039,6 +1055,7 @@ LoadListener varAA77A99C5C414317F827FC325B86977B_1855730651 =         !synchrono
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.041 -0400", hash_original_method = "DD9E58924AE2FD70E5FF51B9D61BCBED", hash_generated_method = "734F841947DF7330010AB10347A42A67")
     private WebResourceResponse shouldInterceptRequest(String url) {
         addTaint(url.getTaint());
@@ -1094,6 +1111,7 @@ WebResourceResponse var2A1114F4272D753FE23A36E3D68CD293_2111610389 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.042 -0400", hash_original_method = "910C3A78FCE0B1E574FD9CA74D1EE7A9", hash_generated_method = "B0B490D0BDC17825AD37CAE5075B809E")
     private void didReceiveIcon(Bitmap icon) {
         addTaint(icon.getTaint());
@@ -1103,6 +1121,7 @@ WebResourceResponse var2A1114F4272D753FE23A36E3D68CD293_2111610389 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.042 -0400", hash_original_method = "F9E26289979EC36BEDC07872BFD387F0", hash_generated_method = "3E44B41BF9AAA9E60ADAAAEC027493E4")
     private void didReceiveTouchIconUrl(String url, boolean precomposed) {
         addTaint(precomposed);
@@ -1113,6 +1132,7 @@ WebResourceResponse var2A1114F4272D753FE23A36E3D68CD293_2111610389 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.042 -0400", hash_original_method = "49DBB49355B8BD4E95F5FBA6E171926E", hash_generated_method = "445E28C0822770685DA3BA94667DC658")
     private BrowserFrame createWindow(boolean dialog, boolean userGesture) {
         addTaint(userGesture);
@@ -1133,6 +1153,7 @@ BrowserFrame var8401B37A9D724FD0969CBF1936487F5E_1731334128 =         mCallbackP
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.042 -0400", hash_original_method = "A6BF5F00A4A45564AACA34EE9DAEC5CF", hash_generated_method = "DC86851CF7AF503FBCA6F3D12D903045")
     private void closeWindow(WebViewCore w) {
         addTaint(w.getTaint());
@@ -1142,6 +1163,7 @@ BrowserFrame var8401B37A9D724FD0969CBF1936487F5E_1731334128 =         mCallbackP
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.043 -0400", hash_original_method = "53828DFE68036F8E35ADAC562AA427C9", hash_generated_method = "7829A1010EB00F2F5760360CED74EE3D")
     private void decidePolicyForFormResubmission(int policyFunction) {
         addTaint(policyFunction);
@@ -1169,6 +1191,7 @@ BrowserFrame var8401B37A9D724FD0969CBF1936487F5E_1731334128 =         mCallbackP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.043 -0400", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "ED13E2FA4FB7E692CB4F4387E544A81F")
      CallbackProxy getCallbackProxy() {
 CallbackProxy var2EB9D6A50345F28BE7711CCFE90E59AC_2082808024 =         mCallbackProxy;
@@ -1179,6 +1202,7 @@ CallbackProxy var2EB9D6A50345F28BE7711CCFE90E59AC_2082808024 =         mCallback
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.043 -0400", hash_original_method = "F09A8DE53C03EAD5D6B2D7442C92246E", hash_generated_method = "E991B8561233D5EECA6ABDCEC2002001")
      String getUserAgentString() {
 String var0BAA1D2A3FE338F0474DA7205A0542F3_953017496 =         mSettings.getUserAgentString();
@@ -1189,6 +1213,7 @@ String var0BAA1D2A3FE338F0474DA7205A0542F3_953017496 =         mSettings.getUser
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.043 -0400", hash_original_method = "D14466E1FBBBA5A0DDC9A63472126D93", hash_generated_method = "4C9287440252A9BA832A123213AFF6F8")
     private String getRawResFilename(int id) {
         addTaint(id);
@@ -1200,7 +1225,8 @@ String varF3DAD022EBABA935DC888B174E45C206_943041032 =         getRawResFilename
     }
 
     
-        static String getRawResFilename(int id, Context context) {
+        @DSModeled(DSC.SPEC)
+    static String getRawResFilename(int id, Context context) {
         int resid;
         switch (id) {
             case NODOMAIN:
@@ -1243,6 +1269,7 @@ String varF3DAD022EBABA935DC888B174E45C206_943041032 =         getRawResFilename
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.043 -0400", hash_original_method = "E4DD03CAE364FD517B782C57726FD370", hash_generated_method = "B390A746BC537FD56A7539B24A0C99AA")
     private float density() {
         float var07D4970463BE718813680AE9698FFB41_476620432 = (mContext.getResources().getDisplayMetrics().density);
@@ -1445,6 +1472,7 @@ String varF3DAD022EBABA935DC888B174E45C206_943041032 =         getRawResFilename
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.045 -0400", hash_original_method = "5EC89579D3745ABD19569589FBBBCA81", hash_generated_method = "2065A0741D852BF0226C18A5D624FA18")
     private void didFinishLoading() {
     if(mKeyStoreHandler != null)        
@@ -1483,6 +1511,7 @@ String varF3DAD022EBABA935DC888B174E45C206_943041032 =         getRawResFilename
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.046 -0400", hash_original_method = "780A48AF1DFDDD134926E1881FBB7981", hash_generated_method = "585B359C2F865923E3484222435DD540")
      SearchBox getSearchBox() {
 SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
@@ -1504,28 +1533,33 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.046 -0400", hash_original_method = "CAC5AC041AD65DE746A86B06B460473E", hash_generated_method = "8EFAC8AB4511B7E165DA50794474A8A3")
     private void nativeCreateFrame(WebViewCore w, AssetManager am,
             WebBackForwardList list) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.046 -0400", hash_original_method = "74AC0793AA670585A51BA4B2FC045561", hash_generated_method = "D0819FF5A9F51FEE8FA89D4F258032D7")
     public void nativeDestroyFrame() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.046 -0400", hash_original_method = "7D705910310ED484283730AFB821A717", hash_generated_method = "77CB7497C6503548A49DEF56D571505E")
     private void nativeCallPolicyFunction(int policyFunction,
             int decision) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.046 -0400", hash_original_method = "AE07D7138DB6945AA08789E90E80B92B", hash_generated_method = "030179C599C6C6C95E46270EA13653EF")
     public void reload(boolean allowStale) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.046 -0400", hash_original_method = "53A1F9C2A72688D9CD2F75BB7D3D5005", hash_generated_method = "CECBA3DCC4E2FD2E5ECF03EAC541C67B")
     private void nativeGoBackOrForward(int steps) {
     }
@@ -1540,17 +1574,20 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.047 -0400", hash_original_method = "1BC95C43CEE0FFE1F6217DA26B59C5B9", hash_generated_method = "56AF48B8BD61F2A35430BDF6E249DFBB")
     private void nativeAddJavascriptInterface(int nativeFramePointer,
             Object obj, String interfaceName) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.047 -0400", hash_original_method = "B177754AEEE092C53184C415EE8118E6", hash_generated_method = "47094B89B018B5DFA4A910C06D3DA460")
     private void setCacheDisabled(boolean disabled) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.047 -0400", hash_original_method = "8B7AAFA05BB3F3ED8C594AA78F708D08", hash_generated_method = "AB6F915D09A0556288F227FA85BDF8F9")
     public boolean cacheDisabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25186549 = getTaintBoolean();
@@ -1558,21 +1595,25 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.047 -0400", hash_original_method = "055468486DD4D3FA9B64A316B50FA6FA", hash_generated_method = "09DFDA49097E0044F1CB77E2DA83386B")
     public void clearCache() {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.047 -0400", hash_original_method = "6C44E95231996B5164D16D96A5AF9CAD", hash_generated_method = "F293DD4C3989DC497C60C424BC165890")
     private void nativeLoadUrl(String url, Map<String, String> headers) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.048 -0400", hash_original_method = "4DAAE38A658B1BBD069DC4A366A0C462", hash_generated_method = "7AFC02E483AE7F6035BE6C4076387ECA")
     private void nativePostUrl(String url, byte[] postData) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.048 -0400", hash_original_method = "8945167C96AD091C5C39DEC108C4839D", hash_generated_method = "84C5E27EED63249939FC5099014E7452")
     private void nativeLoadData(String baseUrl, String data,
             String mimeType, String encoding, String historyUrl) {
@@ -1594,11 +1635,13 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.048 -0400", hash_original_method = "64AB65E4A9095F9BBCDCF9CF6CF9A5F6", hash_generated_method = "863930E14611E1ACA6714E4256C8BCDF")
     private void nativeStopLoading() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.048 -0400", hash_original_method = "9D75E2E2AB8D83EF2AA67EF8FE72195D", hash_generated_method = "B33B2310F3327B3385836C7AB916AFE3")
     public boolean documentHasImages() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_272632334 = getTaintBoolean();
@@ -1606,6 +1649,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.048 -0400", hash_original_method = "10318A015094FE1A39B49B3070F280C0", hash_generated_method = "18F07B6012D74D89BE7B967DAE514F27")
     private boolean hasPasswordField() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136276811 = getTaintBoolean();
@@ -1622,6 +1666,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "2745608D69207B6EE74824552EF70660", hash_generated_method = "1A30370C37C5C66F114998E665F5DE65")
     private void setUsernamePassword(String username, String password) {
     }
@@ -1638,31 +1683,37 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "08E54613B59D770C860286634891B8BB", hash_generated_method = "850BDCB5411EE09BBA08F1498E765617")
     private void nativeOrientationChanged(int orientation) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "68B2D8AE5CF2C1C845D97B94EDB581CC", hash_generated_method = "9AFA00EEEC77D42FCE75299FE8ECAEF0")
     private void nativeAuthenticationProceed(int handle, String username, String password) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "9DEA51422898C7E38A3DECD149992B9B", hash_generated_method = "24B56D25B8D4C69BCC49A3029D0425ED")
     private void nativeAuthenticationCancel(int handle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "DFE86F393FFB1B33336576462A995D77", hash_generated_method = "1D2385A72CC74EB320478672DDD4F738")
     private void nativeSslCertErrorProceed(int handle) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "8A69525C805CE3B5326B3888FD841CA0", hash_generated_method = "0210D16961B93CFA3B6CC1A9AA6C2FFF")
     private void nativeSslCertErrorCancel(int handle, int certError) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.052 -0400", hash_original_method = "81F222D4FD7D3F4B597DBD7F9BD0D106", hash_generated_method = "9F314486FB3D8DB453A1ECAAFCC05CF8")
      void nativeSslClientCert(int handle,
                                     byte[] pkcs8EncodedPrivateKey,
@@ -1680,6 +1731,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.053 -0400", hash_original_method = "F95D370518D151DA0A0757957627AE19", hash_generated_method = "1EB136CC2864A33BD099C5C24566BD76")
     private boolean nativeGetShouldStartScrolledRight(int nativeBrowserFrame) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1808729217 = getTaintBoolean();
@@ -1703,6 +1755,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.053 -0400", hash_original_method = "3638F495C0637CBBD96B9D8F0DA8CFC2", hash_generated_method = "9874BE612BFD391CAB7FF85466DEDBE9")
         public synchronized void addHandler(Handler h) {
             addTaint(h.getTaint());
@@ -1712,6 +1765,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_334290433 =         mSearchBox;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.053 -0400", hash_original_method = "2BDCB7974021DF1350762A5BB88607D6", hash_generated_method = "EA9D4434CA0E68C2A4165F2AED917AD6")
         public void onConfigurationChanged(Configuration newConfig) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1762,6 +1816,7 @@ for(WeakReference weak : handlersToRemove)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.054 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
         public void onLowMemory() {
             //DSFIXME:  CODE0009: Possible callback target function detected

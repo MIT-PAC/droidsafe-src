@@ -147,6 +147,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.172 -0400", hash_original_method = "16D0E6CF226A4618D75D1B422CC8FCDF", hash_generated_method = "69883BB357718DBD4483B3F329F8F78F")
     public boolean isReliable() {
         boolean varB326B5062B2F0E69046810717534CB09_296194946 = (true);
@@ -157,6 +158,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.172 -0400", hash_original_method = "D9B233459FD7A72AC548D3BF0383246D", hash_generated_method = "4BBC087E0C0EDCC1396542B103C26268")
     public void close() {
         try 
@@ -189,6 +191,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.173 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "6C04E3DB846DBAEF74BBC2573A244314")
     public SIPTransactionStack getSIPStack() {
 SIPTransactionStack var0FC1F21ED47F4C0C48881B0DAF112A16_1478242929 =         sipStack;
@@ -199,6 +202,7 @@ SIPTransactionStack var0FC1F21ED47F4C0C48881B0DAF112A16_1478242929 =         sip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.173 -0400", hash_original_method = "0D1837A773C1185791E8B7504B01CB2E", hash_generated_method = "FA05ACF19E1027DEBDF29271D13C2384")
     public String getTransport() {
 String var5830B3663182492A52FBA750E975BF49_1656821954 =         "TCP";
@@ -209,6 +213,7 @@ String var5830B3663182492A52FBA750E975BF49_1656821954 =         "TCP";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.173 -0400", hash_original_method = "59CC467573DB54CDCEF540AE63F43735", hash_generated_method = "DB98B1F0C960C32924DFBA2B4F0514C9")
     public String getPeerAddress() {
     if(peerAddress != null)        
@@ -231,6 +236,7 @@ String var5C0621B65E898A3E2061530CDD6F20D5_737566983 =         getHost();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.173 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "084CB092FD75FAD2EE6E9F9006DC759C")
     protected InetAddress getPeerInetAddress() {
 InetAddress var73F565C01AAA4A3FCE210191AB87441A_486835722 =         peerAddress;
@@ -241,6 +247,7 @@ InetAddress var73F565C01AAA4A3FCE210191AB87441A_486835722 =         peerAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.174 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "CF9D1F9BD1D7111D1D64BFF44867EB93")
     public String getPeerProtocol() {
 String var6B5233BA3C9F99490638F3C0025EA1D3_1407174560 =         this.peerProtocol;
@@ -710,6 +717,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_1407174560 =         this.peerProtoco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.185 -0400", hash_original_method = "588DDE9A59AB3DB90B101694890D3C99", hash_generated_method = "B3F2B3138D609DF54D84403064B1C6C7")
     protected void uncache() {
     if(isCached && !isRunning)        
@@ -723,6 +731,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_1407174560 =         this.peerProtoco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.185 -0400", hash_original_method = "A3550F5A4A6E2000221840888A01CA8A", hash_generated_method = "6F3206EA5FA47F61B2E3B11404816AE1")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -761,6 +770,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_1407174560 =         this.peerProtoco
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.186 -0400", hash_original_method = "2DA7D0C3A567190913C90FAF0FAC7F20", hash_generated_method = "509C344BF3D087A3A460ACD21BB8D00E")
     public String getKey() {
     if(this.key != null)        
@@ -786,6 +796,7 @@ String var28438ADFC1608AABD649C75D36B519BF_1038163474 =             this.key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.186 -0400", hash_original_method = "11E5C6A8F9691D7C5E18B4FE0A22A301", hash_generated_method = "E550435AFA1B5A68BAEA379A69B980E0")
     public String getViaHost() {
 String varE7034C1BD80371A3EE602CF085A2802A_923441358 =         myAddress;
@@ -796,6 +807,7 @@ String varE7034C1BD80371A3EE602CF085A2802A_923441358 =         myAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.187 -0400", hash_original_method = "97574FAF366AF2CA74D034931ECBD71B", hash_generated_method = "99EBF41A951863F46F8E737DCBDC98F2")
     public int getViaPort() {
         int varAB99FC537949F4680FB25A11A38B0042_889935036 = (myPort);
@@ -806,6 +818,7 @@ String varE7034C1BD80371A3EE602CF085A2802A_923441358 =         myAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.187 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "B4D925BD5D7223F214FC5FD44CCAA43B")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1464354764 = (peerPort);
@@ -816,6 +829,7 @@ String varE7034C1BD80371A3EE602CF085A2802A_923441358 =         myAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.187 -0400", hash_original_method = "B210BD4A713B5B982D229CB138437A53", hash_generated_method = "D863E662319AECF89357992486384D65")
     public int getPeerPacketSourcePort() {
         int var863AF973F56BABC8062C15431981E0EC_401757654 = (this.peerPort);
@@ -826,6 +840,7 @@ String varE7034C1BD80371A3EE602CF085A2802A_923441358 =         myAddress;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.187 -0400", hash_original_method = "97EAFF51EEE94208DA244D522468157C", hash_generated_method = "DB1FED4F005871DFB79BD6B051EB8FA7")
     public InetAddress getPeerPacketSourceAddress() {
 InetAddress varCB519CCE5105BD67F1450F075D5E971F_1027949073 =         this.peerAddress;
@@ -836,6 +851,7 @@ InetAddress varCB519CCE5105BD67F1450F075D5E971F_1027949073 =         this.peerAd
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.188 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "633DC11625C61C4C51C9AE9C1490FBBB")
     public boolean isSecure() {
         boolean var68934A3E9455FA72420237EB05902327_733289455 = (false);

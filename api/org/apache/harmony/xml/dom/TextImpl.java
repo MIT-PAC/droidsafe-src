@@ -19,6 +19,7 @@ public class TextImpl extends CharacterDataImpl implements Text {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.961 -0400", hash_original_method = "F5AD87001A4CE84E4D3D0566BEEE7118", hash_generated_method = "44743743CA6F6A90DC5D6BAFDEA2589A")
     @Override
     public String getNodeName() {
@@ -30,6 +31,7 @@ String var479BE8C6ABF395546FF8B94D5B3DB44D_276893398 =         "#text";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.962 -0400", hash_original_method = "C38FDDE6CC592E744EE6602E5FF8812E", hash_generated_method = "73B872AA46B7287007C3E5D1D5DE7B7F")
     @Override
     public short getNodeType() {
@@ -143,6 +145,7 @@ Text varDC838461EE2FA0CA4C9BBB70A15456B0_998910394 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.964 -0400", hash_original_method = "9928E14A90ED22F7792AF824C555C38E", hash_generated_method = "436B1606C96BC16B17B1885505756984")
     private TextImpl firstTextNodeInCurrentRun() {
         TextImpl firstTextInCurrentRun = this;

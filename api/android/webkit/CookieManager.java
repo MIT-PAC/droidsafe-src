@@ -481,6 +481,7 @@ String var540C13E9E156B687226421B24F2DF178_1856118514 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.712 -0400", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "E349E3171C584B41701676E3CC873736")
     private synchronized void signalCookieOperationsStart() {
         pendingCookieOperations++;
@@ -745,6 +746,7 @@ ArrayList<Cookie> var7A32AB0BC299936B4ABF6C972D767041_1110539045 =         cooki
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.716 -0400", hash_original_method = "23D0913407E37C8868B97CA5EA461217", hash_generated_method = "E9139E4036FB7922E32DF7EF47AF9E4A")
     synchronized void syncedACookie(Cookie cookie) {
         addTaint(cookie.getTaint());

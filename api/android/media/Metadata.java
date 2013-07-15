@@ -270,17 +270,20 @@ Date varBD9B55B530F60709CCFA9E4F3BCA3194_1539058481 =             cal.getTime();
     }
 
     
-        public static int lastSytemId() {
+        @DSModeled(DSC.SAFE)
+    public static int lastSytemId() {
         return LAST_SYSTEM;
     }
 
     
-        public static int firstCustomId() {
+        @DSModeled(DSC.SAFE)
+    public static int firstCustomId() {
         return FIRST_CUSTOM;
     }
 
     
-        public static int lastType() {
+        @DSModeled(DSC.SAFE)
+    public static int lastType() {
         return LAST_TYPE;
     }
 

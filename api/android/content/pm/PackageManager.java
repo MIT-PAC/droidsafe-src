@@ -369,22 +369,26 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
     public abstract void updateUserFlags(int id, int flags);
 
     
-        public static boolean isSameUser(int uid1, int uid2) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isSameUser(int uid1, int uid2) {
         return getUserId(uid1) == getUserId(uid2);
     }
 
     
-        public static int getUserId(int uid) {
+        @DSModeled(DSC.SAFE)
+    public static int getUserId(int uid) {
         return uid / PER_USER_RANGE;
     }
 
     
-        public static int getUid(int userId, int appId) {
+        @DSModeled(DSC.SAFE)
+    public static int getUid(int userId, int appId) {
         return userId * PER_USER_RANGE + (appId % PER_USER_RANGE);
     }
 
     
-        public static int getAppId(int uid) {
+        @DSModeled(DSC.SAFE)
+    public static int getAppId(int uid) {
         return uid % PER_USER_RANGE;
     }
 

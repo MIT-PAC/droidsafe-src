@@ -74,6 +74,7 @@ T varF21683B7BF428041682AC146600794E7_295478551 =         array[i];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.830 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "97EFD0817708B083C9CA6C0BB60BCDD5")
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_1213634774 = (size);

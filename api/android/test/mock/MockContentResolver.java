@@ -78,6 +78,7 @@ IContentProvider var540C13E9E156B687226421B24F2DF178_418289423 =             nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.385 -0400", hash_original_method = "2BBC74854CB7DFF372BE1D3A080C6F9A", hash_generated_method = "B012D4724979141B3DA184589B19EA66")
     @Override
     public boolean releaseProvider(IContentProvider provider) {
@@ -90,6 +91,7 @@ IContentProvider var540C13E9E156B687226421B24F2DF178_418289423 =             nul
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.385 -0400", hash_original_method = "0D07CE2954E4C9CEFA50CEA6EA0149DC", hash_generated_method = "86F47FE5568F7BDABA7747D466F67FB7")
     @Override
     public void notifyChange(Uri uri,

@@ -57,6 +57,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.884 -0400", hash_original_method = "338EA256BE1472C967D04B115E1F5FA4", hash_generated_method = "8FE1A7911C19092C119347D7A13DD9D1")
     public void setAlwaysDrawHorizontalTrack(boolean alwaysDrawTrack) {
         mAlwaysDrawHorizontalTrack = alwaysDrawTrack;
@@ -65,6 +66,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.884 -0400", hash_original_method = "901AC7B8EB84A9D2458B7938E8E4C73B", hash_generated_method = "C66686FBF2DCE14707F1068103458953")
     public void setAlwaysDrawVerticalTrack(boolean alwaysDrawTrack) {
         mAlwaysDrawVerticalTrack = alwaysDrawTrack;
@@ -73,6 +75,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.885 -0400", hash_original_method = "0A81522E62255950E42918FC464ECE8D", hash_generated_method = "2AE145DB8EFF75BBD544721B6BC3B9AF")
     public boolean getAlwaysDrawVerticalTrack() {
         boolean varE1BAE08AA8010857DCC5896DD966EC0A_1979812167 = (mAlwaysDrawVerticalTrack);
@@ -83,6 +86,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.885 -0400", hash_original_method = "58B8563B0AE3601908934E7BD6ECE0D9", hash_generated_method = "2E2B2E850814DEC2300252E23F0117FE")
     public boolean getAlwaysDrawHorizontalTrack() {
         boolean var2B9368BA3124C9DDA5EF7E10AC8580EB_1892733740 = (mAlwaysDrawHorizontalTrack);
@@ -93,6 +97,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.886 -0400", hash_original_method = "0CC6554F6E9383DBFFA4FCF818E81542", hash_generated_method = "41E7271BD5B051A39FF389843213AD06")
     public void setParameters(int range, int offset, int extent, boolean vertical) {
     if(mVertical != vertical)        
@@ -277,6 +282,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.890 -0400", hash_original_method = "CF1FA0D3674C65E82EB702858CBA2EA8", hash_generated_method = "16FF5E5F308F4AEFD4C2E5B5A381D3D2")
     public void setVerticalThumbDrawable(Drawable thumb) {
     if(thumb != null)        
@@ -290,6 +296,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.890 -0400", hash_original_method = "95A534FB494475ED343603B1A863AD99", hash_generated_method = "76278313A4578813333311F1F2E2440F")
     public void setVerticalTrackDrawable(Drawable track) {
         mVerticalTrack = track;
@@ -298,6 +305,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.890 -0400", hash_original_method = "D314A45F62304CCC7D305EC252A7898A", hash_generated_method = "6FBE6B2D1E55F3C23288C88417E20532")
     public void setHorizontalThumbDrawable(Drawable thumb) {
     if(thumb != null)        
@@ -311,6 +319,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.891 -0400", hash_original_method = "AA2EFF46594CC873B99869053CAE3587", hash_generated_method = "DDECC2F11A8C08406C0CA76FF56AFC51")
     public void setHorizontalTrackDrawable(Drawable track) {
         mHorizontalTrack = track;
@@ -399,6 +408,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.892 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "6A069166BE6604666032098B557172D3")
     @Override
     public int getOpacity() {

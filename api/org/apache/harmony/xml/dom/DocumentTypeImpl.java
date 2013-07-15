@@ -66,6 +66,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.686 -0400", hash_original_method = "E9049B6D3137F3441BE811CFF59C0D40", hash_generated_method = "C93DF48B1F111F1383A6A999FDD178B2")
     @Override
     public String getNodeName() {
@@ -77,6 +78,7 @@ String var094FD20AC4EEFAADAC7ED29B93015D2D_24351218 =         qualifiedName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "7D99CB31F2E6992AF80C8FC45EE7DFBE", hash_generated_method = "7E2C418CB9343930851279FA51AE9606")
     @Override
     public short getNodeType() {
@@ -88,6 +90,7 @@ String var094FD20AC4EEFAADAC7ED29B93015D2D_24351218 =         qualifiedName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "B18563406FBA7004CBA96EE0AEED3600", hash_generated_method = "D1ABB8ECB603DAC52D1E60ABDE135859")
     public NamedNodeMap getEntities() {
 NamedNodeMap var540C13E9E156B687226421B24F2DF178_2011122165 =         null;
@@ -98,6 +101,7 @@ NamedNodeMap var540C13E9E156B687226421B24F2DF178_2011122165 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "1ACC60D85C446C7470ADF2E2CD7BECFD", hash_generated_method = "C571D6C15C17142826A898142426A5AB")
     public String getInternalSubset() {
 String var540C13E9E156B687226421B24F2DF178_1243182241 =         null;
@@ -108,6 +112,7 @@ String var540C13E9E156B687226421B24F2DF178_1243182241 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.687 -0400", hash_original_method = "4B51CCD327B7473965DE5BE67319C7E7", hash_generated_method = "D7958B1064FFD65948386090858BF567")
     public String getName() {
 String var094FD20AC4EEFAADAC7ED29B93015D2D_2136805084 =         qualifiedName;
@@ -118,6 +123,7 @@ String var094FD20AC4EEFAADAC7ED29B93015D2D_2136805084 =         qualifiedName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "521EA3163F33B14ADC5EA4FB49D4CB7E", hash_generated_method = "998CB3EBA474E8461A71021EA07418A9")
     public NamedNodeMap getNotations() {
 NamedNodeMap var540C13E9E156B687226421B24F2DF178_1371397196 =         null;
@@ -128,6 +134,7 @@ NamedNodeMap var540C13E9E156B687226421B24F2DF178_1371397196 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "4C35CCD7459CBF108086CC78B69AE7CD")
     public String getPublicId() {
 String var76991CCBEF027A0871CF61642EBA53AB_1515292021 =         publicId;
@@ -138,6 +145,7 @@ String var76991CCBEF027A0871CF61642EBA53AB_1515292021 =         publicId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "792A0E6F22E4008FAAF4D743B3A2C6C9")
     public String getSystemId() {
 String varB7D0727ACC7388EA86587212DD1C6E9F_1484164643 =         systemId;
@@ -148,6 +156,7 @@ String varB7D0727ACC7388EA86587212DD1C6E9F_1484164643 =         systemId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.688 -0400", hash_original_method = "76D2ADCA92D33C128096DC8FD3BC4D92", hash_generated_method = "61271644990D6E1039ED4A8197563219")
     @Override
     public String getTextContent() throws DOMException {

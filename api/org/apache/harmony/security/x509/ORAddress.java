@@ -20,6 +20,7 @@ public final class ORAddress {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.213 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "79DF048A7160D522ED09694696149A3A")
     public byte[] getEncoded() {
     if(encoding == null)        

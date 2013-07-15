@@ -279,6 +279,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.150 -0400", hash_original_method = "0886E73CB45EE282B3AFC0BE37F5BE6C", hash_generated_method = "3CC21697F3F26219E4150B47AA14D8BA")
     private int modulateAlpha(int alpha) {
         addTaint(alpha);
@@ -543,6 +544,7 @@ Path var519CAB76968E93D45E4C92AC8B95C0FE_1364931709 =         ringPath;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.162 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "B157425A7FC06C2FE7F337C141AA7EDD")
     @Override
     public int getOpacity() {
@@ -992,6 +994,7 @@ switch(angle){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.197 -0400", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "92AC43DEC18166FB1DC0EA65896D5BDE")
     @Override
     public int getIntrinsicWidth() {
@@ -1003,6 +1006,7 @@ switch(angle){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.198 -0400", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "C4FDB4F3D30EF4FFCD835572BE9AE84B")
     @Override
     public int getIntrinsicHeight() {
@@ -1272,6 +1276,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.216 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "A559729D30BF9E28672CE278551F3E29")
         @Override
         public int getChangingConfigurations() {
@@ -1283,6 +1288,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.216 -0400", hash_original_method = "0F10CA732F07DD9FE38CDA7CBCDABA95", hash_generated_method = "A3BF6B156577AD7EA2864200A6B2814C")
         public void setShape(int shape) {
             mShape = shape;
@@ -1291,6 +1297,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.217 -0400", hash_original_method = "6060B2E1C6E57F715C4E87E13018C121", hash_generated_method = "3AF067B4A790D8213658929FBB0E68D9")
         public void setGradientType(int gradient) {
             mGradient = gradient;
@@ -1299,6 +1306,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.217 -0400", hash_original_method = "90316D628B1BD1AAC4CD928A74CE9FD1", hash_generated_method = "4D02E3166FD3347AE6D9D6E0C8FEC8F1")
         public void setGradientCenter(float x, float y) {
             mCenterX = x;
@@ -1309,6 +1317,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.218 -0400", hash_original_method = "829DF5400D64CA55E626852A56B8E3B1", hash_generated_method = "3317E7F80C009F128AAB1DCE552FD5F5")
         public void setSolidColor(int argb) {
             mHasSolidColor = true;
@@ -1321,6 +1330,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.219 -0400", hash_original_method = "0625749E363A97E3FB7A01916551E363", hash_generated_method = "C44E1F10EA13CAA1D96956245AF57DBD")
         public void setStroke(int width, int color) {
             mStrokeWidth = width;
@@ -1331,6 +1341,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.220 -0400", hash_original_method = "62694733BCC23283C4956406C2DF326D", hash_generated_method = "215F441E5518AD68D917B36A2FBC122A")
         public void setStroke(int width, int color, float dashWidth, float dashGap) {
             mStrokeWidth = width;
@@ -1345,6 +1356,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.220 -0400", hash_original_method = "55392135B56F7FBDA5D3E3F94BBF1F23", hash_generated_method = "6DD2CFD87AEC9286FB7AD8FE993F4EF8")
         public void setCornerRadius(float radius) {
     if(radius < 0)            
@@ -1362,6 +1374,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.221 -0400", hash_original_method = "17EB6FE4DB8FF42541FF19B71843B23B", hash_generated_method = "DBFBC3C26C02E8F16F6EBAC59B75984F")
         public void setCornerRadii(float[] radii) {
             mRadiusArray = radii;
@@ -1377,6 +1390,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.222 -0400", hash_original_method = "2560E21D822EB58266D32B5FBCFCA888", hash_generated_method = "937C2CF909C70F6CCE7A1CB2903577B5")
         public void setSize(int width, int height) {
             mWidth = width;
@@ -1387,6 +1401,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1668304601 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.222 -0400", hash_original_method = "2D6DAC1104AA515AA78A28549F71CF0A", hash_generated_method = "47173080DDFD0B34A1D1F0DBFA24FE39")
         public void setGradientRadius(float gradientRadius) {
             mGradientRadius = gradientRadius;

@@ -82,6 +82,7 @@ View varF556D8F63673A371CE9EF1B174A0164C_505366429 =         activityChooserView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.491 -0400", hash_original_method = "35CF29CD4DCA84D0FC63AC1A69E282B0", hash_generated_method = "15EFACB60B97C39230109EEC0A71947C")
     @Override
     public boolean hasSubMenu() {
@@ -138,6 +139,7 @@ for(int i = 0;i < expandedActivityCount;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.492 -0400", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "DE3C33B3D27BB7832A9685A249945989")
     public void setShareIntent(Intent shareIntent) {
         addTaint(shareIntent.getTaint());
@@ -225,6 +227,7 @@ for(int i = 0;i < expandedActivityCount;i++)
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.493 -0400", hash_original_method = "5A8A50866214BBC9FA1FE4AEB29A128B", hash_generated_method = "4E9B355457F6EB7205C141605294D1B2")
         @Override
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {

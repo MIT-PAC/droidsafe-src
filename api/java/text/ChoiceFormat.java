@@ -214,6 +214,7 @@ StringBuffer var4279DFD88F47264B789C0548FD6DCA8B_1690290145 =         format((do
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.490 -0400", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "22F08E8B06568AB38688B00B94299A46")
     public Object[] getFormats() {
 Object[] var90D971D276260C19EE1F729DAA26FA65_1303755815 =         choiceFormats;
@@ -224,6 +225,7 @@ Object[] var90D971D276260C19EE1F729DAA26FA65_1303755815 =         choiceFormats;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.491 -0400", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "70AB6D339E61076A876F78535EC3D737")
     public double[] getLimits() {
         double[] varDACC316D060F4EC4A159A2F45A706659_893396536 = (choiceLimits);

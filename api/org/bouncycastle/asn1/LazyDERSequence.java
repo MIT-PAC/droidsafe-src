@@ -27,6 +27,7 @@ public class LazyDERSequence extends DERSequence {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.317 -0400", hash_original_method = "F52BE1D6A2A2A6E978CE6B87E0C287FA", hash_generated_method = "4066B9F0C1E6B43C8F07FEF950399A2A")
     private void parse() {
         Enumeration en = new LazyDERConstructionEnumeration(encoded);
@@ -46,6 +47,7 @@ public class LazyDERSequence extends DERSequence {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.317 -0400", hash_original_method = "D55432484A7204F62197A1C42F1222BB", hash_generated_method = "0C1EC9139AC19B1D72E5532BCE576EDB")
     public synchronized DEREncodable getObjectAt(int index) {
         addTaint(index);
@@ -65,6 +67,7 @@ DEREncodable varC3804AE80A9D974831C6A8C893D1AF39_718516268 =         super.getOb
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.317 -0400", hash_original_method = "939539D3FCA2F2720237F25863622D9D", hash_generated_method = "1223CC3C0F33CD39AF254FAF24C4E352")
     public synchronized Enumeration getObjects() {
     if(parsed)        
@@ -85,6 +88,7 @@ Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_805907160 =         new LazyDERC
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.318 -0400", hash_original_method = "4DAF8F12C79E02A5B25C6CFF5DA9F3C5", hash_generated_method = "96BCBBE698BC9E1AC9F8246573C7A1C4")
     public int size() {
     if(size < 0)        
@@ -116,6 +120,7 @@ Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_805907160 =         new LazyDERC
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.318 -0400", hash_original_method = "46D9E51ED6BB4A9637D586153D86E513", hash_generated_method = "7A5DF5C27037FCBEFF2C921FE01002E3")
      void encode(
         DEROutputStream out) throws IOException {

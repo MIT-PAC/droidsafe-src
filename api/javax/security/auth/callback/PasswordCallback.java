@@ -29,6 +29,7 @@ public class PasswordCallback implements Callback, Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.008 -0400", hash_original_method = "3C861E594BCF1170EC69D71F98E7DC21", hash_generated_method = "3D7C63B0A337986962084DDDA2CA4F52")
     private void setPrompt(String prompt) throws IllegalArgumentException {
     if(prompt == null || prompt.length() == 0)        
@@ -46,6 +47,7 @@ public class PasswordCallback implements Callback, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.008 -0400", hash_original_method = "9CD919A2E5CE4DE3A8693DD7DF368A07", hash_generated_method = "9A9BFB7C0B89F10E633FA9F76DCBDD58")
     public String getPrompt() {
 String varE4FB060A074D4292A4C6C936BB93312C_1415375218 =         prompt;
@@ -56,6 +58,7 @@ String varE4FB060A074D4292A4C6C936BB93312C_1415375218 =         prompt;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.008 -0400", hash_original_method = "A27AE4B1B247F3C75C8013A45B07AFAD", hash_generated_method = "0A9FB1F3537F4A39F615D4E456A2C07D")
     public boolean isEchoOn() {
         boolean var34D9638C7D1B78E7942D447C721B97E1_1945511141 = (echoOn);
@@ -110,6 +113,7 @@ String varE4FB060A074D4292A4C6C936BB93312C_1415375218 =         prompt;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.021 -0400", hash_original_method = "C115B79B56D59F71CAFFFA3A677E976D", hash_generated_method = "3D63DBB9F303C4EB0A15E157DA32C4C7")
     public void clearPassword() {
     if(inputPassword != null)        

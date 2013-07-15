@@ -39,6 +39,7 @@ for(Type type : types)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.378 -0400", hash_original_method = "521B9354050D45CFE1C9313A9C3FFED0", hash_generated_method = "312AD3D581E88C7FB55ED722FD25999F")
      void add(Type type) {
         addTaint(type.getTaint());
@@ -57,6 +58,7 @@ for(Type type : types)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.378 -0400", hash_original_method = "5C54E587FAEC26FCFBB8E0F344888E86", hash_generated_method = "1FEEEC93F5A11973109C42B13B7E5712")
      int length() {
         int var09DE4273DF28F413F1060AF72C4E73F0_720585895 = (types.size());
@@ -67,6 +69,7 @@ for(Type type : types)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.379 -0400", hash_original_method = "631AD2F872BA627B3C9B69A500832CF8", hash_generated_method = "A5956C4B329506009AAD4B2B18480B53")
     public Type[] getResolvedTypes() {
         Type[] result = resolvedTypes;
@@ -112,6 +115,7 @@ Type[] varDC838461EE2FA0CA4C9BBB70A15456B0_307896444 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.380 -0400", hash_original_method = "E058D2B2430FADEC45CDF66AF212F70E", hash_generated_method = "838C7103B60F947867ABCEE566E21F8B")
     @Override
     public String toString() {

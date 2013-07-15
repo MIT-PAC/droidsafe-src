@@ -115,6 +115,7 @@ String varBC25A683492661AD32E0D02950883082_1644072259 =         "BluetoothHealth
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.190 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BCCEA2C25606ED862B2ADCA4213B964E")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_516708681 = (0);
@@ -125,6 +126,7 @@ String varBC25A683492661AD32E0D02950883082_1644072259 =         "BluetoothHealth
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.191 -0400", hash_original_method = "238D6A24727CDBAF0BB96C458473CE4A", hash_generated_method = "68CDC6630FA8DAB7D982D4504010A728")
     public int getDataType() {
         int var907A03EF868C95D9758028C546F47838_898272885 = (mDataType);
@@ -135,6 +137,7 @@ String varBC25A683492661AD32E0D02950883082_1644072259 =         "BluetoothHealth
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.192 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AC177E9C5F646B3CBAD3E66AB6A9EF57")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_424711843 =         mName;
@@ -145,6 +148,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_424711843 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.192 -0400", hash_original_method = "5596828740BFEA579FE112D16B3097DF", hash_generated_method = "BBB7FC670E01D68E58FF0341BE449B54")
     public int getRole() {
         int var6F68F3585D2AEBC6A43B8C630A289FED_1527095124 = (mRole);
@@ -155,6 +159,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_424711843 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.193 -0400", hash_original_method = "1B2362EE05FDF056E4EF857CCB8AB5A5", hash_generated_method = "582409DE19398F8CF94BD70894C9AAFE")
     public int getChannelType() {
         int varC29796028A7F353A6C6E1CD0E951F8F0_1122002585 = (mChannelType);

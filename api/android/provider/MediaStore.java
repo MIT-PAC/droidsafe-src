@@ -37,7 +37,8 @@ public final class MediaStore {
     }
 
 
-        public static Uri getMediaScannerUri() {
+        @DSModeled(DSC.SPEC)
+    public static Uri getMediaScannerUri() {
         return Uri.parse(CONTENT_AUTHORITY_SLASH + "none/media_scanner");
     }
 
@@ -68,7 +69,8 @@ public final class MediaStore {
         }
 
 
-                public static Uri getContentUri(String volumeName) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getContentUri(String volumeName) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                     "/file");
         }
@@ -81,7 +83,8 @@ public final class MediaStore {
         }
 
         
-                public static Uri getMtpObjectsUri(String volumeName) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getMtpObjectsUri(String volumeName) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                     "/object");
         }
@@ -149,7 +152,8 @@ public final class MediaStore {
         }
 
 
-                private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolver cr, BitmapFactory.Options options) {
+                @DSModeled(DSC.SPEC)
+        private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolver cr, BitmapFactory.Options options) {
             Bitmap bitmap = null;
             Uri thumbUri = null;
             try {
@@ -172,7 +176,8 @@ public final class MediaStore {
         }
 
         
-                static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
+                @DSModeled(DSC.SPEC)
+        static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
                 long groupId) {
             Uri cancelUri = baseUri.buildUpon().appendQueryParameter("cancel", "1")
                     .appendQueryParameter("orig_id", String.valueOf(origId))
@@ -187,7 +192,8 @@ public final class MediaStore {
         }
 
         
-                static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int kind,
+                @DSModeled(DSC.SPEC)
+        static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int kind,
                 BitmapFactory.Options options, Uri baseUri, boolean isVideo) {
             Bitmap bitmap = null;
             String filePath = null;
@@ -440,7 +446,8 @@ public final class MediaStore {
             }
 
             
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/images/media");
             }
@@ -518,7 +525,8 @@ public final class MediaStore {
             }
 
             
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/images/thumbnails");
             }
@@ -667,13 +675,15 @@ public final class MediaStore {
             }
 
 
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/media");
             }
 
             
-                        public static Uri getContentUriForPath(String path) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUriForPath(String path) {
                 return (path.startsWith(Environment.getExternalStorageDirectory().getPath()) ?
                         EXTERNAL_CONTENT_URI : INTERNAL_CONTENT_URI);
             }
@@ -714,13 +724,15 @@ public final class MediaStore {
             }
 
 
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/genres");
             }
 
             
-                        public static Uri getContentUriForAudioId(String volumeName, int audioId) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUriForAudioId(String volumeName, int audioId) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/media/" + audioId + "/genres");
             }
@@ -788,7 +800,8 @@ public final class MediaStore {
             }
 
 
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/playlists");
             }
@@ -876,7 +889,8 @@ public final class MediaStore {
             }
 
 
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/artists");
             }
@@ -932,7 +946,8 @@ public final class MediaStore {
             }
 
 
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/albums");
             }
@@ -1112,7 +1127,8 @@ public final class MediaStore {
             }
 
 
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/video/media");
             }
@@ -1171,7 +1187,8 @@ public final class MediaStore {
             }
 
             
-                        public static Uri getContentUri(String volumeName) {
+                        @DSModeled(DSC.SPEC)
+            public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/video/thumbnails");
             }

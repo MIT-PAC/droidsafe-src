@@ -97,7 +97,8 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
-        public static AlgorithmIdentifier getInstance(
+        @DSModeled(DSC.SPEC)
+    public static AlgorithmIdentifier getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
@@ -126,6 +127,7 @@ public class AlgorithmIdentifier extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.410 -0400", hash_original_method = "CD881EFC58E30EDA4D15D9E8685CDAFE", hash_generated_method = "D423C9463CC8537329727323F60ACD0B")
     public ASN1ObjectIdentifier getAlgorithm() {
 ASN1ObjectIdentifier var554FF09B66A4F1AE1E145F3ACDB8AE2B_740864200 =         new ASN1ObjectIdentifier(objectId.getId());
@@ -136,6 +138,7 @@ ASN1ObjectIdentifier var554FF09B66A4F1AE1E145F3ACDB8AE2B_740864200 =         new
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.410 -0400", hash_original_method = "494BC62B0A8F124F83635D3540B715A4", hash_generated_method = "F492981BE9CCF4A2124A29B74FA48D1E")
     public DERObjectIdentifier getObjectId() {
 DERObjectIdentifier varDDC1E4C9E86BED9BF72D472958F53326_915821536 =         objectId;
@@ -146,6 +149,7 @@ DERObjectIdentifier varDDC1E4C9E86BED9BF72D472958F53326_915821536 =         obje
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.410 -0400", hash_original_method = "89C55006FD45E6E61AF55DE1360B9A68", hash_generated_method = "7D8B90A063B57304D394016CD15D15D0")
     public DEREncodable getParameters() {
 DEREncodable var3CB0A38B794BDEDADB1F50256E0AE35B_2055964195 =         parameters;
@@ -156,6 +160,7 @@ DEREncodable var3CB0A38B794BDEDADB1F50256E0AE35B_2055964195 =         parameters
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.410 -0400", hash_original_method = "51F3CA499FC5330FCCD6B589EECABC9B", hash_generated_method = "F57882D20CA010A53C0DC6C40624E46B")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

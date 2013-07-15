@@ -15,6 +15,7 @@ public class AlertInfoList extends SIPHeaderList<AlertInfo> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.731 -0400", hash_original_method = "DA21929F9B4B968B70B27DDE76B9FF23", hash_generated_method = "C1262CAA94EA6E6A1F3DD8725B1814D4")
     public Object clone() {
         AlertInfoList retval = new AlertInfoList();

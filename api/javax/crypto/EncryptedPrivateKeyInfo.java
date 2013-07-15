@@ -184,11 +184,13 @@ public class EncryptedPrivateKeyInfo {
     }
 
     
-        private static boolean isNullValue(byte[] toCheck) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isNullValue(byte[] toCheck) {
         return toCheck[0] == 5 && toCheck[1] == 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.132 -0400", hash_original_method = "099B16E0CAD27366561935338A7E9D49", hash_generated_method = "D7F10DC269DDDC06E45BBE998A24E93D")
     public String getAlgName() {
 String var519B4DA5D12B38800F4F5DBB6B79043D_1922266275 =         algName;
@@ -199,6 +201,7 @@ String var519B4DA5D12B38800F4F5DBB6B79043D_1922266275 =         algName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.132 -0400", hash_original_method = "E53778AACD7278B4FF9EA916DFF39F89", hash_generated_method = "4E7CF39CEA198A3C9B19A11E33A6AAD6")
     public AlgorithmParameters getAlgParameters() {
 AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1312749342 =         algParameters;

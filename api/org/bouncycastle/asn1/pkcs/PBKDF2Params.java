@@ -68,7 +68,8 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
-        public static PBKDF2Params getInstance(
+        @DSModeled(DSC.SPEC)
+    public static PBKDF2Params getInstance(
         Object  obj) {
         if (obj instanceof PBKDF2Params)
         {
@@ -82,6 +83,7 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.406 -0400", hash_original_method = "5423221662EFD73C70147CAB8114C396", hash_generated_method = "A8B55C30954256E5CC5FAD3305F83656")
     public byte[] getSalt() {
         byte[] var225742414AAD58D749DE2AEF6A3EF7B3_880256056 = (octStr.getOctets());
@@ -92,6 +94,7 @@ public class PBKDF2Params extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.407 -0400", hash_original_method = "1C8F1DF1E9A7C9D74F917C50A0F9295E", hash_generated_method = "2950AB7DA2DB9B34E2A9C32ED87152F1")
     public BigInteger getIterationCount() {
 BigInteger var53FCCDFC6E49719A6EF34AD5B4B147C7_157933525 =         iterationCount.getValue();
@@ -102,6 +105,7 @@ BigInteger var53FCCDFC6E49719A6EF34AD5B4B147C7_157933525 =         iterationCoun
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.407 -0400", hash_original_method = "05FD7C7D47C946F5351B5DDBB4ABDC60", hash_generated_method = "82AEBEE068DE6527BB847139428822A8")
     public BigInteger getKeyLength() {
     if(keyLength != null)        
@@ -122,6 +126,7 @@ BigInteger var540C13E9E156B687226421B24F2DF178_1321302839 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.407 -0400", hash_original_method = "B60CD10E8E03E12312566D8BFE3F0B82", hash_generated_method = "BC724238365FE4F2FCD44952E385544D")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

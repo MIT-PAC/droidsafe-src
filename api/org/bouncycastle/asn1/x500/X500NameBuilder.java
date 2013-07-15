@@ -24,6 +24,7 @@ public class X500NameBuilder {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.745 -0400", hash_original_method = "B523CEAB6DE32883E9365149ACA12057", hash_generated_method = "F17AF5BBB36B0858C9EC789CF493FE54")
     public X500NameBuilder addRDN(ASN1ObjectIdentifier oid, String value) {
         addTaint(value.getTaint());
@@ -38,6 +39,7 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_128951762 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.745 -0400", hash_original_method = "8590615114869FAEC1B946165AEDD39D", hash_generated_method = "535F9A31AE7548C8B73E71C6742E9820")
     public X500NameBuilder addRDN(ASN1ObjectIdentifier oid, ASN1Encodable value) {
         addTaint(value.getTaint());
@@ -52,6 +54,7 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_529135937 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.746 -0400", hash_original_method = "3E5E6DF77AF598ABE6D42C6639692F78", hash_generated_method = "375AFC401EFFC0E7322B3DE5B5C23616")
     public X500NameBuilder addRDN(AttributeTypeAndValue attrTAndV) {
         addTaint(attrTAndV.getTaint());
@@ -65,6 +68,7 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_1031688153 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.746 -0400", hash_original_method = "273A600B6E97E185C3AB8807EACFE39D", hash_generated_method = "7BE1D00183B696CA2D6474A65E5386F8")
     public X500NameBuilder addMultiValuedRDN(ASN1ObjectIdentifier[] oids, String[] values) {
         addTaint(values[0].getTaint());
@@ -87,6 +91,7 @@ X500NameBuilder varD7F2C29827E72CD1BB5CBC1E148ADA09_1508163441 =         addMult
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.747 -0400", hash_original_method = "19CADD9F3E05278519C8972C40F988FF", hash_generated_method = "32D48F0AE6D2A0A57C7760B363D7210B")
     public X500NameBuilder addMultiValuedRDN(ASN1ObjectIdentifier[] oids, ASN1Encodable[] values) {
         addTaint(values[0].getTaint());
@@ -109,6 +114,7 @@ X500NameBuilder var9D2F985167BE7E1703BB252DA3E09BD5_640486827 =         addMulti
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.747 -0400", hash_original_method = "3AFEEFAA1A94C00426001446F3A2411A", hash_generated_method = "7D37C96148CC0EB63C7CCEF254CB23F8")
     public X500NameBuilder addMultiValuedRDN(AttributeTypeAndValue[] attrTAndVs) {
         addTaint(attrTAndVs[0].getTaint());
@@ -122,6 +128,7 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_2082907630 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.748 -0400", hash_original_method = "6DE1D9D13ABB402C9E6AC772336CF9FE", hash_generated_method = "CF630A12A00A8B3AB478C867A5C3150F")
     public X500Name build() {
         RDN[] vals = new RDN[rdns.size()];

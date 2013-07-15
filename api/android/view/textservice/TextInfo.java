@@ -60,6 +60,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.727 -0400", hash_original_method = "573D2D5BE8E27F6CA8F77B871E9B67A7", hash_generated_method = "CD4FFFA8241B59E73A1BFAF3A3EA654A")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -75,6 +76,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "B1B6208D7EB8042B5F9EFB950269430E")
     public String getText() {
 String var7F7ECB4B14362FFBA020956966B29A66_1126417318 =         mText;
@@ -85,6 +87,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_1126417318 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "AC1EDA43FC7023F4D4E1DFBFEFAF3924", hash_generated_method = "370C04EB7BD1A7313D624F6D2B492469")
     public int getCookie() {
         int var6E854C680205E153D6A9DE7BA337DEAC_1915980746 = (mCookie);
@@ -95,6 +98,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_1126417318 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "FE2AB8ECE26FD7A4F1B7769F13B3F465", hash_generated_method = "175FA13C764A94B7658801CF7EB9E4C7")
     public int getSequence() {
         int varDFA2A9B34C4EF6A435AC62654D16526E_48620116 = (mSequence);
@@ -105,6 +109,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_1126417318 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "39FC27C2156DBE10E21169150C9A74C5")
     @Override
     public int describeContents() {

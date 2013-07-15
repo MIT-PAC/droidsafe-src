@@ -52,6 +52,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.046 -0400", hash_original_method = "27637E49BAB94EC056B8444376552B7F", hash_generated_method = "DCA0D051AEF443D431CA0343464ACE7D")
     @Override
      boolean isValid() {
@@ -63,6 +64,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.047 -0400", hash_original_method = "63622532C5FA451BFFE13D4E08C1E4DD", hash_generated_method = "F15CF29CF1D7A179A64BE571767DD746")
     @Override
      void resize(int width, int height) {
@@ -92,6 +94,7 @@ class GLES20RenderLayer extends GLES20Layer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.047 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "A4DF6DB9D80F1EA4A2733D0B0EA434BB")
     @Override
      HardwareCanvas getCanvas() {
@@ -103,6 +106,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_485443277 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.047 -0400", hash_original_method = "3C804CAC1F48115A32BF6D1258E6260C", hash_generated_method = "7C99D1B4E1A76EE922E70A021205AF89")
     @Override
      void end(Canvas currentCanvas) {
@@ -118,6 +122,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_485443277 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.048 -0400", hash_original_method = "C87B2ED046DB5084DDAC583F9566C531", hash_generated_method = "85E1E973B0E7848015306605F664268C")
     @Override
      HardwareCanvas start(Canvas currentCanvas) {
@@ -137,6 +142,7 @@ HardwareCanvas varC98421EDCA5974E2CF23DD5BCD11D32D_1630216142 =         getCanva
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.048 -0400", hash_original_method = "4B8F7BEEB4E6A31727A7AE50B1045BA3", hash_generated_method = "D84BFEAF1F7F2DD612ECDA04718E2436")
     @Override
      void setTransform(Matrix matrix) {

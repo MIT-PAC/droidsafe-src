@@ -74,6 +74,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.930 -0400", hash_original_method = "088E691065B085AAA9856C71AD537C28", hash_generated_method = "E8C73FEF0F51A279D70C6CBB74345EF0")
     @SuppressWarnings("unchecked")
     private E[] newElementArray(int size) {
@@ -192,6 +193,7 @@ E[] var1B2FE2B69B45A4B74BDC1E1658079136_1984782008 =         (E[]) new Object[si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.938 -0400", hash_original_method = "DD1AE1F8EA98D3605FDD193E0651B9D6", hash_generated_method = "7962580513937AD8B24559826B5F2CD0")
     public synchronized int capacity() {
         int var07C376840AFF9C17A8118A6D2922D513_1685398618 = (elementData.length);
@@ -686,6 +688,7 @@ for(int i = location;i < elementCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.962 -0400", hash_original_method = "0D33E0C5C56D3A9FC9F5E73253A3A2D0", hash_generated_method = "81540180BD9D3606A3AE3EABD826600E")
     @Override
     public synchronized boolean isEmpty() {
@@ -856,6 +859,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_416867409 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.981 -0400", hash_original_method = "B99CB02C0986A5ACE1171E44B2E88FC0", hash_generated_method = "B1AF8F7A62BE803D9C4214E5FFF1A75D")
     public synchronized void removeAllElements() {
 for(int i = 0;i < elementCount;i++)
@@ -1076,6 +1080,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_999939029 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.005 -0400", hash_original_method = "81BBFD456B62650530A643B4CB14DC43", hash_generated_method = "4ADCC6DAE828019329735F1708E5257B")
     @Override
     public synchronized int size() {

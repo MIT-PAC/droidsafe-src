@@ -33,6 +33,7 @@ abstract class BasicTagTechnology implements TagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.818 -0400", hash_original_method = "FC84E29499397B8918F938A8205313A1", hash_generated_method = "A88B29D080902B16D1C0A4D725811A1E")
     @Override
     public Tag getTag() {
@@ -61,6 +62,7 @@ Tag varD6A25044F8E609F6CD67330C1523D33D_650001313 =         mTag;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.818 -0400", hash_original_method = "627518FDA5BCF854C6C8A282AA02DD65", hash_generated_method = "0C8A3E41FB6B2B227BC2A09C4EC84477")
     @Override
     public boolean isConnected() {
@@ -150,6 +152,7 @@ Tag varD6A25044F8E609F6CD67330C1523D33D_650001313 =         mTag;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.820 -0400", hash_original_method = "9693ABC23B7E982FA8E766A116B1D439", hash_generated_method = "283EC2A5569830476C63E08E9A6E714F")
     @Override
     public void reconnect() throws IOException {

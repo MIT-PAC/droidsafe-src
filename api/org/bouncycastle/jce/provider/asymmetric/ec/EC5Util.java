@@ -24,7 +24,8 @@ public class EC5Util {
     }
 
 
-        public static EllipticCurve convertCurve(
+        @DSModeled(DSC.SPEC)
+    public static EllipticCurve convertCurve(
         ECCurve curve, 
         byte[]  seed) {
         if (curve instanceof ECCurve.Fp)

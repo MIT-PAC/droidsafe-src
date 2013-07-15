@@ -60,6 +60,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.372 -0400", hash_original_method = "D25F82A74C11430669962AA7817D10FE", hash_generated_method = "DD5B842D81AE394243957596610A8178")
     public void setOnFrameAvailableListener(OnFrameAvailableListener l) {
         mOnFrameAvailableListener = l;
@@ -164,21 +165,25 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.377 -0400", hash_original_method = "C6EC796BAFF87019C29023815C189B5A", hash_generated_method = "8824C38A2AF18B217147220519528F43")
     private void nativeInit(int texName, Object weakSelf, boolean allowSynchronousMode) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.377 -0400", hash_original_method = "46D026C452E34CB5D17D4D7413C83210", hash_generated_method = "76DCFAD42AA6902991CC86FFBD4823C2")
     private void nativeFinalize() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.378 -0400", hash_original_method = "39631901C5E9C156F840F3431C1EB6A3", hash_generated_method = "E3B4C19945778599093CCCD35B7210D9")
     private void nativeGetTransformMatrix(float[] mtx) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.378 -0400", hash_original_method = "F440D167BF3058541215FA5D0CFEDE56", hash_generated_method = "16662A87D828D5713FAD68331B9204CC")
     private long nativeGetTimestamp() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1422015161 = getTaintLong();
@@ -186,11 +191,13 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.378 -0400", hash_original_method = "777FDD0379AC4E914563AFAE47F93745", hash_generated_method = "53D4DFD381964AA171841E2F104BF57E")
     private void nativeSetDefaultBufferSize(int width, int height) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.378 -0400", hash_original_method = "5F79841CB1993D78C92BE65FFA4E3E7E", hash_generated_method = "500D9916884422448C0A964E9DC78758")
     private int nativeUpdateTexImage() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674599874 = getTaintInt();
@@ -198,6 +205,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.379 -0400", hash_original_method = "7EC2703D346B1354B6934AD09D0B787F", hash_generated_method = "50A29537685FC3B8ADF137E2079A53E8")
     private int nativeGetQueuedCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541460138 = getTaintInt();
@@ -205,6 +213,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.379 -0400", hash_original_method = "2D7DB035F92C7747E201CDD180CCEB34", hash_generated_method = "5B893D9C0D8D139D1AA6F9D31A7778E0")
     private void nativeRelease() {
     }

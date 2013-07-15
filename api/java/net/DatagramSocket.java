@@ -217,6 +217,7 @@ public class DatagramSocket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.567 -0400", hash_original_method = "9059089CB1C35AC3C53D636B58746A1E", hash_generated_method = "5DA1E73348B3C83DD7287C4CF5BC0BA9")
     public InetAddress getInetAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1175862985 =         address;
@@ -283,6 +284,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.569 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "1AF5001FF23DD9E7E2DF993FF7187953")
     public int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_714980951 = (port);
@@ -293,6 +295,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.569 -0400", hash_original_method = "4991C56903C24C085B034589D2617CA7", hash_generated_method = "4A28F51EE6F38727CB9C5BD8056DC4BE")
      boolean isMulticastSocket() {
         boolean var68934A3E9455FA72420237EB05902327_64654220 = (false);
@@ -689,6 +692,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.585 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "6919F3B2559432522C20D0EBFB2E55BE")
     public boolean isBound() {
         boolean var8E4D35088206920061AAF7F347854388_85447776 = (isBound);
@@ -699,6 +703,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.585 -0400", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "BFA889AD2940D1B1312E2F79A5E5DBC9")
     public boolean isConnected() {
         boolean var8CADFAB0F66545464EF713B1AEC0C7DD_821174764 = (isConnected);
@@ -825,6 +830,7 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.589 -0400", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "1B9C9F1AA270D160155609ADC5184792")
     public boolean isClosed() {
         boolean var7587750400D3C39AEAD7C1489F6FE7F3_2081291251 = (isClosed);
@@ -835,6 +841,7 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.589 -0400", hash_original_method = "4DA7A00C8A23C7197F09A02190FE9E45", hash_generated_method = "18CC6F07A664A02C82E545463377EB11")
     public DatagramChannel getChannel() {
 DatagramChannel var540C13E9E156B687226421B24F2DF178_1190018184 =         null;

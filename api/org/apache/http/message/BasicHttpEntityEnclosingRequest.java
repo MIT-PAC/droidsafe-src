@@ -44,6 +44,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.475 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "47F9447E532AD1D9C3B9356A7E990E23")
     public HttpEntity getEntity() {
 HttpEntity varB0390008473457B24431D383C02B7BE2_1774602571 =         this.entity;

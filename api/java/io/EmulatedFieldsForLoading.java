@@ -36,6 +36,7 @@ class EmulatedFieldsForLoading extends ObjectInputStream.GetField {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.967 -0400", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "2B626B4A29FA0B7B3BE1B2A7B774FB44")
      EmulatedFields emulatedFields() {
 EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulatedFields;
@@ -172,6 +173,7 @@ Object varDA6D5552B979C6493B8792E91CCA076D_1425877305 =         emulatedFields.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.995 -0400", hash_original_method = "C05B1B5B49C9CD804F2B010781383CF8", hash_generated_method = "DFF795B584BFB440EBFCF467D507067D")
     @Override
     public ObjectStreamClass getObjectStreamClass() {

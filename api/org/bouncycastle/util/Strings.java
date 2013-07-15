@@ -83,12 +83,14 @@ public final class Strings {
     }
 
     
-        public static byte[] toUTF8ByteArray(String string) {
+        @DSModeled(DSC.SPEC)
+    public static byte[] toUTF8ByteArray(String string) {
         return toUTF8ByteArray(string.toCharArray());
     }
 
     
-        public static byte[] toUTF8ByteArray(char[] string) {
+        @DSModeled(DSC.SPEC)
+    public static byte[] toUTF8ByteArray(char[] string) {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         char[] c = string;
         int i = 0;
@@ -175,7 +177,8 @@ public final class Strings {
     }
 
     
-        public static byte[] toByteArray(char[] chars) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(char[] chars) {
         byte[] bytes = new byte[chars.length];
         for (int i = 0; i != bytes.length; i++)
         {
@@ -185,7 +188,8 @@ public final class Strings {
     }
 
     
-        public static byte[] toByteArray(String string) {
+        @DSModeled(DSC.SPEC)
+    public static byte[] toByteArray(String string) {
         byte[] bytes = new byte[string.length()];
         for (int i = 0; i != bytes.length; i++)
         {
@@ -196,7 +200,8 @@ public final class Strings {
     }
 
     
-        public static String[] split(String input, char delimiter) {
+        @DSModeled(DSC.SPEC)
+    public static String[] split(String input, char delimiter) {
         Vector           v = new Vector();
         boolean moreTokens = true;
         String subString;

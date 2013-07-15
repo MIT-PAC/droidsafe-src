@@ -27,6 +27,7 @@ abstract class AreaCodeMapStorageStrategy {
     public abstract boolean isFlyweight();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.316 -0400", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "2A5F3F9620821C974A06206D27132648")
     public int getNumOfEntries() {
         int var881EB9BA7A3B2170EFED470F473D8D5B_267675265 = (numOfEntries);

@@ -39,6 +39,7 @@ public final class BasicConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.705 -0400", hash_original_method = "BA19E2BECC620F0A37756A3C3C0D942D", hash_generated_method = "D471F9165C3AEDEAA153BF5C970892A1")
     public int getPathLenConstraint() {
         int var9DE6E40C955CD00B514CC5F874B7A6BA_1408831816 = (pathLenConstraint);
@@ -49,6 +50,7 @@ public final class BasicConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.706 -0400", hash_original_method = "946B6F20121D8D093231FCFBEB08839B", hash_generated_method = "553C6F781FFEB7787B220B01A2F07F8E")
     public byte[] getEncoded() {
     if(encoding == null)        
@@ -66,6 +68,7 @@ public final class BasicConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.706 -0400", hash_original_method = "13B672A3A148C28AA73E910809626D2C", hash_generated_method = "067B8394D5404825844B6BE829E1DD07")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());

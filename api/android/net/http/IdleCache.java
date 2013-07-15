@@ -79,6 +79,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.291 -0400", hash_original_method = "84A867D5F5B3563DFEB3ADE540AAE988", hash_generated_method = "3252B060BEB8817477E4722A59940993")
     synchronized Connection getConnection(HttpHost host) {
         addTaint(host.getTaint());
@@ -124,6 +125,7 @@ Connection varEDFF4FBBF053B5DC2B444ADFA049EE0F_1894352810 =         ret;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.292 -0400", hash_original_method = "3CB6FBE953A3200168C4C82134203CFB", hash_generated_method = "8B2D5B358AEA1270BD5C5EDACCB39C3A")
     synchronized void clear() {
 for(int i = 0;mCount > 0 && i < IDLE_CACHE_MAX;i++)
@@ -150,6 +152,7 @@ for(int i = 0;mCount > 0 && i < IDLE_CACHE_MAX;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.292 -0400", hash_original_method = "D819290B68B2E791C413DF56F024C65B", hash_generated_method = "AEE43958128F0F79804035295610C6AA")
     private synchronized void clearIdle() {
     if(mCount > 0)        
@@ -214,6 +217,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.295 -0400", hash_original_method = "251C8B975B1D281BC736CAA8083B5C8E", hash_generated_method = "D8917CFCEA8A09470AD25411D95F05B8")
         public void run() {
             int check = 0;

@@ -134,6 +134,7 @@ public abstract class HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.464 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "C9083453A9DF96FB9488FD8E42A9D875")
     public void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
@@ -207,6 +208,7 @@ SSLEngineResult.HandshakeStatus var68E71D62754FEACD6A50A6182D14BA78_116038222 = 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.465 -0400", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "9277AFCF40B641D75735A70FC37CEF61")
     public SSLSessionImpl getSession() {
 SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
@@ -217,6 +219,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.466 -0400", hash_original_method = "95F30AE0B715D4F051584DDF5B47A5AE", hash_generated_method = "5DF4A49BCAA2F792F82CA4782AE77904")
     protected void sendChangeCipherSpec() {
         needSendCCSpec = true;
@@ -225,6 +228,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.466 -0400", hash_original_method = "CD5990AD34611898DF18221C46BBB35B", hash_generated_method = "3ED1C82D1126AC414DC77295B793F13B")
     protected void sendHelloRequest() {
         needSendHelloRequest = true;

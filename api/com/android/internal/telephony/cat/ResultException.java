@@ -73,6 +73,7 @@ switch(result){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.437 -0400", hash_original_method = "A57BD664B9013CBC4792F94DA18D35A2", hash_generated_method = "F11503413B099E7A79622CC75DFF52C3")
     public ResultCode result() {
 ResultCode var8EC17D26103D23643357521909BC2C9A_2107171367 =         mResult;
@@ -83,6 +84,7 @@ ResultCode var8EC17D26103D23643357521909BC2C9A_2107171367 =         mResult;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.438 -0400", hash_original_method = "AD79E69220253098AEFB7D9A4D5D98C9", hash_generated_method = "E6D3E2277772EB74BDC255ED1393CB76")
     public boolean hasAdditionalInfo() {
         boolean var3EA2D272F0FBB334247B11D270B31BE9_2086994566 = (mAdditionalInfo >= 0);
@@ -93,6 +95,7 @@ ResultCode var8EC17D26103D23643357521909BC2C9A_2107171367 =         mResult;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.438 -0400", hash_original_method = "B6D84D422E51AC37891071F2EE987CA4", hash_generated_method = "C7E716A3499B84AC949B4A0187EBF2E8")
     public int additionalInfo() {
         int var6498C80FCD262D5996F8FC6DFBCB3810_1428367724 = (mAdditionalInfo);

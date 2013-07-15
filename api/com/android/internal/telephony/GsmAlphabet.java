@@ -162,7 +162,8 @@ public class GsmAlphabet {
     }
 
     
-        private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
+        @DSModeled(DSC.SAFE)
+    private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
         int byteOffset = bitOffset / 8;
         int shift = bitOffset % 8;
         packedChars[++byteOffset] |= value << shift;
@@ -525,7 +526,8 @@ public class GsmAlphabet {
     }
 
     
-        static synchronized void setEnabledSingleShiftTables(int[] tables) {
+        @DSModeled(DSC.SAFE)
+    static synchronized void setEnabledSingleShiftTables(int[] tables) {
         sEnabledSingleShiftTables = tables;
         if (tables.length > 0) {
             sHighestEnabledSingleShiftCode = tables[tables.length - 1];
@@ -535,17 +537,20 @@ public class GsmAlphabet {
     }
 
     
-        static synchronized void setEnabledLockingShiftTables(int[] tables) {
+        @DSModeled(DSC.SAFE)
+    static synchronized void setEnabledLockingShiftTables(int[] tables) {
         sEnabledLockingShiftTables = tables;
     }
 
     
-        static synchronized int[] getEnabledSingleShiftTables() {
+        @DSModeled(DSC.SAFE)
+    static synchronized int[] getEnabledSingleShiftTables() {
         return sEnabledSingleShiftTables;
     }
 
     
-        static synchronized int[] getEnabledLockingShiftTables() {
+        @DSModeled(DSC.SAFE)
+    static synchronized int[] getEnabledLockingShiftTables() {
         return sEnabledLockingShiftTables;
     }
 

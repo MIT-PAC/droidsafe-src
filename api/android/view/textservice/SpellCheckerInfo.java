@@ -145,6 +145,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.616 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "C46FCFF9EAB5C20C16984C2F0798D3EA")
     public String getId() {
 String var565D51511D15781AE576ED3D7A8F70E9_2000980574 =         mId;
@@ -155,6 +156,7 @@ String var565D51511D15781AE576ED3D7A8F70E9_2000980574 =         mId;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.616 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "E41CA55E9840BA57CFF173F6BD42BF57")
     public ComponentName getComponent() {
 ComponentName var93E6F91556E618C88339096F31BDB937_1588331726 =         new ComponentName(
@@ -167,6 +169,7 @@ ComponentName var93E6F91556E618C88339096F31BDB937_1588331726 =         new Compo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.616 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "14C46B8344BA3888CF0FEE8CB9839C83")
     public String getPackageName() {
 String var255A04E9345861413C0ACB855498FFE1_1356246342 =         mService.serviceInfo.packageName;
@@ -214,6 +217,7 @@ CharSequence varBFC2C4FE03EF33E1A481371165020B3B_1535502527 =         pm.getText
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.617 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "7EA3E326C0F319839BA990C88DA87875")
     public Drawable loadIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -225,6 +229,7 @@ Drawable varFF3368A5083B43E8384DF7E2744DD5A3_845705938 =         mService.loadIc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.618 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "6E8BD56F154F5801A919C61B2E1ED158")
     public ServiceInfo getServiceInfo() {
 ServiceInfo var28B71D71C22FF17E2913DF471BE53524_1336841012 =         mService.serviceInfo;
@@ -235,6 +240,7 @@ ServiceInfo var28B71D71C22FF17E2913DF471BE53524_1336841012 =         mService.se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.618 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "C7A776DDDF00440C4F6EA2FE2F3BD791")
     public String getSettingsActivity() {
 String varF52598D579FB7EF6DE23C12DD22DC004_1790089261 =         mSettingsActivityName;
@@ -266,6 +272,7 @@ SpellCheckerSubtype var20D9F29322B7A583A76DDB79ACEBD923_594458988 =         mSub
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.618 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AB0862FFB19A5E4B8091EBE6E21DC917")
     @Override
     public int describeContents() {

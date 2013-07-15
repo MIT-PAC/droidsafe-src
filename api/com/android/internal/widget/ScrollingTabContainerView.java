@@ -149,6 +149,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.153 -0400", hash_original_method = "E654067D8A391E646F927D11468DA221", hash_generated_method = "3CC7274A44B95F0704BA216FDB666531")
     public void setAllowCollapse(boolean allowCollapse) {
         mAllowCollapse = allowCollapse;
@@ -794,6 +795,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.165 -0400", hash_original_method = "8ACD8C7DACBB258E07DA374214A46BC1", hash_generated_method = "F6B979CC36578F1A1FB8211A9615142D")
         public ActionBar.Tab getTab() {
 ActionBar.Tab var2863D7221C8303E9575E533B393C6A71_820832582 =             mTab;
@@ -840,6 +842,7 @@ Object varF69A319077C91E2F587183FB5AB81B22_416573857 =             ((TabView) mT
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.166 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "52231501772BCAF05C12438E34D36261")
         @Override
         public long getItemId(int position) {
@@ -934,6 +937,7 @@ for(int i = 0;i < tabCount;i++)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.168 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "6788A6B1A7C531B82013BD58D9340B38")
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             mFinalVisibility = visibility;
@@ -977,6 +981,7 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_1346593657 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.168 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "8F11757114E12F8DD42F47845FC47878")
         @Override
         public void onAnimationCancel(Animator animation) {
@@ -988,6 +993,7 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_1346593657 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.169 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
         @Override
         public void onAnimationRepeat(Animator animation) {

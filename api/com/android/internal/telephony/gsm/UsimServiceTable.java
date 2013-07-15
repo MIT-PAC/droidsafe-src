@@ -27,6 +27,7 @@ public final class UsimServiceTable extends IccServiceTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.015 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "CBD92C69ADB6364634CD0DDA799A49B3")
     @Override
     protected String getTag() {

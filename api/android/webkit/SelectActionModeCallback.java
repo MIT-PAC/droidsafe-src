@@ -27,6 +27,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.059 -0400", hash_original_method = "2B5F8950C4750F957BA2CE7A16E0E578", hash_generated_method = "3E39CDF9FDEC82BE13585E703DC3AFD8")
      void setWebView(WebView webView) {
         mWebView = webView;
@@ -35,6 +36,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.060 -0400", hash_original_method = "AEE4CA66C11C42A4DFBE3B808BED80FD", hash_generated_method = "848AAC59B3BD368E981A795DAFD47D8B")
      void finish() {
     if(mActionMode != null)        
@@ -48,6 +50,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.061 -0400", hash_original_method = "EEC72C77A82E33054EA06A487B276F43", hash_generated_method = "EBF85D9A9E32CEDEE0400F43FD3E7FDC")
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
@@ -89,6 +92,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.062 -0400", hash_original_method = "E3574021502A1E90BCF4C46DB1841054", hash_generated_method = "0503C16FA127E5B387CCEFBAD45565AE")
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
@@ -103,6 +107,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.062 -0400", hash_original_method = "D632FC0DC2F573BE68AD858FDE491D0B", hash_generated_method = "B4A32DBF6E99CFF83EE18715A72E8D68")
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
@@ -146,6 +151,7 @@ switch(item.getItemId()){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.063 -0400", hash_original_method = "E29E2B7D27E4F7A85592500EAD3A4CE6", hash_generated_method = "0BEC8B85CEDC36CB2FB7360EC291E524")
     @Override
     public void onDestroyActionMode(ActionMode mode) {

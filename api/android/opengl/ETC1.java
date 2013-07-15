@@ -15,46 +15,55 @@ public class ETC1 {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void encodeBlock(Buffer in, int validPixelMask, Buffer out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void decodeBlock(Buffer in, Buffer out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getEncodedDataSize(int width, int height) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668332068 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668332068;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void encodeImage(Buffer in, int width, int height,
             int pixelSize, int stride, Buffer out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void decodeImage(Buffer in, Buffer out,
             int width, int height, int pixelSize, int stride) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatHeader(Buffer header, int width, int height) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isValid(Buffer header) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getWidth(Buffer header) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getHeight(Buffer header) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593;

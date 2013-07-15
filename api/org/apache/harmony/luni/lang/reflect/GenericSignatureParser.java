@@ -698,6 +698,7 @@ Type var3C5CC6CDB919ACDAB4FA656C419DF43D_1682622244 =             void.class;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.283 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "29CE80D93744498FF172EF6606EB70B0")
      boolean isStopSymbol(char ch) {
         addTaint(ch);

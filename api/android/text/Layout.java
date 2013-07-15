@@ -499,6 +499,7 @@ TextPaint var942A2EBC27CD21C7FBC19AB14FC6E1BE_2147416680 =         mPaint;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.179 -0400", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "6C7CC6587888BA33A0C3E096937F8EED")
     public int getEllipsizedWidth() {
         int varA3DB1626A190732E588FD0D14FC8FB31_2067710874 = (mWidth);
@@ -1189,6 +1190,7 @@ for(int i = 0;i < runs.length;i += 2)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.187 -0400", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "AC7E0F9DEE2369EF7C8A6B855DD272F5")
     public int getOffsetForHorizontal(int line, float horiz) {
         addTaint(horiz);
@@ -2062,7 +2064,8 @@ for(int i = 0;i < ns;++i)
         }
 
         
-                public static float nextDefaultStop(float h, int inc) {
+                @DSModeled(DSC.SAFE)
+        public static float nextDefaultStop(float h, int inc) {
             return ((int) ((h + inc) / inc)) * inc;
         }
 
@@ -2211,6 +2214,7 @@ String var36EEEB02F8950D6778907441639F547C_955826852 =             new String(s)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.210 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "DDCA2EAA862577467E30ECFF6D6ACC71")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());

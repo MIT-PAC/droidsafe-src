@@ -163,6 +163,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.213 -0400", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "262718C151030B8F8717951B0E8FD6EB")
     @Override
     public Drawable getDrawable() {
@@ -209,6 +210,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_1091464886 =         drawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.213 -0400", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "4CB9D1FDB47A3A1D736DEE61ED737565")
     public String getSource() {
 String varFD1075CFFA556ED219E8DC68F6D057EC_789605945 =         mSource;

@@ -50,6 +50,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.944 -0400", hash_original_method = "E2CE03FA6B4DC8948BADB09C58533480", hash_generated_method = "962D503C076A31A11A2FFB6D500830DE")
     public void setStyle(int style, int theme) {
         mStyle = style;
@@ -188,6 +189,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.954 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "ABC55C629C71FD5E58E525CEF712E830")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
@@ -198,6 +200,7 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.954 -0400", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "9EE9EA85FF72145684CAE56698B835EB")
     public int getTheme() {
         int varF33340182B9891501636E62AEA88BE69_228648683 = (mTheme);
@@ -219,6 +222,7 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.957 -0400", hash_original_method = "C5B21DACDF63560D5CBEBB813CF00A94", hash_generated_method = "77133C2635D85D6EF1C4411F9C7EB603")
     public boolean isCancelable() {
         boolean var895157BE8E63EE5D1276B7D79E82D10B_357367223 = (mCancelable);
@@ -229,6 +233,7 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.958 -0400", hash_original_method = "9B3CB0767DA345E448E7161B8A1612ED", hash_generated_method = "498BC809D2A3B6E137721CDFAE7E8200")
     public void setShowsDialog(boolean showsDialog) {
         mShowsDialog = showsDialog;
@@ -237,6 +242,7 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.959 -0400", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "6544E66075B3146266BD27F427E54DB1")
     public boolean getShowsDialog() {
         boolean varBB3DF4294DE62C91BD8B047DF87E1F79_942691824 = (mShowsDialog);
@@ -355,6 +361,7 @@ Dialog var5C7D6DC943C129796A12D487F3E52C87_1700016975 =         new Dialog(getAc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.964 -0400", hash_original_method = "355678003B9B3B1563024A6589368B65", hash_generated_method = "ED2DA15A78724B9512FA1FE0573630C9")
     public void onCancel(DialogInterface dialog) {
         //DSFIXME:  CODE0009: Possible callback target function detected

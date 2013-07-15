@@ -59,6 +59,7 @@ abstract class WebSyncManager implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.966 -0400", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "97BD3D04E70FBAE8A5D9B74244E1DFFD")
     protected Object clone() throws CloneNotSupportedException {
         CloneNotSupportedException var526F0275412AAA8782D17897499AAE9F_1725106629 = new CloneNotSupportedException("doesn't implement Cloneable");
@@ -69,6 +70,7 @@ abstract class WebSyncManager implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.966 -0400", hash_original_method = "8834F89660AF74637C8D229EF4878BE6", hash_generated_method = "73546D478E9530AF20B6B6090EA19E86")
     public void run() {
         Looper.prepare();
@@ -89,6 +91,7 @@ abstract class WebSyncManager implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.967 -0400", hash_original_method = "51D4EC34A270685406E251162F5D8313", hash_generated_method = "47A4A21DA006D32F480C647FA6DBCFFF")
     public void sync() {
     if(DebugFlags.WEB_SYNC_MANAGER)        
@@ -139,6 +142,7 @@ abstract class WebSyncManager implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.967 -0400", hash_original_method = "2AEDBC8F7C27D5B102C45AFA67E1CB2E", hash_generated_method = "2EAD867CFF16CF65E3B95A6633278CE8")
     public void startSync() {
     if(DebugFlags.WEB_SYNC_MANAGER)        
@@ -195,6 +199,7 @@ abstract class WebSyncManager implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.968 -0400", hash_original_method = "E2DCC4A23007ACC5EB483532AA9CED02", hash_generated_method = "39287E7B275BD495C704BF01DE9A8034")
     protected void onSyncInit() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -214,6 +219,7 @@ abstract class WebSyncManager implements Runnable {
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.968 -0400", hash_original_method = "DDFB485EC354F258C2B8352C9BF41A44", hash_generated_method = "0E14F1B2E76842EE791A8DF918188095")
         @Override
         public void handleMessage(Message msg) {

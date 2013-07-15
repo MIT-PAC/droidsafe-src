@@ -22,7 +22,8 @@ public class ProviderUtil {
     }
 
 
-        static void setParameter(String parameterName, Object parameter) {
+        @DSModeled(DSC.BAN)
+    static void setParameter(String parameterName, Object parameter) {
         SecurityManager securityManager = System.getSecurityManager();
         if (parameterName.equals(ConfigurableProvider.THREAD_LOCAL_EC_IMPLICITLY_CA))
         {
@@ -66,7 +67,8 @@ public class ProviderUtil {
     }
 
     
-        public static ECParameterSpec getEcImplicitlyCa() {
+        @DSModeled(DSC.SPEC)
+    public static ECParameterSpec getEcImplicitlyCa() {
         ECParameterSpec spec = (ECParameterSpec)threadSpec.get();
         if (spec != null)
         {
@@ -76,7 +78,8 @@ public class ProviderUtil {
     }
 
     
-        static int getReadLimit(InputStream in) throws IOException {
+        @DSModeled(DSC.SPEC)
+    static int getReadLimit(InputStream in) throws IOException {
         if (in instanceof ByteArrayInputStream)
         {
             return in.available();

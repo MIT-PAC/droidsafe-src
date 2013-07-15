@@ -131,6 +131,7 @@ CharSequence varB017984728AC60AD1F0BF8734F33F15C_1964150676 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.160 -0400", hash_original_method = "CF29F8673A9FD20E39B97C12C8CE0496", hash_generated_method = "A606C16E590F004340E338252C504A9F")
     public boolean isEnabled() {
         boolean var13504F8DD01CAF7C3049B4351A32E559_1479325576 = (enabled && applicationInfo.enabled);
@@ -241,6 +242,7 @@ Drawable varC6423699DBFD54FBC0A4ED249151ECE7_1082011760 =         applicationInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.164 -0400", hash_original_method = "6586F246687FA42890C123804417F38B", hash_generated_method = "4194BBD961D5B594577623B8F3678AEF")
     @Override
     protected ApplicationInfo getApplicationInfo() {

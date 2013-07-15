@@ -30,6 +30,7 @@ public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.357 -0400", hash_original_method = "2283D2DC026CDBFF3477BE41D42C9914", hash_generated_method = "D262168F541585EBD460EBA7053A0B05")
     public void setmPhoneSubInfo(PhoneSubInfo phoneSubInfo) {
         this.mPhoneSubInfo = phoneSubInfo;
@@ -38,6 +39,7 @@ public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.357 -0400", hash_original_method = "D25D1513A7A9E94213D872FEEFA3459F", hash_generated_method = "BED4D03E9A2827FDCF0F4E425814F997")
     public String getDeviceId() {
 String var774D6DF031E7B965971D1CC76B153EA8_1601711775 =         mPhoneSubInfo.getDeviceId();
@@ -48,6 +50,7 @@ String var774D6DF031E7B965971D1CC76B153EA8_1601711775 =         mPhoneSubInfo.ge
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.357 -0400", hash_original_method = "218139047ECFCF8CA6D1F8CDAA4C694C", hash_generated_method = "5CB7A99BC3ECC2F1E756EEB45D069EAE")
     public String getDeviceSvn() {
 String var658195DA09987FCDC970237CFC50B17E_1081533127 =         mPhoneSubInfo.getDeviceSvn();
@@ -168,6 +171,7 @@ String[] varC760810C18B4A09AFC768FF863D29C8E_713793185 =         mPhoneSubInfo.g
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.358 -0400", hash_original_method = "BD901838E03164DC084863FAEEA45A76", hash_generated_method = "863FE854AA8737B8C4A6AA5D40090D74")
     protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
         addTaint(args[0].getTaint());

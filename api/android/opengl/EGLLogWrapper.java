@@ -87,6 +87,7 @@ class EGLLogWrapper implements EGL11 {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.129 -0400", hash_original_method = "6247B7AE810F729296017888684B59EB", hash_generated_method = "7F35D69637A1BB6BB60D4E427EE128A1")
     public boolean eglCopyBuffers(EGLDisplay display, EGLSurface surface,
             Object native_pixmap) {
@@ -152,6 +153,7 @@ EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_545719346 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.130 -0400", hash_original_method = "E582D9CBB0191E5220367BD0744C6983", hash_generated_method = "50FED8837738FB63804234D4BB062658")
     public EGLSurface eglCreatePbufferSurface(EGLDisplay display,
             EGLConfig config, int[] attrib_list) {
@@ -184,6 +186,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_171157302 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.131 -0400", hash_original_method = "765CEBF62D7B9322979603163DA8F5D9", hash_generated_method = "296D8CD566381A4FE88F41AA34074A22")
     public EGLSurface eglCreatePixmapSurface(EGLDisplay display,
             EGLConfig config, Object native_pixmap, int[] attrib_list) {
@@ -219,6 +222,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1181382364 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.131 -0400", hash_original_method = "CDAC490304CF100FCC182FE43316F1FE", hash_generated_method = "A9649D29EB7CB6EF5B75AE7CB821E3A5")
     public EGLSurface eglCreateWindowSurface(EGLDisplay display,
             EGLConfig config, Object native_window, int[] attrib_list) {
@@ -254,6 +258,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.132 -0400", hash_original_method = "17B0F3E125DE2F7D60446CA9C4D63B31", hash_generated_method = "F07E1D7431458E15F7C67001FF6AD6EF")
     public boolean eglDestroyContext(EGLDisplay display, EGLContext context) {
         addTaint(context.getTaint());
@@ -280,6 +285,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.133 -0400", hash_original_method = "4F8B036EB2172C3CCE8A824D61EAB111", hash_generated_method = "AF2FD6114B75627E65A15ED85A733FBA")
     public boolean eglDestroySurface(EGLDisplay display, EGLSurface surface) {
         addTaint(surface.getTaint());
@@ -376,6 +382,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.135 -0400", hash_original_method = "CD5215ACB5A884467FFDCDB902F66D96", hash_generated_method = "A308DCD5E35FA0DFC482C7A72633B066")
     public EGLContext eglGetCurrentContext() {
         begin("eglGetCurrentContext");
@@ -396,6 +403,7 @@ EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_2041830721 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.136 -0400", hash_original_method = "F89CCAE1C686118EE987018C5EB511F3", hash_generated_method = "5A03AC7A7997B779010C6D948B5F0E7E")
     public EGLDisplay eglGetCurrentDisplay() {
         begin("eglGetCurrentDisplay");
@@ -416,6 +424,7 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_1794706667 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.136 -0400", hash_original_method = "97BC2264A7EAF9C13CA50824D785EB5C", hash_generated_method = "36B9A6C18C838D495D4798917F4E08EB")
     public EGLSurface eglGetCurrentSurface(int readdraw) {
         addTaint(readdraw);
@@ -439,6 +448,7 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1649181117 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.137 -0400", hash_original_method = "D9FC0B2A3D1E4133A8157B766B2423D8", hash_generated_method = "228C0D008400D8D55B24B225DBA98B14")
     public EGLDisplay eglGetDisplay(Object native_display) {
         addTaint(native_display.getTaint());
@@ -462,6 +472,7 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.137 -0400", hash_original_method = "DE53FD647DB0A1FC971C6C4A91049D54", hash_generated_method = "1A60B8A944631DB28746AA996C938A99")
     public int eglGetError() {
         begin("eglGetError");
@@ -480,6 +491,7 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.137 -0400", hash_original_method = "E9B8DEB24A1F9C034A66CF10AF8096D2", hash_generated_method = "066CB2E768E3353BB6F82CD15007EF22")
     public boolean eglInitialize(EGLDisplay display, int[] major_minor) {
         addTaint(major_minor[0]);
@@ -506,6 +518,7 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.138 -0400", hash_original_method = "BB07DB3ECE14A6EF231877217C9BD366", hash_generated_method = "3CA5158A40B93F763B96050D0316B5C4")
     public boolean eglMakeCurrent(EGLDisplay display, EGLSurface draw,
             EGLSurface read, EGLContext context) {
@@ -574,6 +587,7 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.139 -0400", hash_original_method = "D3DE2BC248237F2B7CE3331164B605A6", hash_generated_method = "300CFC4FE14D64BDBA11FA9375B7B5DC")
     public String eglQueryString(EGLDisplay display, int name) {
         addTaint(name);
@@ -635,6 +649,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.140 -0400", hash_original_method = "1B282CDB7FEAA67B60FE87995BF0D6A0", hash_generated_method = "B994DBA822D164AB979D545CBBA838D5")
     public boolean eglReleaseThread() {
         begin("eglReleaseThread");
@@ -655,6 +670,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.140 -0400", hash_original_method = "A5B6F2B2F6446A6BDCF86B87696C0E2D", hash_generated_method = "2A89E12EAA65F853440672F617D16809")
     public boolean eglSwapBuffers(EGLDisplay display, EGLSurface surface) {
         addTaint(surface.getTaint());
@@ -681,6 +697,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.140 -0400", hash_original_method = "027722FADC1595F5ADEB9B83ABCF6D7A", hash_generated_method = "C6E5D0F2F4FB9CE3A3FF1E58210B543D")
     public boolean eglTerminate(EGLDisplay display) {
         addTaint(display.getTaint());
@@ -704,6 +721,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.141 -0400", hash_original_method = "31CF9143DBB991079519ECC4274884CE", hash_generated_method = "BC8F8BBB8067F9BF3E03A12D1458F3D7")
     public boolean eglWaitGL() {
         begin("eglWaitGL");
@@ -724,6 +742,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.141 -0400", hash_original_method = "AE7A08A8F8EFC029A4F74729E48AAF48", hash_generated_method = "76897F4754C5275ECDD48D2A0861BA43")
     public boolean eglWaitNative(int engine, Object bindTarget) {
         addTaint(bindTarget.getTaint());
@@ -750,6 +769,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.142 -0400", hash_original_method = "788326C328235EE087DA54E094036343", hash_generated_method = "E3FAFA337D371DC9F501F463C8B1E2E1")
     private void checkError() {
         int eglError;
@@ -776,6 +796,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.142 -0400", hash_original_method = "B819F9C00E5D903C9B12858E84782EC6", hash_generated_method = "5F5D0216A34371FAE77555290CAD8A42")
     private void logLine(String message) {
         addTaint(message.getTaint());
@@ -785,6 +806,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.142 -0400", hash_original_method = "55C0C6DBDFA700D90D9FD20B92BCF082", hash_generated_method = "1FD69062587B8774F2FBFC9AB6BCAD1D")
     private void log(String message) {
         addTaint(message.getTaint());
@@ -803,6 +825,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.143 -0400", hash_original_method = "FB0C650254ED9FCE75BB6E7EB1636546", hash_generated_method = "802B50CA37688C411C9409CBBB0D3E0E")
     private void begin(String name) {
         addTaint(name.getTaint());
@@ -814,6 +837,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.143 -0400", hash_original_method = "54C70E45C8BA9C703732EB10FD7BBF7B", hash_generated_method = "DF33C133291E9F393FF306B9A4B6373D")
     private void arg(String name, String value) {
         addTaint(value.getTaint());
@@ -838,6 +862,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.143 -0400", hash_original_method = "34DADD61F74380F23C382DA05A595428", hash_generated_method = "B9D1C3BCA829E316DC2B840473E126DE")
     private void end() {
         log(");\n");
@@ -848,6 +873,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.144 -0400", hash_original_method = "0CDA8C40EE3F1BEB19FC35DF0C9C3B14", hash_generated_method = "927A3CC15B210A38C80E3F1C30213844")
     private void flush() {
         try 
@@ -867,6 +893,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.144 -0400", hash_original_method = "B92E6D1514E3DF39AF9DE02825B78605", hash_generated_method = "28D5EDBB11EB9542D1E4EDDD6466965E")
     private void arg(String name, int value) {
         addTaint(value);
@@ -877,6 +904,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.144 -0400", hash_original_method = "F32E9ED1A9AD790C0C3F824859AFFD50", hash_generated_method = "A44C78D54F83B42C98F5A87D7D592935")
     private void arg(String name, Object object) {
         addTaint(object.getTaint());
@@ -887,6 +915,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.145 -0400", hash_original_method = "01946A19C8705B92846E5FD249971514", hash_generated_method = "A3E0A404A5C22B6D9A5CBB341E7D5D8A")
     private void arg(String name, EGLDisplay object) {
         addTaint(object.getTaint());
@@ -915,6 +944,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.145 -0400", hash_original_method = "01463BB924BE80515544A0A965E7A7B9", hash_generated_method = "2BD1B35FFCC0FA98B9ACD71B4D382F01")
     private void arg(String name, EGLContext object) {
         addTaint(object.getTaint());
@@ -936,6 +966,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.146 -0400", hash_original_method = "29F033CFC0C7125F3850A082876BA169", hash_generated_method = "7C81A295FE5C876646AB0AA09D0EDD52")
     private void arg(String name, EGLSurface object) {
         addTaint(object.getTaint());
@@ -957,6 +988,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.146 -0400", hash_original_method = "3FBBFC7C1FE2EDBEEE74392E2BA2D107", hash_generated_method = "9FA8054195C50DED8D4C1D1B38617FA0")
     private void returns(String result) {
         addTaint(result.getTaint());
@@ -968,6 +1000,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.146 -0400", hash_original_method = "A943ABBAFE7E9588C2D5222F0375E708", hash_generated_method = "8FC8EA26A440313CE4C528916D1B6B45")
     private void returns(int result) {
         addTaint(result);
@@ -977,6 +1010,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.146 -0400", hash_original_method = "F758ED771C34CA3F99E1517AB5DA84CC", hash_generated_method = "B27B28C66EF5EE19F9304D379FC76555")
     private void returns(boolean result) {
         addTaint(result);
@@ -986,6 +1020,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.147 -0400", hash_original_method = "13511071C6DE4FFBB82F1BC04606E74C", hash_generated_method = "EA9B9C4262A1C12DB55A4D8784AC2A94")
     private void returns(Object result) {
         addTaint(result.getTaint());
@@ -995,6 +1030,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.147 -0400", hash_original_method = "122D09D33E3C14E13BA1263367B842FD", hash_generated_method = "8D78BB423F5BD2A96B7D2EE058372D41")
     private String toString(Object obj) {
         addTaint(obj.getTaint());
@@ -1019,6 +1055,7 @@ String varCC7F0868C1207D03CC528BFE14315765_1021734488 =             obj.toString
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.147 -0400", hash_original_method = "681A195715F2634EFD4F6574BD3918CD", hash_generated_method = "A863939EA707BA68479FF89CB6DDA064")
     private void arg(String name, int[] arr) {
         addTaint(arr[0]);
@@ -1040,6 +1077,7 @@ String varCC7F0868C1207D03CC528BFE14315765_1021734488 =             obj.toString
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.148 -0400", hash_original_method = "DD519F74DAF76C6EBE410B4846DBED4A", hash_generated_method = "DB296E2DE65B0F6C8FE099903B4A3485")
     private void arg(String name, Object[] arr) {
         addTaint(arr[0].getTaint());
@@ -1061,6 +1099,7 @@ String varCC7F0868C1207D03CC528BFE14315765_1021734488 =             obj.toString
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.148 -0400", hash_original_method = "83D3FA96B1354405A93359C25E36746A", hash_generated_method = "D5DB6191FD4B1B57D8B5E1B661C7FF9F")
     private String toString(int n, int[] arr, int offset) {
         addTaint(offset);
@@ -1106,6 +1145,7 @@ String var4FC680801218E6372BC708D6FA44AE60_5859014 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.149 -0400", hash_original_method = "76307B205B17F18B9623C7717F9DB208", hash_generated_method = "1075FDA741526223774EBD86910BBB75")
     private String toString(int n, Object[] arr, int offset) {
         addTaint(offset);
@@ -1151,12 +1191,14 @@ String var4FC680801218E6372BC708D6FA44AE60_2107898270 =         buf.toString();
     }
 
     
-        private static String getHex(int value) {
+        @DSModeled(DSC.SPEC)
+    private static String getHex(int value) {
         return "0x" + Integer.toHexString(value);
     }
 
     
-        public static String getErrorString(int error) {
+        @DSModeled(DSC.SPEC)
+    public static String getErrorString(int error) {
         switch (error) {
         case EGL_SUCCESS:
             return "EGL_SUCCESS";

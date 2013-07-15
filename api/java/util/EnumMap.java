@@ -380,6 +380,7 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_123290220 =         oldValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.357 -0400", hash_original_method = "9B5434C347C8B5979021C04F4F7D3AC0", hash_generated_method = "CB90CD25447AC083505C2D62A9B68AE1")
     @Override
     public int size() {
@@ -503,6 +504,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.360 -0400", hash_original_method = "74B7FF14F292272934F29B542A6B3535", hash_generated_method = "9FC8FBB551CD14785E1041E3AB443C0B")
     private void initialization(Class<K> type) {
         keyType = type;
@@ -667,6 +669,7 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_1840048586 =         oldValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.367 -0400", hash_original_method = "E6F3009D3E7934C3E89ABA04C91C1657", hash_generated_method = "73BD54249A2CF3C61A74DDFFA144E970")
         @SuppressWarnings("unchecked")
         @Override
@@ -681,6 +684,7 @@ KT varFBE74173B54C2544358AA545CBC3746C_1918974346 =             (KT) enumMap.key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.367 -0400", hash_original_method = "F5CFE00A2E55AC6B5D81DB2B62FB299C", hash_generated_method = "48F8CC512779FA45B257A8CD9FA8A89D")
         @SuppressWarnings("unchecked")
         @Override
@@ -695,6 +699,7 @@ VT varC64AFFD8CD7AF4B7B051702B1CD603C7_1686261652 =             (VT) enumMap.val
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.368 -0400", hash_original_method = "2B70B6F95ECF307373567A039C54EE32", hash_generated_method = "BDD2B98CB22FF2CF5E3D282D10D77F2F")
         @SuppressWarnings("unchecked")
         @Override
@@ -774,6 +779,7 @@ String varE65B3A02759122992CB82C0E651AD408_817279275 =             result.toStri
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.370 -0400", hash_original_method = "6D6AB5C8509128D2C00828238AD4C0D9", hash_generated_method = "ED6E1D088704136A361C3AEB8DBE5AE9")
         public boolean hasNext() {
             int length = enumMap.enumSize;
@@ -798,6 +804,7 @@ for(;position < length;position++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.371 -0400", hash_original_method = "8136BC21B836EBF6A2416BD2D7F3270E", hash_generated_method = "FB88AB8A7471D2E350EB78DAF21DE9B0")
         @SuppressWarnings("unchecked")
         public E next() {
@@ -1137,6 +1144,7 @@ for(int i = 0;i < enumMap.enumSize;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.378 -0400", hash_original_method = "AA0A985577200C3410BBA8066828BEEB", hash_generated_method = "89B17F92BA031A57412F2F5B662AC429")
         @SuppressWarnings("unchecked")
         @Override

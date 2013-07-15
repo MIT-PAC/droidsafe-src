@@ -47,6 +47,7 @@ public class Duration implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.156 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F3F54F2746E79E9CD3A3D89491912EDB")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_731260690 = (0);
@@ -65,6 +66,7 @@ public class Duration implements Parcelable {
         TimeUnit(int value) {
             mValue = value;
         }
+        @DSModeled(DSC.SAFE)
         public int value() {
             return mValue;
         }

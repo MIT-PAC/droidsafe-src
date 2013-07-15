@@ -102,6 +102,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.867 -0400", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "65E1CB3B004935508ECB739DD9996D5C")
     public CharSequence getTextOn() {
 CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_542537258 =         mTextOn;
@@ -112,6 +113,7 @@ CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_542537258 =         mTextOn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.867 -0400", hash_original_method = "ACAEE36BE44A4D8B24B7AB5EAF55367A", hash_generated_method = "67CC13008751AF9B4E65B5930EB2969F")
     public void setTextOn(CharSequence textOn) {
         mTextOn = textOn;
@@ -120,6 +122,7 @@ CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_542537258 =         mTextOn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.867 -0400", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "FC23A15F123455EB3F05A71820A46F49")
     public CharSequence getTextOff() {
 CharSequence varAB991E92B38590F8C1DAE21519779556_959363587 =         mTextOff;
@@ -130,6 +133,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_959363587 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.868 -0400", hash_original_method = "60B041A4AF8BC6B9E7C69B28CDF70955", hash_generated_method = "F6CD4645E4AAFA85FDCFCC947F51F705")
     public void setTextOff(CharSequence textOff) {
         mTextOff = textOff;

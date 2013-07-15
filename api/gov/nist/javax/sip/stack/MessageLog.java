@@ -150,6 +150,7 @@ class MessageLog implements LogRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.747 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "C97DDC1E16DD1F1B3599960216C51C4D")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -178,6 +179,7 @@ class MessageLog implements LogRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.749 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "B4C3E1D399DAAF67E55F4853A75C2261")
     public String toString() {
         String log;

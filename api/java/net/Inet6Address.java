@@ -127,6 +127,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.703 -0400", hash_original_method = "0048D9C1E27FFD1D482DB9672EA3AE03", hash_generated_method = "8A48C8E2B47787BBA5A5D0164FE84460")
     public boolean isIPv4CompatibleAddress() {
 for(int i = 0;i < 12;i++)
@@ -151,6 +152,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.704 -0400", hash_original_method = "9F5F5CEBE580C822E7F3125E303D498E", hash_generated_method = "73283572AF9379D012BCD5DE4B9F2EDB")
     @Override
     public boolean isLinkLocalAddress() {
@@ -173,6 +175,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.704 -0400", hash_original_method = "54D483B8739F01A2815B2B8F656686DE", hash_generated_method = "8AD2B79D80CDA581E54B9648F6613F4A")
     @Override
     public boolean isMCGlobal() {
@@ -184,6 +187,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.705 -0400", hash_original_method = "DCFE2D7DF3B86ED730BA1C809E9E7D4A", hash_generated_method = "016213704A602AD4D8EFF2FBA43A4678")
     @Override
     public boolean isMCLinkLocal() {
@@ -195,6 +199,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.705 -0400", hash_original_method = "A2CA5CB23BE5DDD68CAA7DA2135DB2EA", hash_generated_method = "A2E8584F67F41E5F943A9F2AEE2B8FCC")
     @Override
     public boolean isMCNodeLocal() {
@@ -206,6 +211,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.706 -0400", hash_original_method = "54DE0BED5AB4157674DB2DAF2389E694", hash_generated_method = "AF7F86BF1BF3B79F52B651E29CBD0120")
     @Override
     public boolean isMCOrgLocal() {
@@ -217,6 +223,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.706 -0400", hash_original_method = "F3FC244CCF2BE8692CC93BDBE33FAF7E", hash_generated_method = "8038C039C41CA4B3DAFFB8091E6D0931")
     @Override
     public boolean isMCSiteLocal() {
@@ -228,6 +235,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.706 -0400", hash_original_method = "421AE0BE80F642901B6D5A89B5DB9DC1", hash_generated_method = "A2F56AE02F2251AF5B117E14FC6CDF1E")
     @Override
     public boolean isMulticastAddress() {
@@ -239,6 +247,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.707 -0400", hash_original_method = "3C2D74882AEFA2EBBC23E3A728C5AE01", hash_generated_method = "FA86519AA060C5B0C7C9521A1DAF29B7")
     @Override
     public boolean isSiteLocalAddress() {
@@ -250,6 +259,7 @@ for(int i = 0;i < 12;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.707 -0400", hash_original_method = "50E705BC98343A8115E00AFCB06615D7", hash_generated_method = "CB4045DD525224E2FE3EAAD326B39C9C")
     public int getScopeId() {
         int varBB72CB804BAAB3F6631DAC16FDDF0A60_480862564 = (scope_id_set ? scope_id : 0);

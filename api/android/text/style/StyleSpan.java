@@ -32,6 +32,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.319 -0400", hash_original_method = "C2E273380763004C4C8E32A154731A96", hash_generated_method = "3F34410310382647A72BB5CD4C81A400")
     public int getSpanTypeId() {
         int varF3183A428FC8564EC11BCC1E3FF8D45E_1321704882 = (TextUtils.STYLE_SPAN);
@@ -42,6 +43,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.320 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "45E18C47D6850684886739D2BC72B271")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_177497718 = (0);
@@ -62,6 +64,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.321 -0400", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "6CD1BD717AF5D217B5DB467721FCB77E")
     public int getStyle() {
         int var16896C9E7463BF6DF9DB6B58257F1327_816038722 = (mStyle);

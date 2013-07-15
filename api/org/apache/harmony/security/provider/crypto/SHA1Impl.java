@@ -14,7 +14,8 @@ public class SHA1Impl implements SHA1_Data {
     }
 
 
-        static void computeHash(int[] arrW) {
+        @DSModeled(DSC.SAFE)
+    static void computeHash(int[] arrW) {
         int  a = arrW[HASH_OFFSET   ];
         int  b = arrW[HASH_OFFSET +1];
         int  c = arrW[HASH_OFFSET +2];

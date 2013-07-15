@@ -28,7 +28,8 @@ public class XmlUtils {
     }
 
 
-        public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
+        @DSModeled(DSC.BAN)
+    public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
         int outerDepth = parser.getDepth();
         int type;
         while ((type=parser.next()) != XmlPullParser.END_DOCUMENT

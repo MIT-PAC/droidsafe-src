@@ -94,6 +94,7 @@ for(int i = 0;i < N;)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.460 -0400", hash_original_method = "01DD3741CD8E2948231CA6DA5A86A75B", hash_generated_method = "179C5DC39055777A424FB93293041072")
     public char[] toChars() {
         char[] varA9A9F483CB373090D5BB0F27CF6C4953_33395975 = (toChars(null, null));
@@ -104,6 +105,7 @@ for(int i = 0;i < N;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.461 -0400", hash_original_method = "AD9B978BF103416C8AF045B7D5E010A1", hash_generated_method = "2DCDFA8E016D3AE7A6C6E9E247E18F9A")
     public char[] toChars(char[] existingArray, int[] outLen) {
         addTaint(outLen[0]);
@@ -144,6 +146,7 @@ for(int j=0;j<N;j++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.462 -0400", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "3C85CDED9B008B946136635704BDDAF6")
     public String toCharsString() {
         String str = mStringRef == null ? null : mStringRef.get();
@@ -169,6 +172,7 @@ String var061B89662D09DE43FE2A2D88636258A2_50394357 =         str;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.463 -0400", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "92737C2FDB3CE0F24B9C8A705C86BEA9")
     public byte[] toByteArray() {
         byte[] bytes = new byte[mSignature.length];
@@ -199,6 +203,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_1874153363 =         cert.getPubli
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.465 -0400", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "1826C04BB3E4A302B4834BE47AAEDB58")
     @Override
     public boolean equals(Object obj) {
@@ -231,6 +236,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_1874153363 =         cert.getPubli
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.466 -0400", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "6DE67BB71E9FA24CEB880E94446C2BBF")
     @Override
     public int hashCode() {
@@ -255,6 +261,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_1874153363 =         cert.getPubli
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.466 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DCBB7B83DF7B36A9CD7824239021DFB3")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2066040353 = (0);
@@ -265,6 +272,7 @@ PublicKey varA6AF97A9DA9E3D7762300A5338BFE054_1874153363 =         cert.getPubli
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.467 -0400", hash_original_method = "0B8B8E5420BBB8BD8CE54CF326578D2C", hash_generated_method = "57A6EA668242881AD29276DD3365E2FC")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

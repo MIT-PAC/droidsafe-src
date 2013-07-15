@@ -25,6 +25,7 @@ Class varC556F2A00B4C4BB2A37375D22F96F14B_304666649 =         Class.forName(suit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.396 -0400", hash_original_method = "340959DA3DE1E05DD508233637BBAF32", hash_generated_method = "DD77446817BF6A7D131359398500568B")
     public Class reload(Class aClass) throws ClassNotFoundException {
         addTaint(aClass.getTaint());

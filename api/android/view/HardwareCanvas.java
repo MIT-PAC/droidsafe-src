@@ -18,6 +18,7 @@ public abstract class HardwareCanvas extends Canvas {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.216 -0400", hash_original_method = "BD882F06CCC6AC9974E10A9883BC45CA", hash_generated_method = "BF4B8BF2B77C6E5242041DB0D943D715")
     @Override
     public boolean isHardwareAccelerated() {
@@ -56,6 +57,7 @@ public abstract class HardwareCanvas extends Canvas {
     abstract void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.217 -0400", hash_original_method = "0FE8E55D6D4280D2FC5B882C82F13271", hash_generated_method = "D5AA286EE2D5379B4F1BCA85C2AC4109")
     public boolean callDrawGLFunction(int drawGLFunction) {
         addTaint(drawGLFunction);

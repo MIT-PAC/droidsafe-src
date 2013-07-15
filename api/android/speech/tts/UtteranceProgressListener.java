@@ -26,15 +26,18 @@ public abstract class UtteranceProgressListener {
         static UtteranceProgressListener from(
             final TextToSpeech.OnUtteranceCompletedListener listener) {
         return new UtteranceProgressListener() {
-            @Override
+            @DSModeled(DSC.SAFE)
+    @Override
             public synchronized void onDone(String utteranceId) {
                 listener.onUtteranceCompleted(utteranceId);
             }
-            @Override
+            @DSModeled(DSC.SAFE)
+    @Override
             public void onError(String utteranceId) {
                 listener.onUtteranceCompleted(utteranceId);
             }
-            @Override
+            @DSModeled(DSC.SAFE)
+    @Override
             public void onStart(String utteranceId) {
             }
         };

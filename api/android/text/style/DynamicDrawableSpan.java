@@ -37,6 +37,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.169 -0400", hash_original_method = "613CAAD12B2914F4036D9034966EEECA", hash_generated_method = "06AA56A01629129DC4524AAB8FFE3774")
     public int getVerticalAlignment() {
         int varDD0F6B30A1C3613F4ED1E78B9E676A97_472378010 = (mVerticalAlignment);
@@ -85,6 +86,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.171 -0400", hash_original_method = "6EDA777F5CB3128927ADAA236FCAEE94", hash_generated_method = "294CD1309671CFA7EE5FC6BF83780CF3")
     @Override
     public void draw(Canvas canvas, CharSequence text,
@@ -122,6 +124,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.172 -0400", hash_original_method = "0EFD0E735C0FDE972D23D8A040440B54", hash_generated_method = "5A539C74290ACE01A61AFC7CFEB8FC59")
     private Drawable getCachedDrawable() {
         WeakReference<Drawable> wr = mDrawableRef;

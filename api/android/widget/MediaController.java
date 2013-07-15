@@ -654,6 +654,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.289 -0400", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "4C0714DF4A7467BD2803EC5433944881")
     public boolean isShowing() {
         boolean varED7142E6C56E85275A9E1F55586553C1_1427687128 = (mShowing);

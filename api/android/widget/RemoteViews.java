@@ -141,6 +141,7 @@ RemoteViews varF9965B73D80F3C31BC4764828F08696D_608117871 =         that;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.695 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "AB11E6DC624CBF5C7D73630F54549ADA")
     public String getPackage() {
 String varD0D543EB218BC9E16C17B23C08BC19C7_1080025883 =         mPackage;
@@ -151,6 +152,7 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_1080025883 =         mPackage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.695 -0400", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "547966D8D331A8689250645CD2D3CC6C")
     public int getLayoutId() {
         int var143EA7733FD06F80DE8D3B366855A342_1243786878 = (mLayoutId);
@@ -161,6 +163,7 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_1080025883 =         mPackage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.695 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
      void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
         mIsWidgetCollectionChild = isWidgetCollectionChild;
@@ -296,6 +299,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.698 -0400", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "A214AC9C0996343A91C0F5E76CBAA841")
     public void setImageViewUri(int viewId, Uri uri) {
         addTaint(uri.getTaint());
@@ -384,6 +388,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.699 -0400", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "443FD951F7768975D580B14FB92E9F9D")
     public void setOnClickFillInIntent(int viewId, Intent fillInIntent) {
         addTaint(fillInIntent.getTaint());
@@ -421,6 +426,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.699 -0400", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "7BA5642C25529CE983AA71D42830C192")
     @Deprecated
     public void setRemoteAdapter(int appWidgetId, int viewId, Intent intent) {
@@ -433,6 +439,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.700 -0400", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "20BE7F1E719B3AD314419FA046E7DC4A")
     public void setRemoteAdapter(int viewId, Intent intent) {
         addTaint(intent.getTaint());
@@ -573,6 +580,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.701 -0400", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "A8B80A8412E3D4F82C72D8EC50F3976E")
     public void setUri(int viewId, String methodName, Uri value) {
         addTaint(value.getTaint());
@@ -606,6 +614,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.701 -0400", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "E7890A3CCB40E6A03DC49D0997111D88")
     public void setIntent(int viewId, String methodName, Intent value) {
         addTaint(value.getTaint());
@@ -743,6 +752,7 @@ Context var807FB10045EE51C06BDB74744A6714DF_1573408397 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.703 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C2B5C7078C85F582376FFA02ED2921BD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1732139106 = (0);
@@ -827,6 +837,7 @@ for(int i=0;i<count;i++)
         public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.704 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DB069259F8D53E119C2DB062CB2B8A2A")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1722423250 = (0);
@@ -837,6 +848,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.704 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "9A7E1CFD3CC84E49A82E0C1CD56BAC36")
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             addTaint(counter.getTaint());
@@ -846,6 +858,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.704 -0400", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "387334943AA0FBF6331A76AA58BC8696")
         protected boolean startIntentSafely(Context context, PendingIntent pendingIntent,
                 Intent fillInIntent) {
@@ -1832,6 +1845,7 @@ switch(this.type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.720 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "6CA5FE05A88159D9613461A7BA47E257")
         private Class getParameterType() {
 switch(this.type){
@@ -2149,6 +2163,7 @@ switch(c){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.724 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
         public void clear() {
             mBitmapHeapMemoryUsage = 0;
@@ -2157,6 +2172,7 @@ switch(c){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.724 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
         public void bitmapIncrement(int numBytes) {
             mBitmapHeapMemoryUsage += numBytes;
@@ -2165,6 +2181,7 @@ switch(c){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.727 -0400", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "6294F6EE3EEB9808CE98D466DD2522A8")
         public int getBitmapHeapMemoryUsage() {
             int varC36FDDE1E5252D085B64B1B7ADEDAD8C_365752627 = (mBitmapHeapMemoryUsage);

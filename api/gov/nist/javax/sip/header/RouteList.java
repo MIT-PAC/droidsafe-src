@@ -16,6 +16,7 @@ public class RouteList extends SIPHeaderList<Route> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.953 -0400", hash_original_method = "2F61955E2C85706175B79FB3D2D2F3C0", hash_generated_method = "E60595335F48FBD842A1848DC368E2EA")
     public Object clone() {
         RouteList retval = new RouteList();
@@ -30,6 +31,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_436543702 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.953 -0400", hash_original_method = "48C7607E6836F35D30114914C241A09A", hash_generated_method = "25FF13FC18D2BC26D3C0C3DEA67DBC6A")
     public String encode() {
     if(super.hlist.isEmpty())        
@@ -50,6 +52,7 @@ String var0F81406E787DA37C7E2A213EE826C72B_1109398079 =         super.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.954 -0400", hash_original_method = "A0122B485E57B455599C6CF601D6C0DF", hash_generated_method = "D1AFADA48B49E99C67E8D48BE74A2E3D")
     public boolean equals(Object other) {
         addTaint(other.getTaint());

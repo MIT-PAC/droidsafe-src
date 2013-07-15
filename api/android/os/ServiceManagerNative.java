@@ -100,6 +100,7 @@ switch(code){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.588 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "909DA47A6E93E26B8C8B4AAA4CF9E502")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1204088105 =         this;
@@ -125,6 +126,7 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.589 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "65C7437968AD34D5AE269BE3E5F8247B")
     public IBinder asBinder() {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_1238041937 =         mRemote;
@@ -135,6 +137,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1238041937 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.590 -0400", hash_original_method = "02C17092CC4D0E934B4324BDE37272C4", hash_generated_method = "6CE10861B12392AFEA1EF6E2857563B0")
     public IBinder getService(String name) throws RemoteException {
         addTaint(name.getTaint());
@@ -162,6 +165,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1062963677 =         binder;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.591 -0400", hash_original_method = "5C8E64034E0715CC0FF2A576ACC0AB5A", hash_generated_method = "5DEE7D8D48D9A73AA0540467DE18A95E")
     public IBinder checkService(String name) throws RemoteException {
         addTaint(name.getTaint());
@@ -189,6 +193,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_874068531 =         binder;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.591 -0400", hash_original_method = "5E591506D5DD50AD56DFCE9C7D5E988A", hash_generated_method = "3E3A623CDA01464FE8B3824D9E7CA1FC")
     public void addService(String name, IBinder service) throws RemoteException {
         addTaint(service.getTaint());
@@ -213,6 +218,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_874068531 =         binder;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.592 -0400", hash_original_method = "FC27781B3E4C3CFB72E5AC6A897CA1D1", hash_generated_method = "2C55E9E4A2E11CE0583C98269A1D3706")
     public String[] listServices() throws RemoteException {
         Parcel data = Parcel.obtain();
@@ -237,6 +243,7 @@ String[] varED12C351C2E8CA4F85F097DDC7E77B4D_1191697422 =         list;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.593 -0400", hash_original_method = "8A24F25196050E86CC22CCEE8401DF5F", hash_generated_method = "8AEB568954A68ABA39DE5824232BDB43")
     public void setPermissionController(IPermissionController controller) throws RemoteException {
         addTaint(controller.getTaint());

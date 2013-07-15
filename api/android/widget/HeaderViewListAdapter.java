@@ -522,6 +522,7 @@ Filter var540C13E9E156B687226421B24F2DF178_1510945643 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.630 -0400", hash_original_method = "16C6428A588CE1C0BF49AB22D8718A60", hash_generated_method = "47798F05C051E43F9519B0E222A6317D")
     public ListAdapter getWrappedAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1673574595 =         mAdapter;

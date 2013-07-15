@@ -140,6 +140,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.711 -0400", hash_original_method = "2C9B75B7F79417EB76D61370935CF9C8", hash_generated_method = "A0C7324A63FA3E4756821C675147A473")
     public void updateDynamicallyConfigurableProperties(AccessibilityServiceInfo other) {
         eventTypes = other.eventTypes;
@@ -156,6 +157,7 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.714 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "43087C2FFECCDA6576EC9668DE60271D")
     public String getId() {
 String var565D51511D15781AE576ED3D7A8F70E9_261279112 =         mId;
@@ -166,6 +168,7 @@ String var565D51511D15781AE576ED3D7A8F70E9_261279112 =         mId;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.717 -0400", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "F3816ECAC77EBC7CA57EE1381D5BBC08")
     public ResolveInfo getResolveInfo() {
 ResolveInfo varA409562FAFA81D29E47E0388D6699416_1482098709 =         mResolveInfo;
@@ -176,6 +179,7 @@ ResolveInfo varA409562FAFA81D29E47E0388D6699416_1482098709 =         mResolveInf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.720 -0400", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "E7AD57E6ABABA9693A5487AF7BAAA2F7")
     public String getSettingsActivityName() {
 String varF52598D579FB7EF6DE23C12DD22DC004_594248533 =         mSettingsActivityName;
@@ -186,6 +190,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_594248533 =         mSettingsActivity
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.725 -0400", hash_original_method = "E6B94BCDAE7DB4F02CCDA58E176F7C09", hash_generated_method = "7C6DD5D610A9C8085FD5DDFCCA284934")
     public boolean getCanRetrieveWindowContent() {
         boolean var6D4745E833964FE3F3A2EBA5882199BF_1895414849 = (mCanRetrieveWindowContent);
@@ -196,6 +201,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_594248533 =         mSettingsActivity
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.728 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "0A0FFB649381DFA3D38CE400EC953936")
     public String getDescription() {
 String var2094894B2BDB1315AACD05A5CC5702EE_2038082824 =         mDescription;
@@ -206,6 +212,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_2038082824 =         mDescription;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.733 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "58B9873F4BFE5B213A737F59B2274FF1")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_143647840 = (0);
@@ -392,7 +399,8 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-        public static String flagToString(int flag) {
+        @DSModeled(DSC.SAFE)
+    public static String flagToString(int flag) {
         switch (flag) {
             case DEFAULT:
                 return "DEFAULT";

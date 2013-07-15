@@ -34,6 +34,7 @@ public class EGLSurfaceImpl extends EGLSurface {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.423 -0400", hash_original_method = "686C2DC893E9E8D9D02295779AC83C23", hash_generated_method = "53AA75CF1C04563CC1F8D5E5FB6031F6")
     @Override
     public boolean equals(Object o) {
@@ -62,6 +63,7 @@ public class EGLSurfaceImpl extends EGLSurface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.423 -0400", hash_original_method = "688B514F649E9FC55EF131746A1254F0", hash_generated_method = "2D9B342E08F3A4EB557CA4872F885943")
     @Override
     public int hashCode() {

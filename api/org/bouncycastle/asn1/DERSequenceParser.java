@@ -19,6 +19,7 @@ public class DERSequenceParser implements ASN1SequenceParser {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.182 -0400", hash_original_method = "C77FFAC7A6753577CB275ABB55D17A64", hash_generated_method = "353556590A4BF7D4AD259DDD8ECCD79C")
     public DEREncodable readObject() throws IOException {
 DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_819836043 =         _parser.readObject();
@@ -29,6 +30,7 @@ DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_819836043 =         _parser.rea
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.182 -0400", hash_original_method = "6CB3748BA1DF3221B502A0BCD2F9C771", hash_generated_method = "5E54664F50CEF57474272E406C1DC842")
     public DERObject getLoadedObject() throws IOException {
 DERObject var149AA351DB5DEA0CBA4DC65888095652_1173009589 =         new DERSequence(_parser.readVector());
@@ -39,6 +41,7 @@ DERObject var149AA351DB5DEA0CBA4DC65888095652_1173009589 =         new DERSequen
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.182 -0400", hash_original_method = "6EDDECA4629CF39F1ED286974E98F21F", hash_generated_method = "63F2942AD620B3B7D33AB46C116493AE")
     public DERObject getDERObject() {
         try 
