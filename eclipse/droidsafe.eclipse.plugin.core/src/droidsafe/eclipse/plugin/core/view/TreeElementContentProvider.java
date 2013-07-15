@@ -13,12 +13,12 @@ import org.eclipse.jface.viewers.Viewer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
-import droidsafe.eclipse.plugin.core.specmodel.IModelChangeSupport;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.HotspotModel;
+import droidsafe.speclang.model.IModelChangeSupport;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 
 public class TreeElementContentProvider implements ITreeContentProvider, PropertyChangeListener {
 

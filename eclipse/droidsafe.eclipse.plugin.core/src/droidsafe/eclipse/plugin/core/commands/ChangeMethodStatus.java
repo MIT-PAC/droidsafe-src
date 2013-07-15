@@ -10,10 +10,10 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeIssueResolutionStatus;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.DroidsafeIssueResolutionStatus;
+import droidsafe.speclang.model.MethodModel;
 
 /**
  * Command to mark the selected element in the droidsafe outline view as safe, unsafe, pending, or

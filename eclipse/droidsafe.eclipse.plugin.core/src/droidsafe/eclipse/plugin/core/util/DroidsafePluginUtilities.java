@@ -12,10 +12,10 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.HotspotModel;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
 
 public class DroidsafePluginUtilities {
