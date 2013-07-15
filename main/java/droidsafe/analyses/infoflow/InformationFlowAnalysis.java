@@ -85,10 +85,17 @@ import droidsafe.analyses.GeoPTA;
  */
 
 public class InformationFlowAnalysis {
+    /**
+     * Returns the singleton InformationFlowAnalysis object.
+     * @return the singleton InformationFlowAnalysis object
+     */
     public static InformationFlowAnalysis v() {
         return v;
     }
 
+    /**
+     * Creates a singleton InformationFlowAnalysis object.
+     */
     public static void run() {
         ObjectUtil.run();
         MemoryAccessAnalysis.run();
