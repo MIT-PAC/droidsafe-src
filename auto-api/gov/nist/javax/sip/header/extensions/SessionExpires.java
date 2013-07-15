@@ -1,0 +1,114 @@
+package gov.nist.javax.sip.header.extensions;
+
+
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+
+import java.util.Iterator;
+import gov.nist.javax.sip.header.ParametersHeader;
+import java.text.ParseException;
+import javax.sip.InvalidArgumentException;
+import javax.sip.header.ExtensionHeader;
+
+public final class SessionExpires extends ParametersHeader implements ExtensionHeader, SessionExpiresHeader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.095 -0400", hash_original_field = "09BCB72D61C0D6D1EFF5336DA6881557", hash_generated_field = "C13B9F005337F50619E5092E1337E1D0")
+
+    public int expires;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.095 -0400", hash_original_method = "A8246024A4BBDCEF318DB7F6B74C4E64", hash_generated_method = "0E464BB06220F15972D6EA6681E34A06")
+    public  SessionExpires() {
+        super(NAME);
+        
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.095 -0400", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "77E05FD490682FA33AF61D7E7F839003")
+    public int getExpires() {
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_91241891 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_91241891;
+        
+        
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.096 -0400", hash_original_method = "A313D6724829247498596D0326F894CE", hash_generated_method = "1F94C2B6C4EFAB2003C10C5168D24F2A")
+    public void setExpires(int expires) throws InvalidArgumentException {
+        if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("bad argument " + expires);
+        this.expires = expires;
+        
+        
+            
+        
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.096 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    public void setValue(String value) throws ParseException {
+        if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
+        addTaint(value.getTaint());
+        
+        
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_method = "B1D6BF5FEA5681AEA45EA9D4CACD9FB8", hash_generated_method = "2B4DD49EDC7CE6D5D94760C59B11284B")
+    protected String encodeBody() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1681534502 = null; 
+        String retval = Integer.toString(expires);
+        {
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1918397249 = (!parameters.isEmpty());
+            {
+                retval += SEMICOLON + parameters.encode();
+            } 
+        } 
+        varB4EAC82CA7396A68D541C85D26508E83_1681534502 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1681534502.addTaint(getTaint()); 
+        return varB4EAC82CA7396A68D541C85D26508E83_1681534502;
+        
+        
+        
+            
+        
+        
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_method = "5E6D9C5D9628C8E8194658511D516C38", hash_generated_method = "FAC52DF9A3945834803AA04EBDC611A5")
+    public String getRefresher() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1633610585 = null; 
+        varB4EAC82CA7396A68D541C85D26508E83_1633610585 = parameters.getParameter(REFRESHER);
+        varB4EAC82CA7396A68D541C85D26508E83_1633610585.addTaint(getTaint()); 
+        return varB4EAC82CA7396A68D541C85D26508E83_1633610585;
+        
+        
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_method = "B765158B109DFF1FFF87124C5A68F884", hash_generated_method = "CFBA8027D56906088EF2EB555498C070")
+    public void setRefresher(String refresher) {
+        this.parameters.set(REFRESHER,refresher);
+        addTaint(refresher.getTaint());
+        
+        
+    }
+
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_field = "1A90250BEA22A34094D11017692E5A52", hash_generated_field = "F2330FF32F2F9FA993B883D22A1E4D56")
+
+    private static final long serialVersionUID = 8765762413224043300L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_field = "9BF636FEEC8D4B6523EE9B98ABA0A950", hash_generated_field = "440D53375B5C86D3B1C0A993DC1D1A5F")
+
+    public static final String NAME = "Session-Expires";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:41.097 -0400", hash_original_field = "52C1E472405D97BD87845AB341E0D9DF", hash_generated_field = "D51D2CDCC34D9E34598982CCDA37DCD7")
+
+    public static final String REFRESHER = "refresher";
+}
+

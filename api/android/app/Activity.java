@@ -119,7 +119,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	ActionBarImpl mActionBar = null;
 	private CharSequence mTitle;
 	private int mTitleColor = 0;
-	final FragmentManagerImpl mFragments = new FragmentManagerImpl();
+	FragmentManagerImpl mFragments = new FragmentManagerImpl();
 	SparseArray<LoaderManagerImpl> mAllLoaderManagers;
 	LoaderManagerImpl mLoaderManager;
 	
@@ -685,6 +685,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public void onTrimMemory(int level){
 		mFragments.dispatchTrimMemory(level);
 		// Original method
@@ -697,7 +698,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public FragmentManager getFragmentManager(){
+		if (mFragments == null)
+			mFragments = new FragmentManagerImpl();
 		return mFragments;
 		
 		// Original method
@@ -2636,6 +2640,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
+	public final String getString(int id) {
+		return new String();
+	}
+	
 	public final int getTitleColor(){
 		return getTaintInt();
 		
@@ -2783,13 +2792,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         return null;
     }
 		*/
-		return null;
+		return new View(context);
 	}
 	
 	public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+		return new View(context);
 	}
 	
 	public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){

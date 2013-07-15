@@ -8,7 +8,7 @@ public class Object {
     //do not create DSTaintObject, allocations of DSTaintObject are added to the code by 
     //the DroidSafe tool when needed.
 	public DSTaintObject taint;
-	
+
 	@DSModeled(DSC.SAFE)
 	public Object() {
     }

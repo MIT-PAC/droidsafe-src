@@ -120,8 +120,8 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getType() {
-            return mType;
-        }
+        return mType;
+    }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setType(String type) {

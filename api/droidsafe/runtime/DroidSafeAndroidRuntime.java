@@ -1,5 +1,7 @@
 package droidsafe.runtime;
 
+import java.util.Random;
+
 import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
@@ -15,6 +17,8 @@ import droidsafe.annotations.DSModeled;
  *
  */
 public class DroidSafeAndroidRuntime {
+	public static boolean control = new Random().nextBoolean();
+	public static int switchControl = new Random().nextInt();
 
 	@DSModeled
 	/**

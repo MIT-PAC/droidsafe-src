@@ -1,0 +1,22 @@
+package com.android.internal.os;
+
+
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+
+import java.util.Iterator;
+
+class ZygoteSecurityException extends RuntimeException {
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.874 -0400", hash_original_method = "990020DEEB29D2A4D723F2E6C3895C07", hash_generated_method = "65810DDCE0AA47DDF6499F8FDFA0DA1E")
+      ZygoteSecurityException(String message) {
+        super(message);
+        addTaint(message.getTaint());
+        
+    }
+
+    
+}
+
